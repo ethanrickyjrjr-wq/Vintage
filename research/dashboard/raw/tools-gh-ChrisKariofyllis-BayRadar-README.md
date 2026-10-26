@@ -1,0 +1,153 @@
+# 📡 BayRadar
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](./Dockerfile)
+[![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel&logoColor=white)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FChrisKariofyllis%2FBayRadar&env=DATABASE_URL,TURSO_AUTH_TOKEN,APP_SECRET,CRON_SECRET&envDescription=Enter%20your%20Turso%20Database%20URL%2C%20Auth%20Token%2C%20and%20random%20secrets%20for%20security.&project-name=bayradar)
+[![Version](https://img.shields.io/badge/version-v1.4.5-orange)](./package.json)
+
+> **Self-hosted, automated eBay deal radar & auction monitor.**  
+> Monitor targeted searches, filter out scams and junk listings, and get real-time instant alerts on your phone via Tailscale or your home server.
+
+Built by **[Chris Kariofyllis](https://github.com/ChrisKariofyllis)**.
+
+<p align="center">
+  <img src="docs/bayradar.png" alt="BayRadar dashboard with monitors, live scan, and dark Apple-style UI" width="920" />
+</p>
+
+---
+
+## ✨ Features
+
+- 🎯 **Targeted Monitoring** — Search queries, category constraints, min/max price, and buying formats (Auction vs. Buy It Now).
+- 🛡️ **Anti-Scam & Box Exclusion** — Automatic regex filters exclude empty boxes, defects, and scam patterns (`ovp`, `nur karton`, `box only`, `defekt`, `parts only`).
+- ✨ **AI Smart Exclude** — Optional OpenAI-compatible assistant (Gemini, Groq, OpenAI, OpenRouter, Anthropic, Ollama) suggests marketplace-language negative keywords for parts, accessories, and conflicting models, with sanitizing so query words like `pro` never block legitimate listings.
+- 🛂 **AI Title Gatekeeper** — Optional per-monitor deep check of listing titles before alerts, dropping replacement parts, accessories, empty boxes, and wrong sub-models. Evaluates candidates in batches, retries on 429s, then switches to a configured fallback model if the primary quota is exhausted. Caches accepts, AI rejects, and local-filter rejects so the same eBay item is not re-scored. If both models are out of quota, the scan keeps going with basic filters and warns in the banner. Understands German `mit OVP` vs empty packaging.
+- 🎛️ **AI Provider Presets** — One-click base URL and model chips in Settings for Gemini, Groq, OpenAI, OpenRouter, and Anthropic (via OpenRouter), plus a toggleable fallback model for rate-limit / daily-quota exhaustion.
+- 📡 **Live Scan Progress** — Trigger Scan streams fetch and AI inspection progress in a frosted banner, then refreshes the feed. Manual scans sweep up to 100 listings; cron sweeps 50.
+- 📊 **Deals Feed Sorting** — Sort saved matches by newest, oldest, price, or auction end time.
+- 🖼️ **Listing Quick-View** — Tap a deal to inspect title, price, shipping, and countdown in a mobile bottom sheet or a centered desktop modal. **Open on eBay** stays a secondary action.
+- 🎯 **Gixen Last-Second Sniping** — Arm, update, or cancel a max bid from the feed. Gixen places the bid in the final seconds. Armed cards keep a **Sniped: €…** badge after refresh, **Active Snipes** filters scheduled tasks, and after the auction ends BayRadar syncs **Won / Outbid / Failed** onto **Ended Snipes**.
+- 🧹 **Clear Feed** — One-click purge of saved deals when you want a clean rescan.
+- ⏱️ **Auction Time Windows** — Alert only on auctions entering their final hours (e.g. `<= 24h` remaining) to avoid bid inflation noise.
+- 📱 **Multi-Channel Push Alerts** — Native dispatchers for **Ntfy**, **Telegram**, **Discord**, and **Gotify** with direct eBay links and image previews.
+- 🤖 **Telegram Interactive Bot** — Auction alerts include cap / +€50 / +€100 / custom-bid buttons. Authorized chats can arm a Gixen snipe from Telegram without opening the dashboard, `/load` recent deals, and mute Telegram per monitor while other channels keep firing.
+- 🏷️ **Idealo B-Ware Market Value** — From Create/Edit Monitor, fetch the current Idealo **B-Ware & Gebraucht** price for the query, fill **Market Value / Baseline**, and optionally suggest a max price ~20% below that reference. The lookup prefers camera **Body / Gehäuse** over lens kits and walks color/storage variants for the true lowest used offer. Scans compare landed eBay cost against that baseline and only show the fire-badge discount when it is a real margin.
+- 🧪 **Built-in Mock / Demo Engine** — Test the entire pipeline, filtering, and notifications immediately without waiting for eBay Developer key approval.
+- ⚙️ **In-App Credentials Manager** — Configure eBay keys, marketplace, AI provider, and optional Gixen sniping credentials directly from the Web UI.
+- 🐳 **Self-Hosted & Docker Native** — Single container packaging Next.js Dashboard + Background Poller Daemon with persistent SQLite storage. The worker checks due monitors every 30 seconds (self-healing loop) instead of relying only on cron ticks.
+
+---
+
+## 🚀 Quickstart (Self-Hosted / Home Server)
+
+### Option A: The 1-Line Installer (Recommended)
+
+Run this on your server:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/ChrisKariofyllis/BayRadar/main/install.sh | bash
+```
+
+The installer verifies Docker dependencies, clones the repository into `~/bayradar`, configures credentials, and boots the container stack.
+
+### Option B: Manual Docker Compose
+
+```bash
+git clone https://github.com/ChrisKariofyllis/BayRadar.git
+cd BayRadar
+cp .env.example .env
+
+# Start the stack (Dashboard on port 3050)
+docker compose up -d --build
+```
+
+Open [http://localhost:3050](http://localhost:3050) (or your server's local LAN/Tailscale IP) in your browser.
+
+---
+
+## 🧪 Testing Immediately (Mock Engine)
+
+You don't need active eBay API keys to start testing!
+
+1. Open **Settings** in the dashboard.
+2. Ensure **Demo / Mock Engine** is enabled.
+3. Click **Test eBay Connection** to verify the local mock engine.
+4. Add a Ntfy channel or Discord Webhook in Settings and send a test notification.
+5. Create a Monitor (e.g., PlayStation 5 @ €350) and click **Trigger Scan Now**. The mock engine will simulate deals and filter out scam boxes automatically. A live banner shows listings inspected; **Clear Feed** empties saved deals if you want a clean run.
+6. Optionally open **Settings → AI Configuration**, pick a provider chip (Gemini, Groq, OpenAI, OpenRouter, or Anthropic), paste an API key, and use **AI Smart Exclude** on a monitor to generate negative keywords. Leave **Enable Model Fallback** on so a lighter model can take over if the primary hits a 429.
+7. Enable **AI Title Gatekeeper** on a monitor to inspect titles before notifications. Verified deals show an **✨ AI Verified** chip on the feed. Sort the feed by price or ending time from the filter bar.
+8. To snipe auctions, open **Settings → Sniping / Gixen Configuration**, save your Gixen username/password, click **Test Connection**, then tap an auction on the feed and **Arm Snipe**. Use **Active Snipes** to review or cancel armed bids, and **Ended Snipes** after the auction to see won / outbid / failed. Telegram auction alerts also expose the same arming actions via inline buttons (authorized chat ID only).
+9. When creating a monitor, optionally check **Use name as search query**, then click **Fetch Idealo Refurb**. Queries such as `Sony Alpha 6700` resolve to the body-only product, and `iPhone 15 Pro 256 gb` walks color SKUs for the lowest matching B-Ware price. Turn on **Experimental Features** in Settings if you also want heuristic FMV when a monitor has no Idealo/manual baseline.
+
+---
+
+## 🔑 eBay API Setup (When Ready)
+
+Once you want live marketplace data:
+
+1. Sign up for a free developer account at [developer.ebay.com](https://developer.ebay.com).
+2. Generate an Application Keyset (App ID and Cert ID) for Production.
+3. Open BayRadar **Settings → eBay Account & API Configuration**.
+4. Paste your App ID and Cert ID, choose your marketplace (`EBAY_DE`, `EBAY_US`, etc.), and disable Mock Mode.
+5. Click **Save Configuration** and run your first live scan.
+
+---
+
+## ☁️ Cloud Deployment (Vercel + Turso)
+
+BayRadar uses local SQLite in Docker and remote [Turso](https://turso.tech) (libSQL) on Vercel — same `schema.prisma`, no rewrite.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FChrisKariofyllis%2FBayRadar&env=DATABASE_URL,TURSO_AUTH_TOKEN,APP_SECRET,CRON_SECRET&envDescription=Enter%20your%20Turso%20Database%20URL%2C%20Auth%20Token%2C%20and%20random%20secrets%20for%20security.&project-name=bayradar)
+
+### 3-step setup
+
+1. **Create a free database** at [turso.tech](https://turso.tech). Copy the `libsql://…` URL and the auth token.
+2. **Click Deploy with Vercel** and paste:
+   - `DATABASE_URL` — Turso URL
+   - `TURSO_AUTH_TOKEN` — Turso token
+   - `APP_SECRET` — random string
+   - `CRON_SECRET` — random string (used by GitHub Actions and `/api/cron/poll`)
+3. **Sync the schema once** after the first deploy:
+
+   ```bash
+   DATABASE_URL="libsql://…" TURSO_AUTH_TOKEN="…" npm run db:push
+   ```
+
+   Or from any machine with the Vercel env vars: `npx prisma db push`.
+
+Hobby Vercel crons run **once per day**. For a free 10-minute poller, add GitHub Actions secrets `VERCEL_DEPLOYMENT_URL` (your `https://….vercel.app`) and `CRON_SECRET` (same value as Vercel). The workflow in `.github/workflows/cron-poll.yml` POSTs to `/api/cron/poll` and no-ops until those secrets exist.
+
+> **Note:** Gixen sniping runs from the app process (login + form post). Prefer the self-hosted Docker stack so session work is not cut off by a short serverless timeout.
+
+---
+
+## 🛠️ Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run SQLite migrations
+npx prisma migrate dev
+
+# Run Next.js dashboard
+npm run dev
+
+# Run worker daemon in separate terminal (30s due-check loop + startup poll)
+npm run worker
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] **Phase 7: Gixen last-second sniping** — Arm, update, and cancel max bids from the deals feed via Gixen's web session (Gixen fires in the final seconds; BayRadar does not place eBay bids itself).
+- [x] **Snipe outcome sync** — Pull Gixen win/outbid/failed status back onto the card after the auction ends.
+- [x] **Telegram Interactive Bot** — 1-click snipe actions from Telegram inline buttons when an auction is reported, including a custom max-bid reply, `/load`, and per-monitor Telegram mute.
+- [x] **Idealo B-Ware market value** — On-demand Idealo B-Ware search sets the current refurbished market price as the monitor baseline (body-only cameras, lowest matching color/storage SKU), then the feed only flags a deal when landed cost beats that number.
+
+---
+
+## 📄 License
+
+Distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html) (GPL-3.0). See [LICENSE](./LICENSE) for more details.

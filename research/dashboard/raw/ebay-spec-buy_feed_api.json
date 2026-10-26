@@ -1,0 +1,1540 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Buy Feed API",
+    "description": "The Feed API provides the ability to download TSV_GZIP feed files containing eBay items and an hourly snapshot file for a specific category, date, and marketplace.<br /><br />In addition to the API, there is an open-source Feed SDK written in Java that downloads, combines files into a single file when needed, and unzips the entire feed file. It also lets you specify field filters to curate the items in the file.",
+    "contact": {
+      "name": "eBay Inc,"
+    },
+    "license": {
+      "name": "eBay API License Agreement",
+      "url": "https://developer.ebay.com/join/api-license-agreement"
+    },
+    "version": "v1.4.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.ebay.com{basePath}",
+      "description": "Production",
+      "variables": {
+        "basePath": {
+          "default": "/buy/feed/v1"
+        }
+      }
+    }
+  ],
+  "security": [
+    {}
+  ],
+  "paths": {
+    "/access": {
+      "get": {
+        "tags": [
+          "access"
+        ],
+        "description": "This method retrieves the access rules specific to the application; for example, the feed types to which the application has permissions. An application may be constrained to certain marketplaces, and to specific L1 categories within those marketplaces. You can use this information to apply filters to the <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-file-getfiles\" target=\"_blank\">getFiles</a> method when obtaining details on accessible downloadable files.<h3><b>Restrictions </b></h3>For a list of supported sites and other restrictions, see <a href=\"/api-docs/buy/static/api-feed.html#restrictions\" target=\"_blank\">API restrictions</a>.",
+        "operationId": "getAccess",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationAccess"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13006": {
+                  "domain": "API_FEED",
+                  "category": "APPLICATION",
+                  "description": "There was a problem with an eBay internal system or process. Contact eBay developer support for assistance."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed"
+            ]
+          }
+        ],
+        "summary": "Retrieves details of feed types and L1 categories accessible to the user."
+      }
+    },
+    "/feed_type/{feed_type_id}": {
+      "get": {
+        "tags": [
+          "feed_type"
+        ],
+        "description": "Use this method to obtain the details about a particular feed type to determine its applicability to your needs.<br /><br />With the response, you can compare the eBay marketplaces and categories with the eBay marketplaces and categories that your application is enabled to access. By making these comparisons, you can avoid attempting to download feed files that you do not have access to.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> For a list of supported sites and other restrictions, see <a href=\"/api-docs/buy/static/api-feed.html#restrictions\" target=\"_blank\">API restrictions</a>.</span>",
+        "operationId": "getFeedType",
+        "parameters": [
+          {
+            "name": "feed_type_id",
+            "in": "path",
+            "description": "This path parameter specifies the unique identifier for the feed type to be used as a search filter.<br /><br />Use the <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-feed_type-getfeedtypes\">getFeedTypes</a> method to identify available feed types.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> Refer to <a href=\"/api-docs/buy/static/api-feed.html#supported-feed-types\" target=\"_blank\">Supported feed types</a> to learn more about the feed types supported by the Feed API.</span>",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedType"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14011": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Insufficient permissions for the feed type. Please contact eBay Technical Support for further assistance."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14000": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid feed type id."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13006": {
+                  "domain": "API_FEED",
+                  "category": "APPLICATION",
+                  "description": "There was a problem with an eBay internal system or process. Contact eBay developer support for assistance."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed"
+            ]
+          }
+        ]
+      }
+    },
+    "/feed_type": {
+      "get": {
+        "tags": [
+          "feed_type"
+        ],
+        "description": "<p>Use this method to obtain the details about one or more feed types that are available to be downloaded. If no query parameters are used, all possible feed types are returned.</p>You can filter your search by adding <b>feed_scope</b> and/or <b>marketplace_ids</b> parameters to the URI.</p><p>For instance, a call using <code>GET https://api.ebay.com/buy/feed/v1/feed_type</code> will return all available feed files. A call using <code> GET https://api.ebay.com/buy/feed/v1/feed_type?feed_scope=DAILY&marketplace_ids=EBAY_US</code> will limit the returned list to daily feed files available from the  US marketplace.</p><h3><b>Restrictions </b></h3><p>For a list of supported sites and other restrictions, see <a href=\"/api-docs/buy/static/api-feed.html#restrictions\">API restrictions</a>.</p>",
+        "operationId": "getFeedTypes",
+        "parameters": [
+          {
+            "name": "continuation_token",
+            "in": "query",
+            "description": "The server returns this token to the web client when the responses received require multiple pages to display. The web client sends this token back to the server to get the next page of results.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feed_scope",
+            "in": "query",
+            "description": "This query parameter specifies the frequency with which the feed file is made available (<code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Specifies the number of records to show in the current response.<br /><br /><b>Default:</b> 20<br /><br /><b>Minimum:</b> 20<br /><br /><b>Maximum:</b> 100",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "marketplace_ids",
+            "in": "query",
+            "description": "Use this query parameter to limit marketplaces you want to see in the result set.<br><br>To search for multiple marketplaces at once, list them in the URI separated by commas.<br /><br /><b>Example:</b><br><code>GET https://api.ebay.com/buy/feed/v1/feedtype?marketplaceids=EBAY_FR,EBAY_AU</code>.<br /><br />See <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-feed_type-getfeedtypes.marketplaceidenum\">MarketplaceIdEnum</a> for supported values.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedTypeSearchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13003": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid feed_scope. Valid values: [HOURLY,DAILY,WEEKLY]"
+                },
+                "14001": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid limit. Supported ranges 20 - 100."
+                },
+                "14002": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid or expired continuation token."
+                },
+                "14010": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid 'marketplace_ids' filter. Please refer to documentation for supported values. Max supported:10"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13006": {
+                  "domain": "API_FEED",
+                  "category": "APPLICATION",
+                  "description": "There was a problem with an eBay internal system or process. Contact eBay developer support for assistance."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed"
+            ]
+          }
+        ]
+      }
+    },
+    "/file/{file_id}/download": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "description": "<p>Use this method to download a selected feed file.<br><br><span class=\"tablenote\"><b>Note:</b>The downloaded file will be gzipped automatically, so there is no reason to supply <b>Accept-Encoding:gzip</b> as a header. If this header is supplied, the downloaded file will be compressed twice, and this has no extra benefit.<p>Use the <b>getFiles</b> methods to obtain the <b>file_id</b> of the specific feed file you require.</p> <h3><b>Downloading feed files </b></h3>  <p>The feed files are binary gzip files. If the file is larger than 200 MB, the download must be streamed in chunks. You specify the size of the chunks in bytes using the <a href=\"#s0-1-22-6-7-7-2-9-parameter-name-Range-1\">Range</a> request header. The <b>content-range</b> response header indicates where in the full resource this partial chunk of data belongs and the total number of bytes in the file. For more information about using these headers, see <a href=\"/api-docs/buy/static/api-feed.html#retrieve-gzip\" target=\"_blank\">Retrieving a GZIP feed file</a>.</p><p>In addition to the API, there is an open source <a href=\"https://github.com/eBay/ebay-feedv1-dotnet-sdk\" target=\"_blank\">Feed V1 SDK</a> written in .NET that downloads, combines files into a single file when needed, and unzips the entire feed file. It also lets you specify field filters to curate the items in the file.",
+        "operationId": "downloadFile",
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "description": "This path parameter specifies the unique identifier of the feed file that you wish to download.<br><br>Use the <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-file-getfiles\">getFiles</a> method to obtain the <b>file_id</b> value for the desired feed file.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "description": "Indicates where in the full resource this partial chunk of data belongs and the total number of bytes in the file.<br /><br /><b>Example:</b> <code>bytes=0-102400</code>.<br /><br />For more information about using this header, see <a href=\"/api-docs/buy/static/api-feed.html#retrieve-gzip\" target=\"_blank\">Retrieving a GZIP feed file</a>.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "in": "header",
+            "description": "Indicates the unique identifier of the eBay marketplace that the feed file belongs to. <br /><br /><b>Example:</b> <code>X-EBAY-C-MARKETPLACE-ID: EBAY_US</code>.<br /><br />See <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-file-getfiles.marketplaceidenum\">MarketplaceIdEnum</a> for supported values.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-range": {
+                "schema": {
+                  "type": "string",
+                  "description": "<a name=\"content-range\"></a>The <b>content-range</b> response header indicates where in the full resource this partial chunk of data belongs. It returns the lower and upper values in bytes (specified by the <b> Range</b> header) of the chunk and the total size of the file being downloaded in bytes. <br><br><b> Maximum range</b>: 200 MB<br><br>The following is an example of a <b>content-range</b> response, where 0-10 is the lower and upper limit in bytes and 1000 is the total size of the file in bytes. <br><br> &nbsp;&nbsp;<code>0-10/1000</code><br><br>For more information and examples, see <a href=\"/api-docs/buy/static/api-feed.html#retrieve-gzip\" target=\"_blank\">Retrieving a GZIP feed file</a>."
+                }
+              }
+            },
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutputStream"
+                }
+              }
+            }
+          },
+          "206": {
+            "description": "Partial Content",
+            "headers": {
+              "Content-range": {
+                "schema": {
+                  "type": "string",
+                  "description": "<a name=\"content-range\"></a>The <b>content-range</b> response header indicates where in the full resource this partial chunk of data belongs. It returns the lower and upper values in bytes (specified by the <b> Range</b> header) of the chunk and the total size of the file being downloaded in bytes. <br><br><b> Maximum range</b>: 200 MB<br><br>The following is an example of a <b>content-range</b> response, where 0-10 is the lower and upper limit in bytes and 1000 is the total size of the file in bytes. <br><br> &nbsp;&nbsp;<code>0-10/1000</code><br><br>For more information and examples, see <a href=\"/api-docs/buy/static/api-feed.html#retrieve-gzip\" target=\"_blank\">Retrieving a GZIP feed file</a>."
+                }
+              }
+            },
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutputStream"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13014": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid or missing header X-EBAY-C-MARKETPLACE-ID."
+                },
+                "13015": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Range header is required for file size greater than {allowedLength} bytes."
+                },
+                "13016": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "The Range request header format is invalid. Format: 'bytes=start position-end position'. For help, see the API Reference documentation for this call."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14007": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Insufficient permissions to download this file. Please check oauth scopes required for this feed type and buy/feed/v1/access for access constraints."
+                },
+                "14009": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Insufficient permissions for the feed type for the specified marketplace. Please contact eBay Technical Support for further assistance."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14004": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "The specified file Id does not exist for marketplace specified or may have expired. Please check the maximum allowed look back for the feed type and scope."
+                }
+              }
+            }
+          },
+          "416": {
+            "description": "Range Not Satisfiable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13017": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "The Range header is invalid. Please verify that the start and end positions are correct, 'range start-range end' does not exceed the allowed maximum of {allowedLength} bytes  and is consistent with the file size."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13006": {
+                  "domain": "API_FEED",
+                  "category": "APPLICATION",
+                  "description": "There was a problem with an eBay internal system or process. Contact eBay developer support for assistance."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed"
+            ]
+          }
+        ]
+      }
+    },
+    "/file/{file_id}": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "description": "Use this method to fetch the details of a feed file available to download, as specified by the file's <b>file_id</b>.</p><p>Details in the response include: the feed's <b>file_id</b>, the date it became available, eBay categories that support the feed, its frequency, the time span it covers, its feed type, its format, its size in bytes, the schema under which it was pulled, and the marketplaces it applies to.</p>",
+        "operationId": "getFile",
+        "parameters": [
+          {
+            "name": "file_id",
+            "in": "path",
+            "description": "This path parameter specifies the unique identifier of the feed file that you wish to retrieve.<br><br>Use the <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-file-getfiles\">getFiles</a> method to obtain the <b>fileId</b> value for the desired feed file.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "in": "header",
+            "description": "Indicates the unique identifier of the eBay marketplace on which the feed file exists. <br /><br /><b>Example:</b> <code>X-EBAY-C-MARKETPLACE-ID: EBAY_US</code>.<br /><br />See <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-file-getfiles.marketplaceidenum\">MarketplaceIdEnum</a> for supported values.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileMetadata"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13014": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid or missing header X-EBAY-C-MARKETPLACE-ID."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14009": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Insufficient permissions for the feed type for the specified marketplace. Please contact eBay Technical Support for further assistance."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14004": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "The specified file Id does not exist for marketplace specified or may have expired. Please check the maximum allowed look back for the feed type and scope."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13006": {
+                  "domain": "API_FEED",
+                  "category": "APPLICATION",
+                  "description": "There was a problem with an eBay internal system or process. Contact eBay developer support for assistance."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed"
+            ]
+          }
+        ],
+        "summary": "Retrieves detailed metadata on a specific feed file."
+      }
+    },
+    "/file": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "description": "<p>This method provides a list of the feed files available for download.</p><p>Details for each feed returned include the date the feed was generated, the frequency with which it is pulled, its feed type, its <b>fileId</b>, its format, the eBay marketplaces it applies to, the schema version under which it was generated, its size in bytes, and the time span it covers (in hours).</p><p>You can limit your search results by feed type, marketplace, scope, eBay L1 category, and how far back in time from the present the feed was made available. Set the <blook_back</b> field to control exactly how many feeds from the past are retrieved.</p><h3><b>Restrictions </b></h3><p>For a list of supported sites and other restrictions, see <a href=\"/api-docs/buy/static/api-feed.html#restrictions\">API Restrictions</a>.</p>",
+        "operationId": "getFiles",
+        "parameters": [
+          {
+            "name": "category_ids",
+            "in": "query",
+            "description": "This query parameter is used to specify one or more eBay L1 category IDs.<br><br>If this filter is used, only feed files that are supported for the specified category (or categories) will be returned in the response. Each category ID value must be delimited by a comma.<br><br>For details, see <a href=\"/api-docs/buy/buy-categories.html\" target=\"_blank\">Get Categories for Buy APIs.</a><br /><br /><b>Max:</b> 20 values",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "continuation_token",
+            "in": "query",
+            "description": "The server returns this token to the web client when the responses received require multiple pages to display. The web client sends this token back to the server to get the next page of results.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feed_scope",
+            "in": "query",
+            "description": "This query parameter specifies the frequency with which the feed file is made available (<code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>).",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feed_type_id",
+            "in": "query",
+            "description": "This query parameter specifies the unique identifier for the feed type to be used as a search filter.<br /><br />Use the <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-feed_type-getfeedtypes\" target=\"_blank\">getFeedTypes</a> method to identify available feed types.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> Refer to <a href=\"/api-docs/buy/static/api-feed.html#supported-feed-types\" target=\"_blank\">Supported feed types</a> to learn more about the feed types supported by the Feed API.</span>",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Indicates the number of records to show in the response.<br /><br /><b>Default:</b> 20<br /><br /><b>Minimum:</b> 20<br /><br /><b>Maximum:</b> 100",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "look_back",
+            "in": "query",
+            "description": "This filter controls how far back from the current time to limit the returned feed files and is specified in minutes. The returned feed files will be those generated between the current time and the look-back time.<br /><br /><b>Example:</b> A value of <code>120</code> will limit the returned feed files to those generated in the past 2 hours (120 minutes). If 3 feed files have been generated in the past 2 hours, those 3 files will be returned. A feed file generated 4 hours earlier will not be returned.<br><br><div class=\"msgbox_important\"><p class=\"msgbox_importantInDiv\" data-mc-autonum=\"&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important! &lt;/span&gt;&lt;/b&gt;\"><span class=\"autonumber\"><span><b><span style=\"color: #dd1e31;\" class=\"mcFormatColor\">Important!</span></b></span></span> Unless the <b>look_back</b> filter is used, available files generated approximately within the last 48 hours are returned in the response. The <b>look_back</b> filter can be used to increase or decrease this time frame. The maximum (minutes) value set for this parameter should not exceed the <b>lookBack</b> threshold for the feed type returned in <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-feed_type-getfeedtype\">getFeedType</a>/<a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-feed_type-getfeedtypes\">getFeedTypes</a>.</p></div>",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-EBAY-C-MARKETPLACE-ID",
+            "in": "header",
+            "description": "Indicates the unique identifier of the eBay marketplace on which to search for feed files. <br /><br /><b>Example:</b> <code>X-EBAY-C-MARKETPLACE-ID: EBAY_US</code>.<br /><br />See <a href=\"/develop/api/buy/buy_feed_api#buy-buy_feed_api-file-getfiles.marketplaceidenum\">MarketplaceIdEnum</a> for supported values.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileMetadataSearchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13003": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid 'feed_scope'. Valid values: [HOURLY,DAILY,WEEKLY]"
+                },
+                "13014": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid or missing header X-EBAY-C-MARKETPLACE-ID."
+                },
+                "14001": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid limit. Supported ranges 20 - 100."
+                },
+                "14002": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid or expired continuation token."
+                },
+                "14005": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Maximum number of category_ids exceeded.Limit: 20."
+                },
+                "14006": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid look back period for the feedType and feedScope.Please refer to documentation."
+                },
+                "14008": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Invalid or missing feed type Id."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "14009": {
+                  "domain": "API_FEED",
+                  "category": "REQUEST",
+                  "description": "Insufficient permissions for the feed type for the specified marketplace. Please contact eBay Technical Support for further assistance."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "x-response-codes": {
+              "errors": {
+                "13006": {
+                  "domain": "API_FEED",
+                  "category": "APPLICATION",
+                  "description": "There was a problem with an eBay internal system or process. Contact eBay developer support for assistance."
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_auth": [
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed"
+            ]
+          }
+        ],
+        "summary": "Retrieves detailed metadata on one or more feed files based on search criteria."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Access": {
+        "type": "object",
+        "required": [
+          "constraints",
+          "feedType"
+        ],
+        "properties": {
+          "constraints": {
+            "type": "array",
+            "description": "This array shows the eBay marketplace and eBay L1 categories that the corresponding feed type applies to. If there are no <b>marketplaceId</b> constraints, the application has access to all marketplaces. If there are no <b>categoryId</b> constraints, then the application has access to all categories within the given marketplace.",
+            "items": {
+              "$ref": "#/components/schemas/FeedTypeConstraint"
+            }
+          },
+          "feedType": {
+            "type": "string",
+            "description": "The identifier of the feed type that the application has access to."
+          }
+        },
+        "description": "This type defines the constraints on the feed files available for download within the specified feed type."
+      },
+      "AccessEnum": {
+        "type": "object",
+        "description": "<p>This enumerated type defines the list of the values that represent the level of access to a feed.</p> | - **ALLOWED**: The application is allowed to access the feed. - **RESTRICTED**: The application is restricted from accessing the feed.",
+        "enum": [
+          "ALLOWED",
+          "RESTRICTED"
+        ]
+      },
+      "ApplicationAccess": {
+        "type": "object",
+        "properties": {
+          "required": [
+            "accesses"
+          ],
+          "accesses": {
+            "type": "array",
+            "description": "The response payload will contain a list of every feed type the application can access. The marketplaces and L1 categories to which the application is constrained within each feed are also returned. If no marketplaces are listed for a particular feed type, the application has access to all marketplaces. L1 categories are constrained according to marketplace. If a marketplace is listed with no L1 categories, the application has access to all categories in that marketplace. See <b>Sample 1: getAccess Request</b> below.",
+            "items": {
+              "$ref": "#/components/schemas/Access"
+            }
+          }
+        },
+        "description": "This type defines the array of application configurations that determines the feed files available to the application."
+      },
+      "AvailabilityEnum": {
+        "type": "object",
+        "description": "An enumerated type for the values that represent the item's availability. <br /><br />Code so that your app gracefully handles any future changes to this list. | - **TEMPORARILY_UNAVAILABLE**: Indicates the item is not available now but could be available again in a near future. This could be due to an out-of-stock condition, the seller is on vacation, etc. - **AVAILABLE**: Indicates there are items available for purchase. - **UNAVAILABLE**: Indicates that the item is no longer available. This could be due to the seller ending the listing or the listing being removed due to a listing violation.",
+        "enum": [
+          "TEMPORARILY_UNAVAILABLE",
+          "AVAILABLE",
+          "UNAVAILABLE"
+        ]
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "string",
+            "description": "The unique identifier of the category."
+          },
+          "categoryLevel": {
+            "type": "object",
+            "description": "The level of the category in the hierarchy."
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "The name of the category."
+          },
+          "categoryFullName": {
+            "type": "string",
+            "description": " The full category name from the root category level (the full breadcrumb path)."
+          }
+        },
+        "description": "This type defines information about a specific eBay category, including its ID, name, and hierarchy information."
+      },
+      "ConditionDescriptor": {
+        "type": "object",
+        "description": "This type defines the name/value pairs of a condition descriptor.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of a condition descriptor. The value(s) for this condition descriptor are returned in the associated <b>values</b> array."
+          },
+          "values": {
+            "type": "array",
+            "description": "This array displays the value(s) for a condition descriptor (denoted by the associated <b>name</b> field), as well as any other additional information about the condition of the item.",
+            "items": {
+              "$ref": "#/components/schemas/ConditionDescriptorValue"
+            }
+          }
+        }
+      },
+      "ConditionDescriptorValue": {
+        "type": "object",
+        "description": "This type defines the <b>content</b> and <b>additionalInfo</b> fields of a condition descriptor value.",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "The value for the condition descriptor indicated in the associated <b>name</b> field."
+          },
+          "additionalInfo": {
+            "type": "array",
+            "description": "Additional information about the condition of an item as it relates to a condition descriptor. This array elaborates on the value specified in the <b>content</b> field and provides additional details about the condition of an item.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Constraint": {
+        "type": "object",
+        "properties": {
+          "marketplaceIds": {
+            "type": "array",
+            "description": "A list of the marketplaces to which the application is constrained within the feed type.<br/><br/><b>Example:</b> A value of <code>EBAY_US</code> means the application is constrained to the U.S. marketplace for the listed feed.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> The <b>Buy Feed</b> API is not supported by all eBay marketplaces. See <a href='/api-docs/buy/feed/v1/overview.html#API'>API restrictions</a> for information about regional constraints.</span>",
+            "items": {
+              "$ref": "#/components/schemas/MarketplaceIdEnum"
+            }
+          }
+        },
+        "description": "This type defines the parameter of the application's configuration used to define the feed files that the application can access."
+      },
+      "Criteria": {
+        "type": "object",
+        "properties": {
+          "itemIds": {
+            "type": "array",
+            "description": "An array of item IDs included in the discount.<br><br><b>eBay RESTful format</b>: <code>v1|itemId|skuId</code>",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludedItemIds": {
+            "type": "array",
+            "description": "An array of item IDs excluded from the discount.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sellerUserIds": {
+            "type": "array",
+            "description": "An array of seller IDs included in the discount.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludedSellerUserIds": {
+            "type": "array",
+            "description": "An array of seller IDs excluded from the discount.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "categories": {
+            "description": "An array of included category objects, with metadata, included in the discount.",
+            "$ref": "#/components/schemas/Category"
+          },
+          "excludedCategories": {
+            "description": "An array of categories, with metadata, excluded from the discount.",
+            "$ref": "#/components/schemas/Category"
+          }
+        },
+        "description": "This type defines the criteria for which items are eligible based on item IDs, seller IDs, and category IDs"
+      },
+      "Dimension": {
+        "type": "object",
+        "properties": {
+          "dimensionKey": {
+            "description": "The key element for a value in the <b>dimensions</b> array, paired with its value(s).",
+            "$ref": "#/components/schemas/DimensionKeyEnum"
+          },
+          "values": {
+            "type": "array",
+            "description": "The dimension value(s) paired with the <b>dimensionKey</b> in the <b>dimensions</b> array.",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "This type defines a key-pair array of values used to define the feed files available to the application."
+      },
+      "DimensionKeyEnum": {
+        "type": "object",
+        "description": "<p>The enumerated type defines the key element for a value in the <b>dimensions</b> array, paired with its value(s).</p> | - **CATEGORY**: The eBay category to which the item belongs. See <a href=\"/api-docs/buy/static/buy-categories.html\" target=\"_blank\">Categories for Buy APIs</a> for details on eBay categories. The category is expressed the category's <b>categoryId</b>, not its <b>categoryName</b>; e.g.,  <code>172008</code>, not <code>Gift Cards &amp; Coupons</code>. - **LISTING_MARKETPLACE_ID**: The two-letter code of the eBay marketplace on which listings are available for Cross Border Trading (CBT). - **LISTING_CATEGORY**: The eBay category for which listings are available for Cross Border Trading (CBT).",
+        "enum": [
+          "CATEGORY",
+          "LISTING_MARKETPLACE_ID",
+          "LISTING_CATEGORY"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Identifies the type of error."
+          },
+          "domain": {
+            "type": "string",
+            "description": "Name for the primary system where the error occurred. This is relevant for application errors."
+          },
+          "errorId": {
+            "type": "integer",
+            "description": "A unique number to identify the error.",
+            "format": "int32"
+          },
+          "inputRefIds": {
+            "type": "array",
+            "description": "An array of request elements most closely associated to the error.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "longMessage": {
+            "type": "string",
+            "description": "A more detailed explanation of the error."
+          },
+          "message": {
+            "type": "string",
+            "description": "Information on how to correct the problem, in the end user's terms and language where applicable."
+          },
+          "outputRefIds": {
+            "type": "array",
+            "description": "An array of request elements most closely associated to the error.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "parameters": {
+            "type": "array",
+            "description": "An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned.",
+            "items": {
+              "$ref": "#/components/schemas/ErrorParameter"
+            }
+          },
+          "subdomain": {
+            "type": "string",
+            "description": "Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc."
+          }
+        },
+        "description": "This type defines the fields that can be returned in an error."
+      },
+      "ErrorParameter": {
+        "type": "object",
+        "description": "This type defines the parameters of an error.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The object of the error."
+          },
+          "value": {
+            "type": "string",
+            "description": "The value of the object."
+          }
+        }
+      },
+      "FeedScopeEnum": {
+        "type": "object",
+        "description": "<p>This enumerated type defines the list of possible feed scopes.</p> | - **DAILY**: Designates that the feed file is updated daily. - **HOURLY**: Designates that the feed file is updated hourly. - **WEEKLY**: Designates that the feed file is updated weekly.",
+        "enum": [
+          "DAILY",
+          "HOURLY",
+          "WEEKLY"
+        ]
+      },
+      "FeedStatusEnum": {
+        "type": "object",
+        "description": "<p>This enumerated type defines the list of the values that represent the availability of the feed.</p> | - **ACTIVE**: Indicates that the feed is available. - **PAUSED**: Indicates that the feed is temporarily unavailable. - **DEPRECATED**: Inidcates that the feed is no longer available. ",
+        "enum": [
+          "ACTIVE",
+          "PAUSED",
+          "DEPRECATED"
+        ]
+      },
+      "FeedType": {
+        "type": "object",
+        "required": [
+          "description",
+          "feedTypeId",
+          "supportedFeeds"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "A description of the feed type."
+          },
+          "feedTypeId": {
+            "type": "string",
+            "description": "The unique identifier of the feed type.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> Refer to <a href=\"/api-docs/buy/static/api-feed.html#supported-feed-types\" target=\"_blank\">Supported feed types</a> for additional details.</span>"
+          },
+          "supportedFeeds": {
+            "type": "array",
+            "description": "An array of the feed files of the indicated feed type that are available to be downloaded.",
+            "items": {
+              "$ref": "#/components/schemas/SupportedFeed"
+            }
+          }
+        },
+        "description": "This type is used by the <b>getFeedType</b> and <b>getFeedTypes</b> methods to provide more details about a feed type, including the OAuth scopes required to download the feed files and the constraints on the feed type."
+      },
+      "FeedTypeConstraint": {
+        "type": "object",
+        "properties": {
+          "categoryIds": {
+            "type": "array",
+            "description": "An array of the eBay categories the application can access in a feed. See the <a href='api-docs/commerce/taxonomy/overview.html' target=\"_blank\">Taxonomy API</a> for details about obtaining a list eBay L1 categories. The category is expressed as the category's <b>categoryId</b>, not its <b>categoryName</b>; e.g.,  <code>172008</code>, not <code>Gift Cards &amp; Coupons</code>.<br /><br />If no <b>categoryIds</b> are listed, the application can access all categories in the specified marketplace.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "listingMarketplaceConstraints": {
+            "type": "array",
+            "description": "An array of the eBay marketplace and categories in which listings are available for Cross Border Trading (CBT). Listings on the specified marketplace and categories can be shipped to the marketplace specified for the feed type.<br><br><span class=\"tablenote\"><b>Note:</b> This array will only be returned for the <code>CBT_ITEM_ALL_ACTIVE</code> feed type.</span>",
+            "items": {
+              "$ref": "#/components/schemas/ListingMarketplaceFeedTypeConstraint"
+            }
+          },
+          "marketplaceId": {
+            "description": "This enum value indicates an eBay marketplace for which the application can access feed files for the corresponding feed type<br/><br/><b>Example:</b> <code>EBAY_US</code> for the U.S. or <code>EBAY_DE</code> for Germany.",
+            "$ref": "#/components/schemas/MarketplaceIdEnum"
+          }
+        },
+        "description": "This type is used to define the eBay marketplaces and eBay L1 categories that support the corresponding feed type"
+      },
+      "FeedTypeSearchResponse": {
+        "type": "object",
+        "required": [
+          "feedTypes",
+          "href",
+          "limit",
+          "total"
+        ],
+        "properties": {
+          "feedTypes": {
+            "type": "array",
+            "description": "An array of the feed types that match the search criteria.",
+            "items": {
+              "$ref": "#/components/schemas/FeedType"
+            }
+          },
+          "href": {
+            "type": "string",
+            "description": "The URL to the current set of results."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The number of records to show in the current response.",
+            "format": "int32"
+          },
+          "next": {
+            "type": "string",
+            "description": "You can use this URL to retrieve the next page of results beyond those displayed on the page if there are more results that match the search criteria."
+          },
+          "total": {
+            "type": "integer",
+            "description": "The total number of matches for the search criteria.",
+            "format": "int32"
+          }
+        },
+        "description": "This type is used by the base response of the getFeedTypes method."
+      },
+      "FileMetadata": {
+        "type": "object",
+        "required": [
+          "access",
+          "feedDate",
+          "feedScope",
+          "feedTypeId",
+          "fileId",
+          "format",
+          "marketplaceId",
+          "schemaVersion",
+          "size"
+        ],
+        "properties": {
+          "access": {
+            "description": "Indicates whether the application is permitted to access the feed file. One of <code>ALLOWED</code> or <code>RESTRICTED</code>.",
+            "$ref": "#/components/schemas/AccessEnum"
+          },
+          "dimensions": {
+            "type": "array",
+            "description": "An array of dimensions supported by the corresponding feed file.<br /><br /><b>Example:</b><BR /><code>&quot;dimensionKey&quot;: &quot;CATEGORY&quot;,<br />&quotvalues&quot;: &lsqb;&quot;15032&quot;&rsqb;</code>",
+            "items": {
+              "$ref": "#/components/schemas/Dimension"
+            }
+          },
+          "feedDate": {
+            "type": "string",
+            "description": "The date on which the feed was created. <br /><br /><b>Format:</b> UTC format <code>(yyyy-MM-ddThh:00:00.000Z)</code>."
+          },
+          "feedScope": {
+            "description": "Specifies the frequency with which the feed file is made available (<code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>).",
+            "$ref": "#/components/schemas/FeedScopeEnum"
+          },
+          "feedTypeId": {
+            "type": "string",
+            "description": "The unique identifier of the feed type.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> Refer to <a href=\"/api-docs/buy/static/api-feed.html#supported-feed-types\" target=\"_blank\">Supported feed types</a> for additional details.</span>"
+          },
+          "fileId": {
+            "type": "string",
+            "description": "The file's unique identifier. This <b>fileId</b> is used to select the feed file when using the <b>downloadFile</b> method."
+          },
+          "format": {
+            "description": "Format of the returned feed file.",
+            "$ref": "#/components/schemas/FormatEnum"
+          },
+          "marketplaceId": {
+            "description": "The eBay marketplace identifier for the marketplace(s) to which the feed applies.<br /><br /><b>Example:</b> <code>EBAY_UK</code>.",
+            "$ref": "#/components/schemas/MarketplaceIdEnum"
+          },
+          "schemaVersion": {
+            "type": "string",
+            "description": "Version of the API schema under which the feed was created."
+          },
+          "size": {
+            "type": "integer",
+            "description": "Size of the feed file in bytes.",
+            "format": "int32"
+          },
+          "span": {
+            "description": "The time span between feed files that applies to the feed type (e.g., hourly, daily).<br /><br /><b>Possible Values: </b> <code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code>",
+            "$ref": "#/components/schemas/TimeDuration"
+          }
+        },
+        "description": "This type is used to provide metadata about each feed file in a <b>getFile</b> or <b>getFiles</b> response."
+      },
+      "FileMetadataSearchResponse": {
+        "type": "object",
+        "required": [
+          "fileMetadata",
+          "href",
+          "limit",
+          "total"
+        ],
+        "properties": {
+          "fileMetadata": {
+            "type": "array",
+            "description": "An array of metadata values describing the available feed files that match the input criteria.",
+            "items": {
+              "$ref": "#/components/schemas/FileMetadata"
+            }
+          },
+          "href": {
+            "type": "string",
+            "description": "The URL to the current set of results."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The number of results that will be displayed on each page, as set by the <b>limit</b> URI parameter.<br /><br /><b>Default:</b> 20",
+            "format": "int32"
+          },
+          "next": {
+            "type": "string",
+            "description": "You can use this URL to retrieve the next page of results beyond those displayed on the page if there are more results that match the search criteria."
+          },
+          "total": {
+            "type": "integer",
+            "description": "The total number of matches for the search criteria.",
+            "format": "int32"
+          }
+        },
+        "description": "This type is used by the base response of the <b>getFiles</b> method."
+      },
+      "FormatEnum": {
+        "type": "object",
+        "description": "<p>This enumerated type defines the list of available format types in which a feed file can be downloaded.</p> | - **TSV**: The feed file is in tab separated value format.<br><br><span class=\"tablenote\"><b>Note:</b> This enum value will be returned for all feed types except <code>CBT_ITEM_ALL_ACTIVE</code> and <code>PROMOTION_V2</code>.</span> - **AVRO**: The feed file is in Avro format.<br><br><span class=\"tablenote\"><b>Note:</b> This enum value will only be returned for the <code>CBT_ITEM_ALL_ACTIVE</code> and <code>PROMOTION_V2</code> feed types.</span>",
+        "enum": [
+          "TSV",
+          "AVRO"
+        ]
+      },
+      "HazardPictogram": {
+        "type": "object",
+        "properties": {
+          "pictogramId": {
+            "type": "string",
+            "description": "The unique identifier of the hazmat pictogram."
+          },
+          "pictogramDescription": {
+            "type": "string",
+            "description": "The description of the hazmat pictogram, localized to the default language of the marketplace."
+          },
+          "pictogramUrl": {
+            "type": "string",
+            "description": "The URL of the hazmat pictogram."
+          }
+        },
+        "description": "This type defines the picogram for the type of hazard that a hazardous material represents."
+      },
+      "HazardStatement": {
+        "type": "object",
+        "properties": {
+          "statementId": {
+            "type": "string",
+            "description": "The unique identifier of the hazmat statement."
+          },
+          "statementDescription": {
+            "type": "string",
+            "description": "The description of the hazmat statement, localized to the default language of the marketplace."
+          }
+        },
+        "description": "This type defines the hazard statement for a hazardous material."
+      },
+      "HazardousMaterialsLabels": {
+        "type": "object",
+        "properties": {
+          "statements": {
+            "type": "array",
+            "description": "An array of hazmat statements for the item.",
+            "items": {
+              "$ref": "#/components/schemas/HazardStatement"
+            }
+          },
+          "pictograms": {
+            "type": "array",
+            "description": "An array of hazmat pictograms for the item.",
+            "items": {
+              "$ref": "#/components/schemas/HazardPictogram"
+            }
+          },
+          "signalWordId": {
+            "type": "string",
+            "description": "The unique identifier of the signal word for the hazardous materials label."
+          },
+          "signalWord": {
+            "type": "string",
+            "description": "The signal word for the hazardous materials in the listing."
+          },
+          "additionalInformation": {
+            "type": "string",
+            "description": "Additional information about hazardous materials labels."
+          }
+        },
+        "description": "This type defines the fields used to describe the hazard materials label(s) for a hazardous material."
+      },
+      "ListingMarketplaceFeedTypeConstraint": {
+        "type": "object",
+        "properties": {
+          "listingCategoryIds": {
+            "type": "array",
+            "description": "An array of the eBay categories the application can access in a feed. See the <a href='/api-docs/commerce/taxonomy/overview.html' target=\"_blank\">Taxonomy API</a> for details about obtaining a list eBay L1 categories. The category is expressed as the category's <b>categoryId</b>, not its <b>categoryName</b>; e.g.,  <code>172008</code>, not <code>Gift Cards &amp; Coupons</code>.<br /><br />If no <b>categoryIds</b> are listed, the application can access all categories in the specified marketplace.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "listingMarketplaceId": {
+            "description": "This enum value indicates an eBay marketplace for which the application can access feed files for the corresponding feed type.<br/><br/><b>Example:</b> <code>EBAY_US</code> for the U.S. or <code>EBAY_DE</code> for Germany.",
+            "$ref": "#/components/schemas/MarketplaceIdEnum"
+          }
+        },
+        "description": "This type is used to define the eBay marketplace and eBay L1 categories for which listings are available for Cross Border Trading."
+      },
+      "MarketplaceIdEnum": {
+        "type": "object",
+        "description": "The list of supported marketplaces for which a feed file can be downloaded.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> Although this enumeration type is a complete list of all eBay marketplaces, the <b>Buy Feed</b> API is not supported by all eBay marketplaces. For a list of supported sites, see <a href='api-docs/buy/static/ref-marketplace-supported.html' target=\"_blank\">Buy API Support by Marketplace</a>.</span> | - **EBAY_US**: This enumeration value indicates that the eBay Marketplace is the US site (ebay.com). - **EBAY_CA**: This enumeration value indicates that the eBay Marketplace is the Canada (English) site (ebay.ca). - **EBAY_GB**: This enumeration value indicates that the eBay Marketplace is the UK site (ebay.co.uk). - **EBAY_AU**: This enumeration value indicates that the eBay Marketplace is the Australia site (ebay.com.au). - **EBAY_AT**: This enumeration value indicates that the eBay Marketplace is the Austria site (ebay.at). - **EBAY_BE**: This enumeration value indicates that the eBay marketplace is the Belgium (Dutch) site (www.ebay.be). - **EBAY_DE**: This enumeration value indicates that the eBay Marketplace is the Germany site (ebay.de). - **EBAY_IT**: This enumeration value indicates that the eBay Marketplace is the Italy site (ebay.it). - **EBAY_NL**: This enumeration value indicates that the eBay Marketplace is the Netherlands site (ebay.nl). - **EBAY_ES**: This enumeration value indicates that the eBay Marketplace is the Spain site (ebay.es). - **EBAY_CH**: This enumeration value indicates that the eBay Marketplace is the Switzerland site (ebay.ch). - **EBAY_TW**: This enumeration value indicates that the eBay Marketplace is the Taiwan site (ebay.com/tw). - **EBAY_CZ**: This enumeration value indicates that the eBay Marketplace is the Czech Republic site (ebay.com/sch/Czech-Republic). - **EBAY_DK**: This enumeration value indicates that the eBay Marketplace is the Denmark site (ebay.com/sch/Denmark). - **EBAY_FI**: This enumeration value indicates that the eBay Marketplace is the Finland site (ebay.com/sch/Finland). - **EBAY_FR**: This enumeration value indicates that the eBay Marketplace is the France site (ebay.fr). - **EBAY_GR**: This enumeration value indicates that the eBay Marketplace is the Greece site (ebay.com/sch/Greece). - **EBAY_HK**: This enumeration value indicates that the eBay Marketplace is the Hong Kong site (ebay.com.hk). - **EBAY_HU**: This enumeration value indicates that the eBay Marketplace is the Hungary site (ebay.com/sch/Hungary). - **EBAY_IN**: This enumeration value indicates that the eBay Marketplace is the India site (ebay.in). Note: eBay India is no longer a functioning eBay marketplace. - **EBAY_ID**: This enumeration value indicates that the eBay Marketplace is the Indonesia site (id.ebay.com). - **EBAY_IE**: This enumeration value indicates that the eBay Marketplace is the Ireland site (ebay.ie). - **EBAY_IL**: This enumeration value indicates that the eBay Marketplace is the Israel site (ebay.com/sch/Israel). - **EBAY_MY**: This enumeration value indicates that the eBay Marketplace is the Malaysia site (ebay.com/my). - **EBAY_NZ**: This enumeration value indicates that the eBay Marketplace is the New Zealand site (ebay.com/sch/New-Zealand). - **EBAY_NO**: This enumeration value indicates that the eBay Marketplace is the Norway site (ebay.com/sch/Norway). - **EBAY_PH**: This enumeration value indicates that the eBay Marketplace is the Philippines site (ebay.ph). - **EBAY_PL**: This enumeration value indicates that the eBay Marketplace is the Poland site (ebay.pl). - **EBAY_PT**: This enumeration value indicates that the eBay Marketplace is the Portugal site (ebay.com/sch/Portugal). - **EBAY_PR**: This enumeration value indicates that the eBay Marketplace is the Puerto Rico site (ebay.com/sch/Puerto-Rico). - **EBAY_RU**: This enumeration value indicates that the eBay Marketplace is the Russia site (ebay.com/sch/Russia). - **EBAY_SG**: This enumeration value indicates that the eBay Marketplace is the Singapore site (ebay.com/sg). - **EBAY_ZA**: This enumeration value indicates that the eBay Marketplace is the South Africa site (ebay.com/sch/South-Africa). - **EBAY_SE**: This enumeration value indicates that the eBay Marketplace is the Sweden site (ebay.com/sch/Sweden). - **EBAY_TH**: This enumeration value indicates that the eBay Marketplace is the Thailand site (export.ebay.co.th). - **EBAY_VN**: This enumeration value indicates that the eBay Marketplace is the Vietnam site (ebay.vn). - **EBAY_CN**: This enumeration value indicates that the eBay Marketplace is the China site (ebay.com/sch/China). - **EBAY_JP**: This enumeration value indicates that the eBay Marketplace is the Japan site (ebay.co.jp). - **EBAY_PE**: This enumeration value indicates that the eBay Marketplace is the Peru site (ebay.com/sch/Peru). - **EBAY_HALF_US**: This enumeration value is no longer applicable as the Half.com site no longer exists. - **EBAY_MOTORS_US**: This enumeration value indicates that the eBay Marketplace is the US eBay Motors site (ebay.com/motors).",
+        "enum": [
+          "EBAY_US",
+          "EBAY_CA",
+          "EBAY_GB",
+          "EBAY_AU",
+          "EBAY_AT",
+          "EBAY_BE",
+          "EBAY_DE",
+          "EBAY_IT",
+          "EBAY_NL",
+          "EBAY_ES",
+          "EBAY_CH",
+          "EBAY_TW",
+          "EBAY_CZ",
+          "EBAY_DK",
+          "EBAY_FI",
+          "EBAY_FR",
+          "EBAY_GR",
+          "EBAY_HK",
+          "EBAY_HU",
+          "EBAY_IN",
+          "EBAY_ID",
+          "EBAY_IE",
+          "EBAY_IL",
+          "EBAY_MY",
+          "EBAY_NZ",
+          "EBAY_NO",
+          "EBAY_PH",
+          "EBAY_PL",
+          "EBAY_PT",
+          "EBAY_PR",
+          "EBAY_RU",
+          "EBAY_SG",
+          "EBAY_ZA",
+          "EBAY_SE",
+          "EBAY_TH",
+          "EBAY_VN",
+          "EBAY_CN",
+          "EBAY_JP",
+          "EBAY_PE",
+          "EBAY_HALF_US",
+          "EBAY_MOTORS_US"
+        ]
+      },
+      "OutputStream": {
+        "type": "object",
+        "description": "This type defines the object for the feed file being downloaded."
+      },
+      "SupportedFeed": {
+        "type": "object",
+        "required": [
+          "authorizationScopes",
+          "feedScope",
+          "lookBack",
+          "status",
+          "supportedSchemas"
+        ],
+        "properties": {
+          "authorizationScopes": {
+            "type": "array",
+            "description": "The oauth authorization scopes which grant access to the feed files.<br /><br />Currently the only applicable authorization scope is <code>https://api.ebay.com/oauth/api_scope/buy.item.feed</code>.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> You can view your application's oauth scopes on the <a href='developer.ebay.com/my/keys'>Application Keys</a> page.</span>",
+            "items": {
+              "type": "string"
+            }
+          },
+          "constraint": {
+            "description": "This container shows the eBay marketplaces that support the corresponding feed type. If no constraints are returned, all marketplaces are supported.",
+            "$ref": "#/components/schemas/Constraint"
+          },
+          "feedScope": {
+            "description": "Specifies the frequency with which the feed file is made available (<code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>).",
+            "$ref": "#/components/schemas/FeedScopeEnum"
+          },
+          "lookBack": {
+            "description": "How far back from the current time to limit the returned feed files. The returned feed files will be those generated between the current time and the look-back time.<br /><br /><b>Example:</b> A value of <code>120</code> will limit the returned feed files to those generated in the past 2 hours (120 minutes). If 3 feed files have been generated in the past 2 hours, those 3 files will be returned. A feed file generated 4 hours earlier will not be returned.",
+            "$ref": "#/components/schemas/TimeDuration"
+          },
+          "status": {
+            "description": "The status for this feed. One of <code>ACTIVE</code>, <code>PAUSED</code>, or <code>DEPRECATED</code>.",
+            "$ref": "#/components/schemas/FeedStatusEnum"
+          },
+          "supportedSchemas": {
+            "type": "array",
+            "description": "An array of the supported <b>Feed</b> API schemas for this feed type.",
+            "items": {
+              "$ref": "#/components/schemas/SupportedSchema"
+            }
+          }
+        },
+        "description": "This type defines the object that is returned by a successful <b>getFeedType</b> or <b>getFeedTypes</b> search describing the characteristics of a feed type."
+      },
+      "SupportedSchema": {
+        "type": "object",
+        "required": [
+          "definition",
+          "deprecated",
+          "formats",
+          "schemaVersion"
+        ],
+        "properties": {
+          "definition": {
+            "type": "string",
+            "description": "A list of the fields that will be returned in the feed file.<br /><br /><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note:</strong></span> Refer to <a href=\"/api-docs/buy/static/api-feed.html#supported-feed-types\" target=\"_blank\">Supported feed types</a> to learn about the feed fields that are included in each supported feed type.</span>"
+          },
+          "deprecated": {
+            "type": "boolean",
+            "description": "Indicates whether the schema is still functional or deprecated. One of either <code>true</code> or <code>false</code>."
+          },
+          "formats": {
+            "type": "array",
+            "description": "An list of the available formats in which the schema can be downloaded.",
+            "items": {
+              "$ref": "#/components/schemas/FormatEnum"
+            }
+          },
+          "schemaVersion": {
+            "type": "string",
+            "description": "The version of the <b>Feed</b> API schema under which the feed type was created.<br /><br /><b>Example:</b> 1.0."
+          }
+        },
+        "description": "The type defines the <b>Feed</b> API schema version(s) supported by the feed type."
+      },
+      "TimeDuration": {
+        "type": "object",
+        "required": [
+          "unit",
+          "value"
+        ],
+        "properties": {
+          "unit": {
+            "description": "This enumeration value indicates the time unit used for the time period.",
+            "$ref": "#/components/schemas/TimeDurationUnitEnum"
+          },
+          "value": {
+            "type": "integer",
+            "description": "The number of units of time in the span.",
+            "format": "int32"
+          }
+        },
+        "description": "This type defines the time span between feed files that applies to the feed type (e.g., hourly, daily, weekly)."
+      },
+      "TimeDurationUnitEnum": {
+        "type": "object",
+        "description": "This enumerated type defines the list of possible values for the <b>unit</b> attribute of the <b>TimeDuration</b> object of a <b>feed_type</b> object. Currently only <code>HOUR</code> is supported. | - **YEAR**: Time duration is based on the number of years. - **MONTH**: Time duration is based on the number of months - **DAY**: Time duration is based on the number of days. - **HOUR**: Time duration is based on the number of hours. - **CALENDAR_DAY**: Time duration is based on the calendar, meaning Sunday through Saturday and does not exclude holidays. - **BUSINESS_DAY**: Time duration is based on the number of business days, meaning 'working days'. So it excludes all holidays for the location and in some locations can include Saturday. - **MINUTE**: Time duration is based on the number of minutes. - **SECOND**: Time duration is based on the number of seconds. - **MILLISECOND**: Time duration is based on the number of milliseconds. ",
+        "enum": [
+          "YEAR",
+          "MONTH",
+          "DAY",
+          "HOUR",
+          "CALENDAR_DAY",
+          "BUSINESS_DAY",
+          "MINUTE",
+          "SECOND",
+          "MILLISECOND"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "api_auth": {
+        "type": "oauth2",
+        "description": "The security definitions for this API. Please check individual operations for applicable scopes.",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://api.ebay.com/identity/v1/oauth2/token",
+            "scopes": {
+              "https://api.ebay.com/oauth/api_scope/buy.item.feed": "View curated feeds of eBay items"
+            }
+          }
+        }
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

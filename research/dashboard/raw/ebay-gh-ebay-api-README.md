@@ -1,0 +1,812 @@
+# eBay Node API in TypeScript with Browser support
+
+<!-- Quality & CI -->
+[![codecov](https://codecov.io/gh/hendt/ebay-api/branch/master/graph/badge.svg?token=E67PSWIZFZ)](https://codecov.io/gh/hendt/ebay-api)
+
+<!-- Package Stats -->
+[![npm version](https://img.shields.io/npm/v/ebay-api.svg?style=flat-square)](https://www.npmjs.com/package/ebay-api)
+[![npm downloads](https://img.shields.io/npm/dt/ebay-api.svg?style=flat-square)](https://www.npmjs.com/package/ebay-api)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/ebay-api/badge)](https://www.jsdelivr.com/package/npm/ebay-api)
+
+<!-- License -->
+[![License](https://img.shields.io/npm/l/ebay-api?style=flat-square)](./LICENSE)
+
+This eBay API implements both Traditional \(xml\) and the RESTful eBay API.
+It supports `client credentials grant` and `authorization code grant` \(Auth'N'Auth, OAuth2 and IAF\). Digital Signature is supported too.
+
+* [API Browser Examples](https://hendt.github.io/ebay-api/)
+* [API Documentation](https://hendt.gitbook.io/ebay-api/)
+
+## Table of Contents
+
+- [🚀 Quick Start](#-quick-start)
+- [Implementation Status](#implementation-status)
+- [Migrating from v9 to v10](#migrating-from-v9-to-v10)
+- [Install](#install)
+- [eBay Docs](#ebay-docs)
+- [🔧 eBayApi Config](#-ebayapi-config)
+- [Load Config from Environment](#load-config-from-environment)
+- [🐞 Debug](#-debug)
+- [🔑 Access Token Types](#-access-token-types)
+- [OAuth2: Authorization Code Grant](#oauth2-exchanging-the-authorization-code-for-a-user-access-token)
+- [Digital Signature](#digital-signature)
+- [RESTful API](#restful-api)
+- [Traditional API](#controlling-traditional-xml-request-and-response)
+- [Examples](#examples)
+- [FAQ](#faq)
+- [Contribution](#contribution)
+- [📝 License](#-license)
+
+## 🚀 Quick Start
+
+* `v10.0.2` is the latest release.
+* See [here](https://github.com/hendt/ebay-api/blob/master/CHANGELOG.md) for the full changelog.
+
+Sign up for an API key here: [Developer Account](https://developer.ebay.com/signin?tab=register).
+
+## Implementation status
+
+### RESTful APIs
+
+| API                | Implemented                                                                                                                                                                                                                                                                                                                                                                  |
+|:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Buy API**        | ✔ Browse API `v1.20.4`<br>✔  Deal API `v1.3.0`<br>✔ Feed API `v1_beta.35.2`<br>✔ Marketing API `v1_beta.2.0`<br>✔ Offer API `v1_beta.0.1`<br>✔ Order API `v2.1.4`<br>✔ Marketplace Insights API `v1_beta.2.2`                                                                                                                                                                |
+| **Commerce API**   | ✔ Catalog API `v1_beta.5.3`<br>✔ Charity API `v1.2.1`<br>✔ Feedback API `v1.0.0`<br>✔ Identity API `v2.0.0`<br>✔ Media API `v1_beta.5.0`<br>✔ Message API `v1.0.0`<br>✔ Notification API `v1.6.7`<br>✔ Taxonomy API `v1.1.1`<br>✔ Translation API `v1_beta.1.6`                                                                                                              |
+| **Developer API**  | ✔ Analytics API `v1_beta.0.1`<br>✔ Key Management API `v1.0.0`                                                                                                                                                                                                                                                                                                                                                              |
+| **Post Order API** | ✔ Cancellation API<br>✔ Case Management API<br>✔ Inquiry API<br>✔ Return API                                                                                                                                                                                                                                                                                                 |
+| **Sell API**       | ✔ Account API `v1.9.3` / `v2.2.0`<br>✔ Analytics API `v1.3.2`<br>✔ Feed API `v1.3.1`<br>✔ Finance API `v1.19.0`<br>✔ Fulfillment API `v1.20.7`<br>✔ Inventory API `v1.18.5`<br>✔ Listing API `v1_beta.2.1`<br>✔ Logistics API `v1_beta.0.0`<br>✔ Marketing API `v1.23.2`<br>✔ Metadata API `v1.12.1`<br>✔ Negotiation API `v1.1.0`<br>✔ Recommendation API `v1.1.0`<br>✔ Stores API `v1.0.0` |
+
+### Traditional APIs
+
+| API                   | Implemented |
+|:----------------------|:------------|
+| **Shopping API**      | ✔           |
+| **Merchandising API** | ✔           |
+| **Trading API**       | ✔           |
+| **Client Alerts API** | ✔           |
+| **Feedback API**      | ✔           |
+
+## Migrating from v9 to v10
+
+v10 is a major release that removes eBay APIs and operations that **eBay has decommissioned**. The public interface (auth, config, request handling) is unchanged — you only need to make changes if your app used one of the removed APIs/operations below.
+
+### Removed APIs
+
+| Removed | Replacement / Notes |
+|:--------|:--------------------|
+| **Finding API** (`eBay.finding`) | eBay took the traditional Finding API down server-side in February 2025. Migrate item search to the **Buy Browse API** (`eBay.buy.browse`). |
+| **Sell Compliance API** (`eBay.sell.compliance`) | Decommissioned by eBay on 2026-03-30. Removed together with `getListingViolations` / `getListingViolationsSummary` and the `SuppressViolationRequest` type. |
+
+### Removed operations
+
+Every operation below was dropped from eBay's own published OpenAPI spec. Calling one in v9 already
+failed against the live API; in v10 the method no longer exists.
+
+| API | Removed | Replacement / Notes |
+|:----|:--------|:--------------------|
+| **Buy Browse** (`eBay.buy.browse`) | `addItem`, `removeItem`, `updateQuantity`, `getShoppingCart` | The experimental `/shopping_cart` resource was withdrawn. The `AddCartItemInput`, `RemoveCartItemInput` and `UpdateCartItemInput` types were removed with it. |
+| **Buy Feed** (`eBay.buy.feed`) | `getProductFeed` | The `/product` feed was withdrawn. Use `getItemFeed`, `getItemGroupFeed`, `getItemSnapshotFeed` or the new `getItemPriorityFeed`. |
+| **Buy Marketing** (`eBay.buy.marketing`) | `getAlsoBoughtByProduct`, `getAlsoViewedByProduct` | Only `getMerchandisedProducts` remains. |
+| **Buy Order** (`eBay.buy.order`) | Migrated **v1 → v2** — only the **guest checkout** flow remains. The member checkout session, proxy-guest checkout session, payment-info, initiate-payment and place-order operations are gone. | The `CreateSignInCheckoutSessionRequest`, `GuestPlaceOrderRequest`, `InitiatePaymentRequest`, `UpdatePaymentInformation` and `CheckoutSessionRequestWithoutPayment` types were removed. |
+| **Commerce Catalog** (`eBay.commerce.catalog`) | `getChangeRequest`, `getChangeRequests`, `getProductMetadata`, `getProductMetadataForCategories` | The catalog change-request and product-metadata resources were decommissioned. `getProduct` and `search` remain. |
+| **Commerce Charity** (`eBay.commerce.charity`) | `getCharityOrgByLegacyId` | Look the organization up with `getCharityOrgs` and use its current ID with `getCharityOrg`. |
+| **Sell Account v1** (`eBay.sell.account`) | `getInventoryLocation`, `getInventoryLocations`, `createInventoryLocation`, `updateInventoryLocation`, `deleteInventoryLocation`, `enableInventoryLocation`, `disableInventoryLocation` | These were duplicates pointing at `/sell/account/v1/location`, which eBay does not serve. Use the identically-named methods on **`eBay.sell.inventory`**, which target the correct `/sell/inventory/v1/location` path. |
+| **Sell Account v1** (`eBay.sell.account`) | `getSalesTaxJurisdictions` | The `sales_tax_jurisdiction` resource was withdrawn. The `/sales_tax` methods (`getSalesTax`, `getSalesTaxes`, `createOrReplaceSalesTax`, `deleteSalesTax`, `bulkCreateOrReplaceSalesTax`) are unaffected. |
+| **Sell Marketing** (`eBay.sell.marketing`) | `setupQuickCampaign`, `launchCampaign` | The `quick_setup` and `launch` operations were retired, along with the `QuickSetupRequest` type. |
+| **Sell Metadata** (`eBay.sell.metadata`) | `getProductAdoptionPolicies` | The `get_product_adoption_policies` operation was withdrawn. |
+| **Post-Order** (`eBay.postOrder.*`) | 29 methods — see the table below. | The request types that only those methods used were removed too: `BuyerCloseCaseRequest`, `BuyerCloseInquiryRequest`, `CheckEligibilityRequest`, `CheckInquiryEligibilityRequest`, `CloseReturnRequest`, `ConfirmRefundRequest`, `CreateInquiryRequest`, `GetEstimateRequest`, `MarkAsShippedRequest`, `MarkRefundSentRequest`, `ReturnAddressRequest`, `SellerProvideRefundInfoRequest`, `SetReturnCreationSessionRequest`, `UpdateTrackingRequest`, `VoidLabelRequest`. |
+
+Removed post-order methods:
+
+| Resource | Removed |
+|:---------|:--------|
+| `eBay.postOrder.cancellation` | `confirmRefundReceived` |
+| `eBay.postOrder.case` | `closeCase`, `issueCaseRefund`, `provideReturnShipmentInfo`, `providesReturnAddress` |
+| `eBay.postOrder.inquiry` | `checkInquiryEligibility`, `closeInquiry`, `confirmInquiryRefund`, `createInquiry`, `provideInquiryRefundInfo` |
+| `eBay.postOrder.return` | `cancelReturnRequest`, `checkReturnEligibility`, `checkShippingLabelEligibility`, `createReturnDraft`, `createReturnShippingLabel`, `deleteReturnDraftFile`, `getReturnDraft`, `getReturnDraftFiles`, `getReturnEstimate`, `getReturnShippingLabel`, `markReturnRefundReceived`, `markReturnRefundSent`, `markReturnShipped`, `sendReturnShippingLabel`, `submitReturnFile`, `updateReturnDraft`, `updateShipmentTrackingInfo`, `uploadReturnDraftFile`, `voidShippingLabel` |
+
+### Renamed methods
+
+- **Commerce Notification** — `eBay.commerce.notification.test(subscriptionId)` is now
+  `eBay.commerce.notification.testSubscription(subscriptionId)`, matching eBay's `operationId`.
+
+### Changed behaviour
+
+- **`IEBayApiRequest` gained a required `patch` method.** If you pass a custom request implementation
+  (`new eBayApi(config, myRequest)`), add a `patch(url, data?, config?)` member. The bundled
+  `AxiosRequest` already has it. This is needed by `eBay.sell.accountV2.setUserPreferences`, eBay's
+  first `PATCH` operation.
+- **`eBay.commerce.media.uploadVideo`** now sends `Content-Type: application/octet-stream`, as the spec
+  requires, and takes an optional third `headers` argument so you can supply `Content-Range` /
+  `Content-Length` for resumable uploads.
+- **`eBay.sell.logistics.downloadLabelFile`** now requests `application/pdf` and returns the raw
+  buffer (`responseType: 'arraybuffer'`) instead of attempting to parse the PDF as JSON.
+- **Per-request headers now win over the client-wide defaults.** Previously the library's default
+  `Content-Type: application/json` overwrote the `multipart/form-data` header that the upload
+  endpoints set, so `createImageFromFile`, `uploadDocument`, `uploadPostOrderDocument`,
+  `sell.feed.uploadFile` and `sell.fulfillment.uploadEvidenceFile` were rejected by eBay. They work now.
+- **Sell Finances `filter` parameters accept an array.** `getPayouts`, `getPayoutSummary`,
+  `getTransactions`, `getTransactionSummary`, `getOrderEarnings`, `getOrderEarningsSummary` and
+  `getBillingActivities` all take `string | string[]` and join the list for you.
+  `getOrderEarningsSummary` now takes an options object (`{filter}`) like its siblings.
+- **Commerce Media** — the `InputStream` type was removed upstream; `uploadVideo` now accepts `any`
+  for its body.
+
+### New in v10
+
+- **Sell Stores API** (`eBay.sell.stores`) — manage the categories of a seller's eBay store.
+- **Sell Account API v2** (`eBay.sell.accountV2`) — rate tables, payout settings, combined shipping
+  rules and user preferences.
+- All RESTful OpenAPI specs were refreshed to eBay's latest published versions, which adds a number of
+  new methods (for example `eBay.buy.feed.getItemPriorityFeed` and 19 new Sell Metadata operations).
+
+## Install
+
+```bash
+npm install ebay-api 
+# or
+yarn add ebay-api
+```
+
+### Basic Usage
+
+```typescript
+import eBayApi from 'ebay-api';
+// or:
+// const eBayApi = require('ebay-api')
+
+const eBay = new eBayApi({
+  appId: '-- also called Client ID --',
+  certId: '-- also called Client Secret --',
+  sandbox: false
+});
+
+const item = await eBay.buy.browse.getItem('v1|254188828753|0');
+console.log(JSON.stringify(item, null, 2));
+```
+
+For more examples, check out the [examples directory](./examples).
+
+## eBay Docs
+
+* [eBay API Explorer](https://developer.ebay.com/my/api_test_tool)
+* [eBay API Docs](https://developer.ebay.com/docs)
+* [eBay API Status](https://entwickler.ebay.de/support/api-status/production)
+
+## Detailed Configuration
+
+```typescript
+import eBayApi from 'ebay-api';
+
+const eBay = new eBayApi({
+  appId: '-- also called Client ID --',
+  certId: '-- also called Client Secret --',
+  sandbox: false,
+
+  siteId: eBayApi.SiteId.EBAY_US, // required for traditional APIs, see https://developer.ebay.com/DevZone/merchandising/docs/Concepts/SiteIDToGlobalID.html
+
+  marketplaceId: eBayApi.MarketplaceId.EBAY_US, // default. required for RESTful APIs
+  acceptLanguage: eBayApi.Locale.en_US, // default
+  contentLanguage: eBayApi.Locale.en_US, // default.
+
+  // optional parameters, should be omitted if not used
+  devId: '-- devId --', // required for traditional Trading API
+  ruName: '-- eBay Redirect URL name --', // 'RuName' (eBay Redirect URL name) required for authorization code grant
+
+  authToken: '--  Auth\'n\'Auth for traditional API (used by trading) --', // can be set to use traditional API without code grant
+});
+```
+
+## Browser Usage
+
+Check out live example: [https://hendt.github.io/ebay-api/](https://hendt.github.io/ebay-api/).
+Because of the eBay CORS problems a Proxy server is required to use the API in the Browser.
+
+For testing purposes you can use `https://ebay.hendt.workers.dev/` url as proxy. You can also set up your own Proxy
+server. We have added an example for cloudfront
+workers: [https://github.com/hendt/ebay-api/blob/master/proxy/worker.js](https://github.com/hendt/ebay-api/blob/master/proxy/worker.js)
+
+Or use [CORS Anywhere](https://github.com/Rob--W/cors-anywhere) (a NodeJS proxy that works very well with heroku.com).
+
+### ESM
+
+```html
+
+<script type="module">
+    import eBayApi from 'https://cdn.jsdelivr.net/npm/ebay-api@latest/dist/ebay-api.min.mjs';
+    // or 
+    import eBayApiEsm from 'https://esm.sh/ebay-api';
+</script>
+```
+
+#### UMD
+
+```html
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ebay-api@latest/lib/ebay-api.min.js"></script>
+<script>
+    const eBay = new eBayApi({
+        appId: 'appId',
+        certId: 'certId',
+        sandbox: false
+    });
+
+    // eBay.req.instance is AxiosInstance per default
+    eBay.req.instance.interceptors.request.use((request) => {
+        // Add Proxy
+        request.url = 'https://ebay.hendt.workers.dev/' + request.url;
+        return request;
+    });
+
+    eBay.buy.browse.getItem('v1|254188828753|0').then(item => {
+        console.log(JSON.stringify(item, null, 2));
+    }).catch(e => {
+        console.error(e);
+    });
+</script>
+```
+
+## 🔧 eBayApi Config
+
+The first (required) parameter in eBayApi instance takes an object with following properties:
+
+| Name                              | Occurrence                                                                           | Description                                                                                                                                                                                                                                                                                                    |
+|:----------------------------------|:-------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| appId                             | Required                                                                             | App ID \(Client ID\) from  [Application Keys](https://developer.ebay.com/my/keys).                                                                                                                                                                                                                             |
+| certId                            | Required                                                                             | Cert ID \(Client Secret\) from  [Application Keys](https://developer.ebay.com/my/keys).                                                                                                                                                                                                                        |
+| devId                             | Conditionally                                                                        | The Dev Id from [Application Keys](https://developer.ebay.com/my/keys).                                                                                                                                                                                                                                        |
+| sandbox                           | Required<br><pre>Default: `false`</pre>                                              | If true, the [Sandbox Environment](https://developer.ebay.com/tools/sandbox) will be used.                                                                                                                                                                                                                     |
+| ruName                            | Conditionally                                                                        | The redirect\_url value. [More info](https://developer.ebay.com/api-docs/static/oauth-redirect-uri.html).                                                                                                                                                                                                      |
+| autoRefreshToken                  | Required<pre>Default: `true`</pre>                                                   | Auto refresh the token if it's expired.                                                                                                                                                                                                                                                                        |
+| siteId<br><i>Traditional</i>      | Required<br><pre>Default: `SiteId.EBAY_US`</pre>                                     | eBay site to which you want to send the request (Trading API, Shopping API).                                                                                                                                                                                                                                   |
+| authToken<br><i>Traditional</i>   | Optional                                                                             | The Auth'N'Auth token. The traditional authentication and authorization technology used by the eBay APIs.                                                                                                                                                                                                      |
+| parseOptions<br><i>Traditional</i> | Optional<br><pre>Default: `{ processEntities: { maxTotalExpansions: 10000 } }`</pre> | Global [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser) parse options applied to all Traditional API responses. Can be overridden per-call. |
+| marketplaceId<br><i>RESTful</i>   | Required<br><pre>Default: `MarketplaceId.EBAY_US`</pre>                              | [Docs](https://developer.ebay.com/api-docs/static/rest-request-components.html#marketpl) REST HTTP Header. X-EBAY-C-MARKETPLACE-ID identifies the user's business context and is specified using a marketplace ID value. Note that this header does not indicate a language preference or consumer location.   |
+| scope<br><i>RESTful</i>           | Conditionally<bre><pre>Default:<br>`['https://api.ebay.com/oauth/api_scope']` </pre> | The scopes assigned to your application allow access to different API resources and functionality.                                                                                                                                                                                                             |
+| endUserCtx<br><i>RESTful</i>      | Conditionally recommended<br><i>RESTful</i>                                          | [Docs](https://developer.ebay.com/api-docs/static/rest-request-components.html#headers) X-EBAY\_C\_ENDUSERCTX provides various types of information associated with the request.                                                                                                                               |
+| contentLanguage<br><i>RESTful</i> | Conditionally required<br><pre>Default: `Locale.en_US`</pre>                | [Docs](https://developer.ebay.com/api-docs/static/rest-request-components.html#headers)Content-Language indicates the locale preferred by the client for the response.                                                                                                                                         |
+| acceptLanguage<br><i>RESTful</i>  | Optional<pre>Default: `Locale.en_US`</pre>                                           | [Docs](https://developer.ebay.com/api-docs/static/rest-request-components.html#headers) Accept-Language indicates the natural language the client prefers for the response. This specifies the language the client wants to use when the field values provided in the request body are displayed to consumers. |
+
+## Load config from environment
+
+Use `eBayApi.fromEnv()` to load data from environment variables.
+
+| Name          | Value                               |
+|:--------------|:------------------------------------|
+| appId         | process.env.EBAY_APP_ID             |
+| certId        | process.env.EBAY_CERT_ID            |
+| devId         | process.env.EBAY_DEV_ID             |
+| authToken     | process.env.EBAY_AUTH_TOKEN         |
+| siteId        | process.env.EBAY_SITE_ID            |
+| marketplaceId | process.env.EBAY_MARKETPLACE_ID     |
+| ruName        | process.env.EBAY_RU_NAME            |
+| sandbox       | process.env.EBAY_SANDBOX === 'true' |
+
+## 🐞 Debug
+
+To see node debug logs use `DEBUG=ebay:*` environment variable.
+
+## 🔑 Access token types
+
+See the full Documentation [here](https://developer.ebay.com/api-docs/static/oauth-token-types.html).
+
+*Client credentials grant flow* mints a new Application access token.
+*Authorization code grant flow* mints a new User access token.
+
+### User access token (authorization code grant flow)
+
+👉 Recommended for all API Calls.
+
+> You must employ a User token to call any interface that accesses or modifies data that is owned by the user (such as
+> user information and account data).
+> To get a User token, the users of your app must grant your application the permissions it needs to act upon their
+> behalf. This process is called user consent. With the user consent flow, each User token contains the set of scopes
+> for
+> which the user has granted their
+> permission [(eBay Token Types)](https://developer.ebay.com/api-docs/static/oauth-token-types.html).
+
+### Application access token (client credentials grant flow)
+
+👉 Recommended for API calls that will only request application data (`GET` method, and it's also restricted).
+
+> Application tokens are general-use tokens that give access to interfaces that return application data. For example,
+> many GET requests require only an Application token for authorization.
+[(eBay Token Types)](https://developer.ebay.com/api-docs/static/oauth-token-types.html)
+
+If no other token is set, this token will be obtained *automatically* in the process of calling an RESTful API.
+
+### Auth'N'Auth
+In the Single User Model, the application supports only a single user. In this model, you need only one Auth'n'Auth token.
+👉 The "old" way. Only works with Traditional API.
+Checkout the [Auth'N'Auth example](https://github.com/hendt/ebay-api/tree/master/examples/traditional/authNAuth.ts).
+
+You can also generate the token on eBay developer page and use it directly (see Detailed configuration example).
+
+## OAuth2: Exchanging the authorization code for a User access token
+
+[eBay Docs](https://developer.ebay.com/api-docs/static/oauth-auth-code-grant-request.html)
+
+```js
+import eBayApi from 'ebay-api';
+
+// 1. Create new eBayApi instance and set the scope.
+const eBay = eBayApi.fromEnv();
+
+eBay.OAuth2.setScope([
+  'https://api.ebay.com/oauth/api_scope',
+  'https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly',
+  'https://api.ebay.com/oauth/api_scope/sell.fulfillment'
+]);
+
+// 2. Generate and open Url and Grant Access
+const url = eBay.OAuth2.generateAuthUrl();
+console.log('Open URL', url);
+```
+
+After you granted success, eBay will redirect you to your 'Auth accepted URL' and add a query parameter `code`
+
+### Express example
+
+This is how it would look like if you use `express`:
+
+```js
+import eBayApi from 'ebay-api';
+
+
+// This is your RUName endpoint like https://your-ebay.app/success
+app.get('/success', async function (req, res) {
+  // 3. Get the parameter code that is placed as query parameter in redirected page
+  const code = req.query.code; // this is provided from eBay
+  const eBay = eBayApi.fromEnv(); // or use new eBayApi()
+
+  try {
+    const token = await eBay.OAuth2.getToken(code);
+    eBay.OAuth2.setCredentials(token);
+    // store this token e.g. to a session
+    req.session.token = token
+
+    // 5. Start using the API
+    const orders = await eBay.sell.fulfillment.getOrders()
+    res.send(orders);
+  } catch (error) {
+    console.error(error)
+    res.sendStatus(400)
+  }
+});
+```
+
+If token is already in session:
+
+```js
+import eBayApi from 'ebay-api';
+
+app.get('/orders/:id', async function (req, res) {
+  const id = req.params.id;
+  const eBay = eBayApi.fromEnv(); // or use new eBayApi(...)
+  const token = req.session.token;
+  if (!token) {
+    return res.sendStatus(403);
+  }
+
+  eBay.OAuth2.setCredentials(token);
+
+  // If token get's refreshed
+  eBay.OAuth2.on('refreshAuthToken', (token) => {
+    req.session.token = token;
+  });
+
+  try {
+    // 5. Start using the API
+    const order = await eBay.sell.fulfillment.getOrder(id);
+    res.send(order);
+  } catch (error) {
+    console.error(error)
+    res.sendStatus(400)
+  }
+});
+```
+
+## Digital Signature
+Signatures are required when the call is made for EU- or UK-domiciled sellers, and only for the following APIs/methods:
+
+* All methods in the Finances API -> (`eBay.sell.finances.sign.XXX()`)
+* issueRefund in the Fulfillment API -> (`eBay.sell.fulfillment.sign.issueRefund()`)
+* GetAccount in the Trading API -> (`eBay.trading.GetAccount(null, { sign: true }))`)
+* The following methods in the Post-Order API:
+  - Issue Inquiry Refund -> (`eBay.postOrder.inquiry.sign.issueInquiryRefund()`)
+  - Issue return refund -> (`eBay.postOrder.return.sign.issueReturnRefund()`)
+  - Process Return Request -> (`eBay.postOrder.return.sign.processReturnRequest()`)
+  - Create Cancellation Request -> (`eBay.postOrder.cancellation.sign.createCancellation()`)
+  - Approve Cancellation Request -> (`eBay.postOrder.cancellation.sign.approveCancellationRequest()`)
+
+### How to use Digital Signature
+```typescript
+// 1. Create signing key and save it appropriately
+const signingKey = await eBay.developer.keyManagement.createSigningKey('ED25519');
+// 2. Set the signature
+eBay.setSignature(signingKey)
+// or in constructor
+eBay = new eBayApi({
+   appId: '...',
+   certId: '...',
+   signature: {
+      jwe: signingKey.jwe,
+      privateKey: signingKey.privateKey
+   }
+});
+// 3. Use the 'sign' keyword in Restful API
+const summary = await eBay.sell.finances.sign.getSellerFundsSummary();
+// 3. Or the 'sign' parameter in traditional API
+const account = await eBay.trading.GetAccount(null, {sign: true});
+```
+
+## RESTful API
+
+### How to set the Scope
+
+```typescript
+const eBay = new eBayApi({
+  // ...
+  scope: ['https://api.ebay.com/oauth/api_scope']
+});
+
+// Or:
+eBay.OAuth2.setScope([
+  'https://api.ebay.com/oauth/api_scope',
+  'https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly',
+  'https://api.ebay.com/oauth/api_scope/sell.fulfillment'
+]);
+```
+
+### Use apix.ebay.com or apiz.ebay.com (beta) endpoints
+
+For some APIs, eBay use a `apix`/`apiz` subdomain. To use these subdomains you can use `.apix`/`.apiz` before the api
+call like this:
+
+```typescript
+eBay.buy.browse.apix.getItem(); // now it will use https://apix.ebay.com
+eBay.buy.browse.apiz.getItem(); // now it will use https://apiz.ebay.com
+```
+
+In any case eBay adds a new subdomain, it's also possible to configure whatever you want:
+
+```typescript
+eBay.buy.browse.api({subdomain: 'apiy'}).getItem(); // now it will use https://apiy.ebay.com
+```
+
+### Return raw RESTful API response
+
+```typescript
+eBay.buy.browse.api({
+  returnResponse: true, // return the response instead of data
+}).getItem();
+```   
+
+### How to refresh the token
+
+If `autoRefreshToken` is set to true (default value) the token will be automatically refreshed when eBay response
+with `invalid access token` error.
+
+Use Event Emitter to get the token when it gets successfully refreshed.
+
+```typescript
+eBay.OAuth2.on('refreshAuthToken', (token) => {
+  console.log(token);
+  // Store this token in DB
+});
+
+// for client token
+eBay.OAuth2.on('refreshClientToken', (token) => {
+  console.log(token)
+  // Store this token in DB
+});
+```
+
+To manually refresh the user access token use `eBay.OAuth2.refreshUserAccessToken()`, and for the
+client token use `eBay.OAuth2.obtainApplicationAccessToken()`. `eBay.OAuth2.refreshToken()` picks the
+right one for you based on the credentials that are set.
+Keep in mind that you need the 'refresh_token' value set.
+
+```typescript
+const token = await eBay.OAuth2.refreshToken();
+// will refresh Auth Token if set, otherwise the client token if set.
+```
+
+## Additional request headers
+
+Sometimes you want to add additional headers to the request like a GLOBAL-ID `X-EBAY-SOA-GLOBAL-ID`.
+You have multiple options to do this.
+
+### RESTful API headers
+
+```typescript
+const eBay = new eBayApi();
+
+eBay.buy.browse.api({
+  headers: {
+    'X-EBAY-SOA-GLOBAL-ID': 'EBAY-DE'
+  }
+}).getItem('v1|382282567190|651094235351').then((item) => {
+  console.log(item);
+});
+```
+
+### Traditional API headers
+
+You can pass headers directly in the method call in the second parameter:
+
+```typescript
+eBay.trading.AddFixedPriceItem({
+  Item: {
+    Title: 'title',
+    Description: {
+      __cdata: '<div>test</div>'
+    }
+  }
+}, {
+  headers: {
+    'X-EBAY-SOA-GLOBAL-ID': 'EBAY-DE'
+  }
+});
+```
+
+### Low level: add extra headers with the Axios interceptor
+
+If you want to add a header to every request you can use the Axios interceptor.
+
+```typescript
+import eBayApi from 'ebay-api';
+
+const eBay = new eBayApi(/* {  your config here } */);
+
+eBay.req.instance.interceptors.request.use((request) => {
+  // Add Header
+  request.headers['X-EBAY-SOA-GLOBAL-ID'] = 'EBAY-DE';
+  return request;
+});
+```
+
+
+### Handle JSON GZIP response e.g fetchItemAspects
+
+You need a decompress library installed like `zlib`.
+
+```bash 
+npm install zlib # or yarn add zlib
+```
+
+```typescript
+import eBayApi from 'ebay-api';
+import zlib from 'zlib';
+
+const toString = (data: Buffer): Promise<string> => new Promise((resolve) => {
+  zlib.gunzip(data, (err, output) => {
+    if (err) throw err;
+    resolve(output.toString());
+  });
+});
+
+const eBay = new eBayApi(/* {  your config here } */);
+
+try {
+  const data = await eBay.commerce.taxonomy.fetchItemAspects(/* categoryTreeId */);
+  const result = await toString(data);
+
+  console.log(result)
+} catch (error) {
+  console.error(error);
+}
+```
+## Handling errors
+```typescript
+import eBayApi from 'ebay-api';
+import { EBayApiError } from 'ebay-api/lib/errors';
+
+const eBay = new eBayApi(/* {  your config here } */);
+
+try {
+  const result = await eBay.trading.GetItem({
+    ItemID: 'itemId',
+  });
+  console.log(result);
+} catch (error) {
+  if (error instanceof EBayApiError && error.errorCode === 17) {
+    // Item not found
+  } else {
+    throw error;
+  }
+  
+  // in error there is also the field "meta" with the response
+  if (error instanceof EBayApiError && error.meta?.res?.status === 404) {
+    // not found
+    
+    // The first error
+    console.log(error?.firstError);
+  }
+  
+  
+}
+```
+
+The `errorCode` is extracted from the first error in the API response.
+
+* [Shopping API Error Codes](https://developer.ebay.com/devzone/shopping/docs/callref/Errors/ErrorMessages.html)
+* [Trading API  Error Codes](https://developer.ebay.com/devzone/xml/docs/reference/ebay/errors/errormessages.htm)
+* [RESTful  Error Codes](https://developer.ebay.com/devzone/xml/docs/reference/ebay/errors/errormessages.htm)
+* [PostOrder  Error Codes](https://developer.ebay.com/Devzone/post-order/ErrorMessages.html#ErrorsByNumber)
+
+
+
+## Controlling Traditional XML request and response
+
+### Global parse options (constructor)
+
+Pass `parseOptions` in the constructor config to apply [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser) options to **all** Traditional API responses:
+
+```typescript
+const eBay = new eBayApi({
+  appId: '...',
+  certId: '...',
+  devId: '...',
+  siteId: eBayApi.SiteId.EBAY_DE,
+  parseOptions: {
+    processEntities: {
+      maxTotalExpansions: 20000 // raise limit for stores with rich HTML descriptions (default: 10000)
+    }
+  }
+});
+```
+
+Per-call `parseOptions` (see below) are merged on top and take precedence.
+
+### Per-call options
+
+The second parameter in the traditional API has the following options:
+
+```typescript
+export type Options = {
+  raw?: boolean // return raw XML
+  parseOptions?: X2jOptions // https://github.com/NaturalIntelligence/fast-xml-parser — merged with global parseOptions
+  xmlBuilderOptions?: XmlBuilderOptions // https://github.com/NaturalIntelligence/fast-xml-parser
+  useIaf?: boolean // use IAF in header instead of Bearer
+  headers?: Headers // additional Headers (key, value)
+  hook?: (xml) => BodyHeaders // hook into the request to modify the body and headers
+};
+```
+
+[Fast XML](https://github.com/NaturalIntelligence/fast-xml-parser) is used to parse the XML. You can pass the parse
+option to `parseOptions` parameter.
+
+Important for Traditional request bodies: when an element has both attributes and text content, the text must go under `#value`, not `#text`, because the XML builder is configured with `textNodeName: '#value'`. For example, use `StartPrice: { '@_currencyID': 'EUR', '#value': '20.00' }`. If you use `#text` instead, it will be serialized literally as `<#text>...</#text>`, which causes eBay XML parse errors that do not clearly point back to the JS-to-XML mapping.
+
+### Parse JSON Array
+```js
+
+eBay.trading.SetNotificationPreferences({
+  UserDeliveryPreferenceArray: [{
+    NotificationEnable: {
+      EventType: 'ItemListed',
+      EventEnable: 'Enable',
+    }
+  }, {
+    NotificationEnable: {
+      EventType: 'ItemSold',
+      EventEnable: 'Enable',
+    },
+  }],
+}, { xmlBuilderOptions: { oneListGroup: true }})
+```
+
+Will produce:
+```xml
+<UserDeliveryPreferenceArray>
+  <NotificationEnable>
+    <EventType>ItemListed</EventType>
+    <EventEnable>Enable</EventEnable>
+  </NotificationEnable>
+  <NotificationEnable>
+    <EventType>ItemSold</EventType>
+    <EventEnable>Enable</EventEnable>
+  </NotificationEnable>
+</UserDeliveryPreferenceArray>
+```
+
+
+
+## Examples
+
+### Trading - AddFixedPriceItem \(CDATA\)
+
+You can submit your description using CDATA if you want to use HTML or XML.
+
+```js
+eBay.trading.AddFixedPriceItem({
+  Item: {
+    Title: 'title',
+    Description: {
+      __cdata: '<div>test</div>'
+    }
+  }
+});
+```
+
+### Trading - ReviseFixedPriceItem (Update the price of an item)
+
+```js
+eBay.trading.ReviseFixedPriceItem({
+  Item: {
+    ItemID: 'itemId',
+    StartPrice: 'startPrice'
+  }
+});
+```
+
+### Buy - getItem
+
+```js
+eBay.buy.browse.getItem('v1|382282567190|651094235351').then(a => {
+  console.log(a);
+}).catch(e => {
+  console.log(e);
+});
+```
+
+### Post-Order - getReturn
+
+```js
+eBay.postOrder.return.getReturn('5132021997').then(a => {
+  console.log(a);
+}).catch(e => {
+  console.log(e);
+});
+```
+
+### Trading - GetMyeBaySelling
+
+```js
+eBay.trading.GetMyeBaySelling({
+  SoldList: {
+    Include: true,
+    Pagination: {
+      EntriesPerPage: 20,
+      PageNumber: 1
+    }
+  }
+}).then(data => {
+  console.log(data.results)
+});
+```
+
+## FAQ
+
+1. Do I need the [eBay OAuth Client](https://www.npmjs.com/package/ebay-oauth-nodejs-client) dependency?
+
+No. This library has already all authentication implemented and support also auto refreshing token.
+
+2. What does IAF mean?
+
+IAF stands for IDENTITY ASSERTION FRAMEWORK.
+The traditional API supports IAF. That means you can use the OAuth2 token with the traditional APIs.
+
+3. Is it possible to Upload Pictures directly to EPS?
+
+Yes. Checkout the [Browser](https://hendt.github.io/ebay-api/) example
+and [Node Example here](https://github.com/hendt/ebay-api/blob/master/examples/traditional/trading.UploadSiteHostedPictures.ts).
+
+4. itemAffiliateWebUrl is missing in eBay.buy.browse.search call
+   You have to set `endUserCtx`.
+
+
+## Contribution
+
+Check [here](https://github.com/hendt/ebay-api/blob/master/CONTRIBUTING.md)
+
+## Supported By
+
+[leaderboarded.com](https://leaderboarded.com/)
+
+[rootle.de](https://rootle.de)
+
+## 📝 License
+
+MIT.
