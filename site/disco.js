@@ -133,6 +133,26 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const toggle = document.querySelector(".disco-motion-toggle");
   let paused = false;
+  // Projected light is a page layer, so it also reaches the collection while
+  // the ball is outside the viewport. CSS animates only transforms and opacity.
+  const lightField = document.createElement("div");
+  lightField.className = "disco-room-light";
+  lightField.setAttribute("aria-hidden", "true");
+  const reflections = [
+    [14, 21, 19, 0], [30, 34, 15, -.55], [49, 24, 12, -.2],
+    [75, 30, 21, -.75], [59, 58, 16, -.4], [23, 73, 18, -.9],
+    [86, 68, 13, -.1], [44, 86, 20, -.65],
+  ];
+  reflections.forEach(([x, y, size, delay]) => {
+    const patch = document.createElement("span");
+    patch.className = "disco-light-patch";
+    patch.style.setProperty("--light-x", `${x}%`);
+    patch.style.setProperty("--light-y", `${y}%`);
+    patch.style.setProperty("--light-size", `${size}px`);
+    patch.style.setProperty("--light-delay", `${delay}s`);
+    lightField.append(patch);
+  });
+  document.body.append(lightField);
   const balls = [...document.querySelectorAll(".disco-ball")].map((element, index) => {
     const canvas = element.querySelector("canvas");
     const image = element.querySelector("img");
@@ -173,7 +193,11 @@
     if ("ResizeObserver" in window) new ResizeObserver(() => renderer?.resize()).observe(element);
     return ball;
   });
-  function syncAll() { balls.forEach(ball => ball.sync()); }
+  function syncAll() {
+    lightField.dataset.running = String(!paused && !reduced.matches && !document.hidden);
+    if (toggle) toggle.hidden = reduced.matches;
+    balls.forEach(ball => ball.sync());
+  }
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -195,4 +219,5 @@
     toggle.textContent = paused ? "Let it dance" : "Pause the disco";
     syncAll();
   });
+  syncAll();
 })();
