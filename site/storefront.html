@@ -35,6 +35,7 @@
     <script src="catalog-data.js" defer></script>
     <script src="catalog.js" defer></script>
     <script src="storefront.js" defer></script>
+    <script src="disco.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#collection">Skip to the collection</a>
@@ -102,7 +103,10 @@
           <div class="salon-lamp" aria-hidden="true">
             <img src="assets/editorial/urn-lamp.webp" srcset="assets/editorial/urn-lamp--400.webp 400w, assets/editorial/urn-lamp.webp 600w" sizes="(max-width: 767px) 215px, (max-width: 1500px) 25vw, 375px" width="600" height="900" alt="" fetchpriority="high" />
           </div>
-          <a class="salon-disco" href="#disco" aria-label="A little disco to go: our signature buyer handout"><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="A silver mirror disco ball catching pink and gold light" /></a>
+          <a class="salon-disco disco-ball" href="#disco" aria-label="A little disco to go: our signature buyer handout">
+            <img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="A silver mirror disco ball catching pink and gold light" />
+            <canvas class="disco-sphere" aria-hidden="true"></canvas>
+          </a>
           <button class="salon-tour" type="button" data-open-walkthrough><span class="tour-play" aria-hidden="true">▷</span><span>Where the feeling began<small>Inside the original room · 24 seconds</small></span></button>
         </div>
         <div class="salon-ledge" aria-hidden="true"></div>
@@ -355,11 +359,15 @@
         </div>
       </section>
       <section class="disco-note page-width" id="disco" aria-labelledby="disco-title">
-        <div class="disco-note-image reveal"><img src="assets/editorial/disco-ball.webp" width="600" height="600" alt="Silver mirror disco ball" loading="lazy" /></div>
+        <div class="disco-note-image disco-ball reveal">
+          <img src="assets/editorial/disco-ball.webp" width="600" height="600" alt="Silver mirror disco ball" loading="lazy" />
+          <canvas class="disco-sphere" aria-hidden="true"></canvas>
+        </div>
         <div class="reveal">
           <h2 id="disco-title">A little<br /><em>disco to go.</em></h2>
           <p>A little gift for our buyers: a mirror ball to carry the Hollywood &amp; Vine feeling home.</p>
           <p class="disco-signoff">Find a sunny spot. Let it dance.</p>
+          <button class="disco-motion-toggle" type="button" aria-pressed="false" hidden>Pause the disco</button>
         </div>
       </section>
       <section

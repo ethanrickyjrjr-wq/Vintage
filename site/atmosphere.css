@@ -150,7 +150,12 @@ body { overflow-x: clip; }
   transition: transform .4s ease;
 }
 .salon-disco::before { content: ""; position: absolute; width: 1px; height: 75px; background: #d7beb7; bottom: 99%; left: 50%; }
-.salon-disco:hover { transform: rotate(7deg); }
+/* The photographic hanger stays fixed while the mirror sphere turns in 3D. */
+.disco-ball > img { width: 100%; }
+.disco-sphere { position: absolute; top: 6.5%; left: 3%; width: 94%; height: 92%; pointer-events: none; opacity: 0; }
+.disco-ready .disco-sphere { opacity: 1; }
+.disco-motion-toggle { margin-top: 6px; padding: 8px 0; color: var(--muted); font-size: 11px; letter-spacing: .08em; text-decoration: underline; text-underline-offset: 4px; }
+.disco-motion-toggle:hover { color: var(--text); }
 .salon-tour {
   display: flex;
   align-items: center;
@@ -235,6 +240,10 @@ body { overflow-x: clip; }
 @media (prefers-reduced-motion: no-preference) {
   .salon-copy { animation: salon-arrive .9s cubic-bezier(.16,1,.3,1) both; }
   @keyframes salon-arrive { from { translate: 0 18px; } to { translate: 0 0; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .disco-motion-toggle { display: none; }
+  .disco-ready .disco-sphere { opacity: 0; }
 }
 @media (max-width: 1150px) and (min-width: 768px) {
   .salon-stage { height: 650px; }

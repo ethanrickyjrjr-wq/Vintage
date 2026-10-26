@@ -13,7 +13,8 @@ Existing dials: DESIGN_VARIANCE 5, MOTION_INTENSITY 4, VISUAL_DENSITY 4. Target:
 ## Implementation
 
 - The entrance has background wall molding and framed art, raised text in the middle, and transparent lamp/chandelier assets in front. A small hanging disco ball links to the gift section.
-- Pointer depth is bounded to a few pixels and uses one requested animation frame per pointer update. Touch and reduced-motion settings disable it. Automatic disco rotation was removed after the performance audit showed it extending the largest-contentful-paint measurement.
+- Pointer depth is bounded to a few pixels and uses one requested animation frame per pointer update. Touch and reduced-motion settings disable it.
+- Both disco balls turn around their hanging axis using a small WebGL mirror sphere, with the original photo supplying the reflected room colors. The photographed hanger stays fixed. Tile highlights remain on the surface; there are no decorative stars or floating sparkle particles. Rendering is capped at 30 frames per second and 640 pixels, pauses offscreen and in hidden tabs, and respects reduced motion. A shared pause control is available in the gift section. The original photos remain the fallback when WebGL is unavailable.
 - The four category displays vary in frame, aspect ratio and elevation. Their names, links and filters remain intact.
 - The room story explains the mix of chrome, brass, pink glass and art. Its object links open original catalog details.
 - The gift section says: “A little gift for our buyers: a mirror ball to carry the Hollywood & Vine feeling home.” It does not assert gift eligibility, fulfillment timing, dimensions, or a gift with every order.
@@ -47,3 +48,7 @@ Final prompt: Create a photorealistic silver mirror disco ball as a transparent 
 Browser review at 1440, 390 and 320 CSS pixels; no page-level horizontal overflow. Both lighting palettes reviewed. Checked framed-art and story-object links, modal close/focus return, mobile menu, search, empty-state recovery, save/unsave, and the disco anchor. No browser console errors observed. JavaScript syntax and static build checks passed. Lighthouse results and proof screenshots are saved in the ignored `artifacts/` directory; they are local lab measurements, not production field data.
 
 Technical references checked in-session: [MDN text-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow), [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform), [reduced motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion), and [Sharp output](https://sharp.pixelplumbing.com/api-output/). The text-shadow page was also captured through the repository's crawl4ai workflow.
+
+The disco-motion update was checked at desktop and phone sizes, including pause/resume and offscreen suspension. The WebGL shader compiled without browser errors, and the static build includes the new animation script. [MDN's texture guide](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL) was checked through crawl4ai. Earlier Lighthouse measurements describe the preceding release, not this animation update.
+
+The owner explicitly requested public access on October 26, 2026. The Sites access policy was changed to `public`; future edits should preserve that audience unless the owner requests another change.
