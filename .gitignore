@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+# crawl4ai output and caches are machine-local, never ship
+*crawl4ai*
+.crawl4ai/
+research/**/*.md.raw
+__pycache__/
+.venv/
+node_modules/
