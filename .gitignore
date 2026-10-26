@@ -8,3 +8,6 @@ research/**/*.md.raw
 __pycache__/
 .venv/
 node_modules/
+site/dist/
+.site-publication/
+artifacts/
