@@ -132,7 +132,24 @@
 
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const toggle = document.querySelector(".disco-motion-toggle");
+  const sparkleToggle = document.querySelector(".salon-disco");
   let paused = false;
+  let sparklesOn = false;
+  const sparkles = document.createElement("div");
+  sparkles.className = "disco-sparkles";
+  sparkles.setAttribute("aria-hidden", "true");
+  // A bounded set of stars fills desktop and phone viewports without blocking taps.
+  for (let i = 0; i < 64; i++) {
+    const star = document.createElement("span");
+    star.className = "disco-sparkle";
+    star.style.setProperty("--sparkle-x", `${3 + (i % 8) * 12 + Math.random() * 6}%`);
+    star.style.setProperty("--sparkle-y", `${3 + Math.floor(i / 8) * 12 + Math.random() * 6}%`);
+    star.style.setProperty("--sparkle-size", `${8 + Math.random() * 13}px`);
+    star.style.setProperty("--sparkle-duration", `${2 + Math.random() * 3}s`);
+    star.style.setProperty("--sparkle-delay", `${-Math.random() * 5}s`);
+    sparkles.append(star);
+  }
+  document.body.append(sparkles);
   // Projected light is a page layer, so it also reaches the collection while
   // the ball is outside the viewport. CSS animates only transforms and opacity.
   const lightField = document.createElement("div");
@@ -195,6 +212,9 @@
   });
   function syncAll() {
     lightField.dataset.running = String(!paused && !reduced.matches && !document.hidden);
+    sparkles.dataset.active = String(sparklesOn && !document.hidden);
+    sparkles.dataset.running = String(sparklesOn && !paused && !reduced.matches && !document.hidden);
+    if (sparkleToggle) sparkleToggle.dataset.motionPaused = String(paused || document.hidden);
     if (toggle) toggle.hidden = reduced.matches;
     balls.forEach(ball => ball.sync());
   }
@@ -213,6 +233,11 @@
   }
   document.addEventListener("visibilitychange", syncAll);
   reduced.addEventListener("change", syncAll);
+  sparkleToggle?.addEventListener("click", () => {
+    sparklesOn = !sparklesOn;
+    sparkleToggle.setAttribute("aria-pressed", String(sparklesOn));
+    syncAll();
+  });
   toggle?.addEventListener("click", () => {
     paused = !paused;
     toggle.setAttribute("aria-pressed", String(paused));

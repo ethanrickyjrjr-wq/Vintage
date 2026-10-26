@@ -12,9 +12,9 @@ Existing dials: DESIGN_VARIANCE 5, MOTION_INTENSITY 4, VISUAL_DENSITY 4. Target:
 
 ## Implementation
 
-- The entrance has background wall molding and framed art, raised text in the middle, and transparent lamp/chandelier assets in front. A small hanging disco ball links to the gift section.
+- The entrance has background wall molding and framed art, raised text in the middle, and transparent lamp/chandelier assets in front. The lamp, chandelier and framed painting open their matching catalog details. The hanging disco ball toggles a field of sparkles without navigating.
 - Pointer depth is bounded to a few pixels and uses one requested animation frame per pointer update. Touch and reduced-motion settings disable it.
-- Both disco balls turn around their hanging axis using a small WebGL mirror sphere, with the original photo supplying the reflected room colors. The photographed hanger stays fixed. Tile highlights remain on the surface; there are no decorative stars or floating sparkle particles. Rendering is capped at 30 frames per second and 640 pixels, pauses offscreen and in hidden tabs, and respects reduced motion. A shared pause control is available in the gift section. The original photos remain the fallback when WebGL is unavailable.
+- Both disco balls turn around their hanging axis using a small WebGL mirror sphere, with the original photo supplying the reflected room colors. The photographed hanger stays fixed. Tile highlights remain on the surface. The entrance ball also gently sways on desktop and phones; clicking or tapping it toggles 64 cream and pink stars across the viewport. The sparkle layer never intercepts input, and reduced-motion users see stationary stars. Rendering is capped at 30 frames per second and 640 pixels, pauses offscreen and in hidden tabs, and respects reduced motion. A shared pause control is available in the gift section. The original photos remain the fallback when WebGL is unavailable.
 - Occasional projected light reaches the page beyond the balls: eight soft rectangular reflections sweep across the viewport in brief passes about every 14 seconds, with six smaller patches on phones. Screen blending lets them illuminate the wall colors, lettering and photos. The layer is decorative and ignores pointer input; it pauses with the shared disco control and in hidden tabs, and is absent with reduced motion. It remains active while browsing the collection even when the balls are offscreen.
 - The four category displays vary in frame, aspect ratio and elevation. Their names, links and filters remain intact.
 - The room story explains the mix of chrome, brass, pink glass and art. Its object links open original catalog details.
@@ -46,7 +46,7 @@ Final prompt: Create a photorealistic silver mirror disco ball as a transparent 
 
 ## Verification
 
-Browser review at 1440, 390 and 320 CSS pixels; no page-level horizontal overflow. Both lighting palettes reviewed. Checked framed-art and story-object links, modal close/focus return, mobile menu, search, empty-state recovery, save/unsave, and the disco anchor. No browser console errors observed. JavaScript syntax and static build checks passed. Lighthouse results and proof screenshots are saved in the ignored `artifacts/` directory; they are local lab measurements, not production field data.
+Browser review at 1440, 390 and 320 CSS pixels; no page-level horizontal overflow. Both lighting palettes reviewed. Checked framed-art and story-object links, modal close/focus return, mobile menu, search, empty-state recovery, save/unsave, and the disco sparkle toggle. No browser console errors observed. JavaScript syntax and static build checks passed. Lighthouse results and proof screenshots are saved in the ignored `artifacts/` directory; they are local lab measurements, not production field data.
 
 Technical references checked in-session: [MDN text-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow), [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform), [reduced motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion), and [Sharp output](https://sharp.pixelplumbing.com/api-output/). The text-shadow page was also captured through the repository's crawl4ai workflow.
 
@@ -55,3 +55,5 @@ The disco-motion update was checked at desktop and phone sizes, including pause/
 The projected-light follow-up was reviewed at desktop and 390 CSS pixels, including its bright and quiet phases, shared pause/resume, and non-intercepting overlay. No horizontal overflow was observed. [MDN's blend-mode reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/mix-blend-mode) was checked live; the crawl4ai attempt stalled, so the official page was read through web browsing.
 
 The owner explicitly requested public access on October 26, 2026. The Sites access policy was changed to `public`; future edits should preserve that audience unless the owner requests another change.
+
+The entrance-interaction update checks desktop clicks and phone taps at 1440, 390 and 320 CSS pixels: lamp/chandelier/art detail selection, close/focus return, sparkle toggle without scroll or hash changes, keyboard activation, reduced motion, and horizontal overflow. The ball sways on phones as well as desktop.

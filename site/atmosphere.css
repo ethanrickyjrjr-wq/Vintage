@@ -101,7 +101,7 @@ body { overflow-x: clip; }
   width: 17%;
   left: -2%;
   top: -75px;
-  pointer-events: none;
+  padding: 0;
   filter: drop-shadow(15px 19px 9px #25121d70);
   transform: translate3d(calc(var(--look-x) * -.4), calc(var(--look-y) * -.4), 0) rotate(5deg);
 }
@@ -134,7 +134,7 @@ body { overflow-x: clip; }
   width: 25%;
   right: -1%;
   bottom: -17px;
-  pointer-events: none;
+  padding: 0;
   transform: translate3d(var(--look-x), var(--look-y), 0);
   filter: drop-shadow(20px 15px 8px #29111e60);
 }
@@ -168,6 +168,27 @@ body { overflow-x: clip; }
   transition: opacity .35s;
 }
 .disco-room-light[data-running="true"] { opacity: 1; }
+.disco-sparkles {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .4s;
+}
+.disco-sparkles[data-active="true"] { opacity: 1; }
+.disco-sparkle {
+  position: absolute;
+  left: var(--sparkle-x);
+  top: var(--sparkle-y);
+  width: var(--sparkle-size);
+  height: var(--sparkle-size);
+  background: #fff1cf;
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+  opacity: .65;
+}
+.disco-sparkle:nth-child(3n) { background: #f8c6df; }
 .disco-light-patch {
   position: absolute;
   left: var(--light-x);
@@ -263,6 +284,15 @@ body { overflow-x: clip; }
 .footer-wordmark { text-shadow: 2px 2px 0 #af9386, 5px 7px 7px #1e111d66; }
 .site-footer { background: var(--wall-edge); }
 @media (prefers-reduced-motion: no-preference) {
+  .salon-disco { animation: disco-sway 6s ease-in-out infinite alternate; transform-origin: 50% -65px; }
+  .salon-disco[data-motion-paused="true"] { animation-play-state: paused; }
+  @keyframes disco-sway { from { rotate: -3deg; translate: 0 -2px; } to { rotate: 3deg; translate: 0 3px; } }
+  .disco-sparkle { animation: disco-twinkle var(--sparkle-duration) ease-in-out infinite alternate; animation-delay: var(--sparkle-delay); animation-play-state: paused; }
+  .disco-sparkles[data-running="true"] .disco-sparkle { animation-play-state: running; }
+  @keyframes disco-twinkle {
+    from { opacity: .12; transform: translate3d(-8px, 10px, 0) scale(.35) rotate(-15deg); }
+    to { opacity: .95; transform: translate3d(8px, -10px, 0) scale(1.15) rotate(25deg); }
+  }
   .disco-light-patch { animation: disco-light-pass 28s linear infinite; animation-delay: var(--light-delay); animation-play-state: paused; }
   .disco-room-light[data-running="true"] .disco-light-patch { animation-play-state: running; }
   @keyframes disco-light-pass {

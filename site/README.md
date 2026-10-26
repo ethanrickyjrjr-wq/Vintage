@@ -17,7 +17,7 @@ Run `node build.mjs`. The deployable static site is written to `dist/`, with the
 - `storefront.js` handles entrance reveals, the color theme and the header shortcut to saved finds.
 - The real room's optimized photos, extracted frames, video and licensed fonts are self-hosted in `assets/`.
 - `atmosphere.css` composes the entrance as a burgundy interior: raised lettering, a foreground lamp, a hanging chandelier, framed art and a disco ball. Category displays have varied proportions and frames. The original room is presented as the source of the designer's approach, not as an operating physical store.
-- The disco ball links to a buyer-gift section. Copy reflects the owner's stated handout tradition without promising a gift with every order.
+- The entrance lamp, chandelier and painting open catalog details. The disco ball spins and sways; clicking or tapping toggles sparkles without navigating. The buyer-gift section remains below. Copy reflects the owner's stated handout tradition without promising a gift with every order.
 - Original catalog photographs remain unchanged. AI-assisted editorial cutouts are separate in `assets/editorial/`, with smaller responsive variants for phones. Asset prompts, provenance and the design audit are recorded in `../docs/storefront-art-direction.md`.
 - Homepage photography uses responsive original exports. Builds omit unused large exports and walkthrough frames. The earlier category research remains in `../research/design-2026-10-26.md`; the dimensional direction supersedes its equal-frame recommendation.
 - All prices remain provisional research guides. This preview does not accept orders or payments. Mature magazine covers require an explicit reveal. Attribution and authentication notes remain in item details.
