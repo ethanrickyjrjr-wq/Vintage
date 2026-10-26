@@ -8,6 +8,11 @@ by Sonnet subagents into `research/pricing/`, sample storefront built as an arti
 video frames live in `assets/` (previews only; originals stay in Ricky's Drive). Next: Ricky re-shoots
 the "needs photo" items. Shop name (Ricky, 2026-10-26): **Hollywood and Vine**.
 
+**Dashboard (2026-10-26):** ops dashboard researched (ten Sonnet reports in `research/dashboard/`) and
+designed: `docs/dashboard-design.md` (what and why) and `docs/dashboard-handoff.md` (build order, smoke
+tests, schema deltas). Nothing built. Step 0 is blocked on Ricky creating the eBay, Etsy, Shopify and
+Supabase Pro accounts and keys (handoff section 0). The next build session starts at the handoff.
+
 Drive folder (Ricky's second Google account, `u/1`): https://drive.google.com/drive/u/1/folders/1doMLpzt09qxtbSOjWFkBOCYSQQnb3HYD
 The Claude Drive connector is on the other account and cannot see it; fetch through the signed-in
 Chrome tab (Drive folder menu > Download gives one zip) or ask Ricky to share to the connector account.
@@ -64,6 +69,7 @@ A new key goes into the desk `.env` first, then here. Never into brain-platform.
 
 - `research/` — fetched pages and notes, dated, with the source URL at the top. Raw layer, never rewritten.
 - `tools/` — `crawl.sh`, `search.sh`. Add a script only when a third session would otherwise retype it.
+- `docs/` — design and handoff documents (synthesis, decisions). Rewritten as decisions change.
 - Anything worth keeping past this folder (a decision, a verified vendor fact, a lesson) goes to the
   desk wiki with `/compile <path>`; the wiki lives in `dev/Chief Of Staff/wiki/`.
 
