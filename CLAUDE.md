@@ -1,7 +1,16 @@
 # Vintage
 
-**Status (2026-10-26):** Day 0. Ricky asked for the folder; he has not yet said what Vintage is.
-Do not invent a purpose from the name. Ask him in one line, then record his answer here.
+**Status (2026-10-26):** Vintage is Ricky's vintage resale shop. A physical room already exists
+(burgundy walls, racks, lamps, art, a pink "do it for the plot" neon); the job is to put it online on
+Etsy and Shopify, probably with its own site later. First pass done 2026-10-26: Drive folder of 10
+photos + a 24 s walkthrough video pulled, inventory catalogued in `research/inventory/`, comps priced
+by Sonnet subagents into `research/pricing/`, sample storefront built as an artifact. Photos and
+video frames live in `assets/` (previews only; originals stay in Ricky's Drive). Next: Ricky re-shoots
+the "needs photo" items, picks a shop name, says whether a GitHub remote is wanted.
+
+Drive folder (Ricky's second Google account, `u/1`): https://drive.google.com/drive/u/1/folders/1doMLpzt09qxtbSOjWFkBOCYSQQnb3HYD
+The Claude Drive connector is on the other account and cannot see it; fetch through the signed-in
+Chrome tab (Drive folder menu > Download gives one zip) or ask Ricky to share to the connector account.
 
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
