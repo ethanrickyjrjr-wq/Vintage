@@ -1,0 +1,290 @@
+[Skip to content](https://tanstack.com/router/latest/docs/overview#site-main-content)
+[![TanStack](https://tanstack.com/images/brand/tanstack-wordmark-black.svg)](https://tanstack.com/)[Router](https://tanstack.com/router/latest)
+Libraries
+Loading libraries…
+[Blog](https://tanstack.com/blog)
+Blog & Release Notes
+About
+[YouTubeThe official TanStack channel.](https://youtube.com/@tan_stack)[WorkshopsLive sessions from the maintainers.](https://tanstack.com/workshops)[Release NotesThe latest releases and changelog.](https://tanstack.com/blog)
+Community
+Channels
+[DiscordReal-time community support.](https://tlinz.com/discord)[GitHubSource, issues, discussions, and releases.](https://github.com/TanStack)
+People & Work
+[MaintainersMeet the people maintaining the stack.](https://tanstack.com/maintainers)[ShowcaseProjects selected by the TanStack team.](https://tanstack.com/showcase)[Community projects](https://tanstack.com/community-projects)
+[TanChatNEW](https://tanstack.com/chat)
+Tools
+Tools
+[Application StarterAlphaGenerate TanStack app starters.](https://tanstack.com/application-starter)[StatsNPM and ecosystem usage data.](https://tanstack.com/stats/npm)
+[Merch](https://tanstack.com/shop)
+Support
+Support
+[Support OverviewFind the right support path.](https://tanstack.com/support)[PartnersCompanies supporting TanStack.](https://tanstack.com/partners)[OSS SponsorsSponsors keeping TanStack open source.](https://tanstack.com/#sponsors)[Enterprise SupportPrivate consulting and expert support.](https://tanstack.com/paid-support)ContactGet in touch with the TanStack team.
+About
+[EthosHow we approach open source.](https://tanstack.com/ethos)[TenetsThe values that shape TanStack libraries.](https://tanstack.com/tenets)[Design SystemLogos, tokens, and UI components.](https://tanstack.com/ds)
+Partners
+Sponsorships, placements, and partner pages.
+Work with
+![TanStack](https://tanstack.com/images/brand/tanstack-landscape-black.svg)![](https://tanstack.com/images/brand/tanstack-landscape-white.svg)
+Partnership Inquiry
+Search
+Ask AI
+[Log In](https://tanstack.com/login)
+LibrariesBlogCommunityTanChatNEWToolsMerchSupport
+SearchAsk AI[Sign In](https://tanstack.com/login)
+Back
+Router Docs
+![React](data:image/svg+xml,%3csvg%20viewBox='-11.5%20-10.23%2023%2020.46'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20fill='%2361dafb'%20r='2.05'/%3e%3cg%20fill='none'%20stroke='%2361dafb'%3e%3cellipse%20rx='11'%20ry='4.2'/%3e%3cellipse%20rx='11'%20ry='4.2'%20transform='matrix\(.5%20.8660254%20-.8660254%20.5%200%200\)'/%3e%3cellipse%20rx='11'%20ry='4.2'%20transform='matrix\(-.5%20.8660254%20-.8660254%20-.5%200%200\)'/%3e%3c/g%3e%3c/svg%3e)React
+v1Latest
+Search...
+K
+  * [Home](https://tanstack.com/router/latest)
+  * [Get Started](https://tanstack.com/router/latest/docs/overview)
+  * [Guides](https://tanstack.com/router/latest/docs/routing/routing-concepts)
+  * [API](https://tanstack.com/router/latest/docs/api/router)
+  * [Examples](https://tanstack.com/router/latest/docs/framework/react/examples/quickstart-file-based)
+
+
+Getting Started
+  * [Overview](https://tanstack.com/router/latest/docs/overview)
+  * [Quick Start](https://tanstack.com/router/latest/docs/quick-start)
+  * [Devtools](https://tanstack.com/router/latest/docs/devtools)
+  * [Decisions on DX](https://tanstack.com/router/latest/docs/decisions-on-dx)
+  * [Comparison](https://tanstack.com/router/latest/docs/comparison)
+  * [Frequently Asked Questions](https://tanstack.com/router/latest/docs/faq)
+
+
+Installation Guides
+  * [Manual Setup](https://tanstack.com/router/latest/docs/installation/manual)
+  * [Vite](https://tanstack.com/router/latest/docs/installation/with-vite)
+  * [Rspack/Rsbuild](https://tanstack.com/router/latest/docs/installation/with-rspack)
+  * [Webpack](https://tanstack.com/router/latest/docs/installation/with-webpack)
+  * [Esbuild](https://tanstack.com/router/latest/docs/installation/with-esbuild)
+  * [Router CLI](https://tanstack.com/router/latest/docs/installation/with-router-cli)
+  * [Migrate from React Router](https://tanstack.com/router/latest/docs/installation/migrate-from-react-router)
+  * [Migrate from React Location](https://tanstack.com/router/latest/docs/installation/migrate-from-react-location)
+
+
+MenuMenu
+[Home](https://tanstack.com/router/latest)[Get Started](https://tanstack.com/router/latest/docs/overview)[Guides](https://tanstack.com/router/latest/docs/routing/routing-concepts)[API](https://tanstack.com/router/latest/docs/api/router)[Examples](https://tanstack.com/router/latest/docs/framework/react/examples/quickstart-file-based)
+![React](data:image/svg+xml,%3csvg%20viewBox='-11.5%20-10.23%2023%2020.46'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20fill='%2361dafb'%20r='2.05'/%3e%3cg%20fill='none'%20stroke='%2361dafb'%3e%3cellipse%20rx='11'%20ry='4.2'/%3e%3cellipse%20rx='11'%20ry='4.2'%20transform='matrix\(.5%20.8660254%20-.8660254%20.5%200%200\)'/%3e%3cellipse%20rx='11'%20ry='4.2'%20transform='matrix\(-.5%20.8660254%20-.8660254%20-.5%200%200\)'/%3e%3c/g%3e%3c/svg%3e)React
+v1Latest
+Getting Started
+  * [Overview](https://tanstack.com/router/latest/docs/overview)
+  * [Quick Start](https://tanstack.com/router/latest/docs/quick-start)
+  * [Devtools](https://tanstack.com/router/latest/docs/devtools)
+  * [Decisions on DX](https://tanstack.com/router/latest/docs/decisions-on-dx)
+  * [Comparison](https://tanstack.com/router/latest/docs/comparison)
+  * [Frequently Asked Questions](https://tanstack.com/router/latest/docs/faq)
+
+
+Installation Guides
+  * [Manual Setup](https://tanstack.com/router/latest/docs/installation/manual)
+  * [Vite](https://tanstack.com/router/latest/docs/installation/with-vite)
+  * [Rspack/Rsbuild](https://tanstack.com/router/latest/docs/installation/with-rspack)
+  * [Webpack](https://tanstack.com/router/latest/docs/installation/with-webpack)
+  * [Esbuild](https://tanstack.com/router/latest/docs/installation/with-esbuild)
+  * [Router CLI](https://tanstack.com/router/latest/docs/installation/with-router-cli)
+  * [Migrate from React Router](https://tanstack.com/router/latest/docs/installation/migrate-from-react-router)
+  * [Migrate from React Location](https://tanstack.com/router/latest/docs/installation/migrate-from-react-location)
+
+
+[AI/LLM: This documentation page is available in plain markdown format at/router/latest/docs/overview.md](https://tanstack.com/router/latest/docs/overview.md)
+Getting StartedOn this page
+# Overview
+Copy page
+**TanStack Router is a router for building React and Solid applications**. Some of its features include:
+  * 100% inferred TypeScript support
+  * Typesafe navigation
+  * Nested Routing and layout routes (with pathless layouts)
+  * Built-in Route Loaders w/ SWR Caching
+  * Designed for client-side data caches (TanStack Query, SWR, etc.)
+  * Automatic route prefetching
+  * Asynchronous route elements and error boundaries
+  * File-based Route Generation
+  * Typesafe JSON-first Search Params state management APIs
+  * Path and Search Parameter Schema Validation
+  * Search Param Navigation APIs
+  * Custom Search Param parser/serializer support
+  * Search param middleware
+  * Route matching/loading middleware
+
+
+To get started quickly, head to the next page. For a more lengthy explanation, buckle up while I bring you up to speed!
+## "A Fork in the Route"[#](https://tanstack.com/router/latest/docs/overview#a-fork-in-the-route)
+Using a router to build applications is widely regarded as a must-have and is usually one of the first choices you’ll make in your tech stack.
+## Why TanStack Router?[#](https://tanstack.com/router/latest/docs/overview#why-tanstack-router)
+TanStack Router delivers on the same fundamental expectations as other routers that you’ve come to expect:
+  * Nested routes, layout routes, grouped routes
+  * File-based Routing
+  * Parallel data loading
+  * Prefetching
+  * URL Path Params
+  * Error Boundaries and Handling
+  * SSR
+  * Route Masking
+
+
+And it also delivers some new features that raise the bar:
+  * 100% inferred TypeScript support
+  * Typesafe navigation
+  * Built-in SWR Caching for loaders
+  * Designed for client-side data caches (TanStack Query, SWR, etc.)
+  * Typesafe JSON-first Search Params state management APIs
+  * Path and Search Parameter Schema Validation
+  * Search Parameter Navigation APIs
+  * Custom Search Param parser/serializer support
+  * Search param middleware
+  * Inherited Route Context
+  * Mixed file-based and code-based routing
+
+
+Let’s dive into some of the more important ones in more detail!
+## 100% Inferred TypeScript Support[#](https://tanstack.com/router/latest/docs/overview#100-inferred-typescript-support)
+Everything these days is written “in Typescript” or at the very least offers type definitions that are veneered over runtime functionality, but too few packages in the ecosystem actually design their APIs with TypeScript in mind. So while I’m pleased that your router is auto-completing your option fields and catching a few property/method typos here and there, there is much more to be had.
+  * TanStack Router is fully aware of all of your routes and their configuration at any given point in your code. This includes the path, path params, search params, context, and any other configuration you’ve provided. Ultimately this means that you can navigate to any route in your app with 100% type safety and confidence that your link or navigate call will succeed.
+  * TanStack Router provides lossless type-inference. It uses countless generic type parameters to enforce and propagate any type information you give it throughout the rest of its API and ultimately your app. No other router offers this level of type safety and developer confidence.
+
+
+What does all of that mean for you?
+  * Faster feature development with auto-completion and type hints
+  * Safer and faster refactors
+  * Confidence that your code will work as expected
+
+
+## 1st Class Search Parameters[#](https://tanstack.com/router/latest/docs/overview#1st-class-search-parameters)
+Search parameters are often an afterthought, treated like a black box of strings (or string) that you can parse and update, but not much else. Existing solutions are **not** type-safe either, adding to the caution that is required to deal with them. Even the most "modern" frameworks and routers leave it up to you to figure out how to manage this state. Sometimes they'll parse the search string into an object for you, or sometimes you're left to do it yourself with URLSearchParams.
+Let's step back and remember that **search params are the most powerful state manager in your entire application.** They are global, serializable, bookmarkable, and shareable making them the perfect place to store any kind of state that needs to survive a page refresh or a social share.
+To live up to that responsibility, search parameters are a first-class citizen in TanStack Router. While still based on standard URLSearchParams, TanStack Router uses a powerful parser/serializer to manage deeper and more complex data structures in your search params, all while keeping them type-safe and easy to work with.
+**It's like having useState right in the URL!**
+Search parameters are:
+  * Automatically parsed and serialized as JSON
+  * Validated and typed
+  * Inherited from parent routes
+  * Accessible in loaders, components, and hooks
+  * Easily modified with the useSearch hook, Link, navigate, and router.navigate APIs
+  * Customizable with a custom search filters and middleware
+  * Subscribed via fine-grained search param selectors for efficient re-renders
+
+
+Once you start using TanStack Router's search parameters, you'll wonder how you ever lived without them.
+## Built-In Caching and Friendly Data Loading[#](https://tanstack.com/router/latest/docs/overview#built-in-caching-and-friendly-data-loading)
+Data loading is a critical part of any application and while most existing routers offer some form of critical data loading APIs, they often fall short when it comes to caching and data lifecycle management. Existing solutions suffer from a few common problems:
+  * No caching at all. Data is always fresh, but your users are left waiting for frequently accessed data to load over and over again.
+  * Overly-aggressive caching. Data is cached for too long, leading to stale data and a poor user experience.
+  * Blunt invalidation strategies and APIs. Data may be invalidated too often, leading to unnecessary network requests and wasted resources, or you may not have any fine-grained control over when data is invalidated at all.
+
+
+TanStack Router solves these problems with a two-prong approach to caching and data loading:
+### Built-in Cache[#](https://tanstack.com/router/latest/docs/overview#built-in-cache)
+TanStack Router provides a light-weight built-in caching layer that works seamlessly with the Router. This caching layer is loosely based on TanStack Query, but with fewer features and a much smaller API surface area. Like TanStack Query, sane but powerful defaults guarantee that your data is cached for reuse, invalidated when necessary, and garbage collected when not in use. It also provides a simple API for invalidating the cache manually when needed.
+### Flexible & Powerful Data Lifecycle APIs[#](https://tanstack.com/router/latest/docs/overview#flexible-powerful-data-lifecycle-apis)
+TanStack Router is designed with a flexible and powerful data loading API that more easily integrates with existing data fetching libraries like TanStack Query, SWR, Apollo, Relay, or even your own custom data fetching solution. Configurable APIs like context, beforeLoad, loaderDeps and loader work in unison to make it easy to define declarative data dependencies, prefetch data, and manage the lifecycle of an external data source with ease.
+## Inherited Route Context[#](https://tanstack.com/router/latest/docs/overview#inherited-route-context)
+TanStack Router's router and route context is a powerful feature that allows you to define context that is specific to a route which is then inherited by all child routes. Even the router and root routes themselves can provide context. Context can be built up both synchronously and asynchronously, and can be used to share data, configuration, or even functions between routes and route configurations. This is especially useful for scenarios like:
+  * Authentication and Authorization
+  * Hybrid SSR/CSR data fetching and preloading
+  * Theming
+  * Singletons and global utilities
+  * Curried or partial application across preloading, loading, and rendering stages
+
+
+Also, what would route context be if it weren't type-safe? TanStack Router's route context is fully type-safe and inferred at zero cost to you.
+## File-based and/or Code-Based Routing[#](https://tanstack.com/router/latest/docs/overview#file-based-and-or-code-based-routing)
+TanStack Router supports both file-based and code-based routing at the same time. This flexibility allows you to choose the approach that best fits your project's needs.
+TanStack Router's file-based routing approach is uniquely user-facing. Route configuration is generated for you either by the Vite plugin or TanStack Router CLI, leaving the usage of said generated code up to you! This means that you're always in total control of your routes and router, even if you use file-based routing.
+## Acknowledgements[#](https://tanstack.com/router/latest/docs/overview#acknowledgements)
+TanStack Router builds on concepts and patterns popularized by many other OSS projects, including:
+  * [TRPC](https://trpc.io/)
+  * [Remix](https://remix.run)
+  * [Chicane](https://swan-io.github.io/chicane/)
+  * [Next.js](https://nextjs.org)
+
+
+We acknowledge the investment, risk and research that went into their development, but are excited to push the bar they have set even higher.
+## Let's go![#](https://tanstack.com/router/latest/docs/overview#let-s-go)
+Enough overview, there's so much more to do with TanStack Router. Hit that next button and let's get started!
+[Edit on GitHub](https://github.com/tanstack/router/edit/main/docs/router/overview.md)
+[ NextQuick Start ](https://tanstack.com/router/latest/docs/quick-start)
+### On this page
+  * ["A Fork in the Route"](https://tanstack.com/router/latest/docs/overview#a-fork-in-the-route "a-fork-in-the-route")
+  * [Why TanStack Router?](https://tanstack.com/router/latest/docs/overview#why-tanstack-router "why-tanstack-router")
+  * [100% Inferred TypeScript Support](https://tanstack.com/router/latest/docs/overview#100-inferred-typescript-support "100-inferred-typescript-support")
+  * [1st Class Search Parameters](https://tanstack.com/router/latest/docs/overview#1st-class-search-parameters "1st-class-search-parameters")
+  * [Built-In Caching and Friendly Data Loading](https://tanstack.com/router/latest/docs/overview#built-in-caching-and-friendly-data-loading "built-in-caching-and-friendly-data-loading")
+  * [Built-in Cache](https://tanstack.com/router/latest/docs/overview#built-in-cache "built-in-cache")
+  * [Flexible & Powerful Data Lifecycle APIs](https://tanstack.com/router/latest/docs/overview#flexible-powerful-data-lifecycle-apis "flexible-powerful-data-lifecycle-apis")
+  * [Inherited Route Context](https://tanstack.com/router/latest/docs/overview#inherited-route-context "inherited-route-context")
+  * [File-based and/or Code-Based Routing](https://tanstack.com/router/latest/docs/overview#file-based-and-or-code-based-routing "file-based-and-or-code-based-routing")
+  * [Acknowledgements](https://tanstack.com/router/latest/docs/overview#acknowledgements "acknowledgements")
+  * [Let's go!](https://tanstack.com/router/latest/docs/overview#let-s-go "let-s-go")
+
+
+![](https://static.scarf.sh/a.png?x-pxid=3d14fff2-f326-4929-b5e1-6ecf953d24f4&key=bda5bb8c-e221-4a4a-94b8-0773e5df5bd0)
+[Partners](https://tanstack.com/partners)Become a Partner
+Gold
+[ ![Cloudflare](https://tanstack.com/assets/cloudflare-black-6Ojsn8yh.svg)![Cloudflare](https://tanstack.com/assets/cloudflare-white-Co-Tyjbl.svg) ](https://www.cloudflare.com?utm_source=tanstack)[ ![Vercel](data:image/svg+xml,%3csvg%20width='2048'%20height='407'%20viewBox='0%200%202048%20407'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M467.444%20406.664L233.722%200.190918L0%20406.664H467.444ZM703.186%20388.161L898.51%2018.668H814.024L679.286%20287.007L544.547%2018.668H460.061L655.385%20388.161H703.186ZM2034.31%2018.668V388.162H1964.37V18.668H2034.31ZM1644.98%20250.25C1644.98%20221.454%201650.99%20196.127%201663.01%20174.27C1675.03%20152.412%201691.79%20135.586%201713.28%20123.79C1734.77%20111.994%201759.91%20106.095%201788.69%20106.095C1814.19%20106.095%201837.14%20111.647%201857.54%20122.749C1877.94%20133.851%201894.15%20150.331%201906.17%20172.188C1918.19%20194.046%201924.39%20220.76%201924.75%20252.332V268.465H1718.75C1720.2%20291.363%201726.94%20309.404%201738.96%20322.588C1751.35%20335.425%201767.93%20341.843%201788.69%20341.843C1801.8%20341.843%201813.83%20338.374%201824.75%20331.435C1835.68%20324.496%201843.88%20315.129%201849.34%20303.333L1920.93%20308.537C1912.18%20334.557%201895.79%20355.374%201871.75%20370.986C1847.7%20386.599%201820.02%20394.405%201788.69%20394.405C1759.91%20394.405%201734.77%20388.507%201713.28%20376.711C1691.79%20364.915%201675.03%20348.088%201663.01%20326.231C1650.99%20304.373%201644.98%20279.047%201644.98%20250.25ZM1852.62%20224.23C1850.07%20201.678%201842.97%20185.199%201831.31%20174.79C1819.65%20164.035%201805.45%20158.657%201788.69%20158.657C1769.38%20158.657%201753.72%20164.382%201741.7%20175.831C1729.67%20187.28%201722.21%20203.413%201719.29%20224.23H1852.62ZM1526.96%20174.79C1538.62%20184.158%201545.9%20197.168%201548.82%20213.821L1620.94%20210.178C1618.39%20189.015%201610.93%20170.627%201598.54%20155.014C1586.15%20139.402%201570.13%20127.433%201550.45%20119.106C1531.15%20110.432%201509.84%20106.095%201486.52%20106.095C1457.74%20106.095%201432.61%20111.994%201411.11%20123.79C1389.62%20135.586%201372.86%20152.412%201360.84%20174.27C1348.82%20196.127%201342.81%20221.454%201342.81%20250.25C1342.81%20279.047%201348.82%20304.373%201360.84%20326.231C1372.86%20348.088%201389.62%20364.915%201411.11%20376.711C1432.61%20388.507%201457.74%20394.405%201486.52%20394.405C1510.56%20394.405%201532.42%20390.068%201552.09%20381.395C1571.77%20372.374%201587.79%20359.711%201600.18%20343.404C1612.57%20327.098%201620.03%20308.016%201622.58%20286.159L1549.91%20283.036C1547.36%20301.424%201540.25%20315.649%201528.6%20325.71C1516.94%20335.425%201502.91%20340.282%201486.52%20340.282C1463.94%20340.282%201446.45%20332.476%201434.06%20316.863C1421.68%20301.251%201415.49%20279.047%201415.49%20250.25C1415.49%20221.454%201421.68%20199.25%201434.06%20183.637C1446.45%20168.025%201463.94%20160.219%201486.52%20160.219C1502.19%20160.219%201515.66%20165.076%201526.96%20174.79ZM1172.15%20112.328H1237.24L1239.12%20165.414C1243.74%20150.388%201250.16%20138.719%201258.39%20130.407C1270.32%20118.355%201286.96%20112.328%201308.29%20112.328H1334.87V169.148H1307.75C1292.56%20169.148%201280.09%20171.214%201270.32%20175.346C1260.92%20179.478%201253.69%20186.021%201248.63%20194.975C1243.93%20203.928%201241.58%20215.292%201241.58%20229.066V388.161H1172.15V112.328ZM871.925%20174.27C859.904%20196.127%20853.893%20221.454%20853.893%20250.25C853.893%20279.047%20859.904%20304.373%20871.925%20326.231C883.947%20348.088%20900.704%20364.915%20922.198%20376.711C943.691%20388.507%20968.827%20394.405%20997.606%20394.405C1028.93%20394.405%201056.62%20386.599%201080.66%20370.986C1104.71%20355.374%201121.1%20334.557%201129.84%20308.537L1058.26%20303.333C1052.8%20315.129%201044.6%20324.496%201033.67%20331.435C1022.74%20338.374%201010.72%20341.843%20997.606%20341.843C976.841%20341.843%20960.266%20335.425%20947.88%20322.588C935.858%20309.404%20929.119%20291.363%20927.662%20268.465H1133.67V252.332C1133.3%20220.76%201127.11%20194.046%201115.09%20172.188C1103.07%20150.331%201086.86%20133.851%201066.46%20122.749C1046.06%20111.647%201023.11%20106.095%20997.606%20106.095C968.827%20106.095%20943.691%20111.994%20922.198%20123.79C900.704%20135.586%20883.947%20152.412%20871.925%20174.27ZM1040.23%20174.79C1051.88%20185.199%201058.99%20201.678%201061.54%20224.23H928.208C931.123%20203.413%20938.591%20187.28%20950.612%20175.831C962.634%20164.382%20978.298%20158.657%20997.606%20158.657C1014.36%20158.657%201028.57%20164.035%201040.23%20174.79Z'%20fill='black'/%3e%3c/svg%3e)![Vercel](data:image/svg+xml,%3csvg%20width='2048'%20height='407'%20viewBox='0%200%202048%20407'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M467.444%20406.809L233.722%200.335938L0%20406.809H467.444ZM703.186%20388.306L898.51%2018.813H814.024L679.286%20287.152L544.547%2018.813H460.061L655.385%20388.306H703.186ZM2034.31%2018.813V388.307H1964.37V18.813H2034.31ZM1644.98%20250.395C1644.98%20221.599%201650.99%20196.272%201663.01%20174.415C1675.03%20152.557%201691.79%20135.731%201713.28%20123.935C1734.77%20112.139%201759.91%20106.241%201788.69%20106.241C1814.19%20106.241%201837.14%20111.792%201857.54%20122.894C1877.94%20133.996%201894.15%20150.476%201906.17%20172.333C1918.19%20194.191%201924.39%20220.905%201924.75%20252.477V268.61H1718.75C1720.2%20291.508%201726.94%20309.549%201738.96%20322.733C1751.35%20335.57%201767.93%20341.988%201788.69%20341.988C1801.8%20341.988%201813.83%20338.519%201824.75%20331.58C1835.68%20324.641%201843.88%20315.274%201849.34%20303.478L1920.93%20308.682C1912.18%20334.702%201895.79%20355.519%201871.75%20371.131C1847.7%20386.744%201820.02%20394.55%201788.69%20394.55C1759.91%20394.55%201734.77%20388.652%201713.28%20376.856C1691.79%20365.06%201675.03%20348.233%201663.01%20326.376C1650.99%20304.518%201644.98%20279.192%201644.98%20250.395ZM1852.62%20224.375C1850.07%20201.823%201842.97%20185.344%201831.31%20174.935C1819.65%20164.18%201805.45%20158.802%201788.69%20158.802C1769.38%20158.802%201753.72%20164.527%201741.7%20175.976C1729.67%20187.425%201722.21%20203.558%201719.29%20224.375H1852.62ZM1526.96%20174.935C1538.62%20184.303%201545.9%20197.313%201548.82%20213.966L1620.94%20210.323C1618.39%20189.16%201610.93%20170.772%201598.54%20155.159C1586.15%20139.547%201570.13%20127.578%201550.45%20119.251C1531.15%20110.577%201509.84%20106.241%201486.52%20106.241C1457.74%20106.241%201432.61%20112.139%201411.11%20123.935C1389.62%20135.731%201372.86%20152.557%201360.84%20174.415C1348.82%20196.272%201342.81%20221.599%201342.81%20250.395C1342.81%20279.192%201348.82%20304.518%201360.84%20326.376C1372.86%20348.233%201389.62%20365.06%201411.11%20376.856C1432.61%20388.652%201457.74%20394.55%201486.52%20394.55C1510.56%20394.55%201532.42%20390.213%201552.09%20381.54C1571.77%20372.519%201587.79%20359.856%201600.18%20343.549C1612.57%20327.243%201620.03%20308.161%201622.58%20286.304L1549.91%20283.181C1547.36%20301.569%201540.25%20315.794%201528.6%20325.855C1516.94%20335.57%201502.91%20340.427%201486.52%20340.427C1463.94%20340.427%201446.45%20332.621%201434.06%20317.008C1421.68%20301.396%201415.49%20279.192%201415.49%20250.395C1415.49%20221.599%201421.68%20199.395%201434.06%20183.782C1446.45%20168.17%201463.94%20160.364%201486.52%20160.364C1502.19%20160.364%201515.66%20165.221%201526.96%20174.935ZM1172.15%20112.473H1237.24L1239.12%20165.559C1243.74%20150.533%201250.16%20138.864%201258.39%20130.552C1270.32%20118.5%201286.96%20112.473%201308.29%20112.473H1334.87V169.293H1307.75C1292.56%20169.293%201280.09%20171.359%201270.32%20175.491C1260.92%20179.624%201253.69%20186.166%201248.63%20195.12C1243.93%20204.073%201241.58%20215.437%201241.58%20229.211V388.306H1172.15V112.473ZM871.925%20174.415C859.904%20196.272%20853.893%20221.599%20853.893%20250.395C853.893%20279.192%20859.904%20304.518%20871.925%20326.376C883.947%20348.233%20900.704%20365.06%20922.198%20376.856C943.691%20388.652%20968.827%20394.55%20997.606%20394.55C1028.93%20394.55%201056.62%20386.744%201080.66%20371.131C1104.71%20355.519%201121.1%20334.702%201129.84%20308.682L1058.26%20303.478C1052.8%20315.274%201044.6%20324.641%201033.67%20331.58C1022.74%20338.519%201010.72%20341.988%20997.606%20341.988C976.841%20341.988%20960.266%20335.57%20947.88%20322.733C935.858%20309.549%20929.119%20291.508%20927.662%20268.61H1133.67V252.477C1133.3%20220.905%201127.11%20194.191%201115.09%20172.333C1103.07%20150.476%201086.86%20133.996%201066.46%20122.894C1046.06%20111.792%201023.11%20106.241%20997.606%20106.241C968.827%20106.241%20943.691%20112.139%20922.198%20123.935C900.704%20135.731%20883.947%20152.557%20871.925%20174.415ZM1040.23%20174.935C1051.88%20185.344%201058.99%20201.823%201061.54%20224.375H928.208C931.123%20203.558%20938.591%20187.425%20950.612%20175.976C962.634%20164.527%20978.298%20158.802%20997.606%20158.802C1014.36%20158.802%201028.57%20164.18%201040.23%20174.935Z'%20fill='white'/%3e%3c/svg%3e) ](https://vercel.com?utm_source=tanstack&utm_medium=referral&utm_campaign=gold-launch)[ ![Lovable](https://tanstack.com/assets/lovable-black-1mVxR6Bj.svg)![Lovable](https://tanstack.com/assets/lovable-white-DLB1BxKZ.svg) ](https://lovable.dev?utm_source=tanstack)[ ![CodeRabbit](https://tanstack.com/assets/coderabbit-light-ggTFqYhV.svg)![CodeRabbit](https://tanstack.com/assets/coderabbit-dark-C3hjOiHQ.svg) ](https://coderabbit.link/tanstack?utm_source=tanstack&via=tanstack)[ ![Railway](https://tanstack.com/assets/railway-black-DeBDfNao.svg)![Railway](https://tanstack.com/assets/railway-white-CFKFsfw2.svg) ](https://railway.com/?utm_medium=sponsor&utm_source=oss&utm_campaign=tanstack)[ ![Netlify](data:image/svg+xml,%3csvg%20width='512'%20height='209'%20viewBox='0%200%20512%20209'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url\(%23clip0_235_8\)'%3e%3cpath%20d='M117.436%20207.036V154.604L118.529%20153.51H129.452L130.545%20154.604V207.036L129.452%20208.13H118.529L117.436%20207.036Z'%20fill='%2305BDBA'/%3e%3cpath%20d='M117.436%2053.5225V1.09339L118.529%200H129.452L130.545%201.09339V53.5225L129.452%2054.6159H118.529L117.436%2053.5225Z'%20fill='%2305BDBA'/%3e%3cpath%20d='M69.9539%20169.238H68.4094L60.6869%20161.512V159.967L78.7201%20141.938L86.8976%20141.942L87.9948%20143.031V151.209L69.9539%20169.238Z'%20fill='%2305BDBA'/%3e%3cpath%20d='M69.9462%2038.8917H68.4017L60.6792%2046.6181V48.1626L78.7124%2066.192L86.8899%2066.1882L87.9871%2065.0986V56.9212L69.9462%2038.8917Z'%20fill='%2305BDBA'/%3e%3cpath%20d='M1.09339%2097.5104H75.3711L76.4645%2098.6038V109.526L75.3711%20110.62H1.09339L0%20109.526V98.6038L1.09339%2097.5104Z'%20fill='%2305BDBA'/%3e%3cpath%20d='M440.999%2097.5104H510.91L512.004%2098.6038V109.526L510.91%20110.62H436.633L435.539%20109.526L439.905%2098.6038L440.999%2097.5104Z'%20fill='%2305BDBA'/%3e%3cpath%20d='M212.056%20108.727L210.963%20109.821H177.079L175.986%20110.914C175.986%20113.101%20178.173%20119.657%20186.916%20119.657C190.196%20119.657%20193.472%20118.564%20194.566%20116.377L195.659%20115.284H208.776L209.869%20116.377C208.776%20122.934%20203.313%20132.774%20186.916%20132.774C168.336%20132.774%20159.589%20119.657%20159.589%20104.357C159.589%2089.0576%20168.332%2075.9408%20185.822%2075.9408C203.313%2075.9408%20212.056%2089.0576%20212.056%20104.357V108.731V108.727ZM195.659%2097.7971C195.659%2096.7037%20194.566%2089.0538%20185.822%2089.0538C177.079%2089.0538%20175.986%2096.7037%20175.986%2097.7971L177.079%2098.8905H194.566L195.659%2097.7971Z'%20fill='%23014847'/%3e%3cpath%20d='M242.66%20115.284C242.66%20117.47%20243.753%20118.564%20245.94%20118.564H255.776L256.87%20119.657V130.587L255.776%20131.681H245.94C236.103%20131.681%20227.36%20127.307%20227.36%20115.284V91.2368L226.266%2090.1434H218.617L217.523%2089.05V78.1199L218.617%2077.0265H226.266L227.36%2075.9332V66.0965L228.453%2065.0031H241.57L242.663%2066.0965V75.9332L243.757%2077.0265H255.78L256.874%2078.1199V89.05L255.78%2090.1434H243.757L242.663%2091.2368V115.284H242.66Z'%20fill='%23014847'/%3e%3cpath%20d='M283.1%20131.681H269.983L268.889%20130.587V56.2636L269.983%2055.1702H283.1L284.193%2056.2636V130.587L283.1%20131.681Z'%20fill='%23014847'/%3e%3cpath%20d='M312.61%2068.2871H299.493L298.399%2067.1937V56.2636L299.493%2055.1702H312.61L313.703%2056.2636V67.1937L312.61%2068.2871ZM312.61%20131.681H299.493L298.399%20130.587V78.1237L299.493%2077.0304H312.61L313.703%2078.1237V130.587L312.61%20131.681Z'%20fill='%23014847'/%3e%3cpath%20d='M363.98%2056.2636V67.1937L362.886%2068.2871H353.05C350.863%2068.2871%20349.769%2069.3805%20349.769%2071.5672V75.9408L350.863%2077.0342H361.793L362.886%2078.1276V89.0576L361.793%2090.151H350.863L349.769%2091.2444V130.591L348.676%20131.684H335.559L334.466%20130.591V91.2444L333.372%2090.151H325.723L324.629%2089.0576V78.1276L325.723%2077.0342H333.372L334.466%2075.9408V71.5672C334.466%2059.5438%20343.209%2055.1702%20353.046%2055.1702H362.882L363.976%2056.2636H363.98Z'%20fill='%23014847'/%3e%3cpath%20d='M404.42%20132.774C400.046%20143.704%20395.677%20150.261%20380.373%20150.261H374.906L373.813%20149.167V138.237L374.906%20137.144H380.373C385.836%20137.144%20386.929%20136.05%20388.023%20132.77V131.677L370.536%2089.05V78.1199L371.63%2077.0265H381.466L382.56%2078.1199L395.677%20115.284H396.77L409.887%2078.1199L410.98%2077.0265H420.817L421.91%2078.1199V89.05L404.424%20132.77L404.42%20132.774Z'%20fill='%23014847'/%3e%3cpath%20d='M135.454%20131.681L134.361%20130.587L134.368%2098.9172C134.368%2093.4541%20132.22%2089.2182%20125.625%2089.0806C122.234%2088.9926%20118.354%2089.0729%20114.209%2089.2488L113.59%2089.8834L113.598%20130.587L112.504%20131.681H99.3913L98.2979%20130.587V77.5388L99.3913%2076.4454L128.901%2076.1778C143.685%2076.1778%20149.668%2086.3356%20149.668%2097.8009V130.587L148.575%20131.681H135.454Z'%20fill='%23014847'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_235_8'%3e%3crect%20width='512'%20height='208.126'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)![Netlify](data:image/svg+xml,%3csvg%20width='512'%20height='209'%20viewBox='0%200%20512%20209'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url\(%23clip0_235_26\)'%3e%3cpath%20d='M117.436%20207.036V154.604L118.529%20153.51H129.452L130.545%20154.604V207.036L129.452%20208.13H118.529L117.436%20207.036Z'%20fill='%2332E6E2'/%3e%3cpath%20d='M117.436%2053.5225V1.09339L118.529%200H129.452L130.545%201.09339V53.5225L129.452%2054.6159H118.529L117.436%2053.5225Z'%20fill='%2332E6E2'/%3e%3cpath%20d='M69.9539%20169.238H68.4094L60.6869%20161.512V159.967L78.7201%20141.938L86.8976%20141.942L87.9948%20143.031V151.209L69.9539%20169.238Z'%20fill='%2332E6E2'/%3e%3cpath%20d='M69.9462%2038.8917H68.4017L60.6792%2046.6181V48.1626L78.7124%2066.192L86.8899%2066.1882L87.9871%2065.0986V56.9212L69.9462%2038.8917Z'%20fill='%2332E6E2'/%3e%3cpath%20d='M1.09339%2097.5104H75.3711L76.4645%2098.6038V109.526L75.3711%20110.62H1.09339L0%20109.526V98.6038L1.09339%2097.5104Z'%20fill='%2332E6E2'/%3e%3cpath%20d='M440.999%2097.5104H510.91L512.004%2098.6038V109.526L510.91%20110.62H436.633L435.539%20109.526L439.905%2098.6038L440.999%2097.5104Z'%20fill='%2332E6E2'/%3e%3cpath%20d='M212.056%20108.727L210.963%20109.821H177.079L175.986%20110.914C175.986%20113.101%20178.173%20119.657%20186.916%20119.657C190.196%20119.657%20193.472%20118.564%20194.566%20116.377L195.659%20115.284H208.776L209.869%20116.377C208.776%20122.934%20203.313%20132.774%20186.916%20132.774C168.336%20132.774%20159.589%20119.657%20159.589%20104.357C159.589%2089.0576%20168.332%2075.9408%20185.822%2075.9408C203.313%2075.9408%20212.056%2089.0576%20212.056%20104.357V108.731V108.727ZM195.659%2097.7971C195.659%2096.7037%20194.566%2089.0538%20185.822%2089.0538C177.079%2089.0538%20175.986%2096.7037%20175.986%2097.7971L177.079%2098.8905H194.566L195.659%2097.7971Z'%20fill='white'/%3e%3cpath%20d='M242.66%20115.284C242.66%20117.47%20243.753%20118.564%20245.94%20118.564H255.776L256.87%20119.657V130.587L255.776%20131.681H245.94C236.103%20131.681%20227.36%20127.307%20227.36%20115.284V91.2368L226.266%2090.1434H218.617L217.523%2089.05V78.1199L218.617%2077.0265H226.266L227.36%2075.9332V66.0965L228.453%2065.0031H241.57L242.663%2066.0965V75.9332L243.757%2077.0265H255.78L256.874%2078.1199V89.05L255.78%2090.1434H243.757L242.663%2091.2368V115.284H242.66Z'%20fill='white'/%3e%3cpath%20d='M283.1%20131.681H269.983L268.889%20130.587V56.2636L269.983%2055.1702H283.1L284.193%2056.2636V130.587L283.1%20131.681Z'%20fill='white'/%3e%3cpath%20d='M312.61%2068.2871H299.493L298.399%2067.1937V56.2636L299.493%2055.1702H312.61L313.703%2056.2636V67.1937L312.61%2068.2871ZM312.61%20131.681H299.493L298.399%20130.587V78.1237L299.493%2077.0304H312.61L313.703%2078.1237V130.587L312.61%20131.681Z'%20fill='white'/%3e%3cpath%20d='M363.98%2056.2636V67.1937L362.886%2068.2871H353.05C350.863%2068.2871%20349.769%2069.3805%20349.769%2071.5672V75.9408L350.863%2077.0342H361.793L362.886%2078.1276V89.0576L361.793%2090.151H350.863L349.769%2091.2444V130.591L348.676%20131.684H335.559L334.466%20130.591V91.2444L333.372%2090.151H325.723L324.629%2089.0576V78.1276L325.723%2077.0342H333.372L334.466%2075.9408V71.5672C334.466%2059.5438%20343.209%2055.1702%20353.046%2055.1702H362.882L363.976%2056.2636H363.98Z'%20fill='white'/%3e%3cpath%20d='M404.42%20132.774C400.046%20143.704%20395.677%20150.261%20380.373%20150.261H374.906L373.813%20149.167V138.237L374.906%20137.144H380.373C385.836%20137.144%20386.929%20136.05%20388.023%20132.77V131.677L370.536%2089.05V78.1199L371.63%2077.0265H381.466L382.56%2078.1199L395.677%20115.284H396.77L409.887%2078.1199L410.98%2077.0265H420.817L421.91%2078.1199V89.05L404.424%20132.77L404.42%20132.774Z'%20fill='white'/%3e%3cpath%20d='M135.454%20131.681L134.361%20130.587L134.368%2098.9172C134.368%2093.4541%20132.22%2089.2182%20125.625%2089.0806C122.234%2088.9926%20118.354%2089.0729%20114.209%2089.2488L113.59%2089.8834L113.598%20130.587L112.504%20131.681H99.3913L98.2979%20130.587V77.5388L99.3913%2076.4454L128.901%2076.1778C143.685%2076.1778%20149.668%2086.3356%20149.668%2097.8009V130.587L148.575%20131.681H135.454Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_235_26'%3e%3crect%20width='512'%20height='208.126'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e) ](https://netlify.com?utm_source=tanstack)[ ![Render](https://tanstack.com/assets/render-black-Cz1XqOfh.svg)![Render](https://tanstack.com/assets/render-white-D4l33ygB.svg) ](https://render.com/tanstack?utm_source=tanstack&utm_medium=referral&utm_campaign=gold-launch&utm_content=docs_rail)
+Silver
+[ ![WorkOS](https://tanstack.com/assets/workos-black-DnPI5Ve5.svg)![WorkOS](data:image/svg+xml,%3csvg%20width='880'%20height='168'%20viewBox='0%200%20880%20168'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url\(%23clip0_1647_45\)'%3e%3cpath%20d='M255.264%2025.3765H279.579L297.086%2097.519C300.332%20111.135%20300.976%20119.244%20300.976%20119.244H301.304C301.304%20119.244%20302.435%20111.306%20305.681%2097.519L322.373%2025.3765H349.934L367.599%2097.519C371.003%20111.622%20371.818%20119.244%20371.818%20119.244H372.304C372.304%20119.244%20372.632%20111.622%20375.866%2097.519L392.729%2025.3765H417.043L386.249%20143.717H359.174L340.536%2072.0612C336.646%2056.4997%20336.318%2049.5334%20336.318%2049.5334H335.99C335.99%2049.5334%20335.661%2056.4997%20332.099%2072.0612L314.592%20143.717H286.715L255.264%2025.3765Z'%20fill='white'/%3e%3cpath%20d='M412.984%20100.726C412.984%2073.6509%20430.491%2056.1442%20456.921%2056.1442C483.181%2056.1442%20500.688%2073.6509%20500.688%20100.726C500.688%20127.958%20483.181%20145.635%20456.921%20145.635C430.503%20145.623%20412.984%20127.958%20412.984%20100.726ZM477.99%20100.726C477.99%2083.2189%20469.565%2073.3227%20456.921%2073.3227C443.305%2073.3227%20435.682%2084.3495%20435.682%20100.726C435.682%20118.561%20444.107%20128.445%20456.921%20128.445C470.537%20128.445%20477.99%20117.418%20477.99%20100.726Z'%20fill='white'/%3e%3cpath%20d='M511.545%2057.4711H533.101V73.3609H533.587C537.319%2065.0938%20546.231%2056.8267%20561.464%2056.8267C564.054%2056.8267%20565.683%2057.155%20566.813%2057.4711V79.0263H566.169C566.169%2079.0263%20564.224%2078.3819%20558.875%2078.3819C542.182%2078.3819%20533.101%2088.266%20533.101%20106.745V143.704H511.545V57.4711Z'%20fill='white'/%3e%3cpath%20d='M576.868%2025.3765H598.423V63.3079C598.423%2085.6776%20598.095%2089.7261%20598.095%2089.7261H598.423L630.519%2057.4723H657.424L619.833%2094.7592L663.442%20143.717H637.984L606.532%20108.047L598.423%20115.986V143.705H576.868V25.3765Z'%20fill='white'/%3e%3cpath%20d='M663.757%2084.9796C663.757%2048.5072%20686.455%2024.1923%20720.496%2024.1923C754.537%2024.1923%20777.235%2048.5072%20777.235%2084.9796C777.235%20121.452%20754.537%20145.767%20720.496%20145.767C686.455%20145.767%20663.757%20121.452%20663.757%2084.9796ZM753.722%2084.9796C753.722%2060.1784%20740.434%2043.474%20720.483%2043.474C700.533%2043.474%20687.257%2060.1784%20687.257%2084.9796C687.257%20109.781%20700.545%20126.485%20720.483%20126.485C740.422%20126.485%20753.722%20109.781%20753.722%2084.9796Z'%20fill='white'/%3e%3cpath%20d='M785.488%20104.326H810.131C810.131%20118.271%20819.699%20126.052%20834.288%20126.052C846.603%20126.052%20855.041%20119.888%20855.041%20111.135C855.041%20101.25%20848.561%2098.6488%20827.966%2094.6003C809.158%2090.868%20789.22%2084.5461%20789.22%2059.9029C789.22%2039.3203%20806.727%2023.7587%20833.473%2023.7587C861.35%2023.7587%20878.541%2038.3477%20878.541%2060.3892H853.898C853.898%2049.6906%20845.631%2043.0405%20833.473%2043.0405C821.158%2043.0405%20813.535%2049.0341%20813.535%2057.7875C813.535%2067.0272%20818.884%2070.5893%20835.419%2073.9934C859.892%2079.1847%20880%2081.9323%20880%20109.165C880%20130.745%20861.192%20145.333%20833.473%20145.333C805.268%20145.333%20785.488%20128.957%20785.488%20104.326Z'%20fill='white'/%3e%3cpath%20d='M0%2084.0003C0%2087.6782%200.967855%2091.356%202.83904%2094.5177L36.7785%20153.299C40.2628%20159.299%2045.5537%20164.203%2052.1351%20166.397C65.1044%20170.72%2078.5253%20165.171%2084.9131%20154.073L93.1076%20139.878L60.7813%2084.0003L94.9143%2024.8321L103.109%2010.6369C105.561%206.37836%20108.851%202.89408%20112.723%200.119568H109.174H60.0715C50.8446%200.119568%2042.3275%205.02337%2037.7463%2013.0243L2.83904%2073.483C0.967855%2076.6446%200%2080.3225%200%2084.0003Z'%20fill='white'/%3e%3cpath%20d='M193.571%2083.9997C193.571%2080.3219%20192.603%2076.644%20190.732%2073.4824L156.341%2013.9271C149.953%202.89352%20136.532%20-2.65551%20123.563%201.60305C116.982%203.79685%20111.691%208.70065%20108.206%2014.7013L100.464%2028.0577L132.79%2083.9997L98.6569%20143.168L90.4624%20157.363C88.0105%20161.557%2084.7198%20165.106%2080.8484%20167.88H84.3972H133.5C142.727%20167.88%20151.244%20162.977%20155.825%20154.976L190.732%2094.5171C192.603%2091.3554%20193.571%2087.6776%20193.571%2083.9997Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1647_45'%3e%3crect%20width='880'%20height='168'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e) ](https://workos.com?utm_source=tanstack)[ ![Clerk](https://tanstack.com/assets/clerk-logo-light-BYN-U_0H.svg)![Clerk](https://tanstack.com/assets/clerk-logo-dark-CRE22T_2.svg) ](https://go.clerk.com/wOwHtuJ)[ ![OpenRouter](https://tanstack.com/assets/openrouter-black-CJtk3mjZ.svg)![OpenRouter](https://tanstack.com/assets/openrouter-white-BLyN_5Ca.svg) ](https://openrouter.ai?utm_source=tanstack)[ ![AG Grid](data:image/svg+xml,%3csvg%20clip-rule='evenodd'%20fill-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%20viewBox='0%200%20235%2040'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20transform='matrix\(.635723%200%200%20.635723%20-492.921%20-323.608\)'%3e%3cg%20fill-rule='nonzero'%3e%3cpath%20d='m1099.4%20549.4v-12.5h-21.3l-12.5%2012.5z'%20fill='%23ff8b00'/%3e%3cpath%20d='m1123.4%20518.4h-26.7l-12.6%2012.5h39.3z'%20fill='%2355b2c6'/%3e%3cpath%20d='m1053.2%20561.9%206.4-6.4h21.6v12.5h-28z'%20fill='%23f00'/%3e%3cpath%20d='m1057.9%20543.3h13.8l12.6-12.5h-26.4z'%20fill='%23b4bbbf'/%3e%3cpath%20d='m1042.8%20561.9h10.4l12.4-12.5h-22.8z'%20fill='%23b4bbbf'/%3e%3cpath%20d='m1096.7%20518.4-6.4%206.4h-40.8v-12.5h47.2z'%20fill='%23b4bbbf'/%3e%3cpath%20d='m828.6%20559.7h-19.6l-3.4%208.4h-8.6l18.1-42.4h7.5l18.1%2042.4h-8.7zm-2.7-6.7-7.1-17.3-7.1%2017.3z'%20fill='%23031c4c'/%3e%3cpath%20d='m960.1%20541.3c2.5-3.7%208.8-4.1%2011.4-4.1v7.2c-3.2%200-6.4.1-8.3%201.5s-2.9%203.3-2.9%205.6v16.6h-7.8v-30.9h7.5z'%20fill='%23031c4c'/%3e%3c/g%3e%3cpath%20d='m975.8%20537.2h7.8v30.9h-7.8z'%20fill='%23031c4c'/%3e%3cpath%20d='m975.8%20523.4h7.8v9.2h-7.8z'%20fill='%23031c4c'/%3e%3cpath%20d='m1022.3%20523.4v44.7h-7.5l-.2-4.7c-1.1%201.6-2.5%202.9-4.2%203.9-1.7.9-3.8%201.4-6.2%201.4-2.1%200-4.1-.4-5.8-1.1-1.8-.8-3.4-1.8-4.7-3.2s-2.4-3.1-3.1-5c-.8-1.9-1.1-4.1-1.1-6.5s.4-4.6%201.1-6.6c.8-2%201.8-3.7%203.1-5.1s2.9-2.5%204.7-3.3%203.7-1.2%205.8-1.2c2.4%200%204.4.4%206.1%201.3s3.1%202.1%204.2%203.8v-18.3h7.8zm-16.4%2038.6c2.6%200%204.6-.9%206.2-2.6s2.4-4%202.4-6.8-.8-5-2.4-6.8c-1.6-1.7-3.6-2.6-6.2-2.6-2.5%200-4.6.9-6.1%202.6-1.6%201.7-2.4%204-2.4%206.8s.8%205%202.4%206.7c1.6%201.8%203.6%202.7%206.1%202.7'%20fill='%23031c4c'%20fill-rule='nonzero'/%3e%3cpath%20d='m885.8%20544.2h-19.3v6.7h11c-.3%203.4-1.6%206-3.8%208.1-2.2%202-5%203-8.6%203-2%200-3.9-.4-5.5-1.1-1.7-.7-3.1-1.7-4.3-3.1-1.2-1.3-2.1-2.9-2.8-4.8s-1-3.9-1-6.2.3-4.3%201-6.2c.6-1.9%201.6-3.4%202.8-4.8%201.2-1.3%202.6-2.3%204.3-3.1%201.7-.7%203.5-1.1%205.6-1.1%204.2%200%207.4%201%209.6%203l5.2-5.2c-3.9-3-8.9-4.6-14.8-4.6-3.3%200-6.3.5-9%201.6s-5%202.5-6.9%204.4-3.4%204.2-4.4%206.9-1.5%205.7-1.5%208.9.5%206.2%201.6%208.9%202.5%205%204.4%206.9%204.2%203.4%206.9%204.4c2.7%201.1%205.7%201.6%208.9%201.6s6.1-.5%208.7-1.6%204.8-2.5%206.6-4.4%203.2-4.2%204.2-6.9%201.5-5.7%201.5-8.9v-1.3c-.3-.2-.4-.7-.4-1.1'%20fill='%23031c4c'%20fill-rule='nonzero'/%3e%3cpath%20d='m946.8%20544.2h-19.3v6.7h11c-.3%203.4-1.6%206-3.8%208.1-2.2%202-5%203-8.6%203-2%200-3.9-.4-5.5-1.1-1.7-.7-3.1-1.7-4.3-3.1-1.2-1.3-2.1-2.9-2.8-4.8s-1-3.9-1-6.2.3-4.3%201-6.2c.6-1.9%201.6-3.4%202.8-4.8%201.2-1.3%202.6-2.3%204.3-3.1%201.7-.7%203.5-1.1%205.6-1.1%204.2%200%207.4%201%209.6%203l5.2-5.2c-3.9-3-8.9-4.6-14.8-4.6-3.3%200-6.3.5-9%201.6s-5%202.5-6.9%204.4-3.4%204.2-4.4%206.9-1.5%205.7-1.5%208.9.5%206.2%201.6%208.9%202.5%205%204.4%206.9%204.2%203.4%206.9%204.4c2.7%201.1%205.7%201.6%208.9%201.6s6.1-.5%208.7-1.6%204.8-2.5%206.6-4.4%203.2-4.2%204.2-6.9%201.5-5.7%201.5-8.9v-1.3c-.3-.2-.4-.7-.4-1.1'%20fill='%23031c4c'%20fill-rule='nonzero'/%3e%3c/g%3e%3c/svg%3e)![AG Grid](data:image/svg+xml,%3csvg%20clip-rule='evenodd'%20fill-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%20viewBox='0%200%20235%2040'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20transform='matrix\(.635723%200%200%20.635723%20-492.921%20-323.608\)'%3e%3cg%20fill-rule='nonzero'%3e%3cpath%20d='m1099.4%20549.4v-12.5h-21.3l-12.5%2012.5z'%20fill='%23ff8b00'/%3e%3cpath%20d='m1123.4%20518.4h-26.7l-12.6%2012.5h39.3z'%20fill='%2355b2c6'/%3e%3cpath%20d='m1053.2%20561.9%206.4-6.4h21.6v12.5h-28z'%20fill='%23f00'/%3e%3cpath%20d='m1057.9%20543.3h13.8l12.6-12.5h-26.4z'%20fill='%23b4bbbf'/%3e%3cpath%20d='m1042.8%20561.9h10.4l12.4-12.5h-22.8z'%20fill='%23b4bbbf'/%3e%3cpath%20d='m1096.7%20518.4-6.4%206.4h-40.8v-12.5h47.2z'%20fill='%23b4bbbf'/%3e%3cpath%20d='m828.6%20559.7h-19.6l-3.4%208.4h-8.6l18.1-42.4h7.5l18.1%2042.4h-8.7zm-2.7-6.7-7.1-17.3-7.1%2017.3z'%20fill='%23fff'/%3e%3cpath%20d='m960.1%20541.3c2.5-3.7%208.8-4.1%2011.4-4.1v7.2c-3.2%200-6.4.1-8.3%201.5s-2.9%203.3-2.9%205.6v16.6h-7.8v-30.9h7.5z'%20fill='%23fff'/%3e%3c/g%3e%3cpath%20d='m975.8%20537.2h7.8v30.9h-7.8z'%20fill='%23fff'/%3e%3cpath%20d='m975.8%20523.4h7.8v9.2h-7.8z'%20fill='%23fff'/%3e%3cpath%20d='m1022.3%20523.4v44.7h-7.5l-.2-4.7c-1.1%201.6-2.5%202.9-4.2%203.9-1.7.9-3.8%201.4-6.2%201.4-2.1%200-4.1-.4-5.8-1.1-1.8-.8-3.4-1.8-4.7-3.2s-2.4-3.1-3.1-5c-.8-1.9-1.1-4.1-1.1-6.5s.4-4.6%201.1-6.6c.8-2%201.8-3.7%203.1-5.1s2.9-2.5%204.7-3.3%203.7-1.2%205.8-1.2c2.4%200%204.4.4%206.1%201.3s3.1%202.1%204.2%203.8v-18.3h7.8zm-16.4%2038.6c2.6%200%204.6-.9%206.2-2.6s2.4-4%202.4-6.8-.8-5-2.4-6.8c-1.6-1.7-3.6-2.6-6.2-2.6-2.5%200-4.6.9-6.1%202.6-1.6%201.7-2.4%204-2.4%206.8s.8%205%202.4%206.7c1.6%201.8%203.6%202.7%206.1%202.7'%20fill='%23fff'%20fill-rule='nonzero'/%3e%3cpath%20d='m885.8%20544.2h-19.3v6.7h11c-.3%203.4-1.6%206-3.8%208.1-2.2%202-5%203-8.6%203-2%200-3.9-.4-5.5-1.1-1.7-.7-3.1-1.7-4.3-3.1-1.2-1.3-2.1-2.9-2.8-4.8s-1-3.9-1-6.2.3-4.3%201-6.2c.6-1.9%201.6-3.4%202.8-4.8%201.2-1.3%202.6-2.3%204.3-3.1%201.7-.7%203.5-1.1%205.6-1.1%204.2%200%207.4%201%209.6%203l5.2-5.2c-3.9-3-8.9-4.6-14.8-4.6-3.3%200-6.3.5-9%201.6s-5%202.5-6.9%204.4-3.4%204.2-4.4%206.9-1.5%205.7-1.5%208.9.5%206.2%201.6%208.9%202.5%205%204.4%206.9%204.2%203.4%206.9%204.4c2.7%201.1%205.7%201.6%208.9%201.6s6.1-.5%208.7-1.6%204.8-2.5%206.6-4.4%203.2-4.2%204.2-6.9%201.5-5.7%201.5-8.9v-1.3c-.3-.2-.4-.7-.4-1.1'%20fill='%23fff'%20fill-rule='nonzero'/%3e%3cpath%20d='m946.8%20544.2h-19.3v6.7h11c-.3%203.4-1.6%206-3.8%208.1-2.2%202-5%203-8.6%203-2%200-3.9-.4-5.5-1.1-1.7-.7-3.1-1.7-4.3-3.1-1.2-1.3-2.1-2.9-2.8-4.8s-1-3.9-1-6.2.3-4.3%201-6.2c.6-1.9%201.6-3.4%202.8-4.8%201.2-1.3%202.6-2.3%204.3-3.1%201.7-.7%203.5-1.1%205.6-1.1%204.2%200%207.4%201%209.6%203l5.2-5.2c-3.9-3-8.9-4.6-14.8-4.6-3.3%200-6.3.5-9%201.6s-5%202.5-6.9%204.4-3.4%204.2-4.4%206.9-1.5%205.7-1.5%208.9.5%206.2%201.6%208.9%202.5%205%204.4%206.9%204.2%203.4%206.9%204.4c2.7%201.1%205.7%201.6%208.9%201.6s6.1-.5%208.7-1.6%204.8-2.5%206.6-4.4%203.2-4.2%204.2-6.9%201.5-5.7%201.5-8.9v-1.3c-.3-.2-.4-.7-.4-1.1'%20fill='%23fff'%20fill-rule='nonzero'/%3e%3c/g%3e%3c/svg%3e) ](https://ag-grid.com/react-data-grid/?utm_source=reacttable&utm_campaign=githubreacttable)[ ![SerpApi](https://tanstack.com/assets/serpapi-black-DnXRiQQ3.svg)![SerpApi](https://tanstack.com/assets/serpapi-white-CPxTEZSp.svg) ](https://serpapi.com?utm_source=tanstack)
+Bronze
+[ ![Sentry](data:image/svg+xml,%3csvg%20height='119'%20viewBox='0%200%20222%2066'%20width='400'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m29%202.26a4.67%204.67%200%200%200%20-8%200l-6.58%2011.27a32.21%2032.21%200%200%201%2017.75%2026.66h-4.62a27.68%2027.68%200%200%200%20-15.46-22.72l-6.09%2010.53a15.92%2015.92%200%200%201%209.23%2012.17h-10.61a.76.76%200%200%201%20-.62-1.11l2.94-5a10.74%2010.74%200%200%200%20-3.36-1.9l-2.91%205a4.54%204.54%200%200%200%201.69%206.24%204.66%204.66%200%200%200%202.26.6h14.53a19.4%2019.4%200%200%200%20-8-17.31l2.31-4a23.87%2023.87%200%200%201%2010.3%2021.31h12.31a35.88%2035.88%200%200%200%20-16.41-31.8l4.67-8a.77.77%200%200%201%201.05-.27c.53.29%2020.29%2034.77%2020.66%2035.17a.76.76%200%200%201%20-.68%201.13h-4.76q.09%201.91%200%203.81h4.78a4.59%204.59%200%200%200%204.62-4.61%204.49%204.49%200%200%200%20-.62-2.28zm95.32%2026.02-14.76-19.06h-3.68v25.55h3.73v-19.58l15.18%2019.58h3.26v-25.55h-3.73zm-37.17-4.74h13.23v-3.32h-13.24v-7.69h14.93v-3.32h-18.73v25.56h18.92v-3.32h-15.12zm-15.56-3.24c-5.15-1.24-6.59-2.22-6.59-4.6%200-2.14%201.89-3.59%204.71-3.59a12.06%2012.06%200%200%201%207.07%202.55l2-2.83a14.1%2014.1%200%200%200%20-9-3c-5.06%200-8.59%203-8.59%207.27%200%204.6%203%206.19%208.46%207.52%204.86%201.12%206.35%202.16%206.35%204.49s-2%203.77-5.09%203.77a12.34%2012.34%200%200%201%20-8.3-3.26l-2.25%202.69a15.94%2015.94%200%200%200%2010.42%203.85c5.48%200%209-2.95%209-7.51-.03-3.86-2.31-5.93-8.19-7.35zm124.11-11.08-7.69%2012-7.64-12h-4.46l10.09%2015.45v10.11h3.84v-10.23l10.16-15.33zm-64.63%203.46h8.37v22.1h3.84v-22.1h8.37v-3.46h-20.57zm38.34%2012.12c3.86-1.07%206-3.77%206-7.63%200-4.91-3.59-8-9.38-8h-11.36v25.59h3.8v-9.18h6.45l6.48%209.2h4.44l-7-9.82zm-10.95-2.5v-9.7h7.17c3.74%200%205.88%201.77%205.88%204.84s-2.29%204.86-5.84%204.86z'%20fill='%23362d59'%20transform='translate\(11%2011\)'/%3e%3c/svg%3e)![Sentry](data:image/svg+xml,%3csvg%20height='119'%20viewBox='0%200%20222%2066'%20width='400'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m29%202.26a4.67%204.67%200%200%200%20-8%200l-6.58%2011.27a32.21%2032.21%200%200%201%2017.75%2026.66h-4.62a27.68%2027.68%200%200%200%20-15.46-22.72l-6.09%2010.53a15.92%2015.92%200%200%201%209.23%2012.17h-10.61a.76.76%200%200%201%20-.62-1.11l2.94-5a10.74%2010.74%200%200%200%20-3.36-1.9l-2.91%205a4.54%204.54%200%200%200%201.69%206.24%204.66%204.66%200%200%200%202.26.6h14.53a19.4%2019.4%200%200%200%20-8-17.31l2.31-4a23.87%2023.87%200%200%201%2010.3%2021.31h12.31a35.88%2035.88%200%200%200%20-16.41-31.8l4.67-8a.77.77%200%200%201%201.05-.27c.53.29%2020.29%2034.77%2020.66%2035.17a.76.76%200%200%201%20-.68%201.13h-4.76q.09%201.91%200%203.81h4.78a4.59%204.59%200%200%200%204.62-4.61%204.49%204.49%200%200%200%20-.62-2.28zm95.32%2026.02-14.76-19.06h-3.68v25.55h3.73v-19.58l15.18%2019.58h3.26v-25.55h-3.73zm-37.17-4.74h13.23v-3.32h-13.24v-7.69h14.93v-3.32h-18.73v25.56h18.92v-3.32h-15.12zm-15.56-3.24c-5.15-1.24-6.59-2.22-6.59-4.6%200-2.14%201.89-3.59%204.71-3.59a12.06%2012.06%200%200%201%207.07%202.55l2-2.83a14.1%2014.1%200%200%200%20-9-3c-5.06%200-8.59%203-8.59%207.27%200%204.6%203%206.19%208.46%207.52%204.86%201.12%206.35%202.16%206.35%204.49s-2%203.77-5.09%203.77a12.34%2012.34%200%200%201%20-8.3-3.26l-2.25%202.69a15.94%2015.94%200%200%200%2010.42%203.85c5.48%200%209-2.95%209-7.51-.03-3.86-2.31-5.93-8.19-7.35zm124.11-11.08-7.69%2012-7.64-12h-4.46l10.09%2015.45v10.11h3.84v-10.23l10.16-15.33zm-64.63%203.46h8.37v22.1h3.84v-22.1h8.37v-3.46h-20.57zm38.34%2012.12c3.86-1.07%206-3.77%206-7.63%200-4.91-3.59-8-9.38-8h-11.36v25.59h3.8v-9.18h6.45l6.48%209.2h4.44l-7-9.82zm-10.95-2.5v-9.7h7.17c3.74%200%205.88%201.77%205.88%204.84s-2.29%204.86-5.84%204.86z'%20fill='%23fff'%20transform='translate\(11%2011\)'/%3e%3c/svg%3e) ](https://sentry.io?utm_source=tanstack)[ ![Unkey](data:image/svg+xml,%3csvg%20width='83'%20height='28'%20viewBox='0%200%2083%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M76.1881%2028H66.859V24.8889H79.2979L76.1881%2028Z'%20fill='%23040406'/%3e%3cpath%20d='M82.4076%2021.7778L79.2979%2024.8889V6.22222H82.4076V21.7778Z'%20fill='%23040406'/%3e%3cpath%20d='M3.10972%206.22222V18.6667H12.4389L9.32916%2021.7778H3.10972C1.3916%2021.7778%200%2020.3856%200%2018.6667V6.22222H3.10972Z'%20fill='%23040406'/%3e%3cpath%20d='M20.2132%209.33333V21.7778H17.1035V12.4444L20.2132%209.33333Z'%20fill='%23040406'/%3e%3cpath%20d='M29.5423%206.22222C31.2605%206.22222%2032.6521%207.61444%2032.6521%209.33333V21.7778H29.5423V9.33333H20.2132L23.3229%206.22222H29.5423Z'%20fill='%23040406'/%3e%3cpath%20d='M37.3166%2014.2645L45.3553%206.22222H49.754L41.9797%2014L49.7555%2021.7778H45.3568L39.781%2016.1995L37.3166%2018.6636V21.7778H34.2069V3.11111L37.3166%200V14.2645Z'%20fill='%23040406'/%3e%3cpath%20d='M62.1944%206.22222C63.911%206.22222%2065.3041%207.61444%2065.3041%209.33333V12.4444C65.3041%2014.1633%2063.911%2015.5556%2062.1944%2015.5556H52.8652V18.6667H65.3041V21.7778H52.8652C52.007%2021.7778%2051.2296%2021.4293%2050.6667%2020.8662C50.1039%2020.3031%2049.7555%2019.5253%2049.7555%2018.6667V12.4444L52.8652%209.33333V12.4444H62.1944V9.33333H52.8652L55.975%206.22222H62.1944Z'%20fill='%23040406'/%3e%3cpath%20d='M69.9687%206.22222V18.6667H79.2979L76.1881%2021.7778H69.9687C68.2506%2021.7778%2066.859%2020.3856%2066.859%2018.6667V6.22222H69.9687Z'%20fill='%23040406'/%3e%3cpath%20d='M15.5486%2015.5556L12.4389%2018.6667V6.22222H15.5486V15.5556Z'%20fill='%23040406'/%3e%3c/svg%3e)![Unkey](data:image/svg+xml,%3csvg%20width='83'%20height='28'%20viewBox='0%200%2083%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M76.1881%2028H66.859V24.8889H79.2979L76.1881%2028Z'%20fill='white'/%3e%3cpath%20d='M82.4076%2021.7778L79.2979%2024.8889V6.22222H82.4076V21.7778Z'%20fill='white'/%3e%3cpath%20d='M3.10972%206.22222V18.6667H12.4389L9.32916%2021.7778H3.10972C1.3916%2021.7778%200%2020.3856%200%2018.6667V6.22222H3.10972Z'%20fill='white'/%3e%3cpath%20d='M20.2132%209.33333V21.7778H17.1035V12.4444L20.2132%209.33333Z'%20fill='white'/%3e%3cpath%20d='M29.5423%206.22222C31.2605%206.22222%2032.6521%207.61444%2032.6521%209.33333V21.7778H29.5423V9.33333H20.2132L23.3229%206.22222H29.5423Z'%20fill='white'/%3e%3cpath%20d='M37.3166%2014.2645L45.3553%206.22222H49.754L41.9797%2014L49.7555%2021.7778H45.3568L39.781%2016.1995L37.3166%2018.6636V21.7778H34.2069V3.11111L37.3166%200V14.2645Z'%20fill='white'/%3e%3cpath%20d='M62.1944%206.22222C63.911%206.22222%2065.3041%207.61444%2065.3041%209.33333V12.4444C65.3041%2014.1633%2063.911%2015.5556%2062.1944%2015.5556H52.8652V18.6667H65.3041V21.7778H52.8652C52.007%2021.7778%2051.2296%2021.4293%2050.6667%2020.8662C50.1039%2020.3031%2049.7555%2019.5253%2049.7555%2018.6667V12.4444L52.8652%209.33333V12.4444H62.1944V9.33333H52.8652L55.975%206.22222H62.1944Z'%20fill='white'/%3e%3cpath%20d='M69.9687%206.22222V18.6667H79.2979L76.1881%2021.7778H69.9687C68.2506%2021.7778%2066.859%2020.3856%2066.859%2018.6667V6.22222H69.9687Z'%20fill='white'/%3e%3cpath%20d='M15.5486%2015.5556L12.4389%2018.6667V6.22222H15.5486V15.5556Z'%20fill='white'/%3e%3c/svg%3e) ](https://www.unkey.com/?utm_source=tanstack)[![Scarf](https://tanstack.com/assets/scarf-BJX_-tJ9.svg)](https://about.scarf.sh/?utm_source=tanstack)[ ![Prisma](https://tanstack.com/assets/prisma-light-Cloa3Onm.svg)![Prisma](https://tanstack.com/assets/prisma-dark-DwgDxLwn.svg) ](https://www.prisma.io/?utm_source=tanstack&via=tanstack)
+[Latest Posts](https://tanstack.com/blog)
+[](https://tanstack.com/)
+The open source application stack for the web.
+## Libraries
+  * [Browse all](https://tanstack.com/libraries)
+  * [Query](https://tanstack.com/query/latest)
+  * [Router](https://tanstack.com/router/latest)
+  * [Start](https://tanstack.com/start/latest)
+  * [Table](https://tanstack.com/table/latest)
+  * [Form](https://tanstack.com/form/latest)
+
+
+## Blog
+  * [Latest posts](https://tanstack.com/blog)
+  * [Release notes](https://tanstack.com/blog)
+  * [YouTube](https://youtube.com/@tan_stack)
+  * [Workshops](https://tanstack.com/workshops)
+
+
+## Community
+  * [Discord](https://tlinz.com/discord)
+  * [GitHub](https://github.com/TanStack)
+  * [Maintainers](https://tanstack.com/maintainers)
+  * [Showcase](https://tanstack.com/showcase)
+  * [Community projects](https://tanstack.com/community-projects)
+
+
+## Tools
+  * [Builder](https://tanstack.com/builder)
+  * [Stats](https://tanstack.com/stats/npm)
+
+
+## Merch
+  * [Shop](https://tanstack.com/shop)
+  * [Cart](https://tanstack.com/shop/cart)
+
+
+## Support
+  * [Support overview](https://tanstack.com/support)
+  * [Partners](https://tanstack.com/partners)
+  * [OSS sponsors](https://tanstack.com/#sponsors)
+  * [Enterprise support](https://tanstack.com/paid-support)
+  * Contact
+  * [Ethos](https://tanstack.com/ethos)
+  * [Tenets](https://tanstack.com/tenets)
+  * [Design system](https://tanstack.com/ds)
+
+
+© 2026 TanStack LLC
+  * [Privacy](https://tanstack.com/privacy)
+  * [Terms](https://tanstack.com/terms)
+
+
+  * [](https://x.com/tan_stack)
+  * [](https://bsky.app/profile/tanstack.com)
+  * [](https://github.com/tanstack)
+  * [](https://youtube.com/@tan_stack)
+  * [](https://www.linkedin.com/company/tanstack)
+
+
+
