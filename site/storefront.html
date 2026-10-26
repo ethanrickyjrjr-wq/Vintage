@@ -1,0 +1,307 @@
+<title>Hollywood and Vine</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,600&family=Archivo:wdth,wght@87.5,400;87.5,500;87.5,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a burgundy room. Rug-stripe band on top, editorial hero, then listing grids by shelf.
+   Prices in mono, status chips in form. Dark-first (the walls), light = the cream of the rug. */
+:root {
+  --wall: #4a1626;        /* the burgundy paint */
+  --wall-deep: #33101c;
+  --card: #581b2f;
+  --fg: #f1e7d3;          /* rug cream */
+  --muted: rgba(241, 231, 211, 0.68);
+  --line: rgba(241, 231, 211, 0.16);
+  --gold: #d9b35a;        /* étagère brass */
+  --rust: #c85a27;        /* rug rust */
+  --ink: #1b1114;         /* rug black */
+  --neon: #ff3fa4;        /* "do it for the plot" */
+  --sky: #9db6c4;         /* the thin blue line in the rug */
+  --ok: #8fc98f; --warn: #e8b64c; --bad: #ff7b7b;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "DM Mono", "SF Mono", Consolas, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --wall: #f1e7d3; --wall-deep: #e6d8bf; --card: #fbf4e6;
+    --fg: #33101c; --muted: rgba(51, 16, 28, 0.66); --line: rgba(51, 16, 28, 0.16);
+    --gold: #9a7420; --neon: #d6228b; --sky: #5f8296;
+    --ok: #2f7d3a; --warn: #9a6a00; --bad: #b3261e;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --wall: #f1e7d3; --wall-deep: #e6d8bf; --card: #fbf4e6;
+  --fg: #33101c; --muted: rgba(51, 16, 28, 0.66); --line: rgba(51, 16, 28, 0.16);
+  --gold: #9a7420; --neon: #d6228b; --sky: #5f8296;
+  --ok: #2f7d3a; --warn: #9a6a00; --bad: #b3261e;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--wall); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--wall); }
+.rug { height: 14px; background:
+  repeating-linear-gradient(90deg, var(--rust) 0 44px, var(--fg) 44px 52px, var(--ink) 52px 76px, var(--fg) 76px 84px, var(--sky) 84px 87px, var(--fg) 87px 95px); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; padding-block: 22px 10px; border-bottom: 1px solid var(--line); }
+.brand { font-family: var(--display); font-size: 30px; font-weight: 700; letter-spacing: 0.01em; margin: 0; }
+.brand small { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-left: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+nav a { color: var(--fg); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+nav a:hover, nav a:focus-visible { border-bottom-color: var(--gold); outline: none; }
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; padding-block: 44px 36px; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-style: italic; font-size: clamp(42px, 6.5vw, 84px); line-height: 0.98; margin: 0 0 18px; text-wrap: balance; letter-spacing: -0.01em; }
+.hero h1 em { font-style: normal; font-weight: 700; }
+.hero p { max-width: 36ch; color: var(--muted); margin: 0 0 22px; font-size: 17px; }
+.cta { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 12px 18px; text-decoration: none; border: 0; }
+.cta:hover, .cta:focus-visible { background: var(--fg); outline: none; }
+.hero figure { margin: 0; position: relative; }
+.hero img { width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 1px solid var(--line); }
+.neon { position: absolute; left: 14px; bottom: 14px; font-family: var(--display); font-style: italic; font-size: 22px; color: var(--neon); text-shadow: 0 0 8px var(--neon), 0 0 22px rgba(255, 63, 164, 0.6); background: rgba(27, 17, 20, 0.55); padding: 6px 12px; }
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding-block: 8px 40px; }
+.strip img { width: 100%; max-width: 100%; aspect-ratio: 1; object-fit: cover; display: block; filter: saturate(1.05); }
+.strip figcaption { grid-column: 1 / -1; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+section.shelf { padding-block: 10px 44px; border-top: 1px solid var(--line); }
+.shelf-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; padding-block: 22px 18px; }
+.shelf-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 4vw, 44px); margin: 0; line-height: 1.05; }
+.shelf-head p { margin: 0; color: var(--muted); font-size: 14px; max-width: 48ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px 18px; }
+.card { display: flex; flex-direction: column; min-width: 0; background: var(--card); border: 1px solid var(--line); }
+.card .ph { position: relative; }
+.card img { width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; background: var(--wall-deep); }
+.card img.still { image-rendering: auto; filter: contrast(1.04) saturate(1.05); }
+.chip { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px; background: var(--ink); color: var(--fg); border-left: 3px solid var(--gold); }
+.chip.reshoot { border-left-color: var(--warn); }
+.chip.still { border-left-color: var(--sky); }
+.chip.auth { border-left-color: var(--bad); }
+.chip.mature { border-left-color: var(--neon); }
+.chip.nfs { border-left-color: var(--neon); background: var(--neon); color: var(--ink); }
+.card .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card .eyebrow { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+.card h3 { font-family: var(--display); font-weight: 400; font-size: 21px; line-height: 1.12; margin: 0; text-wrap: balance; }
+.card p { margin: 0; font-size: 13.5px; color: var(--muted); }
+.card .price { margin-top: auto; padding-top: 10px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 10px; border-top: 1px dashed var(--line); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.card .price b { font-weight: 500; font-size: 20px; }
+.card .price span { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+.card .price .pending { color: var(--warn); }
+.card.feature { grid-column: span 2; }
+.card.feature img { aspect-ratio: 4 / 5; }
+.card.feature h3 { font-size: 26px; }
+.card.feature .price b { font-size: 24px; color: var(--neon); }
+.note { font-size: 13px; color: var(--muted); max-width: 70ch; margin: 0; }
+footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px; font-size: 13px; color: var(--muted); }
+footer h4 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 0 0 8px; }
+footer p, footer li { margin: 0 0 6px; }
+footer ul { margin: 0; padding-left: 18px; }
+footer code { font-family: var(--mono); font-size: 12px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-block: 0 14px; }
+.legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; background: var(--ink); border-left: 3px solid var(--gold); }
+.legend i.reshoot { border-left-color: var(--warn); } .legend i.still { border-left-color: var(--sky); } .legend i.auth { border-left-color: var(--bad); } .legend i.mature { border-left-color: var(--neon); }
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 22px; padding-block: 30px 26px; }
+  .strip { grid-template-columns: repeat(2, 1fr); }
+  .card.feature { grid-column: span 1; }
+  footer { grid-template-columns: 1fr; }
+  .brand { font-size: 26px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .card { transition: transform 160ms ease; }
+  .card:hover { transform: translateY(-2px); }
+}
+</style>
+
+<div class="rug" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <h1 class="brand">Hollywood and Vine <small>sample storefront</small></h1>
+    <nav aria-label="Shelves">
+      <a href="#lighting">Lighting &amp; decor</a>
+      <a href="#art">Art &amp; memorabilia</a>
+      <a href="#print">Print</a>
+      <a href="#fashion">Fashion</a>
+      <a href="#owner">The owner</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Come on in,<br><em>get lost.</em></h1>
+      <p>Burgundy walls, two disco balls, Elvis by the lamp. Seventies brass to nineties neon, one of each, pulled from a room in Florida and shipped flat-rate.</p>
+      <a class="cta" href="#lighting">Shop the room &rarr;</a>
+    </div>
+    <figure>
+      <img src="photos/IMG_6610.jpg" alt="Gold étagère with silver mannequin busts and pink stemware under a pink neon sign reading do it for the plot">
+      <span class="neon" aria-hidden="true">do it for the plot</span>
+    </figure>
+  </section>
+
+  <figure class="strip">
+    <img src="stills/A19-rust-sofa-cowhide.jpg" alt="Rust sofa with a cowhide throw on the geometric rug">
+    <img src="stills/A13-gold-bust-lamp.jpg" alt="Gold bust lamp with a yellow ribbed shade">
+    <img src="stills/A16-retro-turntable-shelf.jpg" alt="Wooden turntable on a shelf under Marilyn prints">
+    <img src="stills/A20-white-ribbed-chair.jpg" alt="White ribbed sculptural chair">
+    <figcaption>Stills from the walkthrough video, sharpest frame of every pass. Soft on purpose: the video export is 568 by 320.</figcaption>
+  </figure>
+
+  <div class="legend" aria-label="Chip legend">
+    <span><i></i>ready to list</span>
+    <span><i class="reshoot"></i>re-shoot square-on</span>
+    <span><i class="still"></i>video still, needs a photo</span>
+    <span><i class="auth"></i>authenticate first</span>
+    <span><i class="mature"></i>mature content flag on Etsy</span>
+  </div>
+
+  <section class="shelf" id="lighting">
+    <div class="shelf-head"><h2>Lighting &amp; decor</h2><p>The brass, the glass, the leopard. Lamps ship with the shade off and the harp wrapped.</p></div>
+    <div class="grid" data-cat="lighting"></div>
+  </section>
+
+  <section class="shelf" id="art">
+    <div class="shelf-head"><h2>Art &amp; memorabilia</h2><p>The Elvis is the one to get authenticated before it goes anywhere near a listing.</p></div>
+    <div class="grid" data-cat="art"></div>
+  </section>
+
+  <section class="shelf" id="print">
+    <div class="shelf-head"><h2>Print</h2><p>Read copies, honest wear. Etsy needs the mature-content flag on every magazine here.</p></div>
+    <div class="grid" data-cat="print"></div>
+  </section>
+
+  <section class="shelf" id="fashion">
+    <div class="shelf-head"><h2>Fashion</h2><p>Measurements over sizes. Flat lays plus one on the form, burgundy wall behind.</p></div>
+    <div class="grid" data-cat="fashion"></div>
+  </section>
+
+  <section class="shelf" id="owner">
+    <div class="shelf-head"><h2>The owner</h2><p>Priced on instruction.</p></div>
+    <div class="grid" data-cat="owner"></div>
+  </section>
+
+  <footer>
+    <div>
+      <h4>Where the prices come from</h4>
+      <p>Targets are set from comparable sold and asking prices gathered on 2026-10-26 (eBay sold, Etsy, Chairish, Poshmark, auction records). The full comps tables with URLs are in the repo under <code>research/pricing/</code>. Low–high is the comp spread, not a discount range.</p>
+      <p>Shop tags already on items (the chandelier reads $60) are shown where seen.</p>
+    </div>
+    <div>
+      <h4>Before listing</h4>
+      <ul>
+        <li>Re-shoot the two paintings square-on, no flash; shoot the Elvis front, back and signatures.</li>
+        <li>Everything with a blue chip exists only as a video frame. Share the original iPhone video or shoot stills.</li>
+        <li>Check the lamp base for a Stiffel stamp; it moves the price.</li>
+        <li>Look under the white ribbed chair for a Vitra or Easy Edges label. A real Gehry Wiggle sells for $700 to $1,150.</li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+<script>
+const ITEMS = [
+  // Lighting & decor
+  { id: "A1",  cat: "lighting", title: "Brass and cream urn lamp", sub: "Hollywood Regency table lamp, pineapple finial, linen drum shade. Stiffel-style, 1960s–70s.", img: "photos/IMG_6616.jpg", chip: "ready" },
+  { id: "A2",  cat: "lighting", title: "Sea-glass tiered chandelier", sub: "Two tiers of frosted glass shards on gold rings. Shop tag reads $60.", img: "photos/IMG_6614.jpg", chip: "ready" },
+  { id: "A13", cat: "lighting", title: "Gold bust lamp", sub: "Gilded head with a ribbed butter-yellow shade. The one by the window.", img: "stills/A13-gold-bust-lamp.jpg", chip: "still" },
+  { id: "A17", cat: "lighting", title: "Brass hurricane oil lamp", sub: "Kerosene lamp with a clear chimney. There are two.", img: "stills/A17-brass-oil-lamp.jpg", chip: "still" },
+  { id: "A16", cat: "lighting", title: "Retro turntable", sub: "Wooden tabletop record player with a round speaker grille.", img: "stills/A16-retro-turntable-shelf.jpg", chip: "still" },
+  { id: "A14", cat: "lighting", title: "Ceramic leopard", sub: "Standing spotted leopard, about a foot long, 1970s Italian style.", img: "stills/A14-ceramic-leopard.jpg", chip: "still" },
+  { id: "A15", cat: "lighting", title: "Black armchair, star cushion", sub: "Spindle-back armchair with a Southwestern star-pattern seat.", img: "stills/A15-star-cushion-armchair.jpg", chip: "still" },
+  { id: "A20", cat: "lighting", title: "White ribbed chair", sub: "Looks like a Gehry Wiggle chair. Check under the seat for a Vitra or Easy Edges label before pricing.", img: "stills/A20-white-ribbed-chair.jpg", chip: "still" },
+  { id: "A22", cat: "lighting", title: "Paint-splattered dress form", sub: "Full-body vintage form, blue torso, Pollock legs. Display art.", img: "photos/IMG_6607.jpg", chip: "ready" },
+  { id: "A10", cat: "lighting", title: "Pink stemware", sub: "About six flutes and six coupes in rose glass.", img: "crops/IMG_6610_glass.jpg", chip: "reshoot" },
+  { id: "A8",  cat: "lighting", title: "Silver busts, pair", sub: "Chrome-finish mannequin busts off the gold étagère.", img: "crops/IMG_6610_shelf_top.jpg", chip: "reshoot" },
+  { id: "A9",  cat: "lighting", title: "8mm film projector", sub: "Black mid-century projector, untested, sold as display.", img: "crops/IMG_6610_shelf_top.jpg", chip: "reshoot" },
+  { id: "A19", cat: "lighting", title: "Cowhide throw", sub: "Brown-and-white hair-on hide, the one over the rust sofa.", img: "stills/A19-rust-sofa-cowhide.jpg", chip: "still" },
+  // Art & memorabilia
+  { id: "A5",  cat: "art", title: "Elvis, 1956, signed by the band", sub: "8x10 stage photo signed by Scotty Moore and D.J. Fontana, gold frame. No COA yet.", img: "crops/IMG_6616_elvis.jpg", chip: "auth", feature: true },
+  { id: "A3",  cat: "art", title: "Cubist figure, acrylic on canvas", sub: "About 24 by 36 inches, unsigned, unframed.", img: "photos/IMG_6609.jpg", chip: "reshoot" },
+  { id: "A4",  cat: "art", title: "Ink and wash, face with drip", sub: "Original drawing, black frame, white mat, about 11 by 14.", img: "photos/IMG_6613.jpg", chip: "reshoot" },
+  { id: "A23", cat: "art", title: "Sneaker-leather collar", sub: "One-off wearable art: deconstructed sneaker panels and a braided leather rope.", img: "crops/IMG_6607_belt.jpg", chip: "ready" },
+  // Print
+  { id: "C1",  cat: "print", title: "Playboy, January 1997", sub: "Holiday Anniversary issue, Marilyn Monroe cover.", img: "crops/IMG_6619_tl.jpg", chip: "mature" },
+  { id: "C2",  cat: "print", title: "Playboy, April 1991", sub: "Spring Break issue.", img: "crops/IMG_6619_br.jpg", chip: "mature" },
+  { id: "C3",  cat: "print", title: "Playboy, December, Candice Bergen", sub: "Women of Wrestling, Mike Hammer. Year confirmed in the comps file.", img: "crops/IMG_6619_tr.jpg", chip: "mature" },
+  { id: "C4",  cat: "print", title: "Playboy, January, purple collage", sub: "Seventies holiday cover, well loved.", img: "crops/IMG_6619_tr.jpg", chip: "mature" },
+  { id: "C5",  cat: "print", title: "Penthouse, September 1977", sub: "Special Anniversary issue.", img: "crops/IMG_6619_bl.jpg", chip: "mature" },
+  { id: "C6",  cat: "print", title: "Playboy's Midnight Playmates", sub: "Newsstand special collection.", img: "crops/IMG_6619_mid.jpg", chip: "mature" },
+  { id: "C8",  cat: "print", title: "Chanel coffee-table book", sub: "White CC-monogram cover with the perfume bottles.", img: "crops/IMG_6619_tr.jpg", chip: "reshoot" },
+  // Fashion
+  { id: "B1",  cat: "fashion", title: "Blush faux-leather trench", sub: "Belted, double-breasted, mid-calf.", img: "crops/IMG_6617_coat.jpg", chip: "reshoot" },
+  { id: "B6",  cat: "fashion", title: "Feather cocktail hat", sub: "1950s–60s pheasant and dyed feathers on a velvet base.", img: "photos/IMG_6611.jpg", chip: "ready" },
+  { id: "B7",  cat: "fashion", title: "Leather chain harness belt", sub: "Black straps, silver chain, studs, snap closures.", img: "photos/IMG_6612.jpg", chip: "ready" },
+  { id: "B10", cat: "fashion", title: "Neon colourblock windbreaker", sub: "1990s nylon in yellow, royal and red, embroidered patch.", img: "crops/IMG_6607_jacket.jpg", chip: "reshoot" },
+  { id: "B12", cat: "fashion", title: "Navy shirt dress, cream collar", sub: "1980s look, original tag still on.", img: "crops/IMG_6610_dress.jpg", chip: "reshoot" },
+  { id: "B9",  cat: "fashion", title: "Gray fringed western boots", sub: "Distressed leather ankle boots, stacked heel.", img: "crops/IMG_6612_boots.jpg", chip: "reshoot" },
+  { id: "B13", cat: "fashion", title: "Red lace dress", sub: "Long-sleeve bodycon midi, on the form by the window.", img: "stills/B13-red-lace-dress.jpg", chip: "still" },
+  { id: "B14", cat: "fashion", title: "Neon track jacket, paisley leggings", sub: "Sold together or apart.", img: "stills/B14-neon-tracksuit-paisley-leggings.jpg", chip: "still" },
+  { id: "B15", cat: "fashion", title: "Colourblock blouse, embroidered red jacket", sub: "The two loudest things on the rack.", img: "stills/B15-colourblock-blouse-red-jacket.jpg", chip: "still" },
+  { id: "B18", cat: "fashion", title: "Heels and slides", sub: "Clear mules, pink slides, black kitten heels, snakeskin pumps.", img: "stills/B18-heels-and-slides.jpg", chip: "still" },
+  // Owner
+  { id: "OWNER", cat: "owner", title: "The owner, mirror selfie", sub: "Not for sale. The trench coat behind her is.", img: "photos/IMG_6617.jpg", chip: "nfs", feature: true, fixed: 10000000 },
+];
+
+// Filled from research/pricing/*.md: low / target / high in USD, confidence.
+const PRICES = {
+  // lighting & decor (research/pricing/lighting.md, decor.md, ebay-sold.md)
+  A1:  { low: 45,  target: 95,  high: 150, conf: "med · eBay sold; $120+ if Stiffel-stamped" },
+  A2:  { low: 75,  target: 125, high: 225, conf: "low · no comps, judgment" },
+  A13: { low: 75,  target: 110, high: 165, conf: "low · judgment" },
+  A17: { low: 55,  target: 85,  high: 135, conf: "low · the pair" },
+  A16: { low: 35,  target: 55,  high: 80,  conf: "low · if it plays" },
+  A9:  { low: 30,  target: 45,  high: 65,  conf: "low · untested" },
+  A14: { low: 45,  target: 125, high: 345, conf: "med · eBay sold; Italy mark lifts it" },
+  A10: { low: 50,  target: 110, high: 120, conf: "med · 12-piece lot; $52–$60 per set of 6" },
+  A11: { low: 18,  target: 28,  high: 40,  conf: "low · asking comps" },
+  A12: { low: 25,  target: 42,  high: 65,  conf: "low · asking comps" },
+  A15: { low: 95,  target: 165, high: 250, conf: "low · asking comps" },
+  A20: { low: 175, target: 275, high: 1150, conf: "low · $700+ if Vitra Wiggle label" },
+  A22: { low: 150, target: 245, high: 350, conf: "low · asking comps" },
+  A8:  { low: 90,  target: 150, high: 220, conf: "low · the pair" },
+  A19: { low: 70,  target: 110, high: 160, conf: "med · if it is stock, not staging" },
+  // art & memorabilia (art.md, ebay-sold.md)
+  A5:  { low: 60,  target: 140, high: 200, conf: "med · eBay sold $60–$166; $250+ with JSA" },
+  A3:  { low: 150, target: 275, high: 450, conf: "low · asking comps only" },
+  A4:  { low: 75,  target: 140, high: 225, conf: "low · asking comps only" },
+  A23: { low: 95,  target: 185, high: 300, conf: "low · one of one, judgment" },
+  // print (print.md, ebay-sold.md)
+  C1:  { low: 6,   target: 14,  high: 25,  conf: "high · 90 eBay sold" },
+  C2:  { low: 6,   target: 12,  high: 18,  conf: "high · eBay sold" },
+  C3:  { low: 5,   target: 7,   high: 12,  conf: "med · Dec 1989" },
+  C4:  { low: 6,   target: 10,  high: 18,  conf: "med · Jan 1970, worn" },
+  C5:  { low: 8,   target: 14,  high: 30,  conf: "high · eBay sold" },
+  C6:  { low: 6,   target: 10,  high: 15,  conf: "med · 1990 special" },
+  C8:  { low: 12,  target: 20,  high: 35,  conf: "low · title unconfirmed" },
+  // fashion (fashion.md, ebay-sold.md)
+  B1:  { low: 35,  target: 58,  high: 85,  conf: "med · Poshmark sold" },
+  B5:  { low: 30,  target: 48,  high: 70,  conf: "med · Poshmark sold" },
+  B6:  { low: 25,  target: 48,  high: 75,  conf: "med · eBay + Poshmark sold" },
+  B7:  { low: 30,  target: 48,  high: 70,  conf: "med · Poshmark sold" },
+  B9:  { low: 30,  target: 48,  high: 70,  conf: "med · Poshmark sold" },
+  B10: { low: 20,  target: 35,  high: 50,  conf: "med · eBay + Poshmark sold" },
+  B12: { low: 28,  target: 42,  high: 60,  conf: "med · Poshmark sold" },
+  B13: { low: 20,  target: 32,  high: 45,  conf: "low · Poshmark sold" },
+  B14: { low: 34,  target: 50,  high: 65,  conf: "med · jacket $34 + leggings $16" },
+  B15: { low: 24,  target: 40,  high: 55,  conf: "low · jacket $40, blouse $24" },
+  B18: { low: 14,  target: 26,  high: 26,  conf: "med · per pair, $14–$26" },
+};
+
+const CHIP = { ready: "ready", reshoot: "re-shoot", still: "video still", auth: "authenticate", mature: "mature", nfs: "not for sale" };
+const money = n => "$" + Number(n).toLocaleString("en-US");
+
+function card(it) {
+  const p = PRICES[it.id];
+  let price;
+  if (it.fixed) price = `<b>${money(it.fixed)}</b><span>firm</span>`;
+  else if (p) price = `<b>${money(p.target)}</b><span>comps ${money(p.low)}–${money(p.high)} · ${p.conf}</span>`;
+  else price = `<b class="pending">pricing</b><span>comps in progress</span>`;
+  const still = it.chip === "still" ? " still" : "";
+  return `<article class="card${it.feature ? " feature" : ""}" id="item-${it.id}">
+    <div class="ph"><img class="${still.trim()}" src="${it.img}" alt="${it.title}" loading="lazy"><span class="chip ${it.chip}">${CHIP[it.chip]}</span></div>
+    <div class="body"><div class="eyebrow">${it.id === "OWNER" ? "one of one" : it.id}</div><h3>${it.title}</h3><p>${it.sub}</p><div class="price">${price}</div></div>
+  </article>`;
+}
+for (const grid of document.querySelectorAll(".grid[data-cat]")) {
+  const cat = grid.dataset.cat;
+  grid.innerHTML = ITEMS.filter(i => i.cat === cat).map(card).join("");
+}
+</script>
