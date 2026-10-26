@@ -10,8 +10,11 @@ the "needs photo" items. Shop name (Ricky, 2026-10-26): **Hollywood and Vine**.
 
 **Dashboard (2026-10-26):** ops dashboard researched (ten Sonnet reports in `research/dashboard/`) and
 designed: `docs/dashboard-design.md` (what and why) and `docs/dashboard-handoff.md` (build order, smoke
-tests, schema deltas). Nothing built. Step 0 is blocked on Ricky creating the eBay, Etsy, Shopify and
-Supabase Pro accounts and keys (handoff section 0). The next build session starts at the handoff.
+tests, schema deltas). Same day, Ricky's call: listing from the phone is in Phase 1 (photos plus one
+line in, Claude Haiku drafts, Etsy draft listing, Ricky taps Publish, Crosslist imports from Etsy and
+fans out to eBay and Shopify; handoff T6b, smoke tests 13 and 14, an Anthropic key in section 0).
+Nothing built. Step 0 is blocked on Ricky creating the eBay, Etsy, Shopify, Supabase Pro and Anthropic
+accounts and keys (handoff section 0). The next build session starts at the handoff.
 
 Drive folder (Ricky's second Google account, `u/1`): https://drive.google.com/drive/u/1/folders/1doMLpzt09qxtbSOjWFkBOCYSQQnb3HYD
 The Claude Drive connector is on the other account and cannot see it; fetch through the signed-in

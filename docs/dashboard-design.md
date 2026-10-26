@@ -1,6 +1,7 @@
 # Hollywood and Vine ops dashboard: design v1
 
 Date: 2026-10-26. Status: designed, nothing built. Build handoff: `docs/dashboard-handoff.md`.
+Revised the same day on Ricky's call: listing from the phone (Claude draft, Etsy draft, manual Publish) is in Phase 1.
 
 Research base: ten Sonnet reports in `research/dashboard/01..10` (two waves of five), about 350 raw
 vendor pages in `research/dashboard/raw/`, the data model and metric SQL run in PGlite, the vendor
@@ -9,19 +10,23 @@ source in those reports; this document is the synthesis and the decisions.
 
 ## 1. What it is
 
-One installable web app, on Ricky's phone and on the desktop, that answers four questions:
+One installable web app, on Ricky's phone and on the desktop, that answers four questions and does
+one job (list a piece from the phone):
 
 1. **What sold?** One feed across eBay, Etsy and Shopify, with real profit (gross, fees, shipping, cost basis).
 2. **What do I own?** Every piece with cost, where it is stored, and its live status on each channel.
 3. **What should I go buy?** eBay listings that fit a watch Ricky wrote in plain words plus a price cap.
 4. **What needs me right now?** A sold item still live on another channel, an auction ending, a dead connection, a sale with no cost entered.
 
-It pushes to the phone through Pushover. It never lists, delists, reprices or crosslists; a paid
-crosslister owns that write path. It never buys; sourcing alerts end at a human tap.
+It pushes to the phone through Pushover. It writes to one place: photos taken in the app become a
+Claude-drafted Etsy draft listing that Ricky reviews and publishes with one tap, and the crosslister
+imports that Etsy listing and fans it out to eBay and Shopify (decided 2026-10-26, section 4 "List").
+It never delists, reprices or crosslists; the paid crosslister owns that. It never buys; sourcing
+alerts end at a human tap.
 
 ## 2. The three decisions that shape everything
 
-1. **Buy the write path, build the read path.** No product fills "sourcing alerts by description and price across sites", and nobody gives one profit number across three channels with cost basis. Everything else (crosslist, delist, inventory truth inside the tool) is bought for $9 to $40 a month. Source: `03` buy-vs-build matrix.
+1. **Build the read path and the first listing, buy the fan-out.** No product fills "sourcing alerts by description and price across sites", and nobody gives one profit number across three channels with cost basis. Listing is the bottleneck in resale, so the dashboard also turns photos into an Etsy draft listing (Claude writes it, Ricky publishes it): one write integration, verified against the live Etsy spec in `02` section 3. Everything else (crosslist to eBay and Shopify, delist, inventory truth inside the tool) is bought for $9 to $40 a month. Source: `03` buy-vs-build matrix; the listing step added 2026-10-26 on Ricky's call.
 2. **Webhooks first, polling for correctness.** Etsy (`order.paid`, `inventory.out_of_stock`, `listing.*`), Shopify (`ORDERS_PAID`, `PRODUCTS_UPDATE`) and eBay (`ORDER_CONFIRMATION`, `LISTING`) all push to HTTPS. One Supabase Edge Function receives them. Polling exists only for eBay watches (Browse has no push), for reconciliation, and for eBay listings of record. Source: `05` section 0, `02` section 4, `01` section 3.
 3. **eBay's license shapes the sourcing feature.** Watch hits are the most restricted data in the system: purge when the listing ends, at most 6 hours stale, shown in their own component, never used to suggest a price, train or score. So matching is deterministic rules plus optional per-listing LLM inference, and the "comps" panel is live links only. Source: `10` C5 to C12, `08` section 5.
 
@@ -49,7 +54,10 @@ crosslister owns that write path. It never buys; sourcing alerts end at a human 
                                           '--> ntfy.sh/<existing topic> on non-2xx or unacked p2
                                                                             React 19 PWA (Home Screen)
                                                                             Cloudflare Pages or Vercel Pro
- CROSSLISTER (Crosslist Gold, trial first): owns list / delist / reprice. The dashboard never calls it.
+ Edge Fn list-etsy (called by the app): signed photo URLs + Ricky's one line --> Claude Haiku 5.5 (JSON draft)
+                 --> Etsy create draft listing + upload images (state draft) --> Ricky taps Publish --> state=active
+ CROSSLISTER (Crosslist Gold, trial first): imports the Etsy listing, posts it to eBay and Shopify, owns
+                 delist / reprice. The dashboard never calls it.
  FEDORA BOX: not used in v1. Phase 2 only, outbound, best-effort, heartbeat row.
 ```
 
@@ -63,7 +71,7 @@ crosslister owns that write path. It never buys; sourcing alerts end at a human 
 | Push | **Pushover** primary ($4.99 once), ntfy.sh fallback on the topic Ricky already has | only channel with insist-until-acknowledged (`05` 4c) |
 | UI hosting | Cloudflare Pages ($0, terms carry no non-commercial clause) or Vercel Pro ($20) if already paid | Vercel Hobby forbids commercial use (`05` 2.1, `raw/host-cloudflare-terms.md`) |
 | Dead-man | Healthchecks.io free, one check per scheduled job | a dead cron chain is otherwise silent (`05` 7.3, `10` C46) |
-| Libraries | raw `fetch` for eBay, Etsy, Shopify, Pushover, ntfy, Healthchecks | all tested; no client library needed (`08` section 1) |
+| Libraries | raw `fetch` for eBay, Etsy, Shopify, Pushover, ntfy, Healthchecks, Claude | all tested; no client library needed (`08` sections 1 and 4) |
 
 ## 4. Data flows
 
@@ -84,6 +92,21 @@ custom label) then title.
 **Oversell guard.** On every sale, if any other `channel_listings` row for that item is still
 `active` 20 minutes later, raise `oversell_risk` (priority 2). If the crosslister delists inside its
 documented 15 minutes, the row flips to `ended` and nothing fires.
+
+**List (from the phone).** Add item takes up to ten photos (resized in the PWA to about a 1,500 px
+long edge), cost, and one line of what Claude cannot see: measurements, flaws, maker marks. The
+`list-etsy` function sends 60-second signed Storage URLs plus that line to Claude Haiku 5.5 with
+structured output (`08` section 4: title, description, condition notes, visible defects, era and
+maker guesses with confidence, materials, keywords, tags, `needs_better_photo`; no price field),
+maps the keywords to an Etsy `taxonomy_id` through the seller-taxonomy tree (the model never emits
+category ids), then creates the Etsy draft (`quantity=1`, `who_made=someone_else`, `when_made` from
+the era guess, Ricky's price, the shop's default shipping profile and return policy) and uploads the
+photos in rank order. The draft opens in Item detail with every guess marked; Publish is a separate
+tap that sets `state=active`. Nothing goes live without that tap. The `listing.*` webhook and the
+3-hour sweep keep `channel_listings` honest; the crosslister imports the Etsy listing and posts it
+to eBay and Shopify. If a 20-item side-by-side shows weak titles or eras, switch to Sonnet 5.5
+(about 20x the cost, still under a cent a listing). Verified surfaces: `02` section 3 rows "Create
+listing (draft)", "Image upload", "Update / publish" from the live spec; `08` section 4 for Claude.
 
 **Watches.** `tick` claims due watches with a lease (`update ... where next_run_at <= now() ...
 for update skip locked`), calls Browse `item_summary/search` with `sort=newlyListed`,
@@ -120,6 +143,7 @@ Deltas decided here (exact SQL in the handoff, section 4):
 | `items.cost_purchase` nullable; `cost_basis` uses `coalesce` | NULL = unknown, 0 = free; today they collide (`07` open question 10) |
 | new `deletion_log` | eBay account-deletion proof that survives a restore (`10` C13, C14) |
 | `candidates` purge keeps id, status, hash only | eBay content must go when the listing ends (`10` C8, `08` section 5) |
+| `items` + `ai_notes`, `draft`, `draft_model`, `drafted_at` | the one line Ricky typed, the Claude draft as JSON, which model, when; the Etsy listing id lives in `channel_listings` as today (section 4 "List") |
 
 Money stays `numeric(12,2)` dollars with every sum done in SQL views (`06` is tested that way; `10`
 C44's "integer minor units" is advice, not a vendor rule). Buyer PII is stripped before any row is
@@ -142,14 +166,15 @@ matches it, not the ASCII).
 | **Today** | Is anything on fire, and what did I make | tap the top "Needs you" row |
 | **Alerts** | decide on each buy match; confirm each sale | Bought / Not this / Open on eBay |
 | **Watches** | say what to hunt for, in plain words | create or toggle a watch; "Test" runs it once |
-| **Inventory** | what I own, what it cost, where it is | Add item: photo, title, cost, nothing else required |
+| **Inventory** | what I own, what it cost, where it is; list it | Add item: photos, cost, one line of notes; then Draft, then Publish to Etsy |
 | **Sales** | the real numbers by month and channel | switch month |
-| Item detail (pushed) | everything about one piece | edit, open on channel |
+| Item detail (pushed) | everything about one piece, including the draft | edit, Publish to Etsy, open on channel |
 
 Rules that are not negotiable in the UI:
 
 - "Needs you" order: double-sale risk, unread buy matches, starred auctions ending in 24 h, connection problems, data hygiene (missing cost, aged 90+ days).
 - "Bought" on a buy card creates the inventory item with the paid price as cost basis. That tap is where profit tracking becomes free.
+- Claude's era, maker and material guesses render as guesses with a confidence chip until Ricky edits or confirms them; `needs_better_photo` shows a camera prompt. Publish to Etsy is its own labelled tap after the draft is on screen. There is no auto-publish setting.
 - Every eBay card prints "as of HH:MM", disappears when the listing ends, carries no cost, margin, comp or other-site column, and never interleaves with sales or Recent. The "All" segment is grouped, not merged.
 - No "good deal" badge, no typical price, no channel ranking. By-channel is alphabetical with no commentary.
 - Buyer names, addresses, emails, phones appear nowhere.
@@ -168,7 +193,7 @@ shadcn's output: dark mode to `prefers-color-scheme`, buttons and inputs to 44 p
 
 The full list is `10` section 4 (C1 to C50). The ones that change code:
 
-- Etsy Seller App registered with the purpose "sales and inventory reporting and sold or low-stock alerts for my own shop"; Etsy is never a sourcing source; no buyer messaging. (C1 to C3)
+- Etsy Seller App registered with the purpose "creating and publishing listings for my own shop, plus sales and inventory reporting and sold or low-stock alerts"; scopes `listings_r listings_w transactions_r shops_r` (the minimum set in `02` section 2 already includes `listings_w`); Etsy is never a sourcing source; no buyer messaging. (C1 to C3)
 - eBay watch hits: purge on end, 6-hour staleness, visual isolation, no price modelling, no training, no auto-buy. (C5, C8 to C12)
 - eBay account-deletion endpoint before the first production call; `deletion_log`; redact on notice. (C13, C14)
 - Shopify ingest works with every buyer field null; 30-day deletion on uninstall. (C16, C17)
@@ -185,21 +210,22 @@ first one decides whether buy alerts can be API-driven at all: one production Br
 standard keyset. If it fails, sourcing falls back to eBay's own saved-search emails until an
 Application Growth Check or Partner Network application lands.
 
-**Phase 1: sold feed, inventory, profit (the part that definitely works).** Schema, deletion
+**Phase 1: sold feed, inventory, profit, and listing from the phone.** Schema, deletion
 endpoint, webhook receiver, processors and reconciliation polls, listings sync, oversell guard,
 notify, Healthchecks, token watchdog, PWA with Today, Alerts (Sold), Inventory with Add, Sales,
-Settings, Item detail. Installed on the phone.
+Settings, Item detail. Then List from the phone: photos and one line in, Claude draft, Etsy draft,
+Publish tap (handoff T6b). Installed on the phone.
 
 **Phase 1b: watches.** Watches and candidates tables in use, `tick` watch lane, refresh and purge,
 Watches screen with Test, Alerts Buy tab, Bought sheet.
 
 **Phase 2, in order of value.** Haiku 5.5 tier-2 matching on tier-1 survivors (about $0.08 per
-1,000 listings with thinking disabled; build a 100-listing labelled set from week one first). AI
-listing drafts from a photo (about $0.0004 per photo on Haiku 5.5, $0.007 on Sonnet 5.5). The
+1,000 listings with thinking disabled; build a 100-listing labelled set from week one first). The
 compliant comps panel (live eBay asking prices, unstored, isolated, plus a link to eBay's own sold
 search and Terapeak). Saved-search email ingestion for Craigslist, ShopGoodwill, EstateSales.net,
 Invaluable, Chairish, HiBid. Web Push and the app-icon badge. A second user (a metadata flag, not a
-schema change).
+schema change). Direct eBay and Shopify listing from the same draft (retiring the crosslister)
+only once the Etsy-first flow has proven the drafts and the crosslister's import leg is the pain.
 
 ## 9. Cost
 
@@ -210,6 +236,7 @@ schema change).
 | Pushover | $0 ($4.99 once per platform) | 10,000 messages/month free per user |
 | ntfy.sh, Healthchecks.io, Resend | $0 | ntfy 250/day cap; Healthchecks 20 checks; Resend 3,000/month |
 | Domain | about $1 | |
+| Claude Haiku 5.5 listing drafts (phase 1) | under $1 | about $0.001 per five-photo listing (`08` section 4); Sonnet 5.5 is 20x and still under a cent |
 | Claude Haiku 5.5 (phase 2) | $3 to $5 | at about 1,200 tier-1 survivors a day |
 | Crosslister (Ricky's pick) | $9 to $40 | Crosslist Gold $39.99 is the documented 15-minute all-three-channel option |
 | **Dashboard total** | **about $26 to $46** | plus $4.99 once |
@@ -226,6 +253,7 @@ schema change).
 | Matching v1 | tier 0 + tier 1 rules | LLM (phase 2) and embeddings (never on eBay titles: C11) |
 | Comps | live links only, nothing stored or computed | eBay license 9.5 bans suggesting prices for items listed on eBay |
 | Crosslister | trial Crosslist Gold; dashboard independent of the choice | Vendoo omits Shopify delist; FLUF polls every 60 to 90 min; List Perfectly delists at $99+ |
+| Listing from the phone | one write integration: Claude drafts from the photos plus Ricky's one line, an Etsy draft listing, Ricky taps Publish; Crosslist imports from Etsy (its app bulk-imports from any marketplace) and posts to eBay and Shopify | posting direct to all three now (three listing forms, eBay item specifics, three things to maintain; revisit after the drafts are proven); auto-publish (Claude cannot measure a jacket or see the flaw on the back); the crosslister's own AI add-on (not our model, not our schema, no draft kept) |
 | Shopify as hub | no | Marketplace Connect cannot add Etsy any more; sync apps unproven on quantity-1 delist latency |
 | Pull-to-refresh | none; Realtime plus refetch on `SUBSCRIBED`, `visibilitychange`, `online` | iOS Home Screen apps have no native gesture; Android's reloads the SPA |
 | Offline writes | none in v1 | duplicates after slow saves are a real failure mode; revisit if estate sales have no signal |
@@ -244,6 +272,8 @@ schema change).
 8. A second login later (a helper)? **Not now.**
 9. Email developer@etsy.com to confirm an own-shop sales dashboard is fine under API Terms #25? **Register with the precise purpose and proceed**; the email is cheap insurance.
 10. CPA: inventory accounting method before year end. Not blocking.
+11. Etsy shop defaults the API drafts reference: one shipping profile and one return policy, created in the Etsy shop before T6b. **Whatever the shop already uses.**
+12. Anthropic API key with a spend cap (handoff section 0, row 10). Blocks T6b only.
 
 ## 12. Known unknowns that only Step 0 resolves
 
@@ -254,3 +284,5 @@ schema change).
 - Shopify protected customer data on a Dev Dashboard app in the merchant's org.
 - Supabase Edge Runtime running `npm:fast-xml-parser` (and `web-push` later); the probe is staged in the session scratchpad and resolves by deploying it.
 - Pushover and ntfy delivery latency; whether a Pushover link opens Safari or the installed app.
+- Whether Etsy lets a physical listing publish without `shipping_profile_id` and `readiness_state_id` (optional in the create schema; the draft always sends the shop defaults, so this only bites if they are missing).
+- Whether Anthropic fetches a signed Supabase Storage URL as an image source (base64 of the resized JPEG is the fallback).
