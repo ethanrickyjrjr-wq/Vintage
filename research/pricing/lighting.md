@@ -26,11 +26,16 @@ Discrepancy report: WebSearch result summaries gathered, listing pages need revi
 | Stiffel brass neoclassical lamp, harp + acanthus finial, Stiffel shade, single (S) | $308.75 sale (was $475) | ASKING (on sale) | Etsy | one of: https://www.etsy.com/market/stiffel_antique_lamp , https://www.etsy.com/market/brass_stiffel_lamps , https://www.etsy.com/market/stiffel_lamp |
 | Stiffel trophy-style cast brass, curled acanthus over fluted urn, single (S) | $495 | ASKING | Chairish | https://www.chairish.com/maker/stiffel?page=5&sort=price |
 | Stiffel brass + crystal pineapple PAIR, 30 in (S) | $525 pair (about $262 each) | ASKING | Chairish | https://www.chairish.com/maker/stiffel?page=5&sort=price |
-| Stiffel brass trophy urn PAIR (S) | $225 (was $350) | ASKING | 1stDibs | https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-stiffel-brass-trophy-urn-table-lamps/id-f_3874552 (title match) |
+| Stiffel brass trophy urn PAIR (S) | $225 (was $350) | ASKING | 1stDibs | one of: https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-stiffel-brass-trophy-urn-table-lamps/id-f_3874552 , https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-stiffel-solid-brass-trophy-urn-table-lamps/id-f_45011522 |
+| Tall Stiffel brass + white porcelain urn-form PAIR (closest format to A1) (S) | $1,000 pair on sale, 20% off (about $500 each) | ASKING (on sale) | 1stDibs | one of: https://www.1stdibs.com/furniture/lighting/table-lamps/pair-stiffel-fluted-studded-brass-urn-table-lamps/id-f_733905 , https://www.1stdibs.com/furniture/lighting/table-lamps/table-lamp-stiffel/id-f_11016101 , https://www.1stdibs.com/furniture/lighting/table-lamps/stiffel-tall-brass-table-lamps/id-f_5602443 (summary did not say which) |
+| Stiffel #5561 brass trophy lamp, curled acanthus over fluted urn, 26.25 in, single (S) | $625 | ASKING | 1stDibs | one of: https://www.1stdibs.com/furniture/lighting/table-lamps/stiffel-tall-brass-table-lamps/id-f_5602443 , https://www.1stdibs.com/furniture/lighting/table-lamps/stiffel-brass-table-lamp/id-f_1035812 (summary did not say which) |
+| Stiffel solid brass pair, acanthus detail, Hollywood Regency tag (S) | $1,360 pair (about $680 each) | ASKING | 1stDibs | one of: https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-stiffel-large-brass-crystal-bouillotte-table-lamps/id-f_5663103 , https://www.1stdibs.com/furniture/lighting/table-lamps/pair-stiffel-fluted-studded-brass-urn-table-lamps/id-f_351090 (summary did not say which) |
+
+**Discrepancy:** the same Stiffel trophy description (curled acanthus over fluted urn) priced $625 on 1stDibs vs $495 on Chairish: 1stDibs $625 vs Chairish $495, need review (different listings or the same lamp at two asks; neither page opened).
 
 **Stamped vs unmarked.** Stamped Stiffel singles cluster about $300-$500 asking. Chairish carries unmarked "Stiffel style" pineapple lamps, but no price was captured, so there is NO priced unmarked comp. The unmarked range below is JUDGMENT (about 40-60% of stamped). The stamp is the biggest swing factor on this item; check it before listing.
 
-**List price, stamped Stiffel (single):** low $225 / target $325 / high $425. Rationale: single asks run $308-$495, no sold data, list under the middle to leave offer room.
+**List price, stamped Stiffel (single):** low $225 / target $325 / high $450. Rationale: single asks run $308-$625, porcelain-urn asks $395-$550 each, no sold data, list under the middle to leave offer room.
 **List price, unmarked (JUDGMENT):** low $125 / target $175 / high $250. Rationale: same look and function, no brand premium.
 
 ---
@@ -62,7 +67,7 @@ Discrepancy report: WebSearch result summaries gathered, listing pages need revi
 
 No exact match (gold resin veiled-lady bust with pleated shade) found; the three Etsy rows are the closest-tier comps, all older or different material.
 
-**List price:** low $75 / target $110 / high $165. Rationale: a reproduction resin piece sits under the $128-$250 asks for older chalkware/ceramic; size and pleated shade help. Raise to $200+ if it proves to be marked genuine chalkware.
+**List price (JUDGMENT; no exact comp, comps are older chalkware/ceramic):** low $75 / target $110 / high $165. Rationale: a reproduction resin piece sits under the $128-$250 asks for older chalkware/ceramic; size and pleated shade help. Raise to $200+ if it proves to be marked genuine chalkware.
 
 ---
 
@@ -122,7 +127,7 @@ Notes: the $374.99 K100 is a complete-with-box outlier and an asking price, so d
 |---|---|---|
 | A1 | $325 stamped Stiffel; $175 unmarked (JUDGMENT) | med (stamped) / low (unmarked) |
 | A2 | $125 (JUDGMENT; no comps found) | low |
-| A13 | $110 | low |
+| A13 | $110 (JUDGMENT) | low |
 | A17 | $85 pair / about $50 each (JUDGMENT) | low |
 | A16 | $55 working / $25 untested (JUDGMENT) | low |
-| A9 | $95 working / $45 untested-display | low |
+| A9 | $95 working (JUDGMENT) / $45 untested-display | low |
