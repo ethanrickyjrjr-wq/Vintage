@@ -6,7 +6,7 @@ Etsy and Shopify, probably with its own site later. First pass done 2026-10-26: 
 photos + a 24 s walkthrough video pulled, inventory catalogued in `research/inventory/`, comps priced
 by Sonnet subagents into `research/pricing/`, sample storefront built as an artifact. Photos and
 video frames live in `assets/` (previews only; originals stay in Ricky's Drive). Next: Ricky re-shoots
-the "needs photo" items, picks a shop name, says whether a GitHub remote is wanted.
+the "needs photo" items and picks a shop name.
 
 Drive folder (Ricky's second Google account, `u/1`): https://drive.google.com/drive/u/1/folders/1doMLpzt09qxtbSOjWFkBOCYSQQnb3HYD
 The Claude Drive connector is on the other account and cannot see it; fetch through the signed-in
@@ -69,5 +69,5 @@ A new key goes into the desk `.env` first, then here. Never into brain-platform.
 
 ## Git
 
-Local repo. A GitHub remote is a structure change and needs Ricky's word (`wiki/github-repos.md`).
-Once one exists: `git pull --rebase`, secrets grep, commit, push, every time a task lands.
+Remote `origin` = github.com/ethanrickyjrjr-wq/Vintage (seen 2026-10-26). Every time a task lands:
+`git pull --rebase`, secrets grep, commit, push. Structure changes (rename, delete, visibility) still need Ricky's word.
