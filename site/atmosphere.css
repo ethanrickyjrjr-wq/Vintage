@@ -1,0 +1,325 @@
+/* Hollywood and Vine: an assembled vintage interior.
+   Display layers: wall/art 1, lettering 2, foreground objects 3, controls 4.
+   The Bodoni wordmark, burgundy walls and pink accent are retained brand assets. */
+:root {
+  --paper: #422831;
+  --paper-deep: #4d303b;
+  --text: #f6efdf;
+  --muted: #d1bdb8;
+  --line: #79545e;
+  --rust: #e5a6b4;
+  --wall: #652b40;
+  --wall-edge: #3d1b2b;
+  --relief: #ae9680;
+  color-scheme: dark;
+}
+:root[data-theme="evening"] {
+  --paper: #291d24;
+  --paper-deep: #36242e;
+  --text: #f6efdf;
+  --muted: #cbb8b3;
+  --line: #684652;
+  --wall: #4e2336;
+  --wall-edge: #27151f;
+  color-scheme: dark;
+}
+body { overflow-x: clip; }
+.site-header {
+  height: 80px;
+  background: var(--wall-edge);
+  border-bottom: 1px solid #a47f704d;
+}
+.site-header .wordmark { text-shadow: 0 2px 1px #28101e; }
+.rug-band { height: 5px; }
+.salon {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: radial-gradient(ellipse at 77% 28%, #c17f5e35, transparent 46%),
+    radial-gradient(ellipse at 29% 45%, #ba587c29, transparent 62%),
+    linear-gradient(100deg, var(--wall-edge), var(--wall) 34%, var(--wall) 75%, var(--wall-edge));
+  color: var(--cream);
+  box-shadow: inset 0 12px 20px #1d101c38;
+}
+.salon::before {
+  content: "";
+  position: absolute;
+  inset: 35px 3% 31px;
+  border: 2px solid #b37d7840;
+  box-shadow: 2px 2px 0 #2c132e66, inset 1px 1px 0 #2c132e66;
+  pointer-events: none;
+}
+.salon-stage {
+  --look-x: 0px;
+  --look-y: 0px;
+  position: relative;
+  width: min(1500px, 100%);
+  height: clamp(650px, 48vw, 760px);
+  margin: auto;
+  perspective: 1400px;
+}
+.salon-copy {
+  position: absolute;
+  z-index: 2;
+  left: 13%;
+  top: 19%;
+  width: 72%;
+}
+.salon-copy .eyebrow { margin: 0 0 26px 8px; font-size: 10px; }
+.salon h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(86px, 8.3vw, 130px);
+  letter-spacing: -.055em;
+  line-height: 1.12;
+  margin: 0 0 35px;
+  transform: rotate(-3deg);
+  transform-origin: left center;
+}
+.salon h1 > span {
+  display: block;
+  text-shadow: 1px 1px 0 #c8b49d, 2px 2px 0 #bda58e, 3px 3px 0 #b09982,
+    4px 4px 0 #9f826c, 5px 5px 0 #8f705d, 6px 6px 0 #80604e,
+    9px 13px 3px #26151c70, 14px 24px 20px #25121c80;
+}
+.salon h1 em {
+  display: block;
+  margin-left: 4%;
+  padding-bottom: .08em;
+  white-space: nowrap;
+  font-weight: 400;
+  color: var(--pink);
+  text-shadow: 1px 2px 0 #a75273, 2px 3px 0 #8e3f60, 3px 5px 0 #77304d,
+    5px 8px 0 #582137, 8px 14px 8px #25101d80;
+}
+.salon-description { font-size: 15px; line-height: 1.8; margin: 0 0 25px 8px; max-width: 35ch; color: #edd9d4; }
+.salon-copy > .button { margin-left: 8px; box-shadow: 4px 5px 0 #b29685, 8px 12px 18px #24101e66; }
+.salon-copy > .button:hover { transform: translate(1px, 1px); box-shadow: 2px 3px 0 #b29685, 6px 10px 12px #24101e66; }
+.salon-chandelier {
+  position: absolute;
+  z-index: 3;
+  width: 17%;
+  left: -2%;
+  top: -75px;
+  pointer-events: none;
+  filter: drop-shadow(15px 19px 9px #25121d70);
+  transform: translate3d(calc(var(--look-x) * -.4), calc(var(--look-y) * -.4), 0) rotate(5deg);
+}
+.salon-chandelier img { object-fit: contain; }
+.salon-art {
+  position: absolute;
+  z-index: 1;
+  right: 7%;
+  top: 9%;
+  width: 22%;
+  padding: 0;
+  transform: translate3d(calc(var(--look-x) * -.3), calc(var(--look-y) * -.3), 0) rotate(7deg);
+  transition: transform .4s ease;
+}
+.gilt-frame {
+  display: block;
+  padding: 12px;
+  background: #947239;
+  border: 5px ridge #b69553;
+  box-shadow: inset 0 0 0 2px #513b22, inset 0 0 0 5px #d5b16b,
+    12px 18px 0 #26131c38, 20px 27px 26px #21121c65;
+}
+.gilt-frame img { aspect-ratio: 3/4; border: 3px solid #392719; object-fit: cover; }
+.object-caption { display: block; margin-top: 17px; font-size: 11px; color: #e5d2c8; text-align: left; }
+.object-caption > span { margin-left: 8px; }
+.salon-art:hover, .salon-art:focus-visible { transform: rotate(3deg) translateY(-5px); }
+.salon-lamp {
+  position: absolute;
+  z-index: 3;
+  width: 25%;
+  right: -1%;
+  bottom: -17px;
+  pointer-events: none;
+  transform: translate3d(var(--look-x), var(--look-y), 0);
+  filter: drop-shadow(20px 15px 8px #29111e60);
+}
+.salon-disco {
+  position: absolute;
+  z-index: 3;
+  top: 15px;
+  left: 53%;
+  width: 105px;
+  padding: 0;
+  transform: translate3d(calc(var(--look-x) * .7), calc(var(--look-y) * .7), 0) rotate(-8deg);
+  filter: drop-shadow(12px 15px 8px #28131d70);
+  transition: transform .4s ease;
+}
+.salon-disco::before { content: ""; position: absolute; width: 1px; height: 75px; background: #d7beb7; bottom: 99%; left: 50%; }
+.salon-disco:hover { transform: rotate(7deg); }
+.salon-tour {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  position: absolute;
+  z-index: 4;
+  bottom: 38px;
+  left: 56%;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px;
+}
+.tour-play { width: 43px; height: 43px; flex: 0 0 auto; border: 1px solid #c2a19d; border-radius: 50%; display: grid; place-items: center; font-size: 24px; }
+.salon-tour small { display: block; font-size: 10px; color: #d4b9b6; margin-top: 3px; }
+.salon-tour:hover .tour-play { background: var(--cream); color: var(--burgundy); }
+.salon-ledge { height: 22px; background: linear-gradient(#a17961, #7a5545 18%, #3c242c 25%, #21171e 78%, #63413d); box-shadow: 0 17px 22px #1f121d66; }
+.display-shelves { padding-top: 105px; padding-bottom: 100px; }
+.display-shelves .section-intro { margin-bottom: 55px; padding-left: 3%; }
+.display-shelves .section-intro h2 { font-size: clamp(40px, 4.4vw, 66px); line-height: 1.15; }
+.display-shelves .section-intro h2 em { color: var(--pink); font-weight: 400; text-shadow: 2px 3px 0 #884662, 5px 8px 10px #180f1b50; }
+.display-shelves .section-intro p { font-size: 14px; margin-top: 19px; }
+.display-shelves .department-grid { gap: 42px; align-items: start; padding: 0 20px; }
+.display-shelves .department-image { box-shadow: 10px 14px 20px #190e1a50; transition: transform .4s, box-shadow .4s; }
+.display-shelves .department-lighting .department-image { border-radius: 48% 48% 0 0; border: 7px solid #a98b57; outline: 1px solid #c2ac7a; aspect-ratio: 3/4; transform: rotate(-4deg); }
+.display-shelves .department-fashion { padding-top: 80px; }
+.display-shelves .department-fashion .department-image { border: 9px solid #e6dbca; transform: rotate(4deg); aspect-ratio: 4/5; }
+.display-shelves .department-art { padding-top: 14px; }
+.display-shelves .department-art .department-image { border: 10px ridge #b08b52; transform: rotate(-3deg); aspect-ratio: 1/1.06; }
+.display-shelves .department-print { padding-top: 115px; }
+.display-shelves .department-print .department-image { border: 6px solid #e1d0ba; transform: rotate(6deg); aspect-ratio: 1/1; }
+.display-shelves .department-image img { height: 100%; aspect-ratio: auto; }
+.display-shelves .department:hover .department-image { transform: rotate(0deg) translateY(-7px); box-shadow: 13px 21px 24px #190e1a70; }
+.display-shelves .department-label { margin-top: 30px; }
+.display-shelves .department-label h3 { font-size: 25px; }
+.display-shelves .department p { font-size: 12px; }
+.design-story { padding: 90px 0 110px; background: var(--paper-deep); box-shadow: inset 0 8px 20px #1b0e192b; }
+.design-story-inner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 12%; }
+.design-collage { position: relative; padding: 0 0 55px; }
+.design-room { width: 82%; margin: 0; padding: 12px 12px 0; background: #e6dac8; color: #4a2935; transform: rotate(-5deg); box-shadow: 13px 23px 24px #24132160; }
+.design-room img { aspect-ratio: 3/4; }
+.design-room figcaption { padding: 13px 0; font-size: 12px; }
+.design-detail { position: absolute; bottom: 0; right: -6%; width: 48%; padding: 7px 7px 0; transform: rotate(7deg); background: #d9bcc0; color: #45222e; box-shadow: 11px 18px 20px #24132160; transition: transform .35s; }
+.design-detail img { aspect-ratio: 4/5; }
+.design-detail > span { display: block; font-size: 11px; padding: 12px 4px; }
+.design-detail:hover { transform: rotate(3deg) translateY(-6px); }
+.design-copy h2 { font: 400 clamp(39px, 4.2vw, 62px)/1.15 var(--display); letter-spacing: -.04em; margin: 0 0 28px; }
+.design-copy h2 em { color: var(--pink); display: inline-block; padding-bottom: .08em; text-shadow: 2px 3px 0 #8b4a62, 5px 10px 12px #24132160; }
+.design-copy > p { color: var(--muted); font-size: 15px; line-height: 1.85; max-width: 41ch; margin: 0 0 18px; }
+.material-pairings { display: grid; margin-top: 32px; max-width: 370px; }
+.material-pairings button { padding: 12px 0; display: flex; justify-content: space-between; text-align: left; font-size: 13px; }
+.material-pairings button + button { border-top: 1px solid var(--line); }
+.material-pairings button:hover { color: var(--pink); }
+.material-pairings span { font-size: 19px; }
+.collection { padding-top: 100px; }
+.collection-intro h2 { line-height: 1.15; }
+.collection-intro h2 em { display: inline-block; padding-bottom: .08em; color: var(--pink); }
+.collection-mark { border: 0; text-shadow: 2px 3px 0 #a88a74, 7px 10px 10px #160e1955; transform: rotate(-10deg); }
+.product-visual { border: 7px solid var(--paper-deep); box-shadow: 5px 7px 0 #21151f66; }
+.product-meta .status { background: transparent; border: 0; color: var(--muted); padding-left: 0; }
+.product-id { display: none; }
+.product-info { padding-top: 20px; }
+.product-title { font-size: 24px; }
+.product-price { font-size: 15px; }
+.collection-bottom p { font-size: 12px; }
+.disco-note { position: relative; isolation: isolate; display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 10%; padding-block: 65px 95px; margin-block: 10px 75px; }
+.disco-note::before { content: ""; position: absolute; inset: 10% 0 0; z-index: -1; background: radial-gradient(ellipse at 40% 50%, #b8798322, transparent 60%); pointer-events: none; }
+.disco-note-image { width: min(370px, 88%); justify-self: center; position: relative; transform: rotate(-12deg); filter: drop-shadow(22px 24px 17px #1b101c75); }
+.disco-note-image::before { content: ""; position: absolute; width: 1px; height: 120px; bottom: 98%; left: 50%; background: var(--muted); }
+.disco-note h2 { font: 400 clamp(45px, 5.4vw, 80px)/1.1 var(--display); letter-spacing: -.04em; margin: 0 0 26px; }
+.disco-note h2 em { color: var(--pink); text-shadow: 2px 3px 0 #8d4d65, 5px 7px 0 #71364e, 8px 13px 12px #22121e80; display: inline-block; padding-bottom: .1em; }
+.disco-note p { max-width: 36ch; font-size: 16px; color: var(--muted); line-height: 1.8; }
+.disco-note .disco-signoff { font-family: var(--display); font-style: italic; font-size: 23px; color: var(--text); margin-top: 24px; }
+.owner-section { background: var(--paper-deep); box-shadow: 12px 15px 0 #21151f55; }
+.owner-ticket { background: var(--pink); color: var(--burgundy); box-shadow: 3px 5px 8px #32152055; }
+.owner-star { color: var(--pink); }
+.owner-photo { box-shadow: 10px 15px 20px #24132166; }
+.shop-notes > h2 { font-size: 38px; }
+.notes-grid h3 { font-size: 14px; }
+.notes-grid p, .price-notes > div { font-size: 13px; }
+.footer-wordmark { text-shadow: 2px 2px 0 #af9386, 5px 7px 7px #1e111d66; }
+.site-footer { background: var(--wall-edge); }
+@media (prefers-reduced-motion: no-preference) {
+  .salon-copy { animation: salon-arrive .9s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes salon-arrive { from { translate: 0 18px; } to { translate: 0 0; } }
+}
+@media (max-width: 1150px) and (min-width: 768px) {
+  .salon-stage { height: 650px; }
+  .salon-copy { left: 8%; top: 22%; width: 80%; }
+  .salon h1 { font-size: 9vw; }
+  .salon-art { width: 23%; right: 6%; top: 7%; }
+  .salon-lamp { width: 28%; }
+  .salon-chandelier { width: 17%; top: -40px; left: -4%; }
+  .salon-disco { left: 48%; width: 90px; }
+  .salon-tour { left: 47%; bottom: 27px; max-width: 250px; }
+  .display-shelves .department-grid { gap: 26px; padding: 0 6px; }
+  .display-shelves .department-label h3 { font-size: 21px; }
+  .design-story-inner { gap: 9%; }
+  .design-copy > p { font-size: 14px; }
+}
+@media (max-width: 767px) {
+  .site-header { height: 72px; }
+  .salon::before { inset: 18px 14px 20px; }
+  .salon-stage { height: 690px; width: 100%; }
+  .salon-copy { top: 150px; left: 24px; width: calc(100% - 48px); }
+  .salon-copy .eyebrow { font-size: 8px; margin: 0 0 19px; }
+  .salon h1 { font-size: clamp(47px, 12.5vw, 86px); margin-bottom: 17px; line-height: 1.13; }
+  .salon h1 > span { text-shadow: 1px 1px #c8b49d, 2px 2px #bda58e, 3px 3px #9f826c, 4px 5px #80604e, 7px 11px 8px #25121c80; }
+  .salon h1 em { margin-left: 0; font-size: .98em; }
+  .salon-description { font-size: 12px; line-height: 1.8; margin: 0 0 22px; max-width: 31ch; }
+  .salon-copy > .button { margin-left: 0; min-height: 48px; }
+  .salon-art { top: 25px; right: 7%; width: 125px; }
+  .gilt-frame { border-width: 3px; padding: 5px; }
+  .object-caption { display: none; }
+  .salon-chandelier { top: -50px; left: -18px; width: 125px; }
+  .salon-disco { left: 39%; top: 17px; width: 72px; }
+  .salon-lamp { width: 215px; bottom: -10px; right: -10px; }
+  .salon-tour { left: 17px; bottom: 37px; width: 185px; padding: 7px; gap: 10px; font-size: 11px; }
+  .salon-tour small { font-size: 9px; max-width: 14ch; }
+  .tour-play { width: 35px; height: 35px; font-size: 20px; }
+  .salon-ledge { height: 17px; }
+  .display-shelves { padding-top: 65px; padding-bottom: 65px; }
+  .display-shelves .section-intro { padding-left: 3px; margin-bottom: 40px; }
+  .display-shelves .section-intro h2 { font-size: clamp(33px, 8.5vw, 48px); }
+  .display-shelves .section-intro p { font-size: 12px; margin-top: 14px; }
+  .display-shelves .department-grid { gap: 38px 25px; padding: 0 6px; }
+  .display-shelves .department-fashion { padding-top: 48px; }
+  .display-shelves .department-art { padding-top: 0; }
+  .display-shelves .department-print { padding-top: 50px; }
+  .display-shelves .department-label { margin-top: 24px; }
+  .display-shelves .department-label h3 { font-size: 21px; min-height: auto; }
+  .display-shelves .department p { font-size: 11px; }
+  .display-shelves .department-lighting .department-image { border-width: 5px; }
+  .display-shelves .department-fashion .department-image { border-width: 6px; }
+  .display-shelves .department-art .department-image { border-width: 6px; }
+  .design-story { padding: 55px 0; }
+  .design-story-inner { grid-template-columns: 1fr; gap: 46px; }
+  .design-collage { max-width: 420px; width: 90%; margin: auto; padding-bottom: 40px; }
+  .design-room { width: 80%; padding: 8px 8px 0; }
+  .design-room figcaption { font-size: 10px; padding-block: 10px; }
+  .design-detail { width: 48%; right: -2%; }
+  .design-detail > span { font-size: 9px; padding: 8px 2px; }
+  .design-copy h2 { font-size: clamp(36px, 9vw, 52px); margin-bottom: 20px; }
+  .design-copy > p { font-size: 14px; max-width: 44ch; }
+  .material-pairings { margin-top: 22px; max-width: none; }
+  .collection { padding-block: 60px; }
+  .collection-intro h2 { font-size: 36px; }
+  .collection-mark { display: none; }
+  .product-visual { border-width: 4px; box-shadow: 3px 5px 0 #21151f66; }
+  .product-info { padding-top: 16px; }
+  .product-title { font-size: 21px; }
+  .product-price { font-size: 14px; }
+  .collection-bottom p { font-size: 11px; }
+  .disco-note { grid-template-columns: 1fr; padding: 40px 8px 30px; margin-block: 0 55px; gap: 24px; text-align: center; }
+  .disco-note-image { width: 200px; }
+  .disco-note-image::before { height: 75px; }
+  .disco-note h2 { font-size: 53px; margin-bottom: 15px; }
+  .disco-note p { font-size: 14px; margin-inline: auto; }
+  .disco-note .disco-signoff { font-size: 22px; margin-top: 17px; }
+  .owner-section { box-shadow: 7px 9px 0 #21151f55; }
+  .shop-notes > h2 { font-size: 30px; }
+  .notes-grid p { font-size: 12px; }
+}
+@media (max-width: 370px) {
+  .salon-copy { left: 21px; width: calc(100% - 42px); }
+  .salon h1 { font-size: 12.4vw; }
+  .salon-art { width: 105px; }
+  .salon-lamp { width: 190px; }
+  .salon-tour { width: 165px; }
+  .display-shelves .department-label h3 { font-size: 19px; }
+  .collection-intro h2 { font-size: 32px; }
+  .product-title { font-size: 19px; }
+}

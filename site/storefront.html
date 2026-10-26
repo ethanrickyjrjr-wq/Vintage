@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#451c2b" />
     <meta
       name="description"
-      content="Hollywood and Vine. A room full of vintage lighting, art, fashion and beautiful oddities. One of each, all character."
+      content="Hollywood and Vine. Vintage lighting, art, fashion and beautiful oddities, brought together with an eye for the unexpected."
     />
     <meta
       property="og:title"
@@ -22,13 +22,16 @@
     <link
       rel="preload"
       as="image"
-      href="assets/photos/IMG_6610.webp"
-      imagesrcset="assets/photos/IMG_6610--480.webp 480w, assets/photos/IMG_6610--960.webp 960w, assets/photos/IMG_6610.webp 2048w, assets/photos/IMG_6610--3840.webp 3840w"
-      imagesizes="(max-width: 767px) 100vw, 50vw"
+      href="assets/editorial/urn-lamp.webp"
+      imagesrcset="assets/editorial/urn-lamp--400.webp 400w, assets/editorial/urn-lamp.webp 600w"
+      imagesizes="(max-width: 767px) 215px, (max-width: 1500px) 25vw, 375px"
       fetchpriority="high"
     />
+    <link rel="preload" as="font" href="assets/fonts/bodoni-moda-normal-latin.woff2" type="font/woff2" crossorigin />
+    <link rel="preload" as="font" href="assets/fonts/bodoni-moda-italic-latin.woff2" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="storefront.css" />
+    <link rel="stylesheet" href="atmosphere.css" />
     <script src="catalog-data.js" defer></script>
     <script src="catalog.js" defer></script>
     <script src="storefront.js" defer></script>
@@ -37,7 +40,7 @@
     <a class="skip-link" href="#collection">Skip to the collection</a>
     <div class="rug-band" aria-hidden="true"></div>
     <header class="site-header">
-      <a class="wordmark" href="#home" aria-label="Hollywood and Vine home"
+      <a class="wordmark" href="#home" aria-label="Hollywood &amp; Vine home"
         >Hollywood <span>&amp; Vine</span
         ><span class="wordmark-star" aria-hidden="true">✳</span></a
       >
@@ -53,11 +56,11 @@
           class="saved-nav"
           type="button"
           id="header-saved"
-          aria-label="View saved finds"
+          aria-label="View saved finds (0)"
         >
           <span aria-hidden="true">♡</span
           ><span class="saved-label">Saved finds</span
-          ><span class="saved-count">0</span>
+          ><span class="saved-count" aria-hidden="true">0</span>
         </button>
         <button
           class="menu-toggle"
@@ -81,51 +84,36 @@
       </nav>
     </header>
     <main>
-      <section class="hero" id="home" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Vintage, with a past.</p>
-          <h1 id="hero-title">Good taste.<br /><em>Bad influence.</em></h1>
-          <p class="hero-description">
-            Seventies brass. Nineties neon. Beautiful oddities. <br />A room
-            full of things you didn’t know you needed.
-          </p>
-          <a class="button button-cream" href="#collection"
-            >Shop the room <span aria-hidden="true">↗</span></a
-          >
-        </div>
-        <figure class="hero-visual">
-          <img
-            src="assets/photos/IMG_6610.webp"
-            srcset="
-              assets/photos/IMG_6610--480.webp   480w,
-              assets/photos/IMG_6610--960.webp   960w,
-              assets/photos/IMG_6610.webp       2048w,
-              assets/photos/IMG_6610--3840.webp 3840w
-            "
-            sizes="(max-width: 767px) 100vw, 50vw"
-            width="3840"
-            height="5120"
-            alt="Pink do it for the plot neon above an arched gold shelf, chrome busts and vintage glassware in the real Hollywood and Vine room"
-            fetchpriority="high"
-          />
-          <button class="tour-button" type="button" data-open-walkthrough>
-            <span class="play-symbol" aria-hidden="true">▷</span
-            ><span>Step inside<small>The 24-second room tour</small></span
-            ><span aria-hidden="true">↗</span>
+      <section class="salon" id="home" aria-labelledby="hero-title">
+        <div class="salon-stage">
+          <div class="salon-copy">
+            <p class="eyebrow">Vintage, with a point of view.</p>
+            <h1 id="hero-title"><span>Good taste.</span><em>Bad influence.</em></h1>
+            <p class="salon-description">A little glamour. A little mischief.<br />Things with a past, for a place that’s yours.</p>
+            <a class="button button-cream" href="#collection">Find your thing <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="salon-chandelier" aria-hidden="true">
+            <img src="assets/editorial/chandelier.webp" srcset="assets/editorial/chandelier--300.webp 300w, assets/editorial/chandelier.webp 675w" sizes="(max-width: 767px) 125px, (max-width: 1500px) 17vw, 255px" width="675" height="900" alt="" />
+          </div>
+          <button class="salon-art" type="button" data-open-item="A3" aria-label="Explore the cubist figure painting">
+            <span class="gilt-frame"><img src="assets/photos/IMG_6609--480.webp" srcset="assets/photos/IMG_6609--480.webp 480w, assets/photos/IMG_6609--960.webp 960w" sizes="(max-width: 767px) 125px, (max-width: 1500px) 22vw, 330px" width="960" height="1280" alt="Cubist figure painting in a deep gold frame" /></span>
+            <span class="object-caption">Quite the conversation starter. <span aria-hidden="true">↗</span></span>
           </button>
-        </figure>
-        <div class="hero-stamp" aria-hidden="true">
-          <span>ONE OF EACH</span><b>✳</b><span>ALL CHARACTER</span>
+          <div class="salon-lamp" aria-hidden="true">
+            <img src="assets/editorial/urn-lamp.webp" srcset="assets/editorial/urn-lamp--400.webp 400w, assets/editorial/urn-lamp.webp 600w" sizes="(max-width: 767px) 215px, (max-width: 1500px) 25vw, 375px" width="600" height="900" alt="" fetchpriority="high" />
+          </div>
+          <a class="salon-disco" href="#disco" aria-label="A little disco to go: our signature buyer handout"><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="A silver mirror disco ball catching pink and gold light" /></a>
+          <button class="salon-tour" type="button" data-open-walkthrough><span class="tour-play" aria-hidden="true">▷</span><span>Where the feeling began<small>Inside the original room · 24 seconds</small></span></button>
         </div>
-        <p class="hero-handwritten" aria-hidden="true">do it for the plot.</p>
+        <div class="salon-ledge" aria-hidden="true"></div>
       </section>
       <section
-        class="departments page-width"
+        class="departments display-shelves page-width"
         aria-labelledby="departments-title"
       >
         <div class="section-intro reveal">
-          <h2 id="departments-title">Pick your obsession.</h2>
-          <p>There’s a little trouble in every corner.</p>
+          <h2 id="departments-title">Go on.<br /><em>Get a little carried away.</em></h2>
+          <p>Follow whatever catches your eye.</p>
         </div>
         <div class="department-grid">
           <a
@@ -231,54 +219,25 @@
         </div>
       </section>
       <section
-        class="room-note reveal"
+        class="design-story"
         id="story"
         aria-labelledby="story-title"
       >
-        <div class="room-note-photo">
-          <img
-            src="assets/photos/IMG_6614.webp"
-            srcset="
-              assets/photos/IMG_6614--480.webp  480w,
-              assets/photos/IMG_6614--960.webp  960w,
-              assets/photos/IMG_6614.webp      2048w
-            "
-            sizes="(max-width: 767px) 80vw, 400px"
-            alt="Frosted sea-glass chandelier with brass rings and a tiny disco ball against the burgundy wall"
-            loading="lazy"
-            width="3024"
-            height="4032"
-          />
-        </div>
-        <div class="room-note-copy">
-          <span class="little-star" aria-hidden="true">✳</span>
-          <h2 id="story-title">A little Hollywood.<br />A lot of character.</h2>
-          <p>
-            The walls are burgundy. The leopard is ceramic. Elvis is by the
-            lamp. Nothing matches, and somehow everything belongs.
-          </p>
-          <p>
-            Hollywood and Vine is a vintage room in Florida, filled with pieces
-            that deserve another good story. Take a look around. Stay a while.
-          </p>
-          <button class="text-link" type="button" data-open-walkthrough>
-            Meet the room <span aria-hidden="true">↗</span>
-          </button>
-        </div>
-        <div class="room-note-detail">
-          <img
-            src="assets/photos/IMG_6616.webp"
-            srcset="
-              assets/photos/IMG_6616--480.webp  480w,
-              assets/photos/IMG_6616--960.webp  960w,
-              assets/photos/IMG_6616.webp      2048w
-            "
-            sizes="240px"
-            alt="Brass and cream urn lamp with a framed Elvis photograph below"
-            loading="lazy"
-            width="3840"
-            height="5120"
-          /><span>Quite the cast of characters.</span>
+        <div class="design-story-inner page-width">
+          <div class="design-collage reveal">
+            <figure class="design-room"><img src="assets/photos/IMG_6610--960.webp" width="960" height="1280" alt="Chrome busts, pink glass and a neon sign together on the original room’s brass shelf" loading="lazy" /><figcaption>The room that started it.</figcaption></figure>
+            <button class="design-detail" type="button" data-open-item="A10" aria-label="Explore the pink stemware"><img src="assets/crops/IMG_6610_glass.webp" width="640" height="800" alt="A closer look at the pink stemware" loading="lazy" /><span>A little pink goes a long way. ↗</span></button>
+          </div>
+          <div class="design-copy reveal">
+            <h2 id="story-title">Nothing matches.<br /><em>Everything belongs.</em></h2>
+            <p>Brass beside chrome. Pink glass under neon. A painting that holds its own against all of it.</p>
+            <p>That’s the eye behind Hollywood and Vine: bringing things together until the unexpected feels right. The original room was the beginning. The next mix is yours.</p>
+            <div class="material-pairings" aria-label="Explore the mix">
+              <button type="button" data-open-item="A8">A flash of chrome <span aria-hidden="true">↗</span></button>
+              <button type="button" data-open-item="A10">A little pink glass <span aria-hidden="true">↗</span></button>
+              <button type="button" data-open-item="A3">Something for the walls <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
         </div>
       </section>
       <section
@@ -289,9 +248,9 @@
         <div class="collection-intro reveal">
           <div>
             <h2 id="collection-title">
-              Found. Loved.<br /><em>Up for another story.</em>
+              The good stuff.<br /><em>Take a closer look.</em>
             </h2>
-            <p>The current collection, straight from the room.</p>
+            <p>Lighting, art, fashion and the wonderfully unexpected.</p>
           </div>
           <span class="collection-mark" aria-hidden="true"
             >H<span>&amp;</span>V</span
@@ -366,7 +325,7 @@
         </div>
         <div class="collection-context">
           <p id="result-count" role="status" aria-live="polite">
-            34 finds in the room
+            34 finds to explore
           </p>
           <button id="saved-filter" type="button" aria-pressed="false">
             ♡ Saved finds <span class="saved-count">0</span>
@@ -393,6 +352,14 @@
             Guide prices in USD. Tap a find for its condition, photo status and
             pricing notes.
           </p>
+        </div>
+      </section>
+      <section class="disco-note page-width" id="disco" aria-labelledby="disco-title">
+        <div class="disco-note-image reveal"><img src="assets/editorial/disco-ball.webp" width="600" height="600" alt="Silver mirror disco ball" loading="lazy" /></div>
+        <div class="reveal">
+          <h2 id="disco-title">A little<br /><em>disco to go.</em></h2>
+          <p>A little gift for our buyers: a mirror ball to carry the Hollywood &amp; Vine feeling home.</p>
+          <p class="disco-signoff">Find a sunny spot. Let it dance.</p>
         </div>
       </section>
       <section
@@ -438,10 +405,10 @@
         <h2 id="notes-title">Good finds. Honest details.</h2>
         <div class="notes-grid">
           <div>
-            <h3>One room. One of each.</h3>
+            <h3>A collection with character.</h3>
             <p>
-              These are the actual pieces in the shop. Photos and walkthrough
-              stills show them in their natural habitat.
+              Original photographs and walkthrough stills show the pieces
+              that inspired the collection. Open a find to see the details.
             </p>
           </div>
           <div>
@@ -515,7 +482,7 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 Hollywood and Vine</span
-        ><span>A vintage room in Florida.</span
+        ><span>A good eye. An unexpected mix.</span
         ><button
           id="theme-toggle"
           type="button"
@@ -559,17 +526,17 @@
           id="tour-video"
           controls
           playsinline
-          preload="metadata"
+          preload="none"
           poster="assets/frames/b06_t9.0s.webp"
         >
           <source src="assets/walkthrough.mp4" type="video/mp4" />
         </video>
         <div class="tour-copy">
           <p class="eyebrow">Come on in.</p>
-          <h2 id="tour-title">The real room.</h2>
+          <h2 id="tour-title">Where it began.</h2>
           <p>
-            Twenty-four seconds of burgundy walls, brass shelves and very good
-            company.
+            The original room, and the eye behind it. Burgundy walls, brass
+            shelves, and things you wouldn’t expect to find together.
           </p>
           <p class="tour-footnote">Original store walkthrough. Silent video.</p>
         </div>

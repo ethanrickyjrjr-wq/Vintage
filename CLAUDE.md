@@ -20,6 +20,12 @@ Drive folder (Ricky's second Google account, `u/1`): https://drive.google.com/dr
 The Claude Drive connector is on the other account and cannot see it; fetch through the signed-in
 Chrome tab (Drive folder menu > Download gives one zip) or ask Ricky to share to the connector account.
 
+**Storefront direction (2026-10-26):** The original room is a reference for the designer's taste and
+composition, not a claim of an operating physical store. The site should feel like entering that
+world: dimensional lettering, objects in the foreground, varied framed displays and deliberate
+overlaps. Disco balls are signature gifts/handouts for buyers (confirmed by Ricky); do not infer an
+every-order guarantee. Implemented direction and asset provenance: `docs/storefront-art-direction.md`.
+
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
 

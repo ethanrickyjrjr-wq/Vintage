@@ -1,4 +1,31 @@
 (() => {
+  // Small foreground/background offsets make the assembled display feel spatial.
+  // No scroll handler, continuous loop, or motion on touch/reduced-motion devices.
+  const stage = document.querySelector(".salon-stage");
+  const allowDepth = matchMedia("(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine)");
+  let depthFrame = 0;
+  let depthX = 0;
+  let depthY = 0;
+  function resetDepth() {
+    cancelAnimationFrame(depthFrame);
+    depthFrame = 0;
+    stage?.style.removeProperty("--look-x");
+    stage?.style.removeProperty("--look-y");
+  }
+  stage?.addEventListener("pointermove", (event) => {
+    if (!allowDepth.matches) return;
+    const bounds = stage.getBoundingClientRect();
+    depthX = ((event.clientX - bounds.left) / bounds.width - .5) * 12;
+    depthY = ((event.clientY - bounds.top) / bounds.height - .5) * 8;
+    if (depthFrame) return;
+    depthFrame = requestAnimationFrame(() => {
+      stage.style.setProperty("--look-x", `${depthX.toFixed(2)}px`);
+      stage.style.setProperty("--look-y", `${depthY.toFixed(2)}px`);
+      depthFrame = 0;
+    });
+  });
+  stage?.addEventListener("pointerleave", resetDepth);
+  allowDepth.addEventListener("change", resetDepth);
   const revealElements = document.querySelectorAll(".reveal");
   if (
     "IntersectionObserver" in window &&

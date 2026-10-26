@@ -162,6 +162,7 @@
   }
 
   function syncSaved() {
+    document.querySelector("#header-saved")?.setAttribute("aria-label", `View saved finds (${saved.size})`);
     document.querySelectorAll(".saved-count").forEach((el) => {
       el.textContent = String(saved.size);
     });

@@ -31,6 +31,7 @@ mkdirSync(output, { recursive: true });
 for (const file of [
   "storefront.html",
   "storefront.css",
+  "atmosphere.css",
   "storefront.js",
   "catalog.js",
   "catalog-data.js",
