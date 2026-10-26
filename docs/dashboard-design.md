@@ -133,7 +133,9 @@ estimates with `~` in the UI. Fee rule follows the listing: magazines and the Ch
 ## 6. Screens
 
 Five tabs plus one pushed screen. Full wireframes, copy for empty states, and the token sheet are in
-`07`; this is the contract.
+`07`; this is the contract. A clickable phone mock of the five tabs plus the watch editor (dark mode,
+sample data) is at https://claude.ai/artifact/9b49QKDhDkWsx5Mcm3NQTm (Ricky's artifact; the builder
+matches it, not the ASCII).
 
 | Tab | One job | Primary action |
 |---|---|---|
