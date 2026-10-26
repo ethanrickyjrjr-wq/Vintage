@@ -16,6 +16,7 @@ Run `node build.mjs`. The deployable static site is written to `dist/`, with the
 - `catalog.js` handles shelf filters, search, price sorting, saved finds, pagination, details and the room video. Saved finds stay in the current browser.
 - `storefront.js` handles entrance reveals, the color theme and the header shortcut to saved finds.
 - The real room's optimized photos, extracted frames, video and licensed fonts are self-hosted in `assets/`.
+- Homepage photos use the full-resolution originals with responsive 480, 960 and 2048px-wide WebPs; the large hero also has a 3840px version. Builds omit unused near-duplicate exports and walkthrough frames. The four department photos share a 4:5 frame and equal grid spacing. Design research is documented in `../research/design-2026-10-26.md`.
 - All prices remain provisional research guides. This preview does not accept orders or payments. Mature magazine covers require an explicit reveal. Attribution and authentication notes remain in item details.
 
 The original Claude artifact is a separate preview; editing these files does not change it. Site identity and hosting configuration live in `.openai/hosting.json`.

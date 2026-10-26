@@ -99,13 +99,11 @@
   }
 
   function scrollToCollection() {
-    document
-      .querySelector("#collection")
-      ?.scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-      });
+    document.querySelector("#collection")?.scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
   }
 
   function saveButton(item, extraClass = "") {
@@ -113,12 +111,22 @@
     return `<button class="save-item ${extraClass}" type="button" data-save="${item.id}" aria-pressed="${active}" aria-label="${active ? "Unsave" : "Save"} ${escape(item.title)}"><span aria-hidden="true">${active ? "♥" : "♡"}</span></button>`;
   }
 
+  function photoSources(item, detail = false) {
+    const match = item.img.match(/^assets\/photos\/(IMG_\d+)\.webp$/);
+    if (!match) return "";
+    const base = `assets/photos/${match[1]}`;
+    const sizes = detail
+      ? "(max-width: 767px) 100vw, 450px"
+      : "(max-width: 767px) 50vw, (max-width: 1150px) 25vw, 320px";
+    return `srcset="${base}--480.webp 480w, ${base}--960.webp 960w, ${base}.webp 2048w" sizes="${sizes}"`;
+  }
+
   function card(item) {
     const price = HNV_PRICES[item.id];
     return `<article class="product-card" id="item-${item.id}">
       <div class="product-visual">
         <button class="product-image" type="button" data-open-item="${item.id}" aria-label="View ${escape(item.title)}">
-          <img src="${escape(item.img)}" alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" loading="lazy" decoding="async" width="640" height="800">
+          <img src="${escape(item.img)}" ${photoSources(item)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" loading="lazy" decoding="async" width="640" height="800">
         </button>
         ${saveButton(item)}
         ${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${item.id}" aria-label="View adult magazine cover for ${escape(item.title)}">View cover (18+)</button>` : ""}
@@ -242,7 +250,7 @@
                   ? "Availability as stock rather than room styling still needs confirmation."
                   : "";
     detail.innerHTML = `<div class="detail-layout">
-      <div class="detail-image"><img src="${escape(item.img)}" alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" width="640" height="800">${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${id}">View cover (18+)</button>` : ""}</div>
+      <div class="detail-image"><img src="${escape(item.img)}" ${photoSources(item, true)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" width="640" height="800">${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${id}">View cover (18+)</button>` : ""}</div>
       <div class="detail-copy"><p class="detail-category">${categoryNames[item.cat]} / ${item.id}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
       <p class="detail-price"><strong>${price ? money(price.target) : "Pricing pending"}</strong><small>Guide price</small></p>
       <button class="detail-save" type="button" data-save="${id}" aria-pressed="${saved.has(id)}">${saved.has(id) ? "♥ Saved to your finds" : "♡ Save this find"}</button>
