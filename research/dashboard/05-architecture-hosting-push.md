@@ -21,6 +21,8 @@ A Supabase Edge Function is public HTTPS, and on Pro it never pauses. So the box
 
 Polling is needed for only three things: eBay **watches** and **buy alerts** (Browse API search has no push), reconciliation (webhooks get missed), and residential-IP scraping jobs.
 
+Why eBay item watches still poll even though the Notification API has item-level topics: `ITEM_AVAILABILITY` ("Sent when a fixed-price item's availability type changes"), `ITEM_PRICE_REVISION` and `PRIORITY_LISTING_REVISION` are each noted "Currently, this topic is available for eBay Partner Network (ePN) partners in all marketplaces except the following: CA, AU, HK, SG, MY, and PH." So they are ePN-gated, not available to a plain developer keyset. [V*] `raw/ebay-notification-events.md` (source https://developer.ebay.com/develop/api/sell/notification_events). Whether Ricky could qualify as an ePN partner is not answered by those pages **[U]**; if he could, known-item watches could be push and only new-listing searches would poll.
+
 ---
 
 ## 1. Supabase: pieces, limits, prices
@@ -153,7 +155,7 @@ So the box is a **best-effort lane for residential-IP jobs** (crawl4ai sold-comp
 
 **External dead-man switch** (so a dead pg_cron chain is also noticed): the tick function pings a Healthchecks.io check at the end of every successful run. Hobbyist is "$0 / month, Monitor 20 jobs". https://healthchecks.io/pricing/ [V]. Integration types and free-tier alert latency **[U]**; plain email is the default.
 
-eBay polling budget (it binds cadence): Browse API "5000 API calls per day"; the client-credentials mint endpoint "1,000 requests/day"; an Application access token has `expires_in: 7200`. [V*] `raw/ebay-buy-call-limits.md`; [V] https://developer.ebay.com/api-docs/static/oauth-tokens.html . 5,000/day is 3.5 calls/min, so 20 saved searches every 10 minutes (2,880/day) fits and every 5 minutes (5,760/day) does not. Cache the app token in the DB; never mint per tick.
+eBay polling budget (it binds cadence): Browse API "5000 API calls per day"; the client-credentials mint endpoint "1,000 requests/day"; an Application access token has `expires_in: 7200`. [V*] `raw/ebay-buy-call-limits.md`; [V] https://developer.ebay.com/api-docs/static/oauth-tokens.html . 5,000/day is 3.5 calls/min, so 20 saved searches every 10 minutes (2,880/day) fits and every 5 minutes (5,760/day) does not. Cache the app token in the DB; never mint per tick. (The item-level push topics that would cut this budget are ePN-gated; see section 0.)
 
 ---
 
