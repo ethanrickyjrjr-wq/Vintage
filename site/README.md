@@ -1,14 +1,14 @@
 # Hollywood and Vine
 
-A buildless storefront redesign using the actual shop photography and 24-second room walkthrough. No package installation is required.
+A storefront using the actual shop photography and 24-second room walkthrough, with a small Worker for private room previews. No package installation is required.
 
 ## Preview
 
-From this directory run `python -m http.server 4173 --bind 127.0.0.1`, then open http://127.0.0.1:4173/storefront.html.
+From this directory run `node dev.mjs`, then open http://127.0.0.1:4173. Set `PORT` if that port is busy. Local preview supports uploads and placement sketches; it makes no model calls.
 
 ## Build
 
-Run `node build.mjs`. The deployable static site is written to `dist/`, with the storefront at both `/` and `/storefront.html`.
+Run `node build.mjs`. Static assets go to `dist/client/`, with the storefront at both `/` and `/storefront.html`. The room API is built as a dependency-free Worker in `dist/server/`. The build cleans only this site's generated `dist/` directory.
 
 ## Content and behavior
 
@@ -24,3 +24,11 @@ Run `node build.mjs`. The deployable static site is written to `dist/`, with the
 - All prices remain provisional research guides. This preview does not accept orders or payments. Mature magazine covers require an explicit reveal. Attribution and authentication notes remain in item details.
 
 The original Claude artifact is a separate preview; editing these files does not change it. Site identity and hosting configuration live in `.openai/hosting.json`.
+
+## Try it in your room
+
+`#your-room` accepts a room photo or the generated example in `assets/rooms/`. Shoppers can mark a spot, let Decorate choose a spot, or mark/describe an existing item to replace. Four local styling overlays stay exactly where placed and can be kept in the photo, combined with more finds, or undone without using the image service. The private renderer supports all 16 room-friendly inventory references; AI may adjust placement and product details. Original product photos are used as AI references, with artwork rectified in memory to exclude the shop wall. Results support original/preview comparison, undo, reset, and PNG download. Downloads are labeled as sketches or AI styling previews.
+
+`room-worker.mjs` sends bounded, validated requests to the private Hugging Face Space described in `../room-renderer/`. It uses FLUX.2 Klein 4B on free ZeroGPU, with no paid API fallback. Images remain in memory; EXIF metadata is removed before sending. A D1 counter allows three previews per connection per UTC day and 30 across the shop. Provider failures refund the counter. The same free Hugging Face account's compute allowance is shared with other apps and may impose a lower effective limit or a queue.
+
+Hosted runtime values are `ROOM_PREVIEW_ENABLED=true`, `ROOM_RENDERER_URL`, and secret `HF_TOKEN`. These belong in Sites runtime settings, never in JavaScript, the hosting manifest, or a committed environment file. `drizzle/0000_room_preview_usage.sql` creates the counter table during deployment. Run `node --test tests/room-worker.test.mjs` for server validation. See `../docs/room-preview.md` for the renderer archive, asset provenance, and verification record.

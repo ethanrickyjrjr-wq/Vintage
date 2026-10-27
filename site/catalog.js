@@ -255,6 +255,7 @@
       <div class="detail-copy"><p class="detail-category">${categoryNames[item.cat]} / ${item.id}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
       <p class="detail-price"><strong>${price ? money(price.target) : "Pricing pending"}</strong><small>Guide price</small></p>
       <button class="detail-save" type="button" data-save="${id}" aria-pressed="${saved.has(id)}">${saved.has(id) ? "♥ Saved to your finds" : "♡ Save this find"}</button>
+      ${typeof HNV_ROOM_PRODUCTS !== "undefined" && HNV_ROOM_PRODUCTS.some((product) => product.id === id) ? `<button class="detail-save" type="button" data-try-room="${id}">Try it in your room ↗</button>` : ""}
       <div class="detail-notes"><h3>About this find</h3><p>${statusNotes[item.chip]}</p>${extra ? `<p>${extra}</p>` : ""}<p>Prices are provisional research guides from October 26, 2026. This preview does not take orders or payments.</p>
       ${price ? `<details><summary>Price research</summary><p>Comparable range: ${money(price.low)} to ${money(price.high)}.</p><p>${escape(price.conf)}</p></details>` : ""}</div></div></div>`;
     productDialog.setAttribute("aria-labelledby", "detail-title");
@@ -431,6 +432,7 @@
       if (dialog === tourDialog) document.querySelector("#tour-video")?.pause();
       if (dialog === productDialog && location.hash === `#item-${detailId}`)
         updateHash(detailReturnHash, true);
+      if (dialog === productDialog && location.hash === "#your-room") return;
       focusFind(lastTriggerItemId, lastTrigger);
     });
     dialog.addEventListener("click", (event) => {
