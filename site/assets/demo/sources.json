@@ -1,0 +1,320 @@
+{
+  "date": "2026-10-27",
+  "local_only": true,
+  "items": [
+    {
+      "id": "A13",
+      "file": "assets/demo/gold-bust-lamp.webp",
+      "original": "assets/stills/A13-gold-bust-lamp.webp",
+      "title": "Pair of Pharaoh table lamps, gold bust with rectangular cream shade",
+      "source_page": "https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-pharaoh-table-lamps/id-f_1315740/",
+      "source_file": "assets/demo/source-gold-bust-lamp.webp",
+      "direct_image": "https://a.1stdibscdn.com/archivesE/upload/1121189/f_136883811550299598010/13688381_master.jpg?auto=webp&disable=upscale&quality=90&width=1600",
+      "source_dimensions": [
+        1600,
+        1600
+      ],
+      "dimensions": [
+        919,
+        1224
+      ],
+      "ratio": 0.750817,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "6aa331435bf98321b04ca6f7c001fc4b12d12fcac796e8c07876692c7b956b36",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: supplied product photograph. Precisely isolate ONLY the ONE gold Egyptian pharaoh bust table lamp with its complete cream rectangular shade, curved brass stem, and square pale base. Change only the background and remove surrounding scene, surface or floor shadow. Preserve the photographed product's materials, proportions, colors, patina, details and lighting. No redesign. Genuine transparent alpha background through all empty space and openings, physically appropriate partial alpha in clear glass if present. Keep the complete object centered with 3 percent transparent padding, crisp professional photographic edges. No checkerboard, solid background, labels, borders, added objects, extra shadows or clipped object edges. This is a private room styling demo cutout of a similar vintage piece, not a new product design."
+    },
+    {
+      "id": "A14",
+      "file": "assets/demo/seated-leopard.webp",
+      "original": "assets/stills/A14-ceramic-leopard.webp",
+      "title": "C.1960s\u201370s Italian porcelain leopard, seated upright pose",
+      "source_page": "https://www.chairish.com/product/1505543/c1960s-70s-mid-century-modern-italian-porcelain-ceramic-hand-painted-leopard-in-a-sitting-position",
+      "source_file": "assets/demo/source-seated-leopard.webp",
+      "direct_image": "https://chairish-prod.freetls.fastly.net/image/product/sized/08ca374f-39e8-49d6-b028-dd31dcde6290/c1960s-70s-mid-century-modern-italian-porcelain-ceramic-hand-painted-leopard-in-a-sitting-position-9543?aspect=fit&height=1600&width=1600",
+      "source_dimensions": [
+        1600,
+        1600
+      ],
+      "dimensions": [
+        890,
+        1159
+      ],
+      "ratio": 0.767903,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "b07a0b46cdc15e4b48d5ef28576a7792845727522bcd03e4d4fcdd2626150ae9",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: supplied product photograph. Precisely isolate ONLY the ONE SEATED upright spotted Italian ceramic leopard, retaining its seated pose, both straight front legs, complete paws, curved tail, glazed yellow ceramic and precise spots. Change only the background and remove surrounding scene, surface or floor shadow. Preserve the photographed product's materials, proportions, colors, patina, details and lighting. No redesign. Genuine transparent alpha background through all empty space and openings, physically appropriate partial alpha in clear glass if present. Keep the complete object centered with 3 percent transparent padding, crisp professional photographic edges. No checkerboard, solid background, labels, borders, added objects, extra shadows or clipped object edges. This is a private room styling demo cutout of a similar vintage piece, not a new product design."
+    },
+    {
+      "id": "A15",
+      "file": "assets/demo/southwestern-armchair.webp",
+      "original": "assets/stills/A15-star-cushion-armchair.webp",
+      "title": "Julie Lounge Chair",
+      "source_page": "https://www.1stdibs.com/furniture/seating/side-chairs/julie-lounge-chair/id-f_39490622/",
+      "source_file": "assets/demo/source-southwestern-armchair.webp",
+      "direct_image": "https://a.1stdibscdn.com/archivesE/upload/1121189/f_394906221714484642471/39490622_datamatics.jpg",
+      "source_dimensions": [
+        1362,
+        1362
+      ],
+      "dimensions": [
+        1044,
+        1224
+      ],
+      "ratio": 0.852941,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "c3444767866d0175d6a24577bb4b79a2615327f5ca3e7947b261fc8cc258aa00",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: supplied product photograph. Precisely isolate ONLY the ONE low black wooden armchair with Southwestern geometric upholstery, retaining its three-quarter angle, all four legs and arms and exact rust, cream and black star pattern. Change only the background and remove surrounding scene, surface or floor shadow. Preserve the photographed product's materials, proportions, colors, patina, details and lighting. No redesign. Genuine transparent alpha background through all empty space and openings, physically appropriate partial alpha in clear glass if present. Keep the complete object centered with 3 percent transparent padding, crisp professional photographic edges. No checkerboard, solid background, labels, borders, added objects, extra shadows or clipped object edges. This is a private room styling demo cutout of a similar vintage piece, not a new product design."
+    },
+    {
+      "id": "A16",
+      "file": "assets/demo/wood-radio.webp",
+      "original": "assets/stills/A16-retro-turntable-shelf.webp",
+      "title": "Vintage Zenith wooden tabletop radio cutout",
+      "source_page": "https://pngimg.com/image/91653",
+      "source_file": "assets/demo/source-wood-radio.webp",
+      "direct_image": "https://pngimg.com/uploads/radio/radio_PNG91653.png",
+      "source_dimensions": [
+        2286,
+        1456
+      ],
+      "dimensions": [
+        1224,
+        788
+      ],
+      "ratio": 1.553299,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "dec8e26cb2f778a6ade3dc8234a3f270dc63d24ced420943507e139424b9c58a",
+      "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP.",
+      "prompt": null
+    },
+    {
+      "id": "A17",
+      "file": "assets/demo/brass-oil-lamp.webp",
+      "original": "assets/stills/A17-brass-oil-lamp.webp",
+      "title": "Brass oil lamp with clear glass chimney",
+      "source_page": "https://www.etsy.com/listing/1058456109/brass-oil-lamp-with-glass-chimney",
+      "source_file": "assets/demo/source-brass-oil-lamp.webp",
+      "direct_image": "https://i.etsystatic.com/24175661/r/il/a887ce/3278140877/il_fullxfull.3278140877_j8b7.jpg",
+      "source_dimensions": [
+        2000,
+        1883
+      ],
+      "dimensions": [
+        392,
+        1224
+      ],
+      "ratio": 0.320261,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "42677835310847e156550d7ed52b2980bb2f95c12551923b0d225c9c243320a7",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: supplied product photograph. Precisely isolate ONLY the ONE squat polished brass oil lamp with its clear glass chimney, retaining the ruffled glass rim, short pedestal and gold brass reservoir. Change only the background and remove surrounding scene, surface or floor shadow. Preserve the photographed product's materials, proportions, colors, patina, details and lighting. No redesign. Genuine transparent alpha background through all empty space and openings, physically appropriate partial alpha in clear glass if present. Keep the complete object centered with 3 percent transparent padding, crisp professional photographic edges. No checkerboard, solid background, labels, borders, added objects, extra shadows or clipped object edges. This is a private room styling demo cutout of a similar vintage piece, not a new product design."
+    },
+    {
+      "id": "A19",
+      "file": "assets/demo/cowhide.webp",
+      "original": "assets/stills/A19-rust-sofa-cowhide.webp",
+      "title": "Brown and White Cowhide Rug",
+      "source_page": "https://strut.com.br/en/products/tapete-em-couro-bovino-marrom-e-branco",
+      "source_file": "assets/demo/source-cowhide.webp",
+      "direct_image": "https://strut.com.br/cdn/shop/files/tapete-em-couro-bovino-marrom-e-branco-741109.jpg?v=1718970839",
+      "source_dimensions": [
+        3024,
+        3024
+      ],
+      "dimensions": [
+        1224,
+        1062
+      ],
+      "ratio": 1.152542,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "48a3d223566a130612747c8239f9f5eeb38bd97960a3daaf91e569d1c34e0095",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: the provided source product photograph. Precisely extract ONLY the entire brown-and-white cowhide rug, preserving the exact overhead view, organic hairy edge, brown patches and white center stripe. Preserve the actual photographed object, proportions, materials, color, texture, lighting and every distinguishing detail. Change only the background. Remove the white studio background and floor shadow, retaining physically appropriate partial alpha on clear glass if present. Genuine transparent alpha background throughout empty space and gaps, no checkerboard, solid backdrop, labels, borders, extra objects or redesigned details. Keep the complete object in frame centered with about 3 percent transparent padding. High resolution photographic cutout for a private room-placement demo."
+    },
+    {
+      "id": "A20",
+      "file": "assets/demo/white-paper-chair.webp",
+      "original": "assets/stills/A20-white-ribbed-chair.webp",
+      "title": "Honey-Pop Chair by Tokujin Yoshioka",
+      "source_page": "https://collections.vam.ac.uk/item/O113420/honey-pop-chair-chair-yoshioka-tokujin/",
+      "source_file": "assets/demo/source-white-paper-chair.webp",
+      "direct_image": "https://framemark.vam.ac.uk/collections/2006AY3290/full/!2000,2000/0/default.jpg",
+      "source_dimensions": [
+        1622,
+        2000
+      ],
+      "dimensions": [
+        1022,
+        1224
+      ],
+      "ratio": 0.834967,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "32d5f09e35d081d7976aad74803c7877152fe23021109129d4954974d62343d8",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: supplied product photograph. Precisely isolate ONLY the ONE white expanded honeycomb accordion PAPER chair with raised back and folded side wings. Retain the delicate paper texture, accordion edges, exact seat shape, white color and three-quarter viewpoint; do not turn it into a cardboard Wiggle chair or upholstered chair. Change only the background and remove surrounding scene, surface or floor shadow. Preserve the photographed product's materials, proportions, colors, patina, details and lighting. No redesign. Genuine transparent alpha background through all empty space and openings, physically appropriate partial alpha in clear glass if present. Keep the complete object centered with 3 percent transparent padding, crisp professional photographic edges. No checkerboard, solid background, labels, borders, added objects, extra shadows or clipped object edges. This is a private room styling demo cutout of a similar vintage piece, not a new product design."
+    },
+    {
+      "id": "A22",
+      "file": "assets/demo/source-painted-mannequin.webp",
+      "original": "assets/photos/IMG_6607.webp",
+      "title": "Dennis Sakelson paint-splattered mannequin torso sculpture, high resolution",
+      "source_page": "https://www.mutualart.com/Artwork/Painted-Female-Torso-Mannequin/2E581A4ED4377C49FF3B58863F605800",
+      "source_file": "assets/demo/source-painted-mannequin.webp",
+      "direct_image": "https://media.mutualart.com/Images/2025_10/01/21/107677699/dennis-sakelson-painted-female-torso-man-AAAAA.Jpeg",
+      "source_dimensions": [
+        1600,
+        2132
+      ],
+      "dimensions": [
+        1501,
+        2000
+      ],
+      "cutout_ready": false,
+      "processing": "Source photo only. Built-in background extraction was declined by the image service; no cutout was made."
+    },
+    {
+      "id": "A10",
+      "file": "assets/demo/pink-coupes.webp",
+      "original": "assets/crops/IMG_6610_glass.webp",
+      "title": "Vintage rose champagne coupe",
+      "source_page": "https://www.options.ch/champagnerglas-vintage-rosa.html",
+      "source_file": "assets/demo/source-pink-coupes.webp",
+      "direct_image": "https://www.options.ch/media/catalog/product/cache/23a39abc451cd4fdcc5d36edc81a8436/0/0/0000030494_800D1.png",
+      "source_dimensions": [
+        800,
+        800
+      ],
+      "dimensions": [
+        424,
+        563
+      ],
+      "ratio": 0.753108,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "6969cde4c8a62cbadab6543f0dc657389a0816bceeab6458832efb054eb6f2f2",
+      "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP.",
+      "prompt": null
+    },
+    {
+      "id": "A8",
+      "file": "assets/demo/silver-busts.webp",
+      "original": "assets/crops/IMG_6610_shelf_top.webp",
+      "title": "Pair of vintage West German silver ceramic mannequin head busts",
+      "source_page": "https://www.ebay.com/itm/298527765566",
+      "source_file": "assets/demo/source-silver-busts.webp",
+      "direct_image": "https://i.ebayimg.com/images/g/OlwAAeSw2OBqYiK1/s-l1600.webp",
+      "source_dimensions": [
+        986,
+        1022
+      ],
+      "dimensions": [
+        1182,
+        1165
+      ],
+      "ratio": 1.014592,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "2d41981ddd94d2fc847361d4a8abdbc199b3b97dab03516ebe92989ba9b0deee",
+      "processing": "Built-in imagegen background extraction, then trim transparent margins, resize and encode WebP; similar-piece styling demo only.",
+      "prompt": "Use case: background-extraction. Edit target: supplied product photograph. Precisely isolate ONLY the TWO silver ceramic mannequin HEAD busts as one pair. Preserve their complete heads, necks and small circular bases, photographed side-by-side, actual proportions and worn chrome-silver finish. Do not add shoulders, bodies or stands. Change only the background and remove surrounding scene, surface or floor shadow. Preserve the photographed product's materials, proportions, colors, patina, details and lighting. No redesign. Genuine transparent alpha background through all empty space and openings, physically appropriate partial alpha in clear glass if present. Keep the complete object centered with 3 percent transparent padding, crisp professional photographic edges. No checkerboard, solid background, labels, borders, added objects, extra shadows or clipped object edges. This is a private room styling demo cutout of a similar vintage piece, not a new product design."
+    },
+    {
+      "id": "A9",
+      "file": "assets/demo/film-projector.webp",
+      "original": "assets/crops/IMG_6610_shelf_top.webp",
+      "title": "Vintage movie projector photo-style cutout, dual reel",
+      "source_page": "https://wallpapers.com/png/vintage-movie-projector-png-lyq-ct5vqzmqvyfhpo6k.html",
+      "source_file": "assets/demo/source-film-projector.webp",
+      "direct_image": "https://wallpapers.com/images/hd/vintage-movie-projector-png-lyq-ct5vqzmqvyfhpo6k.png",
+      "source_dimensions": [
+        896,
+        896
+      ],
+      "dimensions": [
+        834,
+        867
+      ],
+      "ratio": 0.961938,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "cutout_ready": true,
+      "sha256": "396fcc4ae5ebbf1dbae43a528248ba7ef7c71dc76f30947eef99ae566cbcbe73",
+      "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP.",
+      "prompt": null
+    }
+  ],
+  "alternatives": [
+    {
+      "title": "Matching vintage rose champagne flute",
+      "file": "assets/demo/rose-flute.webp",
+      "source_page": "https://www.options.ch/fr-ch/flute-a-champagne-vintage-rose.html",
+      "direct_image": "https://www.options.ch/media/catalog/product/0/0/0000030495_800D1.png",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP."
+    },
+    {
+      "title": "Fleur de Rose faceted pink coupe",
+      "file": "assets/demo/faceted-pink-coupe.webp",
+      "source_page": "https://www.ygo.be/woonaccessoires/koken-tafelen/glazen/champagneglazen/",
+      "direct_image": "https://media.ygo.be/media/8b/02/8f/1768537626/6969be1a8e5d6-dc691bbbcdea3522a729bfff0fabc5aaf405caa0_Y14450210306__media_packshots__fleur_de_rose_1__ecommerce.png",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP."
+    },
+    {
+      "title": "Cowhide Rug Texture PNG",
+      "file": "assets/demo/black-cream-cowhide.webp",
+      "source_page": "https://wallpapers.com/png/cowhide-rug-texture-nx6g06u1o1k906w6.html",
+      "direct_image": "https://wallpapers.com/images/hd/cowhide-rug-texture-nx6g06u1o1k906w6.png",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP."
+    }
+  ]
+}

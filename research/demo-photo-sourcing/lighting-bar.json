@@ -1,0 +1,124 @@
+{
+  "purpose": "Private Hollywood and Vine room styling demo; visual stand-ins, not photos of the shop's actual inventory",
+  "sourced_on": "2026-10-27",
+  "firecrawl_cli_available": false,
+  "method": "Web image search; direct downloads; visual inspection against local stills and crop; Pillow verification of dimensions and alpha extrema",
+  "items": [
+    {
+      "item_id": "A13",
+      "reference": "assets/stills/A13-gold-bust-lamp.jpg",
+      "title": "Pair of Pharaoh table lamps, gold bust with rectangular cream shade",
+      "source_page_url": "https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-pharaoh-table-lamps/id-f_1315740/",
+      "direct_image_url": "https://a.1stdibscdn.com/archivesE/upload/1121189/f_136883811550299598010/13688381_master.jpg?auto=webp&disable=upscale&quality=90&width=1600",
+      "local_path": "artifacts/demo-sourcing/lighting-bar/a13_pharaoh_1stdibs.jpg",
+      "dimensions": [1600, 1600],
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "suitability": "Best found match for the reference's gold Egyptian-style head and wide cream rectangular shade. Bust is a different sculpture and base is light rather than green; suitable only as a private visual stand-in.",
+      "alternatives": [
+        {
+          "title": "Gold Pharaoh bust lamp with pale pleated shade",
+          "source_page_url": "https://www.whoppah.com/products/large-lusterie-deknudt-pharaoh-lamp-4XTEW55EX88D",
+          "direct_image_url": "https://images.whoppah.com/image/517d3427-67c8-4241-bfc0-1a2e1f22fb31/original.jpg?width=1280",
+          "local_path": "artifacts/demo-sourcing/lighting-bar/a13_pharaoh_whoppah.jpg",
+          "dimensions": [1280, 1280],
+          "alpha_transparency_verified": false,
+          "background": "white",
+          "suitability": "More polished gold and shade texture, but curved shade differs from reference."
+        }
+      ]
+    },
+    {
+      "item_id": "A17",
+      "reference": "assets/stills/A17-brass-oil-lamp.jpg",
+      "title": "Brass oil lamp with clear glass chimney",
+      "source_page_url": "https://www.etsy.com/listing/1058456109/brass-oil-lamp-with-glass-chimney",
+      "direct_image_url": "https://i.etsystatic.com/24175661/r/il/a887ce/3278140877/il_fullxfull.3278140877_j8b7.jpg",
+      "local_path": "artifacts/demo-sourcing/lighting-bar/a17_etsy_brass.jpg",
+      "dimensions": [2000, 1883],
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "suitability": "Squat polished brass font, stepped base and clear glass chimney resemble the reference. Single lamp represents a pair in the source inventory; different glass profile.",
+      "alternatives": [
+        {
+          "title": "Antique brass oil lamp with clear glass chimney",
+          "source_page_url": "https://www.1stdibs.com/furniture/asian-art-furniture/metalwork/antique-brass-oil-lamp/id-f_41449502/",
+          "direct_image_url": "https://a.1stdibscdn.com/antique-brass-oil-lamp-for-sale/f_92142/f_414495021726166392530/f_41449502_1726166392845_bg_processed.jpg",
+          "local_path": "artifacts/demo-sourcing/lighting-bar/a17_brass_1stdibs.jpg",
+          "dimensions": [1494, 1494],
+          "alpha_transparency_verified": false,
+          "background": "white",
+          "suitability": "Good full-object packshot, but taller and slimmer than the reference."
+        }
+      ]
+    },
+    {
+      "item_id": "A16",
+      "reference": "assets/stills/A16-retro-turntable-shelf.jpg",
+      "title": "Crosley Lancaster Entertainment Center, paprika finish, lid closed",
+      "source_page_url": "https://www.crosleyradio.eu/products/lancaster-entertainment-center-cr42e-pa4-paprika",
+      "direct_image_url": "https://www.crosleyradio.eu/cdn/shop/files/Lancaster-Entertainment-Center---CR42E-PA4---Paprika-Crosley-Radio-Europe-1682499881_a8310fa4-6179-46bc-90ad-c1a23628cbf7.jpg?v=1682499913&width=1920",
+      "local_path": "artifacts/demo-sourcing/lighting-bar/a16_lancaster_crosley.jpg",
+      "dimensions": [1920, 1325],
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "suitability": "Closest clean packshot: closed reddish wood tabletop cabinet, central round radio dial, side speaker grilles. Reference has horizontal louvered side grilles and a taller box, so this is a style match rather than the same model.",
+      "alternatives": [
+        {
+          "title": "Thomas Pacconi Museum Series closed wood record player",
+          "source_page_url": "https://www.southauction.com/auctions/25222/lot/34647-thomas-museum-series-wood-cabinet-radio-and-turntable",
+          "direct_image_url": "https://d3j17a2r8lnfte.cloudfront.net/sth/2025/8/medium/UOPczliVb2gvqW8hlx28nIgr.jpeg",
+          "local_path": "artifacts/demo-sourcing/lighting-bar/a16_thomas_museum.jpg",
+          "dimensions": [768, 576],
+          "alpha_transparency_verified": false,
+          "background": "room/auction",
+          "suitability": "Central circular dial and closed lid closer to reference; lower resolution and scene background make it a weaker overlay source."
+        },
+        {
+          "title": "Transparent Crosley-style wood record player",
+          "source_page_url": "https://pngimg.com/image/111944",
+          "direct_image_url": "https://pngimg.com/uploads/record_player/record_player_PNG111944.png",
+          "local_path": "artifacts/demo-sourcing/lighting-bar/a16_pngimg_111944.png",
+          "dimensions": [518, 510],
+          "alpha_transparency_verified": true,
+          "background": "transparent, with visible fringe/streak artifacts",
+          "suitability": "Real transparent pixels and wood front with grille, but open lid and low quality; not preferred for room overlay."
+        }
+      ]
+    },
+    {
+      "item_id": "A10",
+      "reference": "assets/crops/IMG_6610_glass.jpg",
+      "title": "Veneto Ballet pink champagne coupes, set of four",
+      "source_page_url": "https://godinger.com/products/veneto-ballet-champagne-coupe-set-of-4",
+      "direct_image_url": "https://godinger.com/cdn/shop/files/Veneto-Ballet-Champagne-Coupe-Set-of-4-Godinger-Al-0.jpg?v=1741700907",
+      "local_path": "artifacts/demo-sourcing/lighting-bar/a10_godinger.jpg",
+      "dimensions": [2400, 2400],
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "suitability": "Four complete rose-pink coupes match the reference's coupe grouping, though the actual shelf also includes flutes. Glass bowls retain white backdrop through the glass; a naive cutout will look wrong on burgundy.",
+      "companion": {
+        "title": "Meridian blush champagne flutes, set of four",
+        "source_page_url": "https://godinger.com/products/meridian-blush-flute-set-of-4",
+        "direct_image_url": "https://godinger.com/cdn/shop/products/Meridian-Blush-Flute-Set-of-4-Godinger-All-Barware-0.jpg?v=1719895317",
+        "local_path": "artifacts/demo-sourcing/lighting-bar/a10_flutes_godinger.jpg",
+        "dimensions": [2400, 2400],
+        "alpha_transparency_verified": false,
+        "background": "white",
+        "suitability": "Tall pale-pink flutes complete the mixed shelf look."
+      },
+      "alternatives": [
+        {
+          "title": "Vintage Rosaline pink champagne flutes",
+          "source_page_url": "https://thatretropiece.com/products/luminarc-france-rosaline-champagne-flute-glasses",
+          "direct_image_url": "https://thatretropiece.com/cdn/shop/files/IMG_7112.png?v=1722230128",
+          "local_path": "artifacts/demo-sourcing/lighting-bar/a10_flutes_rosaline.png",
+          "dimensions": [3673, 2755],
+          "alpha_transparency_verified": false,
+          "background": "white",
+          "suitability": "Vintage peach tint closer to reference, but stems and bowls are more ornate than the actual flutes."
+        }
+      ]
+    }
+  ]
+}

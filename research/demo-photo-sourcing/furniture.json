@@ -84,6 +84,34 @@
       "alpha_transparency_verified": false,
       "background": "white",
       "reason_suitable": "High-resolution isolated overhead product image with especially distinct natural contours and hair texture; brown/white distribution is complementary to A19."
+    },
+    {
+      "title": "Honey-Pop Chair by Tokujin Yoshioka",
+      "matched_item_id": "A20",
+      "source_page_url": "https://collections.vam.ac.uk/item/O113420/honey-pop-chair-chair-yoshioka-tokujin/",
+      "direct_image_url": "https://framemark.vam.ac.uk/collections/2006AY3290/full/!2000,2000/0/default.jpg",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a20_honey_pop_vam.jpg",
+      "dimensions_px": {
+        "width": 1622,
+        "height": 2000
+      },
+      "alpha_transparency_verified": false,
+      "background": "dark gray studio backdrop",
+      "reason_suitable": "Much closer style match than the natural-cardboard Wiggle: white expanded accordion/honeycomb paper construction, layered ribbed folds, chair-like raised back and deep seat. The original A20 photo may depict this exact design family; this is a high-resolution front three-quarter museum photograph."
+    },
+    {
+      "title": "Julie Lounge Chair",
+      "matched_item_id": "A15",
+      "source_page_url": "https://www.1stdibs.com/furniture/seating/side-chairs/julie-lounge-chair/id-f_39490622/",
+      "direct_image_url": "https://a.1stdibscdn.com/archivesE/upload/1121189/f_394906221714484642471/39490622_datamatics.jpg",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a15_black_low_geometric_1stdibs.jpg",
+      "dimensions_px": {
+        "width": 1362,
+        "height": 1362
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "Improved silhouette and pattern match: lower black wood armchair frame with angular mid-century shape, plus a rust/red/cream/black geometric starburst-like motif across the seat and back. Product cutout on white; pattern is close in palette and graphic feel to the Southwestern star cushion."
     }
   ]
 }

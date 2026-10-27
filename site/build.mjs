@@ -32,6 +32,8 @@ const frames = new Set(
   [...page.matchAll(/assets\/frames\/([^"\s]+)/g)].map((match) => match[1]),
 );
 function shipAsset(file) {
+  // Borrowed styling samples are local-only, even when someone publishes this build.
+  if (path.relative(path.join(root, "assets"), file).split(path.sep)[0] === "demo") return false;
   const name = path.basename(file);
   if (/^IMG_\d+--(?:1920|3840)\.webp$/.test(name)) return largePhotos.has(name);
   if (path.basename(path.dirname(file)) === "frames" && name.endsWith(".webp"))

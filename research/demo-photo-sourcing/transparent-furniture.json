@@ -1,0 +1,27 @@
+{
+  "search_scope": "Ready-made photo PNG/WebP assets with actual alpha transparency; no generated or background-removal images.",
+  "candidates": [
+    {
+      "title": "Cowhide Rug Texture PNG",
+      "matched_item_id": "A19",
+      "source_page_url": "https://wallpapers.com/png/cowhide-rug-texture-nx6g06u1o1k906w6.html",
+      "direct_image_url": "https://wallpapers.com/images/hd/cowhide-rug-texture-nx6g06u1o1k906w6.png",
+      "local_file_path": "artifacts/demo-sourcing/ready-transparent/furniture/a19_wallpapers_cowhide.png",
+      "dimensions_px": {
+        "width": 3647,
+        "height": 2611
+      },
+      "alpha_transparency_verified": {
+        "min": 0,
+        "max": 255,
+        "transparent_pixel_count": 3019647
+      },
+      "reason_suitable": "Photographic cowhide silhouette with a genuine transparent surround and overhead view suitable for a floor placement. The hide is black-and-cream rather than the requested brown-and-white, so color is an approximate match.",
+      "license_note": "Source page says free download with attribution required."
+    }
+  ],
+  "unfilled_items": [
+    "A15 black armchair with Southwestern seat: no style-matched ready-alpha photo cutout found in this pass.",
+    "A20 white accordion/honeycomb chair: no ready-alpha cutout found in this pass."
+  ]
+}

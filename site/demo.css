@@ -1,0 +1,10 @@
+/* Loaded only by the local /demo route; excluded from the publishable build. */
+.styling-demo-banner { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 12px clamp(20px, 4vw, 60px); background: var(--burgundy); color: var(--cream, #f6efdf); font-size: 12px; }
+.styling-demo-banner p { margin: 0; }
+.styling-demo-banner strong { display: block; font-weight: 500; }
+.styling-demo-banner a { flex-shrink: 0; text-decoration: underline; text-underline-offset: 4px; }
+.styling-demo .status.demo { background: #e9dfcd; color: #451c2b; }
+.styling-demo .product-card:has(.status.demo) .product-image img,
+.styling-demo .detail-layout:has(.status.demo) .detail-image img { object-fit: contain; padding: 7%; background: var(--paper); }
+.styling-demo .room-selected-product img { object-fit: contain; }
+@media (max-width: 767px) { .styling-demo-banner { align-items: start; font-size: 11px; } }

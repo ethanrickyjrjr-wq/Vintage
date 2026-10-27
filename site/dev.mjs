@@ -6,7 +6,7 @@ import { createRoomWorker } from "./room-worker.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 4173);
-const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".mp4": "video/mp4", ".mp3": "audio/mpeg" };
+const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".mp4": "video/mp4", ".mp3": "audio/mpeg" };
 const worker = createRoomWorker();
 createServer(async (request, response) => {
   try {
@@ -19,11 +19,19 @@ createServer(async (request, response) => {
       response.writeHead(result.status, Object.fromEntries(result.headers));
       response.end(Buffer.from(await result.arrayBuffer())); return;
     }
+    if (url.pathname === "/demo") {
+      if (!["GET", "HEAD"].includes(request.method)) { response.writeHead(405); response.end(); return; }
+      const page = (await readFile(path.join(root, "storefront.html"), "utf8"))
+        .replace('<script src="room-products.js" defer></script>', '<script src="room-products.js" defer></script>\n    <script src="demo-products.js" defer></script>\n    <link rel="stylesheet" href="demo.css" />')
+        .replace("<title>Hollywood and Vine | Vintage with a past</title>", '<meta name="robots" content="noindex, nofollow" /><title>Hollywood and Vine | Private styling demo</title>');
+      response.writeHead(200, { "content-type": "text/html", "cache-control": "no-store" });
+      response.end(request.method === "HEAD" ? undefined : page); return;
+    }
     const file = path.resolve(root, `.${decodeURIComponent(url.pathname === "/" ? "/storefront.html" : url.pathname)}`);
-    if (!file.startsWith(root + path.sep) || !["GET", "HEAD"].includes(request.method) || ![".html", ".js", ".css", ".webp", ".png", ".jpg", ".svg", ".woff2", ".mp4", ".mp3"].includes(path.extname(file))) { response.writeHead(404); response.end(); return; }
+    if (!file.startsWith(root + path.sep) || !["GET", "HEAD"].includes(request.method) || (!Object.hasOwn(types, path.extname(file)) || path.extname(file) === ".json" && url.pathname !== "/assets/demo/sources.json")) { response.writeHead(404); response.end(); return; }
     const info = await stat(file);
     if (!info.isFile()) { response.writeHead(404); response.end(); return; }
     response.writeHead(200, { "content-type": types[path.extname(file)], "cache-control": "no-store" });
     response.end(request.method === "HEAD" ? undefined : await readFile(file));
   } catch { response.writeHead(404); response.end(); }
-}).listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}`));
+}).listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}\nPrivate styling demo: http://127.0.0.1:${port}/demo#your-room`));

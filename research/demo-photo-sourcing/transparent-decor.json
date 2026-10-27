@@ -1,0 +1,36 @@
+{
+  "assets": [
+    {
+      "item_id": "A8",
+      "title": "Mannequin head display bust cutout (single; white face and dark shoulder base)",
+      "source_page_url": "https://pngpix.com/png/mannequin-head-display-png-20-5tsrsm9n334k4f8l.html",
+      "direct_image_url": "https://pngpix.com/images/hd/mannequin-head-display-png-20-5tsrsm9n334k4f8l.webp",
+      "local_path": "artifacts/demo-sourcing/ready-transparent/decor/A8_mannequin_head_display.webp",
+      "dimensions_px": [
+        896,
+        896
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_transparency_verified": true
+    },
+    {
+      "item_id": "A9",
+      "title": "Vintage movie projector photo-style cutout, dual reel",
+      "source_page_url": "https://wallpapers.com/png/vintage-movie-projector-png-lyq-ct5vqzmqvyfhpo6k.html",
+      "direct_image_url": "https://wallpapers.com/images/hd/vintage-movie-projector-png-lyq-ct5vqzmqvyfhpo6k.png",
+      "local_path": "artifacts/demo-sourcing/ready-transparent/decor/A9_vintage_projector.png",
+      "dimensions_px": [
+        896,
+        896
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_transparency_verified": true
+    }
+  ]
+}

@@ -77,6 +77,71 @@
       ],
       "alpha_transparency_verified": false,
       "reason": "Alternative higher-resolution stylized 8 mm projector graphic; actual downloaded PNG has no alpha (checkerboard is baked into image), so prefer white-background Eumig for clean placement."
+    },
+    {
+      "item_id": "A14",
+      "title": "C.1960s\u201370s Italian porcelain leopard, seated upright pose",
+      "source_page_url": "https://www.chairish.com/product/1505543/c1960s-70s-mid-century-modern-italian-porcelain-ceramic-hand-painted-leopard-in-a-sitting-position",
+      "direct_image_url": "https://chairish-prod.freetls.fastly.net/image/product/sized/08ca374f-39e8-49d6-b028-dd31dcde6290/c1960s-70s-mid-century-modern-italian-porcelain-ceramic-hand-painted-leopard-in-a-sitting-position-9543?aspect=fit&height=1600&width=1600",
+      "local_path": "artifacts/demo-sourcing/decor/A14_chairish_upright_sitting.jpg",
+      "alpha_transparency_verified": false,
+      "reason": "Closest pose match to original: upright seated body with front legs extended. Glossy tan spotted Italian ceramic, full form on clean white background; source image 1600px square.",
+      "dimensions_px": [
+        1600,
+        1600
+      ]
+    },
+    {
+      "item_id": "A8",
+      "title": "Pair of vintage West German silver ceramic mannequin head busts",
+      "source_page_url": "https://www.ebay.com/itm/298527765566",
+      "direct_image_url": "https://i.ebayimg.com/images/g/OlwAAeSw2OBqYiK1/s-l1600.webp",
+      "local_path": "artifacts/demo-sourcing/decor/A8_ebay_west_germany_silver_pair.webp",
+      "alpha_transparency_verified": false,
+      "reason": "Specific close match to actual pair of small, realistic mannequin head-and-neck busts in silver metallic finish; vintage German ceramic, heads only rather than full torsos. First product image shows both side by side. Soft room backdrop; 986\u00d71022px.",
+      "dimensions_px": [
+        986,
+        1022
+      ]
+    },
+    {
+      "item_id": "A22",
+      "title": "Dennis Sakelson paint-splattered mannequin torso sculpture, high resolution",
+      "source_page_url": "https://www.mutualart.com/Artwork/Painted-Female-Torso-Mannequin/2E581A4ED4377C49FF3B58863F605800",
+      "direct_image_url": "https://media.mutualart.com/Images/2025_10/01/21/107677699/dennis-sakelson-painted-female-torso-man-AAAAA.Jpeg",
+      "local_path": "artifacts/demo-sourcing/decor/A22_mutualart_699_original.jpg",
+      "alpha_transparency_verified": false,
+      "reason": "Original full-resolution 1600\u00d72132 JPEG extracted from the gallery page image link (not the -570 preview); saturated multicolor paint splatter/drips, complete torso from shoulders to hips plus stand on a pale studio background.",
+      "dimensions_px": [
+        1600,
+        2132
+      ]
+    },
+    {
+      "item_id": "A9",
+      "title": "Bell & Howell 253 RV Regular 8mm projector on white plinth",
+      "source_page_url": "https://www.newwavepool.shop/fr/collections/super8_and_8mm_projectors",
+      "direct_image_url": "https://www.newwavepool.shop/cdn/shop/products/bell_and_howell_253RV_regular_8mm_projector_202209081752.jpg?v=1662649248&width=1066",
+      "local_path": "artifacts/demo-sourcing/decor/A9_newwavepool_1066.jpg",
+      "alpha_transparency_verified": false,
+      "reason": "Complete vintage brown 8mm projector with both reels and visible branding; clean bright studio product photograph. 1066\u00d7853px, higher-resolution than previous 530px Eumig shot.",
+      "dimensions_px": [
+        1066,
+        853
+      ]
+    },
+    {
+      "item_id": "A9",
+      "title": "Bell & Howell 253 RV Regular 8mm projector, 2048px product photo",
+      "source_page_url": "https://www.newwavepool.shop/fr/collections/super8_and_8mm_projectors",
+      "direct_image_url": "https://www.newwavepool.shop/cdn/shop/products/bell_and_howell_253RV_regular_8mm_projector_202209081752.jpg?v=1662649248&width=2048",
+      "local_path": "artifacts/demo-sourcing/decor/A9_newwavepool_2048.jpg",
+      "dimensions_px": [
+        2048,
+        1639
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Higher-resolution variant of the same complete two-reel vintage 8mm projector photo on a bright studio plinth; object details and full reel outlines remain visible."
     }
   ]
 }

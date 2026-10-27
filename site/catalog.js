@@ -11,6 +11,7 @@
     fashion: "Fashion",
   };
   const statusNames = {
+    demo: "Styling sample",
     ready: "Ready",
     reshoot: "Re-shoot",
     still: "Video still",
@@ -18,6 +19,7 @@
     mature: "Mature content",
   };
   const statusNotes = {
+    demo: "A borrowed photograph of a similar piece for this private styling demo. It is not a photograph of our inventory.",
     ready:
       "Catalogued from a shop photograph. Final condition and availability still need confirmation.",
     reshoot:
@@ -237,7 +239,7 @@
     if (changeHash) updateHash(`#item-${id}`);
     const price = HNV_PRICES[id];
     const extra =
-      id === "B15"
+      item.chip === "demo" ? "" : id === "B15"
         ? "Guide: $40 for the embroidered jacket; $24 for the blouse. These are separate pieces."
         : id === "B18"
           ? "Guide price is per pair. Individual pairs range from $14 to $26."

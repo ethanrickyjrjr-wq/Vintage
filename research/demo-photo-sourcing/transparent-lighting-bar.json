@@ -1,0 +1,79 @@
+{
+  "purpose": "Existing transparent photographic cutouts for the private Hollywood and Vine room demo; source objects are visual stand-ins, not Ricky's actual inventory",
+  "sourced_on": "2026-10-27",
+  "verification": "Downloaded originals; opened with Pillow, converted paletted transparency to RGBA, confirmed alpha extrema 0–255; visually inspected and rejected baked checkerboards",
+  "ready": [
+    {
+      "item_id": "A10",
+      "title": "Vintage rose champagne coupe",
+      "source_page_url": "https://www.options.ch/champagnerglas-vintage-rosa.html",
+      "direct_image_url": "https://www.options.ch/media/catalog/product/cache/23a39abc451cd4fdcc5d36edc81a8436/0/0/0000030494_800D1.png",
+      "local_path": "artifacts/demo-sourcing/ready-transparent/lighting-bar/a10_options_pink_coupe.png",
+      "dimensions": [800, 800],
+      "format": "PNG",
+      "alpha_transparency_verified": true,
+      "alpha_extrema": [0, 255],
+      "suitability": "Photographic peach-rose vintage coupe with complete object and actual transparent exterior. Matches the coupe half of the source shelf. Bowl retains a milky white look internally, which may read light on burgundy."
+    },
+    {
+      "item_id": "A10",
+      "title": "Matching vintage rose champagne flute",
+      "source_page_url": "https://www.options.ch/fr-ch/flute-a-champagne-vintage-rose.html",
+      "direct_image_url": "https://www.options.ch/media/catalog/product/0/0/0000030495_800D1.png",
+      "local_path": "artifacts/demo-sourcing/ready-transparent/lighting-bar/a10_options_pink_flute.png",
+      "dimensions": [800, 800],
+      "format": "paletted PNG with transparency",
+      "alpha_transparency_verified": true,
+      "alpha_extrema": [0, 255],
+      "suitability": "Matching vintage peach-rose flute completes the original shelf's mixed glassware grouping. White milky appearance remains inside bowl."
+    },
+    {
+      "item_id": "A10",
+      "title": "Fleur de Rose faceted pink coupe",
+      "source_page_url": "https://www.ygo.be/woonaccessoires/koken-tafelen/glazen/champagneglazen/",
+      "direct_image_url": "https://media.ygo.be/media/8b/02/8f/1768537626/6969be1a8e5d6-dc691bbbcdea3522a729bfff0fabc5aaf405caa0_Y14450210306__media_packshots__fleur_de_rose_1__ecommerce.png",
+      "local_path": "artifacts/demo-sourcing/ready-transparent/lighting-bar/a10_ygo_pink_coupe.png",
+      "dimensions": [1200, 1200],
+      "format": "paletted PNG with transparency",
+      "alpha_transparency_verified": true,
+      "alpha_extrema": [0, 255],
+      "suitability": "Sharper and higher resolution single coupe alternative; light pink and faceted bowl, with milky white inside glass."
+    },
+    {
+      "item_id": "A16",
+      "title": "Vintage Zenith wooden tabletop radio cutout",
+      "source_page_url": "https://pngimg.com/image/91653",
+      "direct_image_url": "https://pngimg.com/uploads/radio/radio_PNG91653.png",
+      "local_path": "artifacts/demo-sourcing/ready-transparent/lighting-bar/a16_pngimg_radio_91653.png",
+      "dimensions": [2286, 1456],
+      "format": "PNG",
+      "alpha_transparency_verified": true,
+      "alpha_extrema": [0, 255],
+      "suitability": "Clean photographic cutout of a dark cherry closed wooden tabletop radio, with strong horizontal ribbing and a nearly round central dial. Original is a lighter paprika tabletop turntable/radio with side grilles; this is a style stand-in, not the same device category."
+    }
+  ],
+  "unfilled": [
+    {
+      "item_id": "A13",
+      "reason": "No comparable gold bust lamp plus cream shade with verified original alpha found. Prior white-background stand-in remains in lighting-bar.json."
+    },
+    {
+      "item_id": "A17",
+      "reason": "No verified-alpha brass oil lamp found in this pass. PNGWing and PNGEgg previews had baked checkerboards and alpha 255 throughout, so rejected. Parent agent is independently checking a Pexelsfy candidate."
+    }
+  ],
+  "rejected_examples": [
+    {
+      "url": "https://w1.pngwing.com/pngs/278/253/png-transparent-brass-lighting-oil-lamp-lamp-light-fixture-candle-holder-metal-glass.png",
+      "reason": "Baked checkerboard and alpha 255 throughout."
+    },
+    {
+      "url": "https://e7.pngegg.com/pngimages/725/254/png-clipart-lighting-lantern-oil-lamp-kerosene-lamp-brass-light-fixture-glass.png",
+      "reason": "Baked checkerboard and alpha 255 throughout."
+    },
+    {
+      "url": "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTEwL3Jhd3BpeGVsX29mZmljZV8zNF90d29fcGlua19jaGFtcGFnbmVfZ2xhc3Nlc19jbGlua2luZ19pc29sYXRlZF8xNTQ5ZWE0MC01MTZlLTQ1ODAtYmZhNi1lOTE4ZmVjN2NjZTYucG5n.png",
+      "reason": "Pink champagne flutes preview had baked checkerboard and no alpha."
+    }
+  ]
+}
