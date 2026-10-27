@@ -84,6 +84,7 @@ self.onmessage = async ({ data }) => {
     // signed download queries). Never include pixels, tensors or user content.
     const diagnostic = String(error?.message || error?.name || 'Unknown error')
       .replace(/https?:\/\/\S+/g, '[asset]').replace(/\[[\s\S]*\]/g, '[details]').slice(0, 220);
-    self.postMessage({ requestId, type: 'error', phase, diagnostic, message: 'Room suggestions could not load on this device. You can still drag your picks into place.' });
+    const retryable = phase === 'library' || phase === 'model' && /fetch|network|download|connection|timeout|401|403|404|502|503/i.test(String(error?.message));
+    self.postMessage({ requestId, type: 'error', phase, diagnostic, retryable, message: 'Room suggestions could not load on this device. You can still drag your picks into place.' });
   }
 };

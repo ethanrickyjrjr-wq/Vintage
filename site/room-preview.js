@@ -165,7 +165,7 @@ function startEditor() {
     } catch (error) { if (version === photoVersion) status(error.message, true); }
     finally { URL.revokeObjectURL(objectUrl); $("room-file").value = ""; }
   }
-  function analyze() {
+  async function analyze(attempt = 0) {
     if (state.scene) return Promise.resolve(state.scene);
     worker ??= new Worker(new URL("./room-segmentation.js", import.meta.url), { type: "module" });
     const analysisWorker = worker, id = ++requestId;
@@ -190,10 +190,19 @@ function startEditor() {
         } else if (data.type === "result") finish(null, data);
         else if (data.type === "error") {
           console.warn("Room guide unavailable:", data.phase, data.diagnostic);
-          finish(new Error(data.message || "The room guide couldn’t read this photo. Try placing your picks by hand."));
+          const error = new Error(data.message || "The room guide couldn’t read this photo. Try placing your picks by hand.");
+          error.retryable = data.retryable;
+          finish(error);
         }
       };
       analysisWorker.postMessage({ requestId: id, width: photo.width, height: photo.height, pixels }, [pixels]);
+    }).catch(error => {
+      if (error.retryable && attempt === 0 && !state.cancelled) {
+        $("room-working-label").textContent = "Download interrupted. Trying once more…";
+        $("room-progress").removeAttribute("value");
+        return analyze(1);
+      }
+      throw error;
     });
   }
   async function decorate(ids) {
