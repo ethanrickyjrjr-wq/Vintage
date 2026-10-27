@@ -10,6 +10,12 @@ the sample photos, or `/demo-photos.html` for side-by-side comparisons and sourc
 The sample room loads automatically in the demo. Each replacement is labeled as a
 styling sample; it does not inherit the original item's research price.
 
+The private storefront and review page use a white background throughout, with
+burgundy type and buttons. Image panels, room controls and details share that white
+surface, so a source photo's white background does not form a cream-bordered box.
+Saved evening-mode preferences do not darken this preview. The painted mannequin
+remains a source photograph rather than a transparent placement layer.
+
 `site/assets/demo/` contains source-photo exports, ten transparent replacement
 cutouts, three additional ready-made transparent options, and `sources.json`.
 The latter records source pages, direct image URLs, dimensions, alpha, processing,

@@ -1,5 +1,17 @@
 /* Loaded only by the local /demo route; excluded from the publishable build. */
-.styling-demo-banner { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 12px clamp(20px, 4vw, 60px); background: var(--burgundy); color: var(--cream, #f6efdf); font-size: 12px; }
+:root, :root[data-theme="evening"] {
+  --paper: #fff;
+  --paper-deep: #fff;
+  --cream: #fff;
+  --text: #451c2b;
+  --muted: #70636a;
+  --line: #e4dde0;
+  --rust: #973b54;
+  --wall: #fff;
+  --wall-edge: #fff;
+  color-scheme: only light;
+}
+.styling-demo-banner { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 12px clamp(20px, 4vw, 60px); background: #fff; color: var(--text); border-bottom: 1px solid var(--line); font-size: 12px; }
 .styling-demo-banner p { margin: 0; }
 .styling-demo-banner strong { display: block; font-weight: 500; }
 .styling-demo-banner a { flex-shrink: 0; text-decoration: underline; text-underline-offset: 4px; }
@@ -7,4 +19,32 @@
 .styling-demo .product-card:has(.status.demo) .product-image img,
 .styling-demo .detail-layout:has(.status.demo) .detail-image img { object-fit: contain; padding: 7%; background: var(--paper); }
 .styling-demo .room-selected-product img { object-fit: contain; }
+.site-header, .mobile-nav, .salon, .design-story, .design-room,
+.design-detail, .owner-section, .site-footer {
+  background: #fff;
+  color: var(--text);
+}
+.site-header { border-bottom-color: var(--line); }
+.site-header .wordmark, .footer-wordmark, .collection-mark,
+.salon h1 > span, .salon h1 em,
+.display-shelves .section-intro h2 em, .design-copy h2 em,
+.collection-intro h2 em, .disco-note h2 em { text-shadow: none; }
+.salon h1 em, .display-shelves .section-intro h2 em,
+.design-copy h2 em, .collection-intro h2 em,
+.disco-note h2 em { color: var(--burgundy); }
+.salon-description, .object-caption, .salon-tour small { color: var(--muted); }
+.salon, .design-story, .owner-section, .product-visual { box-shadow: none; }
+.salon::before { border-color: var(--line); box-shadow: none; }
+.salon-ledge { background: #fff; border-bottom: 1px solid var(--line); box-shadow: none; }
+.salon-disco::before { background: var(--muted); }
+.salon-copy > .button, .button-cream { background: var(--burgundy); color: #fff; }
+.salon-copy > .button { box-shadow: 3px 4px 0 #e4dde0; }
+.salon-copy > .button:hover { box-shadow: 2px 3px 0 #e4dde0; }
+.product-visual { background: #fff; border: 1px solid var(--line); }
+.styling-demo .status.demo, .owner-ticket { background: #fff; border: 1px solid var(--line); }
+.disco-now { background: #fff; }
+.disco-note::before { background: none; }
+.rug-band { background: #fff; border-top: 1px solid var(--line); }
+.site-footer { border-top: 1px solid var(--line); }
+#theme-toggle { display: none; }
 @media (max-width: 767px) { .styling-demo-banner { align-items: start; font-size: 11px; } }
