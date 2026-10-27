@@ -1,0 +1,82 @@
+{
+  "assets": [
+    {
+      "item_id": "A14",
+      "title": "Ceramiche Boxer spotted ceramic leopard standing on all fours",
+      "source_page_url": "https://ceramicheboxer.com/en/dettaglio-prodotto/ceramic-leopard-on-four-legs-168",
+      "direct_image_url": "https://ceramicheboxer.com/pics/prodotti/thumb_big/BOXERleopardosuquattrozampegrande8a16fbab085ece3f97c2cc2ab758816d9c18be2e.jpg",
+      "local_path": "artifacts/demo-sourcing/decor/A14_leopard_boxer.jpg",
+      "dimensions_px": [
+        750,
+        682
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Complete standing spotted ceramic leopard, high quality glazed Italian-style product packshot on a pale studio background; strongest clean full-object fit."
+    },
+    {
+      "item_id": "A8",
+      "title": "Pair of reflective chrome mannequin busts on stands",
+      "source_page_url": "https://www.alibaba.com/showroom/mirrored-mannequins-for-sale.html",
+      "direct_image_url": "https://s.alicdn.com/@sc04/kf/H48e7376f9db24e4f96a4f46defe1e05dF/High-End-Abstract-Chrome-Silver-Half-Upper-Body-Male-Female-Lady-Mirror-Mannequin-Bust-with-Stand-on-Sale.jpg",
+      "local_path": "artifacts/demo-sourcing/decor/A8_chrome_busts_alibaba.jpg",
+      "dimensions_px": [
+        800,
+        800
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Shows a matched pair of full silver mirror-finish bust mannequins; dramatic studio display background, but both forms and stands are visible."
+    },
+    {
+      "item_id": "A22",
+      "title": "Dennis Sakelson multicolor paint-splattered mannequin torso sculpture",
+      "source_page_url": "https://www.mutualart.com/Artwork/Painted-Female-Torso-Mannequin/2E581A4ED4377C49FF3B58863F605800",
+      "direct_image_url": "https://media.mutualart.com/Images/2025_10/01/21/107677703/dennis-sakelson-painted-female-torso-man-AAAAA-570.Jpeg",
+      "local_path": "artifacts/demo-sourcing/decor/A22_painted_mannequin.jpg",
+      "dimensions_px": [
+        428,
+        570
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Vivid all-over paint splatters closely match requested art mannequin direction; front-facing torso photo on pale background, but only torso form (not full-body) and modest resolution."
+    },
+    {
+      "item_id": "A22",
+      "title": "Jan Siwek colorful paint-dripped mannequin torso sculpture",
+      "source_page_url": "https://www.catawiki.com/fr/l/57406219-jan-siwek-composition",
+      "direct_image_url": "https://assets.catawiki.com/image/cw_normal/plain/assets/catawiki/assets/2022/3/28/e/e/7/ee798c62-101d-4ba7-9db7-33168158a192.jpg",
+      "local_path": "artifacts/demo-sourcing/decor/A22_painted_mannequin_catawiki.jpg",
+      "dimensions_px": [
+        525,
+        700
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Strong colorful paint-drip styling on a complete torso sculpture down to hips; distinct full-object photo, though torso-only and set against mottled gray."
+    },
+    {
+      "item_id": "A9",
+      "title": "Eumig Mark 8 cine projector prop photograph",
+      "source_page_url": "https://www.tvfilmprops.co.uk/det/610/Eumig-Mark-8-Cine-Projector/",
+      "direct_image_url": "https://www.tvfilmprops.co.uk/userdata/PRODTHM-610.jpg",
+      "local_path": "artifacts/demo-sourcing/decor/A9_projector_tvfilmprops.jpg",
+      "dimensions_px": [
+        530,
+        530
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Complete recognizable vintage Eumig Mark 8 projector in a tidy isolated white-background product photo."
+    },
+    {
+      "item_id": "A9",
+      "title": "Sekonic 8 mm movie projector transparent-cutout candidate",
+      "source_page_url": "https://www.pngegg.com/ru/png-txdpu",
+      "direct_image_url": "https://e7.pngegg.com/pngimages/697/783/png-clipart-movie-projector-8-mm-film-turbosquid-projector-electronics-film.png",
+      "local_path": "artifacts/demo-sourcing/decor/A9_projector_pngegg.png",
+      "dimensions_px": [
+        900,
+        815
+      ],
+      "alpha_transparency_verified": false,
+      "reason": "Alternative higher-resolution stylized 8 mm projector graphic; actual downloaded PNG has no alpha (checkerboard is baked into image), so prefer white-background Eumig for clean placement."
+    }
+  ]
+}

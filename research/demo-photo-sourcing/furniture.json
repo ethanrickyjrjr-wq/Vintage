@@ -1,0 +1,89 @@
+{
+  "purpose": "Private Hollywood and Vine room styling demo; source photographs only, no background removal or edits.",
+  "candidates": [
+    {
+      "title": "Black Continuous-Arm Windsor Chair with Toile Seat Pad",
+      "matched_item_id": "A15",
+      "source_page_url": "https://www.chairish.com/product/10795035/black-continuous-arm-windsor-chair-bench-made-with-toile-blue-chair-pad",
+      "direct_image_url": "https://chairish-prod.freetls.fastly.net/image/product/sized/c0a9a1c9-4156-4c38-a4e0-5abfa7786f3c/black-continuous-arm-windsor-chair-bench-made-with-toile-blue-chair-pad-7858?aspect=fit&height=1600&width=1600",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a15_black_toile_chair.jpg",
+      "dimensions_px": {
+        "width": 1473,
+        "height": 1473
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "Best form match: black Windsor armchair with spindle back and patterned seat pad; straight-on view and isolated white background make it easy to place in the room."
+    },
+    {
+      "title": "1880s Black Painted Windsor Armchair with Upholstered Seat",
+      "matched_item_id": "A15",
+      "source_page_url": "https://www.1stdibs.com/furniture/seating/armchairs/set-of-2-black-painted-windsor-armchair-made-wood-from-1880s/id-f_17938772/",
+      "direct_image_url": "https://a.1stdibscdn.com/antique-19th-century-ebonised-windsor-armchair-in-oak-ref-af-3467--for-sale/f_100402/f_439349421741350497864/f_43934942_1741350499191_bg_processed.jpg",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a15_vintage_patterned_black_armchair.jpg",
+      "dimensions_px": {
+        "width": 3233,
+        "height": 3233
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "High-resolution three-quarter product view with black spindle frame and subdued patterned upholstery; near match to the item\u2019s Southwestern seat vibe."
+    },
+    {
+      "title": "Vitra Wiggle Side Chair",
+      "matched_item_id": "A20",
+      "source_page_url": "https://www.ambientedirect.com/vitra/wiggle-side-chair-stuhl_pid_2434.html",
+      "direct_image_url": "https://cdn.ambientedirect.com/chameleon/mediapool/thumbs/b/53/none_1500x1500-ID2077063-2f782188c7b4e2fecec13925dda774a9.jpg",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a20_wiggle_1500.jpg",
+      "dimensions_px": {
+        "width": 1500,
+        "height": 1500
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "Clear three-quarter, nearly full-frame isolated packshot; iconic folded, ribbed S profile closely matches the sculptural chair silhouette, though natural cardboard rather than white."
+    },
+    {
+      "title": "Vitra Wiggle Side Chair",
+      "matched_item_id": "A20",
+      "source_page_url": "https://www.2modern.com/products/wiggle-side-chair",
+      "direct_image_url": "https://www.2modern.com/cdn/shop/products/vitra-wiggle-side-chair.jpg?v=1623394617",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a20_wiggle_2modern.jpg",
+      "dimensions_px": {
+        "width": 3000,
+        "height": 3000
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "Sharper high-resolution isolated three-quarter packshot showing full corrugated form and structure; natural cardboard finish differs from the white item."
+    },
+    {
+      "title": "XL Brown and White Cowhide Rug",
+      "matched_item_id": "A19",
+      "source_page_url": "https://cowhideimports.com/products/brown-and-white-cowhide-rug-xl-size",
+      "direct_image_url": "https://cowhideimports.com/cdn/shop/products/Brown_White_Special_copy_7b966222-3e16-4b68-8836-05023b93d458.jpg?v=1455022935&width=1946",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a19_cowhide_1946.jpg",
+      "dimensions_px": {
+        "width": 1587,
+        "height": 2048
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "Flat overhead packshot with organic hide edge, warm brown central field and white patches; close match to the throw/rug palette."
+    },
+    {
+      "title": "Brown and White Cowhide Rug",
+      "matched_item_id": "A19",
+      "source_page_url": "https://strut.com.br/en/products/tapete-em-couro-bovino-marrom-e-branco",
+      "direct_image_url": "https://strut.com.br/cdn/shop/files/tapete-em-couro-bovino-marrom-e-branco-741109.jpg?v=1718970839",
+      "local_file_path": "artifacts/demo-sourcing/furniture/a19_cowhide_strut.jpg",
+      "dimensions_px": {
+        "width": 3024,
+        "height": 3024
+      },
+      "alpha_transparency_verified": false,
+      "background": "white",
+      "reason_suitable": "High-resolution isolated overhead product image with especially distinct natural contours and hair texture; brown/white distribution is complementary to A19."
+    }
+  ]
+}
