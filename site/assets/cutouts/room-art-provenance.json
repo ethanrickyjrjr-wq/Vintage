@@ -1,0 +1,90 @@
+[
+  {
+    "id": "A3",
+    "source": "site/assets/photos/IMG_6609.webp",
+    "source_sha256": "ce622e0030c2c79fe2cfd194f7f0064c7a3341c85ca7645e84df26d349f06098",
+    "source_px": [
+      2048,
+      2731
+    ],
+    "outline_normalized": [
+      [
+        0.15,
+        0
+      ],
+      [
+        0.938,
+        0.063
+      ],
+      [
+        0.975,
+        0.97
+      ],
+      [
+        0.145,
+        0.985
+      ]
+    ],
+    "operation": "deterministic inverse perspective, bicubic; no inpainting",
+    "size": [
+      772,
+      1200
+    ],
+    "ratio": 0.6433333333333333,
+    "content_bbox": [
+      0,
+      0,
+      772,
+      1200
+    ],
+    "pre_encoding_pixels_kept": 1.0,
+    "pre_encoding_comparison": "exact equality to deterministic source warp",
+    "encoding": "lossy WebP quality 82, lossless opaque alpha",
+    "bytes": 162606,
+    "output_sha256": "897f17409805b29909d619184fa47a4e949b4a4ca0f47be7743696a325a06ac6"
+  },
+  {
+    "id": "A4",
+    "source": "site/assets/photos/IMG_6613.webp",
+    "source_sha256": "505f408d79f417168ee5cc08a2c785e73f809f3db2e71ed8251143e2c161a220",
+    "source_px": [
+      2048,
+      2731
+    ],
+    "outline_normalized": [
+      [
+        0.125,
+        0.092
+      ],
+      [
+        0.863,
+        0
+      ],
+      [
+        0.88,
+        0.95
+      ],
+      [
+        0.11,
+        0.93
+      ]
+    ],
+    "operation": "deterministic inverse perspective, bicubic; no inpainting",
+    "size": [
+      764,
+      1200
+    ],
+    "ratio": 0.6366666666666667,
+    "content_bbox": [
+      0,
+      0,
+      764,
+      1200
+    ],
+    "pre_encoding_pixels_kept": 1.0,
+    "pre_encoding_comparison": "exact equality to deterministic source warp",
+    "encoding": "lossy WebP quality 82, lossless opaque alpha",
+    "bytes": 44382,
+    "output_sha256": "6aab8277d2e8e2480ed0eec125b97a78683e897322c135c3422d7b77d1ddefc2"
+  }
+]

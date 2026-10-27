@@ -48,7 +48,7 @@
     <script src="catalog-data.js" defer></script>
     <script src="room-products.js" defer></script>
     <script src="catalog.js" defer></script>
-    <script src="room-preview.js" defer></script>
+    <script src="room-preview.js" type="module"></script>
     <script src="storefront.js" defer></script>
     <script src="disco-music.js" defer></script>
     <script src="disco.js" defer></script>
@@ -398,32 +398,36 @@
                 <small>JPG, PNG or WebP · up to 15 MB</small>
                 <div class="room-example"><img src="assets/rooms/example-room.webp" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" /><button type="button" id="room-use-example">Or try our sample room ↗</button><small>AI-generated example room</small></div>
               </div>
-              <canvas id="room-canvas" width="1200" height="800" tabindex="0" aria-label="Your room preview. In Place mode, click a spot or use the arrow keys to move the selected find. In Replace mode, draw a box around an existing item." hidden></canvas>
-              <div class="room-working" id="room-working" hidden><span class="room-spinner" aria-hidden="true"></span><strong id="room-working-label">Finding its place…</strong><span>This can take about a minute.</span></div>
+              <canvas id="room-canvas" width="1200" height="800" tabindex="0" aria-label="Room editor. Select a find, drag to move it, or drag its corner to resize. Arrow keys move the selected find; Delete removes it." aria-describedby="room-editor-help" hidden></canvas>
+              <div class="room-working" id="room-working" hidden><span class="room-spinner" aria-hidden="true"></span><strong>Looking around your room…</strong><span id="room-working-label">Loading the room guide on your device.</span><progress id="room-progress" max="100" aria-label="Room guide download"></progress><button type="button" id="room-cancel">Cancel</button></div>
             </div>
             <input id="room-file" type="file" accept="image/jpeg,image/png,image/webp" hidden />
             <div class="room-bottom-bar">
-              <p id="room-status" role="status" aria-live="polite">Your photo stays on this device until you request an AI preview.</p>
+              <p id="room-status" role="status" aria-live="polite">Your room photo stays on this device.</p>
               <button type="button" id="room-change-photo" hidden>Change photo</button>
             </div>
           </div>
           <form class="room-controls" id="room-form">
-            <label class="room-label" for="room-product">01 / Pick your find</label>
+            <label class="room-label" for="room-product">01 / Make your picks</label>
             <select id="room-product"></select>
             <div class="room-selected-product"><img id="room-product-image" alt="" width="120" height="140" loading="lazy" /><div><p id="room-product-title"></p><span id="room-product-price"></span><a id="room-product-details" href="#collection">View this find ↗</a></div></div>
-            <fieldset class="room-modes"><legend class="room-label">02 / Make it yours</legend>
-              <label><input type="radio" name="room-mode" value="place" checked /><span><strong>Pick a spot</strong><small>Click where you want it.</small></span></label>
-              <label><input type="radio" name="room-mode" value="decorate" /><span><strong>Decorate for me</strong><small>We’ll find a good spot.</small></span></label>
-              <label><input type="radio" name="room-mode" value="replace" /><span><strong>Replace something</strong><small>Mark what goes. Try this instead.</small></span></label>
-            </fieldset>
-            <div id="room-size-controls"><label class="room-label" for="room-size">Preview size <output id="room-size-value" for="room-size">25%</output></label><input id="room-size" type="range" min="8" max="70" value="25" /><p class="room-help">Adjust the visual size; this is not a measurement.</p></div>
-            <div id="room-replace-controls" hidden><p class="room-help">Draw a box around the item in your photo, or describe it below.</p><label class="room-label" for="room-replace-target">What would you like to replace?</label><input type="text" id="room-replace-target" maxlength="180" placeholder="e.g. the lamp on the left side table" /><button type="button" id="room-clear-selection">Clear marked area</button></div>
-            <label class="room-label" for="room-notes">A little direction <span>(optional)</span></label>
-            <textarea id="room-notes" rows="2" maxlength="240" placeholder="e.g. keep the rest of the room as it is"></textarea>
-            <button type="submit" class="button button-burgundy room-generate" id="room-generate" disabled>Preview this spot <span aria-hidden="true">↗</span></button>
+            <button type="submit" class="room-add" id="room-add">Add to my picks +</button>
+            <ul class="room-tray" id="room-tray" aria-label="My picks"></ul>
+            <p class="room-help" id="room-tray-empty">Build a little collection here, then place each find or let us start.</p>
+            <div class="room-decorate"><p class="room-label">02 / A starting arrangement <span>Beta</span></p>
+              <button type="button" class="button button-burgundy room-generate" id="room-decorate-picks" disabled>Decorate with my picks ↗</button>
+              <button type="button" class="room-secondary" id="room-decorate-favorites" disabled>Decorate with my favorites <span id="room-favorites-count">0</span></button>
+              <p class="room-help">Each button starts a fresh layout from that collection. We leave pieces out when there’s no clear space. Undo brings your last layout back.</p>
+            </div>
+            <div class="room-layer-controls" id="room-layer-controls" hidden><p class="room-label">03 / Make it yours</p>
+              <ul class="room-layers" id="room-layers" aria-label="Finds in your room"></ul>
+              <label class="room-label" for="room-size">Selected find size <output id="room-size-value" for="room-size">25%</output></label><input id="room-size" type="range" min="3" max="85" value="25" step="1" />
+              <div class="room-layer-actions"><button type="button" id="room-flip">Flip</button><button type="button" id="room-front">Bring forward</button><button type="button" id="room-delete">Remove</button></div>
+            </div>
+            <p class="room-help" id="room-editor-help">Drag a pick into the photo, or choose Place. Drag a find to move it; use its corner or the size slider to resize. Arrow keys move the selected find; Shift moves it farther. Proportions are approximate.</p>
+            <div class="room-unplaced" id="room-unplaced" hidden><p class="room-label">Left out of this layout</p><ul id="room-unplaced-list"></ul></div>
             <button type="button" class="room-download" id="room-download" disabled>Download your room ↓</button>
-            <p class="room-help room-privacy">Keeping a cutout placement stays on your device. AI previews send your photo to our private renderer on Hugging Face. We don’t save room photos on this site. AI may adjust placement, details and proportions; previews don’t guarantee fit.</p>
-            <p class="room-service" id="room-service" role="status"></p>
+            <p class="room-help room-privacy">Your photo and arrangement stay in this tab. Decorate downloads a room guide once (about 45 MB plus its runtime) and runs on your device. Closing or reloading clears your room. Previews don’t guarantee fit.</p>
           </form>
         </div>
         <details class="room-demo"><summary>Watch a room find its character <span>Looping sample preview ↗</span></summary><video id="room-demo-video" controls loop muted playsinline preload="none" poster="assets/rooms/example-room.webp"><source src="assets/rooms/room-preview-demo.mp4" type="video/mp4" /></video><p>A sample room with our finds, rendered with FLUX.2 Klein. AI styling previews; proportions and details may vary.</p></details>

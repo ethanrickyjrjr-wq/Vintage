@@ -1,5 +1,25 @@
 # Room previews
 
+## Browser editor — 2026-10-27
+
+The current editor replaces generative placement with independent browser layers. Picks and saved favorites feed separate Decorate actions. Manual drag/drop, resize, flip, bring-forward, delete, keyboard movement, undo, reset, original comparison and labeled PNG export all work without a model service. Every position/size is numeric and remains editable; layers are never flattened into the working room. Photos are normalized locally and kept only in tab memory.
+
+Automatic starting layouts use a lazy module worker (`site/room-segmentation.js`) with pinned Transformers.js 4.3.1 and DETR panoptic q8. The model/runtime are downloaded; the room pixels are transferred only to the local worker. The pipeline and public assets can be cached for reuse. `site/room-layout.js` remaps merged COCO labels, measures connected mask regions, checks blank wall/support space and foreground overlap, and assigns candidates deterministically. Wall art uses furniture-relative proportions and approximate spacing, with at most two artwork placements. Side tables have one available position. Lamps require side-table geometry or a broad cabinet; coffee/unknown tables are excluded. Used candidates, overlapping items and uncertain areas are rejected. Pieces that cannot fit are listed rather than parked on the floor. No inches are inferred from an assumed sofa size.
+
+The model's masks are imperfect, so these are editable suggestions. Missing/ambiguous masks produce fewer placements. Cancellation, timeout, unavailable assets or failed model downloads preserve manual editing and the prior layout. The privacy copy discloses the roughly 45 MB model plus runtime download. Room/layout state clears on reload; favorites remain in browser storage or the catalog's session save set.
+
+Four styling assets remain available: A1 urn lamp and A2 chandelier retain the existing editorial cutouts; A3/A4 now use perspective-correct crops of original photos, with photographed glare/occlusion retained. A5, A22, A8, A9 and A10 could not become honest whole-item layers; see [source review](room-cutout-review.md). The seven still-only room items also remain unavailable.
+
+The storefront no longer calls `/api/room-preview`. Replace is removed, and publication sets the retained legacy service's `ROOM_PREVIEW_ENABLED=false`. Optional Klein light/shadow polish is deferred until its ten-run quality test and authenticated shop-call quota attribution are checked. The historical service notes below describe the previous release, not current editor behavior.
+
+### Verification for this release
+
+`npm test` passes 19 tests: seven new layout safeguards and twelve retained legacy server tests. Layout checks cover COCO remapping, missing surfaces/cutouts, coffee-table lamp exclusion, side-table capacity, deterministic/limited wall arrangements, foreground protection, and portrait/landscape bounds.
+
+The [ten-photo browser benchmark](../research/room-editor/03-browser-benchmark.md) completed on real photos: 16.45 seconds cold including downloads, then 2.69–3.62 seconds per photo (3.26-second median) on this desktop. Captured requests were GET downloads with no photo payloads. These are desktop measurements; phone latency/peak memory and ground-truth mask accuracy have not been measured. The report includes source licences, exact revision, runtime details and observed mask errors.
+
+## Previous service record
+
 The storefront's `#your-room` section offers local placement sketches, automatic decorating, and replacement of an existing item selected by rectangle or description. Four cutouts stay exactly where clicked and can be kept and combined locally for free. Other inventory references can be rendered at a requested location, with the explicit limitation that AI may shift placement and details. Room previews include before/after, undo, reset and download. They are visual styling aids, not dimensional measurements or condition guarantees.
 
 ## Free rendering service

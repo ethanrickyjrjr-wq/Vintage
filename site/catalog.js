@@ -325,6 +325,7 @@
       } catch {
         /* Session-only saves remain usable. */
       }
+      document.dispatchEvent(new CustomEvent("hnv:saved-changed", { detail: [...saved] }));
       if (state.savedOnly) {
         render();
         if (!productDialog?.open) focusFind(id, button);

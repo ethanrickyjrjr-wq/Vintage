@@ -1,0 +1,305 @@
+[
+  {
+    "photo": 1,
+    "source": "https://commons.wikimedia.org/wiki/File:Laptop_in_the_living_room_(Unsplash).jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.24375000000000002,
+        "y": 0.1791666666666667,
+        "w": 0.12303750000000001,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A4",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 2,
+    "source": "https://commons.wikimedia.org/wiki/File:Living_room_(15246771173).jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.5,
+        "y": 0.45,
+        "w": 0.12906874999999998,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      },
+      {
+        "id": "A4",
+        "kind": "art",
+        "x": 0.75,
+        "y": 0.44999999999999996,
+        "w": 0.12773125,
+        "ratio": 1.5706806282722514,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 3,
+    "source": "https://commons.wikimedia.org/wiki/File:Living_room_(Unsplash).jpg",
+    "placed": [
+      {
+        "id": "A2",
+        "kind": "ceiling",
+        "x": 0.3,
+        "y": 0.5604592663772976,
+        "w": 0.1330283273381295,
+        "ratio": 1.5081374321880652,
+        "flip": false
+      },
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.775,
+        "y": 0.37161214953271027,
+        "w": 0.0871515625,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      },
+      {
+        "id": "A4",
+        "kind": "art",
+        "x": 0.6937500000000001,
+        "y": 0.3894859813084112,
+        "w": 0.071028125,
+        "ratio": 1.5706806282722514,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 4,
+    "source": "https://commons.wikimedia.org/wiki/File:Living_room_(15235059612).jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.25,
+        "y": 0.25000000000000006,
+        "w": 0.12906874999999998,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      },
+      {
+        "id": "A4",
+        "kind": "art",
+        "x": 0.75,
+        "y": 0.25,
+        "w": 0.12773125,
+        "ratio": 1.5706806282722514,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 5,
+    "source": "https://commons.wikimedia.org/wiki/File:Living_room_Ireland.jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.384375,
+        "y": 0.25,
+        "w": 0.13389375,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      },
+      {
+        "id": "A4",
+        "kind": "art",
+        "x": 0.5765625000000001,
+        "y": 0.25,
+        "w": 0.13250625,
+        "ratio": 1.5706806282722514,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 6,
+    "source": "https://commons.wikimedia.org/wiki/File:Living_room.jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.315625,
+        "y": 0.41355140186915884,
+        "w": 0.036589583333333335,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A4",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 7,
+    "source": "https://commons.wikimedia.org/wiki/File:Living_room_seen_from_the_Kitchen.jpg",
+    "placed": [],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A3",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A4",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 8,
+    "source": "https://commons.wikimedia.org/wiki/File:Simon_Rae_2017-05-09_(Unsplash).jpg",
+    "placed": [],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A3",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A4",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 9,
+    "source": "https://commons.wikimedia.org/wiki/File:Brier_Living_Room.jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.040625,
+        "y": 0.09472222222222222,
+        "w": 0.03759479166666667,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A4",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  },
+  {
+    "photo": 10,
+    "source": "https://commons.wikimedia.org/wiki/File:Oceanfront_beach_rental_(26978149970).jpg",
+    "placed": [
+      {
+        "id": "A3",
+        "kind": "art",
+        "x": 0.3,
+        "y": 0.4088785046728972,
+        "w": 0.05347708333333333,
+        "ratio": 1.5544041450777202,
+        "flip": false
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "A2",
+        "reason": "No clear ceiling position was found."
+      },
+      {
+        "id": "A4",
+        "reason": "No clear wall space was found."
+      },
+      {
+        "id": "A1",
+        "reason": "No confirmed side table or console has room for this lamp."
+      }
+    ]
+  }
+]

@@ -1,350 +1,313 @@
-(() => {
-  "use strict";
-  const form = document.querySelector("#room-form");
-  if (!form) return;
-  const $ = (id) => document.getElementById(id);
-  const canvas = $("room-canvas");
-  const context = canvas.getContext("2d");
-  const products = HNV_ROOM_PRODUCTS.map((product) => ({
-    ...HNV_ITEMS.find((item) => item.id === product.id), ...product,
-  })).filter((product) => product.title);
-  const state = {
-    original: null, current: null, history: [], point: null, box: null,
-    drag: null, overlay: null, busy: false, comparing: false, generated: false, aiAvailable: false,
-  };
-  let imageVersion = 0;
-  let uploadVersion = 0;
-  let frame = 0;
-  const mode = () => form.elements["room-mode"].value;
-  const selected = () => products.find((product) => product.id === $("room-product").value);
-  function status(message, error = false) {
-    $("room-status").textContent = message;
-    $("room-status").classList.toggle("is-error", error);
-  }
+import { arrangeRoom, constrainLayer, layerBox } from "./room-layout.js";
+
+const form = document.querySelector("#room-form");
+if (form) startEditor();
+
+function startEditor() {
+  const $ = id => document.getElementById(id);
+  const canvas = $("room-canvas"), context = canvas.getContext("2d");
+  const inventory = new Map(HNV_ITEMS.map(item => [item.id, item]));
+  const products = HNV_ROOM_PRODUCTS.map(product => ({ ...inventory.get(product.id), ...product }));
+  const productMap = new Map(products.map(product => [product.id, product]));
+  const textures = new Map();
+  const state = { photo: null, layers: [], picks: [], selected: null, history: [], unplaced: [], scene: null, busy: false, comparing: false, drag: null };
+  const savedKey = "hollywood-and-vine-saved";
+  let favorites = [], photoVersion = 0, frame = 0, worker = null, requestId = 0, cancelAnalysis = null, sizeStart = null;
+  const selectedProduct = () => productMap.get($("room-product").value);
+  const selectedLayer = () => state.layers.find(layer => layer.id === state.selected);
+  const photoAspect = () => canvas.width / canvas.height;
+  function status(message, error = false) { $("room-status").textContent = message; $("room-status").classList.toggle("is-error", error); }
+  function snapshot() { return { layers: state.layers.map(layer => ({ ...layer })), selected: state.selected, unplaced: state.unplaced.map(item => ({ ...item })) }; }
+  function remember(previous = snapshot()) { state.history.push(previous); if (state.history.length > 30) state.history.shift(); }
+  function change(callback) { remember(); callback(); state.comparing = false; refresh(); }
   function loadImage(source) {
     return new Promise((resolve, reject) => {
-      const image = new Image();
-      image.onload = () => resolve(image);
-      image.onerror = () => reject(new Error("That photo could not be opened. Please try a JPG, PNG or WebP."));
-      image.src = source;
+      const image = new Image(); image.onload = () => resolve(image);
+      image.onerror = () => reject(new Error("That image couldn’t be opened. Please try again.")); image.src = source;
     });
   }
-  function coordinates(event) {
-    const bounds = canvas.getBoundingClientRect();
-    // object-fit: contain may leave space above/below a wide or tall photograph.
-    const scale = Math.min(bounds.width / canvas.width, bounds.height / canvas.height);
-    const width = canvas.width * scale;
-    const height = canvas.height * scale;
-    return {
-      x: Math.max(0, Math.min(1, (event.clientX - bounds.left - (bounds.width - width) / 2) / width)),
-      y: Math.max(0, Math.min(1, (event.clientY - bounds.top - (bounds.height - height) / 2) / height)),
-    };
-  }
-  function syncControls() {
-    const hasPhoto = !!state.current;
-    const localPlacement = mode() === "place" && !!state.overlay;
-    $("room-generate").disabled = state.busy || (!localPlacement && !state.aiAvailable) || !hasPhoto ||
-      (mode() === "place" && !state.point) ||
-      (mode() === "replace" && !state.box && !$("room-replace-target").value.trim());
-    $("room-generate").innerHTML = `${localPlacement ? "Keep this placement" : mode() === "decorate" ? "Decorate my room" : mode() === "replace" ? "Replace with this find" : "Render this placement"} <span aria-hidden="true">↗</span>`;
-    $("room-before").disabled = state.busy || (state.current === state.original && !state.point);
-    $("room-before").setAttribute("aria-pressed", String(state.comparing));
-    $("room-before").textContent = state.comparing ? "Show preview" : "Show original";
-    $("room-undo").disabled = state.busy || (!state.history.length && !state.point && !state.box);
-    $("room-reset").disabled = state.busy || !hasPhoto;
-    $("room-download").disabled = state.busy || !hasPhoto || (state.current === state.original && !(state.point && state.overlay));
-    $("room-change-photo").disabled = state.busy;
-    $("room-file").disabled = state.busy;
-    form.querySelectorAll("input, select, textarea").forEach((input) => { input.disabled = state.busy; });
-    $("room-working").hidden = !state.busy;
-    $("room-stage").setAttribute("aria-busy", String(state.busy));
-    $("room-size-controls").hidden = mode() !== "place";
-    $("room-replace-controls").hidden = mode() !== "replace";
-  }
-  function draw(includeSelection = true, includeMarker = true) {
-    frame = 0;
-    const photo = state.comparing ? state.original : state.current;
-    if (!photo) return;
-    canvas.width = photo.image.naturalWidth;
-    canvas.height = photo.image.naturalHeight;
-    context.drawImage(photo.image, 0, 0);
-    if (!includeSelection || state.comparing) return;
-    const unit = canvas.width / 800;
-    if (mode() === "place" && state.point) {
-      const x = state.point.x * canvas.width;
-      const y = state.point.y * canvas.height;
-      if (state.overlay) {
-        const width = canvas.width * Number($("room-size").value) / 100;
-        const height = width * state.overlay.naturalHeight / state.overlay.naturalWidth;
-        context.save();
-        context.globalAlpha = .9;
-        const outline = selected().outline;
-        if (outline) {
-          context.beginPath();
-          outline.forEach(([px, py], index) => context[index ? "lineTo" : "moveTo"](x - width / 2 + px * width, y - height / 2 + py * height));
-          context.closePath(); context.clip();
-        }
-        context.drawImage(state.overlay, x - width / 2, y - height / 2, width, height);
-        context.restore();
-      }
-      if (includeMarker) {
-      context.beginPath();
-      context.arc(x, y, 12 * unit, 0, Math.PI * 2);
-      context.fillStyle = "#451c2b";
-      context.fill();
-      context.strokeStyle = "#f6efdf";
-      context.lineWidth = 2 * unit;
-      context.stroke();
-      context.fillStyle = "#f6efdf";
-      context.font = `${16 * unit}px Arial`;
-      context.textAlign = "center";
-      context.textBaseline = "middle";
-      context.fillText("+", x, y);
-      }
+  async function texture(product) {
+    if (textures.has(product.id)) return textures.get(product.id);
+    const image = await loadImage(product.overlay);
+    const source = document.createElement("canvas"); source.width = image.naturalWidth; source.height = image.naturalHeight;
+    const ctx = source.getContext("2d", { willReadFrequently: true }); ctx.drawImage(image, 0, 0);
+    // Ignore transparent cell padding for positioning, contact shadows and size.
+    const { data } = ctx.getImageData(0, 0, source.width, source.height);
+    let left = source.width, top = source.height, right = -1, bottom = -1;
+    for (let y = 0; y < source.height; y++) for (let x = 0; x < source.width; x++) if (data[(y * source.width + x) * 4 + 3] > 12) {
+      left = Math.min(left, x); top = Math.min(top, y); right = Math.max(right, x); bottom = Math.max(bottom, y);
     }
-    if (mode() === "replace" && state.box) {
-      const { x, y, width, height } = state.box;
-      context.fillStyle = "#e5a6b455";
-      context.fillRect(x * canvas.width, y * canvas.height, width * canvas.width, height * canvas.height);
-      context.strokeStyle = "#f6efdf";
-      context.lineWidth = 3 * unit;
-      context.strokeRect(x * canvas.width, y * canvas.height, width * canvas.width, height * canvas.height);
-      context.strokeStyle = "#451c2b";
-      context.lineWidth = unit;
-      context.setLineDash([6 * unit, 4 * unit]);
-      context.strokeRect(x * canvas.width, y * canvas.height, width * canvas.width, height * canvas.height);
-      context.setLineDash([]);
+    if (right < left) throw new Error("This cutout is empty. Please try another find.");
+    const trimmed = document.createElement("canvas"); trimmed.width = right - left + 1; trimmed.height = bottom - top + 1;
+    trimmed.getContext("2d").drawImage(source, left, top, trimmed.width, trimmed.height, 0, 0, trimmed.width, trimmed.height);
+    textures.set(product.id, trimmed); return trimmed;
+  }
+  function coordinate(event) {
+    const bounds = canvas.getBoundingClientRect();
+    const scale = Math.min(bounds.width / canvas.width, bounds.height / canvas.height);
+    const width = canvas.width * scale, height = canvas.height * scale;
+    return { x: (event.clientX - bounds.left - (bounds.width - width) / 2) / width,
+      y: (event.clientY - bounds.top - (bounds.height - height) / 2) / height };
+  }
+  function draw(selection = true, original = state.comparing) {
+    frame = 0; if (!state.photo) return;
+    context.clearRect(0, 0, canvas.width, canvas.height); context.drawImage(state.photo, 0, 0);
+    if (original) return;
+    for (const layer of state.layers) {
+      const image = textures.get(layer.id); if (!image) continue;
+      const box = layerBox(layer, photoAspect());
+      const x = box.x * canvas.width, y = box.y * canvas.height, w = box.w * canvas.width, h = box.h * canvas.height;
+      context.save();
+      if (["lamp", "floor", "decor", "media"].includes(layer.kind)) {
+        context.globalCompositeOperation = "multiply"; context.fillStyle = "rgb(35 20 18 / .24)";
+        context.shadowColor = "rgb(20 12 10 / .35)"; context.shadowBlur = Math.max(3, w * .035);
+        context.beginPath(); context.ellipse(x + w / 2, y + h - Math.max(1, w * .007), w * .37, Math.max(2, w * .025), 0, 0, Math.PI * 2); context.fill();
+      }
+      context.restore(); context.save();
+      context.shadowColor = "rgb(20 12 10 / .2)"; context.shadowBlur = Math.max(2, w * .02); context.shadowOffsetY = w * .012;
+      context.translate(x + w / 2, y); context.scale(layer.flip ? -1 : 1, 1); context.drawImage(image, -w / 2, 0, w, h); context.restore();
+      if (selection && layer.id === state.selected) {
+        const unit = canvas.width / canvas.getBoundingClientRect().width;
+        context.save(); context.strokeStyle = "#fff"; context.lineWidth = 3 * unit; context.strokeRect(x, y, w, h);
+        context.strokeStyle = "#451c2b"; context.lineWidth = unit; context.strokeRect(x, y, w, h);
+        const size = 12 * unit; context.fillStyle = "#451c2b"; context.fillRect(x + w - size / 2, y + h - size / 2, size, size);
+        context.strokeStyle = "#fff"; context.strokeRect(x + w - size / 2, y + h - size / 2, size, size); context.restore();
+      }
     }
   }
   function scheduleDraw() { if (!frame) frame = requestAnimationFrame(() => draw()); }
-  function guidance() {
-    if (!state.current) return;
-    const messages = {
-      place: selected().overlay ? "Click a spot, adjust the size, then keep your placement. Local cutouts stay exactly where you put them." : "Click a spot, then render this find from its catalog photo. AI may adjust its position or details.",
-      decorate: "Ready when you are. Decorate will choose a spot that suits this find and your room.",
-      replace: "Draw a box around what you want to replace, or describe the item. We’ll remove it and try your find there.",
-    };
-    status(messages[mode()]);
+  function button(text, label, action, disabled = false) {
+    const element = document.createElement("button"); element.type = "button"; element.textContent = text;
+    element.setAttribute("aria-label", label); element.disabled = disabled; element.addEventListener("click", action); return element;
   }
-  async function updateProduct() {
-    const product = selected();
-    $("room-product-image").src = product.img;
-    $("room-product-image").alt = product.title;
+  function refresh() {
+    const hasPhoto = !!state.photo, layer = selectedLayer();
+    $("room-tray").replaceChildren(); $("room-tray-empty").hidden = state.picks.length > 0;
+    for (const id of state.picks) {
+      const product = productMap.get(id), row = document.createElement("li"), title = document.createElement("span");
+      const image = document.createElement("img"); image.src = product.img; image.alt = ""; image.width = 34; image.height = 42;
+      title.textContent = product.title; row.append(image, title);
+      const present = state.layers.some(item => item.id === id);
+      row.draggable = !!product.overlay && !present && !state.busy;
+      row.addEventListener("dragstart", event => { event.dataTransfer.setData("application/x-hnv-find", id); event.dataTransfer.effectAllowed = "copy"; });
+      row.append(button(present ? "In room" : product.overlay ? "Place" : "Photo needed", `Place ${product.title}`, () => place(id), state.busy || !hasPhoto || present || !product.overlay));
+      row.append(button("×", `Remove ${product.title} from my picks`, () => { state.picks = state.picks.filter(item => item !== id); refresh(); }, state.busy));
+      $("room-tray").append(row);
+    }
+    $("room-layers").replaceChildren();
+    for (const item of state.layers) {
+      const row = document.createElement("li"), control = button(productMap.get(item.id).title, `Select ${productMap.get(item.id).title}`, () => { state.selected = item.id; state.comparing = false; refresh(); }, state.busy);
+      control.setAttribute("aria-pressed", String(item.id === state.selected)); row.append(control); $("room-layers").append(row);
+    }
+    $("room-layer-controls").hidden = !state.layers.length;
+    $("room-size").disabled = state.busy || !layer;
+    if (layer) { $("room-size").value = Math.round(layer.w * 100); $("room-size-value").value = `${Math.round(layer.w * 100)}%`; }
+    for (const id of ["room-flip", "room-front", "room-delete"]) $(id).disabled = state.busy || !layer;
+    $("room-flip").setAttribute("aria-pressed", String(!!layer?.flip));
+    $("room-before").disabled = state.busy || !state.layers.length; $("room-before").setAttribute("aria-pressed", String(state.comparing));
+    $("room-before").textContent = state.comparing ? "Show arrangement" : "Show original";
+    $("room-undo").disabled = state.busy || !state.history.length;
+    $("room-reset").disabled = state.busy || !hasPhoto || !state.layers.length && !state.unplaced.length;
+    $("room-download").disabled = state.busy || !state.layers.length;
+    $("room-decorate-picks").disabled = state.busy || !hasPhoto || !state.picks.length;
+    $("room-decorate-favorites").disabled = state.busy || !hasPhoto || !favorites.length;
+    $("room-favorites-count").textContent = favorites.length;
+    const picked = state.picks.includes(selectedProduct().id);
+    $("room-add").textContent = picked ? "In my picks ✓" : "Add to my picks +"; $("room-add").disabled = state.busy || picked;
+    $("room-product").disabled = state.busy; $("room-file").disabled = state.busy;
+    for (const id of ["room-change-photo", "room-upload-button", "room-use-example"]) $(id).disabled = state.busy;
+    $("room-working").hidden = !state.busy; $("room-stage").setAttribute("aria-busy", String(state.busy));
+    $("room-unplaced").hidden = !state.unplaced.length; $("room-unplaced-list").replaceChildren();
+    for (const item of state.unplaced) {
+      const row = document.createElement("li"); row.textContent = `${inventory.get(item.id)?.title || item.id}: ${item.reason}`; $("room-unplaced-list").append(row);
+    }
+    draw();
+  }
+  function updateProduct() {
+    const product = selectedProduct(); $("room-product-image").src = product.img; $("room-product-image").alt = product.title;
     $("room-product-title").textContent = product.title;
     const price = HNV_PRICES[product.id];
-    $("room-product-price").textContent = price ? `$${price.target.toLocaleString("en-US")} guide price` : "Pricing pending";
-    $("room-product-details").href = `#item-${product.id}`;
-    state.overlay = null;
-    state.comparing = false;
-    const version = ++imageVersion;
-    draw(); syncControls(); guidance();
-    if (product.overlay) {
-      try {
-        const image = await loadImage(product.overlay);
-        if (version === imageVersion) { state.overlay = image; draw(); syncControls(); }
-      } catch { /* The placement marker remains available if a cutout fails. */ }
-    }
+    $("room-product-price").textContent = product.overlay ? price ? `$${price.target.toLocaleString("en-US")} guide price` : "Pricing pending" : "A clear product photo is needed to place this find.";
+    $("room-product-details").href = `#item-${product.id}`; refresh();
   }
-  async function upload(file) {
+  async function place(id, point) {
+    const product = productMap.get(id); if (state.busy || !state.photo || !product?.overlay) return;
+    if (state.layers.some(layer => layer.id === id)) { state.selected = id; refresh(); return; }
+    const version = photoVersion;
+    try {
+      const image = await texture(product); if (version !== photoVersion || state.busy || state.layers.some(layer => layer.id === id)) return;
+      change(() => {
+        const layer = constrainLayer({ id, kind: product.kind, x: point?.x ?? .5, y: point?.y ?? .5, w: product.kind === "art" ? .2 : .17, ratio: image.height / image.width, flip: false }, photoAspect());
+        state.layers.push(layer); state.selected = id; state.unplaced = state.unplaced.filter(item => item.id !== id);
+      });
+      status("Placed. Drag the find or its corner to adjust it. Each find stays editable.");
+      if (matchMedia("(max-width: 767px)").matches) canvas.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+      canvas.focus({ preventScroll: true });
+    } catch (error) { status(error.message, true); }
+  }
+  async function upload(file, sample = false) {
     if (state.busy || !file) return;
-    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-      status("Please choose a JPG, PNG or WebP room photo. Convert HEIC photos to JPG first.", true); return;
-    }
-    if (!file.size || file.size > 15 * 1024 * 1024) {
-      status("Please choose a photo smaller than 15 MB.", true); return;
-    }
-    const version = ++uploadVersion;
-    const objectUrl = URL.createObjectURL(file);
+    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) { status("Choose a JPG, PNG or WebP. Convert HEIC photos to JPG first.", true); return; }
+    if (!file.size || file.size > 15 * 1024 * 1024) { status("Choose a room photo smaller than 15 MB.", true); return; }
+    const version = ++photoVersion, objectUrl = URL.createObjectURL(file);
     try {
       const image = await loadImage(objectUrl);
       if (image.naturalWidth < 200 || image.naturalHeight < 200) throw new Error("Use a room photo at least 200 pixels wide and tall.");
-      // Re-encoding strips EXIF/GPS metadata and bounds the service payload.
       const scale = Math.min(1, 1600 / Math.max(image.naturalWidth, image.naturalHeight));
-      const normalized = document.createElement("canvas");
-      normalized.width = Math.round(image.naturalWidth * scale);
-      normalized.height = Math.round(image.naturalHeight * scale);
-      const ctx = normalized.getContext("2d");
-      ctx.fillStyle = "#fff";
-      ctx.fillRect(0, 0, normalized.width, normalized.height);
-      ctx.drawImage(image, 0, 0, normalized.width, normalized.height);
-      const url = normalized.toDataURL("image/jpeg", .88);
-      const photo = { url, image: await loadImage(url), kind: "original" };
-      if (version !== uploadVersion) return;
-      Object.assign(state, { original: photo, current: photo, history: [], point: null, box: null, comparing: false, generated: false });
-      $("room-upload").hidden = true;
-      canvas.hidden = false;
-      $("room-change-photo").hidden = false;
-      $("room-photo-label").textContent = "Your room / placement sketch";
-      draw(); syncControls(); guidance();
-    } catch (error) { if (version === uploadVersion) status(error.message, true); }
+      const normalized = document.createElement("canvas"); normalized.width = Math.round(image.naturalWidth * scale); normalized.height = Math.round(image.naturalHeight * scale);
+      normalized.getContext("2d").drawImage(image, 0, 0, normalized.width, normalized.height);
+      const photo = await loadImage(normalized.toDataURL("image/jpeg", .92)); if (version !== photoVersion) return;
+      Object.assign(state, { photo, layers: [], history: [], selected: null, unplaced: [], scene: null, comparing: false });
+      canvas.width = photo.naturalWidth; canvas.height = photo.naturalHeight;
+      $("room-upload").hidden = true; canvas.hidden = false; $("room-change-photo").hidden = false;
+      $("room-photo-label").textContent = sample ? "Sample room / AI-generated example" : "Your room / placement sketch";
+      refresh(); status("Your room is ready. Add finds to your picks, then place them or try a starting arrangement.");
+    } catch (error) { if (version === photoVersion) status(error.message, true); }
     finally { URL.revokeObjectURL(objectUrl); $("room-file").value = ""; }
   }
-  products.forEach((product) => {
-    const option = document.createElement("option");
-    option.value = product.id; option.textContent = product.title;
-    $("room-product").append(option);
-  });
-  $("room-upload-button").addEventListener("click", () => $("room-file").click());
-  $("room-change-photo").addEventListener("click", () => $("room-file").click());
+  function analyze() {
+    if (state.scene) return Promise.resolve(state.scene);
+    worker ??= new Worker(new URL("./room-segmentation.js", import.meta.url), { type: "module" });
+    const analysisWorker = worker, id = ++requestId;
+    const photo = document.createElement("canvas"), scale = Math.min(1, 1000 / Math.max(canvas.width, canvas.height));
+    photo.width = Math.round(canvas.width * scale); photo.height = Math.round(canvas.height * scale);
+    const ctx = photo.getContext("2d"); ctx.drawImage(state.photo, 0, 0, photo.width, photo.height);
+    const pixels = ctx.getImageData(0, 0, photo.width, photo.height).data.buffer;
+    return new Promise((resolve, reject) => {
+      const finish = (error, result) => {
+        clearTimeout(timeout); cancelAnalysis = null; analysisWorker.onmessage = null; analysisWorker.onerror = null;
+        if (error) { analysisWorker.terminate(); if (worker === analysisWorker) worker = null; reject(error); }
+        else resolve(result);
+      };
+      const timeout = setTimeout(() => finish(new Error("The room guide took too long. Your arrangement is still here; try placing your picks by hand.")), 180000);
+      cancelAnalysis = () => finish(new Error("Room guide cancelled. Your last arrangement is still here."));
+      analysisWorker.onerror = () => finish(new Error("The room guide couldn’t load on this device. You can still place every available cutout by hand."));
+      analysisWorker.onmessage = ({ data }) => {
+        if (data.requestId !== id) return;
+        if (data.type === "progress") {
+          $("room-working-label").textContent = data.message;
+          if (Number.isFinite(data.progress)) $("room-progress").value = data.progress; else $("room-progress").removeAttribute("value");
+        } else if (data.type === "result") finish(null, data);
+        else if (data.type === "error") finish(new Error(data.message || "The room guide couldn’t read this photo. Try placing your picks by hand."));
+      };
+      analysisWorker.postMessage({ requestId: id, width: photo.width, height: photo.height, pixels }, [pixels]);
+    });
+  }
+  async function decorate(ids) {
+    if (state.busy || !state.photo || !ids.length) return;
+    state.busy = true; state.cancelled = false; $("room-working-label").textContent = "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); refresh();
+    try {
+      const usable = [], excluded = [];
+      for (const id of ids) {
+        const product = productMap.get(id);
+        if (!product) { excluded.push({ id, reason: "This find isn’t a room item." }); continue; }
+        if (!product.overlay) { excluded.push({ id, reason: "A clear product cutout is needed." }); continue; }
+        try { const image = await texture(product); usable.push({ ...product, ratio: image.height / image.width }); }
+        catch { excluded.push({ id, reason: "This cutout couldn’t load. Try again or choose another find." }); }
+      }
+      if (state.cancelled) throw new Error("Room guide cancelled. Your last arrangement is still here.");
+      const scene = usable.length ? await analyze() : null;
+      if (scene) state.scene = scene;
+      const result = scene ? arrangeRoom(usable, scene, photoAspect()) : { layers: [], unplaced: [] };
+      remember(); Object.assign(state, { layers: result.layers, selected: result.layers.at(-1)?.id ?? null, unplaced: [...excluded, ...result.unplaced], comparing: false });
+      status(result.layers.length ? `${result.layers.length} ${result.layers.length === 1 ? "find placed" : "finds placed"}${state.unplaced.length ? `; ${state.unplaced.length} left out` : ""}. Drag any find to make the arrangement yours.` : "No clear positions were found for this collection. See the list of pieces left out, or place available cutouts by hand.");
+    } catch (error) { status(error.message, true); }
+    finally { state.busy = false; refresh(); }
+  }
+  function readFavorites() {
+    try { const stored = JSON.parse(localStorage.getItem(savedKey) || "[]"); favorites = Array.isArray(stored) ? [...new Set(stored.filter(id => inventory.has(id) && id !== "OWNER"))] : []; } catch { /* Keep session saves when storage is blocked. */ }
+  }
+  for (const product of products) { const option = document.createElement("option"); option.value = product.id; option.textContent = `${product.title}${product.overlay ? "" : " — photo needed"}`; $("room-product").append(option); }
+  readFavorites();
+  document.addEventListener("hnv:saved-changed", ({ detail }) => { favorites = [...new Set(detail.filter(id => inventory.has(id) && id !== "OWNER"))]; refresh(); });
+  window.addEventListener("storage", event => { if (event.key === savedKey || event.key === null) { readFavorites(); refresh(); } });
+  form.addEventListener("submit", event => { event.preventDefault(); if (!$("room-add").disabled) { state.picks.push(selectedProduct().id); refresh(); status("Added to your picks. Choose Place to position it yourself, or decorate with your collection."); } });
+  $("room-product").addEventListener("change", updateProduct);
+  $("room-decorate-picks").addEventListener("click", () => decorate([...state.picks]));
+  $("room-decorate-favorites").addEventListener("click", () => decorate([...favorites]));
+  $("room-cancel").addEventListener("click", () => { state.cancelled = true; cancelAnalysis?.(); });
+  for (const id of ["room-upload-button", "room-change-photo"]) $(id).addEventListener("click", () => $("room-file").click());
   $("room-file").addEventListener("change", () => upload($("room-file").files[0]));
   $("room-use-example").addEventListener("click", async () => {
-    try {
-      const response = await fetch("assets/rooms/example-room.webp");
-      if (!response.ok) throw new Error("The sample room couldn’t be opened. Please try your own photo.");
-      await upload(new File([await response.blob()], "Sample room.webp", { type: "image/webp" }));
-      $("room-photo-label").textContent = "Sample room / AI-generated example";
-    } catch (error) { status(error.message, true); }
+    try { const response = await fetch("assets/rooms/example-room.webp"); if (!response.ok) throw new Error("The sample room couldn’t load. Try your own photo."); await upload(new File([await response.blob()], "Sample.webp", { type: "image/webp" }), true); }
+    catch (error) { status(error.message, true); }
   });
-  $("room-demo-video").closest("details").addEventListener("toggle", (event) => {
-    const video = $("room-demo-video");
-    if (!event.currentTarget.open) video.pause();
-    else if (!matchMedia("(prefers-reduced-motion: reduce)").matches) video.play().catch(() => {});
-  });
-  $("room-stage").addEventListener("dragover", (event) => { event.preventDefault(); if (!state.busy) $("room-stage").classList.add("is-dragging"); });
+  $("room-stage").addEventListener("dragover", event => { if (event.dataTransfer.types.includes("Files") || event.dataTransfer.types.includes("application/x-hnv-find")) { event.preventDefault(); if (!state.busy) $("room-stage").classList.add("is-dragging"); } });
   $("room-stage").addEventListener("dragleave", () => $("room-stage").classList.remove("is-dragging"));
-  $("room-stage").addEventListener("drop", (event) => { event.preventDefault(); $("room-stage").classList.remove("is-dragging"); upload(event.dataTransfer.files[0]); });
-  $("room-product").addEventListener("change", updateProduct);
-  form.querySelectorAll('[name="room-mode"]').forEach((input) => input.addEventListener("change", () => {
-    state.comparing = false; state.drag = null; syncControls(); draw(); guidance();
-  }));
-  $("room-size").addEventListener("input", () => { $("room-size-value").value = `${$("room-size").value}%`; scheduleDraw(); });
-  $("room-replace-target").addEventListener("input", syncControls);
-  $("room-clear-selection").addEventListener("click", () => { state.box = null; draw(); syncControls(); });
-  canvas.addEventListener("pointerdown", (event) => {
-    if (state.busy || !state.current || mode() === "decorate" || event.button !== 0) return;
-    state.comparing = false;
-    const point = coordinates(event);
-    state.drag = point;
-    if (mode() === "place") state.point = point;
-    else state.box = null;
-    canvas.setPointerCapture(event.pointerId);
-    canvas.focus({ preventScroll: true });
-    draw(); syncControls();
+  $("room-stage").addEventListener("drop", event => {
+    event.preventDefault(); $("room-stage").classList.remove("is-dragging");
+    const id = event.dataTransfer.getData("application/x-hnv-find");
+    if (productMap.has(id)) place(id, coordinate(event)); else upload(event.dataTransfer.files[0]);
   });
-  canvas.addEventListener("pointermove", (event) => {
-    if (!state.drag) return;
-    const point = coordinates(event);
-    if (mode() === "place") state.point = point;
-    else state.box = { x: Math.min(state.drag.x, point.x), y: Math.min(state.drag.y, point.y), width: Math.abs(point.x - state.drag.x), height: Math.abs(point.y - state.drag.y) };
-    scheduleDraw();
+  canvas.addEventListener("pointerdown", event => {
+    if (state.busy || !state.photo || state.comparing || event.button !== 0) return;
+    const point = coordinate(event), current = selectedLayer(), currentBox = current && layerBox(current, photoAspect());
+    const bounds = canvas.getBoundingClientRect(), scale = Math.min(bounds.width / canvas.width, bounds.height / canvas.height);
+    const toleranceX = 20 / (canvas.width * scale), toleranceY = 20 / (canvas.height * scale);
+    const resize = currentBox && Math.abs(point.x - currentBox.x - currentBox.w) < toleranceX && Math.abs(point.y - currentBox.y - currentBox.h) < toleranceY;
+    const hit = resize ? current : [...state.layers].reverse().find(layer => { const b = layerBox(layer, photoAspect()); return point.x >= b.x && point.x <= b.x + b.w && point.y >= b.y && point.y <= b.y + b.h; });
+    state.selected = hit?.id ?? null; refresh();
+    if (!hit) return;
+    state.drag = { start: point, layer: { ...hit }, previous: snapshot(), resize };
+    canvas.setPointerCapture(event.pointerId); canvas.focus({ preventScroll: true });
   });
-  function finishDrag() {
+  canvas.addEventListener("pointermove", event => {
     if (!state.drag) return;
-    state.drag = null;
-    if (state.box && (state.box.width < .025 || state.box.height < .025)) {
-      state.box = null; status("Draw a box around the whole item, or describe it in the replacement field.", true);
-    } else if (mode() === "place") status(state.overlay ? "Spot selected. Adjust the size, then choose Keep this placement." : "Spot selected. Choose Render this placement to create an AI preview.");
-    else status("Area marked. Choose Replace with this find to create your preview.");
-    draw(); syncControls();
+    const point = coordinate(event), drag = state.drag, layer = selectedLayer();
+    if (drag.resize) {
+      const b = layerBox(drag.layer, photoAspect());
+      layer.w = Math.max(.025, point.x - b.x, (point.y - b.y) / (layer.ratio * photoAspect()));
+      layer.x = b.x + layer.w / 2; layer.y = b.y + layer.w * layer.ratio * photoAspect() / 2;
+    } else { layer.x = drag.layer.x + point.x - drag.start.x; layer.y = drag.layer.y + point.y - drag.start.y; }
+    constrainLayer(layer, photoAspect()); $("room-size").value = Math.round(layer.w * 100); $("room-size-value").value = `${Math.round(layer.w * 100)}%`; scheduleDraw();
+  });
+  function finishDrag(cancel = false) {
+    if (!state.drag) return;
+    const { previous } = state.drag; state.drag = null;
+    if (cancel) Object.assign(state, previous);
+    else if (JSON.stringify(previous.layers) !== JSON.stringify(state.layers)) remember(previous);
+    refresh();
   }
-  canvas.addEventListener("pointerup", finishDrag);
-  canvas.addEventListener("pointercancel", finishDrag);
-  canvas.addEventListener("keydown", (event) => {
-    if (state.busy || mode() !== "place" || !["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
-    event.preventDefault(); state.comparing = false;
-    state.point ??= { x: .5, y: .5 };
-    const axis = ["ArrowLeft", "ArrowRight"].includes(event.key) ? "x" : "y";
-    const direction = ["ArrowLeft", "ArrowUp"].includes(event.key) ? -1 : 1;
-    state.point[axis] = Math.max(0, Math.min(1, state.point[axis] + direction * (event.shiftKey ? .05 : .01)));
-    draw(); syncControls(); status("Spot selected. Arrow keys move the find; Shift moves it farther.");
+  canvas.addEventListener("pointerup", () => finishDrag()); canvas.addEventListener("pointercancel", () => finishDrag(true));
+  canvas.addEventListener("lostpointercapture", () => finishDrag());
+  canvas.addEventListener("keydown", event => {
+    if (state.busy || state.comparing) return;
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "z") { event.preventDefault(); $("room-undo").click(); return; }
+    const layer = selectedLayer(); if (!layer) return;
+    if (["Delete", "Backspace"].includes(event.key)) { event.preventDefault(); $("room-delete").click(); return; }
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
+    event.preventDefault(); change(() => { const axis = ["ArrowLeft", "ArrowRight"].includes(event.key) ? "x" : "y"; layer[axis] += (["ArrowLeft", "ArrowUp"].includes(event.key) ? -1 : 1) * (event.shiftKey ? .05 : .005); constrainLayer(layer, photoAspect()); });
   });
-  $("room-before").addEventListener("click", () => { state.comparing = !state.comparing; draw(); syncControls(); });
-  $("room-undo").addEventListener("click", () => {
-    if (state.point || state.box) {
-      state.point = null; state.box = null; state.comparing = false;
-      draw(); syncControls(); guidance(); return;
-    }
-    const previous = state.history.pop();
-    if (!previous) return;
-    state.current = previous; state.generated = previous.kind === "ai";
-    state.comparing = false; state.point = null; state.box = null;
-    $("room-photo-label").textContent = state.generated ? "Your room / AI styling preview" : "Your room / placement sketch";
-    draw(); syncControls(); guidance();
+  $("room-size").addEventListener("input", () => {
+    const layer = selectedLayer(); if (!layer || state.busy) return; sizeStart ??= snapshot();
+    layer.w = Number($("room-size").value) / 100; constrainLayer(layer, photoAspect()); state.comparing = false;
+    $("room-size-value").value = `${Math.round(layer.w * 100)}%`; draw();
   });
-  $("room-reset").addEventListener("click", () => {
-    Object.assign(state, { current: state.original, history: [], point: null, box: null, comparing: false, generated: false });
-    $("room-photo-label").textContent = "Your room / placement sketch";
-    draw(); syncControls(); guidance();
-  });
+  $("room-size").addEventListener("change", () => { if (sizeStart) { remember(sizeStart); sizeStart = null; refresh(); } });
+  $("room-flip").addEventListener("click", () => change(() => { selectedLayer().flip = !selectedLayer().flip; }));
+  $("room-front").addEventListener("click", () => change(() => { const layer = selectedLayer(); state.layers = [...state.layers.filter(item => item !== layer), layer]; }));
+  $("room-delete").addEventListener("click", () => change(() => { state.layers = state.layers.filter(layer => layer.id !== state.selected); state.selected = state.layers.at(-1)?.id ?? null; }));
+  $("room-before").addEventListener("click", () => { state.comparing = !state.comparing; refresh(); });
+  $("room-undo").addEventListener("click", () => { const previous = state.history.pop(); if (previous) { Object.assign(state, previous, { comparing: false }); refresh(); status("Your last arrangement is back."); } });
+  $("room-reset").addEventListener("click", () => change(() => { state.layers = []; state.selected = null; state.unplaced = []; status("A fresh start. Your room photo and picks are still here."); }));
   $("room-download").addEventListener("click", () => {
-    // Export what is currently shown, with an honest label on sketches and renders.
-    const sketch = mode() === "place" && state.point && state.overlay && !state.comparing;
-    draw(!!sketch, false);
-    const output = document.createElement("canvas");
-    const footer = Math.max(36, Math.round(canvas.width * .035));
+    draw(false, false);
+    const output = document.createElement("canvas"), footer = Math.max(36, Math.round(canvas.width * .035));
     output.width = canvas.width; output.height = canvas.height + footer;
-    const ctx = output.getContext("2d");
-    ctx.drawImage(canvas, 0, 0);
-    ctx.fillStyle = "#451c2b"; ctx.fillRect(0, canvas.height, output.width, footer);
+    const ctx = output.getContext("2d"); ctx.drawImage(canvas, 0, 0); ctx.fillStyle = "#451c2b"; ctx.fillRect(0, canvas.height, output.width, footer);
     ctx.fillStyle = "#f6efdf"; ctx.font = `${Math.max(10, footer * .33)}px Arial`;
-    const label = state.comparing ? "Original photo" : sketch || state.current.kind === "sketch" ? "Placement sketch · proportions approximate" : "AI styling preview · proportions approximate";
-    ctx.fillText(`Hollywood & Vine / ${label}`, footer * .35, canvas.height + footer * .63, output.width - footer * .7);
-    output.toBlob((blob) => {
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a"); link.href = url; link.download = "hollywood-and-vine-your-room.png"; link.click();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }, "image/png");
-    draw();
+    ctx.fillText("Hollywood & Vine / Placement sketch · proportions approximate", footer * .35, canvas.height + footer * .63, output.width - footer * .7);
+    output.toBlob(blob => { if (!blob) return; const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = "hollywood-and-vine-your-room.png"; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }, "image/png"); draw();
   });
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if ($("room-generate").disabled) return;
-    if (mode() === "place" && state.overlay && state.point) {
-      // Keep exact browser placement without sending the room to any service.
-      $("room-generate").disabled = true;
-      state.comparing = false;
-      draw(true, false);
-      const url = canvas.toDataURL("image/jpeg", .94);
-      const photo = { url, image: await loadImage(url), kind: "sketch" };
-      state.history.push(state.current);
-      if (state.history.length > 5) state.history.shift();
-      Object.assign(state, { current: photo, generated: false, point: null, box: null });
-      $("room-photo-label").textContent = "Your room / placement sketch";
-      draw(); syncControls();
-      status("Placement kept. Add another find, compare with your original, or download your room. No photo was sent to the AI service.");
-      return;
-    }
-    state.busy = true; state.comparing = false;
-    $("room-working-label").textContent = mode() === "replace" ? "Making room for your find…" : "Finding its place…";
-    draw(); syncControls(); status("Creating your AI preview. Keep this page open.");
-    try {
-      const response = await fetch("/api/room-preview", {
-        method: "POST", headers: { "content-type": "application/json" },
-        body: JSON.stringify({ image: state.current.url, productId: selected().id, mode: mode(), point: state.point, box: state.box, size: Number($("room-size").value) / 100, target: $("room-replace-target").value.trim(), notes: $("room-notes").value.trim() }),
-        signal: AbortSignal.timeout(120000),
-      });
-      if (!(response.headers.get("content-type") || "").includes("application/json")) throw new Error("AI room previews are not connected on this preview server yet. Your placement sketch is still available.");
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Your preview could not be created. Please try again.");
-      if (!/^data:image\/(png|jpeg|webp);base64,/.test(result.image || "")) throw new Error("The image service did not return a preview. Please try again.");
-      const photo = { url: result.image, image: await loadImage(result.image), kind: "ai" };
-      state.history.push(state.current);
-      if (state.history.length > 5) state.history.shift();
-      Object.assign(state, { current: photo, generated: true, point: null, box: null });
-      $("room-photo-label").textContent = "Your room / AI styling preview";
-      status("Here’s your room with a little more character. Compare with the original, try another find, or download your preview.");
-    } catch (error) {
-      status(["TimeoutError", "AbortError"].includes(error.name) ? "The image service took too long. Your photo and placement are still here; please try again." : error.message, true);
-    } finally { state.busy = false; draw(); syncControls(); }
+  $("room-demo-video").closest("details").addEventListener("toggle", event => {
+    const video = $("room-demo-video"); if (!event.currentTarget.open) video.pause(); else if (!matchMedia("(prefers-reduced-motion: reduce)").matches) video.play().catch(() => {});
   });
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-try-room]");
-    if (!button || state.busy) return;
-    event.preventDefault();
-    $("room-product").value = button.dataset.tryRoom;
-    document.querySelector("#product-dialog")?.close();
-    updateProduct();
-    history.pushState(null, "", "#your-room");
-    $("your-room").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
-    (state.current ? $("room-product") : $("room-upload-button")).focus({ preventScroll: true });
+  document.addEventListener("click", event => {
+    const control = event.target.closest("[data-try-room]"); if (!control || state.busy || !productMap.has(control.dataset.tryRoom)) return;
+    event.preventDefault(); const id = control.dataset.tryRoom; $("room-product").value = id;
+    if (!state.picks.includes(id)) state.picks.push(id); document.querySelector("#product-dialog")?.close(); updateProduct();
+    history.pushState(null, "", "#your-room"); $("your-room").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    if (state.photo && productMap.get(id).overlay) place(id); else (state.photo ? $("room-product") : $("room-upload-button")).focus({ preventScroll: true });
   });
-  updateProduct(); syncControls();
-  fetch("/api/room-preview", { headers: { accept: "application/json" } }).then(async (response) => {
-    if (!(response.headers.get("content-type") || "").includes("application/json")) return;
-    const service = await response.json();
-    state.aiAvailable = !!service.available;
-    $("room-service").textContent = service.available ? `Up to ${service.dailyLimit} AI previews per day on this connection.` : "AI previews are not available yet. Try a placement sketch with the urn lamp, chandelier, or either original artwork.";
-    syncControls();
-  }).catch(() => { $("room-service").textContent = "The AI service is unavailable right now. Local placement sketches are still available."; });
-})();
+  updateProduct();
+}

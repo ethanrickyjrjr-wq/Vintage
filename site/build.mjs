@@ -51,6 +51,8 @@ for (const file of [
   "room-products.js",
   "room-preview.css",
   "room-preview.js",
+  "room-layout.js",
+  "room-segmentation.js",
   "favicon.svg",
 ]) {
   cpSync(path.join(root, file), path.join(output, file));

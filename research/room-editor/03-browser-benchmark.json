@@ -1,0 +1,1038 @@
+{
+  "runtime": "Chromium 148.0.7778.96 / Transformers.js 4.3.1 / onnxruntime-web WASM single thread",
+  "date": "2026-10-27T20:26:30Z",
+  "model": "Xenova/detr-resnet-50-panoptic",
+  "revision": "ea24b2d4e0bfae31f0a1299ba3fb892a2df064de",
+  "onnxBytes": 44483407,
+  "options": {
+    "dtype": "q8",
+    "device": "wasm",
+    "numThreads": 1,
+    "preprocessor": {
+      "shortest_edge": 512,
+      "longest_edge": 768
+    },
+    "threshold": 0.6,
+    "mask_threshold": 0.5,
+    "overlap_mask_area_threshold": 0.5
+  },
+  "rooms": [
+    {
+      "id": 1,
+      "title": "File:Laptop in the living room (Unsplash).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Laptop_in_the_living_room_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Oliur Rahman ultralinx",
+      "elapsedMs": 16449.700000047684,
+      "width": 160,
+      "height": 120,
+      "segments": [
+        {
+          "label": "laptop",
+          "score": 0.9990147948265076,
+          "pixels": 1778
+        },
+        {
+          "label": "tv",
+          "score": 0.9990831017494202,
+          "pixels": 766
+        },
+        {
+          "label": "bottle",
+          "score": 0.8238136172294617,
+          "pixels": 58
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.936633825302124,
+          "pixels": 3368
+        },
+        {
+          "label": "curtain",
+          "score": 0.9322860240936279,
+          "pixels": 883
+        },
+        {
+          "label": "vase",
+          "score": 0.9913578033447266,
+          "pixels": 60
+        },
+        {
+          "label": "window-other",
+          "score": 0.9107956886291504,
+          "pixels": 467
+        },
+        {
+          "label": "laptop",
+          "score": 0.6528289318084717,
+          "pixels": 239
+        },
+        {
+          "label": "potted plant",
+          "score": 0.8680567741394043,
+          "pixels": 222
+        },
+        {
+          "label": "LABEL_200",
+          "score": 0.8383808732032776,
+          "pixels": 6492
+        },
+        {
+          "label": "LABEL_195",
+          "score": 0.7137178182601929,
+          "pixels": 97
+        },
+        {
+          "label": "chair",
+          "score": 0.9702607989311218,
+          "pixels": 1026
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "File:Living room (15246771173).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Living_room_(15246771173).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Carlos ZGZ from Paris, France",
+      "elapsedMs": 3460.5999999046326,
+      "width": 160,
+      "height": 107,
+      "segments": [
+        {
+          "label": "floor-wood",
+          "score": 0.9746242761611938,
+          "pixels": 520
+        },
+        {
+          "label": "light",
+          "score": 0.9703635573387146,
+          "pixels": 297
+        },
+        {
+          "label": "floor-wood",
+          "score": 0.8106566667556763,
+          "pixels": 335
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.9996607899665833,
+          "pixels": 15527
+        },
+        {
+          "label": "laptop",
+          "score": 0.9159010052680969,
+          "pixels": 208
+        },
+        {
+          "label": "LABEL_189",
+          "score": 0.7913257479667664,
+          "pixels": 180
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "File:Living room (Unsplash).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Living_room_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Jarosław Ceborski jarson",
+      "elapsedMs": 3207.2999999523163,
+      "width": 160,
+      "height": 107,
+      "segments": [
+        {
+          "label": "curtain",
+          "score": 0.7020665407180786,
+          "pixels": 679
+        },
+        {
+          "label": "chair",
+          "score": 0.998371422290802,
+          "pixels": 573
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9956583380699158,
+          "pixels": 144
+        },
+        {
+          "label": "LABEL_188",
+          "score": 0.7712200880050659,
+          "pixels": 1237
+        },
+        {
+          "label": "LABEL_186",
+          "score": 0.9959567785263062,
+          "pixels": 8102
+        },
+        {
+          "label": "light",
+          "score": 0.9785768985748291,
+          "pixels": 62
+        },
+        {
+          "label": "tv",
+          "score": 0.9875109791755676,
+          "pixels": 822
+        },
+        {
+          "label": "floor-wood",
+          "score": 0.9950414299964905,
+          "pixels": 1251
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9936040043830872,
+          "pixels": 137
+        },
+        {
+          "label": "curtain",
+          "score": 0.9846733808517456,
+          "pixels": 441
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.8959254622459412,
+          "pixels": 1429
+        },
+        {
+          "label": "couch",
+          "score": 0.9907257556915283,
+          "pixels": 1132
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9981372356414795,
+          "pixels": 205
+        },
+        {
+          "label": "pillow",
+          "score": 0.8997169733047485,
+          "pixels": 241
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "File:Living room (15235059612).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Living_room_(15235059612).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "author": "rob Stoeltje from loenen, netherlands",
+      "elapsedMs": 3262.100000143051,
+      "width": 160,
+      "height": 107,
+      "segments": [
+        {
+          "label": "knife",
+          "score": 0.6012653112411499,
+          "pixels": 61
+        },
+        {
+          "label": "clock",
+          "score": 0.9346923232078552,
+          "pixels": 148
+        },
+        {
+          "label": "chair",
+          "score": 0.9082521200180054,
+          "pixels": 93
+        },
+        {
+          "label": "wine glass",
+          "score": 0.9910568594932556,
+          "pixels": 179
+        },
+        {
+          "label": "chair",
+          "score": 0.7266299724578857,
+          "pixels": 88
+        },
+        {
+          "label": "chair",
+          "score": 0.9892033338546753,
+          "pixels": 167
+        },
+        {
+          "label": "dining table",
+          "score": 0.6789271831512451,
+          "pixels": 126
+        },
+        {
+          "label": "dining table",
+          "score": 0.6456513404846191,
+          "pixels": 158
+        },
+        {
+          "label": "chair",
+          "score": 0.945842444896698,
+          "pixels": 43
+        },
+        {
+          "label": "chair",
+          "score": 0.6613802909851074,
+          "pixels": 52
+        },
+        {
+          "label": "wine glass",
+          "score": 0.8828501105308533,
+          "pixels": 24
+        },
+        {
+          "label": "dining table",
+          "score": 0.9350975155830383,
+          "pixels": 418
+        },
+        {
+          "label": "chair",
+          "score": 0.8060132265090942,
+          "pixels": 97
+        },
+        {
+          "label": "light",
+          "score": 0.9835085868835449,
+          "pixels": 965
+        },
+        {
+          "label": "bottle",
+          "score": 0.7597740888595581,
+          "pixels": 126
+        },
+        {
+          "label": "wine glass",
+          "score": 0.9939716458320618,
+          "pixels": 113
+        },
+        {
+          "label": "wine glass",
+          "score": 0.8140217661857605,
+          "pixels": 47
+        },
+        {
+          "label": "chair",
+          "score": 0.6696367859840393,
+          "pixels": 131
+        },
+        {
+          "label": "wine glass",
+          "score": 0.9778101444244385,
+          "pixels": 64
+        },
+        {
+          "label": "chair",
+          "score": 0.9544075727462769,
+          "pixels": 37
+        },
+        {
+          "label": "cup",
+          "score": 0.8491623401641846,
+          "pixels": 73
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.9810025095939636,
+          "pixels": 10995
+        },
+        {
+          "label": "chair",
+          "score": 0.8553637862205505,
+          "pixels": 81
+        },
+        {
+          "label": "chair",
+          "score": 0.6040664911270142,
+          "pixels": 42
+        },
+        {
+          "label": "wine glass",
+          "score": 0.9519842267036438,
+          "pixels": 58
+        },
+        {
+          "label": "dining table",
+          "score": 0.953278124332428,
+          "pixels": 1165
+        },
+        {
+          "label": "apple",
+          "score": 0.8384048342704773,
+          "pixels": 49
+        },
+        {
+          "label": "wine glass",
+          "score": 0.8676603436470032,
+          "pixels": 60
+        },
+        {
+          "label": "chair",
+          "score": 0.9341912269592285,
+          "pixels": 84
+        },
+        {
+          "label": "chair",
+          "score": 0.8448622822761536,
+          "pixels": 191
+        },
+        {
+          "label": "chair",
+          "score": 0.6922757625579834,
+          "pixels": 139
+        },
+        {
+          "label": "knife",
+          "score": 0.8994258642196655,
+          "pixels": 76
+        },
+        {
+          "label": "chair",
+          "score": 0.9848811030387878,
+          "pixels": 216
+        },
+        {
+          "label": "wine glass",
+          "score": 0.82769376039505,
+          "pixels": 65
+        },
+        {
+          "label": "chair",
+          "score": 0.8386468887329102,
+          "pixels": 88
+        },
+        {
+          "label": "chair",
+          "score": 0.9982275366783142,
+          "pixels": 392
+        },
+        {
+          "label": "chair",
+          "score": 0.6806848645210266,
+          "pixels": 73
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "File:Living room Ireland.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Living_room_Ireland.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "author": "Obi from ROMA ,LONDON",
+      "elapsedMs": 3376.2999999523163,
+      "width": 160,
+      "height": 111,
+      "segments": [
+        {
+          "label": "chair",
+          "score": 0.9844692945480347,
+          "pixels": 713
+        },
+        {
+          "label": "LABEL_186",
+          "score": 0.7140644788742065,
+          "pixels": 122
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.9823830127716064,
+          "pixels": 10009
+        },
+        {
+          "label": "window-other",
+          "score": 0.6401611566543579,
+          "pixels": 479
+        },
+        {
+          "label": "clock",
+          "score": 0.7255804538726807,
+          "pixels": 136
+        },
+        {
+          "label": "mirror-stuff",
+          "score": 0.9272829294204712,
+          "pixels": 349
+        },
+        {
+          "label": "mirror-stuff",
+          "score": 0.8715089559555054,
+          "pixels": 575
+        },
+        {
+          "label": "curtain",
+          "score": 0.9970522522926331,
+          "pixels": 408
+        },
+        {
+          "label": "LABEL_200",
+          "score": 0.9268523454666138,
+          "pixels": 900
+        },
+        {
+          "label": "LABEL_188",
+          "score": 0.8756654858589172,
+          "pixels": 1156
+        },
+        {
+          "label": "LABEL_200",
+          "score": 0.613490104675293,
+          "pixels": 262
+        },
+        {
+          "label": "window-other",
+          "score": 0.931988537311554,
+          "pixels": 1418
+        },
+        {
+          "label": "dining table",
+          "score": 0.9957910180091858,
+          "pixels": 1136
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "File:Living room.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Living_room.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "author": "Linsenhejhej",
+      "elapsedMs": 3376.4000000953674,
+      "width": 160,
+      "height": 107,
+      "segments": [
+        {
+          "label": "car",
+          "score": 0.9133463501930237,
+          "pixels": 43
+        },
+        {
+          "label": "book",
+          "score": 0.8072323799133301,
+          "pixels": 248
+        },
+        {
+          "label": "potted plant",
+          "score": 0.7921693921089172,
+          "pixels": 63
+        },
+        {
+          "label": "potted plant",
+          "score": 0.992974042892456,
+          "pixels": 81
+        },
+        {
+          "label": "potted plant",
+          "score": 0.71639484167099,
+          "pixels": 89
+        },
+        {
+          "label": "wall-wood",
+          "score": 0.8556737303733826,
+          "pixels": 835
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9876413941383362,
+          "pixels": 174
+        },
+        {
+          "label": "couch",
+          "score": 0.9974469542503357,
+          "pixels": 12490
+        },
+        {
+          "label": "car",
+          "score": 0.9729847311973572,
+          "pixels": 90
+        },
+        {
+          "label": "car",
+          "score": 0.7983227372169495,
+          "pixels": 60
+        },
+        {
+          "label": "book",
+          "score": 0.8228045701980591,
+          "pixels": 203
+        },
+        {
+          "label": "vase",
+          "score": 0.9701406955718994,
+          "pixels": 95
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9875677824020386,
+          "pixels": 151
+        },
+        {
+          "label": "car",
+          "score": 0.9795830249786377,
+          "pixels": 95
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9823370575904846,
+          "pixels": 128
+        },
+        {
+          "label": "light",
+          "score": 0.9397859573364258,
+          "pixels": 183
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9838316440582275,
+          "pixels": 124
+        },
+        {
+          "label": "LABEL_189",
+          "score": 0.8164548873901367,
+          "pixels": 397
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9156177043914795,
+          "pixels": 88
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9515151381492615,
+          "pixels": 105
+        },
+        {
+          "label": "mouse",
+          "score": 0.9234749674797058,
+          "pixels": 79
+        },
+        {
+          "label": "car",
+          "score": 0.623265266418457,
+          "pixels": 168
+        },
+        {
+          "label": "potted plant",
+          "score": 0.7671211361885071,
+          "pixels": 72
+        },
+        {
+          "label": "laptop",
+          "score": 0.9990900754928589,
+          "pixels": 635
+        },
+        {
+          "label": "book",
+          "score": 0.6703057289123535,
+          "pixels": 125
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "File:Living room seen from the Kitchen.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Living_room_seen_from_the_Kitchen.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "Ajsm712",
+      "elapsedMs": 3621.600000143051,
+      "width": 160,
+      "height": 213,
+      "segments": [
+        {
+          "label": "light",
+          "score": 0.7997820377349854,
+          "pixels": 2121
+        },
+        {
+          "label": "LABEL_190",
+          "score": 0.9213991165161133,
+          "pixels": 954
+        },
+        {
+          "label": "chair",
+          "score": 0.6436898708343506,
+          "pixels": 376
+        },
+        {
+          "label": "window-other",
+          "score": 0.6023128628730774,
+          "pixels": 283
+        },
+        {
+          "label": "chair",
+          "score": 0.9289215207099915,
+          "pixels": 333
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.996644914150238,
+          "pixels": 18478
+        },
+        {
+          "label": "spoon",
+          "score": 0.6298818588256836,
+          "pixels": 277
+        },
+        {
+          "label": "curtain",
+          "score": 0.7658042907714844,
+          "pixels": 1582
+        },
+        {
+          "label": "shelf",
+          "score": 0.7652485370635986,
+          "pixels": 467
+        },
+        {
+          "label": "potted plant",
+          "score": 0.918148934841156,
+          "pixels": 88
+        },
+        {
+          "label": "bowl",
+          "score": 0.9646514058113098,
+          "pixels": 1252
+        },
+        {
+          "label": "potted plant",
+          "score": 0.8768103122711182,
+          "pixels": 121
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9991521239280701,
+          "pixels": 1518
+        },
+        {
+          "label": "door-stuff",
+          "score": 0.6627249717712402,
+          "pixels": 2718
+        },
+        {
+          "label": "light",
+          "score": 0.8107850551605225,
+          "pixels": 3512
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "File:Simon Rae 2017-05-09 (Unsplash).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Simon_Rae_2017-05-09_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Simon Rae simonrae",
+      "elapsedMs": 3204.4000000953674,
+      "width": 160,
+      "height": 107,
+      "segments": [
+        {
+          "label": "LABEL_184",
+          "score": 0.9816845059394836,
+          "pixels": 505
+        },
+        {
+          "label": "book",
+          "score": 0.6753096580505371,
+          "pixels": 63
+        },
+        {
+          "label": "wall-wood",
+          "score": 0.9866744875907898,
+          "pixels": 11102
+        },
+        {
+          "label": "door-stuff",
+          "score": 0.7450805306434631,
+          "pixels": 607
+        },
+        {
+          "label": "light",
+          "score": 0.9848264455795288,
+          "pixels": 160
+        },
+        {
+          "label": "chair",
+          "score": 0.7269466519355774,
+          "pixels": 57
+        },
+        {
+          "label": "window-blind",
+          "score": 0.7497813105583191,
+          "pixels": 405
+        },
+        {
+          "label": "bird",
+          "score": 0.8888195753097534,
+          "pixels": 13
+        },
+        {
+          "label": "LABEL_200",
+          "score": 0.7175872325897217,
+          "pixels": 816
+        },
+        {
+          "label": "chair",
+          "score": 0.9798895120620728,
+          "pixels": 93
+        },
+        {
+          "label": "chair",
+          "score": 0.9938886761665344,
+          "pixels": 222
+        },
+        {
+          "label": "couch",
+          "score": 0.9846717119216919,
+          "pixels": 1680
+        },
+        {
+          "label": "LABEL_189",
+          "score": 0.8997665047645569,
+          "pixels": 174
+        },
+        {
+          "label": "chair",
+          "score": 0.6392878293991089,
+          "pixels": 723
+        },
+        {
+          "label": "chair",
+          "score": 0.8297303318977356,
+          "pixels": 100
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "File:Brier Living Room.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Brier_Living_Room.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "author": "ChrisCaparro",
+      "elapsedMs": 2687.4000000953674,
+      "width": 160,
+      "height": 90,
+      "segments": [
+        {
+          "label": "LABEL_184",
+          "score": 0.689639687538147,
+          "pixels": 452
+        },
+        {
+          "label": "pillow",
+          "score": 0.6424837708473206,
+          "pixels": 755
+        },
+        {
+          "label": "chair",
+          "score": 0.6090530753135681,
+          "pixels": 20
+        },
+        {
+          "label": "chair",
+          "score": 0.9866142272949219,
+          "pixels": 74
+        },
+        {
+          "label": "LABEL_189",
+          "score": 0.8389363884925842,
+          "pixels": 486
+        },
+        {
+          "label": "LABEL_189",
+          "score": 0.8281433582305908,
+          "pixels": 638
+        },
+        {
+          "label": "LABEL_185",
+          "score": 0.733542799949646,
+          "pixels": 188
+        },
+        {
+          "label": "chair",
+          "score": 0.6613588333129883,
+          "pixels": 25
+        },
+        {
+          "label": "LABEL_186",
+          "score": 0.9921032786369324,
+          "pixels": 495
+        },
+        {
+          "label": "potted plant",
+          "score": 0.9555916786193848,
+          "pixels": 78
+        },
+        {
+          "label": "light",
+          "score": 0.7432141304016113,
+          "pixels": 60
+        },
+        {
+          "label": "wall-wood",
+          "score": 0.6432930827140808,
+          "pixels": 1051
+        },
+        {
+          "label": "chair",
+          "score": 0.9938418865203857,
+          "pixels": 21
+        },
+        {
+          "label": "chair",
+          "score": 0.7845733165740967,
+          "pixels": 61
+        },
+        {
+          "label": "chair",
+          "score": 0.9684480428695679,
+          "pixels": 110
+        },
+        {
+          "label": "sink",
+          "score": 0.6472172141075134,
+          "pixels": 71
+        },
+        {
+          "label": "dining table",
+          "score": 0.9718614816665649,
+          "pixels": 295
+        },
+        {
+          "label": "LABEL_190",
+          "score": 0.9911779165267944,
+          "pixels": 428
+        },
+        {
+          "label": "chair",
+          "score": 0.6963655352592468,
+          "pixels": 37
+        },
+        {
+          "label": "LABEL_200",
+          "score": 0.9953648447990417,
+          "pixels": 778
+        },
+        {
+          "label": "couch",
+          "score": 0.9993966817855835,
+          "pixels": 6549
+        },
+        {
+          "label": "book",
+          "score": 0.8154833912849426,
+          "pixels": 149
+        },
+        {
+          "label": "chair",
+          "score": 0.9885129332542419,
+          "pixels": 55
+        },
+        {
+          "label": "refrigerator",
+          "score": 0.9960265159606934,
+          "pixels": 513
+        },
+        {
+          "label": "LABEL_187",
+          "score": 0.9492905139923096,
+          "pixels": 445
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "File:Oceanfront beach rental (26978149970).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Oceanfront_beach_rental_(26978149970).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "author": "Matthew Trudeau Photography from Murrells inlet , USA",
+      "elapsedMs": 3196.2999999523163,
+      "width": 160,
+      "height": 107,
+      "segments": [
+        {
+          "label": "couch",
+          "score": 0.9958630800247192,
+          "pixels": 284
+        },
+        {
+          "label": "LABEL_186",
+          "score": 0.9530647993087769,
+          "pixels": 10281
+        },
+        {
+          "label": "LABEL_190",
+          "score": 0.9950447678565979,
+          "pixels": 1379
+        },
+        {
+          "label": "pillow",
+          "score": 0.8150245547294617,
+          "pixels": 72
+        },
+        {
+          "label": "LABEL_199",
+          "score": 0.9986277222633362,
+          "pixels": 1361
+        },
+        {
+          "label": "window-other",
+          "score": 0.836798906326294,
+          "pixels": 322
+        },
+        {
+          "label": "LABEL_189",
+          "score": 0.9231461882591248,
+          "pixels": 228
+        },
+        {
+          "label": "LABEL_188",
+          "score": 0.9057180881500244,
+          "pixels": 516
+        },
+        {
+          "label": "couch",
+          "score": 0.984494686126709,
+          "pixels": 1378
+        },
+        {
+          "label": "remote",
+          "score": 0.8255108594894409,
+          "pixels": 37
+        },
+        {
+          "label": "sea",
+          "score": 0.9259353280067444,
+          "pixels": 258
+        },
+        {
+          "label": "LABEL_200",
+          "score": 0.981638491153717,
+          "pixels": 483
+        },
+        {
+          "label": "light",
+          "score": 0.9615785479545593,
+          "pixels": 132
+        }
+      ]
+    }
+  ],
+  "network": {
+    "requestCount": 31,
+    "methods": [
+      "GET"
+    ],
+    "requestsWithBody": 0,
+    "externalHosts": [
+      "cdn.jsdelivr.net",
+      "huggingface.co",
+      "us.aws.cdn.hf.co"
+    ]
+  }
+}
