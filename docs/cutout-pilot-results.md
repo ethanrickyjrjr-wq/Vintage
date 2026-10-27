@@ -15,7 +15,9 @@ Scope: handoff Phases 0–2 only. Local review; no publication and no catalog ro
 
 ## Source limitations
 
-The urn lamp's shade is clipped at the top. The dress form, harness and jacket overlap other inventory; the Elvis frame is obscured. These limitations must stay visible and cannot be repaired by segmentation. Sizes are unmeasured, so all cards say **Size coming**. Research price targets are labelled guide prices. The SOLD badge is explicitly demo data.
+The urn lamp's shade is clipped at the top. The dress form, harness and jacket overlap other inventory; the Elvis frame is obscured. These limitations stay visible. Sizes are unmeasured, so all cards say **Size coming**. Research price targets are labelled guide prices. The SOLD badge is explicitly demo data.
+
+Owner direction: **retain complete photographed display supports**. B6 includes the entire mannequin head, neck and base with the feather hat. A22 and B10 use the full scene source and retain the supporting forms, clothing and visible chair; alpha-only support masks recover chair areas omitted by the model. B7 keeps the original photograph because the automatic mask omits chair parts. Source camera framing is preserved, with no additional crop through a support and no reconstruction. This rule is also recorded in the handoff and enforced by the input-crop guard in the pipeline.
 
 The archived photo JPEGs are 1050×1400, and the crop sources are at most 1400 pixels along their long side. Some site WebPs are larger derivatives, not higher-resolution originals. None qualifies for a 1500-pixel source-subject channel export; no channel JPEGs are manufactured by upscaling.
 
@@ -38,9 +40,9 @@ The mechanical test passes for every raw A trial (99.79%–100% of alpha≥250 p
 
 Final mask studies reapply the selected alpha to the original prepared RGB: **100% opaque RGB retention before trimming, resizing and lossy WebP**. Exported alpha is verified bit for bit after WebP decoding. Lossy RGB encoding differences are recorded separately, without applying the mask-integrity pass/fail threshold to compression.
 
-Eight transparent studies ship as pilot assets: six masks (A1, A22, B6, B9, B1, B10) and two perspective crops (A3, A4). A2, A10, B7 and A5 retain the original photograph. The harness mask picked supporting clothes and chair, and the Elvis frame cannot be recovered from behind another picture. The hat's display head remains and is labelled a layout test. Glare, wear, occlusion, cords and labels are not retouched away.
+Eight transparent studies ship as pilot assets: six masks (A1, A22, B6, B9, B1, B10) and two perspective crops (A3, A4). A2, A10, B7 and A5 retain the original photograph. The complete hat display is retained; A22/B10 retain their full photographed display groups, including the chair. The harness photograph preserves its whole chair; the Elvis frame remains obscured by another picture. Glare, wear, occlusion, cords and labels are not retouched away.
 
-All eight studies have 960×1200 and 480×600 variants, quality 82, alpha quality 100; largest file 99,970 bytes, below 200 KB. The third lamp image is explicitly a detail crop of its existing original, not another angle. Channel export is deferred and there are no transparent files under `media/`.
+All eight studies have 960×1200 and 480×600 variants, quality 82, alpha quality 100; largest file 118,492 bytes, below 200 KB. The third lamp image is explicitly a detail crop of its existing original, not another angle. Channel export is deferred and there are no transparent files under `media/`.
 
 Inspect the committed [audit](../tools/cutout/pilot-audit.json) for source hashes, dimensions, flags, versions, timings, coverage and export checks. Local generated evidence (ignored): `artifacts/pilot/pass-fail.jpg` (one-page table), `test-A1.jpg`, `test-A2.jpg`, `test-A10.jpg`, `test-B9.jpg`, `mask-contact-sheet.jpg`; native 1:1 hard-area crops appear to the right of every tile on white, black and burgundy. The original archives and full manifest are under `media/`.
 

@@ -1,14 +1,282 @@
 [
-  {"id":"A1","source":"assets/photos/IMG_6616.jpg","mode":"cut","fit":"tall","anchor":"bottom","scale":1,"size":"","crop":[0.10,0,0.72,0.83],"maskLimit":[0,0,1,0.935],"layoutTest":true,"focus":[0.48,0.61],"note":"Shade is clipped and the foot is hidden by the adjacent Elvis frame. Alpha excludes that frame; no missing part is reconstructed."},
-  {"id":"A2","source":"assets/photos/IMG_6614.jpg","mode":"keep","fit":"wide","anchor":"top","scale":0.94,"size":"","focus":[0.5,0.3],"note":"Both glass tests fail: opaque shards in A, background haze in B. Original retained; re-shoot on a seamless backdrop."},
-  {"id":"A22","source":"assets/photos/IMG_6607.jpg","mode":"cut","fit":"tall","anchor":"bottom","scale":1,"size":"","crop":[0.31,0.15,0.76,0.99],"layoutTest":true,"note":"Form is partly obscured by clothing and the chair; layout test only."},
-  {"id":"A10","source":"assets/crops/IMG_6610_glass.jpg","mode":"keep","fit":"small","anchor":"bottom","scale":0.84,"size":"","layoutTest":true,"focus":[0.25,0.5],"note":"Glass control: shelf photo retained; needs a seamless-backdrop re-shoot."},
-  {"id":"B6","source":"assets/photos/IMG_6611.jpg","mode":"cut","fit":"small","anchor":"center","scale":0.96,"size":"","crop":[0.02,0.10,0.79,0.61],"layoutTest":true,"note":"Hat is shown on its display head. Some feathers overlap it, so the prop remains; needs an isolated re-shoot."},
-  {"id":"B7","source":"assets/photos/IMG_6612.jpg","mode":"keep","fit":"tall","anchor":"top","scale":0.9,"size":"","crop":[0.24,0.17,0.69,0.91],"layoutTest":true,"note":"Mask also selects the yellow garment and chair. Original retained; the harness needs its own photograph."},
-  {"id":"B9","source":"assets/crops/IMG_6612_boots.jpg","mode":"cut","fit":"small","anchor":"bottom","scale":0.94,"size":"","layoutTest":true,"focus":[0.27,0.49],"note":"Boots and fringe remain limited by the soft scene crop; use for layout only and re-shoot for listings."},
-  {"id":"B1","source":"assets/crops/IMG_6617_coat.jpg","mode":"cut","fit":"tall","anchor":"top","scale":1,"size":"","layoutTest":true,"note":"Narrow scene crop; no face is included. Needs an unobscured re-shoot."},
-  {"id":"B10","source":"assets/crops/IMG_6607_jacket.jpg","mode":"cut","fit":"tall","anchor":"top","scale":0.96,"size":"","layoutTest":true,"note":"Jacket overlaps necklaces and a hanger; layout test only."},
-  {"id":"A3","source":"assets/photos/IMG_6609.jpg","mode":"flat","fit":"wide","anchor":"center","scale":0.98,"size":"","layoutTest":true,"quad":[[0.1476,0.0043],[0.934,0.064],[0.976,0.973],[0.1476,0.983]],"note":"Perspective crop only; glare and the partly obscured right edge remain. Needs a square-on re-shoot."},
-  {"id":"A4","source":"assets/photos/IMG_6613.jpg","mode":"flat","fit":"wide","anchor":"center","scale":0.94,"size":"","layoutTest":true,"quad":[[0.115,0.095],[0.875,0.005],[0.885,0.965],[0.115,0.925]],"note":"Perspective crop only; glare, frame wear and the clipped top edge remain."},
-  {"id":"A5","source":"assets/crops/IMG_6616_elvis.jpg","mode":"keep","fit":"wide","anchor":"center","scale":0.88,"size":"","layoutTest":true,"soldDemo":true,"note":"Frame is hidden behind another picture. Keep the source photo; signatures are unverified."}
+  {
+    "id": "A1",
+    "source": "assets/photos/IMG_6616.jpg",
+    "mode": "cut",
+    "fit": "tall",
+    "anchor": "bottom",
+    "scale": 1,
+    "size": "",
+    "crop": [
+      0.1,
+      0,
+      0.72,
+      0.83
+    ],
+    "maskLimit": [
+      0,
+      0,
+      1,
+      0.935
+    ],
+    "layoutTest": true,
+    "focus": [
+      0.48,
+      0.61
+    ],
+    "note": "Shade is clipped and the foot is hidden by the adjacent Elvis frame. Alpha excludes that frame; no missing part is reconstructed."
+  },
+  {
+    "id": "A2",
+    "source": "assets/photos/IMG_6614.jpg",
+    "mode": "keep",
+    "fit": "wide",
+    "anchor": "top",
+    "scale": 0.94,
+    "size": "",
+    "focus": [
+      0.5,
+      0.3
+    ],
+    "note": "Both glass tests fail: opaque shards in A, background haze in B. Original retained; re-shoot on a seamless backdrop."
+  },
+  {
+    "id": "A22",
+    "source": "assets/photos/IMG_6607.jpg",
+    "mode": "cut",
+    "fit": "tall",
+    "anchor": "bottom",
+    "scale": 1,
+    "size": "",
+    "displaySupport": true,
+    "layoutTest": true,
+    "note": "The photographed display is kept together, including the forms, clothing and chair. No extra crop removes its supports; the camera frame still limits the view.",
+    "includePolygons": [
+      [
+        [
+          0.611429,
+          0.769286
+        ],
+        [
+          0.622857,
+          0.767857
+        ],
+        [
+          0.642857,
+          0.772857
+        ],
+        [
+          1.0,
+          0.880714
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.551429,
+          1.0
+        ],
+        [
+          0.567619,
+          0.928571
+        ],
+        [
+          0.581905,
+          0.855
+        ],
+        [
+          0.59619,
+          0.809286
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "A10",
+    "source": "assets/crops/IMG_6610_glass.jpg",
+    "mode": "keep",
+    "fit": "small",
+    "anchor": "bottom",
+    "scale": 0.84,
+    "size": "",
+    "layoutTest": true,
+    "focus": [
+      0.25,
+      0.5
+    ],
+    "note": "Glass control: shelf photo retained; needs a seamless-backdrop re-shoot."
+  },
+  {
+    "id": "B6",
+    "source": "assets/photos/IMG_6611.jpg",
+    "mode": "cut",
+    "fit": "tall",
+    "anchor": "bottom",
+    "scale": 1,
+    "size": "",
+    "displaySupport": true,
+    "note": "Feather hat with the entire photographed mannequin head, neck and base. The complete display is retained."
+  },
+  {
+    "id": "B7",
+    "source": "assets/photos/IMG_6612.jpg",
+    "mode": "keep",
+    "fit": "tall",
+    "anchor": "bottom",
+    "scale": 0.96,
+    "size": "",
+    "displaySupport": true,
+    "layoutTest": true,
+    "note": "The complete photographed chair, garments and harness are retained in the original. The automatic cut omits parts of the chair, so this tile keeps the full display photograph."
+  },
+  {
+    "id": "B9",
+    "source": "assets/crops/IMG_6612_boots.jpg",
+    "mode": "cut",
+    "fit": "small",
+    "anchor": "bottom",
+    "scale": 0.94,
+    "size": "",
+    "layoutTest": true,
+    "focus": [
+      0.27,
+      0.49
+    ],
+    "note": "Boots and fringe remain limited by the soft scene crop; use for layout only and re-shoot for listings."
+  },
+  {
+    "id": "B1",
+    "source": "assets/crops/IMG_6617_coat.jpg",
+    "mode": "cut",
+    "fit": "tall",
+    "anchor": "top",
+    "scale": 1,
+    "size": "",
+    "layoutTest": true,
+    "note": "Narrow scene crop; no face is included. Needs an unobscured re-shoot."
+  },
+  {
+    "id": "B10",
+    "source": "assets/photos/IMG_6607.jpg",
+    "img": "assets/photos/IMG_6607.webp",
+    "mode": "cut",
+    "fit": "tall",
+    "anchor": "bottom",
+    "scale": 0.96,
+    "size": "",
+    "displaySupport": true,
+    "layoutTest": true,
+    "note": "Windbreaker shown with the full photographed mannequin display, necklaces, hanger and chair. No extra crop removes its supports; the source camera framing remains.",
+    "includePolygons": [
+      [
+        [
+          0.611429,
+          0.769286
+        ],
+        [
+          0.622857,
+          0.767857
+        ],
+        [
+          0.642857,
+          0.772857
+        ],
+        [
+          1.0,
+          0.880714
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.551429,
+          1.0
+        ],
+        [
+          0.567619,
+          0.928571
+        ],
+        [
+          0.581905,
+          0.855
+        ],
+        [
+          0.59619,
+          0.809286
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "A3",
+    "source": "assets/photos/IMG_6609.jpg",
+    "mode": "flat",
+    "fit": "wide",
+    "anchor": "center",
+    "scale": 0.98,
+    "size": "",
+    "layoutTest": true,
+    "quad": [
+      [
+        0.1476,
+        0.0043
+      ],
+      [
+        0.934,
+        0.064
+      ],
+      [
+        0.976,
+        0.973
+      ],
+      [
+        0.1476,
+        0.983
+      ]
+    ],
+    "note": "Perspective crop only; glare and the partly obscured right edge remain. Needs a square-on re-shoot."
+  },
+  {
+    "id": "A4",
+    "source": "assets/photos/IMG_6613.jpg",
+    "mode": "flat",
+    "fit": "wide",
+    "anchor": "center",
+    "scale": 0.94,
+    "size": "",
+    "layoutTest": true,
+    "quad": [
+      [
+        0.115,
+        0.095
+      ],
+      [
+        0.875,
+        0.005
+      ],
+      [
+        0.885,
+        0.965
+      ],
+      [
+        0.115,
+        0.925
+      ]
+    ],
+    "note": "Perspective crop only; glare, frame wear and the clipped top edge remain."
+  },
+  {
+    "id": "A5",
+    "source": "assets/crops/IMG_6616_elvis.jpg",
+    "mode": "keep",
+    "fit": "wide",
+    "anchor": "center",
+    "scale": 0.88,
+    "size": "",
+    "layoutTest": true,
+    "soldDemo": true,
+    "note": "Frame is hidden behind another picture. Keep the source photo; signatures are unverified."
+  }
 ]

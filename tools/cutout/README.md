@@ -39,6 +39,8 @@ Open `http://127.0.0.1:4182/pilot-cutouts.html`. Optional query parameters: `sty
 
 Each pipeline stage accepts `--ids A1 A2 ...`. Run stages sequentially: they update the same manifest. `items.json` holds crop coordinates (fractions of the oriented source), alpha-only background exclusions, perspective corners, fit, anchor, and review scale. Glass and obscured objects can explicitly use `mode: keep`. All incomplete objects remain labelled layout tests.
 
+Keep the entire photographed mannequin/display support with anything placed on it. `displaySupport: true` rejects input crops; `includePolygons` restores omitted support areas using alpha alone. B6 includes the full head, neck and base. A22/B10 retain the full photographed display and visible chair. B7 retains its original so all chair parts stay visible. WebP and JSON writes are atomic, and every pipeline process must finish before build/staging.
+
 - `prepare`: byte-identical originals and hashes in ignored `media/<id>/orig.jpg`; sRGB, oriented, at-most-2048-pixel working sources under ignored `artifacts/pilot/work/`. Archives are the available preview originals, not claimed full-resolution camera masters.
 - `general`: one CPU session; A is the same prediction/decontamination code path as `rembg i -m birefnet-general -dc`; A0 is the non-decontaminated control with the same alpha. Session-load time is separate from per-image inference and colour-processing time.
 - `matting`: the four test subjects at a 2048×2048 model input, CPU fp32. A larger model input does not create more source detail.

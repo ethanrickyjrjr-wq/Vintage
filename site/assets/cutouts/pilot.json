@@ -59,19 +59,54 @@
     "anchor": "bottom",
     "scale": 1,
     "size": "",
-    "crop": [
-      0.31,
-      0.15,
-      0.76,
-      0.99
-    ],
+    "displaySupport": true,
     "layoutTest": true,
-    "note": "Form is partly obscured by clothing and the chair; layout test only.",
+    "note": "The photographed display is kept together, including the forms, clothing and chair. No extra crop removes its supports; the camera frame still limits the view.",
+    "includePolygons": [
+      [
+        [
+          0.611429,
+          0.769286
+        ],
+        [
+          0.622857,
+          0.767857
+        ],
+        [
+          0.642857,
+          0.772857
+        ],
+        [
+          1.0,
+          0.880714
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.551429,
+          1.0
+        ],
+        [
+          0.567619,
+          0.928571
+        ],
+        [
+          0.581905,
+          0.855
+        ],
+        [
+          0.59619,
+          0.809286
+        ]
+      ]
+    ],
     "cutout": "assets/cutouts/A22.webp",
-    "result": "Mask study",
+    "result": "Full display retained",
     "pixelsKept": {
       "within_3_share": 1.0,
-      "opaque_share": 0.5743164850686037,
+      "opaque_share": 0.5180319727891156,
       "pass": true,
       "stage": "before trim, resizing and lossy encoding"
     }
@@ -98,23 +133,17 @@
     "id": "B6",
     "source": "assets/photos/IMG_6611.jpg",
     "mode": "cut",
-    "fit": "small",
-    "anchor": "center",
-    "scale": 0.96,
+    "fit": "tall",
+    "anchor": "bottom",
+    "scale": 1,
     "size": "",
-    "crop": [
-      0.02,
-      0.1,
-      0.79,
-      0.61
-    ],
-    "layoutTest": true,
-    "note": "Hat is shown on its display head. Some feathers overlap it, so the prop remains; needs an isolated re-shoot.",
+    "displaySupport": true,
+    "note": "Feather hat with the entire photographed mannequin head, neck and base. The complete display is retained.",
     "cutout": "assets/cutouts/B6.webp",
-    "result": "Mask study",
+    "result": "Full display retained",
     "pixelsKept": {
       "within_3_share": 1.0,
-      "opaque_share": 0.7626197574208917,
+      "opaque_share": 0.4254156462585034,
       "pass": true,
       "stage": "before trim, resizing and lossy encoding"
     }
@@ -124,17 +153,12 @@
     "source": "assets/photos/IMG_6612.jpg",
     "mode": "keep",
     "fit": "tall",
-    "anchor": "top",
-    "scale": 0.9,
+    "anchor": "bottom",
+    "scale": 0.96,
     "size": "",
-    "crop": [
-      0.24,
-      0.17,
-      0.69,
-      0.91
-    ],
+    "displaySupport": true,
     "layoutTest": true,
-    "note": "Mask also selects the yellow garment and chair. Original retained; the harness needs its own photograph.",
+    "note": "The complete photographed chair, garments and harness are retained in the original. The automatic cut omits parts of the chair, so this tile keeps the full display photograph.",
     "cutout": null,
     "result": "Original retained",
     "pixelsKept": null
@@ -183,19 +207,61 @@
   },
   {
     "id": "B10",
-    "source": "assets/crops/IMG_6607_jacket.jpg",
+    "source": "assets/photos/IMG_6607.jpg",
+    "img": "assets/photos/IMG_6607.webp",
     "mode": "cut",
     "fit": "tall",
-    "anchor": "top",
+    "anchor": "bottom",
     "scale": 0.96,
     "size": "",
+    "displaySupport": true,
     "layoutTest": true,
-    "note": "Jacket overlaps necklaces and a hanger; layout test only.",
+    "note": "Windbreaker shown with the full photographed mannequin display, necklaces, hanger and chair. No extra crop removes its supports; the source camera framing remains.",
+    "includePolygons": [
+      [
+        [
+          0.611429,
+          0.769286
+        ],
+        [
+          0.622857,
+          0.767857
+        ],
+        [
+          0.642857,
+          0.772857
+        ],
+        [
+          1.0,
+          0.880714
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.551429,
+          1.0
+        ],
+        [
+          0.567619,
+          0.928571
+        ],
+        [
+          0.581905,
+          0.855
+        ],
+        [
+          0.59619,
+          0.809286
+        ]
+      ]
+    ],
     "cutout": "assets/cutouts/B10.webp",
-    "result": "Mask study",
+    "result": "Full display retained",
     "pixelsKept": {
       "within_3_share": 1.0,
-      "opaque_share": 0.7099827554910147,
+      "opaque_share": 0.5180319727891156,
       "pass": true,
       "stage": "before trim, resizing and lossy encoding"
     }

@@ -36,6 +36,7 @@ commit and push every time a phase lands, never put secrets in the repo. Pushing
    background is removed.
 5. **Keep the untouched original for every item.** The detail view and every Etsy listing must include it (Etsy requires one unedited photo).
 6. **Transparent files are for our own site only.** Anything that goes to Etsy, eBay, Shopify or Google is a flattened JPEG.
+7. **Keep complete display supports (Ricky, 2026-10-27).** The feather cocktail hat must include the entire mannequin head, neck and base. Apply this to anything presented on a mannequin or similar support: retain the whole photographed display rather than cropping the support to isolate the item. Use source pixels and alpha-only support masks where needed; preserve the original camera framing without inventing missing parts.
 
 Correction to something said earlier in the session: the catalog section does not sit on burgundy. In `site/storefront.css` the page uses
 `--paper: #f6efdf` (cream) in the default theme and `--paper: #2c2024` (dark plum) in `:root[data-theme="evening"]`. Burgundy

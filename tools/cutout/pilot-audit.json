@@ -27,7 +27,7 @@
     }
   },
   "session_load_seconds": {
-    "general": 9.15,
+    "general": 9.706,
     "matting": 6.17
   },
   "trials": {
@@ -411,41 +411,76 @@
       "anchor": "bottom",
       "scale": 1,
       "size": "",
-      "crop": [
-        0.31,
-        0.15,
-        0.76,
-        0.99
-      ],
+      "displaySupport": true,
       "layoutTest": true,
-      "note": "Form is partly obscured by clothing and the chair; layout test only.",
+      "note": "The photographed display is kept together, including the forms, clothing and chair. No extra crop removes its supports; the camera frame still limits the view.",
       "source_px": [
         1050,
         1400
       ],
       "prepared_px": [
-        472,
-        1176
+        1050,
+        1400
       ],
       "source_sha256": "727e76969fc30fa50d8ebdcf9f263d7deb06c3972b269c79059c15fa05ebe6b2",
       "original_sha256": "727e76969fc30fa50d8ebdcf9f263d7deb06c3972b269c79059c15fa05ebe6b2",
       "colour_profile": "sRGB",
       "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
       "status": "layout test",
-      "selected_tool": "original RGB + birefnet-general alpha",
+      "includePolygons": [
+        [
+          [
+            0.611429,
+            0.769286
+          ],
+          [
+            0.622857,
+            0.767857
+          ],
+          [
+            0.642857,
+            0.772857
+          ],
+          [
+            1.0,
+            0.880714
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            0.551429,
+            1.0
+          ],
+          [
+            0.567619,
+            0.928571
+          ],
+          [
+            0.581905,
+            0.855
+          ],
+          [
+            0.59619,
+            0.809286
+          ]
+        ]
+      ],
+      "selected_tool": "original RGB + birefnet-general alpha; hand-reviewed support masks (alpha only)",
       "pixels_kept": {
         "within_3_share": 1.0,
-        "opaque_share": 0.5743164850686037,
+        "opaque_share": 0.5180319727891156,
         "pass": true,
         "stage": "before trim, resizing and lossy encoding"
       },
       "alpha_bbox_px": [
         0,
-        0,
-        373,
-        1176
+        153,
+        1050,
+        1400
       ],
-      "subject_long_edge_prepared_px": 1176,
+      "subject_long_edge_prepared_px": 1247,
       "exports": [
         {
           "path": "site\\assets\\cutouts\\A22.webp",
@@ -453,13 +488,13 @@
             960,
             1200
           ],
-          "bytes": 74354,
+          "bytes": 118492,
           "quality": 82,
           "alpha_quality": 100,
           "alpha_exact": true,
           "encoding_comparison": {
-            "within_3_share": 0.3634313618761761,
-            "opaque_share": 0.22326736111111112,
+            "within_3_share": 0.386719845230752,
+            "opaque_share": 0.37152083333333336,
             "stage": "lossy WebP round-trip; not the mask integrity test"
           }
         },
@@ -469,13 +504,13 @@
             480,
             600
           ],
-          "bytes": 29120,
+          "bytes": 45126,
           "quality": 82,
           "alpha_quality": 100,
           "alpha_exact": true,
           "encoding_comparison": {
-            "within_3_share": 0.24126323041272624,
-            "opaque_share": 0.2217638888888889,
+            "within_3_share": 0.2774789059403137,
+            "opaque_share": 0.3678958333333333,
             "stage": "lossy WebP round-trip; not the mask integrity test"
           }
         }
@@ -514,24 +549,19 @@
       "id": "B6",
       "source": "assets/photos/IMG_6611.jpg",
       "mode": "cut",
-      "fit": "small",
-      "anchor": "center",
-      "scale": 0.96,
+      "fit": "tall",
+      "anchor": "bottom",
+      "scale": 1,
       "size": "",
-      "crop": [
-        0.02,
-        0.1,
-        0.79,
-        0.61
-      ],
-      "note": "Hat is shown on its display head. Some feathers overlap it, so the prop remains; needs an isolated re-shoot.",
+      "displaySupport": true,
+      "note": "Feather hat with the entire photographed mannequin head, neck and base. The complete display is retained.",
       "source_px": [
         1050,
         1400
       ],
       "prepared_px": [
-        809,
-        714
+        1050,
+        1400
       ],
       "source_sha256": "5fc5dfd581a934ff5bc484dbd165c04de1e3e1c85a9e1a3bcb9baa29a6b40138",
       "original_sha256": "5fc5dfd581a934ff5bc484dbd165c04de1e3e1c85a9e1a3bcb9baa29a6b40138",
@@ -541,17 +571,17 @@
       "selected_tool": "original RGB + birefnet-general alpha",
       "pixels_kept": {
         "within_3_share": 1.0,
-        "opaque_share": 0.7626197574208917,
+        "opaque_share": 0.4254156462585034,
         "pass": true,
         "stage": "before trim, resizing and lossy encoding"
       },
       "alpha_bbox_px": [
         0,
         0,
-        783,
-        714
+        817,
+        1335
       ],
-      "subject_long_edge_prepared_px": 783,
+      "subject_long_edge_prepared_px": 1335,
       "exports": [
         {
           "path": "site\\assets\\cutouts\\B6.webp",
@@ -559,13 +589,13 @@
             960,
             1200
           ],
-          "bytes": 83814,
+          "bytes": 111494,
           "quality": 82,
           "alpha_quality": 100,
           "alpha_exact": true,
           "encoding_comparison": {
-            "within_3_share": 0.38900549200685625,
-            "opaque_share": 0.29778125,
+            "within_3_share": 0.36295067553406296,
+            "opaque_share": 0.3396232638888889,
             "stage": "lossy WebP round-trip; not the mask integrity test"
           }
         },
@@ -575,48 +605,188 @@
             480,
             600
           ],
-          "bytes": 33354,
+          "bytes": 44700,
           "quality": 82,
           "alpha_quality": 100,
           "alpha_exact": true,
           "encoding_comparison": {
-            "within_3_share": 0.23695886937740632,
-            "opaque_share": 0.29580555555555554,
+            "within_3_share": 0.21593422346002622,
+            "opaque_share": 0.3391111111111111,
             "stage": "lossy WebP round-trip; not the mask integrity test"
           }
         }
-      ],
-      "layoutTest": true
+      ]
     },
     "B7": {
       "id": "B7",
       "source": "assets/photos/IMG_6612.jpg",
       "mode": "keep",
       "fit": "tall",
-      "anchor": "top",
-      "scale": 0.9,
+      "anchor": "bottom",
+      "scale": 0.96,
       "size": "",
-      "crop": [
-        0.24,
-        0.17,
-        0.69,
-        0.91
-      ],
+      "displaySupport": true,
       "layoutTest": true,
-      "note": "Mask also selects the yellow garment and chair. Original retained; the harness needs its own photograph.",
+      "note": "The complete photographed chair, garments and harness are retained in the original. The automatic cut omits parts of the chair, so this tile keeps the full display photograph.",
       "source_px": [
         1050,
         1400
       ],
       "prepared_px": [
-        472,
-        1036
+        1050,
+        1400
       ],
       "source_sha256": "f1612b010c51bc9d70954c6c15b7bea1cd9a4900a96eec953637eaff5e766944",
       "original_sha256": "f1612b010c51bc9d70954c6c15b7bea1cd9a4900a96eec953637eaff5e766944",
       "colour_profile": "sRGB",
       "channel_status": "needs re-shoot: glass or obscured item",
       "status": "layout test",
+      "includePolygons": [
+        [
+          [
+            0.219048,
+            0.267143
+          ],
+          [
+            0.207619,
+            0.272143
+          ],
+          [
+            0.199048,
+            0.289286
+          ],
+          [
+            0.013333,
+            0.656429
+          ],
+          [
+            0.012381,
+            0.668571
+          ],
+          [
+            0.027619,
+            0.678571
+          ],
+          [
+            0.250476,
+            0.687857
+          ],
+          [
+            0.488571,
+            0.697857
+          ],
+          [
+            0.706667,
+            0.698571
+          ],
+          [
+            0.721905,
+            0.657857
+          ],
+          [
+            0.802857,
+            0.611429
+          ],
+          [
+            0.800952,
+            0.571429
+          ],
+          [
+            0.701905,
+            0.443571
+          ],
+          [
+            0.550476,
+            0.285
+          ],
+          [
+            0.30381,
+            0.264286
+          ]
+        ],
+        [
+          [
+            0.061905,
+            0.677857
+          ],
+          [
+            0.087619,
+            0.678571
+          ],
+          [
+            0.0,
+            0.964286
+          ],
+          [
+            0.0,
+            0.878571
+          ]
+        ],
+        [
+          [
+            0.151429,
+            0.684286
+          ],
+          [
+            0.174286,
+            0.685714
+          ],
+          [
+            0.074286,
+            1.0
+          ],
+          [
+            0.049524,
+            1.0
+          ]
+        ],
+        [
+          [
+            0.689524,
+            0.672143
+          ],
+          [
+            0.72381,
+            0.670714
+          ],
+          [
+            0.744762,
+            0.68
+          ],
+          [
+            0.758095,
+            0.702143
+          ],
+          [
+            0.766667,
+            0.75
+          ],
+          [
+            0.801905,
+            1.0
+          ],
+          [
+            0.774286,
+            1.0
+          ],
+          [
+            0.737143,
+            0.735714
+          ],
+          [
+            0.732381,
+            0.707143
+          ],
+          [
+            0.72381,
+            0.695
+          ],
+          [
+            0.685714,
+            0.690714
+          ]
+        ]
+      ],
       "selected_tool": "no cut; original retained"
     },
     "B9": {
@@ -769,41 +939,83 @@
     },
     "B10": {
       "id": "B10",
-      "source": "assets/crops/IMG_6607_jacket.jpg",
+      "source": "assets/photos/IMG_6607.jpg",
+      "img": "assets/photos/IMG_6607.webp",
       "mode": "cut",
       "fit": "tall",
-      "anchor": "top",
+      "anchor": "bottom",
       "scale": 0.96,
       "size": "",
+      "displaySupport": true,
       "layoutTest": true,
-      "note": "Jacket overlaps necklaces and a hanger; layout test only.",
+      "note": "Windbreaker shown with the full photographed mannequin display, necklaces, hanger and chair. No extra crop removes its supports; the source camera framing remains.",
       "source_px": [
-        787,
+        1050,
         1400
       ],
       "prepared_px": [
-        787,
+        1050,
         1400
       ],
-      "source_sha256": "9112876ed0830b2649c1d999cfbeca55e78de00ae689c15b7a6da0ac77ffa6f0",
-      "original_sha256": "9112876ed0830b2649c1d999cfbeca55e78de00ae689c15b7a6da0ac77ffa6f0",
+      "source_sha256": "727e76969fc30fa50d8ebdcf9f263d7deb06c3972b269c79059c15fa05ebe6b2",
+      "original_sha256": "727e76969fc30fa50d8ebdcf9f263d7deb06c3972b269c79059c15fa05ebe6b2",
       "colour_profile": "sRGB",
       "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
       "status": "layout test",
-      "selected_tool": "original RGB + birefnet-general alpha",
+      "includePolygons": [
+        [
+          [
+            0.611429,
+            0.769286
+          ],
+          [
+            0.622857,
+            0.767857
+          ],
+          [
+            0.642857,
+            0.772857
+          ],
+          [
+            1.0,
+            0.880714
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            0.551429,
+            1.0
+          ],
+          [
+            0.567619,
+            0.928571
+          ],
+          [
+            0.581905,
+            0.855
+          ],
+          [
+            0.59619,
+            0.809286
+          ]
+        ]
+      ],
+      "selected_tool": "original RGB + birefnet-general alpha; hand-reviewed support masks (alpha only)",
       "pixels_kept": {
         "within_3_share": 1.0,
-        "opaque_share": 0.7099827554910147,
+        "opaque_share": 0.5180319727891156,
         "pass": true,
         "stage": "before trim, resizing and lossy encoding"
       },
       "alpha_bbox_px": [
         0,
-        0,
-        750,
+        153,
+        1050,
         1400
       ],
-      "subject_long_edge_prepared_px": 1400,
+      "subject_long_edge_prepared_px": 1247,
       "exports": [
         {
           "path": "site\\assets\\cutouts\\B10.webp",
@@ -811,13 +1023,13 @@
             960,
             1200
           ],
-          "bytes": 75920,
+          "bytes": 118492,
           "quality": 82,
           "alpha_quality": 100,
           "alpha_exact": true,
           "encoding_comparison": {
-            "within_3_share": 0.5243127444860124,
-            "opaque_share": 0.3865642361111111,
+            "within_3_share": 0.386719845230752,
+            "opaque_share": 0.37152083333333336,
             "stage": "lossy WebP round-trip; not the mask integrity test"
           }
         },
@@ -827,13 +1039,13 @@
             480,
             600
           ],
-          "bytes": 30056,
+          "bytes": 45126,
           "quality": 82,
           "alpha_quality": 100,
           "alpha_exact": true,
           "encoding_comparison": {
-            "within_3_share": 0.36662860457107643,
-            "opaque_share": 0.38314583333333335,
+            "within_3_share": 0.2774789059403137,
+            "opaque_share": 0.3678958333333333,
             "stage": "lossy WebP round-trip; not the mask integrity test"
           }
         }

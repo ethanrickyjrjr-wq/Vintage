@@ -29,7 +29,9 @@ SRGB = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()
 
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf8")
+    temporary = path.with_name(path.name + ".tmp")
+    temporary.write_text(json.dumps(value, indent=2) + "\n", encoding="utf8")
+    temporary.replace(path)
 
 
 def digest(path):
@@ -60,6 +62,8 @@ def save_manifest(manifest):
 
 def prepare(items, manifest):
     for item in items:
+        if item.get("displaySupport") and item.get("crop"):
+            raise ValueError(f'{item["id"]}: keep the entire photographed display; do not crop its supports')
         source = ROOT / item["source"]
         folder = MEDIA / item["id"]
         folder.mkdir(parents=True, exist_ok=True)
@@ -232,6 +236,16 @@ def export(items, manifest):
             selected = item.get("selectedArm", "mask")
             result = Image.open(WORK / f"{key}-{selected}.png").convert("RGBA")
             record["selected_tool"] = "original RGB + " + ("HR-matting alpha" if selected == "B" else "birefnet-general alpha")
+            if item.get("includePolygons"):
+                # Keep complete photographed supports that the automatic mask omitted.
+                support = Image.new("L", (source.width * 3, source.height * 3))
+                drawing = ImageDraw.Draw(support)
+                for polygon in item["includePolygons"]:
+                    drawing.polygon([(round(x * support.width), round(y * support.height)) for x, y in polygon], fill=255)
+                support = support.resize(source.size, Image.Resampling.LANCZOS)
+                alpha = Image.fromarray(np.maximum(np.asarray(result.getchannel("A")), np.asarray(support)))
+                result = original_rgb(source, alpha)
+                record["selected_tool"] += "; hand-reviewed support masks (alpha only)"
             if "maskLimit" in item:
                 alpha = np.array(result.getchannel("A"))
                 x1, y1, x2, y2 = [round(v * (result.width if i % 2 == 0 else result.height))
@@ -255,10 +269,12 @@ def export(items, manifest):
             arr[arr[:, :, 3] == 0, :3] = 0
             image = Image.fromarray(arr)
             for quality in (82, 78, 74, 70):
-                image.save(target, format="WEBP", quality=quality, alpha_quality=100, method=6,
+                temporary = WORK / (target.name + ".tmp")
+                image.save(temporary, format="WEBP", quality=quality, alpha_quality=100, method=6,
                            exact=True, icc_profile=SRGB)
-                if target.stat().st_size <= 200_000:
+                if temporary.stat().st_size <= 200_000:
                     break
+            temporary.replace(target)
             assert target.stat().st_size <= 200_000, f"{key}: file budget exceeded"
             decoded = Image.open(target).convert("RGBA")
             # Report encoding loss separately; this is not the mask provenance test.
@@ -270,7 +286,7 @@ def export(items, manifest):
             record["exports"].append({"path": str(target.relative_to(ROOT)), "px": size, "bytes": target.stat().st_size,
                                       "quality": quality, "alpha_quality": 100, "alpha_exact": alpha_exact,
                                       "encoding_comparison": encoding})
-        pilot.append({**item, "cutout": f"assets/cutouts/{key}.webp", "result": "Perspective crop" if item["mode"] == "flat" else "Mask study",
+        pilot.append({**item, "cutout": f"assets/cutouts/{key}.webp", "result": "Perspective crop" if item["mode"] == "flat" else "Full display retained" if item.get("displaySupport") else "Mask study",
                       "pixelsKept": record["pixels_kept"]})
     save_manifest(manifest)
     write_json(OUT / "pilot.json", pilot)
