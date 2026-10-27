@@ -151,6 +151,15 @@
     lightField.append(patch);
   }
   document.body.append(lightField);
+  // Names the song that is playing, so Ricky can say which ones stay. Doubles as the on-screen music credit.
+  const nowPlaying = document.createElement("p");
+  nowPlaying.className = "disco-now";
+  nowPlaying.setAttribute("role", "status");
+  document.body.append(nowPlaying);
+  document.addEventListener("hnv-track", () => {
+    const title = window.HNVDiscoMusic?.title;
+    nowPlaying.textContent = title ? `♪ ${title} · Kevin MacLeod` : "";
+  });
   const balls = [...document.querySelectorAll(".disco-ball")].map((element, index) => {
     const canvas = element.querySelector("canvas");
     const image = element.querySelector("img");

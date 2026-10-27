@@ -1,0 +1,11 @@
+
+```
+{
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest/licenses/licenses#get-the-license-for-a-repository",
+  "status": "404"
+}
+
+```
+
+

@@ -1,0 +1,59 @@
+facets: 1004 | max identity error: 4.4e-16 | tilt 0.0100 rad -> reflected ray turns 0.0200 rad (2x)
+
+--- facet grid 28 x 56 = 1004 facets ---
+phone warm h=0.5                   h=422px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 100 (min 95, max 105)  elongation p50/p90 1.2/1.5  radial length px p50/p90 17.1/29.6  coverage 10%
+desk  warm h=0.5                   h=720px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 136 (min 133, max 141)  elongation p50/p90 1.2/1.5  radial length px p50/p90 32.0/47.5  coverage 10%
+phone pink h=0.5                   h=422px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 41 (min 37, max 43)  elongation p50/p90 1.1/1.6  radial length px p50/p90 15.9/32.4  coverage 4%
+desk  pink h=0.5                   h=720px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 68 (min 65, max 70)  elongation p50/p90 1.2/1.5  radial length px p50/p90 33.3/49.4  coverage 5%
+phone warm h=0.9                   h=760px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 43 (min 40, max 45)  elongation p50/p90 1.1/1.3  radial length px p50/p90 27.3/39.6  coverage 10%
+desk  warm h=0.9                   h=1296px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 67 (min 60, max 74)  elongation p50/p90 1.1/1.2  radial length px p50/p90 48.7/58.3  coverage 11%
+phone pink h=0.9                   h=760px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 18 (min 15, max 21)  elongation p50/p90 1.1/1.3  radial length px p50/p90 26.2/39.6  coverage 4%
+desk  pink h=0.9                   h=1296px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 28 (min 24, max 30)  elongation p50/p90 1.1/1.2  radial length px p50/p90 46.6/55.8  coverage 4%
+
+--- facet grid 42 x 84 = 2254 facets ---
+phone warm h=0.5                   h=422px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 225 (min 221, max 232)  elongation p50/p90 1.2/1.5  radial length px p50/p90 17.2/29.6  coverage 22%
+desk  warm h=0.5                   h=720px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 309 (min 302, max 316)  elongation p50/p90 1.2/1.5  radial length px p50/p90 32.0/47.1  coverage 22%
+phone pink h=0.5                   h=422px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 91 (min 88, max 95)  elongation p50/p90 1.1/1.6  radial length px p50/p90 15.8/32.8  coverage 9%
+desk  pink h=0.5                   h=720px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 151 (min 147, max 155)  elongation p50/p90 1.2/1.5  radial length px p50/p90 33.2/49.3  coverage 12%
+phone warm h=0.9                   h=760px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 95 (min 90, max 97)  elongation p50/p90 1.1/1.3  radial length px p50/p90 27.3/39.4  coverage 22%
+desk  warm h=0.9                   h=1296px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 151 (min 146, max 157)  elongation p50/p90 1.1/1.2  radial length px p50/p90 48.6/58.0  coverage 25%
+phone pink h=0.9                   h=760px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 41 (min 38, max 44)  elongation p50/p90 1.1/1.3  radial length px p50/p90 26.1/39.7  coverage 9%
+desk  pink h=0.9                   h=1296px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 62 (min 60, max 65)  elongation p50/p90 1.1/1.2  radial length px p50/p90 46.6/56.1  coverage 10%
+
+--- facet grid 56 x 112 = 3998 facets ---
+phone warm h=0.5                   h=422px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 399 (min 393, max 410)  elongation p50/p90 1.2/1.5  radial length px p50/p90 17.1/29.4  coverage 40%
+desk  warm h=0.5                   h=720px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 549 (min 544, max 554)  elongation p50/p90 1.2/1.5  radial length px p50/p90 31.9/46.8  coverage 40%
+phone pink h=0.5                   h=422px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 163 (min 157, max 166)  elongation p50/p90 1.1/1.6  radial length px p50/p90 15.8/32.8  coverage 17%
+desk  pink h=0.5                   h=720px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 269 (min 262, max 275)  elongation p50/p90 1.2/1.5  radial length px p50/p90 33.2/49.7  coverage 21%
+phone warm h=0.9                   h=760px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 171 (min 166, max 175)  elongation p50/p90 1.1/1.3  radial length px p50/p90 27.4/39.8  coverage 40%
+desk  warm h=0.9                   h=1296px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 268 (min 264, max 277)  elongation p50/p90 1.1/1.2  radial length px p50/p90 48.8/58.0  coverage 45%
+phone pink h=0.9                   h=760px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 74 (min 71, max 77)  elongation p50/p90 1.1/1.3  radial length px p50/p90 25.9/39.9  coverage 17%
+desk  pink h=0.9                   h=1296px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 111 (min 108, max 115)  elongation p50/p90 1.1/1.2  radial length px p50/p90 46.7/56.5  coverage 18%
+
+--- recommended: 56 x 112 = 3998 facets, h=0.55, aRad=0.012 ---
+phone warm                         h=464px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 354 (min 349, max 359)  elongation p50/p90 1.2/1.5  radial length px p50/p90 7.4/12.5  coverage 6%
+desk  warm                         h=792px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 508 (min 501, max 512)  elongation p50/p90 1.2/1.4  radial length px p50/p90 13.8/19.1  coverage 7%
+phone pink                         h=464px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 145 (min 142, max 150)  elongation p50/p90 1.1/1.6  radial length px p50/p90 6.9/13.5  coverage 3%
+desk  pink                         h=792px lamp=[-0.8475477675843517,-0.19710413199636087,-0.49276032999090214]  spots in view: mean 236 (min 233, max 241)  elongation p50/p90 1.2/1.4  radial length px p50/p90 13.9/19.8  coverage 3%
+
+--- h sweep, warm lamp, 56 x 112, aRad=0.012 ---
+phone h=0.2                        h=169px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 790 (min 783, max 800)  elongation p50/p90 1.3/1.9  radial length px p50/p90 3.3/7.3  coverage 4%
+desk  h=0.2                        h=288px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 854 (min 847, max 860)  elongation p50/p90 1.3/2.3  radial length px p50/p90 5.9/17.6  coverage 4%
+phone h=0.3                        h=253px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 633 (min 627, max 640)  elongation p50/p90 1.2/1.7  radial length px p50/p90 4.5/8.8  coverage 5%
+desk  h=0.3                        h=432px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 736 (min 731, max 745)  elongation p50/p90 1.3/1.9  radial length px p50/p90 8.5/17.9  coverage 5%
+phone h=0.55                       h=464px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 354 (min 349, max 359)  elongation p50/p90 1.2/1.5  radial length px p50/p90 7.4/12.5  coverage 6%
+desk  h=0.55                       h=792px lamp=[0.3777198357842386,-0.44966647117171266,-0.8093996481090827]  spots in view: mean 508 (min 501, max 512)  elongation p50/p90 1.2/1.4  radial length px p50/p90 13.8/19.1  coverage 7%
+
+--- ball flash: tiles >50% lit at once (mean over 64 spin angles), visible tiles ~ 512
+  tilt jitter +-0.006 rad, exponent   90: 3.69 tiles lit at once (half-width of one tile's flash 7.1 deg)
+  tilt jitter +-0.006 rad, exponent  300: 1.14 tiles lit at once (half-width of one tile's flash 3.9 deg)
+  tilt jitter +-0.006 rad, exponent  700: 0.69 tiles lit at once (half-width of one tile's flash 2.5 deg)
+  tilt jitter +-0.006 rad, exponent 1500: 0.33 tiles lit at once (half-width of one tile's flash 1.7 deg)
+  tilt jitter +-0.1 rad, exponent   90: 3.83 tiles lit at once (half-width of one tile's flash 7.1 deg)
+  tilt jitter +-0.1 rad, exponent  300: 1.27 tiles lit at once (half-width of one tile's flash 3.9 deg)
+  tilt jitter +-0.1 rad, exponent  700: 0.55 tiles lit at once (half-width of one tile's flash 2.5 deg)
+  tilt jitter +-0.1 rad, exponent 1500: 0.25 tiles lit at once (half-width of one tile's flash 1.7 deg)
+
+--- geometry cost: 1.14 ms/frame on this desktop CPU (sink -1); a phone will be slower, not measured
+
+--- inverse mapping n = normalize(r - d): 329 facets, max error 4.8e-15

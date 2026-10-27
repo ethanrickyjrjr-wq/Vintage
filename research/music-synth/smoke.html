@@ -1,0 +1,229 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>disco synth smoke test</title>
+<!-- Test harness, not part of the site. Renders the ORIGINAL voices and the PROPOSED v2 voices
+     (the snippets from the research report) into an OfflineAudioContext and reports peak, RMS, NaN count,
+     L/R correlation and coarse band shares. Run: window.run() -> metrics. No audio is played. -->
+<script>
+const BPM = 114, stepLength = 60 / BPM / 4, SR = 44100;
+const frequency = n => 440 * 2 ** ((n - 69) / 12);
+const progression4 = [
+  { bass: 38, chord: [62, 65, 69, 72], melody: [81, 79, 77, 76] },
+  { bass: 43, chord: [62, 65, 67, 70], melody: [79, 77, 74, 77] },
+  { bass: 36, chord: [60, 64, 67, 71], melody: [79, 76, 74, 72] },
+  { bass: 33, chord: [61, 64, 67, 69], melody: [76, 73, 71, 73] },
+];
+const prog8 = [[38, [62, 65, 69, 72]], [43, [62, 65, 67, 70]], [36, [60, 64, 67, 70]], [41, [60, 64, 65, 69]],
+  [34, [62, 65, 69, 70]], [40, [62, 64, 67, 70]], [33, [61, 64, 67, 69]], [38, [62, 65, 69, 72]]]
+  .map(([bass, chord]) => ({ bass, chord, melody: [chord[3] + 12, chord[2] + 12, chord[1] + 12, chord[2] + 12] }));
+
+function newContext(seconds) {
+  const context = new OfflineAudioContext(2, Math.ceil(seconds * SR), SR);
+  const master = context.createGain(), compressor = context.createDynamicsCompressor();
+  master.gain.value = .48; compressor.threshold.value = -18; compressor.ratio.value = 4;
+  master.connect(compressor).connect(context.destination);
+  const noise = context.createBuffer(1, Math.ceil(SR * .3), SR);
+  const s = noise.getChannelData(0); for (let i = 0; i < s.length; i++) s[i] = Math.random() * 2 - 1;
+  return { context, master, noise };
+}
+
+// ---------- ORIGINAL voices (copied from site/disco-music.js, context injected) ----------
+function renderOriginal(bars) {
+  const { context, master, noise } = newContext(bars * 16 * stepLength + 2);
+  function tone(note, time, duration, volume, type = "sine", cutoff = 1800) {
+    const oscillator = context.createOscillator(), filter = context.createBiquadFilter(), envelope = context.createGain();
+    oscillator.type = type; oscillator.frequency.value = frequency(note);
+    filter.type = "lowpass"; filter.frequency.setValueAtTime(cutoff, time);
+    filter.frequency.exponentialRampToValueAtTime(Math.max(200, cutoff * .35), time + duration);
+    envelope.gain.setValueAtTime(0, time); envelope.gain.linearRampToValueAtTime(volume, time + .008);
+    envelope.gain.exponentialRampToValueAtTime(.0001, time + duration);
+    oscillator.connect(filter).connect(envelope).connect(master); oscillator.start(time); oscillator.stop(time + duration + .02);
+  }
+  function percussion(time, duration, volume, cutoff, highpass = true) {
+    const source = context.createBufferSource(), filter = context.createBiquadFilter(), envelope = context.createGain();
+    source.buffer = noise; filter.type = highpass ? "highpass" : "bandpass"; filter.frequency.value = cutoff;
+    envelope.gain.setValueAtTime(volume, time); envelope.gain.exponentialRampToValueAtTime(.0001, time + duration);
+    source.connect(filter).connect(envelope).connect(master); source.start(time); source.stop(time + duration);
+  }
+  function kick(time) {
+    const source = context.createOscillator(), envelope = context.createGain();
+    source.frequency.setValueAtTime(125, time); source.frequency.exponentialRampToValueAtTime(45, time + .13);
+    envelope.gain.setValueAtTime(.7, time); envelope.gain.exponentialRampToValueAtTime(.0001, time + .23);
+    source.connect(envelope).connect(master); source.start(time); source.stop(time + .25);
+  }
+  function playStep(step, time) {
+    const beat = step % 16, part = progression4[Math.floor(step / 16) % 4];
+    if (beat % 4 === 0) kick(time);
+    percussion(time, beat % 4 === 2 ? .16 : .035, beat % 2 === 0 ? .12 : .035, 7300);
+    if (beat === 4 || beat === 12) { percussion(time, .105, .22, 1600, false); percussion(time + .018, .085, .14, 2100, false); tone(50, time, .07, .1, "triangle"); }
+    const bassPattern = [0, null, 12, null, 0, null, 7, 10, null, 0, 12, null, 7, null, 12, 7];
+    if (bassPattern[beat] !== null) { tone(part.bass + bassPattern[beat], time, .16, .23, "sawtooth", 650); tone(part.bass + bassPattern[beat], time, .18, .16, "sine", 500); }
+    if ([2, 6, 10, 14].includes(beat)) part.chord.forEach(n => { tone(n, time, .3, .07, "triangle", 2400); tone(n + 12, time, .12, .016, "sine", 4000); });
+    if ([3, 7, 11, 14].includes(beat)) { const n = part.melody[[3, 7, 11, 14].indexOf(beat)]; tone(n, time, .32, .055, "sine", 3500); tone(n, time + .18, .24, .018, "sine", 2500); }
+  }
+  for (let step = 0; step < bars * 16; step++) playStep(step, .04 + step * stepLength);
+  return context.startRendering();
+}
+
+// ---------- PROPOSED v2 (the report's snippets) ----------
+async function renderV2(bars) {
+  const hats = await Promise.all([makeHat(.07), makeHat(.3)]);   // A3.4, rendered in its own OfflineAudioContext
+  const [hatClosed, hatOpen] = hats;
+  const { context, master, noise } = newContext(bars * 16 * stepLength + 3);
+
+  // A3.1 buses, reverb, stereo
+  const music = context.createGain(), musicLP = context.createBiquadFilter(), drums = context.createGain();
+  const verb = context.createConvolver(), sendM = context.createGain(), sendD = context.createGain();
+  musicLP.type = "lowpass"; musicLP.frequency.value = 4200;
+  verb.buffer = impulse(1.8); sendM.gain.value = .35; sendD.gain.value = .12;
+  music.connect(musicLP).connect(master); musicLP.connect(sendM).connect(verb);
+  drums.connect(master); drums.connect(sendD).connect(verb); verb.connect(master);
+  const bus = pan => { const g = context.createGain(), p = context.createStereoPanner(); p.pan.value = pan; g.connect(p).connect(music); return g; };
+  const stabs = bus(-.25), melody = bus(-.4), chicks = bus(.45);
+  function impulse(sec) {
+    const n = context.sampleRate * sec | 0, ir = context.createBuffer(2, n, context.sampleRate);
+    for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n) ** 3; }
+    return ir;
+  }
+
+  function tone(note, time, duration, volume, type = "sine", cutoff = 1800, dest = master) {
+    const oscillator = context.createOscillator(), filter = context.createBiquadFilter(), envelope = context.createGain();
+    oscillator.type = type; oscillator.frequency.value = frequency(note);
+    filter.type = "lowpass"; filter.frequency.setValueAtTime(cutoff, time);
+    filter.frequency.exponentialRampToValueAtTime(Math.max(200, cutoff * .35), time + duration);
+    envelope.gain.setValueAtTime(0, time); envelope.gain.linearRampToValueAtTime(volume, time + .008);
+    envelope.gain.exponentialRampToValueAtTime(.0001, time + duration);
+    oscillator.connect(filter).connect(envelope).connect(dest); oscillator.start(time); oscillator.stop(time + duration + .02);
+  }
+  function percussion(time, duration, volume, cutoff, highpass = true, q = 1, dest = drums, buf = noise) {
+    const source = context.createBufferSource(), filter = context.createBiquadFilter(), envelope = context.createGain();
+    source.buffer = buf; filter.type = highpass ? "highpass" : "bandpass"; filter.frequency.value = cutoff; filter.Q.value = q;
+    envelope.gain.setValueAtTime(volume, time); envelope.gain.exponentialRampToValueAtTime(.0001, time + duration);
+    source.connect(filter).connect(envelope).connect(dest); source.start(time); source.stop(time + duration);
+  }
+  function kick(time) {
+    const source = context.createOscillator(), envelope = context.createGain();
+    source.frequency.setValueAtTime(125, time); source.frequency.exponentialRampToValueAtTime(45, time + .13);
+    envelope.gain.setValueAtTime(.7, time); envelope.gain.exponentialRampToValueAtTime(.0001, time + .23);
+    source.connect(envelope).connect(master); source.start(time); source.stop(time + .25);
+  }
+  // A3.3 bass
+  const softClip = Float32Array.from({ length: 257 }, (_, i) => Math.tanh((i / 128 - 1) * 2.2));
+  function bass(note, time, len) {
+    const lp = context.createBiquadFilter(), shape = context.createWaveShaper(), out = context.createGain(), f = frequency(note);
+    lp.type = "lowpass"; lp.Q.value = 6;
+    lp.frequency.setValueAtTime(2600, time); lp.frequency.exponentialRampToValueAtTime(280, time + .1);
+    out.gain.setValueAtTime(0, time); out.gain.linearRampToValueAtTime(.3, time + .004);
+    out.gain.setTargetAtTime(0, time + len, .025);
+    shape.curve = softClip; shape.oversample = "2x";
+    [-7, 7].forEach(c => { const o = context.createOscillator(); o.type = "sawtooth"; o.frequency.value = f; o.detune.value = c; o.connect(lp); o.start(time); o.stop(time + len + .25); });
+    lp.connect(shape).connect(out).connect(master);
+  }
+  const bassPattern = [0, null, 12, null, 0, null, 12, 0, 0, null, 12, null, 0, null, 12, 10];
+  // A3.5 strings
+  const strings = context.createGain();
+  [[-.8, .31], [.8, .43]].forEach(([p, rate]) => {
+    const d = context.createDelay(.05), lfo = context.createOscillator(), depth = context.createGain(), s = context.createStereoPanner();
+    d.delayTime.value = .02; lfo.frequency.value = rate; depth.gain.value = .0035; s.pan.value = p;
+    lfo.connect(depth); depth.connect(d.delayTime); lfo.start();
+    strings.connect(d); d.connect(s); s.connect(music);
+  });
+  function pad(notes, time, len) {
+    const lp = context.createBiquadFilter(), env = context.createGain();
+    lp.type = "lowpass"; lp.frequency.value = 2200;
+    env.gain.setValueAtTime(0, time); env.gain.setTargetAtTime(.05, time, .15); env.gain.setTargetAtTime(0, time + len, .2);
+    notes.forEach(n => [-10, 0, 10].forEach(c => { const o = context.createOscillator(); o.type = "sawtooth"; o.frequency.value = frequency(n); o.detune.value = c; o.connect(lp); o.start(time); o.stop(time + len + 1.5); }));
+    lp.connect(env).connect(strings);
+  }
+  // A3.7 form
+  const form = ["hp", "khbp", "khcbps", "khcbpsgm", "pm", "khcpsg", "khcbpsgm", "khbp"];
+  function playStep(step, time) {
+    const beat = step % 16, bar = Math.floor(step / 16), part = prog8[bar % 8];
+    const on = c => form[Math.floor(bar / 4) % form.length].includes(c);
+    if (beat === 0) musicLP.frequency.setTargetAtTime(on("k") ? 4200 : 900, time, 1.1);
+    if (beat % 4 === 0 && on("k")) {
+      kick(time);
+      const g = music.gain; g.cancelScheduledValues(time);
+      g.setTargetAtTime(.3, time, .004);
+      g.setTargetAtTime(1, time + .05, .09);
+    }
+    if (on("h")) { if (beat % 4 === 2) percussion(time, .3, .1, 20, true, 1, drums, hatOpen); else percussion(time, .07, beat % 2 === 0 ? .05 : .03, 20, true, 1, drums, hatClosed); }
+    if (on("c") && (beat === 4 || beat === 12)) { percussion(time, .105, .22, 1600, false); percussion(time + .018, .085, .14, 2100, false); tone(50, time, .07, .1, "triangle", 1800, drums); }
+    if (on("b") && bassPattern[beat] !== null) bass(part.bass + 12 + bassPattern[beat], time, stepLength * 1.5);
+    if (on("p") && beat === 0) pad(part.chord, time, 16 * stepLength);
+    if (on("s") && [2, 6, 10, 14].includes(beat)) part.chord.forEach(n => tone(n, time, .3, .07, "triangle", 2400, stabs));
+    if (on("m") && [3, 7, 11, 14].includes(beat)) { const n = part.melody[[3, 7, 11, 14].indexOf(beat)]; tone(n, time, .32, .055, "sine", 3500, melody); tone(n, time + .18, .24, .018, "sine", 2500, melody); }
+    if (on("g") && [1, 3, 5, 6, 9, 11, 13, 14].includes(beat)) {
+      percussion(time, .028, beat % 4 === 1 ? .09 : .05, 3200, false, 3, chicks);
+      tone(part.chord[1] + 12, time, .07, .03, "square", 2600, chicks);
+    }
+  }
+  for (let step = 0; step < bars * 16; step++) {
+    const lilt = step % 2 ? stepLength * .10 : 0;   // A3.2
+    playStep(step, .04 + step * stepLength + lilt);
+  }
+  return context.startRendering();
+}
+
+// A3.4
+function makeHat(sec) {
+  const off = new OfflineAudioContext(1, 44100 * sec | 0, 44100), bp = off.createBiquadFilter(), hp = off.createBiquadFilter(), vca = off.createGain();
+  bp.type = "bandpass"; bp.frequency.value = 7100; bp.Q.value = .8; hp.type = "highpass"; hp.frequency.value = 6000;
+  vca.gain.setValueAtTime(1, 0); vca.gain.exponentialRampToValueAtTime(.001, sec);
+  [205.3, 304.4, 369.6, 522.7, 540, 800].forEach(f => { const o = off.createOscillator(); o.type = "square"; o.frequency.value = f; o.connect(bp); o.start(); });
+  bp.connect(hp).connect(vca).connect(off.destination);
+  return off.startRendering().then(b => { const d = b.getChannelData(0), pk = d.reduce((m, x) => Math.max(m, Math.abs(x)), 0) || 1; for (let i = 0; i < d.length; i++) d[i] /= pk; return b; });
+}
+
+// ---------- metrics ----------
+function fft(re, im) {   // in-place radix-2
+  const n = re.length;
+  for (let i = 1, j = 0; i < n; i++) { let bit = n >> 1; for (; j & bit; bit >>= 1) j ^= bit; j ^= bit; if (i < j) { [re[i], re[j]] = [re[j], re[i]]; [im[i], im[j]] = [im[j], im[i]]; } }
+  for (let len = 2; len <= n; len <<= 1) {
+    const ang = -2 * Math.PI / len, wr = Math.cos(ang), wi = Math.sin(ang);
+    for (let i = 0; i < n; i += len) { let cr = 1, ci = 0; for (let k = 0; k < len / 2; k++) {
+      const a = i + k, b = a + len / 2, tr = re[b] * cr - im[b] * ci, ti = re[b] * ci + im[b] * cr;
+      re[b] = re[a] - tr; im[b] = im[a] - ti; re[a] += tr; im[a] += ti; const t = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = t; } }
+  }
+}
+function analyze(buf, from, to) {
+  const L = buf.getChannelData(0), R = buf.getChannelData(1);
+  let peak = 0, bad = 0, sl = 0, sr = 0, sll = 0, srr = 0, slr = 0, n = 0;
+  for (let i = 0; i < L.length; i++) {
+    const l = L[i], r = R[i];
+    if (!Number.isFinite(l) || !Number.isFinite(r)) { bad++; continue; }
+    peak = Math.max(peak, Math.abs(l), Math.abs(r));
+  }
+  const a = Math.floor(from * buf.sampleRate), b = Math.min(L.length, Math.floor(to * buf.sampleRate));
+  for (let i = a; i < b; i++) { const l = L[i], r = R[i]; sl += l; sr += r; sll += l * l; srr += r * r; slr += l * r; n++; }
+  const cov = slr / n - (sl / n) * (sr / n), vl = sll / n - (sl / n) ** 2, vr = srr / n - (sr / n) ** 2;
+  const rms = Math.sqrt((sll + srr) / (2 * n));
+  // mid/side energy ratio
+  let mm = 0, ss = 0; for (let i = a; i < b; i++) { const m = (L[i] + R[i]) / 2, s = (L[i] - R[i]) / 2; mm += m * m; ss += s * s; }
+  // band shares from a 2^16 FFT of the mono sum at the start of the analysis window
+  const N = 1 << 16, re = new Float64Array(N), im = new Float64Array(N);
+  for (let i = 0; i < N; i++) re[i] = ((L[a + i] || 0) + (R[a + i] || 0)) / 2 * (0.5 - 0.5 * Math.cos(2 * Math.PI * i / N));
+  fft(re, im);
+  const bands = [[20, 150], [150, 800], [800, 4000], [4000, 16000]], e = bands.map(() => 0);
+  for (let k = 1; k < N / 2; k++) { const f = k * buf.sampleRate / N, p = re[k] ** 2 + im[k] ** 2; bands.forEach(([lo, hi], j) => { if (f >= lo && f < hi) e[j] += p; }); }
+  const tot = e.reduce((x, y) => x + y, 0) || 1;
+  return { seconds: +buf.duration.toFixed(1), peak: +peak.toFixed(3), rmsDb: +(20 * Math.log10(rms)).toFixed(1), nonFinite: bad,
+    lrCorrelation: +(cov / Math.sqrt(vl * vr || 1)).toFixed(3), sideToMidDb: +(10 * Math.log10((ss || 1e-12) / (mm || 1e-12))).toFixed(1),
+    bandShare_20_150: +(e[0] / tot).toFixed(3), bandShare_150_800: +(e[1] / tot).toFixed(3), bandShare_800_4k: +(e[2] / tot).toFixed(3), bandShare_4k_16k: +(e[3] / tot).toFixed(3) };
+}
+window.run = async () => {
+  const out = {};
+  let t = performance.now();
+  const o = await renderOriginal(32);
+  out.originalRenderMs = Math.round(performance.now() - t);
+  out.original = analyze(o, 10, 40);
+  t = performance.now();
+  const v = await renderV2(32);
+  out.v2RenderMs = Math.round(performance.now() - t);
+  out.v2_grooveWindow_bars_8_to_28 = analyze(v, 8 * 16 * stepLength + .04, 8 * 16 * stepLength + 30);
+  out.v2_breakdownBars_16_to_19 = analyze(v, 16 * 16 * stepLength, 19 * 16 * stepLength);
+  out.v2_wholeFile = analyze(v, 0.04, v.duration - 3);
+  return out;
+};
+</script>
+<body>Open the console and call <code>run()</code>.</body>
