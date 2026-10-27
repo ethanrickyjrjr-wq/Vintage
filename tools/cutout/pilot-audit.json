@@ -617,54 +617,7 @@
       "colour_profile": "sRGB",
       "channel_status": "needs re-shoot: glass or obscured item",
       "status": "layout test",
-      "selected_tool": "no cut; original retained",
-      "pixels_kept": {
-        "within_3_share": 1.0,
-        "opaque_share": 0.5848561939663635,
-        "pass": true,
-        "stage": "before trim, resizing and lossy encoding"
-      },
-      "alpha_bbox_px": [
-        61,
-        0,
-        472,
-        1036
-      ],
-      "subject_long_edge_prepared_px": 1036,
-      "exports": [
-        {
-          "path": "site\\assets\\cutouts\\B7.webp",
-          "px": [
-            960,
-            1200
-          ],
-          "bytes": 66852,
-          "quality": 82,
-          "alpha_quality": 100,
-          "encoding_comparison": {
-            "within_3_share": 0.49831111769020114,
-            "opaque_share": 0.2580190972222222,
-            "pass": false,
-            "stage": "before trim, resizing and lossy encoding"
-          }
-        },
-        {
-          "path": "site\\assets\\cutouts\\B7--480.webp",
-          "px": [
-            480,
-            600
-          ],
-          "bytes": 28136,
-          "quality": 82,
-          "alpha_quality": 100,
-          "encoding_comparison": {
-            "within_3_share": 0.35226025076245343,
-            "opaque_share": 0.25616319444444446,
-            "pass": false,
-            "stage": "before trim, resizing and lossy encoding"
-          }
-        }
-      ]
+      "selected_tool": "no cut; original retained"
     },
     "B9": {
       "id": "B9",
