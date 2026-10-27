@@ -1,0 +1,172 @@
+[![](https://archivevintage.com/cdn/shop/t/94/assets/account.svg?v=152161910560963363051687469171)](https://archivevintage.com/account)
+We offer FREE carbon neutral shipping within the US 
+[ ](https://archivevintage.com/cart)
+[ ![ARCHIVE](https://archivevintage.com/cdn/shop/files/Screen_Shot_2020-06-09_at_2.10.54_PM_225x.png?v=1613539306) ](https://archivevintage.com/)
+[ ](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+  * [New](https://archivevintage.com/collections/new-arrivals)
+  * [Clothing](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+    * [BOTTOMS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Skirts](https://archivevintage.com/collections/skirts)
+      * [Pants](https://archivevintage.com/collections/pants)
+    * [Dresses](https://archivevintage.com/collections/dresses) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [COCKTAIL ](https://archivevintage.com/collections/dresses)
+      * [EVENING](https://archivevintage.com/collections/dresses)
+      * [DAY ](https://archivevintage.com/collections/dresses)
+    * [TOPS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Blazers / Jackets](https://archivevintage.com/collections/blazers-jackets)
+      * [Coats](https://archivevintage.com/collections/coats)
+      * [Sweaters / Knits](https://archivevintage.com/collections/tops-sweaters)
+      * [Tops](https://archivevintage.com/collections/tops)
+    * [JAPANESE](https://archivevintage.com/collections/japanese)
+    * [Sheer](https://archivevintage.com/collections/sheer)
+    * [SALE](https://archivevintage.com/collections/sale-sale-sale)
+  * [Accessories](https://archivevintage.com/collections/accessories) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+    * [JEWELRY](https://archivevintage.com/collections/jewelry) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [ALL JEWELRY](https://archivevintage.com/collections/jewelry)
+      * [Bracelets](https://archivevintage.com/collections/bracelets)
+      * [Brooches](https://archivevintage.com/collections/brooches)
+      * [Earrings](https://archivevintage.com/collections/earrings)
+      * [Necklaces](https://archivevintage.com/collections/necklaces)
+    * [Handbags](https://archivevintage.com/collections/bags) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [ALL HANDBAGS](https://archivevintage.com/collections/bags)
+      * [CROSS BODY](https://archivevintage.com/collections/cross-body)
+      * [MINI BAGS](https://archivevintage.com/collections/mini-bags)
+      * [BACKPACKS](https://archivevintage.com/collections/backpacks)
+      * [CLUTCHES](https://archivevintage.com/collections/clutches)
+      * [SHOULDER BAGS](https://archivevintage.com/collections/shoulder-bags)
+    * [ACCESSORIES](https://archivevintage.com/collections/accessories) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [ALL ACCESSORIES](https://archivevintage.com/collections/accessories)
+      * [Sunglasses](https://archivevintage.com/collections/sunglasses)
+      * [Belts](https://archivevintage.com/collections/belts)
+      * [Hats](https://archivevintage.com/collections/hats)
+      * [Shoes](https://archivevintage.com/collections/shoes)
+      * [Scarves](https://archivevintage.com/collections/scarves)
+    * [Home Items](https://archivevintage.com/collections/home-items) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [All home items](https://archivevintage.com/collections/home-items)
+      * [BOOKS](https://archivevintage.com/collections/books)
+      * [DESK ACCESSORIES](https://archivevintage.com/collections/home-items)
+  * [FEATURED DESIGNERS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+    * [FEATURED DESIGNERS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Alaia](https://archivevintage.com/collections/alaia)
+      * [Alexander McQueen](https://archivevintage.com/collections/alexander-mcqueen)
+      * [Chanel](https://archivevintage.com/collections/chanel-1)
+      * [Chloe ](https://archivevintage.com/collections/chloe)
+      * [Christian Dior](https://archivevintage.com/collections/christian-dior)
+      * [Christian Lacroix](https://archivevintage.com/collections/christian-lacroix)
+    * [Comme des Garcons](https://archivevintage.com/collections/comme-des-garcons) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Gianni Versace](https://archivevintage.com/collections/gianni-versace)
+      * [Givenchy](https://archivevintage.com/collections/givenchy)
+      * [Gucci](https://archivevintage.com/collections/gucci)
+      * [Issey Miyake](https://archivevintage.com/collections/issey-miyake)
+    * [Jean Paul Gaultier](https://archivevintage.com/collections/jean-paul-gaultier) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Martin Margiela](https://archivevintage.com/collections/martin-margiela)
+      * [Yohji Yamamoto](https://archivevintage.com/collections/yohji-yamamoto)
+      * [Yves Saint Laurent](https://archivevintage.com/collections/yves-saint-laurent)
+  * [Press](https://archivevintage.com/blogs/archive-vintage)
+  * [ Cart ($0.00 ) ](https://archivevintage.com/cart)
+
+
+[ ](https://archivevintage.com/cart)
+[ ![ARCHIVE](https://archivevintage.com/cdn/shop/files/Screen_Shot_2020-06-09_at_2.10.54_PM_225x.png?v=1613539306) ](https://archivevintage.com/)
+[ ](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+  * [New](https://archivevintage.com/collections/new-arrivals)
+  * [Clothing](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+    * [BOTTOMS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Skirts](https://archivevintage.com/collections/skirts)
+      * [Pants](https://archivevintage.com/collections/pants)
+    * [Dresses](https://archivevintage.com/collections/dresses) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [COCKTAIL ](https://archivevintage.com/collections/dresses)
+      * [EVENING](https://archivevintage.com/collections/dresses)
+      * [DAY ](https://archivevintage.com/collections/dresses)
+    * [TOPS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Blazers / Jackets](https://archivevintage.com/collections/blazers-jackets)
+      * [Coats](https://archivevintage.com/collections/coats)
+      * [Sweaters / Knits](https://archivevintage.com/collections/tops-sweaters)
+      * [Tops](https://archivevintage.com/collections/tops)
+    * [JAPANESE](https://archivevintage.com/collections/japanese)
+    * [Sheer](https://archivevintage.com/collections/sheer)
+    * [SALE](https://archivevintage.com/collections/sale-sale-sale)
+  * [Accessories](https://archivevintage.com/collections/accessories) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+    * [JEWELRY](https://archivevintage.com/collections/jewelry) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [ALL JEWELRY](https://archivevintage.com/collections/jewelry)
+      * [Bracelets](https://archivevintage.com/collections/bracelets)
+      * [Brooches](https://archivevintage.com/collections/brooches)
+      * [Earrings](https://archivevintage.com/collections/earrings)
+      * [Necklaces](https://archivevintage.com/collections/necklaces)
+    * [Handbags](https://archivevintage.com/collections/bags) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [ALL HANDBAGS](https://archivevintage.com/collections/bags)
+      * [CROSS BODY](https://archivevintage.com/collections/cross-body)
+      * [MINI BAGS](https://archivevintage.com/collections/mini-bags)
+      * [BACKPACKS](https://archivevintage.com/collections/backpacks)
+      * [CLUTCHES](https://archivevintage.com/collections/clutches)
+      * [SHOULDER BAGS](https://archivevintage.com/collections/shoulder-bags)
+    * [ACCESSORIES](https://archivevintage.com/collections/accessories) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [ALL ACCESSORIES](https://archivevintage.com/collections/accessories)
+      * [Sunglasses](https://archivevintage.com/collections/sunglasses)
+      * [Belts](https://archivevintage.com/collections/belts)
+      * [Hats](https://archivevintage.com/collections/hats)
+      * [Shoes](https://archivevintage.com/collections/shoes)
+      * [Scarves](https://archivevintage.com/collections/scarves)
+    * [Home Items](https://archivevintage.com/collections/home-items) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [All home items](https://archivevintage.com/collections/home-items)
+      * [BOOKS](https://archivevintage.com/collections/books)
+      * [DESK ACCESSORIES](https://archivevintage.com/collections/home-items)
+  * [FEATURED DESIGNERS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+    * [FEATURED DESIGNERS](https://archivevintage.com/collections/clothing) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Alaia](https://archivevintage.com/collections/alaia)
+      * [Alexander McQueen](https://archivevintage.com/collections/alexander-mcqueen)
+      * [Chanel](https://archivevintage.com/collections/chanel-1)
+      * [Chloe ](https://archivevintage.com/collections/chloe)
+      * [Christian Dior](https://archivevintage.com/collections/christian-dior)
+      * [Christian Lacroix](https://archivevintage.com/collections/christian-lacroix)
+    * [Comme des Garcons](https://archivevintage.com/collections/comme-des-garcons) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Gianni Versace](https://archivevintage.com/collections/gianni-versace)
+      * [Givenchy](https://archivevintage.com/collections/givenchy)
+      * [Gucci](https://archivevintage.com/collections/gucci)
+      * [Issey Miyake](https://archivevintage.com/collections/issey-miyake)
+    * [Jean Paul Gaultier](https://archivevintage.com/collections/jean-paul-gaultier) [+-](https://archivevintage.com/collections/sold-archive/products/f-w-1988-castelbajac-teddy-bear-coat)
+      * [Martin Margiela](https://archivevintage.com/collections/martin-margiela)
+      * [Yohji Yamamoto](https://archivevintage.com/collections/yohji-yamamoto)
+      * [Yves Saint Laurent](https://archivevintage.com/collections/yves-saint-laurent)
+  * [Press](https://archivevintage.com/blogs/archive-vintage)
+  * [ Cart ($0.00 ) ](https://archivevintage.com/cart)
+
+
+[Home](https://archivevintage.com/ "Back to the frontpage") › [Sold Archive](https://archivevintage.com/collections/sold-archive) › F/W 1988 CASTELBAJAC teddy bear coat
+[Castelbajac](https://archivevintage.com/collections/vendors?q=Castelbajac)
+# F/W 1988 CASTELBAJAC teddy bear coat
+F/W 1988 CASTELBAJAC teddy bear coat 
+Default Title - Sold Out
+Sold Out • $17,500.00 
+  * RETURNS
+  * SHIPPING
+
+
+ARCHIVE gladly accepts returns! If the item does not fit or you are not satisfied with it, you may return it for a refund. 
+Items usually ship within 1 - 2 business days. We offer FREE FedEx Ground shipping on all orders within the US. We also ship worldwide with DHL.
+RETURNS 
+ARCHIVE gladly accepts returns! If the item does not fit or you are not satisfied with it, you may return it for a refund. 
+SHIPPING 
+Items usually ship within 1 - 2 business days. We offer FREE FedEx Ground shipping on all orders within the US. We also ship worldwide with DHL.
+Invalid Password
+[ Enter ](javascript:void\(0\);)
+MORE INFO
+* * *
+  * [ABOUT](https://archivevintage.com/pages/about-us)
+  * [NEWS](https://archivevintage.com/blogs/archive-vintage)
+  * [SOLD ARCHIVE](https://archivevintage.com/collections/sold-archive)
+  * [Privacy Policy](https://archivevintage.com/pages/shipping)
+  * [CONTACT](https://archivevintage.com/pages/contact)
+
+
+RETURNS
+* * *
+We accept returns for refund, let us know within 2 days of receiving your item that you wish to return it. Please return all items unworn in condition you received it.
+[SHIPPING / RETURNS](https://archivevintage.com/pages/shipping-returns-1 "SHIPPING / RETURNS")
+  * [© ARCHIVE 2026](https://archivevintage.com)
+
+
+  * [ Instagram ](https://www.instagram.com/archivevintage "ARCHIVE on Instagram")
+
+
+

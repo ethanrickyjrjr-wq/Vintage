@@ -11,3 +11,8 @@ node_modules/
 site/dist/
 .site-publication/
 artifacts/
+
+# third-party photos and page captures kept as research evidence only; copyrighted by their owners
+research/site-ideas/raw/a2-img/
+research/site-ideas/raw/a2-kitschy-home.html
+research/site-ideas/raw/*.html

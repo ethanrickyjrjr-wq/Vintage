@@ -1,0 +1,25 @@
+[Skip to main content](https://showponypalmbeach.com/product/vintage-brass-and-crystal-parrot-sconce-7fe81cf8#main-content)
+![Vintage Brass and Crystal Parrot Sconce](https://showponypalmbeach.com/.netlify/images?url=%2Fproduct-images%2Foriginal%2Fbg-removed-1786193779068-pbet40.webp&w=1280&fit=contain&fm=webp&q=80)
+![Vintage Brass and Crystal Parrot Sconce — additional photo 1](https://showponypalmbeach.com/product-images/render/img3024-1786193777485.webp?width=640&quality=80&resize=contain&format=webp&v=2)![Vintage Brass and Crystal Parrot Sconce — additional photo 2](https://showponypalmbeach.com/product-images/render/img3018-1786193778794.webp?width=640&quality=80&resize=contain&format=webp&v=2)![Vintage Brass and Crystal Parrot Sconce — additional photo 3](https://showponypalmbeach.com/product-images/render/img3023-1786193780124.webp?width=640&quality=80&resize=contain&format=webp&v=2)![Vintage Brass and Crystal Parrot Sconce — additional photo 4](https://showponypalmbeach.com/product-images/render/img3020-1786193781563.webp?width=640&quality=80&resize=contain&format=webp&v=2)![Vintage Brass and Crystal Parrot Sconce — additional photo 5](https://showponypalmbeach.com/product-images/render/img3021-1786193783103.webp?width=640&quality=80&resize=contain&format=webp&v=2)![Vintage Brass and Crystal Parrot Sconce — additional photo 6](https://showponypalmbeach.com/product-images/render/img3022-1786193784634.webp?width=640&quality=80&resize=contain&format=webp&v=2)![Vintage Brass and Crystal Parrot Sconce — additional photo 7](https://showponypalmbeach.com/product-images/render/img3017-1786193785987.webp?width=640&quality=80&resize=contain&format=webp&v=2)
+[Home](https://showponypalmbeach.com/) / [Shop](https://showponypalmbeach.com/shop) / Lighting / Sconces
+# Vintage Brass and Crystal Parrot Sconce
+895.00 USD
+**Available**
+## Description
+A vintage brass and crystal sconce, featuring a detailed parrot motif, exemplifies the decorative artistry of early to mid-20th-century lighting design. Crafted from metal and glass, the sconce showcases a rich brass finish that has developed a pleasing patina, indicative of its age and quality materials. The central parrot figure is meticulously cast, displaying intricate feather detailing and a poised stance atop a rounded brass orb, adding a whimsical yet elegant focal point. The sconce includes two gracefully curved arms, each supporting a faux candle sleeve, subtly mimicking the appearance of dripping wax. Decorative glass drops, in hues of amber and clear, hang gracefully from each arm, catching light and enhancing the sconce's visual appeal. These elements are intact and well-maintained, complementing the sconce's overall aesthetic. Minor surface wear is visible on the arms and backplate, consistent with careful handling and age. Measuring 9.25 inches in width, 11 inches in height, and extending 6 inches from the wall, the piece is well-proportioned for various interior settings. Its charming design and quality craftsmanship make it a distinctive example of vintage lighting, appealing to collectors and enthusiasts of decorative arts.
+## Details Condition
+    Very Good Condition notes
+    The sconce retains its original brass finish with a pleasing patina appropriate for its age. Minor surface wear is visible on the arms and backplate, consistent with careful handling. All decorative elements, including the glass drops, are intact and well-preserved. Period
+    Mid 20th Century Style
+    Hollywood Regency Materials
+    Metal, Glass Dimensions
+    Width 9.25 inches × Depth 6 inches × Height 11 inches Item number
+    SP0826-OW-610353
+Delivery charges depend on the item and destination. Check delivery options before purchasing. Local pickup can be arranged in West Palm Beach.
+Returns require contact within 2 days of delivery for an item significantly not as described or a wrong item; change of mind is not eligible. Review the full policy before purchasing.
+[Shipping & delivery information](https://showponypalmbeach.com/shipping) · [Returns policy](https://showponypalmbeach.com/returns)
+[Browse available pieces](https://showponypalmbeach.com/shop) · [Visit or contact Show Pony Palm Beach](https://showponypalmbeach.com/about)
+Currency: USD
+Display currencyAutomatic (network location) USD · US dollar EUR · Euro GBP · British pound CAD · Canadian dollar AUD · Australian dollar NZD · New Zealand dollar JPY · Japanese yen CHF · Swiss franc CZK · Czech koruna DKK · Danish krone HUF · Hungarian forint PLN · Polish zloty RON · Romanian leu SEK · Swedish krona ISK · Icelandic krona NOK · Norwegian krone TRY · Turkish lira BRL · Brazilian real CNY · Chinese yuan HKD · Hong Kong dollar IDR · Indonesian rupiah ILS · Israeli shekel INR · Indian rupee KRW · South Korean won MXN · Mexican peso MYR · Malaysian ringgit PHP · Philippine peso SGD · Singapore dollar THB · Thai baht ZAR · South African rand
+Approx. network country: United States · Prices shown in USD. Checkout, offers and price filters use USD.
+
