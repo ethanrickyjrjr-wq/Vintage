@@ -49,7 +49,7 @@ Keep the entire photographed mannequin/display support with anything placed on i
 
 The pixels-kept check runs **before** trimming, resizing and lossy encoding: at least 99% of alpha≥250 pixels must differ by at most 3/255. An empty opaque set fails. Mask-only recomposition is exactly 100%; decontaminated and naive arms are measured independently. WebP decoding loss is recorded separately in `encoding_comparison` and must not be described as a failed mask or as a pixel-identical final file.
 
-No channel exports are produced in this pilot. Current available source subjects are below 1500 pixels; upscaling to 2048 would not fix that. `media/` contains no alpha files. A future approved rollout must obtain suitable originals and emit flattened, undecorated sRGB JPEGs with the source original retained.
+No channel exports are produced in this pilot. Its selected JPEG source subjects are below 1500 pixels; upscaling those inputs to 2048 would not add detail. Larger site WebPs exist; verify their source provenance before treating them as higher-detail channel inputs. `media/` contains no alpha files. A future approved rollout must obtain suitable originals and emit flattened, undecorated sRGB JPEGs with the source original retained.
 
 Capture the page at 1440, 390 and 320 CSS pixels in both themes for each style, into `artifacts/pilot/`. Results and remaining photo limitations are in `docs/cutout-pilot-results.md`. Commit only named pilot paths; never stage `media/`, `.venv/`, artifacts, or another session's work. Publishing and catalog rollout wait for the owner's style choice.
 

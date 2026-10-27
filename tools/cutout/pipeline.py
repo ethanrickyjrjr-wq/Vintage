@@ -365,7 +365,7 @@ def sheets(items, manifest):
             for column, content in enumerate(texts):
                 wrapped = "\n".join(textwrap.fill(line, 43 if column < 2 else 58) for line in content.splitlines())
                 td.multiline_text((edges[column + 1], y), wrapped, font=font, fill="#451c2b", spacing=7)
-        td.text((30, 1100), "No complete listing-ready set. All current sources are below the 1500 px subject threshold. No channel files exported.", font=font, fill="#451c2b")
+        td.text((30, 1100), "Pilot JPEG inputs are below 1500 px subject size. Verify larger-source provenance before channel exports; none produced here.", font=font, fill="#451c2b")
         td.text((30, 1135), "Source RGB + selected alpha is 100% unchanged before resizing and lossy WebP. Owner review is still required.", font=font, fill="#451c2b")
         table.save(ROOT / "artifacts/pilot/pass-fail.jpg", quality=94)
 

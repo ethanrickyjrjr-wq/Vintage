@@ -19,7 +19,7 @@ The urn lamp's shade is clipped at the top. The dress form, harness and jacket o
 
 Owner direction: **retain complete photographed display supports**. B6 includes the entire mannequin head, neck and base with the feather hat. A22 and B10 use the full scene source and retain the supporting forms, clothing and visible chair; alpha-only support masks recover chair areas omitted by the model. B7 keeps the original photograph because the automatic mask omits chair parts. Source camera framing is preserved, with no additional crop through a support and no reconstruction. This rule is also recorded in the handoff and enforced by the input-crop guard in the pipeline.
 
-The archived photo JPEGs are 1050×1400, and the crop sources are at most 1400 pixels along their long side. Some site WebPs are larger derivatives, not higher-resolution originals. None qualifies for a 1500-pixel source-subject channel export; no channel JPEGs are manufactured by upscaling.
+The JPEG inputs used for these trials are 1050×1400, and the selected crop inputs are at most 1400 pixels along their long side. Some site WebPs are 2048×2731; their provenance as higher-detail sources has not been established, so larger dimensions alone were not treated as proof of additional detail. Channel eligibility here applies to the recorded JPEG inputs, not every file in the repository. Verify the larger sources or obtain camera originals before channel export; no channel JPEGs are manufactured by upscaling these inputs.
 
 ## Actual collection colours
 
