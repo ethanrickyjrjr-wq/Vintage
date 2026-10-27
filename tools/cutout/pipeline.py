@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import textwrap
 import time
 
 import numpy as np
@@ -19,6 +20,7 @@ MEDIA = ROOT / "media"
 CONFIG = json.loads((Path(__file__).parent / "items.json").read_text())
 TEST_IDS = {"A1", "A2", "A10", "B9"}
 HR_REV = "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f"
+HR_SHA256 = "a5a4de698739ea5e0e8bbab28e1b293dde95092b87a442d566cbc585c53cef55"
 os.environ.setdefault("U2NET_HOME", str(ROOT / ".venv/models/rembg"))
 os.environ.setdefault("OMP_NUM_THREADS", "8")
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
@@ -52,7 +54,7 @@ def save_manifest(manifest):
     manifest["models"] = {
         "general": {"name": "birefnet-general", "licence": "MIT", "expected_md5": "7a35a0141cbbc80de11d9c9a28f52697",
                     "url": "https://huggingface.co/ZhengPeng7/BiRefNet"},
-        "matting": {"name": "ZhengPeng7/BiRefNet_HR-matting", "revision": HR_REV, "licence": "MIT"}}
+        "matting": {"name": "ZhengPeng7/BiRefNet_HR-matting", "revision": HR_REV, "licence": "MIT", "sha256": HR_SHA256}}
     write_json(MEDIA / "manifest.json", manifest)
 
 
@@ -139,7 +141,8 @@ def general(items, manifest):
                   "decontamination_seconds": round(decontamination, 3), "pixels_kept": pixels_kept(source, decontaminated)},
             "A0": {"tool": "rembg naive_cutout; same predicted mask, no decontamination", "pixels_kept": pixels_kept(source, naive)},
             "preserved": {"tool": "original RGB + BiRefNet general alpha", "pixels_kept": pixels_kept(source, preserved)},
-            "C": {"tool": "no cut; unchanged source pixels", "seconds": 0, "pixels_kept": {"pass": True, "within_3_share": 1}}})
+            "C": {"tool": "no cut; unchanged source pixels", "seconds": 0, "timing_scope": "no model inference; I/O excluded",
+                  "pixels_kept": {"pass": True, "within_3_share": 1}}})
         save_manifest(manifest)
         print(f'{key}: A {inference + decontamination:.2f}s, pixels {manifest["trials"][key]["A"]["pixels_kept"]}', flush=True)
 
@@ -150,6 +153,7 @@ def matting(items, manifest):
     from transformers import AutoModelForImageSegmentation
     torch.set_num_threads(8)
     model_path = ROOT / ".venv/models/BiRefNet_HR-matting"
+    assert digest(model_path / "model.safetensors") == HR_SHA256, "Unexpected HR model weights"
     started = time.perf_counter()
     # Downloaded at HR_REV; model code reviewed before this local-only load.
     model = AutoModelForImageSegmentation.from_pretrained(str(model_path), trust_remote_code=True,
@@ -212,6 +216,10 @@ def export(items, manifest):
         record = manifest["items"][key]
         record.update(item)
         if item["mode"] == "keep":
+            for suffix in ("", "--480"):
+                (OUT / f"{key}{suffix}.webp").unlink(missing_ok=True)
+            for field in ("exports", "pixels_kept", "alpha_bbox_px", "subject_long_edge_prepared_px"):
+                record.pop(field, None)
             pilot.append({**item, "cutout": None, "result": "Original retained", "pixelsKept": None})
             record["selected_tool"] = "no cut; original retained"
             record["channel_status"] = "needs re-shoot: glass or obscured item"
@@ -254,9 +262,14 @@ def export(items, manifest):
             assert target.stat().st_size <= 200_000, f"{key}: file budget exceeded"
             decoded = Image.open(target).convert("RGBA")
             # Report encoding loss separately; this is not the mask provenance test.
+            encoding = pixels_kept(image, decoded)
+            encoding.pop("pass")
+            encoding["stage"] = "lossy WebP round-trip; not the mask integrity test"
+            alpha_exact = np.array_equal(np.asarray(image.getchannel("A")), np.asarray(decoded.getchannel("A")))
+            assert alpha_exact, f"{key}: alpha changed during encoding"
             record["exports"].append({"path": str(target.relative_to(ROOT)), "px": size, "bytes": target.stat().st_size,
-                                      "quality": quality, "alpha_quality": 100,
-                                      "encoding_comparison": pixels_kept(image, decoded)})
+                                      "quality": quality, "alpha_quality": 100, "alpha_exact": alpha_exact,
+                                      "encoding_comparison": encoding})
         pilot.append({**item, "cutout": f"assets/cutouts/{key}.webp", "result": "Perspective crop" if item["mode"] == "flat" else "Mask study",
                       "pixelsKept": record["pixels_kept"]})
     save_manifest(manifest)
@@ -267,12 +280,13 @@ def sheets(items, manifest):
     font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 18)
     heading = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", 25)
     # Each arm is inspected at grid size and in a true 1:1 source crop.
-    for key in sorted(TEST_IDS):
+    tested = [item["id"] for item in items if item["id"] in TEST_IDS]
+    for key in tested:
         source = Image.open(WORK / f"{key}-source.png").convert("RGBA")
         item = next(v for v in items if v["id"] == key)
         sheet = Image.new("RGB", (1800, 1240), "#f6efdf")
         draw = ImageDraw.Draw(sheet)
-        draw.text((20, 14), f"{key} / A general -dc / B HR matting / C original / lower panels: 100% crops", font=heading, fill="#451c2b")
+        draw.text((20, 14), f"{key} / A general -dc / B HR matting / C original / right panels: 100% crops", font=heading, fill="#451c2b")
         # Default crop includes the middle of the hard area, refined per image after inspection.
         focus = item.get("focus", [.5, .5])
         for column, arm in enumerate(("A", "B", "C")):
@@ -292,11 +306,52 @@ def sheets(items, manifest):
                 sheet.paste(panel.convert("RGB"), (x + 305, y + 25))
                 draw.text((x + 14, y + 350), f"{arm}  {background}  |  right: 1:1", font=font, fill="#451c2b")
         sheet.save(ROOT / f"artifacts/pilot/test-{key}.jpg", quality=92)
-    overview = Image.new("RGB", (1800, 1240 * 4), "#f6efdf")
-    for i, key in enumerate(sorted(TEST_IDS)):
+    overview = Image.new("RGB", (1800, 1240 * len(tested)), "#f6efdf")
+    for i, key in enumerate(tested):
         overview.paste(Image.open(ROOT / f"artifacts/pilot/test-{key}.jpg"), (0, i * 1240))
     overview.save(ROOT / "artifacts/pilot/mask-contact-sheet.jpg", quality=90)
     write_json(ROOT / "artifacts/pilot/trial-results.json", manifest["trials"])
+    if set(tested) == TEST_IDS:
+        verdicts = {
+            "A1": ["FAIL as-is: adjacent Elvis frame selected. Lamp edge is usable.",
+                   "FAIL: stray hanger, softened foot and adjacent frame remain.",
+                   "General alpha plus a rectangular exclusion of the adjacent frame. Layout only: shade clipped, foot obscured."],
+            "A2": ["FAIL glass: gaps improve, but shards look opaque.",
+                   "FAIL glass: background haze and uneven translucency.",
+                   "Keep the original. Re-shoot on a seamless backdrop."],
+            "A10": ["FAIL glass: old wall remains inside opaque-looking bowls.",
+                    "FAIL: most glasses disappear; unrelated clothing remains.",
+                    "Keep the original. Re-shoot glass with defined edges."],
+            "B9": ["PASS layout: boots, fringe, toes and soles remain. Source is soft.",
+                   "FAIL: shafts and most fringe are erased; only toe areas remain.",
+                   "General alpha for layout only. Re-shoot for sharp fringe and listing resolution."]}
+        audit = {"versions": manifest["versions"], "models": manifest["models"],
+                 "session_load_seconds": {"general": manifest["general_session_load_seconds"],
+                                          "matting": manifest["matting_session_load_seconds"]},
+                 "trials": {key: manifest["trials"][key] for key in tested}, "visual_review": verdicts,
+                 "items": {key: value for key, value in manifest["items"].items()}}
+        write_json(ROOT / "tools/cutout/pilot-audit.json", audit)
+        table = Image.new("RGB", (1760, 1190), "#f6efdf")
+        td = ImageDraw.Draw(table)
+        td.text((30, 25), "Hollywood & Vine / mask pilot / 27 October 2026", font=heading, fill="#451c2b")
+        td.text((30, 70), "CPU / A: general -dc / B: HR-matting 2048 / C: original, no inference", font=font, fill="#451c2b")
+        td.text((30, 102), "All opaque-pixel checks PASS. That proves RGB retention, not correct coverage; judge the masks by eye.", font=font, fill="#451c2b")
+        edges = [30, 195, 645, 1095, 1730]
+        for x, title in zip(edges, ("Item", "A / general", "B / HR matting", "Decision")):
+            td.text((x, 155), title, font=heading, fill="#451c2b")
+        for row, key in enumerate(tested):
+            y = 205 + row * 215
+            td.line((30, y - 10, 1730, y - 10), fill="#451c2b", width=1)
+            td.text((30, y), key, font=heading, fill="#451c2b")
+            trial = manifest["trials"][key]
+            texts = [f'{trial["A"]["seconds"]:.2f} s\n' + verdicts[key][0],
+                     f'{trial["B"]["seconds"]:.2f} s\n' + verdicts[key][1], verdicts[key][2]]
+            for column, content in enumerate(texts):
+                wrapped = "\n".join(textwrap.fill(line, 43 if column < 2 else 58) for line in content.splitlines())
+                td.multiline_text((edges[column + 1], y), wrapped, font=font, fill="#451c2b", spacing=7)
+        td.text((30, 1100), "No complete listing-ready set. All current sources are below the 1500 px subject threshold. No channel files exported.", font=font, fill="#451c2b")
+        td.text((30, 1135), "Source RGB + selected alpha is 100% unchanged before resizing and lossy WebP. Owner review is still required.", font=font, fill="#451c2b")
+        table.save(ROOT / "artifacts/pilot/pass-fail.jpg", quality=94)
 
 
 if __name__ == "__main__":
