@@ -1,0 +1,1092 @@
+{
+  "versions": {
+    "rembg": "2.0.86",
+    "Pillow": "12.3.0",
+    "numpy": "2.5.4",
+    "onnxruntime": "1.31.1",
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "transformers": "4.57.6",
+    "timm": "1.0.27",
+    "kornia": "0.8.3",
+    "einops": "0.8.2",
+    "safetensors": "0.7.0"
+  },
+  "models": {
+    "general": {
+      "name": "birefnet-general",
+      "licence": "MIT",
+      "expected_md5": "7a35a0141cbbc80de11d9c9a28f52697",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet"
+    },
+    "matting": {
+      "name": "ZhengPeng7/BiRefNet_HR-matting",
+      "revision": "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f",
+      "licence": "MIT",
+      "sha256": "a5a4de698739ea5e0e8bbab28e1b293dde95092b87a442d566cbc585c53cef55"
+    }
+  },
+  "session_load_seconds": {
+    "general": 9.15,
+    "matting": 6.17
+  },
+  "trials": {
+    "A1": {
+      "A": {
+        "tool": "rembg 2.0.86",
+        "flags": "-m birefnet-general -dc",
+        "provider": "CPUExecutionProvider",
+        "seconds": 15.049,
+        "inference_seconds": 14.87,
+        "decontamination_seconds": 0.179,
+        "pixels_kept": {
+          "within_3_share": 0.9985490398057538,
+          "opaque_share": 0.4491633419788436,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "A0": {
+        "tool": "rembg naive_cutout; same predicted mask, no decontamination",
+        "pixels_kept": {
+          "within_3_share": 0.9997527775733942,
+          "opaque_share": 0.4491633419788436,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "preserved": {
+        "tool": "original RGB + BiRefNet general alpha",
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.4491633419788436,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "C": {
+        "tool": "no cut; unchanged source pixels",
+        "seconds": 0,
+        "pixels_kept": {
+          "pass": true,
+          "within_3_share": 1
+        }
+      },
+      "B": {
+        "tool": "BiRefNet_HR-matting",
+        "revision": "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "device": "CPU fp32",
+        "seconds": 115.461,
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.3831494509968776,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      }
+    },
+    "A2": {
+      "A": {
+        "tool": "rembg 2.0.86",
+        "flags": "-m birefnet-general -dc",
+        "provider": "CPUExecutionProvider",
+        "seconds": 17.481,
+        "inference_seconds": 17.176,
+        "decontamination_seconds": 0.305,
+        "pixels_kept": {
+          "within_3_share": 0.9979126540733319,
+          "opaque_share": 0.49765374149659863,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "A0": {
+        "tool": "rembg naive_cutout; same predicted mask, no decontamination",
+        "pixels_kept": {
+          "within_3_share": 0.9987232605792351,
+          "opaque_share": 0.49765374149659863,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "preserved": {
+        "tool": "original RGB + BiRefNet general alpha",
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.49765374149659863,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "C": {
+        "tool": "no cut; unchanged source pixels",
+        "seconds": 0,
+        "pixels_kept": {
+          "pass": true,
+          "within_3_share": 1
+        }
+      },
+      "B": {
+        "tool": "BiRefNet_HR-matting",
+        "revision": "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "device": "CPU fp32",
+        "seconds": 118.557,
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.09922380952380952,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      }
+    },
+    "A10": {
+      "A": {
+        "tool": "rembg 2.0.86",
+        "flags": "-m birefnet-general -dc",
+        "provider": "CPUExecutionProvider",
+        "seconds": 11.382,
+        "inference_seconds": 11.201,
+        "decontamination_seconds": 0.181,
+        "pixels_kept": {
+          "within_3_share": 0.9986200090662195,
+          "opaque_share": 0.2862620578778135,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "A0": {
+        "tool": "rembg naive_cutout; same predicted mask, no decontamination",
+        "pixels_kept": {
+          "within_3_share": 0.9993300625408682,
+          "opaque_share": 0.2862620578778135,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "preserved": {
+        "tool": "original RGB + BiRefNet general alpha",
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.2862620578778135,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "C": {
+        "tool": "no cut; unchanged source pixels",
+        "seconds": 0,
+        "pixels_kept": {
+          "pass": true,
+          "within_3_share": 1
+        }
+      },
+      "B": {
+        "tool": "BiRefNet_HR-matting",
+        "revision": "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "device": "CPU fp32",
+        "seconds": 118.274,
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.06695796968305007,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      }
+    },
+    "B9": {
+      "A": {
+        "tool": "rembg 2.0.86",
+        "flags": "-m birefnet-general -dc",
+        "provider": "CPUExecutionProvider",
+        "seconds": 11.354,
+        "inference_seconds": 11.087,
+        "decontamination_seconds": 0.268,
+        "pixels_kept": {
+          "within_3_share": 0.9999980881149578,
+          "opaque_share": 0.35014325880305264,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "A0": {
+        "tool": "rembg naive_cutout; same predicted mask, no decontamination",
+        "pixels_kept": {
+          "within_3_share": 0.9999751454944517,
+          "opaque_share": 0.35014325880305264,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "preserved": {
+        "tool": "original RGB + BiRefNet general alpha",
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.35014325880305264,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      },
+      "C": {
+        "tool": "no cut; unchanged source pixels",
+        "seconds": 0,
+        "pixels_kept": {
+          "pass": true,
+          "within_3_share": 1
+        }
+      },
+      "B": {
+        "tool": "BiRefNet_HR-matting",
+        "revision": "5d6b6f8adcb5b417c871b1d84ceaae9871355b7f",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "device": "CPU fp32",
+        "seconds": 120.808,
+        "pixels_kept": {
+          "within_3_share": 1.0,
+          "opaque_share": 0.0217572633552015,
+          "pass": true,
+          "stage": "before trim, resizing and lossy encoding"
+        }
+      }
+    }
+  },
+  "visual_review": {
+    "A1": [
+      "FAIL as-is: adjacent Elvis frame selected. Lamp edge is usable.",
+      "FAIL: stray hanger, softened foot and adjacent frame remain.",
+      "General alpha plus a rectangular exclusion of the adjacent frame. Layout only: shade clipped, foot obscured."
+    ],
+    "A2": [
+      "FAIL glass: gaps improve, but shards look opaque.",
+      "FAIL glass: background haze and uneven translucency.",
+      "Keep the original. Re-shoot on a seamless backdrop."
+    ],
+    "A10": [
+      "FAIL glass: old wall remains inside opaque-looking bowls.",
+      "FAIL: most glasses disappear; unrelated clothing remains.",
+      "Keep the original. Re-shoot glass with defined edges."
+    ],
+    "B9": [
+      "PASS layout: boots, fringe, toes and soles remain. Source is soft.",
+      "FAIL: shafts and most fringe are erased; only toe areas remain.",
+      "General alpha for layout only. Re-shoot for sharp fringe and listing resolution."
+    ]
+  },
+  "items": {
+    "A1": {
+      "id": "A1",
+      "source": "assets/photos/IMG_6616.jpg",
+      "mode": "cut",
+      "fit": "tall",
+      "anchor": "bottom",
+      "scale": 1,
+      "size": "",
+      "crop": [
+        0.1,
+        0,
+        0.72,
+        0.83
+      ],
+      "note": "Shade is clipped and the foot is hidden by the adjacent Elvis frame. Alpha excludes that frame; no missing part is reconstructed.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        651,
+        1162
+      ],
+      "source_sha256": "6173bb7adc700b6e99cef787f436ca18a112f54f62342ad1136beb213052788c",
+      "original_sha256": "6173bb7adc700b6e99cef787f436ca18a112f54f62342ad1136beb213052788c",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "pilot; visual review required",
+      "selected_tool": "original RGB + birefnet-general alpha; alpha-only exclusion of adjacent frame",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.43082269829812997,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        18,
+        0,
+        584,
+        1086
+      ],
+      "subject_long_edge_prepared_px": 1086,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\A1.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 86616,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.38655317545887946,
+            "opaque_share": 0.2672951388888889,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\A1--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 25624,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.35612088902826233,
+            "opaque_share": 0.2657395833333333,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ],
+      "maskLimit": [
+        0,
+        0,
+        1,
+        0.935
+      ],
+      "layoutTest": true,
+      "focus": [
+        0.48,
+        0.61
+      ]
+    },
+    "A2": {
+      "id": "A2",
+      "source": "assets/photos/IMG_6614.jpg",
+      "mode": "keep",
+      "fit": "wide",
+      "anchor": "top",
+      "scale": 0.94,
+      "size": "",
+      "note": "Both glass tests fail: opaque shards in A, background haze in B. Original retained; re-shoot on a seamless backdrop.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        1050,
+        1400
+      ],
+      "source_sha256": "e20a881fa01c7eb46d74b2cabab14013e8d2c697c050c6b9b4b9728ebd5f493c",
+      "original_sha256": "e20a881fa01c7eb46d74b2cabab14013e8d2c697c050c6b9b4b9728ebd5f493c",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot: glass or obscured item",
+      "status": "pilot; visual review required",
+      "selected_tool": "no cut; original retained",
+      "focus": [
+        0.5,
+        0.3
+      ]
+    },
+    "A22": {
+      "id": "A22",
+      "source": "assets/photos/IMG_6607.jpg",
+      "mode": "cut",
+      "fit": "tall",
+      "anchor": "bottom",
+      "scale": 1,
+      "size": "",
+      "crop": [
+        0.31,
+        0.15,
+        0.76,
+        0.99
+      ],
+      "layoutTest": true,
+      "note": "Form is partly obscured by clothing and the chair; layout test only.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        472,
+        1176
+      ],
+      "source_sha256": "727e76969fc30fa50d8ebdcf9f263d7deb06c3972b269c79059c15fa05ebe6b2",
+      "original_sha256": "727e76969fc30fa50d8ebdcf9f263d7deb06c3972b269c79059c15fa05ebe6b2",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "layout test",
+      "selected_tool": "original RGB + birefnet-general alpha",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.5743164850686037,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        0,
+        0,
+        373,
+        1176
+      ],
+      "subject_long_edge_prepared_px": 1176,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\A22.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 74354,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.3634313618761761,
+            "opaque_share": 0.22326736111111112,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\A22--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 29120,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.24126323041272624,
+            "opaque_share": 0.2217638888888889,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ]
+    },
+    "A10": {
+      "id": "A10",
+      "source": "assets/crops/IMG_6610_glass.jpg",
+      "mode": "keep",
+      "fit": "small",
+      "anchor": "bottom",
+      "scale": 0.84,
+      "size": "",
+      "layoutTest": true,
+      "note": "Glass control: shelf photo retained; needs a seamless-backdrop re-shoot.",
+      "source_px": [
+        1400,
+        622
+      ],
+      "prepared_px": [
+        1400,
+        622
+      ],
+      "source_sha256": "10c262d742652c179633ce7f1101f84cb58a43086c9b6ae686f3d9256bf52b5e",
+      "original_sha256": "10c262d742652c179633ce7f1101f84cb58a43086c9b6ae686f3d9256bf52b5e",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot: glass or obscured item",
+      "status": "layout test",
+      "selected_tool": "no cut; original retained",
+      "focus": [
+        0.25,
+        0.5
+      ]
+    },
+    "B6": {
+      "id": "B6",
+      "source": "assets/photos/IMG_6611.jpg",
+      "mode": "cut",
+      "fit": "small",
+      "anchor": "center",
+      "scale": 0.96,
+      "size": "",
+      "crop": [
+        0.02,
+        0.1,
+        0.79,
+        0.61
+      ],
+      "note": "Hat is shown on its display head. Some feathers overlap it, so the prop remains; needs an isolated re-shoot.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        809,
+        714
+      ],
+      "source_sha256": "5fc5dfd581a934ff5bc484dbd165c04de1e3e1c85a9e1a3bcb9baa29a6b40138",
+      "original_sha256": "5fc5dfd581a934ff5bc484dbd165c04de1e3e1c85a9e1a3bcb9baa29a6b40138",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "pilot; visual review required",
+      "selected_tool": "original RGB + birefnet-general alpha",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.7626197574208917,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        0,
+        0,
+        783,
+        714
+      ],
+      "subject_long_edge_prepared_px": 783,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\B6.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 83814,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.38900549200685625,
+            "opaque_share": 0.29778125,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\B6--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 33354,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.23695886937740632,
+            "opaque_share": 0.29580555555555554,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ],
+      "layoutTest": true
+    },
+    "B7": {
+      "id": "B7",
+      "source": "assets/photos/IMG_6612.jpg",
+      "mode": "keep",
+      "fit": "tall",
+      "anchor": "top",
+      "scale": 0.9,
+      "size": "",
+      "crop": [
+        0.24,
+        0.17,
+        0.69,
+        0.91
+      ],
+      "layoutTest": true,
+      "note": "Mask also selects the yellow garment and chair. Original retained; the harness needs its own photograph.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        472,
+        1036
+      ],
+      "source_sha256": "f1612b010c51bc9d70954c6c15b7bea1cd9a4900a96eec953637eaff5e766944",
+      "original_sha256": "f1612b010c51bc9d70954c6c15b7bea1cd9a4900a96eec953637eaff5e766944",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot: glass or obscured item",
+      "status": "layout test",
+      "selected_tool": "no cut; original retained",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.5848561939663635,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        61,
+        0,
+        472,
+        1036
+      ],
+      "subject_long_edge_prepared_px": 1036,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\B7.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 66852,
+          "quality": 82,
+          "alpha_quality": 100,
+          "encoding_comparison": {
+            "within_3_share": 0.49831111769020114,
+            "opaque_share": 0.2580190972222222,
+            "pass": false,
+            "stage": "before trim, resizing and lossy encoding"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\B7--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 28136,
+          "quality": 82,
+          "alpha_quality": 100,
+          "encoding_comparison": {
+            "within_3_share": 0.35226025076245343,
+            "opaque_share": 0.25616319444444446,
+            "pass": false,
+            "stage": "before trim, resizing and lossy encoding"
+          }
+        }
+      ]
+    },
+    "B9": {
+      "id": "B9",
+      "source": "assets/crops/IMG_6612_boots.jpg",
+      "mode": "cut",
+      "fit": "small",
+      "anchor": "bottom",
+      "scale": 0.94,
+      "size": "",
+      "layoutTest": true,
+      "note": "Boots and fringe remain limited by the soft scene crop; use for layout only and re-shoot for listings.",
+      "source_px": [
+        1400,
+        1067
+      ],
+      "prepared_px": [
+        1400,
+        1067
+      ],
+      "source_sha256": "daeb876a57888a90e9b8d09e1dabd778808e0bcc1256291448ad215d3545ba27",
+      "original_sha256": "daeb876a57888a90e9b8d09e1dabd778808e0bcc1256291448ad215d3545ba27",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "layout test",
+      "selected_tool": "original RGB + birefnet-general alpha",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.35014325880305264,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        54,
+        186,
+        1100,
+        975
+      ],
+      "subject_long_edge_prepared_px": 1046,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\B9.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 29932,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.7296072705941067,
+            "opaque_share": 0.19828732638888888,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\B9--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 14060,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.572983298575209,
+            "opaque_share": 0.1981284722222222,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ],
+      "focus": [
+        0.27,
+        0.49
+      ]
+    },
+    "B1": {
+      "id": "B1",
+      "source": "assets/crops/IMG_6617_coat.jpg",
+      "mode": "cut",
+      "fit": "tall",
+      "anchor": "top",
+      "scale": 1,
+      "size": "",
+      "layoutTest": true,
+      "note": "Narrow scene crop; no face is included. Needs an unobscured re-shoot.",
+      "source_px": [
+        420,
+        1400
+      ],
+      "prepared_px": [
+        420,
+        1400
+      ],
+      "source_sha256": "473a1ae5d76ddbfdff65efbd210f506fe0ea692878c7ca9f9bd13461b1df147b",
+      "original_sha256": "473a1ae5d76ddbfdff65efbd210f506fe0ea692878c7ca9f9bd13461b1df147b",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "layout test",
+      "selected_tool": "original RGB + birefnet-general alpha",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.7642840136054422,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        0,
+        0,
+        420,
+        1387
+      ],
+      "subject_long_edge_prepared_px": 1387,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\B1.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 32536,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.7111220189361547,
+            "opaque_share": 0.22636371527777777,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\B1--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 15520,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.5854665053212945,
+            "opaque_share": 0.2238125,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ]
+    },
+    "B10": {
+      "id": "B10",
+      "source": "assets/crops/IMG_6607_jacket.jpg",
+      "mode": "cut",
+      "fit": "tall",
+      "anchor": "top",
+      "scale": 0.96,
+      "size": "",
+      "layoutTest": true,
+      "note": "Jacket overlaps necklaces and a hanger; layout test only.",
+      "source_px": [
+        787,
+        1400
+      ],
+      "prepared_px": [
+        787,
+        1400
+      ],
+      "source_sha256": "9112876ed0830b2649c1d999cfbeca55e78de00ae689c15b7a6da0ac77ffa6f0",
+      "original_sha256": "9112876ed0830b2649c1d999cfbeca55e78de00ae689c15b7a6da0ac77ffa6f0",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "layout test",
+      "selected_tool": "original RGB + birefnet-general alpha",
+      "pixels_kept": {
+        "within_3_share": 1.0,
+        "opaque_share": 0.7099827554910147,
+        "pass": true,
+        "stage": "before trim, resizing and lossy encoding"
+      },
+      "alpha_bbox_px": [
+        0,
+        0,
+        750,
+        1400
+      ],
+      "subject_long_edge_prepared_px": 1400,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\B10.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 75920,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.5243127444860124,
+            "opaque_share": 0.3865642361111111,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\B10--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 30056,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.36662860457107643,
+            "opaque_share": 0.38314583333333335,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ]
+    },
+    "A3": {
+      "id": "A3",
+      "source": "assets/photos/IMG_6609.jpg",
+      "mode": "flat",
+      "fit": "wide",
+      "anchor": "center",
+      "scale": 0.98,
+      "size": "",
+      "layoutTest": true,
+      "quad": [
+        [
+          0.1476,
+          0.0043
+        ],
+        [
+          0.934,
+          0.064
+        ],
+        [
+          0.976,
+          0.973
+        ],
+        [
+          0.1476,
+          0.983
+        ]
+      ],
+      "note": "Perspective crop only; glare and the partly obscured right edge remain. Needs a square-on re-shoot.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        1050,
+        1400
+      ],
+      "source_sha256": "2654c10467bfa3fd17a70a1c76441e4dbdb84a970b00066647140c56fdf295c0",
+      "original_sha256": "2654c10467bfa3fd17a70a1c76441e4dbdb84a970b00066647140c56fdf295c0",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "layout test",
+      "selected_tool": "Pillow quadrilateral rectification; no synthesis",
+      "pixels_kept": {
+        "pass": true,
+        "stage": "geometric source sampling only; no segmentation or retouching"
+      },
+      "alpha_bbox_px": [
+        0,
+        0,
+        850,
+        1322
+      ],
+      "subject_long_edge_prepared_px": 1322,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\A3.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 99970,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.442564443416946,
+            "opaque_share": 0.5406875,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\A3--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 35956,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.33009821960763985,
+            "opaque_share": 0.5359305555555556,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ]
+    },
+    "A4": {
+      "id": "A4",
+      "source": "assets/photos/IMG_6613.jpg",
+      "mode": "flat",
+      "fit": "wide",
+      "anchor": "center",
+      "scale": 0.94,
+      "size": "",
+      "layoutTest": true,
+      "quad": [
+        [
+          0.115,
+          0.095
+        ],
+        [
+          0.875,
+          0.005
+        ],
+        [
+          0.885,
+          0.965
+        ],
+        [
+          0.115,
+          0.925
+        ]
+      ],
+      "note": "Perspective crop only; glare, frame wear and the clipped top edge remain.",
+      "source_px": [
+        1050,
+        1400
+      ],
+      "prepared_px": [
+        1050,
+        1400
+      ],
+      "source_sha256": "c9087ac50283801e53cf1e3477055c7243d3a325a3d8269883383ff3bc10a075",
+      "original_sha256": "c9087ac50283801e53cf1e3477055c7243d3a325a3d8269883383ff3bc10a075",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot or visual approval; no channel export in pilot",
+      "status": "layout test",
+      "selected_tool": "Pillow quadrilateral rectification; no synthesis",
+      "pixels_kept": {
+        "pass": true,
+        "stage": "geometric source sampling only; no segmentation or retouching"
+      },
+      "alpha_bbox_px": [
+        0,
+        0,
+        809,
+        1253
+      ],
+      "subject_long_edge_prepared_px": 1253,
+      "exports": [
+        {
+          "path": "site\\assets\\cutouts\\A4.webp",
+          "px": [
+            960,
+            1200
+          ],
+          "bytes": 37308,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.7729658792650919,
+            "opaque_share": 0.5423958333333333,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        },
+        {
+          "path": "site\\assets\\cutouts\\A4--480.webp",
+          "px": [
+            480,
+            600
+          ],
+          "bytes": 13488,
+          "quality": 82,
+          "alpha_quality": 100,
+          "alpha_exact": true,
+          "encoding_comparison": {
+            "within_3_share": 0.696146940673478,
+            "opaque_share": 0.5376319444444444,
+            "stage": "lossy WebP round-trip; not the mask integrity test"
+          }
+        }
+      ]
+    },
+    "A5": {
+      "id": "A5",
+      "source": "assets/crops/IMG_6616_elvis.jpg",
+      "mode": "keep",
+      "fit": "wide",
+      "anchor": "center",
+      "scale": 0.88,
+      "size": "",
+      "layoutTest": true,
+      "soldDemo": true,
+      "note": "Frame is hidden behind another picture. Keep the source photo; signatures are unverified.",
+      "source_px": [
+        1400,
+        971
+      ],
+      "prepared_px": [
+        1400,
+        971
+      ],
+      "source_sha256": "15a8d5d1778eb39c0cb3a9c39c3f189c5fb681a228905eecbea3b56eddace3c2",
+      "original_sha256": "15a8d5d1778eb39c0cb3a9c39c3f189c5fb681a228905eecbea3b56eddace3c2",
+      "colour_profile": "sRGB",
+      "channel_status": "needs re-shoot: glass or obscured item",
+      "status": "layout test",
+      "selected_tool": "no cut; original retained"
+    }
+  }
+}
