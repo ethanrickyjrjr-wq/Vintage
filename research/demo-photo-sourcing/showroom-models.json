@@ -1,0 +1,79 @@
+{
+  "model_viewer": {
+    "url": "https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js",
+    "version": "4.3.1",
+    "license": "Apache-2.0",
+    "sha256": "283b0672384614b4847636c306fc93fe4b1fcadc76d668b4e47f0ca76bcf033b"
+  },
+  "models": {
+    "GlamVelvetSofa": {
+      "source": "KhronosGroup/glTF-Sample-Assets",
+      "page": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlamVelvetSofa",
+      "file": "assets/demo/models/GlamVelvetSofa.glb",
+      "bytes": 3149844,
+      "sha256": "67202c74a1a33377771f162dc7fad612a6c9bd51ee15124c488e9851d9ac5266",
+      "legal": "&copy; 2021, Wayfair, LLC. [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n - Eric Chadwick for Everything"
+    },
+    "ChairDamaskPurplegold": {
+      "source": "KhronosGroup/glTF-Sample-Assets",
+      "page": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ChairDamaskPurplegold",
+      "file": "assets/demo/models/ChairDamaskPurplegold.glb",
+      "bytes": 2028924,
+      "sha256": "9862ff753f25ca6738bf5924afbfde01b794fae73db3f94bcd8cdc7cc570d9bb",
+      "legal": "&copy; 2021, Wayfair. [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n - Eric Chadwick for Models and Textures"
+    },
+    "MaterialsVariantsShoe": {
+      "source": "KhronosGroup/glTF-Sample-Assets",
+      "page": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe",
+      "file": "assets/demo/models/MaterialsVariantsShoe.glb",
+      "bytes": 7833592,
+      "sha256": "e1d7cb190382111e5a5b37b51e9a7f007f7eb2ab1b6185e0188e8d0a0d1265a7",
+      "legal": "&copy; 2021, Shopify. [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n - Shopify for Everthing"
+    },
+    "filmstrip_projector_8mm": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/filmstrip_projector_8mm",
+      "file": "assets/demo/models/filmstrip_projector_8mm/filmstrip_projector_8mm_1k.gltf",
+      "bytes": 3121515,
+      "authors": {
+        "PeterM": "All"
+      },
+      "name": "Filmstrip Projector 8mm",
+      "dimensions_mm": [
+        253.67923080921173,
+        602.6187837123871,
+        345.4076647758484
+      ]
+    },
+    "vintage_oil_lamp": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/vintage_oil_lamp",
+      "file": "assets/demo/models/vintage_oil_lamp/vintage_oil_lamp_1k.gltf",
+      "bytes": 2070002,
+      "authors": {
+        "Monsta3D": "All"
+      },
+      "name": "Vintage Oil Lamp",
+      "dimensions_mm": [
+        219.9999988079071,
+        219.9999913573265,
+        801.6371909276536
+      ]
+    },
+    "horse_statue_01": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/horse_statue_01",
+      "file": "assets/demo/models/horse_statue_01/horse_statue_01_1k.gltf",
+      "bytes": 1283596,
+      "authors": {
+        "Rico Cilliers": "All"
+      },
+      "name": "Horse Statue 01",
+      "dimensions_mm": [
+        163.80367428064346,
+        107.79086500406265,
+        219.97890953571186
+      ]
+    }
+  }
+}

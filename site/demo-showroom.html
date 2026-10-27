@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Holliewood and Vine | Private showroom</title>
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <style>
+    * { box-sizing: border-box; }
+    :root { --burg: #451c2b; --neon: #ff2f92; --line: #451c2b30; }
+    body { margin: 0; background: #fff; color: var(--burg); font: 15px/1.6 "DM Sans", sans-serif; }
+    header, main, footer { width: min(1220px, 92%); margin-inline: auto; }
+    header { padding: 65px 0 38px; border-bottom: 1px solid var(--line); }
+    .eyebrow { font: 11px "Space Mono", monospace; text-transform: uppercase; letter-spacing: .09em; margin: 0; }
+    h1 { font: 500 clamp(38px, 5vw, 72px)/1.1 "Bodoni Moda", serif; margin: 20px 0; max-width: 850px; }
+    h2 { font: 500 clamp(28px, 3.4vw, 42px)/1.15 "Bodoni Moda", serif; margin: 10px 0 12px; }
+    h3 { font: 500 22px/1.25 "Bodoni Moda", serif; margin: 0; }
+    p { margin: 0 0 12px; }
+    header p, section > p { max-width: 760px; }
+    a { color: inherit; text-underline-offset: 4px; }
+    .nav a { display: inline-block; margin: 10px 18px 0 0; font-size: 13px; }
+    section { padding-block: 44px; border-bottom: 1px solid var(--line); }
+    button { font: inherit; color: inherit; }
+    [hidden] { display: none !important; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0; }
+    .chips > span { font: 11px "Space Mono", monospace; text-transform: uppercase; letter-spacing: .08em; margin-right: 4px; min-width: 70px; }
+    .chip { font: 500 12px "Space Mono", monospace; border: 1px solid var(--burg); background: #fff; padding: 8px 12px; cursor: pointer; }
+    .chip:hover { background: #451c2b14; }
+    .chip[aria-pressed="true"] { background: var(--burg); color: #fff; }
+    .chip:focus-visible, .thumb:focus-visible { outline: 3px solid var(--neon); outline-offset: 2px; }
+    .stage { position: relative; height: clamp(380px, 64dvh, 620px); background: #fff; border: 1px solid var(--line); overflow: hidden; transition: background .4s; }
+    model-viewer { width: 100%; height: 100%; --poster-color: transparent; background: transparent; }
+    .stage .status { position: absolute; left: 12px; bottom: 10px; font: 11px "Space Mono", monospace; background: #fffc; padding: 3px 8px; pointer-events: none; }
+    .stage.shooting::after { content: "Shooting the listing photos…"; position: absolute; inset: 0; display: grid; place-items: center; background: #fffe; font: 12px "Space Mono", monospace; letter-spacing: .06em; }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .shots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 12px; }
+    .thumb { border: 1px solid var(--line); background: #fff; padding: 4px 4px 6px; cursor: pointer; font: 11px "Space Mono", monospace; text-align: center; }
+    .thumb img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; display: block; }
+    .thumb:hover { border-color: var(--burg); }
+    .mine { display: flex; gap: 14px; align-items: center; margin: 12px 0; min-height: 0; }
+    .mine img { width: 92px; height: 92px; object-fit: contain; border: 1px solid var(--line); }
+    .small { font-size: 12px; }
+    #credit { margin-top: 14px; }
+    .picker { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 14px; }
+    .picker .chip { white-space: nowrap; }
+    /* cutout lab */
+    .lab-stage { --lab-h: clamp(420px, 66dvh, 640px); position: relative; height: var(--lab-h); border: 1px solid var(--line); display: grid; place-items: center; background: #fff; transition: background .4s; overflow: hidden; }
+    .obj { display: flex; flex-direction: column; align-items: center; }
+    .obj img { display: block; width: auto; max-width: min(80vw, 760px); max-height: calc(var(--lab-h) * .42); filter: hue-rotate(var(--hue, 0deg)); }
+    .main { position: relative; cursor: crosshair; }
+    .main img { position: relative; z-index: 1; }
+    .main::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: -7px; height: 16px; background: radial-gradient(ellipse at center, #0000008c, #0000 70%); filter: blur(4px); }
+    .no-shadow .main::after { display: none; }
+    .reflect { transform: scaleY(-1); margin-top: 0; opacity: .3; -webkit-mask-image: linear-gradient(to bottom, #000, #0000 42%); mask-image: linear-gradient(to bottom, #000, #0000 42%); pointer-events: none; }
+    .no-reflect .reflect { visibility: hidden; }
+    .loupe { position: absolute; width: 170px; height: 170px; border-radius: 50%; border: 2px solid var(--burg); box-shadow: 0 8px 24px #0004; pointer-events: none; z-index: 5; background-color: #fff; background-repeat: no-repeat; }
+    .strip { display: flex; gap: 6px; overflow-x: auto; padding: 10px 0 4px; }
+    .strip .thumb { flex: 0 0 74px; padding: 3px; }
+    .strip .thumb img { aspect-ratio: 1; }
+    .strip .thumb[aria-pressed="true"] { border-color: var(--burg); box-shadow: 0 0 0 2px var(--burg); }
+    .hue { display: flex; align-items: center; gap: 10px; font: 11px "Space Mono", monospace; }
+    .hue input { width: 180px; accent-color: var(--burg); }
+    footer { padding-block: 30px 55px; font-size: 12px; }
+    footer li { margin-bottom: 4px; }
+    @media (max-width: 700px) { header { padding-top: 35px; } .shots { grid-template-columns: repeat(3, 1fr); } .chips > span { min-width: 100%; } .loupe { width: 120px; height: 120px; } }
+    @media (prefers-reduced-motion: reduce) { .stage, .lab-stage { transition: none; } }
+  </style>
+  <script type="module" src="assets/demo/vendor/model-viewer.min.js"></script>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Holliewood &amp; Vine / Private showroom</p>
+    <h1>Every angle.<br />Every color.</h1>
+    <p>What good source material unlocks on a product page. Spin real 3D models, jump to a true side, back or top view, swap colorways, and let one photo drop onto any backdrop. Nothing here is public.</p>
+    <nav class="nav"><a href="#spin">01 Spin it ↓</a><a href="#lab">02 Cutout lab ↓</a><a href="demo-photos.html">All photo matches ↗</a><a href="/demo#your-room">Room editor ↗</a></nav>
+  </header>
+
+  <main>
+    <section id="spin">
+      <p class="eyebrow">01 / Spin it</p>
+      <h2>Real side, back and top views.</h2>
+      <p>These are open-licensed 3D models, not photos. Drag to rotate, scroll to zoom, or tap a view. Each model auto-shoots its own listing photo set, the way a product page gallery would look.</p>
+      <div class="picker" id="picker" role="group" aria-label="Choose a 3D piece"></div>
+      <div class="chips" id="viewChips" role="group" aria-label="Camera view"><span>View</span></div>
+      <div class="chips" id="backChips" role="group" aria-label="Backdrop"><span>Backdrop</span></div>
+      <div class="chips" id="toggleChips" role="group" aria-label="Options"><span>Options</span></div>
+      <div class="chips" id="variantChips" role="group" aria-label="Colorways" hidden><span>Colorway</span></div>
+      <div class="stage" id="stage">
+        <model-viewer id="mv" camera-controls touch-action="pan-y" shadow-intensity="1.1" shadow-softness="0.9" environment-image="neutral" exposure="1.05" interaction-prompt="auto" loading="eager" alt="Interactive 3D model"></model-viewer>
+        <div class="status" id="status" role="status">Loading model…</div>
+      </div>
+      <div class="shots" id="shots" aria-label="Auto-shot listing photos"></div>
+      <div class="mine" id="mine" hidden><img id="mineImg" alt="" /><p class="small" id="mineText"></p></div>
+      <p class="small" id="credit"></p>
+    </section>
+
+    <section id="lab">
+      <p class="eyebrow">02 / Cutout lab</p>
+      <h2>One photo, any scene.</h2>
+      <p>Your 45 transparent cutouts on a switchable backdrop, with a floor shadow, a reflection, a hover zoom into the full-resolution pixels, and an approximate recolor.</p>
+      <div class="chips" id="labBack" role="group" aria-label="Backdrop"><span>Backdrop</span></div>
+      <div class="chips" id="labToggles" role="group" aria-label="Options"><span>Options</span>
+        <label class="hue">Recolor (approx.) <input id="hue" type="range" min="0" max="360" value="0" aria-label="Hue rotation in degrees" /></label>
+      </div>
+      <div class="lab-stage" id="labStage">
+        <div class="obj" id="obj">
+          <div class="main" id="main"><img id="labImg" alt="" /></div>
+          <img id="labRef" class="reflect" alt="" aria-hidden="true" />
+        </div>
+        <div class="loupe" id="loupe" hidden></div>
+      </div>
+      <p class="small" id="labCaption" role="status"></p>
+      <div class="strip" id="strip" role="group" aria-label="Choose a cutout"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Credits.</strong> 3D models open-licensed; the page and files are a private, local demo.</p>
+    <ul id="credits"></ul>
+    <p>3D viewer: Google <a href="https://modelviewer.dev/" target="_blank" rel="noreferrer">&lt;model-viewer&gt;</a> 4.3.1, Apache-2.0, vendored locally. Models marked Poly Haven are CC0 from <a href="https://polyhaven.com/" target="_blank" rel="noreferrer">polyhaven.com</a>. Khronos sample models are CC BY 4.0 from <a href="https://github.com/KhronosGroup/glTF-Sample-Assets" target="_blank" rel="noreferrer">glTF-Sample-Assets</a>. Cutout photos are from pngimg.com (CC BY-NC 4.0): private demo only.</p>
+  </footer>
+
+  <script type="module">
+    const $ = (s) => document.querySelector(s);
+    const node = (tag, attrs = {}, text) => { const n = Object.assign(document.createElement(tag), attrs); if (text != null) n.textContent = text; return n; };
+    const frames = (n) => new Promise((done) => { const tick = () => (--n <= 0 ? done() : requestAnimationFrame(tick)); requestAnimationFrame(tick); });
+    // Backdrops shared by both sections. "room" is Ricky's own shop wall.
+    const BACKDROPS = {
+      White: "#fff",
+      Burgundy: "#451c2b",
+      Neon: "radial-gradient(circle at 50% 40%, #ff5fb0, #7a1450 70%, #2a0a1c)",
+      Gold: "linear-gradient(160deg, #f6e3a6, #c9a24a)",
+      "Your room": "url(assets/photos/IMG_6610--960.webp) center 28% / cover #451c2b",
+    };
+    function backdropChips(host, apply, first = "White") {
+      const chips = Object.entries(BACKDROPS).map(([name, css]) => {
+        const chip = node("button", { type: "button", className: "chip" }, name);
+        chip.addEventListener("click", () => { chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip))); apply(css); });
+        host.append(chip); return chip;
+      });
+      chips.find((c) => c.textContent === first).click();
+    }
+
+    // ---------- 01 Spin it ----------
+    // yaw turns a model's own "front" to the camera; tune per model after looking at it.
+    const MODELS = [
+      { title: "Glam velvet sofa", src: "assets/demo/models/GlamVelvetSofa.glb", yaw: 0, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlamVelvetSofa", credit: "Glam Velvet Sofa, © 2021 Wayfair, LLC, Eric Chadwick. CC BY 4.0." },
+      { title: "Damask lounge chair", src: "assets/demo/models/ChairDamaskPurplegold.glb", yaw: 0, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ChairDamaskPurplegold", credit: "Chair Damask Purple Gold, © 2021 Wayfair. CC BY 4.0." },
+      { title: "Sneaker colorways", src: "assets/demo/models/MaterialsVariantsShoe.glb", yaw: 90, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe", credit: "Materials Variants Shoe, © 2021 Shopify. CC BY 4.0." },
+      { title: "8mm film projector", src: "assets/demo/models/filmstrip_projector_8mm/filmstrip_projector_8mm_1k.gltf", yaw: 90, page: "https://polyhaven.com/a/filmstrip_projector_8mm", credit: "Filmstrip Projector 8mm by PeterM, Poly Haven. CC0.", mine: ["assets/crops/IMG_6610_shelf_top.webp", "A9: your 8mm projector on the gold étagère. Same object type, shot from every side."] },
+      { title: "Vintage oil lamp", src: "assets/demo/models/vintage_oil_lamp/vintage_oil_lamp_1k.gltf", yaw: 0,
+        // The chimney is a BLEND material whose texture has no alpha channel, so it renders as an opaque black rod. Make it smoked glass.
+        fix: (viewer) => viewer.model.getMaterialByName("vintage_oil_lamp_glass")?.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0.16]),
+        page: "https://polyhaven.com/a/vintage_oil_lamp", credit: "Vintage Oil Lamp by Monsta3D, Poly Haven. CC0.", mine: ["assets/stills/A17-brass-oil-lamp.webp", "A17: your brass hurricane lamps. Same family of piece."] },
+      { title: "Porcelain horse", src: "assets/demo/models/horse_statue_01/horse_statue_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/horse_statue_01", credit: "Horse Statue 01 by Rico Cilliers, Poly Haven. CC0.", mine: ["assets/stills/A14-ceramic-leopard.webp", "A14: your ceramic leopard. A figurine like this gets a full turntable."] },
+    ];
+    const VIEWS = { Front: [0, 80], "¾": [38, 70], Side: [90, 82], Back: [180, 80], Top: [0, 0] };
+    const mv = $("#mv"), stage = $("#stage"), status = $("#status");
+    let current = MODELS[0], shootToken = 0;
+    const orbit = (view) => `${VIEWS[view][0] + (current.yaw || 0)}deg ${VIEWS[view][1]}deg 105%`;
+    const go = (view) => mv.setAttribute("camera-orbit", orbit(view));
+
+    const viewChips = Object.keys(VIEWS).map((name) => {
+      const chip = node("button", { type: "button", className: "chip" }, name);
+      chip.addEventListener("click", () => { mv.removeAttribute("auto-rotate"); spin.setAttribute("aria-pressed", "false"); go(name); });
+      $("#viewChips").append(chip); return chip;
+    });
+    const spin = node("button", { type: "button", className: "chip" }, "Auto-spin");
+    spin.setAttribute("aria-pressed", "false");
+    spin.addEventListener("click", () => { const on = spin.getAttribute("aria-pressed") !== "true"; spin.setAttribute("aria-pressed", String(on)); on ? mv.setAttribute("auto-rotate", "") : mv.removeAttribute("auto-rotate"); });
+    const shadow = node("button", { type: "button", className: "chip" }, "Shadow");
+    shadow.setAttribute("aria-pressed", "true");
+    shadow.addEventListener("click", () => { const on = shadow.getAttribute("aria-pressed") !== "true"; shadow.setAttribute("aria-pressed", String(on)); mv.setAttribute("shadow-intensity", on ? "1.1" : "0"); });
+    $("#toggleChips").append(spin, shadow);
+    backdropChips($("#backChips"), (css) => { stage.style.background = css; });
+
+    // model-viewer frames the whole bounding sphere, so an end-on sofa is tiny. Crop each still to its visible pixels, like a listing photo.
+    async function trim(url) {
+      const img = new Image(); img.src = url; await img.decode();
+      const c = document.createElement("canvas"); c.width = img.naturalWidth; c.height = img.naturalHeight;
+      const ctx = c.getContext("2d", { willReadFrequently: true }); ctx.drawImage(img, 0, 0);
+      const { data, width, height } = ctx.getImageData(0, 0, c.width, c.height);
+      let x0 = width, y0 = height, x1 = -1, y1 = -1;
+      for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) if (data[(y * width + x) * 4 + 3] > 16) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+      if (x1 < 0) return url;
+      const pad = Math.round(Math.max(x1 - x0, y1 - y0) * 0.06);
+      const sx = Math.max(0, x0 - pad), sy = Math.max(0, y0 - pad), w = Math.min(width, x1 + pad) - sx, h = Math.min(height, y1 + pad) - sy;
+      const out = document.createElement("canvas"); out.width = w; out.height = h;
+      out.getContext("2d").drawImage(c, sx, sy, w, h, 0, 0, w, h);
+      return out.toDataURL("image/webp", 0.9);
+    }
+
+    async function shoot(token) {
+      // Capture each angle as a transparent still, like a listing photo set. The overlay hides the camera jumping.
+      stage.classList.add("shooting");
+      const spinning = mv.hasAttribute("auto-rotate"), before = mv.getAttribute("camera-orbit"), shots = [];
+      mv.removeAttribute("auto-rotate");
+      try {
+        for (const view of Object.keys(VIEWS)) {
+          if (token !== shootToken) return;
+          go(view); mv.jumpCameraToGoal(); await frames(3);
+          shots.push([view, mv.toDataURL("image/webp", 0.9)]);
+        }
+      } finally {
+        if (token === shootToken) { mv.setAttribute("camera-orbit", before); mv.jumpCameraToGoal(); if (spinning) mv.setAttribute("auto-rotate", ""); }
+        stage.classList.remove("shooting");
+      }
+      if (token !== shootToken) return;
+      for (const shot of shots) shot[1] = await trim(shot[1]);
+      if (token !== shootToken) return;
+      $("#shots").replaceChildren(...shots.map(([view, url]) => {
+        const thumb = node("button", { type: "button", className: "thumb", title: `Go to the ${view} view` });
+        thumb.append(node("img", { src: url, alt: `${current.title}, ${view} view`, loading: "lazy" }), node("span", {}, view));
+        thumb.addEventListener("click", () => go(view)); return thumb;
+      }));
+    }
+
+    function showModel(model, picker) {
+      current = model; shootToken++;
+      picker.forEach((chip) => chip.setAttribute("aria-pressed", String(chip.textContent === model.title)));
+      status.textContent = "Loading model…"; $("#shots").replaceChildren(); $("#variantChips").hidden = true;
+      mv.removeAttribute("variant-name");
+      mv.setAttribute("alt", `3D model: ${model.title}`);
+      mv.setAttribute("camera-orbit", orbit("¾"));
+      mv.src = model.src;
+      $("#credit").replaceChildren(node("span", {}, model.credit + " "), Object.assign(node("a", { href: model.page, target: "_blank", rel: "noreferrer" }, "Source ↗")));
+      const mine = $("#mine"); mine.hidden = !model.mine;
+      if (model.mine) { $("#mineImg").src = model.mine[0]; $("#mineImg").alt = "Your original piece"; $("#mineText").textContent = model.mine[1]; }
+    }
+    mv.addEventListener("load", () => {
+      status.textContent = `${current.title} / drag to rotate, scroll to zoom`;
+      const variants = mv.availableVariants || [], host = $("#variantChips");
+      host.querySelectorAll("button").forEach((b) => b.remove()); host.hidden = variants.length < 2;
+      variants.forEach((name) => {
+        const chip = node("button", { type: "button", className: "chip" }, name);
+        chip.addEventListener("click", async () => {
+          host.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b === chip)));
+          mv.setAttribute("variant-name", name); await frames(20); const token = ++shootToken; shoot(token);
+        });
+        host.append(chip);
+      });
+      current.fix?.(mv);
+      const token = ++shootToken; shoot(token);
+    });
+    mv.addEventListener("error", () => { status.textContent = "This model could not be loaded."; });
+    const picker = MODELS.map((model) => {
+      const chip = node("button", { type: "button", className: "chip" }, model.title);
+      chip.addEventListener("click", () => showModel(model, picker)); $("#picker").append(chip); return chip;
+    });
+    showModel(MODELS[0], picker);
+
+    // ---------- 02 Cutout lab ----------
+    const labStage = $("#labStage"), obj = $("#obj"), labImg = $("#labImg"), labRef = $("#labRef"), loupe = $("#loupe"), main = $("#main");
+    backdropChips($("#labBack"), (css) => { labStage.style.background = css; });
+    for (const [label, cls, on] of [["Shadow", "no-shadow", true], ["Reflection", "no-reflect", true]]) {
+      const chip = node("button", { type: "button", className: "chip" }, label);
+      chip.setAttribute("aria-pressed", String(on));
+      chip.addEventListener("click", () => { const now = chip.getAttribute("aria-pressed") !== "true"; chip.setAttribute("aria-pressed", String(now)); obj.classList.toggle(cls, !now); });
+      $("#labToggles").insertBefore(chip, $(".hue"));
+    }
+    let zoomOn = true;
+    const zoomChip = node("button", { type: "button", className: "chip" }, "Hover zoom");
+    zoomChip.setAttribute("aria-pressed", "true");
+    zoomChip.addEventListener("click", () => { zoomOn = !zoomOn; zoomChip.setAttribute("aria-pressed", String(zoomOn)); loupe.hidden = true; });
+    $("#labToggles").insertBefore(zoomChip, $(".hue"));
+    $("#hue").addEventListener("input", (e) => { obj.style.setProperty("--hue", `${e.target.value}deg`); loupe.style.filter = `hue-rotate(${e.target.value}deg)`; });
+    const ZOOM = 2.6;
+    main.addEventListener("pointermove", (e) => {
+      if (!zoomOn) return;
+      const box = labImg.getBoundingClientRect(), stageBox = labStage.getBoundingClientRect();
+      const x = e.clientX - box.left, y = e.clientY - box.top, half = loupe.offsetWidth / 2;
+      loupe.hidden = false;
+      const clamp = (v, max) => Math.min(Math.max(v, 4), max - 2 * half - 4);
+      loupe.style.left = `${clamp(e.clientX - stageBox.left - half, stageBox.width)}px`; loupe.style.top = `${clamp(e.clientY - stageBox.top - half - 90, stageBox.height)}px`;
+      loupe.style.backgroundImage = `url("${labImg.src}")`;
+      loupe.style.backgroundSize = `${box.width * ZOOM}px ${box.height * ZOOM}px`;
+      loupe.style.backgroundPosition = `${half - x * ZOOM}px ${half - y * ZOOM}px`;
+    });
+    main.addEventListener("pointerleave", () => { loupe.hidden = true; });
+    function pick(item, thumbs) {
+      labImg.src = labRef.src = item.file; labImg.alt = item.title; loupe.hidden = true;
+      thumbs.forEach((t) => t.setAttribute("aria-pressed", String(t.dataset.file === item.file)));
+      const dims = (item.source_dimensions || item.dimensions || []).join("×");
+      $("#labCaption").textContent = `${item.title}${dims ? ` · ${dims} px source` : ""}${item.note ? ` · ${item.note}` : ""}`;
+    }
+    try {
+      const { alternatives } = await (await fetch("assets/demo/sources.json")).json();
+      const thumbs = alternatives.map((item) => {
+        const t = node("button", { type: "button", className: "thumb", title: item.title }); t.dataset.file = item.file;
+        t.append(node("img", { src: item.file, alt: item.title, loading: "lazy" })); t.addEventListener("click", () => pick(item, thumbs));
+        $("#strip").append(t); return t;
+      });
+      pick(alternatives.find((i) => i.file.includes("rotary-phone")) || alternatives[0], thumbs);
+    } catch { $("#labCaption").textContent = "Cutouts could not be loaded."; }
+
+    // ---------- credits ----------
+    for (const model of MODELS) {
+      const li = node("li", {}, `${model.credit} `); li.append(Object.assign(node("a", { href: model.page, target: "_blank", rel: "noreferrer" }, "Source ↗"))); $("#credits").append(li);
+    }
+  </script>
+</body>
+</html>
