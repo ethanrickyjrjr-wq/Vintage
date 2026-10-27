@@ -188,7 +188,10 @@ function startEditor() {
           $("room-working-label").textContent = data.message;
           if (Number.isFinite(data.progress)) $("room-progress").value = data.progress; else $("room-progress").removeAttribute("value");
         } else if (data.type === "result") finish(null, data);
-        else if (data.type === "error") finish(new Error(data.message || "The room guide couldn’t read this photo. Try placing your picks by hand."));
+        else if (data.type === "error") {
+          console.warn("Room guide unavailable:", data.phase, data.diagnostic);
+          finish(new Error(data.message || "The room guide couldn’t read this photo. Try placing your picks by hand."));
+        }
       };
       analysisWorker.postMessage({ requestId: id, width: photo.width, height: photo.height, pixels }, [pixels]);
     });

@@ -6,6 +6,7 @@ const REVISION = 'ea24b2d4e0bfae31f0a1299ba3fb892a2df064de';
 let library;
 let segmenterPromise;
 let activeRequestId;
+let phase = 'initializing';
 
 function progress(message, value) {
   self.postMessage({ requestId: activeRequestId, type: 'progress', message, ...(Number.isFinite(value) ? { progress: value } : {}) });
@@ -15,6 +16,7 @@ async function loadSegmenter() {
   if (!segmenterPromise) {
     segmenterPromise = (async () => {
       progress('Loading room tools…');
+      phase = 'library';
       library = await import(LIBRARY_URL);
       const { env, pipeline } = library;
       env.allowLocalModels = false;
@@ -22,6 +24,8 @@ async function loadSegmenter() {
       // stays responsive because this entire pipeline runs outside its thread.
       env.backends.onnx.wasm.numThreads = 1;
       env.backends.onnx.wasm.proxy = false;
+      phase = 'model';
+      progress('Loading the room model…');
       const segmenter = await pipeline('image-segmentation', MODEL, {
         revision: REVISION,
         dtype: 'q8',
@@ -54,6 +58,7 @@ self.onmessage = async ({ data }) => {
       throw new Error('Invalid room pixels');
     }
     const segmenter = await loadSegmenter();
+    phase = 'inference';
     progress('Finding the room’s surfaces…');
     const gridWidth = 160;
     const gridHeight = Math.max(1, Math.round(gridWidth * height / width));
@@ -74,7 +79,11 @@ self.onmessage = async ({ data }) => {
     }));
     self.postMessage({ requestId, type: 'result', width: gridWidth, height: gridHeight, segments },
       segments.map(segment => segment.mask.buffer));
-  } catch {
-    self.postMessage({ requestId, type: 'error', message: 'Room suggestions could not load on this device. You can still drag your picks into place.' });
+  } catch (error) {
+    // Diagnostic text contains library errors only; strip asset URLs (including
+    // signed download queries). Never include pixels, tensors or user content.
+    const diagnostic = String(error?.message || error?.name || 'Unknown error')
+      .replace(/https?:\/\/\S+/g, '[asset]').replace(/\[[\s\S]*\]/g, '[details]').slice(0, 220);
+    self.postMessage({ requestId, type: 'error', phase, diagnostic, message: 'Room suggestions could not load on this device. You can still drag your picks into place.' });
   }
 };
