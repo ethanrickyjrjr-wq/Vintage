@@ -42,12 +42,17 @@ Rule: anything always-on must be static or paused under `prefers-reduced-motion`
 - If our own site sells the item, we are merchant of record and, by b4's reading of F.S. 212.05965, a Florida "marketplace provider": we owe the tax, refunds and chargebacks without ever touching the box. The clean alternative is the owner staying the seller on their own Chairish or eBay account while we coach them for a fee.
 - Etsy is the high-risk channel for third-party items (drop-shipping ban; Etsy's seller policy pages were walled, so no explicit ban is confirmed).
 
-**Florida gate (assumes the shop is in Florida; confirm).** I read the 2026 statute text:
+**Florida gate (assumes the shop is in Florida; confirm).** I read the 2026 statute text (https://www.flsenate.gov/Laws/Statutes/2026/Chapter538/All, raw capture `research/consignment/raw/b3-fl-ch538-2026.md`; Department of Revenue page https://floridarevenue.com/taxes/taxesfees/Pages/secondhand_dealers_recyclers.aspx). As written, the rules below apply unless an exemption fits, and exemptions are listed after them:
 - Ch. 538.03: "Acquire" means to obtain by purchase, consignment, or trade. Buying, consigning and trading are all regulated.
 - "Secondhand goods" excludes clothing, books, coins, office furniture and pianos (full list in the statute). So fashion is likely out of scope. Lamps, glass, art, decorative objects and fine jewelry are in. Playboys and signed memorabilia are unclear.
 - Registration with the Department of Revenue, $6 per location. Report each acquisition to law enforcement within 24 hours. Seller ID, thumbprint and photos (per b3/b5).
 - 538.06: you may not sell, alter or dispose of goods for 15 calendar days, or 30 for antique decorative objects, art, jewelry, precious metals and gemstones.
-- 538.06(2): a dealer must maintain actual physical possession of secondhand goods throughout a transaction. **Nobody flagged this one.** It bears directly on a hold-and-ship model for hard goods and is a first question for an attorney.
+- 538.06(2): a dealer must maintain actual physical possession of secondhand goods throughout a transaction. No agent flagged this. Whether it blocks hold-and-ship depends on the exemptions below, so it is a question for an attorney, not a settled blocker.
+- **Exemptions in 538.03(2) that could take an online shop out of ch. 538.** I read them; whether any fits is for the attorney or the Department of Revenue to say. Two agents (b3, b5) did not surface these in their summaries, and b5 listed the online-seller carve-out as unverified.
+  - (l) A business registered with the Department of Revenue for sales tax as an antique dealer under ch. 212 that buys from the owner at the owner's residence under a written agreement stating the owner's name, address and phone.
+  - (m) A business that contracts with others to offer goods through a website and "maintains a shop, store, or other business premises for this purpose," if eight conditions hold: public viewing at no charge; 2-year records; serial numbers on the records and the listing; listings searchable by state or zip; business names given to law enforcement; premises open to inspection; payment only by check or a licensed money services business to the person who contracted; and either a stolen-article database check 48 hours after contracting or an electronic report to law enforcement within 24 hours. Whether the room counts as "business premises" decides this one.
+  - (n) A person offering their own property, or a person or entity offering others' property, through a website "when that person or entity does not have, and is not required to have, a local occupational or business license for this purpose." A shop that holds a local business tax receipt may not qualify. Unresolved.
+  Net: an online-only consignment model might be exempt, but only if it fits one of these. Treat the whole Florida question as undecided until a Florida attorney or the Department of Revenue answers it.
 - Also (b5): the art statutes (686.502-.503) may make "left at consignor's risk" unenforceable for art. Consignee collects sales tax on the full price (Rule 12A-1.081, read on a mirror only). 1099-K threshold is $20,000 and 200 transactions; 1099-NEC/MISC is $2,000 for tax years after 2025, and the IRS lists "payments for merchandise" as not reportable, which a CPA must confirm.
 
 **Benchmarks.**
@@ -74,7 +79,7 @@ Rule: anything always-on must be static or paused under `prefers-reduced-motion`
 AptDeco, Sotheby's Home, Etsy seller/creativity policies, Poshmark terms and fees, Fashionphile terms, Club Vintage, Rejuvenation vintage, Poolsuite. Visuals in group A are inferred from page text and markup; nobody saw a rendered page.
 
 ## Decisions for Ricky
-1. Is the shop Florida-based? Everything in the legal section assumes yes.
+1. Is the shop Florida-based, and does it hold (or need) a local business tax receipt? Everything in the legal section assumes Florida, and exemption (n) turns on the license.
 2. Which storefront is primary: the hand-built site or a Shopify theme? That decides whether to spend $220-$420 on a theme at all.
 3. Soft-goods-first buy flow now, hard-goods consignment later: yes or no?
 4. Want screenshots of the top 5 or 6 reference sites (James Veloria, The Kitschy Maximalist, Soho Home Shop the Look, The Old Above, Shrimpton) from your signed-in Chrome to judge the look?
