@@ -370,9 +370,63 @@ def sheets(items, manifest):
         table.save(ROOT / "artifacts/pilot/pass-fail.jpg", quality=94)
 
 
+def pagesheets(items, manifest):
+    folder = ROOT / "artifacts/pilot"
+    captures = json.loads((folder / "browser-captures.json").read_text())
+    assert len(captures) == 24, "Capture four styles, two themes and three viewport widths first"
+    font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 22)
+    heading = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", 30)
+    styles = ("white", "cream", "burgundy", "shelf")
+    crops = {}
+    for record in captures:
+        assert record["cards"] == 12 and record["scrollWidth"] <= record["width"]
+        key = (record["style"], record["theme"], record["width"])
+        screenshot = Image.open(folder / record["file"]).convert("RGB")
+        rect = record["section"]
+        # Browser screenshots omit the scrollbar; coordinates are CSS content pixels.
+        ratio = screenshot.width / record["scrollWidth"]
+        crop = screenshot.crop(tuple(round(v * ratio) for v in
+                               (rect["x"], rect["y"], rect["x"] + rect["width"], rect["y"] + rect["height"])))
+        crops[key] = crop
+    for style in styles:
+        desktops = [ImageOps.contain(crops[(style, theme, 1440)], (750, 1600)) for theme in ("day", "evening")]
+        phones = [crops[(style, theme, width)] for width in (390, 320) for theme in ("day", "evening")]
+        top_height = max(v.height for v in desktops)
+        phone_height = max(v.height for v in phones)
+        sheet = Image.new("RGB", (1600, 170 + top_height + 80 + phone_height + 35), "#f6efdf")
+        drawing = ImageDraw.Draw(sheet)
+        drawing.text((30, 22), f"{style.title()} / 12 finds / both themes / three viewport widths", font=heading, fill="#451c2b")
+        for i, (theme, desktop) in enumerate(zip(("day", "evening"), desktops)):
+            x = 30 + i * 785
+            drawing.text((x, 90), f"1440 CSS px / {theme}", font=font, fill="#451c2b")
+            sheet.paste(desktop, (x, 130))
+        x = 30
+        y = 170 + top_height
+        for (width, theme), phone in zip(((390, "day"), (390, "evening"), (320, "day"), (320, "evening")), phones):
+            drawing.text((x, y), f"{width} px / {theme}", font=font, fill="#451c2b")
+            sheet.paste(phone, (x, y + 50))
+            x += phone.width + 35
+        sheet.save(folder / f"style-{style}.jpg", quality=92)
+    thumbs = {key: ImageOps.contain(value, (465, 900)) for key, value in crops.items() if key[2] == 1440}
+    row_height = max(image.height for image in thumbs.values()) + 65
+    overview = Image.new("RGB", (2020, 110 + row_height * 2), "#f6efdf")
+    drawing = ImageDraw.Draw(overview)
+    drawing.text((30, 20), "Hollywood & Vine / the four cutout studies", font=heading, fill="#451c2b")
+    for row, theme in enumerate(("day", "evening")):
+        for column, style in enumerate(styles):
+            x, y = 25 + column * 505, 90 + row * row_height
+            drawing.text((x, y), f"{style.title()} / {theme}", font=font, fill="#451c2b")
+            overview.paste(thumbs[(style, theme, 1440)], (x, y + 40))
+    overview.save(folder / "styles-overview.jpg", quality=94)
+    audit_path = ROOT / "tools/cutout/pilot-audit.json"
+    audit = json.loads(audit_path.read_text())
+    audit["browser_qa"] = {"captures": captures, "checks": json.loads((folder / "browser-checks.json").read_text())}
+    write_json(audit_path, audit)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("stage", choices=("prepare", "general", "matting", "export", "sheets"))
+    parser.add_argument("stage", choices=("prepare", "general", "matting", "export", "sheets", "pagesheets"))
     parser.add_argument("--ids", nargs="*")
     args = parser.parse_args()
     selected = [v for v in CONFIG if not args.ids or v["id"] in args.ids]

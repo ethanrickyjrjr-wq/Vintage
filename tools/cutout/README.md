@@ -52,3 +52,5 @@ The pixels-kept check runs **before** trimming, resizing and lossy encoding: at 
 No channel exports are produced in this pilot. Current available source subjects are below 1500 pixels; upscaling to 2048 would not fix that. `media/` contains no alpha files. A future approved rollout must obtain suitable originals and emit flattened, undecorated sRGB JPEGs with the source original retained.
 
 Capture the page at 1440, 390 and 320 CSS pixels in both themes for each style, into `artifacts/pilot/`. Results and remaining photo limitations are in `docs/cutout-pilot-results.md`. Commit only named pilot paths; never stage `media/`, `.venv/`, artifacts, or another session's work. Publishing and catalog rollout wait for the owner's style choice.
+
+After browser QA has written `browser-captures.json` (including section rectangles) and `browser-checks.json`, run `pipeline.py pagesheets` to assemble the four combined style sheets and `styles-overview.jpg`, and append the browser evidence to the committed audit. The local-only pilot loads all study images eagerly so full-page screenshots include every item. Production catalog loading is unchanged.

@@ -1253,5 +1253,545 @@
       "status": "layout test",
       "selected_tool": "no cut; original retained"
     }
+  },
+  "browser_qa": {
+    "captures": [
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3026,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2215.921875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "white",
+        "theme": "day",
+        "width": 1440,
+        "file": "white-day-1440.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3026,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2215.921875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "white",
+        "theme": "evening",
+        "width": 1440,
+        "file": "white-evening-1440.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3026,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2215.921875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "cream",
+        "theme": "day",
+        "width": 1440,
+        "file": "cream-day-1440.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3026,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2215.921875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "cream",
+        "theme": "evening",
+        "width": 1440,
+        "file": "cream-evening-1440.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3026,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2215.921875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "burgundy",
+        "theme": "day",
+        "width": 1440,
+        "file": "burgundy-day-1440.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3026,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2215.921875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "burgundy",
+        "theme": "evening",
+        "width": 1440,
+        "file": "burgundy-evening-1440.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3046,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2235.421875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "shelf",
+        "theme": "day",
+        "width": 1440,
+        "file": "shelf-day-1440.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 4,
+        "height": 3046,
+        "missing": [],
+        "scrollWidth": 1425,
+        "section": {
+          "height": 2235.421875,
+          "width": 1280,
+          "x": 72.5,
+          "y": 587.265625
+        },
+        "style": "shelf",
+        "theme": "evening",
+        "width": 1440,
+        "file": "shelf-evening-1440.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4504,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3464.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "white",
+        "theme": "day",
+        "width": 390,
+        "file": "white-day-390.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4504,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3464.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "white",
+        "theme": "evening",
+        "width": 390,
+        "file": "white-evening-390.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4504,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3464.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "cream",
+        "theme": "day",
+        "width": 390,
+        "file": "cream-day-390.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4504,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3464.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "cream",
+        "theme": "evening",
+        "width": 390,
+        "file": "cream-evening-390.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4504,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3464.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "burgundy",
+        "theme": "day",
+        "width": 390,
+        "file": "burgundy-day-390.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4504,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3464.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "burgundy",
+        "theme": "evening",
+        "width": 390,
+        "file": "burgundy-evening-390.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4531,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3491.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "shelf",
+        "theme": "day",
+        "width": 390,
+        "file": "shelf-day-390.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4531,
+        "missing": [],
+        "scrollWidth": 375,
+        "section": {
+          "height": 3491.859375,
+          "width": 351,
+          "x": 12,
+          "y": 753.953125
+        },
+        "smallTargets": [],
+        "style": "shelf",
+        "theme": "evening",
+        "width": 390,
+        "file": "shelf-evening-390.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4425,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3202.359375,
+          "width": 281,
+          "x": 12,
+          "y": 895.171875
+        },
+        "smallTargets": [],
+        "style": "white",
+        "theme": "day",
+        "width": 320,
+        "file": "white-day-320.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4434,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3202.359375,
+          "width": 281,
+          "x": 12,
+          "y": 904.359375
+        },
+        "smallTargets": [],
+        "style": "white",
+        "theme": "evening",
+        "width": 320,
+        "file": "white-evening-320.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4425,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3202.359375,
+          "width": 281,
+          "x": 12,
+          "y": 895.171875
+        },
+        "smallTargets": [],
+        "style": "cream",
+        "theme": "day",
+        "width": 320,
+        "file": "cream-day-320.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4434,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3202.359375,
+          "width": 281,
+          "x": 12,
+          "y": 904.359375
+        },
+        "smallTargets": [],
+        "style": "cream",
+        "theme": "evening",
+        "width": 320,
+        "file": "cream-evening-320.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4425,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3202.359375,
+          "width": 281,
+          "x": 12,
+          "y": 895.171875
+        },
+        "smallTargets": [],
+        "style": "burgundy",
+        "theme": "day",
+        "width": 320,
+        "file": "burgundy-day-320.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4434,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3202.359375,
+          "width": 281,
+          "x": 12,
+          "y": 904.359375
+        },
+        "smallTargets": [],
+        "style": "burgundy",
+        "theme": "evening",
+        "width": 320,
+        "file": "burgundy-evening-320.jpg"
+      },
+      {
+        "background": "rgb(66, 40, 49)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4473,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3250.15625,
+          "width": 281,
+          "x": 12,
+          "y": 895.171875
+        },
+        "smallTargets": [],
+        "style": "shelf",
+        "theme": "day",
+        "width": 320,
+        "file": "shelf-day-320.jpg"
+      },
+      {
+        "background": "rgb(41, 29, 36)",
+        "cards": 12,
+        "columns": 2,
+        "height": 4482,
+        "missing": [],
+        "scrollWidth": 305,
+        "section": {
+          "height": 3250.15625,
+          "width": 281,
+          "x": 12,
+          "y": 904.359375
+        },
+        "smallTargets": [],
+        "style": "shelf",
+        "theme": "evening",
+        "width": 320,
+        "file": "shelf-evening-320.jpg"
+      }
+    ],
+    "checks": {
+      "hatDialog": {
+        "note": "Feather hat with the entire photographed mannequin head, neck and base. The complete display is retained. Size coming. Guide $48.",
+        "open": true,
+        "original": "assets/photos/IMG_6611.webp"
+      },
+      "closeFocus": {
+        "closed": true,
+        "focus": "B6",
+        "hover": true,
+        "hoverOpacity": "0.485072"
+      },
+      "keyboard": {
+        "focus": "pilot-card-link",
+        "offset": "4px",
+        "outline": "rgb(246, 239, 223) solid 3px",
+        "visible": true
+      },
+      "phonePhoto": {
+        "label": "Base detail \u00b7 crop of the same original",
+        "selected": "2"
+      },
+      "scale": {
+        "scale": "0.99",
+        "value": "0.99"
+      },
+      "palettes": [
+        {
+          "background": "rgb(66, 40, 49)",
+          "captionRatio": 7.396082555083829,
+          "scrollWidth": 1425,
+          "theme": "day",
+          "titleRatio": 11.605262002143949,
+          "wall": "theme",
+          "width": 1440
+        },
+        {
+          "background": "rgb(246, 239, 223)",
+          "captionRatio": 4.918223447157899,
+          "scrollWidth": 1425,
+          "theme": "day",
+          "titleRatio": 12.032594006226972,
+          "wall": "cream",
+          "width": 1440
+        },
+        {
+          "background": "rgb(69, 28, 43)",
+          "captionRatio": 7.183599585776457,
+          "scrollWidth": 1425,
+          "theme": "day",
+          "titleRatio": 12.6068566514791,
+          "wall": "burgundy",
+          "width": 1440
+        },
+        {
+          "background": "rgb(41, 29, 36)",
+          "captionRatio": 8.526743470045265,
+          "scrollWidth": 1425,
+          "theme": "evening",
+          "titleRatio": 14.149478230669056,
+          "wall": "theme",
+          "width": 1440
+        },
+        {
+          "background": "rgb(246, 239, 223)",
+          "captionRatio": 4.918223447157899,
+          "scrollWidth": 1425,
+          "theme": "evening",
+          "titleRatio": 12.032594006226972,
+          "wall": "cream",
+          "width": 1440
+        },
+        {
+          "background": "rgb(69, 28, 43)",
+          "captionRatio": 7.183599585776457,
+          "scrollWidth": 1425,
+          "theme": "evening",
+          "titleRatio": 12.6068566514791,
+          "wall": "burgundy",
+          "width": 1440
+        }
+      ],
+      "reducedMotion": {
+        "verified": "CSS disables transitions, animations and smooth scrolling under prefers-reduced-motion: reduce",
+        "limitation": "Live media emulation is not exposed by the browser connector"
+      },
+      "console": []
+    }
   }
 }

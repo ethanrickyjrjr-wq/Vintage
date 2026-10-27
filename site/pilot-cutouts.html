@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en" data-theme="day" data-wall="theme">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cutout study | Hollywood and Vine</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="storefront.css">
+  <link rel="stylesheet" href="atmosphere.css">
+  <style>
+    html { scroll-behavior: auto; }
+    body { --page-colour: var(--paper); background: var(--page-colour); overflow-x: visible; }
+    html[data-wall="cream"] body { --page-colour: var(--cream); --text: #432331; --muted: #74645e; --line: #d8cbbb; color-scheme: light; }
+    html[data-wall="burgundy"] body { --page-colour: var(--burgundy); --text: var(--cream); --muted: var(--pink); --line: #79545e; color-scheme: dark; }
+    .pilot-wrap { width: min(1280px, calc(100% - 80px)); margin-inline: auto; }
+    .pilot-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+    .pilot-brand { font: 28px/1 var(--display); min-height: 44px; display: flex; align-items: center; }
+    .pilot-label, .pilot-index { font: 11px/1.6 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .pilot-header .pilot-label { text-align: right; }
+    .pilot-intro { padding-block: 42px 28px; }
+    .pilot-intro h1 { font: 500 clamp(42px, 5.5vw, 76px)/1.08 var(--display); letter-spacing: -.04em; margin: 10px 0 18px; }
+    .pilot-intro > p { max-width: 720px; margin: 0 0 12px; }
+    .pilot-meta { color: var(--muted); font-size: 13px; }
+    .pilot-toolbar { border-block: 1px solid var(--line); padding-block: 18px; display: flex; align-items: start; flex-wrap: wrap; gap: 16px 28px; }
+    .pilot-toolbar fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+    .pilot-toolbar legend, .pilot-style-label { font: 11px/1.6 var(--mono); margin-bottom: 7px; }
+    .pilot-segment { display: flex; flex-wrap: wrap; gap: 4px; }
+    .pilot-segment button, .pilot-toolbar select { min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 0; color: var(--text); background: var(--page-colour); }
+    .pilot-segment button[aria-pressed="true"] { background: var(--text); color: var(--page-colour); border-color: var(--text); }
+    .pilot-toolbar select { width: 190px; max-width: 100%; }
+    .pilot-readout { padding-top: 14px; min-height: 40px; color: var(--muted); font: 11px/1.6 var(--mono); }
+    .pilot-section { padding-block: 46px 26px; }
+    .pilot-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); margin-bottom: 26px; padding-bottom: 16px; }
+    .pilot-section h2 { font: 500 42px/1.1 var(--display); margin: 0; letter-spacing: -.03em; }
+    .pilot-section-heading p { max-width: 350px; color: var(--muted); font-size: 13px; margin: 0; }
+    .pilot-section h2 .pilot-index { display: block; margin-bottom: 8px; }
+    .pilot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 22px; --tile-bg: #fff; }
+    .pilot-grid[data-tile="cream"] { --tile-bg: var(--cream); }
+    .pilot-grid[data-tile="burgundy"] { --tile-bg: var(--burgundy); }
+    .pilot-card { min-width: 0; position: relative; }
+    .pilot-card-link { display: block; }
+    .pilot-visual { position: relative; padding: 12px; background: var(--tile-bg); border: 1px solid var(--line); }
+    .pilot-visual::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--line); opacity: .65; pointer-events: none; }
+    .pilot-stage { aspect-ratio: 4 / 5; position: relative; overflow: hidden; }
+    .pilot-layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 140ms ease, transform 140ms ease; }
+    .pilot-layer.is-study { transform: scale(var(--s, 1)); transform-origin: center 94%; filter: drop-shadow(0 9px 10px rgb(0 0 0 / .18)); }
+    [data-anchor="top"] .pilot-layer.is-study { transform-origin: center 6%; }
+    [data-anchor="center"] .pilot-layer.is-study { transform-origin: center; }
+    .pilot-layer.is-original { padding: 4%; }
+    .pilot-layer.is-hidden { opacity: 0; pointer-events: none; }
+    .pilot-layer.is-hover { opacity: 0; padding: 4%; }
+    @media (hover: hover) and (pointer: fine) {
+      .pilot-card-link:hover .is-study { transform: scale(calc(var(--s, 1) * 1.02)); }
+      .pilot-card[data-photo="0"] .pilot-card-link:hover .is-hover { opacity: 1; }
+      .pilot-card[data-photo="0"]:has(.is-hover) .pilot-card-link:hover .is-study { opacity: 0; }
+    }
+    .pilot-badge { position: absolute; left: 16px; bottom: 16px; padding: 5px 9px; background: var(--burgundy); color: var(--cream); font: 10px/1.5 var(--mono); border: 1px solid var(--pink); }
+    .pilot-title { font: 500 21px/1.2 var(--display); margin: 15px 0 8px; min-height: 2.4em; }
+    .pilot-size { margin: 0 0 3px; color: var(--muted); font-size: 13px; }
+    .pilot-price { margin: 0 0 8px; font-size: 14px; }
+    .pilot-status { margin: 0; color: var(--muted); font: 10px/1.6 var(--mono); min-height: 3.2em; }
+    .pilot-dots { display: flex; gap: 0; align-items: center; min-height: 44px; }
+    .pilot-dot { width: 44px; height: 44px; padding: 0; display: grid; place-items: center; }
+    .pilot-dot::after { content: ""; width: 7px; height: 7px; border: 1px solid var(--text); border-radius: 50%; }
+    .pilot-dot[aria-pressed="true"]::after { background: var(--text); }
+    .pilot-photo-label { font-size: 11px; color: var(--muted); min-height: 1.6em; margin: 0; }
+    .pilot-scale { border-top: 1px solid var(--line); margin-top: 10px; font-size: 12px; }
+    .pilot-scale summary { min-height: 44px; padding-block: 12px; cursor: pointer; color: var(--muted); }
+    .pilot-scale input { width: 100%; min-height: 44px; accent-color: var(--text); margin: 0; }
+    .pilot-scale label { display: block; }
+    [data-tile="shelf"] .pilot-visual { padding: 0; border: 0; background: transparent; }
+    [data-tile="shelf"] .pilot-visual::before { inset: auto 0 6%; border: 0; height: 1px; background: var(--line); opacity: 1; z-index: 2; }
+    [data-tile="shelf"] .pilot-card[data-anchor="bottom"] .pilot-visual.is-cutout::after { content: ""; position: absolute; bottom: 5%; left: 28%; width: 44%; height: 2%; border-radius: 50%; background: var(--burgundy-deep); opacity: .16; filter: blur(3px); }
+    [data-tile="shelf"] .pilot-layer.is-study { filter: none; }
+    .pilot-footer { border-top: 1px solid var(--line); padding-block: 26px 44px; margin-top: 30px; color: var(--muted); font-size: 13px; }
+    .pilot-footer p { max-width: 750px; }
+    .pilot-wrap :is(a, button, summary, input, select):focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+    .pilot-dialog { width: min(860px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 24px; border: 1px solid var(--line); background: var(--page-colour); color: var(--text); }
+    .pilot-dialog::backdrop { background: rgb(0 0 0 / .75); }
+    .pilot-dialog-header { display: flex; justify-content: space-between; align-items: start; gap: 20px; }
+    .pilot-dialog h2 { margin: 0; font: 28px/1.2 var(--display); }
+    .pilot-close { min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); }
+    .pilot-dialog img { width: 100%; height: min(54dvh, 600px); object-fit: contain; margin-block: 18px; }
+    .pilot-dialog p { font-size: 13px; }
+    .pilot-dialog :is(button, a):focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+    .pilot-error { padding: 30px 0; }
+    #studies:focus-visible { outline: 3px solid var(--text); outline-offset: 8px; }
+    @media (max-width: 700px) {
+      .pilot-wrap { width: calc(100% - 24px); }
+      .pilot-header { padding-block: 22px; gap: 12px; }
+      .pilot-brand { font-size: 23px; }
+      .pilot-header .pilot-label { font-size: 9px; max-width: 100px; }
+      .pilot-intro { padding-block: 28px 20px; }
+      .pilot-intro h1 { font-size: 43px; }
+      .pilot-intro > p { font-size: 14px; }
+      .pilot-toolbar { gap: 16px; }
+      .pilot-section { padding-top: 30px; }
+      .pilot-section-heading { display: block; margin-bottom: 20px; }
+      .pilot-section h2 { font-size: 34px; }
+      .pilot-section-heading p { margin-top: 12px; }
+      .pilot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 12px; }
+      .pilot-visual { padding: 8px; }
+      .pilot-visual::before { inset: 4px; }
+      .pilot-title { font-size: 19px; min-height: 3.6em; }
+      .pilot-status { font-size: 10px; min-height: 4.8em; }
+      .pilot-badge { left: 9px; bottom: 9px; padding: 3px 5px; font-size: 9px; }
+      .pilot-dialog { padding: 16px; }
+      .pilot-dialog h2 { font-size: 23px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#studies">Skip to the studies</a>
+  <header class="pilot-header pilot-wrap">
+    <a class="pilot-brand" href="storefront.html">Hollywood &amp; Vine</a>
+    <span class="pilot-label">Catalog study<br>Local review / 01</span>
+  </header>
+  <main class="pilot-wrap">
+    <div class="pilot-intro">
+      <span class="pilot-label">Twelve finds. Four ways to frame them.</span>
+      <h1>The cutout study.</h1>
+      <p>The same objects on white, cream, burgundy and an open shelf. Change the light and the wall; open any find to see its original photograph.</p>
+      <p class="pilot-meta">White is the starting choice. Sizes are still to be measured; prices are research guides. “Layout test” marks a photograph that needs another shoot. SOLD is a labelled demo.</p>
+    </div>
+    <div class="pilot-toolbar" aria-label="Study settings">
+      <fieldset><legend>Lighting</legend><div class="pilot-segment" id="themes">
+        <button type="button" data-theme="day" aria-pressed="true">Day</button>
+        <button type="button" data-theme="evening" aria-pressed="false">Evening</button>
+      </div></fieldset>
+      <fieldset><legend>Page colour</legend><div class="pilot-segment" id="walls">
+        <button type="button" data-wall="theme" aria-pressed="true">Theme paper</button>
+        <button type="button" data-wall="cream" aria-pressed="false">Cream</button>
+        <button type="button" data-wall="burgundy" aria-pressed="false">Burgundy</button>
+      </div></fieldset>
+      <label class="pilot-style-label">View<br><select id="style-view">
+        <option value="all">All four styles</option><option value="white">01 / White</option>
+        <option value="cream">02 / Cream</option><option value="burgundy">03 / Burgundy</option>
+        <option value="shelf">04 / Open shelf</option>
+      </select></label>
+    </div>
+    <p class="pilot-readout" id="colour-readout" aria-live="polite"></p>
+    <div id="studies" tabindex="-1"><p class="pilot-error">Loading the twelve finds…</p></div>
+    <footer class="pilot-footer">
+      <p>Every study keeps the photographed object’s pixels. Glass and obscured objects keep their original photo when a cut would misrepresent them. A detail crop is labelled as a crop of the same photograph.</p>
+      <p>Scale controls change this review only; they do not represent real dimensions. No product availability, catalog data or published page is changed.</p>
+    </footer>
+  </main>
+  <dialog class="pilot-dialog" id="item-dialog" aria-labelledby="dialog-title">
+    <div class="pilot-dialog-header"><h2 id="dialog-title"></h2><button type="button" class="pilot-close">Close</button></div>
+    <p id="dialog-context">Original photograph — shown first.</p>
+    <img id="dialog-image" alt="" width="960" height="1200">
+    <div id="dialog-dots" class="pilot-dots" aria-label="Item images"></div>
+    <p id="dialog-note"></p>
+  </dialog>
+  <script src="catalog-data.js"></script>
+  <script>
+  (async () => {
+    const styles = [
+      {id: 'white', name: 'White', note: 'The starting choice. A white mat, a fine frame, the object in focus.'},
+      {id: 'cream', name: 'Cream', note: 'The house cream carries through the mat. Compare its edge against both page themes.'},
+      {id: 'burgundy', name: 'Burgundy', note: 'The entrance colour, carried into the gallery. Watch the feathers and pale edges.'},
+      {id: 'shelf', name: 'Open shelf', note: 'Objects on the page, with a shared ledge. An option to review; originals remain visible where cutting fails.'}
+    ];
+    const html = document.documentElement;
+    const query = new URLSearchParams(location.search);
+    let currentStyle = styles.some(s => s.id === query.get('style')) ? query.get('style') : 'all';
+    let items;
+    try {
+      const response = await fetch('assets/cutouts/pilot.json');
+      if (!response.ok) throw new Error('Pilot assets have not been prepared.');
+      items = await response.json();
+    } catch (error) {
+      document.querySelector('#studies').textContent = error.message + ' Run the cutout pipeline described in tools/cutout/README.md.';
+      return;
+    }
+    const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const photoSet = item => {
+      const photos = item.cutout ? [{src:item.cutout, label:item.result, study:true}] : [];
+      photos.push({src:item.img, label:'Original photograph'});
+      if (item.id === 'A1') photos.push({src:'assets/cutouts/A1-detail.webp', label:'Base detail · crop of the same original'});
+      return photos;
+    };
+    const data = items.map(config => ({...HNV_ITEMS.find(item => item.id === config.id), ...config}));
+    const card = (item, style) => {
+      const key = style + '-' + item.id;
+      const photos = photoSet(item);
+      const status = [item.id, item.layoutTest ? 'Layout test' : 'Pilot study', item.cutout ? item.result : 'Original retained', item.soldDemo ? 'SOLD · demo' : ''].filter(Boolean).join(' / ');
+      return `<article class="pilot-card" data-id="${item.id}" data-anchor="${item.anchor}" data-photo="0" style="--s:${item.scale}">
+        <a class="pilot-card-link" href="${item.img}" aria-labelledby="${key}-title" aria-describedby="${key}-size ${key}-price ${key}-status">
+          <div class="pilot-visual ${item.cutout ? 'is-cutout' : ''}"><div class="pilot-stage">
+            ${photos.map((photo, i) => `<img class="pilot-layer ${photo.study ? 'is-study' : 'is-original'} ${i ? 'is-hidden' : ''}" src="${photo.src}" ${photo.study ? `srcset="${photo.src.replace('.webp', '--480.webp')} 480w, ${photo.src} 960w" sizes="(max-width:700px) calc((100vw - 36px) / 2), (min-width:1360px) 304px, calc((100vw - 146px) / 4)"` : ''} alt="${i ? '' : escape(item.title)}" width="960" height="1200" loading="eager" data-layer="${i}">`).join('')}
+            ${item.cutout ? `<img class="pilot-layer is-hover" src="${item.img}" alt="" width="960" height="1200" loading="eager">` : ''}
+          </div>${item.soldDemo ? '<span class="pilot-badge">SOLD · demo</span>' : ''}</div>
+          <h3 class="pilot-title" id="${key}-title">${escape(item.title)}</h3>
+          <p class="pilot-size" id="${key}-size">${escape(item.size || 'Size coming')}</p>
+          <p class="pilot-price" id="${key}-price">Guide $${HNV_PRICES[item.id].target}</p>
+          <p class="pilot-status" id="${key}-status">${status}</p>
+        </a>
+        <div class="pilot-dots" aria-label="${escape(item.title)} images">${photos.map((photo, i) => `<button type="button" class="pilot-dot" data-image="${i}" aria-label="${escape(item.title)}: ${escape(photo.label)}" aria-pressed="${i === 0}"></button>`).join('')}</div>
+        <p class="pilot-photo-label" aria-live="polite">${escape(photos[0].label)}</p>
+        <details class="pilot-scale"><summary>Scale <span class="pilot-scale-value">${item.scale.toFixed(2)}</span>×</summary><label for="${key}-scale">Visual scale · not a measurement</label><input id="${key}-scale" type="range" min="0.6" max="1" step="0.01" value="${item.scale}" aria-label="${escape(item.title)} visual scale"></details>
+      </article>`;
+    };
+    document.querySelector('#studies').innerHTML = styles.map((style, i) => `<section class="pilot-section" id="style-${style.id}" data-style="${style.id}" aria-labelledby="title-${style.id}">
+      <div class="pilot-section-heading"><h2 id="title-${style.id}"><span class="pilot-index">Study 0${i + 1} / 12 finds</span>${style.name}</h2><p>${style.note}</p></div>
+      <div class="pilot-grid" data-tile="${style.id}">${data.map(item => card(item, style.id)).join('')}</div>
+    </section>`).join('');
+    function settings() {
+      document.querySelectorAll('#themes button').forEach(b => b.setAttribute('aria-pressed', b.dataset.theme === html.dataset.theme));
+      document.querySelectorAll('#walls button').forEach(b => b.setAttribute('aria-pressed', b.dataset.wall === html.dataset.wall));
+      document.querySelectorAll('.pilot-section').forEach(s => s.hidden = currentStyle !== 'all' && s.dataset.style !== currentStyle);
+      document.querySelector('#style-view').value = currentStyle;
+      const colour = getComputedStyle(document.body).backgroundColor;
+      document.querySelector('#colour-readout').textContent = `${html.dataset.theme === 'evening' ? 'Evening' : 'Day'} / ${html.dataset.wall === 'theme' ? 'collection paper' : html.dataset.wall + ' page'} / ${colour}`;
+      const next = new URLSearchParams({style:currentStyle, theme:html.dataset.theme, wall:html.dataset.wall});
+      history.replaceState(null, '', '?' + next);
+    }
+    html.dataset.theme = query.get('theme') === 'evening' ? 'evening' : 'day';
+    html.dataset.wall = ['cream','burgundy'].includes(query.get('wall')) ? query.get('wall') : 'theme';
+    document.querySelector('#themes').addEventListener('click', e => { if (e.target.dataset.theme) {html.dataset.theme = e.target.dataset.theme; settings();} });
+    document.querySelector('#walls').addEventListener('click', e => { if (e.target.dataset.wall) {html.dataset.wall = e.target.dataset.wall; settings();} });
+    document.querySelector('#style-view').addEventListener('change', e => {currentStyle = e.target.value; settings();});
+    settings();
+    const dialog = document.querySelector('#item-dialog');
+    let returnFocus;
+    const showDialogImage = (item, index) => {
+      // Original first in details, followed by the study and the labelled detail crop.
+      const photos = photoSet(item).sort((a, b) => Number(b.src === item.img) - Number(a.src === item.img));
+      const photo = photos[index];
+      const image = document.querySelector('#dialog-image');
+      image.src = photo.src; image.alt = item.title;
+      document.querySelector('#dialog-context').textContent = photo.label + (index === 0 ? ' — shown first.' : '');
+      document.querySelector('#dialog-dots').innerHTML = photos.map((p, i) => `<button type="button" class="pilot-dot" data-dialog-image="${i}" aria-label="${escape(p.label)}" aria-pressed="${i === index}"></button>`).join('');
+    };
+    let dialogItem;
+    document.querySelector('#studies').addEventListener('click', e => {
+      const article = e.target.closest('.pilot-card');
+      if (!article) return;
+      const item = data.find(v => v.id === article.dataset.id);
+      const dot = e.target.closest('[data-image]');
+      if (dot) {
+        const index = Number(dot.dataset.image);
+        article.dataset.photo = index;
+        article.querySelectorAll('[data-layer]').forEach(img => img.classList.toggle('is-hidden', Number(img.dataset.layer) !== index));
+        article.querySelectorAll('[data-image]').forEach(button => button.setAttribute('aria-pressed', button === dot));
+        article.querySelector('.pilot-photo-label').textContent = photoSet(item)[index].label;
+      } else if (e.target.closest('.pilot-card-link')) {
+        e.preventDefault(); returnFocus = article.querySelector('.pilot-card-link'); dialogItem = item;
+        document.querySelector('#dialog-title').textContent = item.title;
+        document.querySelector('#dialog-note').textContent = item.note + ' Size coming. Guide $' + HNV_PRICES[item.id].target + '.' + (item.soldDemo ? ' SOLD is demo data only.' : '');
+        showDialogImage(item, 0); dialog.showModal();
+      }
+    });
+    document.querySelector('#studies').addEventListener('input', e => {
+      if (e.target.type !== 'range') return;
+      const article = e.target.closest('.pilot-card');
+      article.style.setProperty('--s', e.target.value);
+      article.querySelector('.pilot-scale-value').textContent = Number(e.target.value).toFixed(2);
+    });
+    document.querySelector('#dialog-dots').addEventListener('click', e => {
+      const button = e.target.closest('[data-dialog-image]');
+      if (button) {const index = Number(button.dataset.dialogImage); showDialogImage(dialogItem, index); document.querySelector(`[data-dialog-image="${index}"]`).focus();}
+    });
+    dialog.querySelector('.pilot-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => returnFocus?.focus());
+  })();
+  </script>
+</body>
+</html>

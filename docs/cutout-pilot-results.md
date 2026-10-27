@@ -27,7 +27,7 @@ Browser-computed values in the isolated storefront, verified in both themes: `#c
 
 ## Phase 1: four-item comparison
 
-All arms use the same oriented sRGB source crop. A uses rembg's general prediction and `-dc` code path; B uses HR-matting at 2048×2048, CPU fp32; C retains the source without segmentation (zero model inference time; I/O excluded). General session loading took 9.15 s, HR loading 6.17 s, separately from the image timings below.
+All arms use the same oriented sRGB source crop. A uses rembg's general prediction and `-dc` code path; B uses HR-matting at 2048×2048, CPU fp32; C retains the source without segmentation (zero model inference time; I/O excluded). Initial comparison-session loading took 9.15 s for general and 6.17 s for HR, separately from the image timings below. The audit also records the latest general session used for the complete-support pass.
 
 | Item | A: general + decontamination | B: HR-matting | Pilot decision |
 |---|---|---|---|
@@ -48,4 +48,16 @@ Inspect the committed [audit](../tools/cutout/pilot-audit.json) for source hashe
 
 ## Phase 2: local tile pilot
 
-Browser screenshots and final validation are in progress. Catalog rollout and publication remain stopped for the owner's style choice.
+Open **http://127.0.0.1:4182/pilot-cutouts.html**. The page remains local and is omitted from the build allowlist. It contains all 12 specified items in each of four styles, two lighting themes, and explicit cream/burgundy page overrides. White remains the starting choice. The whole mannequin head, neck and base stay with the hat in every style; the complete-support rule is retained in the handoff for rollout.
+
+**Browser verification:** 24 full-page screenshots, four styles × two themes × 1440/390/320 CSS pixels. Every case has 12 items, four columns/three rows on desktop and two columns/six rows on phones, all images loaded, and no horizontal overflow. Every visible phone control is at least 44×44 CSS pixels. Reviewed desktop, phone and combined sheets visually.
+
+Verified original-first dialogs, Escape/close focus return, desktop hover alternate, three lamp photos through phone dots, and scale control changes/reset. Keyboard focus uses a visible 3 px text-colour ring with a 4 px offset; the skip target also has a ring. Caption contrast is 7.40:1 by day, 8.53:1 in evening, 4.92:1 on cream, and 7.18:1 on burgundy. Title contrast is at least 11.61:1. No browser warnings or console errors were observed.
+
+Reduced-motion CSS disables transitions, animations and smooth scrolling. **Verification limit:** the current browser connector does not expose live media emulation, so the reduced-motion rule was inspected rather than tested with an emulated OS preference.
+
+Local evidence in `artifacts/pilot/`: `styles-overview.jpg`; one combined sheet per style (`style-white.jpg`, `style-cream.jpg`, `style-burgundy.jpg`, `style-shelf.jpg`), each including both themes at all three widths; all 24 full-page captures; two shelf page-colour captures; keyboard, dialog and third-photo screenshots. `hat-full-head-four-styles.jpg` shows the corrected complete hat display in all four styles. `browser-captures.json` and `browser-checks.json` are also included in the committed audit.
+
+**Build and file verification:** JavaScript syntax, all 12 item/original/price references, output dimensions/size/alpha, 12 byte-identical original archives, and absence of alpha exports under `media/` pass. The latest storefront build writes to `site/dist/client` and `site/dist/server`; the built client contains all eight cutout pairs and omits the pilot page. The existing room-worker suite passes all 12 tests. The later room-preview commit was incorporated from `origin/master`; its source, hero, disco, gift copy and hosting settings have no pilot edits.
+
+All phases are committed/pushed on `codex/cutout-pilot`. **STOP 1:** catalog rollout and publication wait for the owner's style choice. No Site publication or access-policy change was performed.
