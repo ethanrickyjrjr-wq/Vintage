@@ -1,0 +1,586 @@
+{
+  "lane": "furniture",
+  "date": "2026-10-27",
+  "gate_note": "assets pass every gate item. borderline_tight_crop = real alpha, long side >= 1000, visually clean, failing only the 5%-corner-patch rule (and for flat rugs the 15% rule) because pngimg crops tight to the subject; recommend accepting after eyeballing.",
+  "assets": [
+    {
+      "slug": "gilded-emerald-velvet-regency-armchair",
+      "title": "Gilded Regency armchair in emerald velvet",
+      "echoes": "style only",
+      "style_match": "Hollywood Regency gold carving plus emerald velvet, the jewel-tone glam the burgundy room wants.",
+      "source_page_url": "https://pngimg.com/image/7048",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/armchair/armchair_PNG7048.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/armchair_PNG7048.png",
+      "dimensions_px": [
+        900,
+        1145
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5119,
+      "corners_transparent": true,
+      "sha256": "6964b10287609aa7b087c0a7525063aca5b173786446fdeb44d0a749ec7e5f5f",
+      "visual_check": "Burgundy: gold frame and green velvet pop, open space between arm and seat is transparent, no halo. White: clean edges, no checkerboard. Subject fully inside frame."
+    },
+    {
+      "slug": "rust-leather-midcentury-sofa",
+      "title": "Rust/orange leather mid-century three-seat sofa, tapered wood legs",
+      "echoes": "A19",
+      "style_match": "Direct match to the rust mid-century sofa under the cowhide in the shop video.",
+      "source_page_url": "https://pngimg.com/image/6961",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/sofa/sofa_PNG6961.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/sofa_PNG6961.png",
+      "dimensions_px": [
+        2875,
+        1312
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3886,
+      "corners_transparent": true,
+      "sha256": "25e5327e226511c4770656be178c472cdd24611c3d363bcde268c1fce4405a5f",
+      "visual_check": "Burgundy: rust leather reads well against wall colour, gaps between the tapered legs are transparent. White: clean; a very thin light line along the underside edge near one leg, negligible. Whole sofa in frame."
+    },
+    {
+      "slug": "red-swan-sofa-chrome-base",
+      "title": "Red wool Swan-style sofa on a chrome base",
+      "echoes": "style only",
+      "style_match": "Sculptural 50s-60s red curved sofa, a loud retro statement piece that holds against burgundy.",
+      "source_page_url": "https://pngimg.com/image/6953",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/sofa/sofa_PNG6953.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/sofa_PNG6953.png",
+      "dimensions_px": [
+        2866,
+        1589
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.412,
+      "corners_transparent": true,
+      "sha256": "02267a3af2ef9d9d59cb460e21bb0a55945e10cd853ce56b7508da6033c85c04",
+      "visual_check": "Burgundy: red sofa visible, gap under the seat between chrome legs is transparent. White: clean, chrome base edges fine. Whole object."
+    },
+    {
+      "slug": "worn-wood-barstool",
+      "title": "Worn walnut wooden barstool",
+      "echoes": "style only",
+      "style_match": "Lived-in wooden barstool for the bar corner; honest vintage patina.",
+      "source_page_url": "https://pngimg.com/image/6844",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/chair/chair_PNG6844.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/chair_PNG6844.png",
+      "dimensions_px": [
+        1652,
+        2444
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6218,
+      "corners_transparent": true,
+      "sha256": "07ca0fc80a56443f50ed181f179db81b48c74718941b8e2acb63b31c2eb3b8ea",
+      "visual_check": "Burgundy and white: rungs and gaps between legs are transparent; faint light fringe on a couple of rung edges only visible at 100% zoom. Legs touch the bottom edge of a tight crop but nothing is cut off."
+    },
+    {
+      "slug": "pink-vinyl-chrome-diner-chair",
+      "title": "Hot-pink vinyl and chrome 50s diner chair",
+      "echoes": "style only",
+      "style_match": "Pink-vinyl diner chair is pure kitsch glam and echoes the shop's pink neon and pink stemware.",
+      "source_page_url": "https://pngimg.com/image/6871",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/chair/chair_PNG6871.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/chair_PNG6871.png",
+      "dimensions_px": [
+        1928,
+        2613
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.7158,
+      "corners_transparent": true,
+      "sha256": "a4f5fd3d9e2127c633ad74df7ea124a63c6fc1612fa0b68a4d009c752cdcb979",
+      "visual_check": "Burgundy: pink vinyl and chrome frame clear, gaps between chrome legs transparent. White: thin pale fringe on chrome, acceptable. Whole chair."
+    },
+    {
+      "slug": "gold-baroque-oval-mirror",
+      "title": "Ornate gold baroque oval mirror",
+      "echoes": "style only",
+      "style_match": "Heavy gilded frame is the Hollywood Regency wall piece; pairs with the gold etagere.",
+      "source_page_url": "https://pngimg.com/image/17370",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/mirror/mirror_PNG17370.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/mirror_PNG17370.png",
+      "dimensions_px": [
+        1460,
+        2104
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3135,
+      "corners_transparent": true,
+      "sha256": "6f8cfd1e64c5576a007cb5bfba2f6436c6d1a86275ce1974741d3ecca9c69633",
+      "visual_check": "Burgundy: gold filigree edges clean, mirror glass shows as opaque silver (not a hole). White: no halo. Tight crop touches all four edges but crest and base are complete."
+    },
+    {
+      "slug": "blue-velvet-round-button-pouf-cushion",
+      "title": "Round teal-blue velvet button cushion/pouf",
+      "echoes": "style only",
+      "style_match": "Velvet floor cushion/pouf in jewel blue; sits in the same cushion family as the star cushion on the black armchair (A15) but is not a copy of it.",
+      "source_page_url": "https://pngimg.com/image/103004",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/pillow/pillow_PNG103004.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/pillow_PNG103004.png",
+      "dimensions_px": [
+        3253,
+        3169
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.2156,
+      "corners_transparent": true,
+      "sha256": "f892675719139311c5ebc61b88a7776f6f7645868db3ef13041ee59b2922dc37",
+      "visual_check": "Burgundy: velvet texture visible, circular silhouette clean. White: no halo. Whole object."
+    },
+    {
+      "slug": "black-cream-sheepskin-throw",
+      "title": "Black and cream patched sheepskin throw",
+      "echoes": "A19",
+      "style_match": "Sheepskin throw sits with the cowhide over the sofa; black/cream patches echo the shop's black-cream cowhide without duplicating it.",
+      "source_page_url": "https://pngimg.com/image/106366",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/fur/fur_PNG35.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/fur_PNG35.png",
+      "dimensions_px": [
+        1597,
+        1646
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4109,
+      "corners_transparent": true,
+      "sha256": "f3db89af8563db5cf77f773e42463d6dc3b22dd24a9e45b27b9c4e0ae1962f6d",
+      "visual_check": "Burgundy: fur edge feathered naturally, no white rim. White: soft feathering on fur tips, expected for fur. Whole hide."
+    }
+  ],
+  "borderline_tight_crop": [
+    {
+      "slug": "yellow-sheepskin-clam-chair",
+      "title": "Mustard sheepskin 'Clam' chair with black bentwood arms",
+      "echoes": "style only",
+      "style_match": "Best quirky statement chair: 60s Danish-style lounge, warm yellow against burgundy; stands in for the black armchair slot (A15) as a different chair.",
+      "source_page_url": "https://pngimg.com/image/7064",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/armchair/armchair_PNG7064.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/armchair_PNG7064.png",
+      "dimensions_px": [
+        2671,
+        2611
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5381,
+      "corners_transparent": false,
+      "sha256": "93470bebeaa354b805216b08f4140821993e64d5f7f01cd2dfc2d03d9ea7167b",
+      "visual_check": "Burgundy and white: legs, arms and gap under the seat transparent, clean edges. Tight crop: arm tip enters the top-right corner patch and legs touch image edges, but no part is clipped.",
+      "gate_exception": "Fails only the 5% corner rule because the subject reaches the corner of a tight crop."
+    },
+    {
+      "slug": "burgundy-roll-arm-armchair",
+      "title": "Burgundy linen roll-arm armchair",
+      "echoes": "style only",
+      "style_match": "Tone-on-tone with the burgundy walls; a conservative base piece.",
+      "source_page_url": "https://pngimg.com/image/7026",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/armchair/armchair_PNG7026.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/armchair_PNG7026.png",
+      "dimensions_px": [
+        1386,
+        1525
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3473,
+      "corners_transparent": false,
+      "sha256": "d5f888b6bdea6f3fdc4c1bfefb2dcdc62a74eb832005a5ddf999a35f9db93862",
+      "visual_check": "Burgundy: blends with wall but legible, clean. White: clean. Back-left corner of chair touches top-left corner.",
+      "gate_exception": "Fails only the 5% corner rule (tight crop)."
+    },
+    {
+      "slug": "brown-mohair-channel-tufted-sofa",
+      "title": "Brown mohair channel-tufted sofa with wood base",
+      "echoes": "style only",
+      "style_match": "Warm 60s-70s tufted brown sofa, a good alternative to the rust one.",
+      "source_page_url": "https://pngimg.com/image/6921",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/sofa/sofa_PNG6921.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/sofa_PNG6921.png",
+      "dimensions_px": [
+        3508,
+        1273
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.1086,
+      "corners_transparent": false,
+      "sha256": "f7e4e1fbb8345898084306f4d6200e4778baba6adf55c038145a83fb13111871",
+      "visual_check": "Burgundy and white: clean edges, gap between legs transparent. Whole sofa, spans full width.",
+      "gate_exception": "Fails the 5% corner rule (tight crop, top-left patch clear) and the 15% transparency rule (10.9%, the sofa fills a wide frame)."
+    },
+    {
+      "slug": "wood-console-tv-tapered-legs",
+      "title": "1960s wood console television on tapered legs",
+      "echoes": "style only",
+      "style_match": "Film/music-memorabilia prop. Real photo of a vintage wood-cabinet TV; a strong period prop for the room editor.",
+      "source_page_url": "https://pngimg.com/image/39216",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/tv/tv_PNG39216.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/tv_PNG39216.png",
+      "dimensions_px": [
+        2613,
+        2375
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.237,
+      "corners_transparent": false,
+      "sha256": "100787051b332470e9ca034f2b5b1d1676ab15f5d060ffbd01c3b3f9ebf957e8",
+      "visual_check": "Burgundy: screen is opaque grey glass (not a hole). Gap between legs transparent. White: clean. Whole set incl. legs.",
+      "gate_exception": "Fails only the 5% corner rule (tight crop)."
+    },
+    {
+      "slug": "gold-1950s-portable-tv-rabbit-ears",
+      "title": "Gold-cased 1950s portable TV with rabbit-ear antennas",
+      "echoes": "style only",
+      "style_match": "Film/music-memorabilia prop. Gold-plastic retro portable TV with antennas: kitsch and Hollywood-gold at once.",
+      "source_page_url": "https://pngimg.com/image/39209",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/tv/tv_PNG39209.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/tv_PNG39209.png",
+      "dimensions_px": [
+        1859,
+        2857
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4738,
+      "corners_transparent": false,
+      "sha256": "c7af5fb898be6b93fe7d8e09089ef469aaf8c0fde653f5d470b1d23ff86376fc",
+      "visual_check": "Burgundy and white: thin antennas intact and clean, handle gap transparent. Whole object.",
+      "gate_exception": "Fails only the 5% corner rule (bottom corner patches are the TV feet)."
+    },
+    {
+      "slug": "rust-red-geometric-kilim-rug",
+      "title": "Rust-red Scandinavian-style geometric kilim flatweave rug",
+      "echoes": "style only",
+      "style_match": "Rust/cream geometric flatweave is the closest ready cutout to the orange/cream/black rug in the shop.",
+      "source_page_url": "https://pngimg.com/image/57686",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/carpet/carpet_PNG57686.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/carpet_PNG57686.png",
+      "dimensions_px": [
+        2056,
+        2904
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.0118,
+      "corners_transparent": false,
+      "sha256": "017be575bf34dd7783600bfb653669032fcb0780172c8887914c6de7c5ee697b",
+      "visual_check": "Burgundy and white: rectangle with clean cut edges, no halo. Flat rug, corners opaque by nature.",
+      "gate_exception": "Flat rug: relaxed rule; fails strict 15% transparent and corner rule."
+    },
+    {
+      "slug": "pink-orange-diamond-kilim-fringed-rug",
+      "title": "Pink/orange/cream diamond kilim rug with greek-key border and fringe",
+      "echoes": "style only",
+      "style_match": "Echoes the shop geometric flatweave rug. Geometric flatweave in orange, pink, cream and navy; fringe gives an organic outline.",
+      "source_page_url": "https://pngimg.com/image/57678",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/carpet/carpet_PNG57678.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/carpet_PNG57678.png",
+      "dimensions_px": [
+        2381,
+        3000
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.0686,
+      "corners_transparent": false,
+      "sha256": "0f8de34e6b2173fdd9ab18dec5e0ed20d2ec2ebacb0d921b5447f8396fe61973",
+      "visual_check": "Burgundy and white: fringe strands separated cleanly, no halo. Fringe touches the frame edge but rug whole.",
+      "gate_exception": "Flat rug: relaxed rule; fails strict corner rule."
+    },
+    {
+      "slug": "orange-teal-navy-geometric-kilim-rug",
+      "title": "Orange/teal/navy stepped-diamond kilim rug",
+      "echoes": "style only",
+      "style_match": "Echoes the shop geometric flatweave rug. Stepped diamonds in orange, teal and navy on a cream border, strongly geometric.",
+      "source_page_url": "https://pngimg.com/image/57682",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/carpet/carpet_PNG57682.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/carpet_PNG57682.png",
+      "dimensions_px": [
+        1974,
+        2884
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.0119,
+      "corners_transparent": false,
+      "sha256": "308a81095a7aacac7aac23efab4131dd67e21205afa4a6e7eb2edd0b3f1b2156",
+      "visual_check": "Burgundy and white: clean rectangle, slight thin white line on left edge at 100% zoom. Whole rug.",
+      "gate_exception": "Flat rug: relaxed rule; fails strict corner rule."
+    },
+    {
+      "slug": "red-orange-heriz-medallion-rug",
+      "title": "Rust-red Heriz-style medallion rug",
+      "echoes": "style only",
+      "style_match": "Rust and navy Persian medallion rug, warmer and more traditional than the kilims.",
+      "source_page_url": "https://pngimg.com/image/57685",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/carpet/carpet_PNG57685.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/carpet_PNG57685.png",
+      "dimensions_px": [
+        2090,
+        2400
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.0215,
+      "corners_transparent": false,
+      "sha256": "5657e0cc1f4b137f2657ae707234d7f72b4ad58e8e25f599c7c604a2c0a27db5",
+      "visual_check": "Burgundy and white: clean edges, no halo. Whole rug.",
+      "gate_exception": "Flat rug: relaxed rule; fails strict corner rule."
+    },
+    {
+      "slug": "orange-shag-rug",
+      "title": "Blaze-orange shag rug",
+      "echoes": "style only",
+      "style_match": "70s orange shag, loud and on-palette.",
+      "source_page_url": "https://pngimg.com/image/57644",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/carpet/carpet_PNG57644.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/carpet_PNG57644.png",
+      "dimensions_px": [
+        1000,
+        991
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.0532,
+      "corners_transparent": false,
+      "sha256": "9a4c27a4ee487655891fab51e34e420d2f7abbb503d061333c70059993830902",
+      "visual_check": "Burgundy: orange pops, pile edge slightly blunt. White: clean. Barely cut out (5% transparent), reads as a square.",
+      "gate_exception": "Flat rug: relaxed rule; fails strict corner rule. 1000 px long side is the minimum."
+    },
+    {
+      "slug": "aztec-black-tan-rug-perspective",
+      "title": "Southwestern black/tan/cream Aztec rug photographed in perspective",
+      "echoes": "style only",
+      "style_match": "Echoes the shop geometric flatweave rug. Aztec diamonds in black, tan and cream, the Southwestern star motif family of A15.",
+      "source_page_url": "https://pngimg.com/image/57657",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/carpet/carpet_PNG57657.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/carpet_PNG57657.png",
+      "dimensions_px": [
+        1487,
+        1000
+      ],
+      "pillow_mode": "P",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3322,
+      "corners_transparent": false,
+      "sha256": "49fd8d9910fa3d50beb35e1ee972a8e15c790cb9aa9111e4b492121bfba36d89",
+      "visual_check": "Burgundy and white: trapezoid outline hard-edged (palette PNG with 1-bit alpha), no halo. Perspective shot, only suits a floor angle.",
+      "gate_exception": "P-mode PNG with binary alpha; bottom corner patches are rug pixels."
+    },
+    {
+      "slug": "black-velvet-ribbon-cushion",
+      "title": "Black velvet cushion with magenta/orange ribbon swirls",
+      "echoes": "style only",
+      "style_match": "Black cushion with wine/orange ribbon embroidery suits a punk-glam sofa pile.",
+      "source_page_url": "https://pngimg.com/image/102997",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/pillow/pillow_PNG102997.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "local_path": "artifacts/demo-sourcing/round2/furniture/pillow_PNG102997.png",
+      "dimensions_px": [
+        2995,
+        2764
+      ],
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.2052,
+      "corners_transparent": false,
+      "sha256": "15c7435f47b979c5396d64d263e2b19f4196525cf1f9149013c33f3782df0590",
+      "visual_check": "Burgundy and white: clean silhouette, no halo. Whole cushion.",
+      "gate_exception": "Fails only the 5% corner rule (tight crop)."
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://pngimg.com/uploads/armchair/armchair_PNG7010.png",
+      "reason": "Red baroque armchair, 1180x1165, passes every numeric gate item (alpha, 47.6% transparent, clean corners) but looks CG-rendered/over-saturated, has small specks in the carved crest, and is a second ornate gilded armchair next to the emerald Regency one. Spare only."
+    },
+    {
+      "url": "https://pngimg.com/uploads/carpet/carpet_PNG57661.png",
+      "reason": "Persian-style runner in perspective (1100x1650, P mode), not reviewed in detail; traditional red medallion, off-style."
+    },
+    {
+      "url": "https://pngimg.com/uploads/carpet/carpet_PNG57708.png",
+      "reason": "Byte-identical duplicate of carpet_PNG57657 (same sha256)."
+    },
+    {
+      "url": "https://pngimg.com/uploads/mirror/mirror_PNG17335.png",
+      "reason": "Gold rococo shell mirror, 1000x1809, passes the numbers, but a lilac/grey halo outline is visible around the crest flowers on burgundy. 17336 is a byte-identical duplicate."
+    },
+    {
+      "url": "https://pngimg.com/uploads/record_player/record_player_PNG111944.png",
+      "reason": "Wood radio/record console (best A16 look-alike) is only 518x510. Other record players 111916, 111918, 111924 are 500-800 px."
+    },
+    {
+      "url": "https://pngimg.com/uploads/armchair/armchair_PNG7035.png",
+      "reason": "Orange wood-frame lounge chair is on-palette but 871x928, under 1000 px."
+    },
+    {
+      "url": "https://pngimg.com/uploads/chair/chair_PNG6908.png",
+      "reason": "Mustard mid-century lounge chair, 823x823, under 1000 px."
+    },
+    {
+      "url": "https://pngimg.com/uploads/tv/tv_PNG39243.png",
+      "reason": "Orange TV is a cartoon illustration, not a photo."
+    },
+    {
+      "url": "https://pngimg.com/uploads/tv/tv_PNG39281.png",
+      "reason": "Flat-screen monitor with a transparent screen hole; wrong era."
+    },
+    {
+      "url": "https://pngimg.com/uploads/lamp/lamp_PNG108737.png",
+      "reason": "Gold wire base with black drum shade is on-style but 681x1024 and a table lamp (other lane; lamp shapes previously rejected)."
+    },
+    {
+      "url": "https://pngimg.com/uploads/lamp/lamp_PNG108714.png",
+      "reason": "Black arc floor lamp is 660x970, under 1000 px."
+    },
+    {
+      "url": "https://pngimg.com/uploads/fur/fur_PNG26.png",
+      "reason": "Tan sheepskin 663x800; fur 31 (536px) and fur 7 (611x796) also too small."
+    },
+    {
+      "url": "https://pngimg.com/uploads/chair/chair_PNG6872.png",
+      "reason": "Eames-style plywood chair has clean 2226x2756 alpha but a modern-showroom look, not shop style; chair 6897 (LCW) and 6848 (red diner, corner patch) are similar spares."
+    },
+    {
+      "url": "https://www.pngmart.com/files/7/Folding-Screen-PNG-File.png",
+      "reason": "White fabric folding screen with a baked soft shadow; farmhouse/minimal, not shop style."
+    },
+    {
+      "url": "https://www.pngmart.com/files/7/Folding-Screen-PNG-Free-Download.png",
+      "reason": "Wood-framed mirror screen: the mirror panels are transparent holes (burgundy shows through)."
+    },
+    {
+      "url": "https://www.stickpng.com/img/electronics/turntables/jukebox-table-remote",
+      "reason": "StickPNG jukebox cutouts are 283x284; page says free for personal use only."
+    },
+    {
+      "url": "https://pngpix.com/png/arc-floor-lamp-png-38-us9w3oxq87tne6yw.html",
+      "reason": "Arc floor lamp is 896x896 (pngpix standard size), under 1000 px."
+    },
+    {
+      "url": "https://pngimg.com/image/6912",
+      "reason": "Brown tweed sofa with striped pillows has clean 2708x1544 alpha but is suburban-showroom, not shop style."
+    }
+  ],
+  "gaps": [
+    "Sites actually mined: pngimg.com (category pages armchair, sofa, chair, mirror, carpet, table, lamp, tv, record_player, pillow, bookshelf, fur, bench, rocking_chair), pngpix.com (floor-lamp page, 896 px standard), pngmart.com (folding-screen tag), stickpng.com (jukebox and sheepskin pages, small files), freepngimg.com (jukebox tag page returned no image links).",
+    "Searched only via SearXNG queries, never browsed: Wikimedia Commons (jukebox, zebra rug, sunburst mirror queries surfaced only categories and unrelated files), pngall.com and purepng.com (no relevant hits), pngegg.com (search pages only, preview-only risk). A Commons category walk for jukeboxes and a pngall/pngegg crawl are untried.",
+    "Zebra, leopard or cheetah rugs/throws: none found on pngimg (animals/fur has only sheepskins and fur scarves) or in search results; cowhide and sheepskin only.",
+    "Vintage record-player console/turntable (A16): pngimg record_player has only 500-800 px alpha; needs another source.",
+    "Jukebox, pinball machine, globe bar, bar cart, gold etagere, drum/lucite coffee table, tulip/Saarinen table, sunburst mirror, rattan/peacock chair, ottoman: no genuine >=1000 px alpha located on the sites above (only a velvet button cushion-pouf).",
+    "Arc floor lamp: only 660x970 (pngimg) and 896x896 (pngpix).",
+    "Navajo-style blanket/throw: only rugs (kilims, one Aztec rug in perspective) found.",
+    "Orange/cream/black flatweave rug not matched exactly; nearest are the rust/cream kilims.",
+    "Every file came from pngimg.com (CC BY-NC 4.0). Tight crops mean many hi-res pieces fail the 5% corner rule; see borderline_tight_crop."
+  ]
+}

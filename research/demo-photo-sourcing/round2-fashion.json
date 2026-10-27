@@ -1,0 +1,647 @@
+{
+  "lane": "fashion",
+  "date": "2026-10-27",
+  "license_summary": "All files are from pngimg.com under CC BY-NC 4.0: attribution required, no commercial use. Fine for the private demo only; for a public or commercial site every one of these must be replaced or re-licensed.",
+  "edge_check": "For every keeper edge that has opaque pixels on the image border, the opaque width grows at least 2.9x within 6 px of the edge (scripts/clipprofile.py), i.e. curved tangent contact from a tight bbox crop, never a flat cut. Native-res 300 px crops at all touch points (scripts/edges.py, sheets/edges1.png, edges2.png, edges3.png) show no right-angle cuts. Stray-speck count via connected components (scripts/specks.py).",
+  "source_note": "All keepers from pngimg.com category galleries (boots, women_shoes, hat, women_bag, sunglasses, cowboy_hat, jewelry, necklace, sandals, dress, fur_coat). Direct URL pattern https://pngimg.com/uploads/<category>/<name>.png is the full-size original, not the small/ thumbnail. Gate script and composites in artifacts/demo-sourcing/round2/fashion-scripts and fashion/review.",
+  "assets": [
+    {
+      "slug": "zebra-print-star-pump",
+      "title": "Zebra-print pointed pump, hot pink lining, star stud and zip trim",
+      "echoes": "B18",
+      "style_match": "Animal-print heel with pink lining and a punk zip: stands in for the snakeskin-print pumps.",
+      "source_page_url": "https://pngimg.com/image/7437",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7437.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_7437.png",
+      "dimensions_px": [
+        1096,
+        876
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6078,
+      "corners_transparent": true,
+      "sha256": "c05d20bf5a227c25896976ef8eb7c1c508650af166d7ace98812786b362a7a9e",
+      "source_listing_title": "Women Shoes transparent PNG image",
+      "visual_check": "Clean on both. Zebra stripes, pink lining and chrome zip edges crisp, no halo, nothing filled inside the throat. Whole shoe, margin on all sides. Lowest res of the set (1096 px).",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_7437__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_7437__white.png"
+      ]
+    },
+    {
+      "slug": "spiked-black-platform-pumps",
+      "title": "Black suede platform pumps with silver spike toe studs (back view + side view)",
+      "echoes": "B18",
+      "style_match": "Black platform heels with spikes: the punk side of the shop.",
+      "source_page_url": "https://pngimg.com/image/7449",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7449.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_7449.png",
+      "dimensions_px": [
+        1607,
+        1178
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5136,
+      "corners_transparent": true,
+      "sha256": "9ef10641d005eea44e27390c6212d6881721d9f5caa3eda1a18ae0d377871633",
+      "source_listing_title": "Black Women Shoes PNG picture",
+      "visual_check": "Clean cutout; black reads well on white, on burgundy it is dark-on-dark but the outline is crisp. Spikes separate cleanly. Pair touches left/right/bottom edges by tangent only (tight bbox crop), no part cut off. Faint rough edge along the sole bottom.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_7449__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_7449__white.png"
+      ]
+    },
+    {
+      "slug": "neon-pink-patent-platform-pumps",
+      "title": "Pair of neon pink patent platform pumps with stiletto heels",
+      "echoes": "B18",
+      "style_match": "Neon pink patent heels: the shop's pink/neon note in one pair of shoes.",
+      "source_page_url": "https://pngimg.com/image/7451",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7451.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_7451.png",
+      "dimensions_px": [
+        1400,
+        1239
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4285,
+      "corners_transparent": true,
+      "sha256": "a1570db6895836fa681c3f4c9445fcc3e8dbb836abb70fc355de76ac7ed98971",
+      "source_listing_title": "Pink Women Shoes transparent PNG image",
+      "visual_check": "Clean on both at reduced scale and in native-res edge crops: no halo, heel gap fully transparent, zero stray specks (component count 0). Pair touches edges by tangent only (tight bbox crop). 1400x1239. Same object type as 7437/7449 but a different style (pointed zebra / spiked black platform / neon patent platform).",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_7451__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_7451__white.png"
+      ]
+    },
+    {
+      "slug": "neon-lime-gem-t-strap-sandal",
+      "title": "Tan leather T-strap flat sandal with neon lime gem stones and lime heel",
+      "echoes": "B18",
+      "style_match": "Neon accent on a flat sandal: the 80s neon-on-neutral mix.",
+      "source_page_url": "https://pngimg.com/image/9695",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/sandals/sandals_PNG9695.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_9695.png",
+      "dimensions_px": [
+        2287,
+        1367
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5531,
+      "corners_transparent": true,
+      "sha256": "51641e2186057cb20fb46bee06cc9a422db2d2199d57041ec650a3057f30230a",
+      "source_listing_title": "Sandals large resolution 2287x1367 PNG picture",
+      "visual_check": "Clean on both. Strap gaps and buckle open, lime gems crisp, no halo. Very high res (2287 px); sandal touches right edge (tight crop) but whole.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_9695__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_9695__white.png"
+      ]
+    },
+    {
+      "slug": "feathered-studded-felt-cowboy-hat",
+      "title": "Brown felt cowboy hat, studded leather band, red/blue feather",
+      "echoes": "B6|B9",
+      "style_match": "Western plus feather in one hat: ties to the feather cocktail hat and the western boots.",
+      "source_page_url": "https://pngimg.com/image/59672",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/cowboy_hat/cowboy_hat_PNG40.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_59672.png",
+      "dimensions_px": [
+        2452,
+        1330
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3802,
+      "corners_transparent": true,
+      "sha256": "ae480f04564f1a7d60d14cb2802c78bbbd39f780e0782da0ed77bb4156a79ba5",
+      "source_listing_title": "Realistic view of coffee colored cowboy hat with studded band and red feather PNG",
+      "visual_check": "Clean on both, felt texture soft but no halo or leftover white. Whole hat, brim tips touch left/right edges (tight crop) but not cut. Photo-style.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_59672__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_59672__white.png"
+      ]
+    },
+    {
+      "slug": "red-pleated-leather-jewel-handbag",
+      "title": "Red leather pleated handbag with patent top handle and jewelled flower clasp",
+      "echoes": "style only",
+      "style_match": "Glossy red leather with a rhinestone flower: maximalist glam.",
+      "source_page_url": "https://pngimg.com/image/6399",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/women_bag/women_bag_PNG6399.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_6399.png",
+      "dimensions_px": [
+        2126,
+        1845
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4707,
+      "corners_transparent": true,
+      "sha256": "610a75934391bf51c18ec1ca1e58c0e41393e9f01b5950c057981165327cdc44",
+      "source_listing_title": "Women Bag clean PNG clipart",
+      "visual_check": "Clean on both, handle opening fully transparent, no halo or fill. Whole bag, margins all round. 2126x1845.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_6399__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_6399__white.png"
+      ]
+    },
+    {
+      "slug": "magenta-feather-crystal-earrings",
+      "title": "Pair of magenta feather statement earrings with crystal feather studs",
+      "echoes": "B6",
+      "style_match": "Feathers in magenta/pink with crystals: the closest thing to the pheasant-feather hat.",
+      "source_page_url": "https://pngimg.com/image/6706",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/jewelry/jewelry_PNG6706.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_6706.png",
+      "dimensions_px": [
+        1987,
+        2829
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3812,
+      "corners_transparent": true,
+      "sha256": "1585a0a6fe010e9f8cac1608df9e1fa2131fff38be12fff46e03439263fcbb4d",
+      "source_listing_title": "Feather Earrings PNG picture",
+      "visual_check": "Clean on both, feather barbs soft and natural, no white fringe. Pair touches left/right/bottom edges (tight bbox crop), feather tips look intact.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_6706__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_6706__white.png"
+      ]
+    },
+    {
+      "slug": "gold-braided-chain-necklace",
+      "title": "Chunky braided gold necklace set with small diamonds, open clasp",
+      "echoes": "B11",
+      "style_match": "Chunky gold chain with sparkle: the gold-hardware note.",
+      "source_page_url": "https://pngimg.com/image/53727",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/necklace/necklace_PNG122.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_53727.png",
+      "dimensions_px": [
+        2694,
+        2832
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.8596,
+      "corners_transparent": true,
+      "sha256": "ca4d5afaed9d2e4668c7127db6bfabbc1b1e74539f936d2a44ec8837137f456e",
+      "source_listing_title": "Realistic view of a braided gold and silver collar necklace PNG",
+      "visual_check": "Clean on both; the whole ring interior is transparent and chain gaps are open (burgundy shows through). Edges touch top/bottom/sides (tight crop) but the full ring is present. 2694x2832.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_53727__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_53727__white.png"
+      ]
+    },
+    {
+      "slug": "round-wire-pink-lens-sunglasses",
+      "title": "Round gold wire-frame sunglasses with pink lenses and clear temple tips (photo)",
+      "echoes": "style only",
+      "style_match": "70s round wire frame with rose lenses: the retro-glam eyewear note, a real photo.",
+      "source_page_url": "https://pngimg.com/image/54472",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/sunglasses/sunglasses_PNG116.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_54472.png",
+      "dimensions_px": [
+        2818,
+        1811
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6619,
+      "corners_transparent": true,
+      "sha256": "61d8294e1de99ab9c9084567c724d8aa753a7bcb5e41cba714e2a05040d84879",
+      "source_listing_title": "Realistic view of round sunglasses with gold frame and pink lenses PNG",
+      "visual_check": "Clean on both and in native-res crops of earpieces, hinges and bridge: smooth thin-wire edges, no white halo, one connected object, zero stray specks. Lenses are opaque pink (as photographed). Hinges touch left/right edges by tangent only. 2818x1811.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_54472__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_54472__white.png"
+      ]
+    },
+    {
+      "slug": "red-orange-shaggy-faux-fur-jacket",
+      "title": "Red/orange/yellow shaggy faux fur jacket, ghost mannequin, orange satin lining",
+      "echoes": "B10|B15",
+      "style_match": "Colour-blocked red-orange-yellow maximalist fur: the strongest colour match to the colour-blocked racks.",
+      "source_page_url": "https://pngimg.com/image/40237",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/fur_coat/fur_coat_PNG28.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_40237.png",
+      "dimensions_px": [
+        1000,
+        1000
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.517,
+      "corners_transparent": true,
+      "sha256": "7d6b2ecb86550b45d835cdf4983c262799fed1d1f087fd68bc6336fc933b60e8",
+      "source_listing_title": "Realistic view of red shaggy faux fur jacket with a wide lapel collar PNG",
+      "visual_check": "Clean on both, ragged fur tips preserved, no white halo. No person or mannequin parts. A small black neck label with a brand name is visible inside the collar (part of the photo, tiny). 1000x1000, jacket fills about 85% of frame so usable detail is decent.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_40237__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_40237__white.png"
+      ]
+    },
+    {
+      "slug": "navy-floral-shirt-dress-red-trim",
+      "title": "Navy polka-dot and fruit-print shirt dress, red piping and buttons, ghost mannequin",
+      "echoes": "B12",
+      "style_match": "Navy shirt dress with contrast trim: close stand-in for the navy shirt dress with cream collar.",
+      "source_page_url": "https://pngimg.com/image/56171",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/dress/dress_PNG166.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_56171.png",
+      "dimensions_px": [
+        1866,
+        4011
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.2256,
+      "corners_transparent": true,
+      "sha256": "abf55d55ce9f4d5f6743884db8ee5ec4dbd82959c9d0e66dc2ac3a1bfe77aea3",
+      "source_listing_title": "Realistic view of a blue floral shirt dress with red trim PNG",
+      "visual_check": "Clean on both, no halo, neckline V shows the transparent back. No person. Tiny brand tag at the collar interior. Very tall 1866x4011; touches all four edges by tangent only (tight bbox crop; hem is a curved tangent, not a flat cut), sleeves intact.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_56171__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_56171__white.png"
+      ]
+    },
+    {
+      "slug": "safety-pin-star-sequin-mini-dress",
+      "title": "Black asymmetric mini dress covered in safety pins, studs and silver stars, ghost mannequin",
+      "echoes": "style only",
+      "style_match": "Punk glam: safety pins and stars on black, the 'little bit punk' note.",
+      "source_page_url": "https://pngimg.com/image/56164",
+      "source_homepage_url": "https://pngimg.com",
+      "direct_image_url": "https://pngimg.com/uploads/dress/dress_PNG159.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/pngimg_56164.png",
+      "dimensions_px": [
+        900,
+        1620
+      ],
+      "listed_dimensions_match": true,
+      "pillow_mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5923,
+      "corners_transparent": true,
+      "sha256": "11661d3139aa9ed5f4e0e509c9023ca36934bd006fedd7b24eaba7ea67ead137",
+      "source_listing_title": "Realistic view of a black patterned dress with white sequins PNG",
+      "visual_check": "Clean on both; dark on burgundy but silhouette is crisp, silver pins and stars read on white. No person. Left cuff hem slightly frayed (real fabric). 900x1620 (long side 1620).",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_56164__burg.png",
+        "artifacts/demo-sourcing/round2/fashion/review/pngimg_56164__white.png"
+      ]
+    }
+  ],
+  "spares_verified_both_backgrounds": [
+    {
+      "slug": "hot-pink-suede-booties",
+      "echoes": "B18",
+      "note": "Hot pink suede platform ankle booties, 1280x1177, clean on both at reduced scale but native-res crops show about 20 stray 1-3 px specks under both heels and a dashed hairline under the right toe, so it fails 'clean edges' strictly. Best option if a boot-type shoe is wanted. Checked on burgundy and white.",
+      "source_page_url": "https://pngimg.com/image/7464",
+      "direct_image_url": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7464.png",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/spares/pngimg_7464.png",
+      "dimensions_px": [
+        1280,
+        1177
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.512,
+      "corners_transparent": true,
+      "sha256": "9dc5648bcb3f9e98e276e76417bdbc5a0bbadb390ddc5d6c611ffb67e7264026"
+    },
+    {
+      "slug": "teal-lightning-mary-jane",
+      "echoes": "B18",
+      "note": "Teal Mary Jane with lightning-bolt buckle, 1096x876, clean on both, zero specks; different object type from the pumps but off the red/pink palette. Checked on burgundy and white.",
+      "source_page_url": "https://pngimg.com/image/7436",
+      "direct_image_url": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7436.png",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/spares/pngimg_7436.png",
+      "dimensions_px": [
+        1096,
+        876
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5816,
+      "corners_transparent": true,
+      "sha256": "7f30fd4cc4aec94b36571c8692742947943d678aac20750c278d65bd2af1f8aa"
+    },
+    {
+      "slug": "straw-cowboy-hat",
+      "echoes": "B9",
+      "note": "Straw cowboy hat, 2796x2168, clean on both, pale/natural so less on palette. Checked on burgundy and white.",
+      "source_page_url": "https://pngimg.com/image/5702",
+      "direct_image_url": "https://pngimg.com/uploads/hat/hat_PNG5702.png",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/spares/pngimg_5702.png",
+      "dimensions_px": [
+        2796,
+        2168
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4047,
+      "corners_transparent": true,
+      "sha256": "e42c1715e3c4b8ab85eda87d594748a162929ea6221a2a9fb9662a8187edcc9f"
+    },
+    {
+      "slug": "orange-croc-clutch",
+      "echoes": "style only",
+      "note": "Orange croc-embossed clutch, 1054x766, clean on both. Checked on burgundy and white.",
+      "source_page_url": "https://pngimg.com/image/6424",
+      "direct_image_url": "https://pngimg.com/uploads/women_bag/women_bag_PNG6424.png",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/spares/pngimg_6424.png",
+      "dimensions_px": [
+        1054,
+        766
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3616,
+      "corners_transparent": true,
+      "sha256": "256e708f16265f8e5ba52b2abdfeae5ed70a5c370877a3bef03194ffad8e9ce7"
+    },
+    {
+      "slug": "red-wool-gloves-bow",
+      "echoes": "style only",
+      "note": "Red wool gloves with leather bow, 2341x2088, clean on both. Checked on burgundy and white.",
+      "source_page_url": "https://pngimg.com/image/8318",
+      "direct_image_url": "https://pngimg.com/uploads/gloves/gloves_PNG8318.png",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/spares/pngimg_8318.png",
+      "dimensions_px": [
+        2341,
+        2088
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.473,
+      "corners_transparent": true,
+      "sha256": "cf969c328297eed44a0986d6142d0425cce15b8e4a3e04c3a2054d2e88a21e2f"
+    },
+    {
+      "slug": "black-leather-biker-jacket-gold-zips",
+      "echoes": "B7",
+      "note": "Black ghost-mannequin biker jacket with gold zips, 1000x1203, clean on both, dark on burgundy. Checked on burgundy and white.",
+      "source_page_url": "https://pngimg.com/image/84147",
+      "direct_image_url": "https://pngimg.com/uploads/leather_jacket/leather_jacket_PNG45.png",
+      "local_path": "artifacts/demo-sourcing/round2/fashion/spares/pngimg_84147.png",
+      "dimensions_px": [
+        1000,
+        1203
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4298,
+      "corners_transparent": true,
+      "sha256": "e484a28e14ff365797fc8764e77674c70324d56f3eeb308413245ab04184059c"
+    }
+  ],
+  "spares_numeric_only": [
+    {
+      "id": "43959",
+      "page": "https://pngimg.com/image/43959",
+      "note": "navy floral silk scarf 2621x4934"
+    },
+    {
+      "id": "43957",
+      "page": "https://pngimg.com/image/43957",
+      "note": "pink silk scarf 2456x4478, left edge may be clipped"
+    },
+    {
+      "id": "43922",
+      "page": "https://pngimg.com/image/43922",
+      "note": "pink knit tassel scarf 1466x1599"
+    },
+    {
+      "id": "9617",
+      "page": "https://pngimg.com/image/9617",
+      "note": "burgundy leather belt with gold buckle 1200x1200"
+    },
+    {
+      "id": "59674",
+      "page": "https://pngimg.com/image/59674",
+      "note": "distressed leather cowboy hat with conchos 1571x1176"
+    },
+    {
+      "id": "59723",
+      "page": "https://pngimg.com/image/59723",
+      "note": "ivory cowboy hat, red leather band 2568x1736"
+    },
+    {
+      "id": "40243",
+      "page": "https://pngimg.com/image/40243",
+      "note": "leopard faux fur jacket 1000x1000"
+    },
+    {
+      "id": "54507",
+      "page": "https://pngimg.com/image/54507",
+      "note": "oversized black butterfly sunglasses 1500x1000, small stray white speck below lens"
+    },
+    {
+      "id": "54392",
+      "page": "https://pngimg.com/image/54392",
+      "note": "white-frame oversized sunglasses 1300x731"
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://pngimg.com/image/7468",
+      "reason": "Red/white stripe platform Mary Jane: stray non-transparent mark in the bottom-left corner patch (fails corner gate)."
+    },
+    {
+      "url": "https://pngimg.com/image/59678",
+      "reason": "Black studded leather cowboy hat: corner patch not fully transparent."
+    },
+    {
+      "url": "https://pngimg.com/image/84136",
+      "reason": "Black leather jacket flat-lay: corner patch not fully transparent."
+    },
+    {
+      "url": "https://pngimg.com/image/43955",
+      "reason": "Leopard silk scarf: corner patch not transparent."
+    },
+    {
+      "url": "https://pngimg.com/image/43956",
+      "reason": "Yellow/orange silk scarf: corner patch not transparent, touches edges."
+    },
+    {
+      "url": "https://pngimg.com/image/56188",
+      "reason": "Red draped satin dress: corner gate fail, 764 px wide, brand label."
+    },
+    {
+      "url": "https://pngimg.com/image/56175",
+      "reason": "Red flamenco dress: 3D render, corner gate fail."
+    },
+    {
+      "url": "https://pngimg.com/image/84156",
+      "reason": "Red leather biker jacket (ghost mannequin): passes numerics but a 'Fashion Leather' watermark is across the chest."
+    },
+    {
+      "url": "https://pngimg.com/image/6808",
+      "reason": "Silver earrings: BVLGARI lettering on the pieces (brand text), not on style."
+    },
+    {
+      "url": "https://pngimg.com/image/8305",
+      "reason": "Red fleece gloves: NHL and tire-brand logos printed on them."
+    },
+    {
+      "url": "https://pngimg.com/image/5719",
+      "reason": "Red wide-brim hat: ribbon tail cut off by bottom edge and illustration look."
+    },
+    {
+      "url": "https://pngimg.com/image/5706",
+      "reason": "Leather cowboy hat: vector/illustration style, not a photo; touches edges."
+    },
+    {
+      "url": "https://pngimg.com/image/5712",
+      "reason": "Navy-ribbon boater: vector illustration, not a photo."
+    },
+    {
+      "url": "https://pngimg.com/image/54426",
+      "reason": "Oversized red round sunglasses (2783x1639): passes the numeric gate but looks like a 3D render/vector polish, so the same photo-only rule that rejected 5706/5712 applies; swapped for 54472 (real photo). File kept in rejected/."
+    },
+    {
+      "url": "https://pngimg.com/image/7786",
+      "reason": "Brown over-knee belted boots: tight crop, left buckle strap and toe look clipped by image edge."
+    },
+    {
+      "url": "https://pngimg.com/image/6408",
+      "reason": "Chain-strap bag with snakeskin flap: passes gate but it is a 1000x1000 frame with the bag only about half of it (low effective resolution). Nearest 'chain bag' stand-in; file kept in rejected/."
+    },
+    {
+      "url": "https://pngimg.com/image/6397",
+      "reason": "Gray croc bag: 1000x1000 with small subject, grey, off-palette."
+    },
+    {
+      "url": "https://pngimg.com/image/7444",
+      "reason": "Hot pink platform pump: passes, but redundant with other pumps and toe looks trimmed at the right edge."
+    },
+    {
+      "url": "https://pngimg.com/image/88616",
+      "reason": "Beige trench back view: garment only about 270 px wide in a 1000 px frame (low effective resolution)."
+    },
+    {
+      "url": "https://pngimg.com/image/88590",
+      "reason": "Gray wrap coat: mannequin neck/head stand visible."
+    },
+    {
+      "url": "https://pngimg.com/image/8329",
+      "reason": "Black tactical leather gloves: '5.11' brand mark on the glove, off-style."
+    },
+    {
+      "url": "https://pngimg.com/image/8317",
+      "reason": "Black leather gloves with fur trim: cropped by the image edge (782 border px), off-style."
+    },
+    {
+      "url": "https://pngimg.com/image/54506",
+      "reason": "Blue mirrored sunglasses: modern, off-style."
+    },
+    {
+      "url": "https://wallpapers.com/png/cowboy-boot-with-fringe-png-06122024-ffqpp7ybernmp7x2.html",
+      "reason": "Fringe cowboy boot: wallpapers.com HD PNG is 896 px, looks AI-generated (alt text: 'glows with a warm inner light'), larger sizes are premium/upscaled JPG wallpapers, no true alpha at higher res. Same host's other PNGs skipped for the same reason."
+    },
+    {
+      "url": "https://pngimg.com/images/clothing/belt",
+      "reason": "All 30 belt cutouts are plain menswear leather belts; none studded, chained or harness-style."
+    },
+    {
+      "url": "https://pngimg.com/images/clothing/boots",
+      "reason": "37 boots listed: combat, rubber, riding and over-knee only; no western or fringed boot."
+    }
+  ],
+  "gaps": [
+    "Gray or tan fringed western ankle boots / cowboy boots: none as genuine hi-res alpha (pngimg boots has no western styles; wallpapers.com fringe boots are 896 px AI art).",
+    "Pheasant-feather cocktail hat, fascinator, pillbox: none (pngimg hat set is top hats, fedoras, bowlers, cowboy). Only feather earrings found. wallpapers.com fascinator pages not opened because that host caps at 896 px.",
+    "Black studded chain harness belt: none (all pngimg belts are plain menswear).",
+    "Clear strappy mules, pink flat slides, black kitten heels: not found (sandals set is outdoor/sport; heels set has pumps only).",
+    "Blush faux-leather belted trench (only a beige trench back view, too small), neon colour-block windbreaker / track jacket, paisley quilted kimono jacket, red embroidered jacket, red lace dress, paisley leggings: not found as clean person-free hi-res alpha. pngimg coat/dress/jacket/kimono pages were fetched and title-screened, only some were inspected.",
+    "Chunky gold chain necklace beyond the diamond-braid one: other gold chains on pngimg are thin.",
+    "Not tried for lack of budget: pngall.com, freepngimg.com, stickpng.com, purepng.com, pngegg.com, Wikimedia Commons. Everything here is from pngimg.com, so it all carries one license (CC BY-NC 4.0)."
+  ]
+}

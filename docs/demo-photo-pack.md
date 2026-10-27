@@ -51,6 +51,29 @@ sample data. `build.mjs` excludes the whole borrowed-photo directory, and its
 explicit source list excludes the demo scripts, review page and stylesheet.
 This task does not change the published storefront's audience or deployment.
 
+## Round two: more transparent pieces (2026-10-27)
+
+Ricky asked for more items in the shop's style with transparent backgrounds and good
+resolution. Three Sonnet scouts (decor and lighting, furniture and textiles, fashion
+and accessories) returned 41 pieces, all ready-made alpha from pngimg.com
+(CC BY-NC 4.0, private demo only). They sit under `alternatives` in
+`site/assets/demo/sources.json` and render grouped on `/demo-photos.html`. They are
+review material only: none is wired into `/demo`'s room editor or `demo-products.js`.
+
+Gate: RGBA with alpha 0 to 255, long side at least 1000 px, whole subject, no
+watermark or person, checked on burgundy and white. Sources are 900 to 8000 px;
+`site/assets/demo/` WebPs are trimmed and capped at 1600 px. Per-scout records,
+including rejects and gaps, are `research/demo-photo-sourcing/round2-*.json`. A
+cross-lane duplicate mirror was dropped, as was a 1000 px shag rug.
+
+Caveats: the three disco balls are rendered illustrations, not photographs. The ruby
+lamp has a faint fringe and the oval mirror a hard edge at 100% zoom. Tight crops
+touch their canvas edges (tangent contact, not clipping). Still not found as hi-res
+alpha: fringed western boots, feather fascinator, studded chain belt, clear mules,
+blush trench, neon windbreaker, ceramic animal figurines, black-and-gold shaker, a
+photographic disco ball, a record-player console and a jukebox. pngall, purepng, pngegg
+and Wikimedia Commons were queried but never crawled.
+
 ## Verification
 
 Pixel checks confirm genuine transparent surroundings on all ten replacement

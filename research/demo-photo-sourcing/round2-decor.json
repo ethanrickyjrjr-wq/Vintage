@@ -1,0 +1,612 @@
+{
+  "lane": "decor",
+  "date": "2026-10-27",
+  "assets": [
+    {
+      "slug": "disco-ball-silver",
+      "title": "Silver mirror ball, no hanger, bright glare top right",
+      "echoes": "style only",
+      "style_match": "The shop's signature giveaway in classic silver; reads instantly against burgundy walls.",
+      "source_page_url": "https://pngimg.com/image/117298",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/disco_ball/disco_ball_PNG117298.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/disco-ball-silver.png",
+      "dimensions_px": [
+        8000,
+        8000
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.2388,
+      "corners_transparent": true,
+      "sha256": "658527d5d1317d35f50700174efc024e2e95e9c70f36c09aef5dd1ae70655470",
+      "visual_check": "Burgundy: crisp circular edge, tiles and highlights intact, no halo. White: edge clean, no fringe. 3D-render/vector illustration look, not a photograph. 8000x8000 (9.7 MB), downscale before use.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_disco_117298__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_disco_117298__white.jpg"
+      ]
+    },
+    {
+      "slug": "disco-ball-gold",
+      "title": "Glossy gold mirror ball with dark reflections, no hanger",
+      "echoes": "style only",
+      "style_match": "Gold mirror ball: warm metallic that sits with brass and burgundy; second colorway of the signature disco ball.",
+      "source_page_url": "https://pngimg.com/image/117293",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/disco_ball/disco_ball_PNG117293.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/disco-ball-gold.png",
+      "dimensions_px": [
+        6042,
+        6000
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.237,
+      "corners_transparent": true,
+      "sha256": "03188c2ec0bf34728b407b2eeaa2e7bbd1f3aaa4f5d70d4b7160a0e3e4adca9e",
+      "visual_check": "Burgundy: rich gold, clean circular edge. White: no halo. Render/illustration style. 6042x6000.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_disco_117293__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_disco_117293__white.jpg"
+      ]
+    },
+    {
+      "slug": "disco-ball-magenta",
+      "title": "Magenta/hot-pink mirror ball with purple shaded tiles, no hanger",
+      "echoes": "style only",
+      "style_match": "Pink disco ball matches the pink neon and pink glass; third colorway for the giveaway.",
+      "source_page_url": "https://pngimg.com/image/117283",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/disco_ball/disco_ball_PNG117283.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/disco-ball-magenta.png",
+      "dimensions_px": [
+        2918,
+        2930
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.291,
+      "corners_transparent": true,
+      "sha256": "90d608d7b99a40325d61187973ae5defea6342ffbceb9009d689c0fcd395c824",
+      "visual_check": "Burgundy: strong pink pops, clean edge; its dark lower-left shading is part of the ball and sits close to the burgundy in tone. White: clean. Render/illustration style. 2918x2930.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_disco_117283__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_disco_117283__white.jpg"
+      ]
+    },
+    {
+      "slug": "lamp-pink-glass-gold-base",
+      "title": "Pink glass urn table lamp, gold base, gold-champagne cone shade",
+      "echoes": "A1",
+      "style_match": "Pink glass plus gilt base and glowing shade is Hollywood Regency table-lamp territory; echoes the Stiffel-style A1 in a pink colorway.",
+      "source_page_url": "https://pngimg.com/image/108721",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/lamp/lamp_PNG108721.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/lamp-pink-glass-gold-base.png",
+      "dimensions_px": [
+        1583,
+        2074
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6254,
+      "corners_transparent": true,
+      "sha256": "ba5057ab31b83c66f829af2a4c9b446a08fe9d0a2bdd58b6ded1014acaf6d1a0",
+      "visual_check": "Burgundy: shade and glass read cleanly, base gold intact, no holes. White: no fringe around shade rim. Real product photo cutout.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_lamp_108721__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_lamp_108721__white.jpg"
+      ]
+    },
+    {
+      "slug": "lamp-ruby-glass-brass",
+      "title": "Ruby-red cut glass table lamp, brass fittings, amber pleated shade",
+      "echoes": "A1",
+      "style_match": "Ruby glass lamp with warm lit shade: 70s glam and the ruby-glassware note in one object.",
+      "source_page_url": "https://pngimg.com/image/108688",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/lamp/lamp_PNG108688.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/lamp-ruby-glass-brass.png",
+      "dimensions_px": [
+        1950,
+        3264
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6581,
+      "corners_transparent": true,
+      "sha256": "815cf889eb5ad5be7bace0518ece0a818d98da4325fa84d0d9fa8f6d512b3eea",
+      "visual_check": "Burgundy: clean, shade translucency preserved. White: clean. Real product photo cutout. At 100% there is a thin 1-2 px light fringe with white specks along the shade rim on burgundy and ~5.6k detached alpha>=10 px along that rim (lower rim); invisible at 50% scale or below, but this is the weakest edge of the 12. Swap for lamp-rose-copper-glass-drum if it bothers you.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_lamp_108688__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_lamp_108688__white.jpg"
+      ]
+    },
+    {
+      "slug": "chandelier-brass-frosted-bowls",
+      "title": "Brass pendant chandelier with three frosted alabaster glass bowl shades on a chain",
+      "echoes": "A2",
+      "style_match": "Frosted glass bowls on brass: the closest match to the shop's two-tier frosted sea-glass chandelier A2.",
+      "source_page_url": "https://pngimg.com/image/109066",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/chandelier/chandelier_PNG54.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/chandelier-brass-frosted-bowls.png",
+      "dimensions_px": [
+        1597,
+        2954
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.8221,
+      "corners_transparent": true,
+      "sha256": "502190e703ba337d4197ac4517675db2a7023eb30512bfe9dc6afa0236a29144",
+      "visual_check": "Burgundy: bowls translucent and clean, brass crisp. White: no halo. Real product cutout. 100% crops: the ceiling canopy and rod exit the top edge (19 px, a tether) and the bowl base grazes the bottom edge (47 px, curved tangent); fixture is whole.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_chandelier_109066__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_chandelier_109066__white.jpg"
+      ]
+    },
+    {
+      "slug": "gramophone-rose-horn",
+      "title": "Antique wind-up gramophone with large rose-pink/burgundy flared horn on wooden case",
+      "echoes": "A16",
+      "style_match": "Rose horn on dark wood is film/music memorabilia with pink glam; pairs with the retro wooden turntable A16.",
+      "source_page_url": "https://pngimg.com/image/94885",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/gramophone/gramophone_PNG40.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/gramophone-rose-horn.png",
+      "dimensions_px": [
+        2160,
+        2613
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4821,
+      "corners_transparent": true,
+      "sha256": "ebdb44fd8104889a9d678c189830dc570f1786a72f8cfc41b17c3546423de004",
+      "visual_check": "Burgundy: horn interior reads deep pink, wood case detailed, edge clean. White: clean. Real photo cutout. Tight crop: horn rim touches left edge (72 px) but nothing is cut off.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_gramophone_94885__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_gramophone_94885__white.jpg"
+      ]
+    },
+    {
+      "slug": "rotary-phone-red",
+      "title": "Red Bakelite-style rotary desk telephone with cream handset cord",
+      "echoes": "style only",
+      "style_match": "Candy-red vintage phone is film-set kitsch; the loudest color accent against burgundy.",
+      "source_page_url": "https://pngimg.com/image/48902",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/phone/phone_PNG48902.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/rotary-phone-red.png",
+      "dimensions_px": [
+        2711,
+        2384
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.4064,
+      "corners_transparent": true,
+      "sha256": "791bb8cfcca3c101e7a5281b67717ca91b5b076eb4e13bf9178a4ccbbefe13d3",
+      "visual_check": "Burgundy: red holds against wine background, highlights intact, no halo. White: clean. Real photo cutout. Tight crop: the curved handset grazes the top edge (137 px run, 5% of width) and the right edge (75 px); 100% crops show tangent contact, not a flat cut.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_phone_48902__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_phone_48902__white.jpg"
+      ]
+    },
+    {
+      "slug": "picture-frame-gold-carved",
+      "title": "Square carved gold picture frame with classical flowers and scrolls, empty transparent opening",
+      "echoes": "A5",
+      "style_match": "Gilded frame for the editor to float art inside; echoes the gold-framed signed Elvis A5 and the framed pieces A3/A4. Opening is real alpha, so any artwork layers behind it.",
+      "source_page_url": "https://pngimg.com/image/90986",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/picture_frame/picture_frame_PNG198.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/picture-frame-gold-carved.png",
+      "dimensions_px": [
+        1054,
+        937
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5829,
+      "corners_transparent": true,
+      "sha256": "0b22cf8444fdbeee18c20b75513f8e772fb0eec948d5bd20d43f26c053ab0db0",
+      "visual_check": "Burgundy: gold carving crisp, opening shows burgundy straight through, no halo on inner or outer edge. White: clean. Real photo cutout. 1054x937 is the lowest-resolution keeper (long side just over 1000).",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_picture_frame_90986__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_picture_frame_90986__white.jpg"
+      ]
+    },
+    {
+      "slug": "mirror-gold-oval-rococo",
+      "title": "Ornate gold rococo oval wall mirror with shell crest",
+      "echoes": "style only",
+      "style_match": "Gold baroque oval mirror is maximalist Hollywood Regency wall art; the shop already shows a large mirror.",
+      "source_page_url": "https://pngimg.com/image/17370",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/mirror/mirror_PNG17370.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/mirror-gold-oval-rococo.png",
+      "dimensions_px": [
+        1460,
+        2104
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3135,
+      "corners_transparent": true,
+      "sha256": "6f8cfd1e64c5576a007cb5bfba2f6436c6d1a86275ce1974741d3ecca9c69633",
+      "visual_check": "Burgundy: gilt detail crisp, mirror glass shows its baked grey reflection gradient (part of the product shot, opaque). White: clean. Real photo cutout. Tight crop: 80 border px opaque in total (ornament tips graze the edges, 100% crops confirm tangents), whole object. At 100% the cutout edge is hard/aliased (stair-stepped gilt edge, no AA); fine at 50% scale or below.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_mirror_17370__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_mirror_17370__white.jpg"
+      ]
+    },
+    {
+      "slug": "perfume-atomizer-rose-glass",
+      "title": "Vintage swirled rose/ruby glass perfume atomizer with gold collar, mesh bulb and gold tassel",
+      "echoes": "style only",
+      "style_match": "Boudoir glam: rose glass with gold tassel; same pink/rose glass family as the pink stemware (A10) without duplicating it.",
+      "source_page_url": "https://pngimg.com/image/99985",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/perfume-atomizer-rose-glass.png",
+      "dimensions_px": [
+        2400,
+        2590
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6363,
+      "corners_transparent": true,
+      "sha256": "2043363c4c5020d69ec473b40acf3d422dda7fd8f4801bcba6b0d49dde9832ba",
+      "visual_check": "Burgundy: glass translucency and tassel threads intact, clean. White: no halo. Real photo cutout. Tight crop: 109 border px opaque in total (cap, bulb and tassel graze the edges; 100% crops show tangents), not cut off.",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_perfume_99985__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_perfume_99985__white.jpg"
+      ]
+    },
+    {
+      "slug": "cut-crystal-goblet",
+      "title": "Cut-crystal pressed-star goblet on a baluster stem",
+      "echoes": "A12",
+      "style_match": "Cut crystal barware matching the crystal decanter A12 (decanter itself not found as hi-res alpha).",
+      "source_page_url": "https://pngimg.com/image/2903",
+      "source_homepage_url": "https://pngimg.com/",
+      "direct_image_url": "https://pngimg.com/uploads/wineglass/wineglass_PNG2903.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "local_path": "artifacts/demo-sourcing/round2/decor/cut-crystal-goblet.png",
+      "dimensions_px": [
+        2166,
+        3994
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.362,
+      "corners_transparent": true,
+      "sha256": "1ad1b879313dffb56bc42b9c7dfaecfcb5c635fbff809b65d7e44ea9c04fb9b3",
+      "visual_check": "Burgundy: facets and stem sparkle, bowl reads as hazy mauve glass (partial alpha, expected for glass). White: clean, no halo. Real photo cutout. Rim grazes the top edge (53 px run, 2.5% of width, curved tangent).",
+      "review_composites": [
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_wineglass_2903__burgundy.jpg",
+        "artifacts/demo-sourcing/round2/decor/review/pngimg_wineglass_2903__white.jpg"
+      ]
+    }
+  ],
+  "held_back_passed_gate": [
+    {
+      "slug": "busts-plaster-pair",
+      "title": "Matched pair of white plaster classical busts on plinths (may read as a near-duplicate of the taken mannequin busts)",
+      "echoes": "A8",
+      "source_page_url": "https://pngimg.com/image/107986",
+      "direct_image_url": "https://pngimg.com/uploads/sculpture/sculpture_PNG37.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/busts-plaster-pair.png",
+      "dimensions_px": [
+        1487,
+        1487
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.5549,
+      "corners_transparent": true,
+      "sha256": "a9686e1f6f1d2d1bd350f290b135a0a003eb9b5ec8c09ca509b6c4055e6fbfb3",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "turntable-walnut-smoked-lid",
+      "title": "Walnut-cased turntable with smoked lid raised (3D render)",
+      "echoes": "A16",
+      "source_page_url": "https://pngimg.com/image/111938",
+      "direct_image_url": "https://pngimg.com/uploads/record_player/record_player_PNG111938.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/turntable-walnut-smoked-lid.png",
+      "dimensions_px": [
+        3000,
+        3000
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6575,
+      "corners_transparent": true,
+      "sha256": "3493446539bbf296d878872c8b81081c648a536b4057a196514526b512820d86",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "mirror-gold-rococo-shell",
+      "title": "Gold rococo wall mirror with shell crest, rectangular, 1000x1809",
+      "echoes": "style only",
+      "source_page_url": "https://pngimg.com/image/17335",
+      "direct_image_url": "https://pngimg.com/uploads/mirror/mirror_PNG17335.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/mirror-gold-rococo-shell.png",
+      "dimensions_px": [
+        1000,
+        1809
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.191,
+      "corners_transparent": true,
+      "sha256": "41107d4a307176774839f7fe2d8c1a9ddf5db70c74403a2775c58e705c6ae9d9",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "perfume-atomizer-pink-swirl",
+      "title": "Dusty pink swirled glass perfume atomizer with tassel (near-duplicate of the rose keeper)",
+      "echoes": "A10",
+      "source_page_url": "https://pngimg.com/image/99993",
+      "direct_image_url": "https://pngimg.com/uploads/perfume/perfume_PNG99993.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/perfume-atomizer-pink-swirl.png",
+      "dimensions_px": [
+        2497,
+        2698
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6409,
+      "corners_transparent": true,
+      "sha256": "030d29890701109f36ec8e230d0b7aebe477663f6c8ed66132c6736c1e25d760",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "lamp-rose-copper-glass-drum",
+      "title": "Rose-copper dimpled glass gourd lamp with white drum shade (P-mode palette PNG converted to RGBA to test)",
+      "echoes": "A1",
+      "source_page_url": "https://pngimg.com/image/108706",
+      "direct_image_url": "https://pngimg.com/uploads/lamp/lamp_PNG108706.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/lamp-rose-copper-glass-drum.png",
+      "dimensions_px": [
+        1772,
+        1772
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.6544,
+      "corners_transparent": true,
+      "sha256": "a933aa25679be675f1a778a52ed0628815791776664c5d2a5a96e176c9bd3fe1",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "chandelier-gold-ornate-candles",
+      "title": "Ornate gilded candelabra chandelier, rocaille leaves, many white candles; finial touches top edge 12 px",
+      "echoes": "style only",
+      "source_page_url": "https://pngimg.com/image/109039",
+      "direct_image_url": "https://pngimg.com/uploads/chandelier/chandelier_PNG27.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/chandelier-gold-ornate-candles.png",
+      "dimensions_px": [
+        2645,
+        3887
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.736,
+      "corners_transparent": true,
+      "sha256": "ecfbd6dd6291ed9db449b23eb089f31d58a62377d1f0f7b4df5503f6dd86c629",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "chandelier-gold-baroque-arms",
+      "title": "Gilded baroque chandelier with six candle arms and chains; chain touches top edge",
+      "echoes": "style only",
+      "source_page_url": "https://pngimg.com/image/109077",
+      "direct_image_url": "https://pngimg.com/uploads/chandelier/chandelier_PNG65.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/chandelier-gold-baroque-arms.png",
+      "dimensions_px": [
+        1936,
+        1800
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.7621,
+      "corners_transparent": true,
+      "sha256": "47e3b7dacb16aa38759bb498bb8fd63bc9144d6541d03466e0cc9fc314bd3785",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    },
+    {
+      "slug": "rotary-phone-red-coiled",
+      "title": "Red desk rotary phone with coiled cord (second red phone; tight crop, cord touches left edge)",
+      "echoes": "style only",
+      "source_page_url": "https://pngimg.com/image/48903",
+      "direct_image_url": "https://pngimg.com/uploads/phone/phone_PNG48903.png",
+      "local_path": "artifacts/demo-sourcing/round2/decor/rotary-phone-red-coiled.png",
+      "dimensions_px": [
+        2198,
+        1661
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.3505,
+      "corners_transparent": true,
+      "sha256": "f8a63087deeb87973ac71fe238fe147c47315231a5ce213fe2ee96a821da8ff6",
+      "note": "Passed the numeric alpha gate and a burgundy-composite look; held back only to stay at 12 keepers and avoid same-type duplicates. License as for keepers."
+    }
+  ],
+  "also_in_dir_passed_gate_unlisted": [
+    "artifacts/demo-sourcing/round2/decor/pngimg_chandelier_109033.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_chandelier_109036.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_chandelier_109043.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117284.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117286.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117288.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117289.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117290.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117291.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_disco_117299.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_lamp_108713.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_lamp_108730.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_lamp_108737.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_perfume_99984.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_perfume_99986.png",
+    "artifacts/demo-sourcing/round2/decor/pngimg_phone_48904.png"
+  ],
+  "rejected": [
+    {
+      "url": "https://pngimg.com/image/102018, https://pngimg.com/image/102020, https://pngimg.com/image/102019, https://pngimg.com/image/102009, https://pngimg.com/image/102010, https://pngimg.com/image/102004",
+      "reason": "Realistic disco balls from the 1020xx series. Real files are sequential names (disco_ball_PNG33.png etc.), downloaded and checked: all 400-600 px, under the 1000 px bar. (102017 is 900 px, 102015 is 1280 px but a stylised glint graphic; not fetched.)"
+    },
+    {
+      "url": "https://pngimg.com/image/109029",
+      "reason": "Brass pendant chandelier: two corner patches opaque."
+    },
+    {
+      "url": "https://pngimg.com/image/108724",
+      "reason": "Chrome lamp with black shade: bottom-left corner patch has alpha 15 (haze), fails 'fully transparent corners'. Long side 1456 otherwise fine."
+    },
+    {
+      "url": "https://pngimg.com/image/112599, https://pngimg.com/image/112614",
+      "reason": "Clapperboards fill the canvas: 112614 only 10% transparent with opaque corners; 112599 one opaque corner."
+    },
+    {
+      "url": "https://pngimg.com/image/94882",
+      "reason": "Gramophone with silver horn: top-right corner patch opaque."
+    },
+    {
+      "url": "https://pngimg.com/image/7269, https://pngimg.com/image/7288",
+      "reason": "7269 pair of brass candlesticks: both bottom corner patches opaque. 7288 ruby glass votive: only 7.6% transparent, opaque corners (baked shadow)."
+    },
+    {
+      "url": "https://pngimg.com/image/111891",
+      "reason": "Green suitcase record player: P-mode palette PNG, one corner patch opaque."
+    },
+    {
+      "url": "https://pngimg.com/image/101625, https://pngimg.com/image/101631",
+      "reason": "Vintage rangefinder cameras: tight crops, opaque corner patches, 13% and 18% transparent."
+    },
+    {
+      "url": "https://pngimg.com/image/107954",
+      "reason": "Medusa bust passes the numeric gate but has 282 alpha components: a faint semi-transparent smear detached from the subject plus speckle, visible on burgundy in a 100% crop."
+    },
+    {
+      "url": "https://pngimg.com/image/91007",
+      "reason": "NEAR MISS, high quality: heavy baroque gold frame 1600x1455 with real alpha in the opening, but the frame corners fill all four corner patches so the strict corner test fails. File not kept; re-download https://pngimg.com/uploads/picture_frame/picture_frame_PNG219.png if you relax the corner rule for frames."
+    },
+    {
+      "url": "https://pngimg.com/image/99987, https://pngimg.com/image/99988",
+      "reason": "Peach and clear cut-glass atomizers with tassels: bottom-right corner patch opaque (tassel reaches the canvas corner)."
+    },
+    {
+      "url": "https://pngimg.com/image/2866",
+      "reason": "Ruby cut wine glass: top-left corner patch opaque."
+    },
+    {
+      "url": "https://pngimg.com/image/99986",
+      "reason": "Group of ~10 perfume bottles: multi-subject; passes gate, left in dir as an unlisted extra."
+    },
+    {
+      "url": "https://pngpix.com/png/cocktail-shaker-png-vud75-627tzyut6oy47zlp.html",
+      "reason": "Genuine alpha, clean corners, but 896x896 ('hd' webp max); under 1000 px."
+    },
+    {
+      "url": "https://wallpapers.com/png/cocktail-shaker-png-64-coodh4pldoz4p8qt.html",
+      "reason": "Genuine alpha but 896x896; under 1000 px."
+    },
+    {
+      "url": "https://pngpix.com/png/white-wine-crystal-decanter-png-hav16-3odesf80ygt01eqq.html",
+      "reason": "Crystal decanter, genuine alpha, 896x896; under 1000 px."
+    },
+    {
+      "url": "https://pngpix.com/png/ornate-golden-photo-frame-1u90l1jeo3c01rcj.html, https://pngpix.com/png/ornate-antique-gold-frame-3qymd1d5tozev2ah.html",
+      "reason": "800x1024 and 670x595 with opaque corners; too small."
+    },
+    {
+      "url": "https://wallpapers.com/png/golden-panther-statue-43gftmc7cv95t00g.html",
+      "reason": "Download is a .jpg (no alpha)."
+    },
+    {
+      "url": "https://freepngimg.com/png/59868-toy-silhouette-panther-of-leopard-figurine-black",
+      "reason": "Real alpha, 2083x2083, but a flat black silhouette; disappears on burgundy. License CC BY-NC 4.0 on page."
+    },
+    {
+      "url": "https://www.pngall.com/black-panther-png/download/6576/",
+      "reason": "Marvel superhero statue, 360x502."
+    },
+    {
+      "url": "https://pngimg.com/image/48899",
+      "reason": "Cream rotary phone: passes the numeric gate but the brown handset cord runs off the left edge in the burgundy composite; dropped in favor of the red phone."
+    }
+  ],
+  "gaps": [
+    "Ceramic animal figurines (panther, zebra, tiger, elephant, peacock, flamingo): pngimg/freepngimg animal categories are live-animal photos or flat silhouettes; only figurine-like hits were a JPG (wallpapers.com golden panther) and a black silhouette (freepngimg). No hi-res alpha found.",
+    "Black-and-gold cocktail shaker and cut-crystal decanter: only 896 px alpha cutouts (pngpix, wallpapers.com); pngimg whisky/cocktail categories are bottles and drinks. The cut-crystal goblet is the nearest keeper.",
+    "Murano / sea-glass chandelier: only brass-with-frosted-bowls (keeper) and crystal/gold chandeliers.",
+    "Lucite/acrylic pieces, neon-style signs, ice buckets, brass candlesticks (7269 failed corners), vintage cameras and clapperboards (tight crops fail corners): no passing hi-res alpha.",
+    "Photographic disco ball: the 1000+ px balls are 3D-render/vector illustrations; the 'realistic' ones in the 1020xx series are only 400-600 px.",
+    "Wikimedia Commons not searched in depth (its cocktail-shaker category is mostly JPG photos)."
+  ],
+  "notes": [
+    "All files come from pngimg.com; nothing from the other allowed hosts survived the resolution/corner gate. Gate in the brief applied numerically, then composites on burgundy and white, then 100% crops of every edge-contact run and of silhouette boundaries for all 12 keepers (sheets in artifacts/demo-sourcing/round2/decor-scripts/sheet_edges.jpg and sheet_silh.jpg). Nothing was background-removed or edited by me.",
+    "Edge rule applied uniformly: a curved contour grazing the canvas edge (tangent) or a thin tether (chain, rod, wire, cord) leaving it is accepted if the body is whole; a flat cut through the body is rejected. Hanging disco balls 117287/117295/117296 (wire exits top, body whole) would pass this rule; deleted only because three balls were enough.",
+    "Disco balls and some other files are very large (up to 8000 px, ~10 MB); downscale before putting them in the site.",
+    "Review composites: artifacts/demo-sourcing/round2/decor/review/<original-pngimg-name>__burgundy.jpg and __white.jpg (e.g. pngimg_disco_117298).",
+    "also_in_dir files pass the numeric gate but were only seen on contact sheets; treat as unreviewed spares (disco 117284/117286/117288/117289/117290/117291/117299 are gold, rainbow, pastel and red-hanging variants; lamps 108713, 108730, 108737; chandeliers 109033, 109036, 109043; phone 48904 wood-bodied rotary; perfume 99984 blue atomizer).",
+    "Held-back rotary-phone-red-coiled: top run is 139 px (6.3% of width) of flat-looking red; inspect before using."
+  ]
+}

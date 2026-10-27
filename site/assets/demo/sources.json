@@ -315,6 +315,979 @@
         255
       ],
       "processing": "Downloaded existing transparent photo; trimmed empty margins, resized and encoded WebP."
+    },
+    {
+      "title": "Silver mirror ball, no hanger, bright glare top right",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/disco-ball-silver.webp",
+      "source_page": "https://pngimg.com/image/117298",
+      "direct_image": "https://pngimg.com/uploads/disco_ball/disco_ball_PNG117298.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        8000,
+        8000
+      ],
+      "dimensions": [
+        1624,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "d9613343a18a4c759bb77b74e56c03edc38060c2f70ce6b287bc5debdf9cab2e",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Rendered illustration, not a photograph."
+    },
+    {
+      "title": "Glossy gold mirror ball with dark reflections, no hanger",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/disco-ball-gold.webp",
+      "source_page": "https://pngimg.com/image/117293",
+      "direct_image": "https://pngimg.com/uploads/disco_ball/disco_ball_PNG117293.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        6042,
+        6000
+      ],
+      "dimensions": [
+        1624,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "48f87dbfa217c00bbc864449a3c11a7b7ac69bfbf1c729088523aa8f21a48435",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Rendered illustration, not a photograph."
+    },
+    {
+      "title": "Magenta/hot-pink mirror ball with purple shaded tiles, no hanger",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/disco-ball-magenta.webp",
+      "source_page": "https://pngimg.com/image/117283",
+      "direct_image": "https://pngimg.com/uploads/disco_ball/disco_ball_PNG117283.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2918,
+        2930
+      ],
+      "dimensions": [
+        1624,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "90cde31d5a2d0e92bc59247edd158861d6f87e980f856f705c882ca505c8dce0",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Rendered illustration, not a photograph."
+    },
+    {
+      "title": "Pink glass urn table lamp, gold base, gold-champagne cone shade",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/lamp-pink-glass-gold-base.webp",
+      "source_page": "https://pngimg.com/image/108721",
+      "direct_image": "https://pngimg.com/uploads/lamp/lamp_PNG108721.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "A1",
+      "source_dimensions": [
+        1583,
+        2074
+      ],
+      "dimensions": [
+        1245,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "2d0260a6a5509afc0b1808a981bc1896e9a8fcc07f3d987ce4f16b77842cbd7a",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Ruby-red cut glass table lamp, brass fittings, amber pleated shade",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/lamp-ruby-glass-brass.webp",
+      "source_page": "https://pngimg.com/image/108688",
+      "direct_image": "https://pngimg.com/uploads/lamp/lamp_PNG108688.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "A1",
+      "source_dimensions": [
+        1950,
+        3264
+      ],
+      "dimensions": [
+        950,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "1b7ce63b1bf24bb03fda5013513dc452c9fc4debcc9fdbe7666d7d46edb597fa",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Faint light fringe at 100% zoom."
+    },
+    {
+      "title": "Brass pendant chandelier with three frosted alabaster glass bowl shades on a chain",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/chandelier-brass-frosted-bowls.webp",
+      "source_page": "https://pngimg.com/image/109066",
+      "direct_image": "https://pngimg.com/uploads/chandelier/chandelier_PNG54.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "A2",
+      "source_dimensions": [
+        1597,
+        2954
+      ],
+      "dimensions": [
+        889,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "2c79a12820dfd0587248000983c790906a40d64369049ddad55e58c1f87cefea",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Antique wind-up gramophone with large rose-pink/burgundy flared horn on wooden case",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/gramophone-rose-horn.webp",
+      "source_page": "https://pngimg.com/image/94885",
+      "direct_image": "https://pngimg.com/uploads/gramophone/gramophone_PNG40.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "A16",
+      "source_dimensions": [
+        2160,
+        2613
+      ],
+      "dimensions": [
+        1347,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "fd1b1307cd3b465fef872b7b7d15d98dba390625b8abff320a41539fc187ba53",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Red Bakelite-style rotary desk telephone with cream handset cord",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/rotary-phone-red.webp",
+      "source_page": "https://pngimg.com/image/48902",
+      "direct_image": "https://pngimg.com/uploads/phone/phone_PNG48902.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2711,
+        2384
+      ],
+      "dimensions": [
+        1624,
+        1431
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "3a72b9611aba9cd66e952051793c9643b44e57a20b4630bceced2c2139c18c35",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Square carved gold picture frame with classical flowers and scrolls, empty transparent opening",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/picture-frame-gold-carved.webp",
+      "source_page": "https://pngimg.com/image/90986",
+      "direct_image": "https://pngimg.com/uploads/picture_frame/picture_frame_PNG198.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "A5",
+      "source_dimensions": [
+        1054,
+        937
+      ],
+      "dimensions": [
+        964,
+        937
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "c3919759fae9a4953e8ea1652215d2f53a9f16f20fe2944912347d725189a26f",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Ornate gold rococo oval wall mirror with shell crest",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/mirror-gold-oval-rococo.webp",
+      "source_page": "https://pngimg.com/image/17370",
+      "direct_image": "https://pngimg.com/uploads/mirror/mirror_PNG17370.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1460,
+        2104
+      ],
+      "dimensions": [
+        1134,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "baf571b915506ea2e7a09dab64c500da09c4ea848e4ae59d37424470007ccf9a",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Hard, slightly aliased edge at 100% zoom."
+    },
+    {
+      "title": "Vintage swirled rose/ruby glass perfume atomizer with gold collar, mesh bulb and gold tassel",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/perfume-atomizer-rose-glass.webp",
+      "source_page": "https://pngimg.com/image/99985",
+      "direct_image": "https://pngimg.com/uploads/perfume/perfume_PNG99985.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2400,
+        2590
+      ],
+      "dimensions": [
+        1507,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "c802f507c7c17c6497f8a07828c39d435ae259c75d0bfdd391998dd82cc3c06d",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Cut-crystal pressed-star goblet on a baluster stem",
+      "group": "Round 2 / decor, lighting and glass",
+      "file": "assets/demo/cut-crystal-goblet.webp",
+      "source_page": "https://pngimg.com/image/2903",
+      "direct_image": "https://pngimg.com/uploads/wineglass/wineglass_PNG2903.png",
+      "license_note": "pngimg.com image page footer reads 'License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)' with link https://pngimg.com/license (read on pngimg.com/image/117298; same site-wide footer, not re-read on every page). Private demo only; not cleared for commercial/public use.",
+      "echoes": "A12",
+      "source_dimensions": [
+        2166,
+        3994
+      ],
+      "dimensions": [
+        892,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8949e7f85bbe8776cf37260ccb54e5c78155ae557e539db536d6de9e2f550203",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Gilded Regency armchair in emerald velvet",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/gilded-emerald-velvet-regency-armchair.webp",
+      "source_page": "https://pngimg.com/image/7048",
+      "direct_image": "https://pngimg.com/uploads/armchair/armchair_PNG7048.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        900,
+        1145
+      ],
+      "dimensions": [
+        877,
+        1150
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "5878df882aaa04df0f04d08fc3002e6057c00259b0f2ca16534810f77a96649d",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Rust/orange leather mid-century three-seat sofa, tapered wood legs",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/rust-leather-midcentury-sofa.webp",
+      "source_page": "https://pngimg.com/image/6961",
+      "direct_image": "https://pngimg.com/uploads/sofa/sofa_PNG6961.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "A19",
+      "source_dimensions": [
+        2875,
+        1312
+      ],
+      "dimensions": [
+        1624,
+        754
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "bf425b5542618dcb09dc8ac4393a646bd7c0b7676d0ba6036828bb5f910d3d53",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Red wool Swan-style sofa on a chrome base",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/red-swan-sofa-chrome-base.webp",
+      "source_page": "https://pngimg.com/image/6953",
+      "direct_image": "https://pngimg.com/uploads/sofa/sofa_PNG6953.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2866,
+        1589
+      ],
+      "dimensions": [
+        1624,
+        911
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "a44c407086308a7f7defab86182abca0de862c91af9cabe9df01a12d18f77604",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Worn walnut wooden barstool",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/worn-wood-barstool.webp",
+      "source_page": "https://pngimg.com/image/6844",
+      "direct_image": "https://pngimg.com/uploads/chair/chair_PNG6844.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1652,
+        2444
+      ],
+      "dimensions": [
+        1106,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "86ec4cf0e5295a36592897611b8e5b0bda23fc889e89ebfad2109021108e12e1",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Hot-pink vinyl and chrome 50s diner chair",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/pink-vinyl-chrome-diner-chair.webp",
+      "source_page": "https://pngimg.com/image/6871",
+      "direct_image": "https://pngimg.com/uploads/chair/chair_PNG6871.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1928,
+        2613
+      ],
+      "dimensions": [
+        1133,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "2af9e3b998729e71e7555955a7285cf997c79a1f6b21208e573d353c0d0c8d0d",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Round teal-blue velvet button cushion/pouf",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/blue-velvet-round-button-pouf-cushion.webp",
+      "source_page": "https://pngimg.com/image/103004",
+      "direct_image": "https://pngimg.com/uploads/pillow/pillow_PNG103004.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        3253,
+        3169
+      ],
+      "dimensions": [
+        1624,
+        1583
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "47807a4b7ec24c5758b68362ea4365a415fb71c5ce3e8b093120649d5d312602",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Black and cream patched sheepskin throw",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/black-cream-sheepskin-throw.webp",
+      "source_page": "https://pngimg.com/image/106366",
+      "direct_image": "https://pngimg.com/uploads/fur/fur_PNG35.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "A19",
+      "source_dimensions": [
+        1597,
+        1646
+      ],
+      "dimensions": [
+        1458,
+        1499
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "91b85feec5c6700d989e34ddf7e2416b4f18efe5baebd5db66f7d1eac847e3b7",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Mustard sheepskin 'Clam' chair with black bentwood arms",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/yellow-sheepskin-clam-chair.webp",
+      "source_page": "https://pngimg.com/image/7064",
+      "direct_image": "https://pngimg.com/uploads/armchair/armchair_PNG7064.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2671,
+        2611
+      ],
+      "dimensions": [
+        1624,
+        1588
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "25be102be2b48ccfbd1886452b828d10b3b67c717de3ea3b6a70c36e9c5abf24",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Pale tips on two leg ends."
+    },
+    {
+      "title": "Burgundy linen roll-arm armchair",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/burgundy-roll-arm-armchair.webp",
+      "source_page": "https://pngimg.com/image/7026",
+      "direct_image": "https://pngimg.com/uploads/armchair/armchair_PNG7026.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1386,
+        1525
+      ],
+      "dimensions": [
+        1409,
+        1548
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "4448fe14d11b637ce5fa6a2c422475d7e0457292e8e7c78ddf6d9546c8832554",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Brown mohair channel-tufted sofa with wood base",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/brown-mohair-channel-tufted-sofa.webp",
+      "source_page": "https://pngimg.com/image/6921",
+      "direct_image": "https://pngimg.com/uploads/sofa/sofa_PNG6921.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        3508,
+        1273
+      ],
+      "dimensions": [
+        1624,
+        605
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "6d890064d95ab8f226a3175eeb563ad076e3ce39f8e5585b9498ccde3440f663",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "1960s wood console television on tapered legs",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/wood-console-tv-tapered-legs.webp",
+      "source_page": "https://pngimg.com/image/39216",
+      "direct_image": "https://pngimg.com/uploads/tv/tv_PNG39216.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2613,
+        2375
+      ],
+      "dimensions": [
+        1624,
+        1478
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "811643c4b2ed1e1da335fba1b10178b3aa7ed1e1cdd328991838d92ae3c887ea",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Gold-cased 1950s portable TV with rabbit-ear antennas",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/gold-1950s-portable-tv-rabbit-ears.webp",
+      "source_page": "https://pngimg.com/image/39209",
+      "direct_image": "https://pngimg.com/uploads/tv/tv_PNG39209.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1859,
+        2857
+      ],
+      "dimensions": [
+        1065,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "4b11d4f1664e658b8278d51e40a7647bda4d086cc1f31f473bc87c10b67a5118",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Rust-red Scandinavian-style geometric kilim flatweave rug",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/rust-red-geometric-kilim-rug.webp",
+      "source_page": "https://pngimg.com/image/57686",
+      "direct_image": "https://pngimg.com/uploads/carpet/carpet_PNG57686.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2056,
+        2904
+      ],
+      "dimensions": [
+        1157,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "f058b842675100f557b193c0bf515077d11553794949fe212200c57e2b22bfda",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Pink/orange/cream diamond kilim rug with greek-key border and fringe",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/pink-orange-diamond-kilim-fringed-rug.webp",
+      "source_page": "https://pngimg.com/image/57678",
+      "direct_image": "https://pngimg.com/uploads/carpet/carpet_PNG57678.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2381,
+        3000
+      ],
+      "dimensions": [
+        1294,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "d058406d7950cf65f75e1607d396eb47f45a9928a058bba4da80caa50d0ae0fa",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Orange/teal/navy stepped-diamond kilim rug",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/orange-teal-navy-geometric-kilim-rug.webp",
+      "source_page": "https://pngimg.com/image/57682",
+      "direct_image": "https://pngimg.com/uploads/carpet/carpet_PNG57682.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1974,
+        2884
+      ],
+      "dimensions": [
+        1119,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "6931a93c776da458e3364b91b2de131280f7e02967febecec065112579359325",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Rust-red Heriz-style medallion rug",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/red-orange-heriz-medallion-rug.webp",
+      "source_page": "https://pngimg.com/image/57685",
+      "direct_image": "https://pngimg.com/uploads/carpet/carpet_PNG57685.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2090,
+        2400
+      ],
+      "dimensions": [
+        1417,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "e4ba1f4f3e8953916cde7e77a8c5acc26db973309a1456bdb949729cff73a1e4",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Southwestern black/tan/cream Aztec rug photographed in perspective",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/aztec-black-tan-rug-perspective.webp",
+      "source_page": "https://pngimg.com/image/57657",
+      "direct_image": "https://pngimg.com/uploads/carpet/carpet_PNG57657.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        1487,
+        1000
+      ],
+      "dimensions": [
+        1491,
+        981
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8043557b63539b70961c30ef113f40d2b85004563e136f69a5622c27754fbaaa",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal.",
+      "note": "Shot in perspective, not top-down."
+    },
+    {
+      "title": "Black velvet cushion with magenta/orange ribbon swirls",
+      "group": "Round 2 / furniture and textiles",
+      "file": "assets/demo/black-velvet-ribbon-cushion.webp",
+      "source_page": "https://pngimg.com/image/102997",
+      "direct_image": "https://pngimg.com/uploads/pillow/pillow_PNG102997.png",
+      "license_note": "CC BY-NC 4.0 (Attribution-NonCommercial 4.0 International) per the pngimg.com image-page footer and https://pngimg.com/license; fine for a private demo, not for commercial or public use without attribution review.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2995,
+        2764
+      ],
+      "dimensions": [
+        1624,
+        1501
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "2394c02bf9476ef5469512cdff9cb3d079d23a73550e8ac33a12a5028a70f6d0",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Zebra-print pointed pump, hot pink lining, star stud and zip trim",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/zebra-print-star-pump.webp",
+      "source_page": "https://pngimg.com/image/7437",
+      "direct_image": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7437.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B18",
+      "source_dimensions": [
+        1096,
+        876
+      ],
+      "dimensions": [
+        1016,
+        881
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "f5c026237b5d10c853dbcef88a9fd2428fc8392bf701be86234f1f237db981c1",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Black suede platform pumps with silver spike toe studs (back view + side view)",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/spiked-black-platform-pumps.webp",
+      "source_page": "https://pngimg.com/image/7449",
+      "direct_image": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7449.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B18",
+      "source_dimensions": [
+        1607,
+        1178
+      ],
+      "dimensions": [
+        1624,
+        1196
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "5dece473bbb1054f5eb82889c384b76b0c6d771d17cf1459a99ae78333cd5b23",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Pair of neon pink patent platform pumps with stiletto heels",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/neon-pink-patent-platform-pumps.webp",
+      "source_page": "https://pngimg.com/image/7451",
+      "direct_image": "https://pngimg.com/uploads/women_shoes/women_shoes_PNG7451.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B18",
+      "source_dimensions": [
+        1400,
+        1239
+      ],
+      "dimensions": [
+        1424,
+        1263
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "11fdd4e63c1236fea3cf61f0e43d43333c665ba50a08f405a2706d655ec50523",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Tan leather T-strap flat sandal with neon lime gem stones and lime heel",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/neon-lime-gem-t-strap-sandal.webp",
+      "source_page": "https://pngimg.com/image/9695",
+      "direct_image": "https://pngimg.com/uploads/sandals/sandals_PNG9695.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B18",
+      "source_dimensions": [
+        2287,
+        1367
+      ],
+      "dimensions": [
+        1624,
+        980
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b45989c7f53e3f0c4f49adc2ca609d428af5d6e4dc151ac8fff418c98a89dbb9",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Brown felt cowboy hat, studded leather band, red/blue feather",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/feathered-studded-felt-cowboy-hat.webp",
+      "source_page": "https://pngimg.com/image/59672",
+      "direct_image": "https://pngimg.com/uploads/cowboy_hat/cowboy_hat_PNG40.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B6|B9",
+      "source_dimensions": [
+        2452,
+        1330
+      ],
+      "dimensions": [
+        1624,
+        892
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "9fef84e311c89dec1af3f70cca2b0ca1ce497fbeb7b884bfb0fb72d23704da63",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Red leather pleated handbag with patent top handle and jewelled flower clasp",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/red-pleated-leather-jewel-handbag.webp",
+      "source_page": "https://pngimg.com/image/6399",
+      "direct_image": "https://pngimg.com/uploads/women_bag/women_bag_PNG6399.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2126,
+        1845
+      ],
+      "dimensions": [
+        1624,
+        1410
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "d33ad56d5e343111f51ab6886f8abade686740a8597b7c069db9ee2d6f218da2",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Pair of magenta feather statement earrings with crystal feather studs",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/magenta-feather-crystal-earrings.webp",
+      "source_page": "https://pngimg.com/image/6706",
+      "direct_image": "https://pngimg.com/uploads/jewelry/jewelry_PNG6706.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B6",
+      "source_dimensions": [
+        1987,
+        2829
+      ],
+      "dimensions": [
+        1148,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "02c1f1da48ba5bd5384b40040d2494624411e504c781da096a87944e8770d009",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Chunky braided gold necklace set with small diamonds, open clasp",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/gold-braided-chain-necklace.webp",
+      "source_page": "https://pngimg.com/image/53727",
+      "direct_image": "https://pngimg.com/uploads/necklace/necklace_PNG122.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B11",
+      "source_dimensions": [
+        2694,
+        2832
+      ],
+      "dimensions": [
+        1546,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "5ba93b5f69d35777ee43d57862e3e295eb2512a8e42bbae6115efce76ab921f0",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Round gold wire-frame sunglasses with pink lenses and clear temple tips (photo)",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/round-wire-pink-lens-sunglasses.webp",
+      "source_page": "https://pngimg.com/image/54472",
+      "direct_image": "https://pngimg.com/uploads/sunglasses/sunglasses_PNG116.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        2818,
+        1811
+      ],
+      "dimensions": [
+        1624,
+        1052
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "321d2cc8fb3530781c5b39fe463cef32a59c522650434b6c9f1ac4810c133b67",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Red/orange/yellow shaggy faux fur jacket, ghost mannequin, orange satin lining",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/red-orange-shaggy-faux-fur-jacket.webp",
+      "source_page": "https://pngimg.com/image/40237",
+      "direct_image": "https://pngimg.com/uploads/fur_coat/fur_coat_PNG28.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B10|B15",
+      "source_dimensions": [
+        1000,
+        1000
+      ],
+      "dimensions": [
+        883,
+        886
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "7d01704da253cf284e48e0454ed5d09cd61940a20fdc3e2dfc0cff68ccd0897e",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Navy polka-dot and fruit-print shirt dress, red piping and buttons, ghost mannequin",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/navy-floral-shirt-dress-red-trim.webp",
+      "source_page": "https://pngimg.com/image/56171",
+      "direct_image": "https://pngimg.com/uploads/dress/dress_PNG166.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "B12",
+      "source_dimensions": [
+        1866,
+        4011
+      ],
+      "dimensions": [
+        768,
+        1624
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "19309a19298f1dcfc822eaf8d52bdb6be79dc4f7f5541223150d46eeeace1bcb",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
+    },
+    {
+      "title": "Black asymmetric mini dress covered in safety pins, studs and silver stars, ghost mannequin",
+      "group": "Round 2 / fashion and accessories",
+      "file": "assets/demo/safety-pin-star-sequin-mini-dress.webp",
+      "source_page": "https://pngimg.com/image/56164",
+      "direct_image": "https://pngimg.com/uploads/dress/dress_PNG159.png",
+      "license_note": "pngimg.com/license page: Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0); image page https://pngimg.com/image/7437 repeats 'License: CC BY-NC 4.0' (other image pages assumed identical, not each opened). Origin/rights of the underlying product photo are not stated. Fine for a private demo, not for public/commercial use.",
+      "echoes": "style only",
+      "source_dimensions": [
+        900,
+        1620
+      ],
+      "dimensions": [
+        648,
+        1316
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "ffc2b7b938df868188ac0e7e6cb3a9bfe40da8758bf558176c0b9568a7000973",
+      "processing": "Downloaded existing transparent image; trimmed empty margins, resized and encoded WebP. No background removal."
     }
   ]
 }

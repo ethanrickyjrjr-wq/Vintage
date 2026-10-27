@@ -24,6 +24,11 @@
     img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
     figcaption { font-size: 12px; padding-top: 8px; }
     .links { display: flex; flex-wrap: wrap; gap: 20px; font-size: 12px; margin-top: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 26px 18px; }
+    .card .photo { height: 280px; padding: 10px; }
+    .card h3 { font: 500 16px/1.3 "Bodoni Moda", serif; margin: 8px 0 4px; }
+    .card p { margin: 0 0 4px; font-size: 12px; }
+    .card a { font-size: 12px; }
     footer { padding-block: 30px 55px; font-size: 12px; }
     @media (max-width: 600px) { header { padding-top: 35px; } .photos { gap: 10px; } .photo { height: 235px; padding: 8px; } h2 { font-size: 24px; } }
   </style>
@@ -62,14 +67,18 @@
         }
         article.append(heading, photos, links); main.append(article);
       }
-      if (alternatives.length) {
-        const title = document.createElement("h2"); title.textContent = "More ready-made transparent options"; title.style.marginTop = "40px"; main.append(title);
-        for (const item of alternatives) {
-          const article = document.createElement("article"), heading = document.createElement("h2"), frame = document.createElement("div"), image = document.createElement("img"), link = document.createElement("a");
-          heading.textContent = item.title; frame.className = "photo"; image.src = item.file; image.alt = item.title; image.loading = "lazy";
+      const groups = Map.groupBy(alternatives, item => item.group || "More ready-made transparent options");
+      for (const [name, members] of groups) {
+        const section = document.createElement("section"), title = document.createElement("h2"), grid = document.createElement("div");
+        title.textContent = `${name} (${members.length})`; title.style.marginTop = "40px"; grid.className = "grid";
+        for (const item of members) {
+          const card = document.createElement("div"), frame = document.createElement("div"), image = document.createElement("img"), heading = document.createElement("h3"), meta = document.createElement("p"), link = document.createElement("a");
+          card.className = "card"; frame.className = "photo"; image.src = item.file; image.alt = item.title; image.loading = "lazy"; heading.textContent = item.title;
+          meta.textContent = [item.dimensions && `${item.source_dimensions?.join("×") ?? item.dimensions.join("×")} source`, item.note].filter(Boolean).join(" · ");
           link.href = item.source_page; link.textContent = `Photo: ${new URL(item.source_page).hostname.replace(/^www\./, "")} ↗`; link.target = "_blank"; link.rel = "noreferrer";
-          frame.append(image); article.append(heading, frame, link); main.append(article);
+          frame.append(image); card.append(frame, heading, meta, link); grid.append(card);
         }
+        section.append(title, grid); main.append(section);
       }
     } catch (error) { main.textContent = error.message; }
   </script>
