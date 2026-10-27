@@ -1,0 +1,8 @@
+# Optional, used only for the four-image HR-matting comparison.
+torch==2.5.1
+torchvision==0.20.1
+transformers==4.57.6
+timm==1.0.27
+kornia==0.8.3
+einops==0.8.2
+safetensors==0.7.0
