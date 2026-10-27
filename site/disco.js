@@ -370,5 +370,43 @@
   }
   sparkleToggle?.addEventListener("click", toggleDisco);
   toggle?.addEventListener("click", toggleDisco);
+
+  // The room's loading ball uses the same mirrors, with its own silent motor.
+  const roomWorking = document.querySelector("#room-working");
+  const roomBall = roomWorking?.querySelector(".room-loading-ball");
+  if (roomBall) {
+    const canvas = roomBall.querySelector("canvas"), image = roomBall.querySelector("img");
+    let renderer = null, pending = false, unavailable = false, animation = 0, lastPaint = 0;
+    const active = () => !roomWorking.hidden && !document.hidden && !reduced.matches;
+    function paint(now) {
+      if (now - lastPaint >= 1000 / 30) { renderer.draw(now * TAU / 8000); lastPaint = now; }
+      animation = requestAnimationFrame(paint);
+    }
+    async function syncRoomBall() {
+      cancelAnimationFrame(animation); animation = 0;
+      if (!active() || unavailable) return;
+      if (!renderer) {
+        if (pending) return;
+        pending = true;
+        try {
+          await image.decode();
+          renderer = createRenderer(canvas, image);
+          if (renderer) roomBall.classList.add("disco-ready"); else unavailable = true;
+        } catch { unavailable = true; }
+        pending = false;
+        syncRoomBall(); return;
+      }
+      renderer.resize();
+      animation = requestAnimationFrame(paint);
+    }
+    canvas.addEventListener("webglcontextlost", () => {
+      unavailable = true; cancelAnimationFrame(animation); roomBall.classList.remove("disco-ready");
+    });
+    document.addEventListener("hnv:room-working", syncRoomBall);
+    document.addEventListener("visibilitychange", syncRoomBall);
+    reduced.addEventListener("change", syncRoomBall);
+    if ("ResizeObserver" in window) new ResizeObserver(() => { if (active()) renderer?.resize(); }).observe(roomBall);
+    syncRoomBall();
+  }
   syncAll();
 })();

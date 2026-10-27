@@ -399,7 +399,14 @@
                 <div class="room-example"><img src="assets/rooms/example-room.webp" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" /><button type="button" id="room-use-example">Or try our sample room ↗</button><small>AI-generated example room</small></div>
               </div>
               <canvas id="room-canvas" width="1200" height="800" tabindex="0" aria-label="Room editor. Select a find, drag to move it, or drag its corner to resize. Arrow keys move the selected find; Delete removes it." aria-describedby="room-editor-help" hidden></canvas>
-              <div class="room-working" id="room-working" hidden><span class="room-spinner" aria-hidden="true"></span><strong>Looking around your room…</strong><span id="room-working-label">Loading the room guide on your device.</span><progress id="room-progress" max="100" aria-label="Room guide download"></progress><button type="button" id="room-cancel">Cancel</button></div>
+              <div class="room-working" id="room-working" hidden>
+                <div class="room-disco-drop" aria-hidden="true"><div class="room-loading-ball"><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="" /><canvas class="disco-sphere"></canvas></div></div>
+                <p class="eyebrow">A little vintage magic</p>
+                <strong id="room-working-title" role="status" aria-live="polite" aria-atomic="true">Setting the scene…</strong>
+                <span id="room-working-label">Loading the room guide on your device.</span>
+                <progress id="room-progress" max="100" aria-label="Room guide download"></progress>
+                <button type="button" id="room-cancel">Cancel</button>
+              </div>
             </div>
             <input id="room-file" type="file" accept="image/jpeg,image/png,image/webp" hidden />
             <div class="room-bottom-bar">

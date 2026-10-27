@@ -13,6 +13,19 @@ function startEditor() {
   const state = { photo: null, layers: [], picks: [], selected: null, history: [], unplaced: [], scene: null, busy: false, comparing: false, drag: null };
   const savedKey = "hollywood-and-vine-saved";
   let favorites = [], photoVersion = 0, frame = 0, worker = null, requestId = 0, cancelAnalysis = null, sizeStart = null;
+  let loadingTimer = 0;
+  const loadingLines = ["Setting the scene…", "Good taste takes a moment…", "Making room for a little drama…", "Bringing a little Holliewood home…", "Finding room for the unexpected…", "A little character is on its way…"];
+  function loading(active) {
+    clearInterval(loadingTimer);
+    if (active) {
+      let line = 0;
+      $("room-working-title").textContent = loadingLines[line];
+      loadingTimer = setInterval(() => {
+        if (!document.hidden) $("room-working-title").textContent = loadingLines[++line % loadingLines.length];
+      }, 3400);
+    }
+    document.dispatchEvent(new Event("hnv:room-working"));
+  }
   const selectedProduct = () => productMap.get($("room-product").value);
   const selectedLayer = () => state.layers.find(layer => layer.id === state.selected);
   const photoAspect = () => canvas.width / canvas.height;
@@ -207,7 +220,8 @@ function startEditor() {
   }
   async function decorate(ids) {
     if (state.busy || !state.photo || !ids.length) return;
-    state.busy = true; state.cancelled = false; $("room-working-label").textContent = "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); refresh();
+    state.busy = true; state.cancelled = false; $("room-working-label").textContent = "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); refresh(); loading(true);
+    if (matchMedia("(max-width: 767px)").matches) $("room-stage").scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     try {
       const usable = [], excluded = [];
       for (const id of ids) {
@@ -224,7 +238,7 @@ function startEditor() {
       remember(); Object.assign(state, { layers: result.layers, selected: result.layers.at(-1)?.id ?? null, unplaced: [...excluded, ...result.unplaced], comparing: false });
       status(result.layers.length ? `${result.layers.length} ${result.layers.length === 1 ? "find placed" : "finds placed"}${state.unplaced.length ? `; ${state.unplaced.length} left out` : ""}. Drag any find to make the arrangement yours.` : "No clear positions were found for this collection. See the list of pieces left out, or place available cutouts by hand.");
     } catch (error) { status(error.message, true); }
-    finally { state.busy = false; refresh(); }
+    finally { state.busy = false; refresh(); loading(false); }
   }
   function readFavorites() {
     try { const stored = JSON.parse(localStorage.getItem(savedKey) || "[]"); favorites = Array.isArray(stored) ? [...new Set(stored.filter(id => inventory.has(id) && id !== "OWNER"))] : []; } catch { /* Keep session saves when storage is blocked. */ }
