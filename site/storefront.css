@@ -154,15 +154,6 @@ select:focus-visible {
 .wordmark span {
   font-style: italic;
 }
-.wordmark .wordmark-star {
-  font-family: var(--body);
-  font-size: 27px;
-  margin-left: 17px;
-  font-style: normal;
-  color: var(--pink);
-  display: inline-block;
-  vertical-align: middle;
-}
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -1027,14 +1018,6 @@ select:focus-visible {
 .owner-copy .owner-aside {
   font-style: italic;
 }
-.owner-star {
-  position: absolute;
-  right: 25px;
-  top: 20px;
-  font-size: 60px;
-  color: var(--rust);
-  transform: rotate(12deg);
-}
 .shop-notes {
   padding-bottom: 70px;
 }
@@ -1488,10 +1471,6 @@ body:has(dialog[open]) {
     font-size: 23px;
     letter-spacing: -1px;
   }
-  .wordmark .wordmark-star {
-    font-size: 20px;
-    margin-left: 7px;
-  }
   .desktop-nav {
     display: none;
   }
@@ -1799,11 +1778,6 @@ body:has(dialog[open]) {
   .owner-copy > p:not(.eyebrow) {
     font-size: 12px;
   }
-  .owner-star {
-    font-size: 45px;
-    right: 15px;
-    top: 14px;
-  }
   .owner-ticket {
     font-size: 9px;
     padding: 9px 18px;
@@ -1919,9 +1893,6 @@ body:has(dialog[open]) {
 @media (max-width: 370px) {
   .wordmark {
     font-size: 20px;
-  }
-  .wordmark-star {
-    display: none !important;
   }
   .header-actions {
     gap: 12px;
