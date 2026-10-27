@@ -1,0 +1,71 @@
+{
+  "url": "https://www.mrporter.com/en-us/mens/clothing/jackets",
+  "html": "<html><head>\n<title>Access Denied</title>\n</head><body>\n<h1>Access Denied</h1>\n \nYou don't have permission to access \"http://www.mrporter.com/en-us/mens/clothing/jackets\" on this server.<p>\nReference #18.972cc17.1793113385.81ff0e73\n</p><p>https://errors.edgesuite.net/18.972cc17.1793113385.81ff0e73</p>\n\n\n</body></html>",
+  "fit_html": "<html><body>\n<h1>Access Denied</h1>\n \nYou don't have permission to access \"http://www.mrporter.com/en-us/mens/clothing/jackets\" on this server.<p>\nReference #18.972cc17.1793113385.81ff0e73\n</p><p>https://errors.edgesuite.net/18.972cc17.1793113385.81ff0e73</p>\n\n\n</body></html>",
+  "success": false,
+  "cleaned_html": "<html>\n<head>\n<title>Access Denied</title>\n</head>\n<body>\n<h1>Access Denied</h1>\n \nYou don't have permission to access \"http://www.mrporter.com/en-us/mens/clothing/jackets\" on this server.<p>\nReference #18.972cc17.1793113385.81ff0e73\n</p>\n<p>https://errors.edgesuite.net/18.972cc17.1793113385.81ff0e73</p>\n\n\n</body>\n</html>",
+  "media": {
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  "links": {
+    "internal": [],
+    "external": []
+  },
+  "downloaded_files": null,
+  "js_execution_result": null,
+  "screenshot": null,
+  "pdf": null,
+  "mhtml": null,
+  "extracted_content": null,
+  "metadata": {
+    "title": "Access Denied",
+    "description": null,
+    "keywords": null,
+    "author": null
+  },
+  "error_message": "Blocked by anti-bot protection: Akamai block (Reference #)",
+  "session_id": null,
+  "response_headers": {
+    "content-length": "411",
+    "content-type": "text/html",
+    "date": "Tue, 27 Oct 2026 15:03:05 GMT",
+    "expires": "Tue, 27 Oct 2026 15:03:05 GMT",
+    "link": "<https://p11.techlab-cdn.com>;rel=\"preconnect\",<https://cdn.raygun.io>;rel=\"preconnect\"",
+    "mime-version": "1.0",
+    "server-timing": "ak_p; desc=\"1793113385601_399274505_2180976243_29_23507_36_113_255\";dur=1"
+  },
+  "status_code": 403,
+  "ssl_certificate": null,
+  "dispatch_result": null,
+  "redirected_url": "https://www.mrporter.com/en-us/mens/clothing/jackets",
+  "redirected_status_code": 403,
+  "network_requests": null,
+  "console_messages": null,
+  "tables": [],
+  "head_fingerprint": "45abf4f004b4c585",
+  "cached_at": null,
+  "cache_status": "miss",
+  "crawl_stats": {
+    "attempts": 1,
+    "retries": 0,
+    "proxies_used": [
+      {
+        "proxy": null,
+        "status_code": 403,
+        "blocked": true,
+        "reason": "Akamai block (Reference #)"
+      }
+    ],
+    "fallback_fetch_used": false,
+    "resolved_by": null
+  },
+  "markdown": {
+    "raw_markdown": "# Access Denied\nYou don't have permission to access \"http://www.mrporter.com/en-us/mens/clothing/jackets\" on this server.\nReference #18.972cc17.1793113385.81ff0e73 \nhttps://errors.edgesuite.net/18.972cc17.1793113385.81ff0e73\n",
+    "markdown_with_citations": "# Access Denied\nYou don't have permission to access \"http://www.mrporter.com/en-us/mens/clothing/jackets\" on this server.\nReference #18.972cc17.1793113385.81ff0e73 \nhttps://errors.edgesuite.net/18.972cc17.1793113385.81ff0e73\n",
+    "references_markdown": "\n\n## References\n\n",
+    "fit_markdown": "",
+    "fit_html": ""
+  }
+}

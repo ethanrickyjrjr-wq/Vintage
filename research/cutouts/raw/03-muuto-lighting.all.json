@@ -1,0 +1,73 @@
+{
+  "url": "https://www.muuto.com/shop/lighting/",
+  "html": "<html><head></head><body></body></html>",
+  "fit_html": "<html><body></body></html>",
+  "success": false,
+  "cleaned_html": "<html></html>",
+  "media": {
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  "links": {
+    "internal": [],
+    "external": []
+  },
+  "downloaded_files": null,
+  "js_execution_result": null,
+  "screenshot": null,
+  "pdf": null,
+  "mhtml": null,
+  "extracted_content": null,
+  "metadata": {
+    "title": null,
+    "description": null,
+    "keywords": null,
+    "author": null
+  },
+  "error_message": "Blocked by anti-bot protection: Structural: minimal_text, no_content_elements (39 bytes, 0 chars visible)",
+  "session_id": null,
+  "response_headers": {
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a51295e488034e75-MIA",
+    "content-length": "0",
+    "date": "Tue, 27 Oct 2026 15:03:05 GMT",
+    "location": "",
+    "priority": "u=0,i",
+    "server": "cloudflare",
+    "server-timing": "cfExtPri"
+  },
+  "status_code": 302,
+  "ssl_certificate": null,
+  "dispatch_result": null,
+  "redirected_url": "https://www.muuto.com/shop/lighting/",
+  "redirected_status_code": 302,
+  "network_requests": null,
+  "console_messages": null,
+  "tables": [],
+  "head_fingerprint": "",
+  "cached_at": null,
+  "cache_status": "miss",
+  "crawl_stats": {
+    "attempts": 1,
+    "retries": 0,
+    "proxies_used": [
+      {
+        "proxy": null,
+        "status_code": 302,
+        "blocked": true,
+        "reason": "Structural: minimal_text, no_content_elements (39 bytes, 0 chars visible)"
+      }
+    ],
+    "fallback_fetch_used": false,
+    "resolved_by": null
+  },
+  "markdown": {
+    "raw_markdown": "\n",
+    "markdown_with_citations": "\n",
+    "references_markdown": "\n\n## References\n\n",
+    "fit_markdown": "",
+    "fit_html": ""
+  }
+}

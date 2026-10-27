@@ -1,0 +1,85 @@
+{
+  "url": "https://www.anthropologie.com/lighting",
+  "html": "<html lang=\"en\"><head><title>anthropologie.com</title><style>#cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></head><body style=\"margin:0\"><script data-cfasync=\"false\">var dd={'rt':'c','cid':'AHrlqAAAAAMA15_BJ0l_qC8AR8jFRg==','hsh':'EB7A402357436FB62439EF4CB34BEC','t':'fe','qp':'','s':59633,'e':'1a2181a06dc438ddcc56d7bab83f95a9a600a563d2327842f1d01ab7340f25a514ec62731e57c4464578a8decb407014','host':'geo.captcha-delivery.com','cookie':'qWlzBCIilMEQcuk3qiBDfQ~N~OoAOg16eSqF5~fz8qwapFAkCWDNzt9ufGf72J9iOJgWZeH~YNabpac_Y~6emxR0pRkgEePgYu94laDRMT7e_jWprGrjLf6ANVl6KuSj'}</script><script data-cfasync=\"false\" src=\"https://ct.captcha-delivery.com/c.js\"></script><iframe src=\"https://geo.captcha-delivery.com/captcha/?initialCid=AHrlqAAAAAMA15_BJ0l_qC8AR8jFRg%3D%3D&amp;hash=EB7A402357436FB62439EF4CB34BEC&amp;cid=qWlzBCIilMEQcuk3qiBDfQ~N~OoAOg16eSqF5~fz8qwapFAkCWDNzt9ufGf72J9iOJgWZeH~YNabpac_Y~6emxR0pRkgEePgYu94laDRMT7e_jWprGrjLf6ANVl6KuSj&amp;t=fe&amp;referer=https%3A%2F%2Fwww.anthropologie.com%2Flighting&amp;s=59633&amp;e=1a2181a06dc438ddcc56d7bab83f95a9a600a563d2327842f1d01ab7340f25a514ec62731e57c4464578a8decb407014&amp;dm=cd\" sandbox=\"allow-scripts allow-same-origin allow-forms\" allow=\"accelerometer; gyroscope; magnetometer\" title=\"DataDome CAPTCHA\" width=\"100%\" height=\"100%\" style=\"height:100vh;\" frameborder=\"0\" border=\"0\" scrolling=\"yes\"></iframe></body></html>",
+  "fit_html": "<html lang=\"en\"><body></body></html>",
+  "success": false,
+  "cleaned_html": "<html><head><title>anthropologie.com</title></head></html>",
+  "media": {
+    "images": [],
+    "videos": [],
+    "audios": []
+  },
+  "links": {
+    "internal": [],
+    "external": []
+  },
+  "downloaded_files": null,
+  "js_execution_result": null,
+  "screenshot": null,
+  "pdf": null,
+  "mhtml": null,
+  "extracted_content": null,
+  "metadata": {
+    "title": "anthropologie.com",
+    "description": null,
+    "keywords": null,
+    "author": null
+  },
+  "error_message": "Blocked by anti-bot protection: DataDome captcha",
+  "session_id": null,
+  "response_headers": {
+    "alt-svc": "h3=\":443\"; ma=2592000",
+    "connection": "Keep-Alive",
+    "content-encoding": "br",
+    "content-length": "513",
+    "date": "Tue, 27 Oct 2026 15:03:05 GMT",
+    "keep-alive": "timeout=10, max=2500",
+    "rtss": "1-2-88",
+    "server": "Apache",
+    "vary": "Accept-Encoding",
+    "accept-ch": "Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory,Sec-CH-UA-Platform-Version",
+    "access-control-allow-credentials": "true",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "x-dd-b, x-set-cookie",
+    "cache-control": "max-age=0, private, no-cache, no-store, must-revalidate",
+    "charset": "utf-8",
+    "content-type": "text/html;charset=utf-8",
+    "pragma": "no-cache",
+    "via": "1.1 google",
+    "x-datadome": "protected",
+    "x-datadome-cid": "AHrlqAAAAAMA15_BJ0l_qC8AR8jFRg==",
+    "x-dd-b": "1"
+  },
+  "status_code": 403,
+  "ssl_certificate": null,
+  "dispatch_result": null,
+  "redirected_url": "https://www.anthropologie.com/lighting",
+  "redirected_status_code": 403,
+  "network_requests": null,
+  "console_messages": null,
+  "tables": [],
+  "head_fingerprint": "86d2ce5b6a804684",
+  "cached_at": null,
+  "cache_status": "miss",
+  "crawl_stats": {
+    "attempts": 1,
+    "retries": 0,
+    "proxies_used": [
+      {
+        "proxy": null,
+        "status_code": 403,
+        "blocked": true,
+        "reason": "DataDome captcha"
+      }
+    ],
+    "fallback_fetch_used": false,
+    "resolved_by": null
+  },
+  "markdown": {
+    "raw_markdown": "\n",
+    "markdown_with_citations": "\n",
+    "references_markdown": "\n\n## References\n\n",
+    "fit_markdown": "",
+    "fit_html": ""
+  }
+}
