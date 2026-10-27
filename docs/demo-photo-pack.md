@@ -45,36 +45,54 @@ differs from the original full-body dress form and stays unavailable for placeme
 Glass photos retain pale highlights inside the bowls; these are approximate styling
 overlays. Sources document the borrowed photos, not permission for public use.
 
-The existing urn lamp, chandelier and original A3/A4 artwork are retained. Actual
-inventory photographs in `catalog-data.js` are unchanged. `/demo` injects only local
-sample data. `build.mjs` excludes the whole borrowed-photo directory, and its
-explicit source list excludes the demo scripts, review page and stylesheet.
-This task does not change the published storefront's audience or deployment.
+## Polished-photo preview, October 27
 
-## Round two: more transparent pieces (2026-10-27)
+Reading this as: a photography refresh for the vintage storefront, preserving the
+existing layout and mouse interactions while presenting whole items on white mats.
+The existing editorial typography, burgundy accents, varied category frames and
+hover transforms remain. Design variance / motion intensity / visual density stay
+at 7 / 5 / 4; this pass adds no motion or design-system dependency.
 
-Ricky asked for more items in the shop's style with transparent backgrounds and good
-resolution. Three Sonnet scouts (decor and lighting, furniture and textiles, fashion
-and accessories) returned 41 pieces, all ready-made alpha from pngimg.com
-(CC BY-NC 4.0, private demo only). They sit under `alternatives` in
-`site/assets/demo/sources.json` and render grouped on `/demo-photos.html`. They are
-review material only: none is wired into `/demo`'s room editor or `demo-products.js`.
+`/demo` now uses 52 selected, complete product photographs from the original photo
+pack and Sonnet's additional sources. A single list in `site/demo-products.js`
+feeds the collection, product details, saved finds, room picker and placement
+layers. Every placement layer uses the same transparent image as its catalog card.
+White image panels use a thin outer frame and inset mat; category frames keep their
+existing tilt and hover lift. Clothing and accessories can be placed manually;
+automatic arrangement still leaves unsupported kinds out with an explanation.
 
-Gate: RGBA with alpha 0 to 255, long side at least 1000 px, whole subject, no
-watermark or person, checked on burgundy and white. Sources are 900 to 8000 px;
-`site/assets/demo/` WebPs are trimmed and capped at 1600 px. Per-scout records,
-including rejects and gaps, are `research/demo-photo-sourcing/round2-*.json`. A
-cross-lane duplicate mirror was dropped, as was a 1000 px shag rug.
+Ricky explicitly kept the original neon-lit store photo (`IMG_6610--960.webp`).
+The entrance lamp, chandelier, painting and disco-ball composition also remain.
+Other rough shop photos, video stills, the incomplete mannequin and the mirror
+selfie no longer appear in the preview. Print has no selected polished replacement
+and is omitted from this pass. Room-tour links lead to the kept store photograph.
+The earlier room-render video is hidden because it uses the superseded item mix.
 
-Caveats: the three disco balls are rendered illustrations, not photographs. The ruby
-lamp has a faint fringe and the oval mirror a hard edge at 100% zoom. Tight crops
-touch their canvas edges (tangent contact, not clipping). Still not found as hi-res
-alpha: fringed western boots, feather fascinator, studded chain belt, clear mules,
-blush trench, neon windbreaker, ceramic animal figurines, black-and-gold shaker, a
-photographic disco ball, a record-player console and a jukebox. pngall, purepng, pngegg
-and Wikimedia Commons were queried but never crawled.
+The three new illustrated disco balls are not product photographs and were not
+selected. Duplicate mirror files are represented once. The rest of the approved
+photographic alternatives, including the rugs and additional seating, are browsable.
+
+Borrowed samples have no inherited inventory prices or availability claims. Their
+source notes remain in `site/assets/demo/sources.json` and the round-two manifests
+in `research/demo-photo-sourcing/`. `catalog-data.js` retains the actual inventory.
+The owner introduction remains as text while its unfinished selfie is omitted.
+
+This is the private review pass. `/demo` injects the photo list and white framing;
+`build.mjs` continues to exclude all demo assets, scripts and review pages. It does
+not change the published storefront or its audience.
 
 ## Verification
+
+The polished-photo refresh passes the existing 19 room-layout/server tests and the
+publication build. A data check confirms 52 unique samples, matching catalog and
+room images, real transparency in every selected WebP and no inherited inventory
+prices. The public build still omits the private photo pack.
+
+Browser review verified the eight initial framed cards, full-image product details,
+52 room choices, placement of the pink lamp and emerald chair, and dragging the
+chair as an independent transparent layer. A 390-pixel phone viewport shows two
+card columns without page overflow. The original neon-lit room photograph remains;
+no other rough photographs appear outside the retained entrance composition.
 
 Pixel checks confirm genuine transparent surroundings on all ten replacement
 cutouts. Warm-background review checks complete silhouettes and baked checkerboards.
