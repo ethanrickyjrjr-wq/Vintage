@@ -1,5 +1,5 @@
 ---
-title: Hollywood and Vine Room Preview
+title: Holliewood and Vine Room Preview
 emoji: 🛋️
 colorFrom: yellow
 colorTo: red
@@ -7,12 +7,12 @@ sdk: gradio
 sdk_version: 6.30.0
 app_file: app.py
 python_version: "3.12"
-short_description: Private room styling renderer for Hollywood and Vine
+short_description: Private room styling renderer for Holliewood and Vine
 license: apache-2.0
 startup_duration_timeout: 1h
 ---
 
-Private image-editing backend for the Hollywood and Vine storefront. Runs the
+Private image-editing backend for the Holliewood and Vine storefront. Runs the
 Apache-2.0 **black-forest-labs/FLUX.2-klein-4B** model on free ZeroGPU hardware.
 The storefront authenticates server-side. No visitor needs a Hugging Face login.
 Room photos and results pass as JSON in memory; this app does not write them to

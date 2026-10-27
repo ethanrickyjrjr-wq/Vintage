@@ -95,8 +95,8 @@ def render_room(payload: dict) -> dict:
     return {"image": "data:image/webp;base64," + base64.b64encode(buffer.getvalue()).decode("ascii"), "seconds": seconds}
 
 
-with gr.Blocks(title="Hollywood and Vine Room Renderer") as demo:
-    gr.Markdown("# Hollywood & Vine room renderer\nPrivate service for the storefront. Photos are processed in memory.")
+with gr.Blocks(title="Holliewood and Vine Room Renderer") as demo:
+    gr.Markdown("# Holliewood & Vine room renderer\nPrivate service for the storefront. Photos are processed in memory.")
     request = gr.JSON(label="Room request")
     result = gr.JSON(label="Styling preview")
     run = gr.Button("Render room")

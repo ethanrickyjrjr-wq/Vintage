@@ -1,4 +1,4 @@
-# Hollywood and Vine
+# Holliewood and Vine
 
 A storefront using the actual shop photography and 24-second room walkthrough, with a small Worker for private room previews. No package installation is required.
 

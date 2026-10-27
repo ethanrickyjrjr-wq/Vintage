@@ -1,4 +1,4 @@
-# Vintage (Hollywood and Vine)
+# Vintage (Holliewood and Vine)
 
 Read `CLAUDE.md` in this folder for the project. This file adds the one rule Codex has been missing.
 

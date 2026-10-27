@@ -308,8 +308,8 @@ function startEditor() {
     output.width = canvas.width; output.height = canvas.height + footer;
     const ctx = output.getContext("2d"); ctx.drawImage(canvas, 0, 0); ctx.fillStyle = "#451c2b"; ctx.fillRect(0, canvas.height, output.width, footer);
     ctx.fillStyle = "#f6efdf"; ctx.font = `${Math.max(10, footer * .33)}px Arial`;
-    ctx.fillText("Hollywood & Vine / Placement sketch · proportions approximate", footer * .35, canvas.height + footer * .63, output.width - footer * .7);
-    output.toBlob(blob => { if (!blob) return; const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = "hollywood-and-vine-your-room.png"; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }, "image/png"); draw();
+    ctx.fillText("Holliewood & Vine / Placement sketch · proportions approximate", footer * .35, canvas.height + footer * .63, output.width - footer * .7);
+    output.toBlob(blob => { if (!blob) return; const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = "holliewood-and-vine-your-room.png"; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }, "image/png"); draw();
   });
   $("room-demo-video").closest("details").addEventListener("toggle", event => {
     const video = $("room-demo-video"); if (!event.currentTarget.open) video.pause(); else if (!matchMedia("(prefers-reduced-motion: reduce)").matches) video.play().catch(() => {});

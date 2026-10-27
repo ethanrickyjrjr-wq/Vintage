@@ -1,4 +1,4 @@
-# Hollywood and Vine ops dashboard: design v1
+# Holliewood and Vine ops dashboard: design v1
 
 Date: 2026-10-26. Status: designed, nothing built. Build handoff: `docs/dashboard-handoff.md`.
 Revised the same day on Ricky's call: listing from the phone (Claude draft, Etsy draft, manual Publish) is in Phase 1.

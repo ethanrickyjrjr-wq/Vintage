@@ -1,4 +1,4 @@
-# Build handoff: Hollywood and Vine ops dashboard
+# Build handoff: Holliewood and Vine ops dashboard
 
 For the next Claude Code session. Written 2026-10-26 after the research and design pass; nothing is
 built yet. Read in this order, then start at section 0:

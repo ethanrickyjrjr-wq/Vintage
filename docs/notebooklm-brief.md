@@ -1,4 +1,4 @@
-# Hollywood and Vine: project brief for NotebookLM
+# Holliewood and Vine: project brief for NotebookLM
 
 Written 2026-10-27 from the project's own files and fresh research. Upload this as one source; it is self-contained.
 Confidence tags used throughout: **VERIFIED** (read from a primary page or our own data this session), **COMP** (price evidence from listings), **JUDGMENT** (our estimate, no comp), **BLOG** (reseller-industry articles, directional only), **NEEDS REVIEW** (open or conflicting).
@@ -7,7 +7,7 @@ Confidence tags used throughout: **VERIFIED** (read from a primary page or our o
 
 ## 1. The one-paragraph version
 
-**Hollywood and Vine** is a vintage resale shop owned by Ricky Cooper. It started as a physical room: burgundy walls, racks of 70s to 90s clothes, lamps, art, a pink "do it for the plot" neon sign, a chalkboard that says "come on in, get lost", disco balls, Marilyn and Elvis on the walls, and a cowhide over a rust mid-century sofa. The job now is to put that room online: list the inventory on **Etsy and Shopify** (and eBay through a crosslister), with a custom storefront as the brand home. On 2026-10-26 we catalogued the first batch of stock, priced it from market comps, built a sample storefront, and designed (but have not built) an operations dashboard that tracks sales, profit, inventory and buy opportunities from a phone.
+**Holliewood and Vine** is a vintage resale shop owned by Ricky Cooper. It started as a physical room: burgundy walls, racks of 70s to 90s clothes, lamps, art, a pink "do it for the plot" neon sign, a chalkboard that says "come on in, get lost", disco balls, Marilyn and Elvis on the walls, and a cowhide over a rust mid-century sofa. The job now is to put that room online: list the inventory on **Etsy and Shopify** (and eBay through a crosslister), with a custom storefront as the brand home. On 2026-10-26 we catalogued the first batch of stock, priced it from market comps, built a sample storefront, and designed (but have not built) an operations dashboard that tracks sales, profit, inventory and buy opportunities from a phone.
 
 The brand is maximalist 70s to 90s glam with a little punk. It is not farmhouse and not minimalist.
 
@@ -128,7 +128,7 @@ One installable web app (iPhone Home Screen), five tabs: **Today, Alerts, Watche
 
 ### 6.1 The goods, by category
 
-| Category | What sells | Why it works | Watch-outs | Fit for Hollywood and Vine |
+| Category | What sells | Why it works | Watch-outs | Fit for Holliewood and Vine |
 |---|---|---|---|---|
 | **Vintage clothing** | Band and tour tees (80s to 90s rock, 90s rap), vintage denim (Levi's 501, Lee, Wrangler), workwear (Carhartt, Dickies, Woolrich), vintage sportswear (Nike, Adidas, Champion, Starter, Polo Sport), outerwear (Patagonia, North Face), Hawaiian shirts, varsity jackets, designer vintage (Chanel, Gucci, YSL, Burberry) | Cheap to acquire (thrifts price by garment type, not brand), light to ship, strong demand, knowledge gap on the rack | Fakes and reprints; trend cycle is fast, hype pieces can lose 20% to 30% in three months; sizing and condition | **Good volume play.** Our rack leans colorblock 80s/90s, leather, hats, western: personality pieces more than label arbitrage. |
 | **Lighting** | Mid-century and Hollywood Regency table lamps (Stiffel, Rembrandt), brass, glass chandeliers, sculptural lamps | High ticket per item; decor buyers pay for look | Shipping and breakage; need to confirm wiring and brand stamps; reproductions abound | **Core.** Several of our biggest pieces. |
@@ -195,7 +195,7 @@ Use these as starting prompts.
 - **Infographic 1, "Where the money is":** the 79/18/3 value split across decor, clothing and print, with the five swing items called out.
 - **Infographic 2, "Vintage resale map":** categories (section 6.1) as a grid with fit-for-us ratings.
 - **Infographic 3, "Anatomy of a listing":** photo, one line, Claude draft, Etsy draft, Publish tap, crosslist to eBay and Shopify.
-- **Mind map:** center "Hollywood and Vine"; branches Brand, Inventory, Pricing, Storefront, Dashboard, Sourcing, Platforms, Open Risks, Next Steps.
+- **Mind map:** center "Holliewood and Vine"; branches Brand, Inventory, Pricing, Storefront, Dashboard, Sourcing, Platforms, Open Risks, Next Steps.
 - **Report (briefing doc):** a one-page "state of the business" and a two-page "category strategy: where to specialise" using the 80/20 rule (pick 3 to 5 categories).
 - **Study guide / FAQ:** "How do I tell Stiffel from Stiffel-style?", "Is it real Depression glass?", "Original or decor canvas?", "What do I need to list a signed item?", "Which platform for which item?"
 - **Audio overview:** ask for a debate-style conversation on "should we specialise in lighting and statement decor, or stay broad?" and "is the dashboard worth building before 50 listings exist?"

@@ -1,12 +1,13 @@
 # Vintage
 
-**Status (2026-10-26):** Vintage is Ricky's vintage resale shop, **Hollywood and Vine**. A physical room already exists
+**Status (2026-10-26):** Vintage is Ricky's vintage resale shop, **Holliewood and Vine**. A physical room already exists
 (burgundy walls, racks, lamps, art, a pink "do it for the plot" neon); the job is to put it online on
 Etsy and Shopify, probably with its own site later. First pass done 2026-10-26: Drive folder of 10
 photos + a 24 s walkthrough video pulled, inventory catalogued in `research/inventory/`, comps priced
 by Sonnet subagents into `research/pricing/`, sample storefront built as an artifact. Photos and
 video frames live in `assets/` (previews only; originals stay in Ricky's Drive). Next: Ricky re-shoots
-the "needs photo" items. Shop name (Ricky, 2026-10-26): **Hollywood and Vine**.
+the "needs photo" items. Shop name (Ricky, corrected 2026-10-27): **Holliewood and Vine** or
+**Holliewood & Vine**. The spelling is **Hollie**, with **ie**.
 
 **Dashboard (2026-10-26):** ops dashboard researched (ten Sonnet reports in `research/dashboard/`) and
 designed: `docs/dashboard-design.md` (what and why) and `docs/dashboard-handoff.md` (build order, smoke

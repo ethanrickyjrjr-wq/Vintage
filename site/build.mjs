@@ -89,4 +89,4 @@ writeFileSync(path.join(dist, "server/wrangler.json"), JSON.stringify({
   assets: { directory: "../client", binding: "ASSETS", run_worker_first: ["/api/*"] },
   d1_databases: [{ binding: "DB", database_name: "room-previews", database_id: "00000000-0000-4000-8000-000000000000" }],
 }));
-console.log("Built Hollywood and Vine: static assets in dist/client, room API in dist/server.");
+console.log("Built Holliewood and Vine: static assets in dist/client, room API in dist/server.");

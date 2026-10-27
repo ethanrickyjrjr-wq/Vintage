@@ -1,4 +1,4 @@
-# Hollywood and Vine: a room made for the web
+# Holliewood and Vine: a room made for the web
 
 October 26, 2026. This pass follows the owner's correction that the site should express the designer's way of putting things together, rather than represent the original physical store as still operating. The owner also confirmed that disco balls are an important buyer handout.
 
@@ -18,7 +18,7 @@ Existing dials: DESIGN_VARIANCE 5, MOTION_INTENSITY 4, VISUAL_DENSITY 4. Target:
 - Warm and muted pink pinspots reflect from the same 28-row spherical facet grid onto a page-sized Canvas2D wall. Light patches shear and stretch with the reflected ray angle, move in coherent curved rows, and have restrained bloom. Actual bass attacks gently accent their brightness; occasional small diffraction glints are attached to real projected facets (70 ms attack, 350 ms decay, at most one glint per 950 ms and no repeated facet within 2.5 seconds). Screen blending illuminates the existing wall colors, lettering and photographs. The layer ignores pointer input and remains active while browsing the collection. Reduced motion suppresses it while leaving music available; hidden pages stop both music and animation.
 - The four category displays vary in frame, aspect ratio and elevation. Their names, links and filters remain intact.
 - The room story explains the mix of chrome, brass, pink glass and art. Its object links open original catalog details.
-- The gift section says: “A little gift for our buyers: a mirror ball to carry the Hollywood & Vine feeling home.” It does not assert gift eligibility, fulfillment timing, dimensions, or a gift with every order.
+- The gift section says: “A little gift for our buyers: a mirror ball to carry the Holliewood & Vine feeling home.” It does not assert gift eligibility, fulfillment timing, dimensions, or a gift with every order.
 - Search, sorting, pagination, saved finds, item links, guide prices, preparation/authentication notes and mature-cover consent remain in place. Saved counts are included in the header's accessible name.
 - The tour is identified as the original room and does not preload its video. Editorial images use responsive WebP variants. Original item photographs are not replaced with generated images.
 
@@ -42,7 +42,7 @@ Final prompt: Use case: background-extraction. Edit target: supplied photograph 
 
 New illustrative asset, not an image of a promised exact gift model.
 
-Final prompt: Create a photorealistic silver mirror disco ball as a transparent cutout asset for Hollywood and Vine, an eclectic vintage shop website with burgundy walls and warm lamps. One round sphere made of many small square glass mirror tiles, imperfections and subtle irregular angles, highly tactile. Three-quarter warm studio lighting with a soft champagne highlight from upper left, muted pink reflected light on right and darker burgundy reflections on underside. Keep ball recognizably silver, not pink overall. A small metal hanging eyelet at top, no chain extending above it. Entire circular silhouette visible, centered, ball fills 88% of square canvas. Actual transparent alpha background, no floor, no drop shadow, no solid backdrop, no checkerboard, no text, no stars, no extra objects. Editorial decorative asset, not a product listing image.
+Final prompt: Create a photorealistic silver mirror disco ball as a transparent cutout asset for Holliewood and Vine, an eclectic vintage shop website with burgundy walls and warm lamps. One round sphere made of many small square glass mirror tiles, imperfections and subtle irregular angles, highly tactile. Three-quarter warm studio lighting with a soft champagne highlight from upper left, muted pink reflected light on right and darker burgundy reflections on underside. Keep ball recognizably silver, not pink overall. A small metal hanging eyelet at top, no chain extending above it. Entire circular silhouette visible, centered, ball fills 88% of square canvas. Actual transparent alpha background, no floor, no drop shadow, no solid backdrop, no checkerboard, no text, no stars, no extra objects. Editorial decorative asset, not a product listing image.
 
 ## Verification
 

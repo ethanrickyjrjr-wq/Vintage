@@ -1,4 +1,4 @@
-# Handoff for Codex: cut-out product tiles for the Hollywood and Vine catalog
+# Handoff for Codex: cut-out product tiles for the Holliewood and Vine catalog
 
 Written 2026-10-27 by Claude for Codex (Ricky publishes through the Codex app; Claude cannot publish to the site).
 Goal: show catalog items as clean cut-outs in rows and columns, like the lamp and chandelier at the top of the homepage, without
