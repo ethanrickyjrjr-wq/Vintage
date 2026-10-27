@@ -25,7 +25,15 @@ Licence basis: incompetech FAQ and the CC BY 4.0 deed, fetched live. The conditi
 
 If it is ever wanted back: kick ducking (3 lines), synthesized-impulse reverb (about 15), detuned-saw string pad with ensemble delay (about 20), a 32-bar arrangement with a longer chord progression (about 14), stereo buses. About 90 lines, no audio files. No library (Tone.js is 79 KB gzip). The old synth is in git history (`site/disco-music.js` before this change). No cleanly licensed 808 or 909 drum kit was found; CC0 options are VCSL (percussion) and VSCO-2-CE (violin section), both on GitHub.
 
-## Lights and sparkles: researched, not built
+## Lights and sparkles: implemented 2026-10-27
+
+The owner requested the most realistic treatment and speed that follows the music. `site/disco.js` now projects two fixed pinspots from the same 28-row mirror grid as the rotating sphere, using reflected rays and a wall-plane intersection. Small sharp quadrilaterals stretch at grazing angles, with modest bloom and rare attached diffraction glints. A narrow half-vector specular highlight catches individual tiles on the ball; the artificial hanging sway and CSS patch lanes are removed.
+
+The composer's catalog captured in `research/music-sources/inc-pieces.md` lists Stringed Disco at 118 BPM, Your Call at 120, Disco con Tutti at 115, and Enter the Party at 120. One shared motor clock makes a revolution every 64 beats (about 32 to 33 seconds), smoothing speed changes over three seconds. The published tempos avoid a syncopated bass line confusing a live tempo estimate. Web Audio still measures the actual playing track: bass attacks add small brightness accents and trigger occasional glints. No microphone or additional audio download is used. Reduced motion suppresses the moving light layer and sphere rendering while music remains available.
+
+Validation scripts in ignored `artifacts/` check bass responses against the first 40 seconds of all four committed MP3s, synthetic beats at 100/120/140 BPM, silence, missing Web Audio, pause and song switching. Production projection code is exercised for a minute at 1440×900, 390×844 and 320×740: finite reflected geometry, less than 0.3% maximum alpha-weighted illuminated viewport area, small frame-to-frame changes, and animation suspension for pause, reduced motion and hidden pages. These are implementation checks, not a formal photometric flash certification.
+
+### Original research
 
 Why it reads wrong now: the 96 light patches are 7 to 17 px soft-glowed boxes moving in straight lanes, the 24 stars are plain clip-path polygons, and the ball highlight is broad rather than a tile flashing white.
 
@@ -34,8 +42,8 @@ Recommended build, about 110 lines of Canvas2D replacing the CSS patches:
 2. Ball: half-vector flash in the shader (about 10 lines GLSL), later at most 3 JS-chosen "hot tiles" plus a 4-point star sprite.
 3. Stars: pre-rendered sprites with a round core and tapering spikes, 70 ms attack and 350 ms decay twinkle, 14 on phones and 24 on desktop.
 
-Owner decisions before building: speed (16 s vs 24 to 30 s per turn), how streaky, whether to add a faint beam haze, still frame vs nothing for reduced motion. Safety rules to keep: at most 3 simultaneous glints, no repeat of one star faster than every 2.5 s, no full-viewport brightness steps. Run a flash-safety check on the final build.
+The implementation resolves the earlier choices with a tempo-based motor, physically projected streaks, no artificial smoke beam, and no moving lights for reduced motion. Glints are limited more conservatively to a single 420 ms catch and at least 950 ms between starts; the same facet cannot repeat within 2.5 seconds. No full-viewport brightness steps are introduced.
 
-`docs/storefront-art-direction.md` lines 17 to 18 are out of step with the code (it says 64 stars and eight light reflections; the code has 96 patches and 24 stars). Fix when the lights are rebuilt.
+`docs/storefront-art-direction.md` and `site/README.md` now describe the implemented light and music behavior.
 
 References: three MIT repos for technique (vikingmute/neo-disco, lowsweet/disco-ball, BonoboJP/threejs-paris-disco-ball); Shadertoy and several physics articles were walled. A runnable geometry check is `research/disco-visuals/projection-check.mjs`.
