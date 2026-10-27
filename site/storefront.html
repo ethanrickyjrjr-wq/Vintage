@@ -3,6 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // Old disco links and restored mobile scroll positions should open at the entrance.
+      history.scrollRestoration = "manual";
+      if (location.hash === "#disco" || location.hash === "#home") {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+      if (!location.hash) {
+        window.addEventListener("pageshow", () => {
+          if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        });
+      }
+    </script>
     <meta name="theme-color" content="#451c2b" />
     <meta
       name="description"
@@ -35,6 +47,7 @@
     <script src="catalog-data.js" defer></script>
     <script src="catalog.js" defer></script>
     <script src="storefront.js" defer></script>
+    <script src="disco-music.js" defer></script>
     <script src="disco.js" defer></script>
   </head>
   <body>
@@ -103,7 +116,7 @@
           <button class="salon-lamp" type="button" data-open-item="A1" aria-label="Explore the brass and cream urn lamp">
             <img src="assets/editorial/urn-lamp.webp" srcset="assets/editorial/urn-lamp--400.webp 400w, assets/editorial/urn-lamp.webp 600w" sizes="(max-width: 767px) 215px, (max-width: 1500px) 25vw, 375px" width="600" height="900" alt="" fetchpriority="high" />
           </button>
-          <button class="salon-disco disco-ball" type="button" aria-label="Toggle disco sparkles" aria-pressed="false">
+          <button class="salon-disco disco-ball" type="button" aria-label="Start the disco: music, spinning and lights" aria-pressed="false" title="Tap for a little disco">
             <img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="A silver mirror disco ball catching pink and gold light" />
             <canvas class="disco-sphere" aria-hidden="true"></canvas>
           </button>
@@ -367,7 +380,7 @@
           <h2 id="disco-title">A little<br /><em>disco to go.</em></h2>
           <p>A little gift for our buyers: a mirror ball to carry the Hollywood &amp; Vine feeling home.</p>
           <p class="disco-signoff">Find a sunny spot. Let it dance.</p>
-          <button class="disco-motion-toggle" type="button" aria-pressed="false" hidden>Pause the disco</button>
+          <button class="disco-motion-toggle" type="button" aria-pressed="false">Start the disco ♪</button>
         </div>
       </section>
       <section

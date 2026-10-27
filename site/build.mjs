@@ -34,6 +34,7 @@ for (const file of [
   "atmosphere.css",
   "storefront.js",
   "disco.js",
+  "disco-music.js",
   "catalog.js",
   "catalog-data.js",
   "favicon.svg",

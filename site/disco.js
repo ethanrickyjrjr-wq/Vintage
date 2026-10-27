@@ -133,42 +133,23 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const toggle = document.querySelector(".disco-motion-toggle");
   const sparkleToggle = document.querySelector(".salon-disco");
-  let paused = false;
-  let sparklesOn = false;
-  const sparkles = document.createElement("div");
-  sparkles.className = "disco-sparkles";
-  sparkles.setAttribute("aria-hidden", "true");
-  // A bounded set of stars fills desktop and phone viewports without blocking taps.
-  for (let i = 0; i < 64; i++) {
-    const star = document.createElement("span");
-    star.className = "disco-sparkle";
-    star.style.setProperty("--sparkle-x", `${3 + (i % 8) * 12 + Math.random() * 6}%`);
-    star.style.setProperty("--sparkle-y", `${3 + Math.floor(i / 8) * 12 + Math.random() * 6}%`);
-    star.style.setProperty("--sparkle-size", `${8 + Math.random() * 13}px`);
-    star.style.setProperty("--sparkle-duration", `${2 + Math.random() * 3}s`);
-    star.style.setProperty("--sparkle-delay", `${-Math.random() * 5}s`);
-    sparkles.append(star);
-  }
-  document.body.append(sparkles);
+  let discoOn = false;
   // Projected light is a page layer, so it also reaches the collection while
   // the ball is outside the viewport. CSS animates only transforms and opacity.
   const lightField = document.createElement("div");
   lightField.className = "disco-room-light";
   lightField.setAttribute("aria-hidden", "true");
-  const reflections = [
-    [14, 21, 19, 0], [30, 34, 15, -.55], [49, 24, 12, -.2],
-    [75, 30, 21, -.75], [59, 58, 16, -.4], [23, 73, 18, -.9],
-    [86, 68, 13, -.1], [44, 86, 20, -.65],
-  ];
-  reflections.forEach(([x, y, size, delay]) => {
+  // Mirror facets project curved rows of light that travel together as the ball turns.
+  for (let i = 0; i < 96; i++) {
+    const row = Math.floor(i / 12), column = i % 12;
     const patch = document.createElement("span");
     patch.className = "disco-light-patch";
-    patch.style.setProperty("--light-x", `${x}%`);
-    patch.style.setProperty("--light-y", `${y}%`);
-    patch.style.setProperty("--light-size", `${size}px`);
-    patch.style.setProperty("--light-delay", `${delay}s`);
+    patch.style.setProperty("--light-y", `${5 + row * 12.5}%`);
+    patch.style.setProperty("--light-size", `${7 + (i * 7 % 11)}px`);
+    patch.style.setProperty("--light-delay", `${-column * 2 - row * .28}s`);
+    patch.style.setProperty("--glint-delay", `${-i * .37}s`);
     lightField.append(patch);
-  });
+  }
   document.body.append(lightField);
   const balls = [...document.querySelectorAll(".disco-ball")].map((element, index) => {
     const canvas = element.querySelector("canvas");
@@ -176,16 +157,15 @@
     let renderer = null, loading = false, unavailable = false;
     const ball = { element, visible: false, sync };
     async function sync() {
-      const active = ball.visible && !paused && !reduced.matches && !document.hidden;
+      const active = ball.visible && discoOn && !reduced.matches && !document.hidden;
       if (active && !renderer && !loading && !unavailable) {
         loading = true;
         try {
           await image.decode();
-          renderer = createRenderer(canvas, image, index ? 32 : 28);
+          renderer = createRenderer(canvas, image, index ? 20 : 16);
           if (!renderer) unavailable = true;
           else {
             element.classList.add("disco-ready");
-            if (toggle) toggle.hidden = false;
           }
         } catch (error) {
           unavailable = true;
@@ -211,11 +191,17 @@
     return ball;
   });
   function syncAll() {
-    lightField.dataset.running = String(!paused && !reduced.matches && !document.hidden);
-    sparkles.dataset.active = String(sparklesOn && !document.hidden);
-    sparkles.dataset.running = String(sparklesOn && !paused && !reduced.matches && !document.hidden);
-    if (sparkleToggle) sparkleToggle.dataset.motionPaused = String(paused || document.hidden);
-    if (toggle) toggle.hidden = reduced.matches;
+    lightField.dataset.active = String(discoOn && !document.hidden);
+    lightField.dataset.running = String(discoOn && !reduced.matches && !document.hidden);
+    if (sparkleToggle) {
+      sparkleToggle.dataset.motionPaused = String(!discoOn || document.hidden);
+      sparkleToggle.setAttribute("aria-pressed", String(discoOn));
+      sparkleToggle.setAttribute("aria-label", discoOn ? "Stop the disco: music, spinning and lights" : "Start the disco: music, spinning and lights");
+    }
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", String(discoOn));
+      toggle.textContent = discoOn ? "Stop the disco ♪" : "Start the disco ♪";
+    }
     balls.forEach(ball => ball.sync());
   }
   if ("IntersectionObserver" in window) {
@@ -231,18 +217,24 @@
     balls.forEach(ball => { ball.visible = true; });
     syncAll();
   }
-  document.addEventListener("visibilitychange", syncAll);
+  function stopDisco() {
+    discoOn = false;
+    window.HNVDiscoMusic?.stop();
+    syncAll();
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopDisco();
+    else syncAll();
+  });
+  window.addEventListener("pagehide", stopDisco);
   reduced.addEventListener("change", syncAll);
-  sparkleToggle?.addEventListener("click", () => {
-    sparklesOn = !sparklesOn;
-    sparkleToggle.setAttribute("aria-pressed", String(sparklesOn));
+  function toggleDisco() {
+    discoOn = !discoOn;
+    if (discoOn) window.HNVDiscoMusic?.start();
+    else window.HNVDiscoMusic?.stop();
     syncAll();
-  });
-  toggle?.addEventListener("click", () => {
-    paused = !paused;
-    toggle.setAttribute("aria-pressed", String(paused));
-    toggle.textContent = paused ? "Let it dance" : "Pause the disco";
-    syncAll();
-  });
+  }
+  sparkleToggle?.addEventListener("click", toggleDisco);
+  toggle?.addEventListener("click", toggleDisco);
   syncAll();
 })();
