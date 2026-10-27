@@ -11,6 +11,11 @@ Read first, in this order:
 4. `research/cutouts/03-grid-layout-references.md` (layout references; read before Phase 2).
 5. `docs/storefront-art-direction.md` (house look, asset provenance, what was already decided).
 
+**Before you start:** run `git status`. On 2026-10-27 the working tree had uncommitted edits in `site/atmosphere.css`, `site/catalog.js`, `site/disco.js`,
+`site/disco-music.js`, `site/storefront.html`, `site/README.md`, `docs/storefront-art-direction.md` and `docs/music-and-lights-notes.md` that Claude did NOT make
+(another session's disco and music work). `catalog.js` is on this handoff's path. Finish or commit that work first, then `git pull --rebase`; never overwrite or revert it.
+Line numbers quoted below may have moved.
+
 House rules that apply: Vendor First (re-check any option name or licence against the live page before you rely on it), Plan Mode First
 (post your plan, then build), ponytail (fewest files, no new dependency without a reason), pathspec `git add` only (never `git add -A`),
 commit and push every time a phase lands, never put secrets in the repo. Pushing to GitHub does NOT publish the site; Ricky publishes.
