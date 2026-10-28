@@ -30,6 +30,8 @@ function startEditor() {
   const selectedLayer = () => state.layers.find(layer => layer.id === state.selected);
   const photoAspect = () => canvas.width / canvas.height;
   function status(message, error = false) { $("room-status").textContent = message; $("room-status").classList.toggle("is-error", error); }
+  // While the room is in use the address names the room, so a reload or tab restore lands here, not on the last category or find.
+  function claimHash() { if (location.hash !== "#your-room") history.replaceState(null, "", "#your-room"); }
   function snapshot() { return { layers: state.layers.map(layer => ({ ...layer })), selected: state.selected, unplaced: state.unplaced.map(item => ({ ...item })) }; }
   function remember(previous = snapshot()) { state.history.push(previous); if (state.history.length > 30) state.history.shift(); }
   function change(callback) { remember(); callback(); state.comparing = false; refresh(); }
@@ -131,8 +133,9 @@ function startEditor() {
     $("room-sample-photo").hidden = !hasPhoto || state.sample; $("room-sample-photo").disabled = state.busy;
     for (const id of ["room-change-photo", "room-upload-button", "room-use-example"]) $(id).disabled = state.busy;
     $("room-working").hidden = !state.busy; $("room-stage").setAttribute("aria-busy", String(state.busy));
-    $("room-disco").hidden = !state.layers.length;
-    if ($("room-disco").hidden && $("room-disco").dataset.discoSource === "true") $("room-disco").click();
+    // Discofy is offered once a find is in the room; the ball itself only drops while that disco runs (disco.js owns it).
+    if ((state.busy || !state.layers.length) && $("room-discofy").getAttribute("aria-pressed") === "true") $("room-discofy").click();
+    $("room-discofy").hidden = !state.layers.length; $("room-discofy").disabled = state.busy;
     $("room-unplaced").hidden = !state.unplaced.length; $("room-unplaced-list").replaceChildren();
     for (const item of state.unplaced) {
       const row = document.createElement("li"); row.textContent = `${inventory.get(item.id)?.title || item.id}: ${item.reason}`; $("room-unplaced-list").append(row);
@@ -156,6 +159,7 @@ function startEditor() {
         const layer = constrainLayer({ id, kind: product.kind, x: point?.x ?? .5, y: point?.y ?? .5, w: product.kind === "art" ? .2 : .17, ratio: image.height / image.width, flip: false }, photoAspect());
         state.layers.push(layer); state.selected = id; state.unplaced = state.unplaced.filter(item => item.id !== id);
       });
+      claimHash();
       status("Placed. Drag the find or its corner to adjust it. Each find stays editable.");
       if (matchMedia("(max-width: 767px)").matches) canvas.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
       canvas.focus({ preventScroll: true });
@@ -177,7 +181,7 @@ function startEditor() {
       canvas.width = photo.naturalWidth; canvas.height = photo.naturalHeight;
       $("room-upload").hidden = true; canvas.hidden = false; $("room-change-photo").hidden = false;
       $("room-photo-label").textContent = sample ? "Sample room / AI-generated example" : "Your room / placement sketch";
-      refresh(); status("Your room is ready. Add finds to your picks, then place them or try a starting arrangement.");
+      claimHash(); refresh(); status("Your room is ready. Add finds to your picks, then place them or try a starting arrangement.");
     } catch (error) { if (version === photoVersion) status(error.message, true); }
     finally { URL.revokeObjectURL(objectUrl); $("room-file").value = ""; }
   }
@@ -223,7 +227,7 @@ function startEditor() {
   }
   async function decorate(ids) {
     if (state.busy || !state.photo || !ids.length) return;
-    state.busy = true; state.cancelled = false; $("room-working-label").textContent = "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); refresh(); loading(true);
+    state.busy = true; state.cancelled = false; $("room-working-label").textContent = "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); claimHash(); refresh(); loading(true);
     if (matchMedia("(max-width: 767px)").matches) $("room-stage").scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     try {
       const usable = [], excluded = [];
@@ -334,8 +338,9 @@ function startEditor() {
   document.addEventListener("click", event => {
     const control = event.target.closest("[data-try-room]"); if (!control || state.busy || !productMap.has(control.dataset.tryRoom)) return;
     event.preventDefault(); const id = control.dataset.tryRoom; $("room-product").value = id;
-    if (!state.picks.includes(id)) state.picks.push(id); document.querySelector("#product-dialog")?.close(); updateProduct();
-    history.pushState(null, "", "#your-room"); $("your-room").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    // Name the room before closing the detail, so the detail does not step back through history behind us.
+    if (!state.picks.includes(id)) state.picks.push(id); claimHash(); document.querySelector("#product-dialog")?.close(); updateProduct();
+    $("your-room").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     if (state.photo && productMap.get(id).overlay) place(id); else (state.photo ? $("room-product") : $("room-upload-button")).focus({ preventScroll: true });
   });
   updateProduct();

@@ -128,6 +128,7 @@
   const toggle = document.querySelector(".disco-motion-toggle");
   const sparkleToggle = document.querySelector(".salon-disco");
   const roomToggle = document.querySelector("#room-disco");
+  const roomDiscofy = document.querySelector("#room-discofy");
   const header = document.querySelector(".site-header");
   let source = sparkleToggle;
   let discoOn = false;
@@ -343,6 +344,10 @@
       button.setAttribute("aria-pressed", String(discoOn));
       button.setAttribute("aria-label", discoOn ? "Stop the disco: music, spinning and lights" : "Start the disco: music, spinning and lights");
     }
+    // The room's ball only hangs while its own disco runs: Discofy drops it in, Discofy or the ball takes it away.
+    const roomOn = discoOn && source === roomToggle;
+    if (roomToggle) roomToggle.hidden = !roomOn;
+    if (roomDiscofy) { roomDiscofy.setAttribute("aria-pressed", String(roomOn)); roomDiscofy.textContent = roomOn ? "Stop the disco ♪" : "Discofy ✦"; }
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(discoOn));
       toggle.textContent = discoOn ? "Stop the disco ♪" : "Start the disco ♪";
@@ -381,6 +386,7 @@
   }
   sparkleToggle?.addEventListener("click", () => toggleDisco(sparkleToggle));
   roomToggle?.addEventListener("click", () => toggleDisco(roomToggle));
+  roomDiscofy?.addEventListener("click", () => toggleDisco(roomToggle));
   toggle?.addEventListener("click", () => toggleDisco(sparkleToggle));
 
   // The room's loading ball uses the same mirrors, with its own silent motor.

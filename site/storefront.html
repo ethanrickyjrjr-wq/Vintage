@@ -6,14 +6,23 @@
     <script>
       // Fresh visits and reloads open at the entrance. Back and Forward return to where you were.
       {
-        const traversal = performance.getEntriesByType("navigation")[0]?.type === "back_forward";
+        const type = performance.getEntriesByType("navigation")[0]?.type;
+        const traversal = type === "back_forward";
         history.scrollRestoration = traversal ? "auto" : "manual";
         if (location.hash === "#disco" || location.hash === "#home") {
           history.replaceState(null, "", location.pathname + location.search);
         }
-        if (!traversal && !location.hash) {
+        if (!traversal) {
           window.addEventListener("pageshow", (event) => {
-            if (!event.persisted && !location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+            if (event.persisted) return;
+            if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+            // With manual restoration a reload keeps its address but skips the fragment. The room editor
+            // claims #your-room while in use, so a reload mid-decorate lands back on the room.
+            else if (type === "reload") {
+              let target = null;
+              try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch {}
+              target?.scrollIntoView({ behavior: "instant" });
+            }
           });
         }
       }
@@ -327,6 +336,7 @@
             <div class="room-toolbar">
               <span id="room-photo-label">Start with your space</span>
               <div class="room-history">
+                <button type="button" id="room-discofy" aria-pressed="false" hidden>Discofy ✦</button>
                 <button type="button" id="room-before" aria-pressed="false" disabled>Show original</button>
                 <button type="button" id="room-undo" disabled>Undo</button>
                 <button type="button" id="room-delete" disabled>Remove find</button>
@@ -343,7 +353,7 @@
                 <div class="room-example"><img src="assets/thumbnails/rooms-example-room--480.webp" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" draggable="false" /><button type="button" id="room-use-example">Or try our sample room ↗</button><small>AI-generated example room</small></div>
               </div>
               <canvas id="room-canvas" width="1200" height="800" tabindex="0" aria-label="Room editor. Select a find, drag to move it, or drag its corner to resize. Arrow keys move the selected find; Delete removes it." aria-describedby="room-editor-help" hidden></canvas>
-              <button class="room-disco disco-ball" type="button" id="room-disco" aria-label="Start the disco: music, spinning and lights" aria-pressed="false" title="Tap for a little disco in your room" hidden><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="" /><canvas class="disco-sphere"></canvas></button>
+              <button class="room-disco disco-ball" type="button" id="room-disco" aria-label="Stop the disco: music, spinning and lights" aria-pressed="true" title="Stop the disco" hidden><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="" /><canvas class="disco-sphere"></canvas></button>
               <div class="room-working" id="room-working" hidden>
                 <div class="room-disco-drop" aria-hidden="true"><div class="room-loading-ball"><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="" /><canvas class="disco-sphere"></canvas></div></div>
                 <p class="eyebrow">A little vintage magic</p>

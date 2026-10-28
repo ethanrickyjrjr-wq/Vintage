@@ -8,6 +8,28 @@ in view. A curl of the live `catalog.js` right after publishing returned a stale
 (`CF-Cache-Status: HIT`, old code) for a few minutes while the browser got the new file; a later curl was fresh.
 If a check ever fails right after a publish, wait a few minutes and reload before blaming the code.
 
+**Third fix, same day (Ricky, 17:30, after trying Sites 22):** the room disco was built wrong. Ricky's words: a
+Discofy button, "the user gets to choose to click it and the ball would drop down and spin", not a ball sitting
+permanently in the photo's corner; and the loading screen's own drop-down ball must never disappear. Also: after
+Decorate the page "jumped to fashion page or some products". Built by Claude, pushed; **Codex: publish only.**
+What changed:
+- `storefront.html`: a **Discofy ✦** button is first in the bar above the photo (`#room-discofy`), shown once a
+  find is in the room. The corner ball (`#room-disco`) is hidden until Discofy is tapped.
+- `disco.js`: Discofy starts the room disco (music, lights clipped to the photo) and un-hides the ball, which drops
+  in on its existing animation and spins. Discofy reads "Stop the disco ♪" while it runs; tapping it or the ball
+  stops the disco and the ball goes away. The entrance ball is untouched.
+- `room-preview.css`: the rule that hid the loading screen's drop-down ball while the room ball was up is deleted.
+  The loading ball drops every time Decorate runs. Decorate stops a running room disco first.
+- `room-preview.js`: while the room is in use (photo loaded, a find placed, Decorate started) the address is
+  `#your-room` (`replaceState`, no history entry). Reproduced on live Sites 22: "Try it in your room" closed the
+  detail, whose close handler calls `history.back()`, and that fragment navigation landed the page on the product
+  card in the grid (scrollY 756) instead of the room; the hash left behind was the product's or the last category,
+  so a reload or a phone's tab restore during the 45 MB room-guide download reopened that product or that
+  category. Claude could not make Decorate itself navigate on desktop Chrome (hash, scroll, dialogs and reloads were
+  logged through a full run: nothing). Now the detail is closed after the address already says `#your-room`, so
+  no back step runs. `storefront.html`'s head script now scrolls a reload to the fragment it kept (Chrome skips the
+  fragment on reload under manual scroll restoration), so a reload lands on the room section.
+
 **Second fix, same day:** a product image dragged from the page replaced the room photo and Undo was empty (Ricky's
 screenshot, 16:39). Built as item 2 of `codex-handoff-sample-room-and-star.md`, with check 10 added to the console
 script. **Codex: publish only, then this file gets the new version number.**
@@ -127,9 +149,17 @@ Not broken, verified: bag "Remove" keeps the bag open and focuses "Continue expl
 9. Room: place two finds, tap Remove on one → the other remains, status says removed, Undo brings it back,
    page does not scroll or jump. "Clear the room" asks nothing but is clearly labelled and sits last.
 10. Keyboard: Escape closes each dialog and returns focus to what opened it; Tab reaches "← Back".
-11. Room: place one find → a small disco ball drops into the photo's top-right corner. Tap it → music plays, the
-    ball spins, mirror lights move over the room photo only (none on the controls or page). Clear the room → the
-    ball goes and the music stops. Undo → the ball is back, silent. The entrance ball still works on its own.
+11. Room: place one find → no ball in the photo; a "Discofy ✦" button appears first in the bar above the photo.
+    Tap it → the mirror ball drops into the photo's top-right corner and spins, music plays, mirror lights move over
+    the room photo only (none on the controls or page); the button reads "Stop the disco ♪". Tap the button, or the
+    ball → music stops and the ball is gone. Clear the room → the button is gone and any disco stops. Undo → the
+    button is back, no ball, silent. The entrance ball still works on its own.
+12. Room with one find placed: Decorate with my picks → the loading screen shows its drop-down mirror ball every
+    time, a running room disco stops first, and when the result arrives the page has not moved, the address is
+    `#your-room`, and no product detail or category has opened.
+13. Open a find's detail from the grid, tap "Try it in your room" → the page scrolls to the room section and stays
+    there, the detail is closed, the address is `#your-room`. Reload → the room section is in view (empty: photos
+    stay on the device), not that product and not a category.
 
 Paste `site/tests/navigation-check.js` into the browser console on the homepage: it runs 1, 4, 5, 6, 8 and 9
 and prints PASS/FAIL per line. It must print no FAIL before you publish.
