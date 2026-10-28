@@ -14,7 +14,7 @@ The complete product grid sits immediately after the entrance/category navigatio
 larger category displays, 3D showroom invitation and room story. Every listing appears without a
 load-more step. Transparent images sit on pure white framed panels and use `object-fit: contain`
 in cards, details and the room controls. The room editor uses each listing's exact full-size image
-as its transparent placement layer. All 52 remain available for manual placement.
+as its transparent placement layer for home goods. Fashion items are excluded from the room editor.
 
 The entrance keeps its burgundy composition, dimensional type, pointer depth and disco controls.
 Ricky's correction on October 28 restores the original brass-and-cream urn lamp, sea-glass
@@ -22,8 +22,8 @@ chandelier and cubist painting. These signature entrance objects must not be rep
 catalog photographs. Their click targets keep the original titles, photos and guide prices,
 separate from the 52 sample listings. White belongs to the product-photo framing; page backgrounds
 remain burgundy in both lighting palettes. The original neon-lit room photograph remains.
-The rough catalog photography, walkthrough-derived listings,
-unfinished owner selfie and superseded generated room video are omitted from the homepage.
+The owner’s original mirror selfie appears in the owner section. Rough catalog photography,
+walkthrough-derived listings and the superseded generated room video are omitted from the homepage.
 
 Cards and details offer Add to bag. The bag persists locally in this browser, limits each unique
 sample piece to one entry, supports removal and calculates its subtotal. Saved finds still work

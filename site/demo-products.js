@@ -62,7 +62,7 @@ const HNV_ENTRANCE_ITEMS = HNV_ITEMS.filter(item => ["A1", "A2", "A3"].includes(
     id: sample.id, cat: sample.cat, title: sample.title, sub: sample.sub, source: sample.source,
     img: `assets/demo/${sample.file}.webp`, chip: "demo",
   })));
-  HNV_ROOM_PRODUCTS.splice(0, HNV_ROOM_PRODUCTS.length, ...samples.map(sample => ({
+  HNV_ROOM_PRODUCTS.splice(0, HNV_ROOM_PRODUCTS.length, ...samples.filter(sample => sample.cat !== "fashion").map(sample => ({
     id: sample.id, kind: sample.kind, surface: sample.surface,
     overlay: `assets/demo/${sample.file}.webp`,
   })));

@@ -43,12 +43,15 @@ test("the public sample collection contains every selected photograph and its ow
   }
 });
 
-test("every sample keeps the same cutout from collection to room editor", () => {
-  assert.equal(products.length, items.length);
+test("room-friendly samples keep their cutouts and fashion stays out of the room editor", () => {
+  assert.equal(products.length, items.filter(item => item.cat !== "fashion").length);
   for (const item of items) {
     const product = products.find(product => product.id === item.id);
-    assert.ok(product, item.id);
-    assert.equal(product.overlay, item.img, item.id);
+    if (item.cat === "fashion") assert.equal(product, undefined, item.id);
+    else {
+      assert.ok(product, item.id);
+      assert.equal(product.overlay, item.img, item.id);
+    }
     for (const width of [480, 960]) {
       assert.ok(existsSync(path.join(root, item.img.replace("assets/demo/", "assets/thumbnails/samples-").replace(".webp", `--${width}.webp`))), `${item.id} has a ${width}px responsive photograph`);
     }
@@ -64,5 +67,5 @@ test("the homepage initializes the sample collection before catalog and room con
   assert.match(page, /Illustrative prices in USD/);
   assert.match(page, /disabled>Checkout coming soon/);
   assert.match(page, /photos-IMG_6610--960.webp/, "keep the original neon-lit room photograph");
-  assert.ok(!page.includes('IMG_6617.webp'), "omit the unfinished selfie");
+  assert.ok(page.includes('IMG_6617.webp'), "show the owner's photograph");
 });

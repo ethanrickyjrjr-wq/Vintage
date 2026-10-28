@@ -56,7 +56,8 @@
 .detail-save:hover { background: #f7f0f3; color: var(--burgundy); }
 .room-selected-product img, .room-tray img { background: #fff; }
 .room-selected-product img, .room-tray img { object-fit: contain; padding: 8px; }
-.owner-section { display: block; max-width: 850px; text-align: center; padding: 50px 30px; box-shadow: none; }
+.owner-section { display: grid; max-width: 850px; text-align: center; padding: 50px 30px; box-shadow: none; }
+@media (max-width: 767px) { .owner-section { grid-template-columns: 1fr; } }
 .owner-copy { padding: 0; }
 .owner-price { justify-content: center; }
 .owner-aside { margin-top: 25px; }

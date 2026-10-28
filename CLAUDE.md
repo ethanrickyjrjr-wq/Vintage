@@ -31,8 +31,9 @@ every-order guarantee. Implemented direction and asset provenance: `docs/storefr
 52 selected transparent product photographs on white framed panels, with item names, illustrative
 prices and shopping controls. `site/demo-products.js` now supplies the public catalog and all room
 layers. The build includes those selected photos and their 480/960px derivatives. The burgundy
-entrance, mouse movement, disco and original neon-lit room remain. Rough item photos, stills and the
-unfinished selfie are omitted from the storefront. The browser-local bag demonstrates shopping;
+entrance, mouse movement, disco and original neon-lit room remain. The owner’s mirror selfie appears
+in the owner section. Rough item photos and stills are omitted. Fashion is excluded from room previews.
+The browser-local bag demonstrates shopping;
 checkout remains unavailable. See `docs/sample-storefront.md` and the historical `docs/demo-photo-pack.md`.
 
 **Fixed visual constraint (Ricky, 2026-10-28):** White applies to product-photo framing only, never
