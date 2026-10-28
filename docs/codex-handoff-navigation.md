@@ -1,9 +1,18 @@
 # Handoff for Codex: close and back return you to where you were
 
 **Status 2026-10-28, later the same day:** Ricky said "do it", so Claude built all six items below and pushed
-them (the commit after `05dc716` on `master`). `site/tests/navigation-check.js` printed five PASS and the
-showroom round trips were checked by hand in Chrome. **Codex: only section "Publish" remains.** The item
-sections stay as the record of what changed and why; their line numbers are from before the change.
+them (`82b313f`). Codex published Sites version 21 but could not reach the browser console, so Claude ran
+`site/tests/navigation-check.js` against the live homepage from Chrome DevTools: five PASS. Live showroom round
+trips by hand: Back from the showroom and the showroom's "← Back" both restored scroll 14901 with the 3D teaser
+in view. A curl of the live `catalog.js` right after publishing returned a stale Cloudflare edge copy
+(`CF-Cache-Status: HIT`, old code) for a few minutes while the browser got the new file; a later curl was fresh.
+If a check ever fails right after a publish, wait a few minutes and reload before blaming the code.
+
+**Second fix, same day:** a product image dragged from the page replaced the room photo and Undo was empty (Ricky's
+screenshot, 16:39). Built as item 2 of `codex-handoff-sample-room-and-star.md`, with check 10 added to the console
+script. **Codex: publish only, then this file gets the new version number.**
+
+The item sections stay as the record of what changed and why; their line numbers are from before the change.
 
 Written 2026-10-28 by Claude for Codex. Ricky publishes through the Codex app; Claude cannot publish.
 Ricky, 2026-10-28: "showroom and other things need to go back to where they were when you close something.

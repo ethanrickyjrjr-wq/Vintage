@@ -150,7 +150,7 @@
     return `<article class="product-card" id="item-${item.id}">
       <div class="product-visual">
         <button class="product-image" type="button" data-open-item="${item.id}" aria-label="View ${escape(item.title)}">
-          <img src="${escape(item.img)}" ${photoSources(item)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" loading="lazy" decoding="async" width="640" height="800">
+          <img src="${escape(item.img)}" ${photoSources(item)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" loading="lazy" decoding="async" width="640" height="800" draggable="false">
         </button>
         ${saveButton(item)}
         ${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${item.id}" aria-label="View adult magazine cover for ${escape(item.title)}">View cover (18+)</button>` : ""}
@@ -305,7 +305,7 @@
                   ? "Availability as stock rather than room styling still needs confirmation."
                   : "";
     detail.innerHTML = `<div class="detail-layout">
-      <div class="detail-image"><img src="${escape(item.img)}" ${photoSources(item, true)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" width="640" height="800">${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${id}">View cover (18+)</button>` : ""}</div>
+      <div class="detail-image"><img src="${escape(item.img)}" ${photoSources(item, true)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" width="640" height="800" draggable="false">${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${id}">View cover (18+)</button>` : ""}</div>
       <div class="detail-copy"><p class="detail-category">${categoryNames[item.cat]} / ${originalId}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
       <p class="detail-price"><strong>${price ? money(price.target) : "Pricing pending"}</strong><small>${price?.sample ? "Sample price · USD" : "Guide price"}</small></p>
       ${item.entrance ? "" : `<button class="product-add detail-add" type="button" data-add-bag="${id}">Add to bag <span aria-hidden="true">+</span></button>
@@ -508,7 +508,7 @@
         detailFromBag = detailPushed = false;
         if (location.hash === `#item-${detailId}`) {
           // Drop the entry the detail pushed, so one Back after closing leaves the page.
-          if (pushed) { closingDetail = true; history.back(); } else updateHash(detailReturnHash, true);
+          if (pushed) { closingDetail = true; setTimeout(() => { closingDetail = false; }, 1000); history.back(); } else updateHash(detailReturnHash, true);
         }
         if (location.hash === "#your-room") return;
         if (fromBag) {

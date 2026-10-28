@@ -27,6 +27,12 @@ Do this, and no more:
 
 ## 2. Room editor: Ricky dragged a photo in and cannot get back to the sample room
 
+**Built by Claude 2026-10-28** after Ricky hit it again (a product image dragged from the page became the "room"; Undo was
+empty because uploads reset the history). A and B below are in `site/room-preview.js` and `storefront.html`: drops that carry
+`text/uri-list` (anything dragged from the page) are ignored, page images are `draggable="false"`, and "Use the sample room"
+appears in the bottom bar whenever the loaded photo is not the sample. C was skipped. Check 10 in
+`site/tests/navigation-check.js` covers it. Codex: publish only.
+
 Ricky's screenshot: `C:\Users\ethan\OneDrive\Documents\Pictures\Screenshots 1\Screenshot 2026-10-27 174946.png`. It shows the editor with the Cubist painting photo as
 the room, labelled "Your room / placement sketch" (the non-sample label), and the Cubist figure as the selected pick. Ricky said they accidentally dragged the picture
 photo over and there is no way back to "the original room we provide".

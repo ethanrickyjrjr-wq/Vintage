@@ -17,9 +17,10 @@
   await back(); await sleep(250);
   check("4 Back closes detail and keeps search", !product.open && search.value === "lamp" && count() === lampCount,
     `open=${product.open} search="${search.value}" count="${count()}"`);
+  await sleep(600); // a person pauses between Back and the next tap; two traversals inside ~300 ms can be dropped by the browser
   search.value = "lamp"; search.dispatchEvent(new Event("input", { bubbles: true })); await sleep(50);
   $("#product-grid .product-image").click(); await sleep(50);
-  product.querySelector("[data-close-dialog]").click(); await sleep(250);
+  product.querySelector("[data-close-dialog]").click(); await sleep(400);
   check("5 × closes detail, keeps search, clears #item hash", !product.open && search.value === "lamp" && !location.hash.startsWith("#item-"),
     `open=${product.open} search="${search.value}" hash=${location.hash}`);
   search.value = ""; search.dispatchEvent(new Event("input", { bubbles: true })); await sleep(50);
@@ -60,6 +61,20 @@
   check("9 Remove takes one find, no scroll, status says removed, Undo restores",
     layers >= 2 && afterRemove === layers - 1 && scrollY === y && /removed/i.test(status) && id("room-layers").children.length === layers,
     `layers=${layers} afterRemove=${afterRemove} scrollDelta=${scrollY - y} status="${status}" afterUndo=${id("room-layers").children.length}`);
+
+  // 10: an image dragged from the page must not replace the room; a file from the device must; the sample room is one tap away
+  const stage = id("room-stage"), labelBefore = id("room-photo-label").textContent;
+  const png = await new Promise((r) => { const c = document.createElement("canvas"); c.width = c.height = 240; const ctx = c.getContext("2d"); ctx.fillStyle = "#888"; ctx.fillRect(0, 0, 240, 240); c.toBlob(r, "image/png"); });
+  const drop = (fromPage) => { const dt = new DataTransfer(); dt.items.add(new File([png], "drag.png", { type: "image/png" })); if (fromPage) dt.setData("text/uri-list", location.href); stage.dispatchEvent(new DragEvent("drop", { dataTransfer: dt, bubbles: true, cancelable: true })); };
+  drop(true); await sleep(400);
+  const pageDragIgnored = id("room-photo-label").textContent === labelBefore;
+  drop(false); for (let i = 0; i < 30 && id("room-photo-label").textContent === labelBefore; i++) await sleep(100);
+  const fileDropLoaded = /Your room/.test(id("room-photo-label").textContent);
+  const sampleButtonShown = !id("room-sample-photo")?.hidden;
+  id("room-sample-photo")?.click(); for (let i = 0; i < 50 && !/Sample room/.test(id("room-photo-label").textContent); i++) await sleep(100);
+  check("10 page image drag ignored, device file loads, sample room one tap away",
+    pageDragIgnored && fileDropLoaded && sampleButtonShown && /Sample room/.test(id("room-photo-label").textContent),
+    `pageDragIgnored=${pageDragIgnored} fileDropLoaded=${fileDropLoaded} sampleButton=${sampleButtonShown} label="${id("room-photo-label").textContent}"`);
 
   console.log(results.join("\n"));
   return results;

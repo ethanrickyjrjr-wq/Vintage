@@ -10,7 +10,7 @@ function startEditor() {
   const products = HNV_ROOM_PRODUCTS.map(product => ({ ...inventory.get(product.id), ...product }));
   const productMap = new Map(products.map(product => [product.id, product]));
   const textures = new Map();
-  const state = { photo: null, layers: [], picks: [], selected: null, history: [], unplaced: [], scene: null, busy: false, comparing: false, drag: null };
+  const state = { photo: null, sample: false, layers: [], picks: [], selected: null, history: [], unplaced: [], scene: null, busy: false, comparing: false, drag: null };
   const savedKey = "hollywood-and-vine-saved";
   let favorites = [], photoVersion = 0, frame = 0, worker = null, requestId = 0, cancelAnalysis = null, sizeStart = null;
   let loadingTimer = 0;
@@ -98,7 +98,7 @@ function startEditor() {
     $("room-tray").replaceChildren(); $("room-tray-empty").hidden = state.picks.length > 0;
     for (const id of state.picks) {
       const product = productMap.get(id), row = document.createElement("li"), title = document.createElement("span");
-      const image = document.createElement("img"); image.src = product.img; image.alt = ""; image.width = 34; image.height = 42;
+      const image = document.createElement("img"); image.src = product.img; image.alt = ""; image.width = 34; image.height = 42; image.draggable = false;
       title.textContent = product.title; row.append(image, title);
       const present = state.layers.some(item => item.id === id);
       row.draggable = !!product.overlay && !present && !state.busy;
@@ -128,8 +128,11 @@ function startEditor() {
     const picked = state.picks.includes(selectedProduct().id);
     $("room-add").textContent = picked ? "In my picks ✓" : "Add to my picks +"; $("room-add").disabled = state.busy || picked;
     $("room-product").disabled = state.busy; $("room-file").disabled = state.busy;
+    $("room-sample-photo").hidden = !hasPhoto || state.sample; $("room-sample-photo").disabled = state.busy;
     for (const id of ["room-change-photo", "room-upload-button", "room-use-example"]) $(id).disabled = state.busy;
     $("room-working").hidden = !state.busy; $("room-stage").setAttribute("aria-busy", String(state.busy));
+    $("room-disco").hidden = !state.layers.length;
+    if ($("room-disco").hidden && $("room-disco").dataset.discoSource === "true") $("room-disco").click();
     $("room-unplaced").hidden = !state.unplaced.length; $("room-unplaced-list").replaceChildren();
     for (const item of state.unplaced) {
       const row = document.createElement("li"); row.textContent = `${inventory.get(item.id)?.title || item.id}: ${item.reason}`; $("room-unplaced-list").append(row);
@@ -170,7 +173,7 @@ function startEditor() {
       const normalized = document.createElement("canvas"); normalized.width = Math.round(image.naturalWidth * scale); normalized.height = Math.round(image.naturalHeight * scale);
       normalized.getContext("2d").drawImage(image, 0, 0, normalized.width, normalized.height);
       const photo = await loadImage(normalized.toDataURL("image/jpeg", .92)); if (version !== photoVersion) return;
-      Object.assign(state, { photo, layers: [], history: [], selected: null, unplaced: [], scene: null, comparing: false });
+      Object.assign(state, { photo, sample, layers: [], history: [], selected: null, unplaced: [], scene: null, comparing: false });
       canvas.width = photo.naturalWidth; canvas.height = photo.naturalHeight;
       $("room-upload").hidden = true; canvas.hidden = false; $("room-change-photo").hidden = false;
       $("room-photo-label").textContent = sample ? "Sample room / AI-generated example" : "Your room / placement sketch";
@@ -254,16 +257,19 @@ function startEditor() {
   $("room-cancel").addEventListener("click", () => { state.cancelled = true; cancelAnalysis?.(); });
   for (const id of ["room-upload-button", "room-change-photo"]) $(id).addEventListener("click", () => $("room-file").click());
   $("room-file").addEventListener("change", () => upload($("room-file").files[0]));
-  $("room-use-example").addEventListener("click", async () => {
+  async function loadSample() {
     try { const response = await fetch("assets/rooms/example-room.webp"); if (!response.ok) throw new Error("The sample room couldn’t load. Try your own photo."); await upload(new File([await response.blob()], "Sample.webp", { type: "image/webp" }), true); }
     catch (error) { status(error.message, true); }
-  });
-  $("room-stage").addEventListener("dragover", event => { if (event.dataTransfer.types.includes("Files") || event.dataTransfer.types.includes("application/x-hnv-find")) { event.preventDefault(); if (!state.busy) $("room-stage").classList.add("is-dragging"); } });
+  }
+  for (const id of ["room-use-example", "room-sample-photo"]) $(id).addEventListener("click", loadSample);
+  // An image dragged from the page itself carries text/uri-list; a file from the device carries only Files.
+  const fileDrop = (transfer) => transfer.types.includes("Files") && !transfer.types.includes("text/uri-list");
+  $("room-stage").addEventListener("dragover", event => { if (fileDrop(event.dataTransfer) || event.dataTransfer.types.includes("application/x-hnv-find")) { event.preventDefault(); if (!state.busy) $("room-stage").classList.add("is-dragging"); } });
   $("room-stage").addEventListener("dragleave", () => $("room-stage").classList.remove("is-dragging"));
   $("room-stage").addEventListener("drop", event => {
     event.preventDefault(); $("room-stage").classList.remove("is-dragging");
     const id = event.dataTransfer.getData("application/x-hnv-find");
-    if (productMap.has(id)) place(id, coordinate(event)); else upload(event.dataTransfer.files[0]);
+    if (productMap.has(id)) place(id, coordinate(event)); else if (fileDrop(event.dataTransfer)) upload(event.dataTransfer.files[0]);
   });
   canvas.addEventListener("pointerdown", event => {
     if (state.busy || !state.photo || state.comparing || event.button !== 0) return;
