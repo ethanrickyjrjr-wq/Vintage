@@ -146,5 +146,17 @@ Sites version 22 was published publicly on 2026-10-28 from the `ef4f9b3` site bu
 `npm test` passed all 23 tests, followed by a successful `node build.mjs`.
 The console check was skipped as requested; Claude will run it against the live site.
 
+Live acceptance line 11 verified in Chrome on 2026-10-28 at desktop and 390 px:
+- PASS: ball hidden before placement; placing one find reveals it, initially unpressed.
+- PASS: a real click starts audio playback (currentTime advances), the ball reports `running`, and mirror lights remain clipped to the room photo. No lights on controls or the page.
+- PASS: Clear hides the ball and pauses audio; Undo restores one layer and the ball with `aria-pressed=false`, audio paused.
+- PASS: entrance ball independently starts playback and page-wide lights with no clip; a second click stops it.
+- PASS: 390 px ball is 56 px wide; no horizontal page overflow. Temporary viewport restored and playback stopped after checks.
+
+Sites confirmed deployment `appgdep_6ae2628c26d88191bbad86c9ba941a30` succeeded,
+using source commit `085a690c3c18a7f76010dbcd74cf9084f5302132` and public access.
+Build and all 23 tests passed again. This follow-up exercised line 11 through browser controls;
+it did not rerun the navigation console script. Local screenshot: `artifacts/room-disco/sites-v22-live.png` (ignored).
+
 Sites version 21 was published publicly on 2026-10-28 from the `82b313f` site build.
 The live console check remains unverified: the available browser connection did not expose the developer console.

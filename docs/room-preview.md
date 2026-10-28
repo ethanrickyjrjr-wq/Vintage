@@ -1,5 +1,16 @@
 # Room previews
 
+## Room disco publication — 2026-10-28
+
+Sites **version 22** is live publicly at https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site .
+Implementation commit: `ef4f9b3`; Sites source commit: `085a690c3c18a7f76010dbcd74cf9084f5302132`;
+deployment `appgdep_6ae2628c26d88191bbad86c9ba941a30` succeeded. Build and all 23 tests pass.
+Live Chrome acceptance line 11 passes on desktop and at 390 px: placement reveals the ball,
+clicking starts advancing audio, spinning and photo-clipped lights; Clear stops playback and hides
+the ball; Undo restores it silently. The entrance ball retains page-wide lights and toggles off.
+At 390 px the ball measures 56 px and the page has no horizontal overflow.
+Detailed verification is recorded in [the navigation handoff](codex-handoff-navigation.md#published).
+
 ## Browser editor — 2026-10-27
 
 The current editor replaces generative placement with independent browser layers. Picks and saved favorites feed separate Decorate actions. Manual drag/drop, resize, flip, bring-forward, delete, keyboard movement, undo, reset, original comparison and labeled PNG export all work without a model service. Every position/size is numeric and remains editable; layers are never flattened into the working room. Photos are normalized locally and kept only in tab memory.
