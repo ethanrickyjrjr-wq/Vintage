@@ -127,3 +127,8 @@ and prints PASS/FAIL per line. It must print no FAIL before you publish.
 `node build.mjs` in `site/`, `npm test`, commit, push, then publish `site/dist` to the existing Sites project
 (id in `site/.openai/hosting.json`), audience public. Then paste the console check into the live site and
 report its output verbatim. Add the Sites version number to this file under a "Published" heading.
+
+## Published
+
+Sites version 21 was published publicly on 2026-10-28 from the `82b313f` site build.
+The live console check remains unverified: the available browser connection did not expose the developer console.
