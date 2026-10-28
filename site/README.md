@@ -24,7 +24,7 @@ Run `node build.mjs`. Static assets go to `dist/client/`, with the storefront at
 - Normal openings and reloads start at the top, including old `#disco` links. Product and collection deep links still work.
 - Original catalog photographs remain unchanged. AI-assisted editorial cutouts are separate in `assets/editorial/`, with smaller responsive variants for phones. Asset prompts, provenance and the design audit are recorded in `../docs/storefront-art-direction.md`.
 - Homepage photography uses responsive original exports. Builds omit unused large exports and walkthrough frames. The earlier category research remains in `../research/design-2026-10-26.md`; the dimensional direction supersedes its equal-frame recommendation.
-- `sample-shop.css` keeps the burgundy entrance and white product panels, including details and room controls. Item details link each source photograph. All public catalog prices are illustrative sample prices. The original price research and preparation labels remain in `catalog-data.js` for future actual listings.
+- `sample-shop.css` keeps burgundy page backgrounds and white product-photo framing, including details and room controls. The original entrance lamp, chandelier and cubist painting remain in place; `HNV_ENTRANCE_ITEMS` preserves their original identities and guide prices independently of the sample catalog. Sample item details link each source photograph. All 52 sample catalog prices are illustrative.
 
 The original Claude artifact is a separate preview; editing these files does not change it. Site identity and hosting configuration live in `.openai/hosting.json`.
 

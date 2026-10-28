@@ -7,8 +7,23 @@ import test from "node:test";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const read = file => readFileSync(path.join(root, file), "utf8");
-const originals = vm.runInNewContext(`${read("catalog-data.js")}\nHNV_ITEMS`);
-const { items, products, prices } = vm.runInNewContext(`${read("catalog-data.js")}\n${read("room-products.js")}\n${read("demo-products.js")}\n({items: HNV_ITEMS, products: HNV_ROOM_PRODUCTS, prices: HNV_PRICES})`);
+const { items: originals, prices: originalPrices } = vm.runInNewContext(`${read("catalog-data.js")}\n({items: HNV_ITEMS, prices: HNV_PRICES})`);
+const { items, products, prices, entrance } = vm.runInNewContext(`${read("catalog-data.js")}\n${read("room-products.js")}\n${read("demo-products.js")}\n({items: HNV_ITEMS, products: HNV_ROOM_PRODUCTS, prices: HNV_PRICES, entrance: HNV_ENTRANCE_ITEMS})`);
+
+test("the entrance keeps the original objects and prices when sample IDs overlap", () => {
+  assert.equal(entrance.length, 3);
+  for (const item of entrance) {
+    const original = originals.find(candidate => candidate.id === item.originalId);
+    assert.ok(original);
+    assert.equal(item.title, original.title);
+    assert.equal(item.img, original.img);
+    assert.equal(item.price.target, originalPrices[original.id].target);
+    assert.equal(item.price.sample, undefined);
+    assert.ok(!items.some(sample => sample.id === item.id), "entrance details must not resolve to a different sample piece");
+  }
+  assert.equal(entrance.find(item => item.originalId === "A1").price.target, 95);
+  assert.equal(prices.A1.target, 165, "the sample lamp keeps its independent sample price");
+});
 
 test("the public sample collection contains every selected photograph and its own price", () => {
   assert.equal(originals.length, 35, "retain the actual inventory source");

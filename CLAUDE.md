@@ -35,6 +35,12 @@ entrance, mouse movement, disco and original neon-lit room remain. Rough item ph
 unfinished selfie are omitted from the storefront. The browser-local bag demonstrates shopping;
 checkout remains unavailable. See `docs/sample-storefront.md` and the historical `docs/demo-photo-pack.md`.
 
+**Fixed visual constraint (Ricky, 2026-10-28):** White applies to product-photo framing only, never
+the page-wide background. Keep the burgundy atmosphere throughout. The original entrance cutouts
+(brass-and-cream urn lamp, sea-glass chandelier, cubist painting and disco ball) stay exactly those
+objects; do not substitute sample catalog photographs at the top of the homepage. Their details
+refer to the original objects, independently of sample listings that reuse the inventory IDs.
+
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
 

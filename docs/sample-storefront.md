@@ -16,9 +16,13 @@ load-more step. Transparent images sit on pure white framed panels and use `obje
 in cards, details and the room controls. The room editor uses each listing's exact full-size image
 as its transparent placement layer. All 52 remain available for manual placement.
 
-The entrance keeps its burgundy composition, dimensional type, pointer depth and disco controls;
-the lamp, chandelier and mirror photographs now match the active sample listings. The original
-neon-lit room photograph remains. The rough catalog photography, walkthrough-derived listings,
+The entrance keeps its burgundy composition, dimensional type, pointer depth and disco controls.
+Ricky's correction on October 28 restores the original brass-and-cream urn lamp, sea-glass
+chandelier and cubist painting. These signature entrance objects must not be replaced with sample
+catalog photographs. Their click targets keep the original titles, photos and guide prices,
+separate from the 52 sample listings. White belongs to the product-photo framing; page backgrounds
+remain burgundy in both lighting palettes. The original neon-lit room photograph remains.
+The rough catalog photography, walkthrough-derived listings,
 unfinished owner selfie and superseded generated room video are omitted from the homepage.
 
 Cards and details offer Add to bag. The bag persists locally in this browser, limits each unique

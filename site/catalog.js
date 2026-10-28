@@ -272,7 +272,7 @@
   }
 
   function showDetails(id, trigger, changeHash = true) {
-    const item = inventory.find((candidate) => candidate.id === id);
+    const item = inventory.find((candidate) => candidate.id === id) || HNV_ENTRANCE_ITEMS.find((candidate) => candidate.id === id);
     const detail = document.querySelector("#product-detail");
     if (!item || !detail || !productDialog) return;
     if (!productDialog.open) {
@@ -284,27 +284,28 @@
     }
     detailId = id;
     if (changeHash) updateHash(`#item-${id}`);
-    const price = HNV_PRICES[id];
+    const price = item.entrance ? item.price : HNV_PRICES[id];
+    const originalId = item.originalId || id;
     const extra =
       item.chip === "demo" ? "" : id === "B15"
         ? "Guide: $40 for the embroidered jacket; $24 for the blouse. These are separate pieces."
         : id === "B18"
           ? "Guide price is per pair. Individual pairs range from $14 to $26."
-          : id === "A2"
+          : originalId === "A2"
             ? "The visible shop tag is $60. The $125 guide is a separate research estimate, not a confirmed selling price."
             : id === "A20"
               ? "Designer and maker are unconfirmed. No Vitra or Easy Edges label has been verified."
-              : id === "A1"
+              : originalId === "A1"
                 ? "The lamp is Stiffel-style. A maker’s stamp has not been verified."
                 : id === "A19"
                   ? "Availability as stock rather than room styling still needs confirmation."
                   : "";
     detail.innerHTML = `<div class="detail-layout">
       <div class="detail-image"><img src="${escape(item.img)}" ${photoSources(item, true)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" width="640" height="800">${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${id}">View cover (18+)</button>` : ""}</div>
-      <div class="detail-copy"><p class="detail-category">${categoryNames[item.cat]} / ${item.id}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
+      <div class="detail-copy"><p class="detail-category">${categoryNames[item.cat]} / ${originalId}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
       <p class="detail-price"><strong>${price ? money(price.target) : "Pricing pending"}</strong><small>${price?.sample ? "Sample price · USD" : "Guide price"}</small></p>
-      <button class="product-add detail-add" type="button" data-add-bag="${id}">Add to bag <span aria-hidden="true">+</span></button>
-      <button class="detail-save" type="button" data-save="${id}" aria-pressed="${saved.has(id)}">${saved.has(id) ? "♥ Saved to your finds" : "♡ Save this find"}</button>
+      ${item.entrance ? "" : `<button class="product-add detail-add" type="button" data-add-bag="${id}">Add to bag <span aria-hidden="true">+</span></button>
+      <button class="detail-save" type="button" data-save="${id}" aria-pressed="${saved.has(id)}">${saved.has(id) ? "♥ Saved to your finds" : "♡ Save this find"}</button>`}
       ${typeof HNV_ROOM_PRODUCTS !== "undefined" && HNV_ROOM_PRODUCTS.some((product) => product.id === id) ? `<button class="detail-save" type="button" data-try-room="${id}">Try it in your room ↗</button>` : ""}
       <div class="detail-notes"><h3>About this find</h3><p>${statusNotes[item.chip]}</p>${extra ? `<p>${extra}</p>` : ""}<p>${price?.sample ? "Explore the bag and try this piece in your room. Checkout is coming soon; this sample shop does not accept orders or payments." : "Prices are provisional research guides from October 26, 2026. This preview does not take orders or payments."}</p>${item.source ? `<p><a class="photo-source" href="${escape(item.source)}" target="_blank" rel="noopener noreferrer">Sample photo source ↗</a></p>` : ""}
       ${price && !price.sample ? `<details><summary>Price research</summary><p>Comparable range: ${money(price.low)} to ${money(price.high)}.</p><p>${escape(price.conf)}</p></details>` : ""}</div></div></div>`;
@@ -326,6 +327,11 @@
     try {
       hash = decodeURIComponent(location.hash.slice(1));
     } catch {
+      return;
+    }
+    const entrance = HNV_ENTRANCE_ITEMS.find(item => hash === `item-${item.id}`);
+    if (entrance) {
+      showDetails(entrance.id, document.querySelector(`[data-open-item="${entrance.id}"]`), false);
       return;
     }
     const item = hash.startsWith("item-")

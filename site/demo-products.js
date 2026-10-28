@@ -1,5 +1,8 @@
 // Public sample collection. The same transparent photographs feed the shop and room editor.
 // Prices are illustrative sample prices, separate from the original inventory research.
+// The signature entrance objects keep their original identities and research.
+const HNV_ENTRANCE_ITEMS = HNV_ITEMS.filter(item => ["A1", "A2", "A3"].includes(item.id))
+  .map(item => ({ ...item, id: `ORIGINAL-${item.id}`, originalId: item.id, entrance: true, price: { ...HNV_PRICES[item.id] } }));
 (() => {
   const samples = [
     {"id": "A13", "file": "gold-bust-lamp", "source": "https://www.1stdibs.com/furniture/lighting/table-lamps/pair-of-pharaoh-table-lamps/id-f_1315740/", "cat": "lighting", "title": "Gold Egyptian bust lamp", "sub": "A gilded bust, a generous cream shade and a pale plinth.", "kind": "lamp", "surface": "table", "price": 245},
