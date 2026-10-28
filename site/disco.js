@@ -127,6 +127,9 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const toggle = document.querySelector(".disco-motion-toggle");
   const sparkleToggle = document.querySelector(".salon-disco");
+  const roomToggle = document.querySelector("#room-disco");
+  const header = document.querySelector(".site-header");
+  let source = sparkleToggle;
   let discoOn = false;
   // The page is a wall behind the ball. Reflect two fixed pinspots from the
   // same spherical tile grid used above, then intersect their rays with it.
@@ -184,10 +187,16 @@
     projection.width = Math.round(width * ratio);
     projection.height = Math.round(height * ratio);
     ctx?.setTransform(ratio, 0, 0, ratio, 0, 0);
-    const bounds = sparkleToggle?.getBoundingClientRect();
-    originX = bounds ? bounds.left + bounds.width / 2 : width * .53;
-    originY = bounds ? Math.max(50, Math.min(height * .22, bounds.top + bounds.height / 2)) : 70;
     depth = Math.max(width, height) * .55;
+    aim();
+  }
+  // Light comes from whichever ball started the disco. The room's ball keeps its light inside the room photo.
+  function aim() {
+    const room = source === roomToggle, bounds = source?.getBoundingClientRect();
+    originX = bounds ? bounds.left + bounds.width / 2 : width * .53;
+    originY = !bounds ? 70 : room ? bounds.top + bounds.height / 2 : Math.max(50, Math.min(height * .22, bounds.top + bounds.height / 2));
+    const stage = room ? roomToggle.parentElement.getBoundingClientRect() : null;
+    lightField.style.clipPath = stage ? `inset(${Math.max(stage.top, header?.getBoundingClientRect().bottom ?? 0)}px ${width - stage.right}px ${height - stage.bottom}px ${stage.left}px)` : "";
   }
   function drawLights(now, music) {
     if (!ctx) return;
@@ -259,6 +268,7 @@
         tempo += (music.tempo - tempo) * (1 - Math.exp(-delta / 3));
         // One continuous revolution per 64 beats: a real motor has inertia.
         phase = (phase + delta * TAU * tempo / (60 * 64)) % TAU;
+        aim();
         drawLights(now, music);
         balls.forEach(ball => ball.draw(phase, music.pulse));
       }
@@ -327,10 +337,11 @@
       cancelAnimationFrame(request);
       request = 0;
     }
-    if (sparkleToggle) {
-      sparkleToggle.dataset.motionPaused = String(!discoOn || document.hidden);
-      sparkleToggle.setAttribute("aria-pressed", String(discoOn));
-      sparkleToggle.setAttribute("aria-label", discoOn ? "Stop the disco: music, spinning and lights" : "Start the disco: music, spinning and lights");
+    for (const button of [sparkleToggle, roomToggle]) if (button) {
+      button.dataset.motionPaused = String(!discoOn || document.hidden);
+      button.dataset.discoSource = String(discoOn && button === source);
+      button.setAttribute("aria-pressed", String(discoOn));
+      button.setAttribute("aria-label", discoOn ? "Stop the disco: music, spinning and lights" : "Start the disco: music, spinning and lights");
     }
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(discoOn));
@@ -362,14 +373,15 @@
   });
   window.addEventListener("pagehide", stopDisco);
   reduced.addEventListener("change", syncAll);
-  function toggleDisco() {
+  function toggleDisco(from = sparkleToggle) {
     discoOn = !discoOn;
-    if (discoOn) window.HNVDiscoMusic?.start();
+    if (discoOn) { source = from; window.HNVDiscoMusic?.start(); }
     else window.HNVDiscoMusic?.stop();
     syncAll();
   }
-  sparkleToggle?.addEventListener("click", toggleDisco);
-  toggle?.addEventListener("click", toggleDisco);
+  sparkleToggle?.addEventListener("click", () => toggleDisco(sparkleToggle));
+  roomToggle?.addEventListener("click", () => toggleDisco(roomToggle));
+  toggle?.addEventListener("click", () => toggleDisco(sparkleToggle));
 
   // The room's loading ball uses the same mirrors, with its own silent motor.
   const roomWorking = document.querySelector("#room-working");

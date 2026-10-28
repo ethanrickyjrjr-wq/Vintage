@@ -127,6 +127,9 @@ Not broken, verified: bag "Remove" keeps the bag open and focuses "Continue expl
 9. Room: place two finds, tap Remove on one → the other remains, status says removed, Undo brings it back,
    page does not scroll or jump. "Clear the room" asks nothing but is clearly labelled and sits last.
 10. Keyboard: Escape closes each dialog and returns focus to what opened it; Tab reaches "← Back".
+11. Room: place one find → a small disco ball drops into the photo's top-right corner. Tap it → music plays, the
+    ball spins, mirror lights move over the room photo only (none on the controls or page). Clear the room → the
+    ball goes and the music stops. Undo → the ball is back, silent. The entrance ball still works on its own.
 
 Paste `site/tests/navigation-check.js` into the browser console on the homepage: it runs 1, 4, 5, 6, 8 and 9
 and prints PASS/FAIL per line. It must print no FAIL before you publish.
