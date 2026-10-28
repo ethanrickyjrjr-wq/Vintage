@@ -114,6 +114,10 @@
   }
 
   function photoSources(item, detail = false) {
+    if (!detail && /^assets\/(photos|crops|stills)\/.+\.webp$/.test(item.img)) {
+      const base = item.img.replace(/^assets\/(photos|crops|stills)\//, "assets/thumbnails/$1-").replace(/\.webp$/, "");
+      return `srcset="${base}--480.webp 480w, ${base}--960.webp 960w" sizes="(max-width: 767px) calc((100vw - 56px) / 2), (max-width: 1150px) 25vw, 320px"`;
+    }
     const match = item.img.match(/^assets\/photos\/(IMG_\d+)\.webp$/);
     if (!match) return "";
     const base = `assets/photos/${match[1]}`;
@@ -134,7 +138,7 @@
         ${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${item.id}" aria-label="View adult magazine cover for ${escape(item.title)}">View cover (18+)</button>` : ""}
       </div>
       <div class="product-info">
-        <div class="product-meta"><span class="status ${item.chip}">${statusNames[item.chip]}</span><span class="product-id">${item.id}</span></div>
+        <div class="product-meta"><span class="status">${categoryNames[item.cat]}</span><span class="product-id">${item.id}</span></div>
         <h3 class="product-title"><button type="button" data-open-item="${item.id}">${escape(item.title)}</button></h3>
         <div class="product-bottom"><span class="product-price">${price ? money(price.target) : "Pricing pending"}<small>guide price</small></span><button class="product-arrow" type="button" data-open-item="${item.id}" aria-label="Details for ${escape(item.title)}">↗</button></div>
       </div>
@@ -374,6 +378,13 @@
       }
       return;
     }
+    if (button.id === "header-saved") {
+      reset();
+      state.savedOnly = true;
+      render();
+      scrollToCollection();
+      return;
+    }
     if (button.id === "saved-filter") {
       state.savedOnly = !state.savedOnly;
       state.limit = 8;
@@ -451,7 +462,11 @@
     });
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMobileNav();
+    if (event.key === "Escape") {
+      const wasOpen = !document.querySelector("#mobile-nav")?.hidden;
+      closeMobileNav();
+      if (wasOpen) document.querySelector("#menu-toggle")?.focus();
+    }
   });
   window.addEventListener("hashchange", readHash);
   render();

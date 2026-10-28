@@ -1,5 +1,11 @@
 # Private showroom (3D spin + cutout lab)
 
+**Public release (October 28, 2026):** `site/showroom.html` now provides the eleven
+open-licensed 3D models with branded navigation and explicit sample labeling.
+The public build includes the model files and viewer only. This original
+`demo-showroom.html`, the cutout lab, photo matches and noncommercial sample photos
+remain local. Public implementation: `showroom.js` and `showroom.css`.
+
 October 27, 2026. Ricky asked to see everything the site could do with good pictures,
 including side and back shots. `site/demo-showroom.html` is local and private; it is
 linked from `/demo-photos.html` and is not in the publication build.

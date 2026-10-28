@@ -1,5 +1,40 @@
 # Holliewood and Vine: a room made for the web
 
+## Public homepage refresh, October 28, 2026
+
+The owner requested publication and a more professional, navigable homepage.
+This is an evolution of the established vintage brand: Bodoni, burgundy, pink,
+dimensional entrance lettering, original room photography and the existing disco
+interaction remain. Target dials: DESIGN_VARIANCE 7, MOTION_INTENSITY 4,
+VISUAL_DENSITY 4. Native CSS and JavaScript remain the implementation foundation.
+
+The header stays visible while browsing. Category shortcuts, larger search/filter
+controls and a fuller footer help visitors reach the collection, room editor,
+story and new public 3D showroom. The collection now appears before the longer
+story. Item cards show their category; condition, preparation and authenticity
+notes remain in item details. The global saved-finds shortcut clears category
+and search filters, and Escape returns focus from the mobile menu.
+
+The public showroom has eleven open-licensed sample models, camera views,
+colorways, backdrops and an on-demand gallery. It identifies the models as
+samples rather than scans or available inventory. Model credits are present.
+The noncommercial cutout lab and borrowed photo experiments remain local.
+Responsive image derivatives reduce transfer sizes without changing originals.
+
+Validation: browser checks at 1440, 390 and 320 CSS pixels; all eleven models
+rendered; camera, color, backdrop and five-view gallery controls exercised.
+Search, empty-state recovery, category links, saved finds, mobile menu/focus,
+item details and both lighting palettes checked. All 19 existing tests passed.
+The local mobile Lighthouse audit scored 82 performance and 100 accessibility,
+best practices and SEO; simulated LCP was 4.5s and CLS 0.002. These are local lab
+measurements, not production field data. Reports are in ignored
+`artifacts/public-launch/`. Public runtime room generation remains disabled.
+
+The existing public Sites origin is retained:
+https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/
+
+---
+
 October 26, 2026. This pass follows the owner's correction that the site should express the designer's way of putting things together, rather than represent the original physical store as still operating. The owner also confirmed that disco balls are an important buyer handout.
 
 ## Design read and audit

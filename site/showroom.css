@@ -1,0 +1,84 @@
+html { scroll-padding-top: 100px; }
+.showroom-header { position: sticky; top: 0; z-index: var(--layer-header); display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 18px max(28px, calc((100% - 1400px) / 2)); min-height: 76px; background: var(--wall-edge); border-bottom: 1px solid var(--line); }
+.showroom-header nav { display: flex; gap: 28px; align-items: center; font-size: 14px; }
+.showroom-header nav a { padding-block: 10px; min-height: 44px; display: flex; align-items: center; white-space: nowrap; }
+.showroom-header [aria-current] { color: var(--pink); }
+.showroom-page, .showroom-footer { width: min(1320px, calc(100% - 64px)); margin-inline: auto; }
+.showroom-intro { padding: 64px 0 28px; }
+.showroom-intro h1 { font: 400 clamp(44px, 5.4vw, 74px)/1.12 var(--display); letter-spacing: -.045em; margin: 0 0 24px; }
+.showroom-intro h1 em { display: inline-block; color: var(--pink); padding-bottom: .08em; }
+.showroom-intro p { max-width: 52ch; font-size: 17px; color: var(--muted); margin: 0; }
+.sample-note { padding: 18px 22px; background: var(--paper-deep); border-left: 2px solid var(--pink); font-size: 14px; margin: 0 0 32px; color: var(--muted); }
+.sample-note strong { color: var(--text); }
+.sample-note a { color: var(--text); text-decoration: underline; text-underline-offset: 4px; margin-left: 8px; }
+.piece-selection { display: grid; grid-template-columns: auto minmax(0, 440px) auto; justify-content: start; align-items: center; gap: 22px; margin-bottom: 20px; }
+.piece-selection label { font-size: 14px; }
+.piece-selection label span { display: block; color: var(--muted); font-size: 12px; }
+.piece-selection select { min-height: 48px; padding: 10px 36px 10px 14px; background: var(--paper-deep); color: var(--text); border: 1px solid var(--line); border-radius: 0; width: 100%; font-size: 16px; }
+.piece-paging { display: flex; gap: 8px; }
+.piece-paging button { width: 48px; height: 48px; border: 1px solid var(--line); font-size: 22px; }
+.piece-paging button:hover { background: var(--paper-deep); }
+.showroom-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start; }
+.viewer-column { min-width: 0; }
+.stage { position: relative; height: clamp(400px, 57dvh, 600px); background: #fcfaf7; border: 1px solid var(--line); overflow: hidden; }
+model-viewer { width: 100%; height: 100%; --poster-color: transparent; background: transparent; }
+.viewer-status { position: absolute; left: 12px; right: 12px; bottom: 12px; width: fit-content; max-width: calc(100% - 24px); background: #fcfaf7ed; color: #451c2b; padding: 6px 12px; font-size: 12px; pointer-events: none; }
+.stage.shooting::after { content: "Preparing all five views…"; position: absolute; inset: 0; display: grid; place-items: center; background: #fcfaf7f5; color: #451c2b; font-size: 15px; }
+.viewer-help { color: var(--muted); font-size: 12px; margin: 12px 0; }
+.viewer-controls { min-width: 0; padding: 0; margin: 0; border: 0; }
+.viewer-controls:disabled { opacity: .65; }
+.control-group { margin-bottom: 26px; }
+.control-group h2 { font: 400 25px/1.25 var(--display); margin: 0 0 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 44px; padding: 9px 14px; font-size: 13px; border: 1px solid var(--line); background: var(--paper-deep); }
+.chip:hover { border-color: var(--pink); }
+.chip[aria-pressed="true"] { background: var(--pink); color: var(--burgundy); border-color: var(--pink); }
+.controls-note { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.collection-return { display: inline-flex; min-height: 44px; align-items: center; text-decoration: underline; text-underline-offset: 5px; font-size: 14px; }
+.gallery-button { min-height: 44px; font-size: 14px; text-decoration: underline; text-underline-offset: 5px; padding: 5px 0; }
+.gallery-button:disabled { opacity: .5; }
+.shots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.shots:empty { display: none; }
+.thumb { border: 1px solid var(--line); background: #fcfaf7; color: #451c2b; padding: 8px 6px; font-size: 12px; }
+.thumb img { width: 100%; aspect-ratio: 4/3; object-fit: contain; margin-bottom: 6px; }
+.thumb:hover { outline: 2px solid var(--pink); }
+.model-credit { font-size: 12px; color: var(--muted); margin-top: 18px; }
+.model-credit a, .showroom-credits a { text-decoration: underline; text-underline-offset: 3px; }
+.showroom-credits { border-top: 1px solid var(--line); margin-top: 48px; padding-block: 24px; color: var(--muted); font-size: 13px; }
+.showroom-credits summary { cursor: pointer; color: var(--text); font-size: 15px; min-height: 44px; }
+.showroom-credits ul { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 36px; padding-left: 18px; margin-block: 15px 25px; }
+.showroom-footer { display: flex; justify-content: space-between; gap: 24px; padding-block: 24px 40px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.showroom-footer p { margin: 0; }
+@media (max-width: 900px) {
+  .showroom-layout { grid-template-columns: 1fr; gap: 22px; }
+  .viewer-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 30px; }
+  .control-group { margin-bottom: 0; }
+  .controls-note { margin-block: 0; }
+}
+@media (max-width: 600px) {
+  .showroom-header { flex-wrap: wrap; gap: 8px; padding: 16px 20px 12px; }
+  .showroom-header .wordmark { font-size: 24px; }
+  .showroom-header nav { gap: 20px; width: 100%; font-size: 12px; }
+  .showroom-header nav a { padding-block: 8px; }
+  .showroom-page, .showroom-footer { width: calc(100% - 40px); }
+  .showroom-intro { padding-top: 36px; }
+  .showroom-intro h1 { font-size: 50px; }
+  .showroom-intro p { font-size: 15px; }
+  .sample-note { font-size: 13px; padding: 16px; }
+  .sample-note a { display: block; margin: 8px 0 0; }
+  .piece-selection { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+  .piece-selection label { grid-column: 1/-1; display: flex; justify-content: space-between; }
+  .piece-selection select { padding-left: 10px; font-size: 14px; }
+  .piece-paging { gap: 6px; }
+  .piece-paging button { width: 44px; }
+  .stage { height: clamp(310px, 48dvh, 440px); }
+  .viewer-controls { grid-template-columns: 1fr; gap: 24px; }
+  .control-group h2 { font-size: 24px; }
+  .shots { gap: 6px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .showroom-credits ul { grid-template-columns: 1fr; }
+  .showroom-footer { flex-direction: column; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 370px) {
+  .showroom-header nav { gap: 14px; font-size: 11px; }
+}

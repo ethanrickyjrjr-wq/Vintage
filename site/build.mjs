@@ -32,8 +32,10 @@ const frames = new Set(
   [...page.matchAll(/assets\/frames\/([^"\s]+)/g)].map((match) => match[1]),
 );
 function shipAsset(file) {
-  // Borrowed styling samples are local-only, even when someone publishes this build.
-  if (path.relative(path.join(root, "assets"), file).split(path.sep)[0] === "demo") return false;
+  // Only the open-licensed models and viewer ship from the demo asset folder.
+  // Noncommercial cutout experiments and borrowed product photos stay local.
+  const relative = path.relative(path.join(root, "assets"), file).split(path.sep);
+  if (relative[0] === "demo" && relative.length > 1 && !["models", "vendor"].includes(relative[1])) return false;
   const name = path.basename(file);
   if (/^IMG_\d+--(?:1920|3840)\.webp$/.test(name)) return largePhotos.has(name);
   if (path.basename(path.dirname(file)) === "frames" && name.endsWith(".webp"))
@@ -45,6 +47,7 @@ for (const file of [
   "storefront.html",
   "storefront.css",
   "atmosphere.css",
+  "homepage.css",
   "storefront.js",
   "disco.js",
   "disco-music.js",
@@ -56,6 +59,9 @@ for (const file of [
   "room-layout.js",
   "room-segmentation.js",
   "favicon.svg",
+  "showroom.html",
+  "showroom.css",
+  "showroom.js",
 ]) {
   cpSync(path.join(root, file), path.join(output, file));
 }

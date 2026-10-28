@@ -28,7 +28,9 @@
       property="og:description"
       content="Good taste. Bad influence. Explore a room full of vintage finds, from seventies brass to nineties neon."
     />
-    <meta property="og:image" content="assets/photos/IMG_6610.webp" />
+    <meta property="og:image" content="https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/assets/thumbnails/photos-IMG_6610--960.webp" />
+    <link rel="canonical" href="https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/" />
+    <meta property="og:url" content="https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/" />
     <title>Holliewood and Vine | Vintage with a past</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link
@@ -45,6 +47,7 @@
     <link rel="stylesheet" href="storefront.css" />
     <link rel="stylesheet" href="atmosphere.css" />
     <link rel="stylesheet" href="room-preview.css" />
+    <link rel="stylesheet" href="homepage.css" />
     <script src="catalog-data.js" defer></script>
     <script src="room-products.js" defer></script>
     <script src="catalog.js" defer></script>
@@ -62,6 +65,7 @@
       >
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#collection">The collection</a>
+        <a href="showroom.html">3D showroom</a>
         <a href="#your-room">Try it in your room</a>
         <button type="button" data-open-walkthrough>
           The room <span aria-hidden="true">↗</span>
@@ -96,6 +100,7 @@
         hidden
       >
         <a href="#collection">The collection</a
+        ><a href="showroom.html">3D showroom</a
         ><button type="button" data-open-walkthrough>The room ↗</button
         ><a href="#your-room">Try it in your room</a><a href="#story">Our kind of vintage</a><a href="#owner">The owner</a>
       </nav>
@@ -104,16 +109,19 @@
       <section class="salon" id="home" aria-labelledby="hero-title">
         <div class="salon-stage">
           <div class="salon-copy">
-            <p class="eyebrow">Vintage, with a point of view.</p>
+            <p class="eyebrow">Vintage furniture, fashion &amp; beautiful oddities.</p>
             <h1 id="hero-title"><span>Good taste.</span><em>Bad influence.</em></h1>
-            <p class="salon-description">A little glamour. A little mischief.<br />Things with a past, for a place that’s yours.</p>
-            <a class="button button-cream" href="#collection">Find your thing <span aria-hidden="true">↗</span></a>
+            <p class="salon-description">Lighting, art and one-of-a-kind finds.<br />A little glamour for a place that’s yours.</p>
+            <div class="salon-actions">
+              <a class="button button-cream" href="#collection">Explore the collection <span aria-hidden="true">↗</span></a>
+              <a class="salon-showroom-link" href="showroom.html">Visit the 3D showroom <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
           <button class="salon-chandelier" type="button" data-open-item="A2" aria-label="Explore the sea-glass tiered chandelier">
             <img src="assets/editorial/chandelier.webp" srcset="assets/editorial/chandelier--300.webp 300w, assets/editorial/chandelier.webp 675w" sizes="(max-width: 767px) 125px, (max-width: 1500px) 17vw, 255px" width="675" height="900" alt="" />
           </button>
           <button class="salon-art" type="button" data-open-item="A3" aria-label="Explore the cubist figure painting">
-            <span class="gilt-frame"><img src="assets/photos/IMG_6609--480.webp" srcset="assets/photos/IMG_6609--480.webp 480w, assets/photos/IMG_6609--960.webp 960w" sizes="(max-width: 767px) 125px, (max-width: 1500px) 22vw, 330px" width="960" height="1280" alt="Cubist figure painting in a deep gold frame" /></span>
+            <span class="gilt-frame"><img src="assets/thumbnails/photos-IMG_6609--480.webp" srcset="assets/thumbnails/photos-IMG_6609--480.webp 480w, assets/thumbnails/photos-IMG_6609--960.webp 960w" sizes="(max-width: 767px) 125px, (max-width: 1500px) 22vw, 330px" width="960" height="1280" alt="Cubist figure painting in a deep gold frame" /></span>
             <span class="object-caption">Quite the conversation starter. <span aria-hidden="true">↗</span></span>
           </button>
           <button class="salon-lamp" type="button" data-open-item="A1" aria-label="Explore the brass and cream urn lamp">
@@ -127,13 +135,21 @@
         </div>
         <div class="salon-ledge" aria-hidden="true"></div>
       </section>
+      <nav class="browse-nav page-width" aria-label="Browse vintage categories">
+        <span>Find your thing</span>
+        <a href="#lighting" data-browse-category="lighting">Lighting &amp; decor</a>
+        <a href="#fashion" data-browse-category="fashion">Fashion</a>
+        <a href="#art" data-browse-category="art">Art &amp; memorabilia</a>
+        <a href="#print" data-browse-category="print">Print</a>
+        <a href="#collection" data-browse-category="all">All finds <span aria-hidden="true">↗</span></a>
+      </nav>
       <section
         class="departments display-shelves page-width"
         aria-labelledby="departments-title"
       >
         <div class="section-intro reveal">
-          <h2 id="departments-title">Go on.<br /><em>Get a little carried away.</em></h2>
-          <p>Follow whatever catches your eye.</p>
+          <h2 id="departments-title">Find your kind of vintage.</h2>
+          <p>Pick a corner of the collection and make yourself at home.</p>
         </div>
         <div class="department-grid">
           <a
@@ -144,8 +160,8 @@
               <img
                 src="assets/photos/IMG_6616.webp"
                 srcset="
-                  assets/photos/IMG_6616--480.webp  480w,
-                  assets/photos/IMG_6616--960.webp  960w,
+                  assets/thumbnails/photos-IMG_6616--480.webp  480w,
+                  assets/thumbnails/photos-IMG_6616--960.webp  960w,
                   assets/photos/IMG_6616.webp      2048w
                 "
                 sizes="(max-width: 767px) 50vw, (max-width: 1150px) 25vw, 320px"
@@ -169,8 +185,8 @@
               <img
                 src="assets/photos/IMG_6607.webp"
                 srcset="
-                  assets/photos/IMG_6607--480.webp  480w,
-                  assets/photos/IMG_6607--960.webp  960w,
+                  assets/thumbnails/photos-IMG_6607--480.webp  480w,
+                  assets/thumbnails/photos-IMG_6607--960.webp  960w,
                   assets/photos/IMG_6607.webp      2048w
                 "
                 sizes="(max-width: 767px) 50vw, (max-width: 1150px) 25vw, 320px"
@@ -194,8 +210,8 @@
               <img
                 src="assets/photos/IMG_6609.webp"
                 srcset="
-                  assets/photos/IMG_6609--480.webp  480w,
-                  assets/photos/IMG_6609--960.webp  960w,
+                  assets/thumbnails/photos-IMG_6609--480.webp  480w,
+                  assets/thumbnails/photos-IMG_6609--960.webp  960w,
                   assets/photos/IMG_6609.webp      2048w
                 "
                 sizes="(max-width: 767px) 50vw, (max-width: 1150px) 25vw, 320px"
@@ -219,8 +235,8 @@
               <img
                 src="assets/photos/IMG_6619.webp"
                 srcset="
-                  assets/photos/IMG_6619--480.webp  480w,
-                  assets/photos/IMG_6619--960.webp  960w,
+                  assets/thumbnails/photos-IMG_6619--480.webp  480w,
+                  assets/thumbnails/photos-IMG_6619--960.webp  960w,
                   assets/photos/IMG_6619.webp      2048w
                 "
                 sizes="(max-width: 767px) 50vw, (max-width: 1150px) 25vw, 320px"
@@ -239,28 +255,6 @@
         </div>
       </section>
       <section
-        class="design-story"
-        id="story"
-        aria-labelledby="story-title"
-      >
-        <div class="design-story-inner page-width">
-          <div class="design-collage reveal">
-            <figure class="design-room"><img src="assets/photos/IMG_6610--960.webp" width="960" height="1280" alt="Chrome busts, pink glass and a neon sign together on the original room’s brass shelf" loading="lazy" /><figcaption>The room that started it.</figcaption></figure>
-            <button class="design-detail" type="button" data-open-item="A10" aria-label="Explore the pink stemware"><img src="assets/crops/IMG_6610_glass.webp" width="640" height="800" alt="A closer look at the pink stemware" loading="lazy" /><span>A little pink goes a long way. ↗</span></button>
-          </div>
-          <div class="design-copy reveal">
-            <h2 id="story-title">Nothing matches.<br /><em>Everything belongs.</em></h2>
-            <p>Brass beside chrome. Pink glass under neon. A painting that holds its own against all of it.</p>
-            <p>That’s the eye behind Holliewood and Vine: bringing things together until the unexpected feels right. The original room was the beginning. The next mix is yours.</p>
-            <div class="material-pairings" aria-label="Explore the mix">
-              <button type="button" data-open-item="A8">A flash of chrome <span aria-hidden="true">↗</span></button>
-              <button type="button" data-open-item="A10">A little pink glass <span aria-hidden="true">↗</span></button>
-              <button type="button" data-open-item="A3">Something for the walls <span aria-hidden="true">↗</span></button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
         class="collection page-width"
         id="collection"
         aria-labelledby="collection-title"
@@ -268,9 +262,9 @@
         <div class="collection-intro reveal">
           <div>
             <h2 id="collection-title">
-              The good stuff.<br /><em>Take a closer look.</em>
+              The collection.<br /><em>Find your favorite.</em>
             </h2>
-            <p>Lighting, art, fashion and the wonderfully unexpected.</p>
+            <p>Browse by category, search for a favorite, or save what catches your eye.</p>
           </div>
           <span class="collection-mark" aria-hidden="true"
             >H<span>&amp;</span>V</span
@@ -331,7 +325,7 @@
               ><input
                 type="search"
                 id="search-input"
-                placeholder="Find your thing…"
+                placeholder="Search lamps, art, fashion…"
                 autocomplete="off" /></label
             ><label class="sort-box"
               ><span class="sr-only">Sort the collection</span
@@ -374,6 +368,37 @@
           </p>
         </div>
       </section>
+      <section class="showroom-invitation page-width" aria-labelledby="showroom-title">
+        <div>
+          <h2 id="showroom-title">A different angle<br /><em>on good design.</em></h2>
+          <p>Turn a piece around. Try another color. Explore eleven interactive sample models in our 3D showroom.</p>
+          <a class="button button-cream" href="showroom.html">Explore in 3D <span aria-hidden="true">↗</span></a>
+          <small>Sample models for inspiration. Our actual finds are in the collection.</small>
+        </div>
+        <figure><img src="assets/thumbnails/photos-IMG_6610--960.webp" width="960" height="1280" alt="Pink glass, silver busts and neon in the original Holliewood and Vine room" loading="lazy" /><figcaption>A little perspective changes everything.</figcaption></figure>
+      </section>
+      <section
+        class="design-story"
+        id="story"
+        aria-labelledby="story-title"
+      >
+        <div class="design-story-inner page-width">
+          <div class="design-collage reveal">
+            <figure class="design-room"><img src="assets/thumbnails/photos-IMG_6610--960.webp" width="960" height="1280" alt="Chrome busts, pink glass and a neon sign together on the original room’s brass shelf" loading="lazy" /><figcaption>The room that started it.</figcaption></figure>
+            <button class="design-detail" type="button" data-open-item="A10" aria-label="Explore the pink stemware"><img src="assets/crops/IMG_6610_glass.webp" width="640" height="800" alt="A closer look at the pink stemware" loading="lazy" /><span>A little pink goes a long way. ↗</span></button>
+          </div>
+          <div class="design-copy reveal">
+            <h2 id="story-title">Nothing matches.<br /><em>Everything belongs.</em></h2>
+            <p>Brass beside chrome. Pink glass under neon. A painting that holds its own against all of it.</p>
+            <p>That’s the eye behind Holliewood and Vine: bringing things together until the unexpected feels right. The original room was the beginning. The next mix is yours.</p>
+            <div class="material-pairings" aria-label="Explore the mix">
+              <button type="button" data-open-item="A8">A flash of chrome <span aria-hidden="true">↗</span></button>
+              <button type="button" data-open-item="A10">A little pink glass <span aria-hidden="true">↗</span></button>
+              <button type="button" data-open-item="A3">Something for the walls <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="room-preview page-width" id="your-room" aria-labelledby="room-title">
         <div class="section-intro">
           <div><p class="eyebrow">A little room for possibility.</p><h2 id="room-title">Your room.<br /><em>Our kind of character.</em></h2></div>
@@ -396,7 +421,7 @@
                 <p>Drop in a photo of your room.<br />A clear, well-lit photo works best.</p>
                 <button type="button" class="button button-burgundy" id="room-upload-button">Choose a room photo <span aria-hidden="true">↗</span></button>
                 <small>JPG, PNG or WebP · up to 15 MB</small>
-                <div class="room-example"><img src="assets/rooms/example-room.webp" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" /><button type="button" id="room-use-example">Or try our sample room ↗</button><small>AI-generated example room</small></div>
+                <div class="room-example"><img src="assets/thumbnails/rooms-example-room--480.webp" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" /><button type="button" id="room-use-example">Or try our sample room ↗</button><small>AI-generated example room</small></div>
               </div>
               <canvas id="room-canvas" width="1200" height="800" tabindex="0" aria-label="Room editor. Select a find, drag to move it, or drag its corner to resize. Arrow keys move the selected find; Delete removes it." aria-describedby="room-editor-help" hidden></canvas>
               <div class="room-working" id="room-working" hidden>
@@ -460,8 +485,8 @@
           <img
             src="assets/photos/IMG_6617.webp"
             srcset="
-              assets/photos/IMG_6617--480.webp  480w,
-              assets/photos/IMG_6617--960.webp  960w,
+              assets/thumbnails/photos-IMG_6617--480.webp  480w,
+              assets/thumbnails/photos-IMG_6617--960.webp  960w,
               assets/photos/IMG_6617.webp      2048w
             "
             sizes="(max-width: 767px) 75vw, 325px"
@@ -564,9 +589,7 @@
           >Holliewood <span>&amp; Vine</span></a
         >
         <p>Vintage with a past.<br />For whatever comes next.</p>
-        <a class="back-top" href="#home"
-          >Back to the good stuff <span aria-hidden="true">↑</span></a
-        >
+        <nav class="footer-nav" aria-label="Explore Holliewood and Vine"><a href="#collection">The collection</a><a href="showroom.html">3D showroom</a><a href="#your-room">Try it in your room</a><a href="#story">Our kind of vintage</a><a href="#notes-title">Before you buy</a><a href="#home">Back to top ↑</a></nav>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Holliewood and Vine</span

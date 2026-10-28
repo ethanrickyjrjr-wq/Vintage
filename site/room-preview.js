@@ -243,7 +243,7 @@ function startEditor() {
   function readFavorites() {
     try { const stored = JSON.parse(localStorage.getItem(savedKey) || "[]"); favorites = Array.isArray(stored) ? [...new Set(stored.filter(id => inventory.has(id) && id !== "OWNER"))] : []; } catch { /* Keep session saves when storage is blocked. */ }
   }
-  for (const product of products) { const option = document.createElement("option"); option.value = product.id; option.textContent = `${product.title}${product.overlay ? "" : " — photo needed"}`; $("room-product").append(option); }
+  for (const product of products) { const option = document.createElement("option"); option.value = product.id; option.textContent = `${product.title}${product.overlay ? "" : " (photo needed)"}`; $("room-product").append(option); }
   readFavorites();
   document.addEventListener("hnv:saved-changed", ({ detail }) => { favorites = [...new Set(detail.filter(id => inventory.has(id) && id !== "OWNER"))]; refresh(); });
   window.addEventListener("storage", event => { if (event.key === savedKey || event.key === null) { readFavorites(); refresh(); } });

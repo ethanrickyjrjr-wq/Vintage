@@ -1,4 +1,27 @@
 (() => {
+  const menuToggle = document.querySelector("#menu-toggle");
+  const mobileNav = document.querySelector("#mobile-nav");
+  function closeMenu() {
+    if (!mobileNav || mobileNav.hidden) return;
+    mobileNav.hidden = true;
+    menuToggle?.setAttribute("aria-expanded", "false");
+  }
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("#mobile-nav a") || !event.target.closest(".site-header")) closeMenu();
+  });
+  const desktopLayout = matchMedia("(min-width: 1001px)");
+  desktopLayout.addEventListener("change", (event) => { if (event.matches) closeMenu(); });
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const current = entries.find((entry) => entry.isIntersecting);
+      if (!current) return;
+      document.querySelectorAll('.desktop-nav a[href^="#"]').forEach((link) => {
+        if (link.hash === `#${current.target.id}`) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-15% 0px -65% 0px" });
+    document.querySelectorAll("#home, #collection, #your-room, #story").forEach((section) => sectionObserver.observe(section));
+  }
   // Small foreground/background offsets make the assembled display feel spatial.
   // No scroll handler, continuous loop, or motion on touch/reduced-motion devices.
   const stage = document.querySelector(".salon-stage");
@@ -69,17 +92,5 @@
     try {
       localStorage.setItem("hnv-theme", theme);
     } catch {}
-  });
-  document.querySelector("#header-saved").addEventListener("click", () => {
-    const savedFilter = document.querySelector("#saved-filter");
-    if (savedFilter.getAttribute("aria-pressed") !== "true")
-      savedFilter.click();
-    document
-      .querySelector("#collection")
-      .scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-      });
   });
 })();

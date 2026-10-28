@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#451c2b" />
+  <title>3D Showroom | Holliewood and Vine</title>
+  <meta name="description" content="Explore eleven interactive 3D sample pieces at Holliewood and Vine. Rotate, see every angle, and try different colors and backdrops." />
+  <link rel="canonical" href="https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/showroom.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="storefront.css" />
+  <link rel="stylesheet" href="atmosphere.css" />
+  <link rel="stylesheet" href="showroom.css" />
+  <script type="module" src="assets/demo/vendor/model-viewer.min.js"></script>
+  <script type="module" src="showroom.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#showroom">Skip to the showroom</a>
+  <div class="rug-band" aria-hidden="true"></div>
+  <header class="showroom-header">
+    <a class="wordmark" href="/" aria-label="Holliewood &amp; Vine home">Holliewood <span>&amp; Vine</span></a>
+    <nav aria-label="Main navigation"><a href="/#collection">The collection</a><a href="showroom.html" aria-current="page">3D showroom</a><a href="/#your-room">Try it in your room</a></nav>
+  </header>
+  <main class="showroom-page">
+    <div class="showroom-intro">
+      <h1>Good design.<br /><em>Every angle.</em></h1>
+      <p>Drag to turn a piece around, take a closer look, and try a different color or backdrop.</p>
+    </div>
+    <p class="sample-note"><strong>A little inspiration.</strong> These eleven licensed sample models demonstrate the showroom. They are separate from our actual vintage inventory. <a href="/#collection">Browse our finds ↗</a></p>
+    <section id="showroom" aria-label="Interactive 3D showroom">
+      <div class="piece-selection">
+        <label for="model-select">Choose a piece <span>11 to explore</span></label>
+        <select id="model-select"></select>
+        <div class="piece-paging"><button type="button" id="previous-piece" aria-label="Previous piece">←</button><button type="button" id="next-piece" aria-label="Next piece">→</button></div>
+      </div>
+      <div class="showroom-layout">
+        <div class="viewer-column">
+          <div class="stage" id="stage" aria-busy="true">
+            <model-viewer id="mv" camera-controls touch-action="pan-y" shadow-intensity="1.1" shadow-softness="0.9" environment-image="neutral" exposure="1.05" interaction-prompt="auto" loading="eager" alt="Interactive 3D sample model" aria-describedby="viewer-help"></model-viewer>
+            <div class="viewer-status" id="status" role="status" aria-live="polite">Loading the first piece…</div>
+          </div>
+          <p class="viewer-help" id="viewer-help">Drag to rotate. Scroll or pinch to zoom. Keyboard: arrow keys turn the piece; Page Up and Page Down zoom.</p>
+          <button class="gallery-button" id="make-photos" type="button" disabled>See all five angles ↓</button>
+          <div class="shots" id="shots" aria-label="Five views of the selected sample"></div>
+          <p class="model-credit" id="credit"></p>
+        </div>
+        <fieldset class="viewer-controls" id="viewer-controls" disabled>
+          <legend class="sr-only">Adjust the selected piece</legend>
+          <div class="control-group"><h2>Take a look around.</h2><div class="chips" id="viewChips" role="group" aria-label="Camera view"></div></div>
+          <div class="control-group"><h2>Set the scene.</h2><div class="chips" id="backChips" role="group" aria-label="Backdrop"></div></div>
+          <div class="control-group"><h2>A finishing touch.</h2><div class="chips" id="toggleChips" role="group" aria-label="Display options"></div></div>
+          <div class="control-group" id="variantGroup" hidden><h2>Try a colorway.</h2><div class="chips" id="variantChips" role="group" aria-label="Colorways"></div></div>
+          <p class="controls-note">Color options appear when a model includes them. Explore our collection for photographs and condition notes on our actual pieces.</p>
+          <a class="collection-return" href="/#collection">Back to the collection ↗</a>
+        </fieldset>
+      </div>
+    </section>
+    <details class="showroom-credits"><summary>Model credits &amp; licenses</summary><ul id="credits"></ul><p>Interactive viewer: Google <a href="https://modelviewer.dev/" target="_blank" rel="noreferrer">&lt;model-viewer&gt;</a> 4.3.1, Apache-2.0. Poly Haven models are CC0. Khronos sample models are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>.</p></details>
+  </main>
+  <footer class="showroom-footer"><p>© 2026 Holliewood and Vine</p><a href="/">Make yourself at home ↗</a></footer>
+  <noscript><p class="sample-note">JavaScript is needed for the 3D showroom. <a href="/">Return to Holliewood and Vine</a>.</p></noscript>
+</body>
+</html>
