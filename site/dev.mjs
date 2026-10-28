@@ -22,8 +22,7 @@ createServer(async (request, response) => {
     if (url.pathname === "/demo") {
       if (!["GET", "HEAD"].includes(request.method)) { response.writeHead(405); response.end(); return; }
       const page = (await readFile(path.join(root, "storefront.html"), "utf8"))
-        .replace('<script src="room-products.js" defer></script>', '<script src="room-products.js" defer></script>\n    <script src="demo-products.js" defer></script>\n    <link rel="stylesheet" href="demo.css" />')
-        .replace("<title>Holliewood and Vine | Vintage with a past</title>", '<meta name="robots" content="noindex, nofollow" /><title>Holliewood and Vine | Private styling demo</title>');
+        .replace("<title>Holliewood and Vine | Vintage with a past</title>", '<meta name="robots" content="noindex, nofollow" /><title>Holliewood and Vine | Sample shop preview</title>');
       response.writeHead(200, { "content-type": "text/html", "cache-control": "no-store" });
       response.end(request.method === "HEAD" ? undefined : page); return;
     }

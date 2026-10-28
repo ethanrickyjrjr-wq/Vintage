@@ -27,11 +27,13 @@ world: dimensional lettering, objects in the foreground, varied framed displays 
 overlaps. Disco balls are signature gifts/handouts for buyers (confirmed by Ricky); do not infer an
 every-order guarantee. Implemented direction and asset provenance: `docs/storefront-art-direction.md`.
 
-**Photo direction (2026-10-27):** Ricky wants whole, polished product photographs on white framed
-panels, including the room decorator, while keeping the entrance cutouts, original neon-lit store
-photo and existing mouse movement. The private `/demo` review now uses 52 selected photographs from
-the photo-sourcing work; one list supplies both catalog images and room layers. Rough item photos,
-stills and the unfinished selfie are omitted from that preview. See `docs/demo-photo-pack.md`.
+**Photo direction (2026-10-28):** Ricky wants the full sample storefront on the homepage, using all
+52 selected transparent product photographs on white framed panels, with item names, illustrative
+prices and shopping controls. `site/demo-products.js` now supplies the public catalog and all room
+layers. The build includes those selected photos and their 480/960px derivatives. The burgundy
+entrance, mouse movement, disco and original neon-lit room remain. Rough item photos, stills and the
+unfinished selfie are omitted from the storefront. The browser-local bag demonstrates shopping;
+checkout remains unavailable. See `docs/sample-storefront.md` and the historical `docs/demo-photo-pack.md`.
 
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.

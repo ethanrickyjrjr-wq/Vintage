@@ -140,7 +140,7 @@ function startEditor() {
     const product = selectedProduct(); $("room-product-image").src = product.img; $("room-product-image").alt = product.title;
     $("room-product-title").textContent = product.title;
     const price = HNV_PRICES[product.id];
-    $("room-product-price").textContent = product.overlay ? price ? `$${price.target.toLocaleString("en-US")} guide price` : "Pricing pending" : "A clear product photo is needed to place this find.";
+    $("room-product-price").textContent = product.overlay ? price ? `$${price.target.toLocaleString("en-US")} ${price.sample ? "sample price" : "guide price"}` : "Pricing pending" : "A clear product photo is needed to place this find.";
     $("room-product-details").href = `#item-${product.id}`; refresh();
   }
   async function place(id, point) {
@@ -324,9 +324,6 @@ function startEditor() {
     ctx.fillStyle = "#f6efdf"; ctx.font = `${Math.max(10, footer * .33)}px Arial`;
     ctx.fillText("Holliewood & Vine / Placement sketch · proportions approximate", footer * .35, canvas.height + footer * .63, output.width - footer * .7);
     output.toBlob(blob => { if (!blob) return; const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = "holliewood-and-vine-your-room.png"; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }, "image/png"); draw();
-  });
-  $("room-demo-video").closest("details").addEventListener("toggle", event => {
-    const video = $("room-demo-video"); if (!event.currentTarget.open) video.pause(); else if (!matchMedia("(prefers-reduced-motion: reduce)").matches) video.play().catch(() => {});
   });
   document.addEventListener("click", event => {
     const control = event.target.closest("[data-try-room]"); if (!control || state.busy || !productMap.has(control.dataset.tryRoom)) return;

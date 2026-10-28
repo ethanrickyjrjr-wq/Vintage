@@ -23,6 +23,8 @@ if (existsSync(dist)) for (const name of readdirSync(dist)) {
 }
 const output = path.join(dist, "client");
 const page = readFileSync(path.join(root, "storefront.html"), "utf8");
+const samples = vm.runInNewContext(`${readFileSync(path.join(root, "catalog-data.js"), "utf8")}\n${readFileSync(path.join(root, "room-products.js"), "utf8")}\n${readFileSync(path.join(root, "demo-products.js"), "utf8")}\nHNV_ITEMS`);
+const sampleAssets = new Set(samples.map(item => path.basename(item.img)));
 const largePhotos = new Set(
   [...page.matchAll(/assets\/photos\/(IMG_\d+--(?:1920|3840)\.webp)/g)].map(
     (match) => match[1],
@@ -32,10 +34,10 @@ const frames = new Set(
   [...page.matchAll(/assets\/frames\/([^"\s]+)/g)].map((match) => match[1]),
 );
 function shipAsset(file) {
-  // Only the open-licensed models and viewer ship from the demo asset folder.
-  // Noncommercial cutout experiments and borrowed product photos stay local.
+  // Ship the selected sample photographs and the existing public 3D showroom.
+  // Keep raw downloads, unselected alternatives and the cutout lab out of the build.
   const relative = path.relative(path.join(root, "assets"), file).split(path.sep);
-  if (relative[0] === "demo" && relative.length > 1 && !["models", "vendor"].includes(relative[1])) return false;
+  if (relative[0] === "demo" && relative.length > 1 && !["models", "vendor"].includes(relative[1]) && !sampleAssets.has(relative[1])) return false;
   const name = path.basename(file);
   if (/^IMG_\d+--(?:1920|3840)\.webp$/.test(name)) return largePhotos.has(name);
   if (path.basename(path.dirname(file)) === "frames" && name.endsWith(".webp"))
@@ -48,11 +50,13 @@ for (const file of [
   "storefront.css",
   "atmosphere.css",
   "homepage.css",
+  "sample-shop.css",
   "storefront.js",
   "disco.js",
   "disco-music.js",
   "catalog.js",
   "catalog-data.js",
+  "demo-products.js",
   "room-products.js",
   "room-preview.css",
   "room-preview.js",

@@ -1,5 +1,11 @@
 # Private styling photo pack
 
+**Superseded October 28, 2026:** Ricky requested these selected photos on the public homepage as
+a complete sample shop. All 52 now feed the collection, product details and room editor, with
+illustrative prices and a local shopping bag. The build includes the selected images and responsive
+derivatives. The private-only publishing restrictions below describe the earlier review, not the
+current requested storefront. See `sample-storefront.md`.
+
 October 27, 2026. Ricky requested clearer photographs of similar pieces for a
 private demonstration of the storefront and real-time room decorating. His
 follow-up emphasized keeping the existing style and using ready-made transparent

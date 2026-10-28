@@ -5,6 +5,6 @@
   "scripts": {
     "build": "node build.mjs",
     "dev": "node dev.mjs",
-    "test": "node --test tests/room-worker.test.mjs tests/room-layout.test.mjs"
+    "test": "node --test tests/*.test.mjs"
   }
 }
