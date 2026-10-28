@@ -1,5 +1,10 @@
 # Handoff for Codex: close and back return you to where you were
 
+**Status 2026-10-28, later the same day:** Ricky said "do it", so Claude built all six items below and pushed
+them (the commit after `05dc716` on `master`). `site/tests/navigation-check.js` printed five PASS and the
+showroom round trips were checked by hand in Chrome. **Codex: only section "Publish" remains.** The item
+sections stay as the record of what changed and why; their line numbers are from before the change.
+
 Written 2026-10-28 by Claude for Codex. Ricky publishes through the Codex app; Claude cannot publish.
 Ricky, 2026-10-28: "showroom and other things need to go back to where they were when you close something.
 We don't want it going all the way back to the home screen or a different section. Buttons need to make sense.

@@ -76,6 +76,9 @@
   let lastTriggerItemId = null;
   let detailId = null;
   let detailReturnHash = "";
+  let detailPushed = false;
+  let detailFromBag = false;
+  let closingDetail = false;
 
   const escape = (value) =>
     String(value).replace(
@@ -267,7 +270,7 @@
     });
     if (search) search.value = "";
     if (sort) sort.value = "curated";
-    updateHash("#collection");
+    updateHash("#collection", true);
     render();
   }
 
@@ -283,7 +286,7 @@
       lastTriggerItemId = id;
     }
     detailId = id;
-    if (changeHash) updateHash(`#item-${id}`);
+    if (changeHash && location.hash !== `#item-${id}`) { updateHash(`#item-${id}`); detailPushed = true; }
     const price = item.entrance ? item.price : HNV_PRICES[id];
     const canTryRoom = typeof HNV_ROOM_PRODUCTS !== "undefined" && HNV_ROOM_PRODUCTS.some((product) => product.id === id);
     const originalId = item.originalId || id;
@@ -324,6 +327,7 @@
   }
 
   function readHash() {
+    if (closingDetail) { closingDetail = false; return; }
     let hash;
     try {
       hash = decodeURIComponent(location.hash.slice(1));
@@ -341,11 +345,13 @@
         )
       : null;
     if (item) {
-      state.category = item.cat;
-      state.search = "";
-      state.savedOnly = false;
-      if (search) search.value = "";
-      render();
+      if (!matches().some((candidate) => candidate.id === item.id)) {
+        state.category = item.cat;
+        state.search = "";
+        state.savedOnly = false;
+        if (search) search.value = "";
+        render();
+      }
       showDetails(
         item.id,
         grid.querySelector(`#item-${item.id} .product-image`),
@@ -353,7 +359,7 @@
       );
       return;
     }
-    if (productDialog?.open) productDialog.close();
+    if (productDialog?.open) { productDialog.close(); return; }
     if (Object.hasOwn(categoryNames, hash) || hash === "collection" || !hash) {
       state.category = Object.hasOwn(categoryNames, hash) ? hash : "all";
       state.search = "";
@@ -418,7 +424,8 @@
     }
     if (button.hasAttribute("data-open-item")) {
       event.preventDefault();
-      if (bagDialog?.open) bagDialog.close();
+      detailFromBag = !!bagDialog?.open;
+      if (detailFromBag) bagDialog.close();
       showDetails(button.dataset.openItem, button);
       return;
     }
@@ -433,9 +440,7 @@
         state.search = "";
         if (search) search.value = "";
       }
-      updateHash(
-        state.category === "all" ? "#collection" : `#${state.category}`,
-      );
+      updateHash(state.category === "all" ? "#collection" : `#${state.category}`, true);
       render();
       if (button.hasAttribute("data-browse-category")) {
         closeMobileNav();
@@ -498,9 +503,20 @@
     dialog.addEventListener("close", () => {
       if (dialog === bagDialog) { if (bagTrigger?.isConnected) bagTrigger.focus({ preventScroll: true }); return; }
       if (dialog === tourDialog) document.querySelector("#tour-video")?.pause();
-      if (dialog === productDialog && location.hash === `#item-${detailId}`)
-        updateHash(detailReturnHash, true);
-      if (dialog === productDialog && location.hash === "#your-room") return;
+      if (dialog === productDialog) {
+        const fromBag = detailFromBag, pushed = detailPushed;
+        detailFromBag = detailPushed = false;
+        if (location.hash === `#item-${detailId}`) {
+          // Drop the entry the detail pushed, so one Back after closing leaves the page.
+          if (pushed) { closingDetail = true; history.back(); } else updateHash(detailReturnHash, true);
+        }
+        if (location.hash === "#your-room") return;
+        if (fromBag) {
+          openBag(bagTrigger);
+          bagDialog.querySelector(`.bag-item-title[data-open-item="${detailId}"]`)?.focus();
+          return;
+        }
+      }
       focusFind(lastTriggerItemId, lastTrigger);
     });
     dialog.addEventListener("click", (event) => {

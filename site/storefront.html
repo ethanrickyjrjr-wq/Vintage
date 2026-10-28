@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
-      // Old disco links and restored mobile scroll positions should open at the entrance.
-      history.scrollRestoration = "manual";
-      if (location.hash === "#disco" || location.hash === "#home") {
-        history.replaceState(null, "", location.pathname + location.search);
-      }
-      if (!location.hash) {
-        window.addEventListener("pageshow", () => {
-          if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-        });
+      // Fresh visits and reloads open at the entrance. Back and Forward return to where you were.
+      {
+        const traversal = performance.getEntriesByType("navigation")[0]?.type === "back_forward";
+        history.scrollRestoration = traversal ? "auto" : "manual";
+        if (location.hash === "#disco" || location.hash === "#home") {
+          history.replaceState(null, "", location.pathname + location.search);
+        }
+        if (!traversal && !location.hash) {
+          window.addEventListener("pageshow", (event) => {
+            if (!event.persisted && !location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          });
+        }
       }
     </script>
     <meta name="theme-color" content="#451c2b" />
@@ -326,7 +329,8 @@
               <div class="room-history">
                 <button type="button" id="room-before" aria-pressed="false" disabled>Show original</button>
                 <button type="button" id="room-undo" disabled>Undo</button>
-                <button type="button" id="room-reset" disabled>Start over</button>
+                <button type="button" id="room-delete" disabled>Remove find</button>
+                <button type="button" id="room-reset" disabled>Clear the room</button>
               </div>
             </div>
             <div class="room-stage" id="room-stage">
@@ -369,9 +373,9 @@
             <div class="room-layer-controls" id="room-layer-controls" hidden><p class="room-label">03 / Make it yours</p>
               <ul class="room-layers" id="room-layers" aria-label="Finds in your room"></ul>
               <label class="room-label" for="room-size">Selected find size <output id="room-size-value" for="room-size">25%</output></label><input id="room-size" type="range" min="3" max="85" value="25" step="1" />
-              <div class="room-layer-actions"><button type="button" id="room-flip">Flip</button><button type="button" id="room-front">Bring forward</button><button type="button" id="room-delete">Remove</button></div>
+              <div class="room-layer-actions"><button type="button" id="room-flip">Flip</button><button type="button" id="room-front">Bring forward</button></div>
             </div>
-            <p class="room-help" id="room-editor-help">Drag a pick into the photo, or choose Place. Drag a find to move it; use its corner or the size slider to resize. Arrow keys move the selected find; Shift moves it farther. Proportions are approximate.</p>
+            <p class="room-help" id="room-editor-help">Drag a pick into the photo, or choose Place. Drag a find to move it; use its corner or the size slider to resize. Arrow keys move the selected find; Shift moves it farther. Remove find takes out the selected find; Undo brings it back. Proportions are approximate.</p>
             <div class="room-unplaced" id="room-unplaced" hidden><p class="room-label">Left out of this layout</p><ul id="room-unplaced-list"></ul></div>
             <button type="button" class="room-download" id="room-download" disabled>Download your room ↓</button>
             <p class="room-help room-privacy">Your photo and arrangement stay in this tab. Decorate downloads a room guide once (about 45 MB plus its runtime) and runs on your device. Closing or reloading clears your room. Previews don’t guarantee fit.</p>

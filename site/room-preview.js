@@ -112,7 +112,7 @@ function startEditor() {
       const row = document.createElement("li"), control = button(productMap.get(item.id).title, `Select ${productMap.get(item.id).title}`, () => { state.selected = item.id; state.comparing = false; refresh(); }, state.busy);
       control.setAttribute("aria-pressed", String(item.id === state.selected)); row.append(control); $("room-layers").append(row);
     }
-    $("room-layer-controls").hidden = !state.layers.length;
+    $("room-layer-controls").hidden = !hasPhoto;
     $("room-size").disabled = state.busy || !layer;
     if (layer) { $("room-size").value = Math.round(layer.w * 100); $("room-size-value").value = `${Math.round(layer.w * 100)}%`; }
     for (const id of ["room-flip", "room-front", "room-delete"]) $(id).disabled = state.busy || !layer;
@@ -312,10 +312,10 @@ function startEditor() {
   $("room-size").addEventListener("change", () => { if (sizeStart) { remember(sizeStart); sizeStart = null; refresh(); } });
   $("room-flip").addEventListener("click", () => change(() => { selectedLayer().flip = !selectedLayer().flip; }));
   $("room-front").addEventListener("click", () => change(() => { const layer = selectedLayer(); state.layers = [...state.layers.filter(item => item !== layer), layer]; }));
-  $("room-delete").addEventListener("click", () => change(() => { state.layers = state.layers.filter(layer => layer.id !== state.selected); state.selected = state.layers.at(-1)?.id ?? null; }));
+  $("room-delete").addEventListener("click", () => change(() => { state.layers = state.layers.filter(layer => layer.id !== state.selected); state.selected = state.layers.at(-1)?.id ?? null; status("Removed. Undo brings it back."); }));
   $("room-before").addEventListener("click", () => { state.comparing = !state.comparing; refresh(); });
   $("room-undo").addEventListener("click", () => { const previous = state.history.pop(); if (previous) { Object.assign(state, previous, { comparing: false }); refresh(); status("Your last arrangement is back."); } });
-  $("room-reset").addEventListener("click", () => change(() => { state.layers = []; state.selected = null; state.unplaced = []; status("A fresh start. Your room photo and picks are still here."); }));
+  $("room-reset").addEventListener("click", () => change(() => { state.layers = []; state.selected = null; state.unplaced = []; status("The room is clear. Your photo and picks are still here, and Undo brings the layout back."); }));
   $("room-download").addEventListener("click", () => {
     draw(false, false);
     const output = document.createElement("canvas"), footer = Math.max(36, Math.round(canvas.width * .035));

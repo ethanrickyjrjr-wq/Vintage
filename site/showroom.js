@@ -213,6 +213,10 @@ MODELS.forEach((model, index) => {
 select.addEventListener("change", () => showModel(Number(select.value)));
 $("#previous-piece").addEventListener("click", () => showModel((Number(select.value) + MODELS.length - 1) % MODELS.length));
 $("#next-piece").addEventListener("click", () => showModel((Number(select.value) + 1) % MODELS.length));
+// A real back when the visitor came from our own pages; otherwise the link target.
+$(".collection-return").addEventListener("click", (event) => {
+  if (history.length > 1 && document.referrer.startsWith(location.origin)) { event.preventDefault(); history.back(); }
+});
 const requestedPiece = Number(new URLSearchParams(location.search).get("piece"));
 const initialPiece = Number.isInteger(requestedPiece) && requestedPiece >= 1 && requestedPiece <= MODELS.length ? requestedPiece - 1 : 0;
 try {
