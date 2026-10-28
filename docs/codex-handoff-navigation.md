@@ -142,5 +142,9 @@ report its output verbatim. Add the Sites version number to this file under a "P
 
 ## Published
 
+Sites version 22 was published publicly on 2026-10-28 from the `ef4f9b3` site build.
+`npm test` passed all 23 tests, followed by a successful `node build.mjs`.
+The console check was skipped as requested; Claude will run it against the live site.
+
 Sites version 21 was published publicly on 2026-10-28 from the `82b313f` site build.
 The live console check remains unverified: the available browser connection did not expose the developer console.
