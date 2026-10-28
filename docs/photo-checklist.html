@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Checklist</title>
+<!-- Source for ~/Downloads/Holliewood-Vine-photos/photo-checklist.pdf. Print: Chrome headless, Letter. -->
+<style>
+  :root { --ink: #2a1a20; --burgundy: #451c2b; --rule: #d9c9b8; --paper: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 16px; background: var(--paper); color: var(--ink);
+         font: 10pt/1.35 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 7.5in; margin: 0 auto; }
+  h1 { font: 600 22pt/1.1 Georgia, "Times New Roman", serif; color: var(--burgundy); margin: 0 0 2px; }
+  .sub { margin: 0 0 12px; color: #6b5560; }
+  h2 { font: 600 12.5pt Georgia, serif; color: var(--burgundy); margin: 14px 0 4px;
+       padding-bottom: 2px; border-bottom: 1px solid var(--rule); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { padding: 2px 0 2px 22px; position: relative; break-inside: avoid; }
+  li::before { content: ""; position: absolute; left: 2px; top: 5px; width: 11px; height: 11px;
+               border: 1.5px solid var(--burgundy); border-radius: 2px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+  .warn { background: #f7eef0; border-left: 3px solid var(--burgundy); padding: 6px 10px; margin: 6px 0; }
+  code { font: 9pt Consolas, monospace; background: #f3eee8; padding: 1px 4px; border-radius: 3px;
+         overflow-wrap: anywhere; }
+  .src { margin-top: 14px; font-size: 8pt; color: #6b5560; }
+  @media (max-width: 600px) { .cols { grid-template-columns: 1fr; } }
+  @page { size: Letter; margin: 0.4in; }
+  @media print { body { padding: 0; font-size: 9.5pt; } h2 { margin-top: 10px; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Holliewood &amp; Vine · Photo Checklist</h1>
+<p class="sub">The pro look comes from light, a plain backdrop and the same framing on every shot. A phone is enough.</p>
+
+<div class="cols">
+<section>
+<h2>1 · Kit (once)</h2>
+<ul>
+  <li>White seamless paper or poster board (pure white, not cream)</li>
+  <li>2 white foam boards (fill) + 1 black foam board (edges)</li>
+  <li>Phone tripod · painter's tape · tape measure</li>
+  <li>Microfiber cloth, brass polish, glass cleaner</li>
+  <li>Optional: iPhone Settings › Camera › Formats › Most Compatible (JPEG). The cutout script reads HEIC too.</li>
+</ul>
+
+<h2>2 · Set up</h2>
+<ul>
+  <li>Room with one big window. Every other light off. Flash off. No direct sun on the set.</li>
+  <li>Tape the paper to the table and curve it up the wall: no seam, no corner.</li>
+  <li>Item side-on to the window (90°). White board on the shadow side.</li>
+  <li>Pale item? Black boards just outside the frame for a dark edge.</li>
+  <li>Phone on the tripod. Tape-mark the tripod and the item spot. Don't move the tripod all session. Turn the item, not the camera.</li>
+  <li>Main 1x lens, never 0.5x. Lens at the item's mid-height, straight on.</li>
+</ul>
+</section>
+
+<section>
+<h2>3 · Every item</h2>
+<ul>
+  <li>Dust it, polish the brass, wipe fingerprints off glass</li>
+  <li>Off: price tags, stickers, strings, props, anything that isn't for sale</li>
+  <li>Item fills 70–80% of the frame, with margin on all four sides. Nothing touching the edge.</li>
+  <li>Tap the item to focus</li>
+</ul>
+<h2>Shot list</h2>
+<ul>
+  <li>Front, straight on (the main photo)</li>
+  <li>Three-quarter angle</li>
+  <li>Back</li>
+  <li>Maker's mark, label, signature</li>
+  <li>Every flaw, up close (never hide one)</li>
+  <li>Tape measure across the widest point</li>
+  <li>In the burgundy room, unedited (Etsy needs one real-setting photo)</li>
+</ul>
+</section>
+</div>
+
+<div class="warn"><b>Seen in the test run:</b> the chandelier shot still had its $60 tag and a mini disco ball on it. The cutout keeps whatever is attached to the item, so take it off before you shoot.</div>
+
+<div class="cols">
+<section>
+<h2>4 · Special cases</h2>
+<ul>
+  <li><b>Big pieces</b> (chair, dress form): plain wall + floor, item pulled 2–3 ft off the wall</li>
+  <li><b>Rugs</b>: lay flat, shoot from overhead</li>
+  <li><b>Glass</b> (chandelier, stemware, decanter): white sheet 2–3 ft behind, lit from behind; black cards just outside the frame. <b>Don't cut these; list the original.</b></li>
+  <li><b>White, frosted, pale</b>: black backdrop or black side boards</li>
+  <li><b>Fringe, feathers, chains</b>: hang or lay flat on a plain contrasting backdrop</li>
+  <li>Never use a backdrop the same colour as the item</li>
+</ul>
+</section>
+
+<section>
+<h2>5 · After the shoot</h2>
+<ul>
+  <li>One folder per shoot; name files by item ID, e.g. <code>A13-front.jpg</code></li>
+  <li>Run the cutout script (or hand the folder to Claude):<br>
+    <code>C:\Users\ethan\dev\Vintage\.venv\cutout\Scripts\python.exe C:\Users\ethan\dev\Vintage\tools\cutout\cutout.py "PHOTO FOLDER"</code></li>
+  <li>Read each report line: <b>OK</b> · <b>PIXELS CHANGED</b> (check by eye) · <b>see-through</b> (use the original) · <b>shoot closer</b></li>
+  <li><code>cutouts/listing/*.jpg</code> → Etsy, eBay, Shopify (2048 px, white)</li>
+  <li><code>cutouts/site/*.png</code> → our site only. Never upload a transparent PNG to Etsy: it turns black.</li>
+  <li>Keep every original</li>
+</ul>
+</section>
+</div>
+
+<p class="src">Sources: Shopify Help Center, help.shopify.com (window light, sweep, foam boards, tripod) · Photoroom, photoroom.com (90° window light) · Apple Support, support.apple.com (Most Compatible format) · Google Merchant Center Help, support.google.com/merchants (75–90% fill) · Etsy rules as captured in research/cutouts/01-channel-image-rules.md. Glass lighting comes from studio-vendor blogs (practice tips, not vendor rules). Prepared 2026-10-28.</p>
+</main>
+</body>
+</html>
