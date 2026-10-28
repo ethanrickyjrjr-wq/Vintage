@@ -74,6 +74,82 @@
         107.79086500406265,
         219.97890953571186
       ]
+    },
+    "mid_century_lounge_chair": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/mid_century_lounge_chair",
+      "file": "assets/demo/models/mid_century_lounge_chair/mid_century_lounge_chair_1k.gltf",
+      "bytes": 2087019,
+      "authors": {
+        "Kuutti Siitonen": "All"
+      },
+      "name": "Mid Century Lounge Chair",
+      "dimensions_mm": [
+        1008.6143612861633,
+        1190.310776233673,
+        1169.0847246776136
+      ]
+    },
+    "Chandelier_01": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/Chandelier_01",
+      "file": "assets/demo/models/Chandelier_01/Chandelier_01_1k.gltf",
+      "bytes": 1306295,
+      "authors": {
+        "Kirill Sannikov": "All"
+      },
+      "name": "Chandelier 01",
+      "dimensions_mm": [
+        746.4556992053986,
+        815.5497610569,
+        798.2709443223541
+      ]
+    },
+    "boombox": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/boombox",
+      "file": "assets/demo/models/boombox/boombox_1k.gltf",
+      "bytes": 3068296,
+      "authors": {
+        "Thomas Paul Mouilleron": "All"
+      },
+      "name": "Boombox",
+      "dimensions_mm": [
+        723.7796187400818,
+        186.46465986967087,
+        470.10064125061035
+      ]
+    },
+    "vintage_video_camera": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/vintage_video_camera",
+      "file": "assets/demo/models/vintage_video_camera/vintage_video_camera_1k.gltf",
+      "bytes": 2710066,
+      "authors": {
+        "James Ray Cock": "Textures",
+        "Jenelle van Heerden": "Photography & Model"
+      },
+      "name": "Vintage Video Camera",
+      "dimensions_mm": [
+        71.20675966143608,
+        132.58329033851624,
+        144.9999362230301
+      ]
+    },
+    "marble_bust_01": {
+      "source": "Poly Haven (CC0)",
+      "page": "https://polyhaven.com/a/marble_bust_01",
+      "file": "assets/demo/models/marble_bust_01/marble_bust_01_1k.gltf",
+      "bytes": 898283,
+      "authors": {
+        "Rico Cilliers": "All"
+      },
+      "name": "Marble Bust 01",
+      "dimensions_mm": [
+        271.7496156692505,
+        299.713671207428,
+        514.9431824684143
+      ]
     }
   }
 }

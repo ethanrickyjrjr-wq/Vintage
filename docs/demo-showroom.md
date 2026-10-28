@@ -7,7 +7,7 @@ linked from `/demo-photos.html` and is not in the publication build.
 Run `node dev.mjs` from `site/` (restart it: `.glb`, `.gltf` and `.bin` content types
 were added), then open `/demo-showroom.html`.
 
-**01 Spin it.** Six open-licensed 3D models rendered with Google `<model-viewer>`
+**01 Spin it.** Eleven open-licensed 3D models rendered with Google `<model-viewer>`
 4.3.1 (Apache-2.0, vendored at `assets/demo/vendor/`). Per model: Front, 3/4, Side,
 Back and Top camera buttons, backdrops (white, burgundy, neon, gold, Ricky's wall
 photo), shadow, auto-spin, and colorway chips read from the file's
@@ -26,7 +26,7 @@ pixels, and an approximate CSS hue-rotate recolor.
 | Model | Source | License |
 | --- | --- | --- |
 | Glam Velvet Sofa, Chair Damask Purple Gold, Materials Variants Shoe | KhronosGroup/glTF-Sample-Assets | CC BY 4.0 (Wayfair, Wayfair, Shopify): credit shown on the page |
-| Filmstrip Projector 8mm, Vintage Oil Lamp, Horse Statue 01 | Poly Haven API, 1k glTF | CC0 |
+| Filmstrip Projector 8mm, Vintage Oil Lamp, Horse Statue 01, Mid Century Lounge Chair, Chandelier 01, Boombox, Vintage Video Camera, Marble Bust 01 | Poly Haven API, 1k glTF | CC0 |
 
 `research/demo-photo-sourcing/showroom-models.json` has URLs, hashes and the license
 text. These are stand-in models, not scans of Ricky's pieces. The 3D views are real
