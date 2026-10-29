@@ -23,3 +23,11 @@ Research and layout decision, 2026-10-29. Ricky asked for the controls to appear
 The exact arrangement is a design inference from this research and the existing storefront, not a measured conversion claim. Preserve the burgundy palette, original entrance objects, current favorites and editable room behavior. Use Coming soon on unavailable entry points and explain that no account or saved project has been created. Do not collect an email, upload a room or display a false success state.
 
 Keep the entry buttons in the storefront HTML so their location is explicit and reviewable. JavaScript opens the existing account preview. The preview assets and HTML references must be included in the same published build, then checked on the live URL.
+
+## Published and verified
+
+Published as Sites version 31 on 2026-10-29 at [the public storefront](https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site). The successful deployment uses source commit `3605d07288ceee9bcced041c5fe93b52a4eaeec4`; GitHub implementation commit is `c6763f1`.
+
+All 33 existing tests and the production build pass. Desktop and phone layout checks include a 320-pixel viewport. On the live site, Account and My Rooms open their Coming soon previews, Save room opens the room-saving preview, and the phone header shows all four personal tools without horizontal overflow. Account fields stay disabled, and the room preview explains that the current room has not been saved. No browser console errors were recorded during these live checks.
+
+The publication also preserves the concurrently landed room-category picker and the Hire Hollie occasion ordering. Live visual evidence is saved locally at `artifacts/account-layout/live-room-controls.png` and `artifacts/account-layout/live-mobile-account.png` (ignored artifacts).
