@@ -132,12 +132,16 @@ const allowedSlots = { lamp: ["lamp-or-decor"], decor: ["decor", "lamp-or-decor"
 const read = file => readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
 const { roomProducts } = vm.runInNewContext(`${read("catalog-data.js")}\n${read("room-products.js")}\n${read("demo-products.js")}\n({ roomProducts: HNV_ROOM_PRODUCTS })`);
 
+const sofas = ["SCB4670A4", "S7E0E0EA5", "SAEEEA93E"];
 test("every sample find lands on a surface that suits its kind", () => {
   const scene = sampleRoomScene();
   assert.equal(roomProducts.length, 40);
   for (const found of roomProducts) {
     assert.ok(allowedSlots[found.kind], `${found.id} has an unknown kind: ${found.kind}`);
-    const result = arrangeRoom([{ id: found.id, kind: found.kind, overlay: found.overlay, ratio: 1 }], scene, 1.5);
+    const result = arrangeRoom([{ id: found.id, kind: found.kind, overlay: found.overlay, ratio: 1, cm: found.cm }], scene, 1.5);
+    if (sofas.includes(found.id)) { // Real size, in a room that already has its sofa: say so rather than shrink a sofa into a toy.
+      assert.equal(result.layers.length, 0, found.id); assert.match(result.unplaced[0].reason, /too big/i); continue;
+    }
     assert.equal(result.layers.length, 1, `${found.id} (${found.kind}) has nowhere to go`);
     const slot = scene.slots.find(candidate => candidate.x === result.layers[0].x);
     assert.ok(allowedSlots[found.kind].includes(slot.kind), `${found.id} (${found.kind}) landed on a ${slot.kind} slot`);
@@ -171,4 +175,17 @@ test("uploaded rooms put cushions on a detected sofa and leave them out without 
     const none = arrangeRoom([cushion], grid(segments), 1.6);
     assert.equal(none.layers.length, 0); assert.match(none.unplaced[0].reason, /sofa/);
   }
+});
+
+test("sample finds are drawn at believable sizes relative to one another", () => {
+  // Ratios measured from the trimmed alpha bounds of each cutout; cm are the catalog's illustrative sizes.
+  const size = (id, kind, ratio) => ({ ...product(id, kind), ratio, cm: roomProducts.find(found => found.id === id).cm });
+  const placed = item => layerBox(arrangeRoom([item], sampleRoomScene(), 1.5).layers[0], 1.5);
+  const lamp = placed(size("A13", "lamp", 1.34)), flute = placed(size("SA6FA3177", "decor", 2.69));
+  const chair = placed(size("A15", "floor", 1.17)), cushion = placed(size("SB05192FF", "cushion", .92));
+  assert.ok(lamp.h > .15 && lamp.h < .2, "the lamp is about as tall as the lamp already in the photo");
+  assert.ok(flute.h < lamp.h / 1.8, "a champagne flute is far smaller than a table lamp");
+  assert.ok(chair.h > .3 && chair.h < .4, "a chair nearest the camera is large");
+  assert.ok(cushion.w <= .1, "a cushion is no wider than the existing throw pillows");
+  assert.equal(arrangeRoom([size("A13", "lamp", 1.34)], grid([]), 1.5).layers.length, 0, "uploaded rooms have no scale and keep fit-to-slot");
 });

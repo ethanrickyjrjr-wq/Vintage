@@ -110,3 +110,11 @@ The loop uses actual FLUX.2 Klein room-editing outputs, labeled as AI styling pr
 All 12 server tests pass, exercising real SQLite quota statements, original-asset selection, placement and replacement instructions, invalid payloads, cross-origin rejection, request size bounds, connection/store limits, failure refunds, and absent-image errors. Live private-Space rendering took 3.18–6.76 seconds of measured handler time; queueing and cold starts can add time. Native-browser QA covers local uploads, sample-room loading, exact placement, multiple kept finds, undo to the original, resizing, keyboard movement, comparison, PNG export and a 375-pixel mobile layout without horizontal overflow. The published Worker successfully returned a real AI preview to the shopper UI; its asset binding, runtime secrets, D1 migration and private renderer authentication were verified together.
 
 Sources: https://huggingface.co/black-forest-labs/FLUX.2-klein-4B ; https://huggingface.co/docs/hub/en/spaces-zerogpu
+
+## Real-size placement in the sample room (2026-10-29)
+
+Each sample find carries `cm`, an illustrative real-world size of its longest side, in `site/demo-products.js`. These are estimates, like the sample prices. Each reviewed slot in `site/room-sample.js` carries `ppm`, the fraction of the photo width one metre spans at that depth, calibrated on objects already in the photo (throw pillows, vase, credenza, sofa, coffee table).
+
+A find is drawn at `cm × ppm`, capped to its slot and never enlarged. If the slot can hold less than 70% of real size, the find is left out as "Too big for the open space in this room" (the three sofas, because the sample already has one). Uploaded rooms have no scale reference, so they keep fitting finds to the slot. Deriving a scale from a detected sofa is the next step there.
+
+The `.1` width floor on the Egyptian-lamp test still guards the fit-to-slot path. At real size that lamp is about `.088` wide, the same scale as the lamp already in the photo.

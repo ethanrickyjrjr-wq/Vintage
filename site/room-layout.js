@@ -141,15 +141,20 @@ export function arrangeRoom(products, grid, photoAspect) {
   const ordered = [...products].sort((a, b) => (rank[a.kind] ?? 9) - (rank[b.kind] ?? 9) || a.id.localeCompare(b.id, "en", { numeric: true }));
   for (const product of ordered) {
     if (!product.overlay || !product.ratio) { unplaced.push({ id: product.id, reason: "A clear product cutout is needed. You can still save this find." }); continue; }
-    let placed = false;
+    let placed = false, tooBig = false;
     for (const slot of scene.slots) {
       if (used.has(slot.id)) continue;
       const legal = product.kind === "lamp" ? slot.kind === "lamp-or-decor" :
         ["decor", "media"].includes(product.kind) ? ["decor", "lamp-or-decor"].includes(slot.kind) : slot.kind === product.kind;
       if (!legal || product.kind === "art" && layers.filter(layer => layer.kind === "art").length >= 2 || product.kind === "floor" && layers.filter(layer => layer.kind === "floor").length >= 2) continue;
+      // Real size: a find with a size in cm, in a slot with a scale, is drawn at that size,
+      // capped to the slot and never enlarged. Under 70% of real size, the slot cannot hold it.
+      const fit = Math.min(slot.w, slot.h / (product.ratio * photoAspect));
+      const real = product.cm && slot.ppm ? product.cm / 100 / Math.max(1, product.ratio) * slot.ppm : Infinity;
+      if (real < Infinity && fit < real * .7) { tooBig = true; continue; }
       for (const scale of [1, .85, .7]) {
-        const w = Math.min(slot.w, slot.h / (product.ratio * photoAspect)) * scale;
-        if (w < .035) continue;
+        const w = Math.min(fit, real) * scale;
+        if (w < Math.min(.035, real * .7)) continue;
         const h = w * product.ratio * photoAspect;
         const layer = { id: product.id, kind: product.kind, x: slot.x, y: slot.bottom + (slot.anchorTop ? h / 2 : -h / 2), w, ratio: product.ratio, flip: false };
         const box = layerBox(layer, photoAspect);
@@ -171,7 +176,7 @@ export function arrangeRoom(products, grid, photoAspect) {
       }
       if (placed) break;
     }
-    if (!placed) unplaced.push({ id: product.id, reason: noSlot[product.kind] || "No suitable position was found." });
+    if (!placed) unplaced.push({ id: product.id, reason: tooBig ? "Too big for the open space in this room." : noSlot[product.kind] || "No suitable position was found." });
   }
   return { layers, unplaced, slotCount: scene.slots.length };
 }
