@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holliewood and Vine Social Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root {
+  /* one reading column; sections stack open, tables become cards under 600px, banks fold away */
+  --bg: #321520;
+  --surface: #451c2b;
+  --ink: #f6efdf;
+  --muted: #d6bcc4;
+  --accent: #e5a6b4;
+  --line: #6a3447;
+  --good: #a9dcb1;
+  --warn: #f2c98a;
+  --display: "Bodoni Moda", Didot, Georgia, serif;
+  --body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.6 var(--body); padding-bottom: 5rem; overflow-wrap: break-word; }
+.wrap { max-width: 56rem; margin: 0 auto; padding: 0 16px; }
+a { color: var(--accent); text-underline-offset: 2px; overflow-wrap: anywhere; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+p, li { max-width: 68ch; }
+strong { font-weight: 700; }
+
+.top { padding: 2rem 0 1rem; }
+.eyebrow { margin: 0 0 .5rem; color: var(--accent); font-size: .8125rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+h1 { margin: 0 0 1rem; font: 600 clamp(1.75rem, 7vw, 2.5rem)/1.15 var(--display); font-optical-sizing: none; letter-spacing: -.01em; }
+.top > p { color: var(--muted); }
+.toc h2, .part-h { margin: 1.5rem 0 .6rem; font: 700 .8125rem/1.2 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.toc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); gap: .5rem; }
+.toc li { max-width: none; display: flex; }
+.toc a { flex: 1; display: flex; gap: .6rem; align-items: baseline; min-height: 48px; padding: .6rem .75rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); text-decoration: none; }
+.toc .n { min-width: 1.5rem; color: var(--accent); font-weight: 700; }
+.toc small { display: block; font-size: .75rem; line-height: 1.3; color: var(--muted); }
+
+.part { margin-top: 2.5rem; padding-top: 1rem; border-top: 3px solid var(--accent); }
+.part > h2 { margin: 0 0 .5rem; font: 600 1.75rem/1.2 var(--display); font-optical-sizing: none; }
+.part-note, .part-note li { color: var(--muted); font-size: .9375rem; }
+.sec { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); scroll-margin-top: 12px; }
+.sec h2, .bank summary { font: 600 1.5rem/1.2 var(--display); font-optical-sizing: none; letter-spacing: -.005em; margin: 0 0 1rem; }
+.num { color: var(--accent); margin-right: .35rem; }
+h3 { margin: 1.75rem 0 .5rem; font: 700 1.125rem/1.3 var(--body); color: var(--accent); }
+ul, ol { padding-left: 1.3rem; }
+li { margin: .35rem 0; }
+blockquote { margin: 1rem 0; padding: .1rem 0 .1rem 1rem; border-left: 3px solid var(--accent); color: var(--muted); }
+code { font: .875rem/1.4 var(--mono); background: var(--surface); padding: .1rem .35rem; border-radius: 4px; overflow-wrap: anywhere; }
+code.tag { font: 500 .8125rem/1.3 var(--body); padding: .05rem .5rem; border-radius: 999px; white-space: nowrap; }
+code.tag.good { color: var(--good); background: rgba(169, 220, 177, .14); }
+code.tag.warn { color: var(--warn); background: rgba(242, 201, 138, .14); }
+code.tag.plain { color: var(--muted); background: rgba(246, 239, 223, .1); }
+
+.tw { overflow-x: auto; margin: 1rem 0; }
+table { border-collapse: collapse; width: 100%; }
+th, td { padding: .6rem .75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { font-size: .8125rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--surface); }
+td.ct { font-weight: 700; }
+
+.copy { display: block; margin: .5rem 0 0; min-height: 44px; padding: .6rem 1.1rem; border: 0; border-radius: 999px; background: var(--accent); color: var(--bg); font: 700 .9375rem var(--body); cursor: pointer; }
+.copy.ok { background: var(--good); }
+
+.bank { margin: .75rem 0; border: 1px solid var(--line); border-radius: 12px; background: rgba(0, 0, 0, .14); scroll-margin-top: 12px; }
+.bank summary { display: flex; gap: .5rem; align-items: baseline; margin: 0; padding: 1rem; min-height: 56px; cursor: pointer; list-style: none; }
+.bank summary::-webkit-details-marker { display: none; }
+.bank summary::after { content: "+"; margin-left: auto; padding-left: .75rem; color: var(--accent); font: 700 1.5rem/1 var(--body); }
+.bank[open] > summary::after { content: "\2013"; }
+.bank-body { padding: 0 16px 16px; }
+.btn { min-height: 44px; padding: .6rem 1.1rem; border: 1px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); font: 700 .9375rem var(--body); cursor: pointer; }
+
+.fab { position: fixed; right: 16px; bottom: 16px; z-index: 5; min-height: 44px; padding: .8rem 1.1rem; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px rgba(0, 0, 0, .45); }
+.foot { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9375rem; }
+
+@media (max-width: 599px) {
+  .tw { overflow: visible; }
+  table, tbody { display: block; }
+  thead { display: none; }
+  tr { display: block; margin: 0 0 .75rem; padding: .35rem 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+  td { display: block; padding: .4rem .9rem; border: 0; }
+  td[data-label]::before { content: attr(data-label); display: block; margin-bottom: .1rem; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  td.ct { font-size: 1.0625rem; }
+  td.kn { display: inline-block; margin: .5rem .9rem 0; padding: .1rem .7rem; border-radius: 999px; background: var(--accent); color: var(--bg); font-size: .8125rem; font-weight: 700; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top" id="top">
+  <p class="eyebrow">Phone edition, built 2026-10-29</p>
+  <h1>Holliewood and Vine social manual</h1>
+  <p><strong>Status (2026-10-29).</strong> Written from 19 research lanes (<code>research/social-2026-10-29/</code>, 8 strategy, 7 automation, 4 live re-checks). Every price and link below was read on the vendor's own page on 2026-10-29 unless it says otherwise; <strong>re-check the price on the signup page before paying.</strong> The content banks (hooks, calendar, cover templates, shoot plan, timing test) are in <code>docs/social-manual-appendices.md</code>. The build spec for the automated version is <code>docs/codex-handoff-social-autopilot.md</code>.</p>
+<p>Tags: <code class="tag good">verified</code> (read on the live page), <code class="tag plain">vendor claim</code>, <code class="tag plain">inferred</code> (my reading), <code class="tag warn">need review</code> (sources disagree or one page was walled).</p>
+
+  <nav class="toc" aria-label="Sections">
+    <h2>The manual</h2>
+    <ul><li><a href="#s0"><span class="n">0</span><span class="l">The short version</span></a></li><li><a href="#s1"><span class="n">1</span><span class="l">Decisions<small>4 answers needed</small></span></a></li><li><a href="#s2"><span class="n">2</span><span class="l">The rules</span></a></li><li><a href="#s3"><span class="n">3</span><span class="l">The link rule</span></a></li><li><a href="#s3a"><span class="n">3A</span><span class="l">How to grow</span></a></li><li><a href="#s4"><span class="n">4</span><span class="l">Step by step<small>Accounts, in order</small></span></a></li><li><a href="#s5"><span class="n">5</span><span class="l">What others do</span></a></li><li><a href="#s6"><span class="n">6</span><span class="l">Pipeline cost</span></a></li><li><a href="#s7"><span class="n">7</span><span class="l">Signups and prices</span></a></li><li><a href="#s8"><span class="n">8</span><span class="l">Calendar, short</span></a></li><li><a href="#s9"><span class="n">9</span><span class="l">Open conflicts and tests<small>5 tests</small></span></a></li><li><a href="#s10"><span class="n">10</span><span class="l">Repo changes</span></a></li><li><a href="#s11"><span class="n">11</span><span class="l">Verified vs review</span></a></li><li><a href="#s12"><span class="n">12</span><span class="l">Source index</span></a></li></ul>
+    <h2>The banks</h2>
+    <ul><li><a href="#appx-a"><span class="n">A</span><span class="l">Hooks, captions, replies<small>Copy buttons</small></span></a></li><li><a href="#appx-b"><span class="n">B</span><span class="l">12-month calendar</span></a></li><li><a href="#appx-c"><span class="n">C</span><span class="l">Cover system</span></a></li><li><a href="#appx-d"><span class="n">D</span><span class="l">90-minute shoot<small>Shoot day</small></span></a></li><li><a href="#appx-e"><span class="n">E</span><span class="l">Four-week timing test</span></a></li><li><a href="#appx-f"><span class="n">F</span><span class="l">Music and AI labels</span></a></li></ul>
+  </nav>
+</header>
+
+<main>
+<div class="part" id="manual">
+  <h2>Part 1. The manual</h2>
+  <section class="sec" id="s0"><h2><span class="num">0</span> The short version</h2><ol>
+<li value="1"><strong>Start free and native this week.</strong> Business Instagram account, Instagram's own Edits app, one 90-minute shoot, the room and Hollie's hands. No scheduler, no bots, no spend. Nothing automatic can run yet anyway: no accounts, no real stock, no checkout.</li>
+<li value="2"><strong>Add Buffer Free in week 2.</strong> It gives 3 channels, 10 queued posts each, and an API <strong>and an MCP server on the free plan</strong>, so Claude can draft and queue posts for Hollie to approve in Buffer. This is the cheapest real autonomy (<code class="tag good">verified</code>: Buffer pricing and MCP pages; Claude driving it is <code class="tag plain">inferred</code>, untested).</li>
+<li value="3"><strong>Build the full pipeline later, in this order of payoff:</strong> Claude-drafted captions, code-rendered covers, a JSON edit list rendered by ffmpeg, a metrics sheet, then own-API publishing. Replies stay by hand until the Meta question in <a href="#s9">section 9</a> is settled.</li>
+<li value="4"><strong>Instagram first, then Pinterest, YouTube Shorts and a Facebook Page. TikTok in month 3</strong> (make the account now to hold the handle). How to grow is <a href="#s3a">section 3A</a>. Skip Whatnot, Poshmark, Depop, Lemon8 and Facebook Groups.</li>
+<li value="5"><strong>No best time to post exists.</strong> Five 2026 studies give five answers. Run the four-week test in <a href="#appx-e">Appendix E</a> and use Hollie's own numbers.</li>
+<li value="6"><strong>Nothing links to a product until real stock exists.</strong> November is a setup month, not a posting month for products. Room and brand posts can start the day the accounts exist.</li>
+</ol>
+<h3>Three tiers</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>A. Free and native</strong></th>
+<th><strong>B. One scheduler (recommended middle)</strong></th>
+<th><strong>C. Full Claude + Codex pipeline</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Software cost</td>
+<td data-label="A. Free and native">$0</td>
+<td data-label="B. One scheduler (recommended middle)">Buffer $0 (3 channels) or $20 a month (4 channels, billed yearly; $24 billed monthly), plus optional extras below</td>
+<td data-label="C. Full Claude + Codex pipeline">About $0 to $30 a month (<a href="#s6">section 6</a>), plus a build</td>
+</tr>
+<tr>
+<td class="ct">One-time</td>
+<td data-label="A. Free and native">Optional starter gear $78.97</td>
+<td data-label="B. One scheduler (recommended middle)">Gear kit $178.94 optional</td>
+<td data-label="C. Full Claude + Codex pipeline">Same gear</td>
+</tr>
+<tr>
+<td class="ct">Edits</td>
+<td data-label="A. Free and native">Instagram Edits on the phone</td>
+<td data-label="B. One scheduler (recommended middle)">Edits, or a Claude-written edit list rendered by ffmpeg (tested on the Fedora box; the Windows run is untested)</td>
+<td data-label="C. Full Claude + Codex pipeline">Edit list rendered automatically on a runner</td>
+</tr>
+<tr>
+<td class="ct">Covers</td>
+<td data-label="A. Free and native">Canva Free or Edits</td>
+<td data-label="B. One scheduler (recommended middle)">Code-rendered cover (Playwright, 1.7 s per cover on the Fedora box)</td>
+<td data-label="C. Full Claude + Codex pipeline">Same, automatic</td>
+</tr>
+<tr>
+<td class="ct">Posting</td>
+<td data-label="A. Free and native">Hollie posts in the app (in-app scheduling: 25 a day, 30 days ahead)</td>
+<td data-label="B. One scheduler (recommended middle)">Posts queue in Buffer; Hollie approves</td>
+<td data-label="C. Full Claude + Codex pipeline">Own API on a timer, with Buffer for TikTok and Pinterest</td>
+</tr>
+<tr>
+<td class="ct">Replies</td>
+<td data-label="A. Free and native">Hollie, by hand</td>
+<td data-label="B. One scheduler (recommended middle)">Hollie, by hand; optional ManyChat or InstantDM</td>
+<td data-label="C. Full Claude + Codex pipeline">Drafts into an approval queue; keyword rule</td>
+</tr>
+<tr>
+<td class="ct">Hollie's time per post</td>
+<td data-label="A. Free and native">10 to 15 min (<code class="tag plain">inferred</code>)</td>
+<td data-label="B. One scheduler (recommended middle)">6 to 10 min (<code class="tag plain">inferred</code>)</td>
+<td data-label="C. Full Claude + Codex pipeline">1 to 3 min (<code class="tag plain">inferred</code>)</td>
+</tr>
+<tr>
+<td class="ct">Build effort</td>
+<td data-label="A. Free and native">None</td>
+<td data-label="B. One scheduler (recommended middle)">3 to 4 hours (Buffer, <code class="tag plain">inferred</code> by w2c)</td>
+<td data-label="C. Full Claude + Codex pipeline">Claude 28 to 35 hours, Codex about 3, Ricky about 4</td>
+</tr>
+<tr>
+<td class="ct">Needs a legal entity?</td>
+<td data-label="A. Free and native">No</td>
+<td data-label="B. One scheduler (recommended middle)">No</td>
+<td data-label="C. Full Claude + Codex pipeline">No for posting; <strong>likely yes</strong> for automatic comment replies (<a href="#s9">section 9</a>)</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="sec" id="s1"><h2><span class="num">1</span> Decisions I need from you</h2><p><strong>Blocking (answer first):</strong></p>
+<ol>
+<li value="1"><strong>Is <code>@holliewoodandvine</code> yours?</strong> Instagram's pages are walled to my tools, so nobody has checked. Search the handle in the app. If it is taken, pick one name and claim it on every platform before posting anything.</li>
+<li value="2"><strong>Is there, or will there be, a registered business entity?</strong> It does not gate posting. It gates taking a Meta app Live (Business Verification, up to 14 business days; desk read 2026-10-12, not re-read) and so probably automatic comment replies on your own app, and a TikTok developer app. Without one, use third-party tools that hold Meta's approved app.</li>
+<li value="3"><strong>Does Hollie approve every post, or only the exceptions?</strong> Default I used: approve everything for the first 60 days, then exceptions only (prices, claims, faces, complaints, anything touching the rules). Approving by exception reverses the dashboard handoff's "no auto-publish" rule, so it needs your word.</li>
+<li value="4"><strong>Hands only, voiceover, or Hollie on camera?</strong> Default is hands-first. Evidence on faces is thin (<code class="tag plain">vendor claim</code>: vidIQ, n=500; a 2014 Instagram study); a mirror shot can show her by accident, and the shoot plan is built to avoid that.</li>
+</ol>
+<p><strong>Soon:</strong></p>
+<ol start="5">
+<li value="5"><strong>The link rule (<a href="#s3">section 3</a>) and one disclosure line.</strong> A compliant automated DM carries an "automated message" line. Does that still count as "the link and nothing else"?</li>
+<li value="6"><strong>"10% off each room after the first" is live on <code>site/hire.html:121</code> and in <code>docs/fabulous-from-online-design.md:87</code>.</strong> It conflicts with your no-discounts rule. Keep or cut? I changed nothing.</li>
+<li value="7"><strong>Drop day and time.</strong> I used Wednesday 7 pm ET as a placeholder; it is a guess, not evidence.</li>
+<li value="8"><strong>Is the iPhone 17 Pro the shop phone, and does Hollie shoot?</strong> The walkthrough video's metadata says iPhone 17 Pro (iOS 26.5.1). That is a file, not proof.</li>
+<li value="9"><strong>Gear spend:</strong> $78.97 or $178.94, or none.</li>
+</ol>
+<p><strong>Later:</strong> may Claude install user-local tools on the Fedora box; is a small separate repo for the pipeline acceptable (a structure change); a $10-a-month Anthropic API key limit; the Screen Test calls recorded or published (call recording needs everyone's consent; Fla. Stat. 934.03(2)(d), flagged by w1g, not legal advice); prop or event rental, a market booth, Chairish; Apify (about $2 to $5) for measured competitor engagement, which I did not spend.</p>
+</section>
+<section class="sec" id="s2"><h2><span class="num">2</span> The rules every post follows</h2><p>These are yours. Research pushed on three of them; each is flagged, none changed.</p>
+<ul>
+<li>No claims by DM or comment; the only call to action is the listing page. No bidding or claim-to-bid lives (Florida regulated-auction status unchecked). No discounts, no codes, "Absolutely no offers."</li>
+<li>No showroom language: never "visit", "in store", "our doors", "stop by", and no business-pin location tag. A city or region tag only, and Instagram names the location tag as a Feed signal (<code class="tag good">verified</code>), so this is your call.</li>
+<li>Hollie is she/her. "Style," never "interior design." The mirror ball is "sometimes," never promised, and never framed as a giveaway: Instagram lists contest and giveaway promotion as not recommendable (<code class="tag good">verified</code>, w1a).</li>
+<li>Real photos of real items only. AI for captions, cuts and layout around real photos is fine; no AI product imagery, no AI B-roll, no AI avatars. The editorial cutouts contain generated pixels and must not be used on a cover that sells a specific piece (w1e).</li>
+<li>Sold pieces say <strong>Gone</strong> and stay visible.</li>
+<li>No product-link post until real stock exists (the site's listings are samples with illustrative prices).</li>
+</ul>
+</section>
+<section class="sec" id="s3"><h2><span class="num">3</span> The link rule (the one conflict wave 1 found)</h2><p>A URL typed in a public Instagram comment is <strong>not tappable</strong> (<code class="tag plain">vendor claim</code>, two tools; Meta's own page not read). So "reply LINK with the link" does not work as written. What does (w2d, recommended):</p>
+<ol>
+<li value="1"><strong>Link in bio plus a piece number on every post.</strong> The listing page answers the number. This always works and needs nothing.</li>
+<li value="2"><strong>"Comment LINK" as an optional extra:</strong> a public reply ("sent, check your DMs") plus a private reply or DM carrying only the listing URL. Needs a tool (below) or your own Live app. Limits: one private reply per comment, within 7 days, 750 an hour; it lands in Requests unless the commenter follows (<code class="tag good">verified</code>, w2d). Whether "comment LINK" counts as engagement bait on Instagram is unstated (<code class="tag warn">need review</code>); check Account Status weekly.</li>
+<li value="3"><strong>A link sticker on Stories</strong>, added by Hollie on drop days. A human tap, always.</li>
+<li value="4"><strong>Never gate the link behind a follow or a comment.</strong> Meta's Spam standard bans like or share gating of exclusive content (<code class="tag good">verified</code>, w2d).</li>
+</ol>
+</section>
+<section class="sec" id="s3a"><h2><span class="num">3A</span> How to grow</h2><p>Ranked by how well the evidence holds. Every line is from Instagram's own statements or a lane-verified source; none is a promise.</p>
+<ol>
+<li value="1"><strong>Make reels people send.</strong> Sends per reach is one of Instagram's three top signals, and slightly more important than likes for non-followers; watch time is the most important for both (Mosseri, 2025-01-21, transcript read). A reel that makes someone text it to a friend ("this lamp") beats one that earns a like.</li>
+<li value="2"><strong>Clear the five gates to reach non-followers:</strong> no watermarks, add audio (especially on carousels), 3 minutes or less, original, good account status (Mosseri, 2025-01-23). Photos and carousels fall under the originality rules from 2026-04-30. Your own photos and video count as original.</li>
+<li value="3"><strong>Post enough, and keep one lane.</strong> 10 or more reels a month (Instagram FAQ), 3 to 5 feed posts a week (Buffer study), and mix in carousels. Instagram says staying on a theme your audience already responds to earns similar distribution: lamps, pink glass, the burgundy room.</li>
+<li value="4"><strong>Put the keywords where Search reads them:</strong> the Name field, bio and captions (not comments), plus 3 to 5 niche hashtags (up to 5 allowed). Hashtags describe a post; they do not raise reach.</li>
+<li value="5"><strong>Reply to comments within 7 days</strong> (Instagram FAQ).</li>
+<li value="6"><strong>Trial Reels once you reach 200 followers</strong> on a professional account: they go only to non-followers first, so you can test hooks before your followers see them.</li>
+<li value="7"><strong>Collab posts with adjacent accounts</strong> (vintage dealers, stylists, designers) are an approved collaboration tool for originality (<code class="tag good">verified</code>), but they cannot be scheduled, so post them live. Eligibility details were not read; the advice to pick adjacent, not competing, accounts is <code class="tag plain">inferred</code>.</li>
+<li value="8"><strong>A Broadcast channel as the drop list</strong> (text, video, voice, polls; no claims in it). Eligibility was not read; using it as the "tell me when the drop opens" list is <code class="tag plain">inferred</code>.</li>
+<li value="9"><strong>Pinterest is the long-lead search channel</strong> (plain Pins to real pages, live 4 to 6 weeks before a season); <strong>Shorts mirror</strong> the same cuts.</li>
+<li value="10"><strong>A signup-only hunt list</strong> (w1f, ranked first for your rules): collect emails or Broadcast followers for "find me a piece" requests before stock exists, with no listing link until it does.</li>
+</ol>
+<p><strong>What no source gives:</strong> a time to the first 1,000 followers or to steady sales. The nearest case is 7,100 followers in about 12 months (Halifax, 2019 to 2020), and the growth stories are mostly 2018 to 2021 winners. Anchor on nothing; use the four-week test in <a href="#appx-e">Appendix E</a> and Instagram Insights.</p>
+</section>
+<section class="sec" id="s4"><h2><span class="num">4</span> Step by step</h2><p>Each step: what, where, cost, time, who. Prices as read 2026-10-29.</p>
+<h3>Phase 0: this week, no cost</h3>
+<ol>
+<li value="1">Decide the four blockers above. Pick one name and spelling: <strong>Holliewood and Vine</strong> or <strong>Holliewood &amp; Vine</strong>, used identically everywhere.</li>
+<li value="2">Check the handle in the Instagram app. Do the same for TikTok, Pinterest, YouTube.</li>
+<li value="3">Pick Hollie's drop day (placeholder only).</li>
+</ol>
+<h3>Phase 1: accounts (about 1 hour, all free)</h3>
+<p>Do them in this order. Nothing here needs a legal entity or an ID check, as the pages state it.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Account</th>
+<th>Create it</th>
+<th>Prerequisite, as stated</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">1</td>
+<td class="ct"><strong>Instagram, then Business</strong></td>
+<td data-label="Create it"><a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank">instagram.com</a>, then Profile &gt; More &gt; Settings and activity &gt; For professionals &gt; Account type and tools &gt; Switch to professional account &gt; Business (<a href="https://www.facebook.com/help/instagram/502981923235522" rel="noopener noreferrer" target="_blank">Meta help</a>)</td>
+<td data-label="Prerequisite, as stated">Age 13+. A private account becomes public</td>
+<td data-label="Notes">Facebook Page link is optional (skip it). Business is Meta's wording for retailers and service providers</td>
+</tr>
+<tr>
+<td class="kn">2</td>
+<td class="ct"><strong>Facebook Page</strong></td>
+<td data-label="Create it"><a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank">facebook.com</a> &gt; Pages &gt; Create (<a href="https://www.facebook.com/help/104002523024878" rel="noopener noreferrer" target="_blank">help</a>)</td>
+<td data-label="Prerequisite, as stated">Any Facebook account</td>
+<td data-label="Notes">Not needed to post to Instagram through the API (w1a, w3d). Needed when you start Facebook posting; cross-posting from Instagram uses it</td>
+</tr>
+<tr>
+<td class="kn">3</td>
+<td class="ct"><strong>Meta Business Suite</strong></td>
+<td data-label="Create it"><a href="https://business.facebook.com/latest" rel="noopener noreferrer" target="_blank">business.facebook.com/latest</a></td>
+<td data-label="Prerequisite, as stated">Facebook login</td>
+<td data-label="Notes">Free scheduling for Facebook and Instagram</td>
+</tr>
+<tr>
+<td class="kn">4</td>
+<td class="ct"><strong>Pinterest Business</strong></td>
+<td data-label="Create it"><a href="https://www.pinterest.com" rel="noopener noreferrer" target="_blank">pinterest.com</a>, desktop only (<a href="https://help.pinterest.com/en/business/article/get-a-business-account" rel="noopener noreferrer" target="_blank">help</a>)</td>
+<td data-label="Prerequisite, as stated">An email not already used on Pinterest</td>
+<td data-label="Notes">Business needed to schedule Pins</td>
+</tr>
+<tr>
+<td class="kn">5</td>
+<td class="ct"><strong>YouTube channel, then verify</strong></td>
+<td data-label="Create it"><a href="https://www.youtube.com" rel="noopener noreferrer" target="_blank">youtube.com</a>, then <a href="https://www.youtube.com/verify" rel="noopener noreferrer" target="_blank">youtube.com/verify</a> (<a href="https://support.google.com/youtube/answer/171664" rel="noopener noreferrer" target="_blank">help</a>)</td>
+<td data-label="Prerequisite, as stated">Phone number for the verification code</td>
+<td data-label="Notes">Verification unlocks Shorts custom thumbnails (Studio on a computer only)</td>
+</tr>
+<tr>
+<td class="kn">6</td>
+<td class="ct"><strong>TikTok, then Business</strong></td>
+<td data-label="Create it"><a href="https://www.tiktok.com" rel="noopener noreferrer" target="_blank">tiktok.com</a></td>
+<td data-label="Prerequisite, as stated">Phone, email or third-party login</td>
+<td data-label="Notes"><strong>Create the account now to hold the handle; post from month 3.</strong> Business gives the Commercial Music Library; scheduling is 10 days ahead on desktop (TikTok's old undated blog; 30 days is a snippet, <code class="tag warn">need review</code>)</td>
+</tr>
+<tr>
+<td class="kn">7</td>
+<td class="ct"><strong>Threads</strong> (optional mirror)</td>
+<td data-label="Create it"><a href="https://www.threads.com" rel="noopener noreferrer" target="_blank">threads.com</a></td>
+<td data-label="Prerequisite, as stated">Sign in with Instagram or Facebook</td>
+<td data-label="Notes">Cut-down mirror only</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Not yet:</strong> a Meta developer account and app (Tier C only; needs a phone and email code, <a href="https://developers.facebook.com/async/registration" rel="noopener noreferrer" target="_blank">developers.facebook.com/async/registration</a>); Etsy and Shopify (separate project).</p>
+<h3>Phase 2: set up the Instagram profile (30 minutes)</h3>
+<ul>
+<li><strong>Name field and bio carry the search keywords.</strong> Instagram Search matches handle, Name, bio, captions, hashtags and places; keywords in the caption count, in comments they do not (<code class="tag good">verified</code>, 2021 Instagram post). A starting Name: "Holliewood &amp; Vine | Vintage lamps &amp; decor" (<code class="tag plain">inferred</code>). Never "interior design."</li>
+<li><strong>Link in bio:</strong> the site's link-in-bio page (Codex builds it; see the handoff). Handle and link limits were not verified; do not count on a specific number.</li>
+<li><strong>Hashtags: up to 5 per post</strong> (Help Center, <code class="tag good">verified</code>); 3 to 5 niche tags, none generic.</li>
+<li><strong>Check Settings &gt; Account status</strong> weekly. It shows recommendation eligibility.</li>
+<li><strong>Audio:</strong> open Audio in the Reels camera on the real account and see what appears. Meta's licensed library is "personal, non-commercial" and some business accounts lack it; the Sound Collection (14,000+ tracks) is commercial-safe (<code class="tag good">verified</code>, w1a, w3c). The four Kevin MacLeod tracks already chosen in <code>docs/music-and-lights-notes.md</code> need a visible credit.</li>
+</ul>
+<h3>Phase 3: the first shoot (90 minutes, one phone)</h3>
+<p>Full settings table, reflection rules and the 34-clip shot list: <a href="#appx-d">Appendix D</a>. The essentials:</p>
+<ul>
+<li><strong>iPhone settings:</strong> Settings &gt; Camera &gt; Formats &gt; Most Compatible; 1080p at 30 fps (4K30 for hero clips you may crop); Auto FPS off; Lock White Balance on; HDR Video off; lock exposure on a mid-tone wall and dim the neon (<code class="tag good">verified</code> settings, chosen values <code class="tag plain">inferred</code>).</li>
+<li><strong>Mirrors, glass and the mirror ball:</strong> shoot off-axis, farther back, with black foam board where the reflection falls. This is what keeps Hollie and the phone out of frame.</li>
+<li><strong>One shoot makes the four weeks:</strong> about 34 clips cover the Instagram posts, TikTok re-cuts and Pin stills (<code class="tag plain">inferred</code>; nobody has timed it).</li>
+<li><strong>Gear:</strong> Kit A <strong>$78.97</strong> (desk mount $29.99, flexible tripod $25.99, bi-colour light $22.99) or Kit B <strong>$178.94</strong> on sale, $188.94 at list (adds overhead stand $44.99, 180 cm light stand $34.99, two RGB61 lights at $24.99 sale, $29.99 list). All six prices re-read 2026-10-29; the DS034 showed 3 in stock; free shipping banner over $50 (Florida shipping not tested). Links are in <a href="#s7">section 7</a>. <strong>Skip:</strong> ring lights, softboxes, polarizers, any gimbal before month two. I dropped the gimbal: the $149 DJI price never existed on a DJI page.</li>
+</ul>
+<h3>Phase 4: edit and post (the first four weeks)</h3>
+<ul>
+<li><strong>Edit in Instagram Edits</strong> (free; "4K, no watermark"; auto captions; iOS 16.3+; in-app purchases exist but their prices were not read). <strong>Do not use CapCut's library music</strong>: its Sounds are non-commercial only (<code class="tag good">verified</code>, CapCut licence updated 2026-01-22). Export clean: no watermark, no letterbox, never re-upload a clip.</li>
+<li><strong>Cadence:</strong> Instagram's FAQ says the greatest follower growth goes to accounts posting <strong>10 or more reels a month</strong>; Buffer's 2.1-million-post study says <strong>3 to 5 feed posts a week</strong> (<code class="tag good">verified</code>/<code class="tag plain">study</code>, vendor). The old 4-week skeleton had 7 to 9 reels, so add 2 to 3 reels cut from the same footage. Carousels matter: a 21.6-million-post vendor dataset has carousels leading views at every follower tier (<code class="tag plain">vendor claim</code>, w1c). Add audio to every carousel (Instagram says so, <code class="tag good">verified</code>).</li>
+<li><strong>Hooks:</strong> 11 of 15 sampled reels put a text hook on screen by about 1 second, median 7 words; 9 of 15 had no speech (n=15, <code class="tag plain">inferred</code> pattern). 30 hooks, 12 series formats, caption formulas and 10 call-to-action lines that obey <a href="#s2">section 2</a> are in <a href="#appx-a">Appendix A</a>.</li>
+<li><strong>Ranking, from Instagram itself:</strong> watch time, likes per reach and sends per reach, with watch time most important for both followers and non-followers (Mosseri, 2025-01-21, transcript read). Five gates to be shown to non-followers: no watermarks, add audio, 3 minutes or less, original, good account status. Early reactions do <strong>not</strong> boost a post (<code class="tag good">verified</code>).</li>
+<li><strong>When to post:</strong> run the four-week test in <a href="#appx-e">Appendix E</a> (16 posts, four slots, four formats). At zero followers it mostly measures noise, so treat it as a screen to retest. Trial Reels need 200 followers; Insights' "times your followers are active" needs 100.</li>
+<li><strong>Collab posts and product tags cannot be scheduled</strong> (<code class="tag good">verified</code>): post those live.</li>
+</ul>
+<h3>Phase 5: covers</h3>
+<p>One 1080x1920 master with the key content inside x 90 to 990, y 420 to 1500; that survives the 3:4 grid crop and the 4:5 feed crop (crop numbers are <code class="tag plain">vendor claim</code>). Pinterest gets its own 1000x1500 file. Six templates with coordinates, type scale and contrast table: <a href="#appx-c">Appendix C</a>. Two fixes before anyone builds it: template 1's top label sits at y 330, outside that safe square, and a blind <code>object-fit: cover</code> crop can keep the switch or a hanger in a lamp shot, so each listing needs a focal box. <strong>Decisions:</strong> the Gone stamp in site pink <code>#e5a6b4</code> (7.18:1 on burgundy) or sampled neon <code>#e33fa6</code> (3.8:1, large stamps only); Hollie's face yes or no; a lighter-ground Pin to A/B (one vendor set claims dark loses 38% of saves).</p>
+<p>Click evidence is thin everywhere: no controlled Instagram or TikTok cover study exists in what I found. At this volume, rotate templates and trust only gaps of about 2x.</p>
+<h3>Phase 6: the other platforms (about 1.75 to 2 extra hours a week for three)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Platform</th>
+<th>What to do</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">Rank 1</td>
+<td class="ct"><strong>Pinterest</strong></td>
+<td data-label="What to do">Plain Pins that link to real pages; keyworded boards; schedule up to 30 days ahead, 10 queued</td>
+<td data-label="Gate">Product Pins are not allowed for pre-owned goods (<code class="tag good">verified</code>), and a real URL per piece does not exist yet. No Pins to sample listings. Seasonal Pins need to be live 4 to 6 weeks early (Pinterest's own rule)</td>
+</tr>
+<tr>
+<td class="kn">Rank 2</td>
+<td class="ct"><strong>YouTube Shorts</strong></td>
+<td data-label="What to do">Same vertical cuts; custom 9:16 thumbnail in Studio on a computer</td>
+<td data-label="Gate">Verified channel. Shorts cannot be A/B tested. The best verified vintage-lamp numbers are here (Crazy Lamp Lady, 309K subscribers; one 72-second Short at 23,394 views), but from a reseller audience</td>
+</tr>
+<tr>
+<td class="kn">Rank 3</td>
+<td class="ct"><strong>Facebook Page</strong></td>
+<td data-label="What to do">Native cross-post of what you post; no links in captions performs best (Meta's guidance)</td>
+<td data-label="Gate">A Page. Avoid third-party watermarks</td>
+</tr>
+<tr>
+<td class="kn">Rank 4</td>
+<td class="ct"><strong>TikTok</strong></td>
+<td data-label="What to do">Month 3</td>
+<td data-label="Gate">Business account for music. No lane for these goods in TikTok Shop; content only. Own-app posting is private-only (below)</td>
+</tr>
+<tr>
+<td class="kn">Skip</td>
+<td class="ct">Whatnot (auctions, lawyer), Poshmark, Depop, Lemon8, Facebook Groups (claims by comment), Marketplace except shipped checkout, Nextdoor except for Hire Hollie</td>
+<td data-label="What to do"></td>
+<td data-label="Gate"></td>
+</tr>
+</tbody>
+</table></div>
+<h3>Phase 7: add the scheduler (week 2)</h3>
+<p><strong>Buffer.</strong> Sign up free: <a href="https://login.buffer.com/signup?product=buffer&amp;plan=free&amp;cycle=year" rel="noopener noreferrer" target="_blank">login.buffer.com/signup?product=buffer&amp;pla…</a>.</p>
+<ul>
+<li>Free: 3 channels, 10 scheduled posts per channel, API (1 key) and MCP on the free plan. Essentials: <strong>$5 per channel a month billed yearly, $6 billed monthly</strong>; four channels is $20 or $24 (<code class="tag plain">inferred</code> from the per-channel rate). Team: $10 or $12 per channel.</li>
+<li>Reels yes (3 seconds to 15 minutes), carousels in the app, alt text on static images. <strong>No custom cover upload</strong>: only a frame pick. Workaround from Buffer's own help: bake the cover into the first frame. Own-API posting does support covers.</li>
+<li>Music on Posts and Stories, stickers, product tags and Story links fall back to a phone reminder, not an auto-post. Native approval workflow is Team only; the MCP leaves posts as drafts, so "you are always the last step."</li>
+<li>Channel pick on Free: Instagram, Pinterest, and one of TikTok or YouTube; Facebook can ride native cross-posting.</li>
+</ul>
+<p><strong>Alternatives, compared honestly:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Price (4 channels, 2026-10-29)</th>
+<th>API / MCP</th>
+<th>Why or why not</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct"><strong>Buffer</strong></td>
+<td data-label="Price (4 channels, 2026-10-29)">$0 (3 ch) or $20 yearly / $24 monthly</td>
+<td data-label="API / MCP">API and MCP on every plan</td>
+<td data-label="Why or why not">Best fit for Claude and Codex</td>
+</tr>
+<tr>
+<td class="ct">Postiz Cloud</td>
+<td data-label="Price (4 channels, 2026-10-29)">$29 monthly, $23 yearly (5 channels, 7-day trial)</td>
+<td data-label="API / MCP">API, CLI, MCP on every plan</td>
+<td data-label="Why or why not">Strong open-source scheduler with a hosted tier. Self-hosting (9 containers) still needs your own Meta and TikTok apps and has open Instagram connect issues. Telemetry not assessed</td>
+</tr>
+<tr>
+<td class="ct">Metricool Starter</td>
+<td data-label="Price (4 channels, 2026-10-29)">"From $20" yearly, $25 monthly; rises with brands</td>
+<td data-label="API / MCP">MCP yes; API only on Advanced from $53</td>
+<td data-label="Why or why not">Free tier is 20 posts a month (about 48 needed)</td>
+</tr>
+<tr>
+<td class="ct">Publer</td>
+<td data-label="Price (4 channels, 2026-10-29)">Free 3 accounts; paid per account (about $16 yearly for four, <code class="tag plain">inferred</code>)</td>
+<td data-label="API / MCP">API and MCP <strong>Business only</strong></td>
+<td data-label="Why or why not">Needs the top plan for any Claude hookup</td>
+</tr>
+<tr>
+<td class="ct">Zernio (formerly Late)</td>
+<td data-label="Price (4 channels, 2026-10-29)">$12 for four accounts (usage-based)</td>
+<td data-label="API / MCP">API is the product</td>
+<td data-label="Why or why not">Newer; whether it runs on its own approved apps was not verified</td>
+</tr>
+<tr>
+<td class="ct">Later, Hootsuite, Planoly</td>
+<td data-label="Price (4 channels, 2026-10-29)">Trials or $14 and up</td>
+<td data-label="API / MCP">Not read</td>
+<td data-label="Why or why not">Skipped</td>
+</tr>
+</tbody>
+</table></div>
+<p>TikTok rule (w2c): unaudited apps post <code>SELF_ONLY</code>, and TikTok's guidelines name "a utility tool to help upload contents to the account(s) you or your team manages" as not acceptable. So public TikTok posting goes <strong>through a scheduler that holds the approved app</strong>, not your own app. <strong>Untested:</strong> whether Buffer Free actually publishes a public TikTok from a Business account is smoke test SA-1 in the handoff; Buffer's own posts guide omits TikTok while its MCP page includes it. Until SA-1 passes, post TikTok by hand in TikTok Studio.</p>
+<h3>Phase 8: replies</h3>
+<p><strong>Month 1: by hand.</strong> 30 comments a week is a few minutes. Use the reply wording in <a href="#appx-a">Appendix A</a> (the "is this available?" and "price?" replies).</p>
+<p><strong>Tools, when you want comment-to-DM:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Price</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct"><strong>InstantDM Legend Pro</strong></td>
+<td data-label="Price">$9.99 a month billed yearly (about $12 monthly, snippet). Free: 5 post automations, 500 DMs</td>
+<td data-label="Verdict">Cheapest working option. API only on Trendsetter ($24.99 yearly)</td>
+</tr>
+<tr>
+<td class="ct"><strong>ManyChat Essential</strong></td>
+<td data-label="Price">$14 a month billed yearly ($17 monthly, snippet). Free: 25 contacts, too few</td>
+<td data-label="Verdict">Mature; API only on Advanced ($139)</td>
+</tr>
+<tr>
+<td class="ct">CommentSold CommentChat</td>
+<td data-label="Price">Bundled in Starter <strong>$149 a month plus 6% of sales</strong></td>
+<td data-label="Verdict">Worst fit: a live-selling and auction platform</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both cheap tools hold Meta's approved app, so you need no entity of your own (their entity requirements were not checked). <strong>None offers a draft-approval queue</strong>, so "Hollie approves every reply" means your own pipeline or doing it by hand. Instagram's own Meta Business Agent (free since June 2026) advertises "Close sales" and breaks API sends when it owns a thread: do not turn it on. Unofficial libraries (instagrapi, instagram-private-api) risk a ban on your one brand account: no.</p>
+<h3>Phase 9: automation (Tier C)</h3>
+<p>Build order by payoff (<code class="tag plain">inferred</code>, from w2g and w2e): 1. Claude drafts captions from a clip and one line (Haiku, banned-words lint). 2. Cover render. 3. The edit list and ffmpeg render. 4. The metrics sheet. 5. Own-API Instagram and Facebook publishing. 6. Reply drafts into an approval queue. The full spec, schema, smoke tests and corrections: <code>docs/codex-handoff-social-autopilot.md</code>.</p>
+<h3>Phase 10: the weekly rhythm</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Day</th>
+<th>What</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Shoot day (every 4 weeks)</td>
+<td data-label="What">90-minute batch, share clips to the ingest folder</td>
+<td data-label="Time">90 min</td>
+</tr>
+<tr>
+<td class="ct">Weekly</td>
+<td data-label="What">Approve the queued week (5 feed posts, 3 Pins, 3 Shorts); fix anything flagged</td>
+<td data-label="Time">30 to 45 min</td>
+</tr>
+<tr>
+<td class="ct">Drop day</td>
+<td data-label="What">Add Story link sticker; reply to comments</td>
+<td data-label="Time">15 min</td>
+</tr>
+<tr>
+<td class="ct">Monthly</td>
+<td data-label="What">Read Insights, Account status, the test sheet; refresh the calendar</td>
+<td data-label="Time">30 min</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="sec" id="s5"><h2><span class="num">5</span> What other vintage and designer accounts do</h2><p>d1 already studied 12 vintage accounts (<code>research/round-d/d1-social-video.md</code>). The new lanes found:</p>
+<ul>
+<li><strong>Revenue split is unknown.</strong> No survey divides vintage revenue between Instagram, marketplaces and an own site. The one dealer figure is Dobbin St. Co-Op: Instagram over 50% of revenue (Curbed, Feb 2021, a pandemic year, one shop). Growth stories are mostly 2018 to 2021 winner profiles; none gives time to the first 1K or to steady sales. Treat them as examples, not benchmarks.</li>
+<li><strong>Models that fit your rules, ranked (w1f):</strong> a signup-only "hunt list" with no listing link until stock exists; a Vintage Market Days booth; Chairish if offers can be turned off (its Trade program's "up to 50% off" conflicts with no-discounts). Examples with evidence: an $85 lamp-wiring workshop sold out at a Philadelphia vintage shop (one case); a flipper reports 80% of income from YouTube and sponsors (one anecdote); antique-mall booths run a median $275 a month plus 7 to 15% at 21 of 35 malls (vendor with an app); four South Florida rental houses already exist. Prop and event rental needs your ruling on "no rentals in v1."</li>
+<li><strong>Designers and stylists (w1g):</strong> every service seller I could read routes inquiries to its own site, not Instagram DMs; referrals lead and Instagram is portfolio and warm-up; two of three small designers have more Pinterest followers than Instagram. Your written Hire Hollie prices sit inside public bands, with two review items: Casting Call at $95 is under the $150 sourcing floor at two competitors, and nobody publishes a rush fee.</li>
+<li><strong>Funnel stack for Hire Hollie:</strong> <a href="http://Cal.com" rel="noopener noreferrer" target="_blank">Cal.com</a> Free + Stripe + Tally Free is $0 a month in subscriptions, but <strong>each paid booking costs Stripe's 2.9% + 30 cents</strong> (<code class="tag good">verified</code>), and <a href="http://Cal.com" rel="noopener noreferrer" target="_blank">Cal.com</a> and Tally keep their own branding on Free. Step up: Dubsado $35 or $55 a month, $335 or $525 a year; HoneyBook $29 a month billed yearly. Worth it past about four projects a month (<code class="tag plain">inferred</code>).</li>
+<li><strong>Google Business Profile</strong> needs a service area (up to 20, about two hours of driving), so it fits only if Hollie really visits homes.</li>
+<li><strong>Show proof without clients:</strong> her own corner, mood boards, the free Screen Test as content. Use a staged call until a lawyer reads the recording and likeness rules.</li>
+</ul>
+</section>
+<section class="sec" id="s6"><h2><span class="num">6</span> What the full pipeline costs, month by month</h2><p>At the reference load: one brand, 5 Instagram and Facebook posts a week, 3 TikTok videos, 3 Pins, about 30 comments a week.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Cost</th>
+<th>Source and caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Claude drafting, Haiku 5.5</td>
+<td data-label="Cost">About $0.27 a month ($2.69 at 10x)</td>
+<td data-label="Source and caveat">$0.10 in / $0.50 out per million tokens, <strong>only up to 100K-token prompts</strong>; $0.50 / $2.50 above (<code class="tag good">verified</code>). Sonnet 5.5 is $2 / $10. Set a limit at <a href="https://platform.claude.com/settings/billing" rel="noopener noreferrer" target="_blank">platform.claude.com/settings/billing</a></td>
+</tr>
+<tr>
+<td class="ct">Media runner (GitHub Actions, private repo)</td>
+<td data-label="Cost">About $1.44 of the <strong>$12 a month GitHub Free includes</strong></td>
+<td data-label="Source and caveat">$0.006 a minute, about 240 minutes; the 2,000-minute figure is arithmetic. The runner has no ffmpeg preinstalled, so it installs it</td>
+</tr>
+<tr>
+<td class="ct">Control plane (Supabase)</td>
+<td data-label="Cost">Free, or Pro from $25</td>
+<td data-label="Source and caveat">Free projects pause after 7 days of low activity; Edge Functions get 2 s CPU; Free storage is 50 MB a file. Whether a cron counts as activity is <code class="tag warn">need review</code>, so Pro is the safe choice</td>
+</tr>
+<tr>
+<td class="ct">Notifications</td>
+<td data-label="Cost">ntfy free; Pushover $4.99 one-time per platform</td>
+<td data-label="Source and caveat">Pushover has no action buttons; ntfy has <code>http</code> buttons (iOS support stated on its docs)</td>
+</tr>
+<tr>
+<td class="ct">Scheduler for TikTok and Pinterest</td>
+<td data-label="Cost">Buffer $0 to $24</td>
+<td data-label="Source and caveat"><a href="#s4">Section 4</a>, phase 7</td>
+</tr>
+<tr>
+<td class="ct">Own Meta app</td>
+<td data-label="Cost">$0</td>
+<td data-label="Source and caveat">Needs Business Verification only to go Live</td>
+</tr>
+<tr>
+<td class="ct">Vercel</td>
+<td data-label="Cost">$0 if renders stay off it</td>
+<td data-label="Source and caveat">Hobby is non-commercial; Pro $20</td>
+</tr>
+<tr>
+<td class="ct"><strong>Approximate total</strong></td>
+<td data-label="Cost"><strong>$0 to about $50 a month</strong></td>
+<td data-label="Source and caveat">Plus the build hours in <a href="#s0">section 0</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Claude and Codex plans (for building):</strong> Claude Pro $17 a month billed yearly ($20 monthly), Max from $100; ChatGPT Plus $20 with Codex, Pro from $100. Cloud scheduled tasks run hourly at most and draw on the subscription. <code>claude --bare -p</code> refuses subscription login; non-bare <code>claude -p</code> with a setup token is the documented subscription route. Anthropic's terms ask product builders to use API keys, so an unattended shop pipeline should use an API key with a limit (<code class="tag warn">need review</code> whether it counts as ordinary individual use). Max API credits do not cover Claude Code.</p>
+</section>
+<section class="sec" id="s7"><h2><span class="num">7</span> Every signup and price in one place</h2><p>All read 2026-10-29. "Yr" is billed yearly; "mo" is billed monthly.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Link</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Instagram Edits (iPhone)</td>
+<td data-label="Link"><a href="https://apps.apple.com/us/app/edits-video-editor/id6738967378" rel="noopener noreferrer" target="_blank">apps.apple.com/us/app/edits-video-editor/i…</a></td>
+<td data-label="Price">Free; in-app purchases, items not read</td>
+</tr>
+<tr>
+<td class="ct">Buffer</td>
+<td data-label="Link"><a href="https://login.buffer.com/signup?product=buffer&amp;plan=free&amp;cycle=year" rel="noopener noreferrer" target="_blank">login.buffer.com/signup?product=buffer&amp;pla…</a></td>
+<td data-label="Price">Free; Essentials $5 yr / $6 mo per channel; Team $10 / $12</td>
+</tr>
+<tr>
+<td class="ct">Postiz Cloud</td>
+<td data-label="Link"><a href="https://platform.postiz.com/auth" rel="noopener noreferrer" target="_blank">platform.postiz.com/auth</a></td>
+<td data-label="Price">$29 mo, $23 yr; 7-day trial</td>
+</tr>
+<tr>
+<td class="ct">Metricool</td>
+<td data-label="Link"><a href="https://app.metricool.com/register" rel="noopener noreferrer" target="_blank">app.metricool.com/register</a></td>
+<td data-label="Price">Free; Starter from $20 yr / $25 mo; Advanced from $53 yr / $67 mo</td>
+</tr>
+<tr>
+<td class="ct">Publer</td>
+<td data-label="Link"><a href="https://app.publer.com/users/sign_up" rel="noopener noreferrer" target="_blank">app.publer.com/users/sign_up</a></td>
+<td data-label="Price">Free; Professional $4 yr / $5 mo; Business $8 / $10 (per-account basis is <code class="tag plain">inferred</code>, the slider was not captured)</td>
+</tr>
+<tr>
+<td class="ct">Zernio</td>
+<td data-label="Link"><a href="https://zernio.com/signup" rel="noopener noreferrer" target="_blank">zernio.com/signup</a></td>
+<td data-label="Price">1 to 2 accounts free, 3 to 10 at $6 each</td>
+</tr>
+<tr>
+<td class="ct">InstantDM</td>
+<td data-label="Link"><a href="https://app.instantdm.com/signup" rel="noopener noreferrer" target="_blank">app.instantdm.com/signup</a></td>
+<td data-label="Price">Free; Legend Pro $9.99 yr</td>
+</tr>
+<tr>
+<td class="ct">ManyChat</td>
+<td data-label="Link"><a href="https://app.manychat.com/signup/facebookAuth?channel=instagram" rel="noopener noreferrer" target="_blank">app.manychat.com/signup/facebookAuth?chann…</a></td>
+<td data-label="Price">Free; Essential $14 yr</td>
+</tr>
+<tr>
+<td class="ct">Canva</td>
+<td data-label="Link"><a href="https://www.canva.com/pricing/" rel="noopener noreferrer" target="_blank">canva.com/pricing</a></td>
+<td data-label="Price">Free; Pro $144 yr ($12 a month) or $18 mo</td>
+</tr>
+<tr>
+<td class="ct">Anthropic API console</td>
+<td data-label="Link"><a href="https://platform.claude.com/" rel="noopener noreferrer" target="_blank">platform.claude.com</a></td>
+<td data-label="Price">Haiku 5.5 $0.10 / $0.50, Sonnet 5.5 $2 / $10, Opus 5.5 $4 / $20, Fable 5.1 $10 / $50 per million tokens</td>
+</tr>
+<tr>
+<td class="ct">Claude</td>
+<td data-label="Link"><a href="https://claude.com/pricing" rel="noopener noreferrer" target="_blank">claude.com/pricing</a></td>
+<td data-label="Price">Pro $17 yr / $20 mo; Max from $100</td>
+</tr>
+<tr>
+<td class="ct">Codex / ChatGPT</td>
+<td data-label="Link"><a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">developers.openai.com/codex/pricing</a></td>
+<td data-label="Price">Plus $20; Pro from $100; Go $8</td>
+</tr>
+<tr>
+<td class="ct">Supabase</td>
+<td data-label="Link"><a href="https://supabase.com/pricing" rel="noopener noreferrer" target="_blank">supabase.com/pricing</a></td>
+<td data-label="Price">Free; Pro from $25</td>
+</tr>
+<tr>
+<td class="ct">GitHub Actions</td>
+<td data-label="Link"><a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" rel="noopener noreferrer" target="_blank">docs.github.com/en/billing/concepts/produc…</a></td>
+<td data-label="Price">Free includes $12 a month for private repos</td>
+</tr>
+<tr>
+<td class="ct">Cloudflare R2</td>
+<td data-label="Link"><a href="https://developers.cloudflare.com/r2/pricing/" rel="noopener noreferrer" target="_blank">developers.cloudflare.com/r2/pricing</a></td>
+<td data-label="Price">10 GB, 1M and 10M operations free; then $0.015 per GB-month</td>
+</tr>
+<tr>
+<td class="ct">Vercel</td>
+<td data-label="Link"><a href="https://vercel.com/pricing" rel="noopener noreferrer" target="_blank">vercel.com/pricing</a></td>
+<td data-label="Price">Hobby $0 (non-commercial); Pro $20</td>
+</tr>
+<tr>
+<td class="ct">ntfy</td>
+<td data-label="Link"><a href="https://ntfy.sh/" rel="noopener noreferrer" target="_blank">ntfy.sh</a></td>
+<td data-label="Price">Free; Supporter $5 yr / $6 mo</td>
+</tr>
+<tr>
+<td class="ct">Pushover</td>
+<td data-label="Link"><a href="https://pushover.net/pricing" rel="noopener noreferrer" target="_blank">pushover.net/pricing</a></td>
+<td data-label="Price">$4.99 one-time per platform</td>
+</tr>
+<tr>
+<td class="ct">PhotoSync (iPhone)</td>
+<td data-label="Link"><a href="https://apps.apple.com/us/app/photosync-transfer-photos/id415850124" rel="noopener noreferrer" target="_blank">apps.apple.com/us/app/photosync-transfer-p…</a></td>
+<td data-label="Price">Premium $6.49 yr / $0.99 mo; lifetime $24.99 (SKU <code class="tag warn">need review</code>)</td>
+</tr>
+<tr>
+<td class="ct">rclone</td>
+<td data-label="Link"><a href="https://rclone.org/" rel="noopener noreferrer" target="_blank">rclone.org</a></td>
+<td data-label="Price">Free</td>
+</tr>
+<tr>
+<td class="ct"><a href="http://Cal.com" rel="noopener noreferrer" target="_blank">Cal.com</a></td>
+<td data-label="Link"><a href="https://cal.com/pricing" rel="noopener noreferrer" target="_blank">cal.com/pricing</a></td>
+<td data-label="Price">Free; Teams $12 per user yr</td>
+</tr>
+<tr>
+<td class="ct">Stripe</td>
+<td data-label="Link"><a href="https://stripe.com/pricing" rel="noopener noreferrer" target="_blank">stripe.com/pricing</a></td>
+<td data-label="Price">2.9% + 30 cents per card payment</td>
+</tr>
+<tr>
+<td class="ct">Tally</td>
+<td data-label="Link"><a href="https://tally.so/pricing" rel="noopener noreferrer" target="_blank">tally.so/pricing</a></td>
+<td data-label="Price">Free; Pro about $24 yr / $29 mo (<code class="tag plain">inferred</code>)</td>
+</tr>
+<tr>
+<td class="ct">Dubsado</td>
+<td data-label="Link"><a href="https://www.dubsado.com/pricing" rel="noopener noreferrer" target="_blank">dubsado.com/pricing</a></td>
+<td data-label="Price">$35 / $55 mo; $335 / $525 yr</td>
+</tr>
+<tr>
+<td class="ct">HoneyBook</td>
+<td data-label="Link"><a href="https://www.honeybook.com/pricing" rel="noopener noreferrer" target="_blank">honeybook.com/pricing</a></td>
+<td data-label="Price">$29 / $49 / $109 yr</td>
+</tr>
+<tr>
+<td class="ct">Neewer gear</td>
+<td data-label="Link"><a href="https://www.neewer.com/products/neewer-basics-ds034-camera-desk-mount-stand-with-c-clamp-phone-holder-66610105" rel="noopener noreferrer" target="_blank">DS034</a>, <a href="https://www.neewer.com/products/neewer-tp34-flexible-phone-tripod-66610307" rel="noopener noreferrer" target="_blank">TP34</a>, <a href="https://www.neewer.com/products/neewer-nl-36ai-camera-soft-light-66600903" rel="noopener noreferrer" target="_blank">NL-36AI</a>, <a href="https://www.neewer.com/products/neewer-ds026-overhead-phone-tripod-stand-66609390" rel="noopener noreferrer" target="_blank">DS026</a>, <a href="https://www.neewer.com/products/neewer-basics-st180b-180cm-photography-light-stand-66609099" rel="noopener noreferrer" target="_blank">ST180B</a>, <a href="https://www.neewer.com/products/neewer-rgb61-cri-97-rgb-video-light-360-full-color-led-camera-light-with-3-cold-shoe-66600609" rel="noopener noreferrer" target="_blank">RGB61</a></td>
+<td data-label="Price">$29.99, $25.99, $22.99, $44.99, $34.99, $24.99 sale ($29.99 list)</td>
+</tr>
+<tr>
+<td class="ct">Meta developer account (Tier C)</td>
+<td data-label="Link"><a href="https://developers.facebook.com/async/registration" rel="noopener noreferrer" target="_blank">developers.facebook.com/async/registration</a></td>
+<td data-label="Price">Free</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="sec" id="s8"><h2><span class="num">8</span> The calendar, in three lines</h2><p>Full table with gates is <a href="#appx-b">Appendix B</a>. <strong>November is a setup month</strong>: Pinterest asks for seasonal Pins 4 to 6 weeks early, so a new account opened in November misses Christmas. <strong>Valentine's is the first moment you can hit on time</strong> (Pins live Dec 20 to Jan 3). Verified dates: USPS lower-48 send-by dates Ground Advantage Dec 17, Priority Dec 18, Express Dec 19; Design Miami Dec 1 to 6, Art Basel Miami Beach Dec 4 to 6; Palm Beach Show Feb 11 to 16, 2027; Salone del Mobile Apr 13 to 18; High Point Market Apr 10 to 14 and Oct 23 to 27. Search demand for lamps is winter-high and spring-low (Jan to Feb beat Apr to Jun in each of four years, by 12 to 32%); disco ball peaks in December (US weekly Google Trends, small-number data). Pinterest Predicts 2026 names "Neo Deco," which fits the room (<code class="tag plain">vendor claim</code>); the 2027 edition is expected around Dec 9, 2026.</p>
+</section>
+<section class="sec" id="s9"><h2><span class="num">9</span> Open conflicts and tests</h2><p><strong>The Meta entity question (w2d vs w2c, arbitrated by w3d).</strong> Meta's own pages contradict each other.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Operation (your own account)</th>
+<th>Without a legal entity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Publish Reels, carousels, Stories</td>
+<td data-label="Without a legal entity"><strong>Yes.</strong> Standard Access, App Review "not required" (<code class="tag good">verified</code>). Test posts in Development mode are visible to role users only</td>
+</tr>
+<tr>
+<td class="ct">Reply to, hide, delete a comment</td>
+<td data-label="Without a legal entity">Yes at Standard Access, but each needs a comment ID</td>
+</tr>
+<tr>
+<td class="ct">Read customers' comments by polling</td>
+<td data-label="Without a legal entity"><strong>Unclear.</strong> No page says non-role commenters' text is withheld or returned</td>
+</tr>
+<tr>
+<td class="ct">Webhooks for customers' comments</td>
+<td data-label="Without a legal entity"><strong>Leaning no.</strong> Setup page: the app must be Live, Advanced Access, and Business Verification "required for production access"; the create-app page requires a Business-Verified business "before you can publish your app"</td>
+</tr>
+<tr>
+<td class="ct">Private reply or DM</td>
+<td data-label="Without a legal entity"><strong>Unclear.</strong> Three Meta pages disagree on Standard Access</td>
+</tr>
+<tr>
+<td class="ct">Counter-quote (Business Verification page)</td>
+<td data-label="Without a legal entity">"If your app will only be used by app users who have a role on the app itself you do not need to complete verification ... all features are always active."</td>
+</tr>
+</tbody>
+</table></div>
+<p>One hour settles it: a throwaway Meta app, a tester account and one non-tester commenting account (nine steps, <code>research/social-2026-10-29/w3d-meta-arbiter.md</code>). <strong>The desk wiki line "our own pages need no review" is true for posting and contested for comment webhooks until the one-hour test; the wiki page will say that, not "wrong".</strong></p>
+<p><strong>Other tests worth an afternoon:</strong></p>
+<ol>
+<li value="1">One real export from your own pipeline and from Edits posted to a throwaway account, to see whether Instagram adds an "AI info" label (Meta's own page says it cannot yet detect other companies' video AI signals, dated 2024, may be stale). Generative fill or upscalers that stamp provenance metadata could label real photos.</li>
+<li value="2">Share one fresh phone clip through Drive, pull it with rclone, and check its resolution. The only clip seen through Drive was 568x320 and nobody knows whether Drive or the download shrank it. If it fails, PhotoSync to SFTP is the fallback.</li>
+<li value="3">Open Audio on the real Business account to see whether the licensed library appears.</li>
+<li value="4">One test upload to settle YouTube: the live page (updated 2026-10-15) says unverified projects are not private-locked and uploads cost 1 unit; older mirrors say otherwise.</li>
+<li value="5">Create one draft through Buffer's MCP from Claude.</li>
+</ol>
+<p><strong>Other open items:</strong> whether "comment LINK" is engagement bait on Instagram; whether the Instagram API limit is 50 or 100 posts a day (plan for 50); how much the Postiz telemetry matters (HyperFrames collects telemetry by default; <code>hyperframes telemetry disable</code> turns it off); the BtbN ffmpeg daily tag <code>autobuild-2026-10-28-19-47</code> is pruned around 2026-11-11, so pin the month-end tag (<code>autobuild-2026-09-30-13-08</code>, SHA-256 digest in w3b) or mirror the tarball by checksum.</p>
+<p><strong>Local tools that already work on the Fedora box without sudo:</strong> a pinned static ffmpeg decodes iPhone H.264 and HEVC (two lanes tested it independently; 4K to 1080p with a burned caption in 9.1 s; a 10.5-second edit-list render in 20 to 31 s, 6 s at <code>veryfast</code>); output carries no GPS, Apple, C2PA or XMP tags in our own code path; an HTML cover renders to 1080x1920 and 1000x1500 in 1.7 s. The Fedora box was off the network from 2026-09-26 to 2026-09-29, so treat it as best-effort. Windows ffmpeg and a GitHub runner are the fallbacks.</p>
+</section>
+<section class="sec" id="s10"><h2><span class="num">10</span> Things I would change in the repo (none done)</h2><ol>
+<li value="1"><code>site/hire.html:121</code> and <code>docs/fabulous-from-online-design.md:87</code>: the 10% multi-room line (decision 6).</li>
+<li value="2">Cover template 1's top label (y 330) and the per-listing focal box (<a href="#appx-c">Appendix C</a>).</li>
+<li value="3">The desk wiki page <code>Chief Of Staff/wiki/social-comment-ai.md</code>: "our own pages need no review" holds for posting; for comment webhooks it is contested until the throwaway-app test.</li>
+<li value="4">The 4-week skeleton in <code>research/round-d/d1-social-video.md</code>: add 2 to 3 reels and carousels (cadence).</li>
+<li value="5">If approval mode B is chosen, <code>docs/dashboard-handoff.md</code>'s "no auto-publish" rule.</li>
+<li value="6">Pages the posts point to: piece-number pages (<code>/p/&lt;n&gt;</code>), a link-in-bio page, a sold archive (Codex builds these; handoff).</li>
+</ol>
+</section>
+<section class="sec" id="s11"><h2><span class="num">11</span> X verified, Y need review</h2><ul>
+<li>Instagram scheduling: 25 posts a day, 30 days ahead, any public account (Help Center, verified) vs 75 days, professional only (a 2022 snippet).</li>
+<li>Hashtags: up to 5 (Help Center, verified) vs 30 (older snippet of the same article).</li>
+<li>Instagram API publish limit: 50 (endpoint reference) vs 100 (guide).</li>
+<li>Posting time: five studies disagree by up to 16 hours; Instagram says audience-awake time matters and early reactions do not boost.</li>
+<li>TikTok scheduling: 10 days (TikTok's old blog, undated) vs 30 (snippet).</li>
+<li>Buffer carousels: up to 10 images (marketing page) vs 20 (help article). Buffer "Custom video covers" (pricing page) vs "can't upload a separate image" (help): probably the frame picker.</li>
+<li>Pinterest bottom margin: 790 px organic and 440 px ads, both verified, need review.</li>
+<li>Satori: README says WOFF2 and Grid work; the Vercel OG docs say no. Unresolved.</li>
+<li>CapCut yearly: $89.99 (App Store) vs $179.99 (<a href="http://capcut.com" rel="noopener noreferrer" target="_blank">capcut.com</a>, "reference only").</li>
+<li>Tally Pro $24 vs $29 is probably yearly vs monthly (<code class="tag plain">inferred</code>).</li>
+<li>The Meta webhook, polling and private-reply questions in <a href="#s9">section 9</a>.</li>
+<li>"Sends weigh 3 to 5x likes" and "watch time 35%, saves 25%, DM shares 20%" have no primary source: discard.</li>
+</ul>
+</section>
+<section class="sec" id="s12"><h2><span class="num">12</span> Source index</h2><p>Lane reports in <code>research/social-2026-10-29/</code>: w1a Instagram rules and timing; w1b other platforms; w1c hooks (n=15 reels); w1d audience and calendar; w1e covers; w1f dealers; w1g designers; w1h capture and ingest; w2a editing; w2b cover automation; w2c publishing APIs; w2d replies; w2e GitHub scan; w2f Hugging Face scan; w2g runtime; w3a to w3d live re-checks. Raw captures are in <code>raw/</code>. Earlier work: <code>research/round-d/d1-social-video.md</code>, <code>docs/round-d-synthesis.md</code>, <code>Chief Of Staff/wiki/social-comment-ai.md</code>.</p>
+<p><strong>What this research could not reach:</strong> Instagram and TikTok profile pages, the Instagram terms page, Meta's Business Verification help pages, and any measured engagement for the accounts studied (the only engagement numbers are 19 reels read through <code>clipfeed</code>). Measured data would need Apify (a few dollars), which I did not spend.</p>
+</section>
+</div>
+
+<div class="part" id="banks">
+  <h2>Part 2. The banks</h2>
+  <div class="part-note"><ul>
+<li>Compiled 2026-10-29 from the lane reports w1c, w1d, w1e, w1h, w1a, w2d and w2b in <code>research/social-2026-10-29/</code>; no web, no new claims, to sit beside the manual written by the parent session.</li>
+<li>Tables, lists and wording are copied verbatim with their evidence tags, source URLs and "X verified, Y need review" notes; where two reports disagree both are shown and marked "need review".</li>
+<li>All banks are drafts for Hollie's approval: nothing here is posted until she approves it (or approves by exception, Ricky's open question).</li>
+<li>Fixed constraints: no claims by DM or comment; no bidding; no discounts or codes; no showroom language; Hollie is she/her; "style", never "interior design"; the mirror ball is "sometimes" a gift, never promised; real photos of real items only.</li>
+<li>Gates: the shop's accounts do not exist yet, and no product-link post goes out until real stock exists (A = accounts only, S = accounts plus stock).</li>
+</ul>
+</div>
+  <p><button type="button" class="btn" id="toggle-banks">Open all banks</button></p>
+  <details class="bank" id="appx-a"><summary><span class="num">A</span> <span>Hook bank, series formats, captions, CTAs and canned replies</span></summary><div class="bank-body"><p>Source: <a href="http://w1c-content-hooks.md" rel="noopener noreferrer" target="_blank">w1c-content-hooks.md</a> sections 4, 5, 6, 7 and 10 (accessed 2026-10-29), with the link-rule context from w1c TL;DR, <a href="http://w2d-reply-dm.md" rel="noopener noreferrer" target="_blank">w2d-reply-dm.md</a> TL;DR 4 and section 1, and <a href="http://w1a-ig-rules-timing.md" rel="noopener noreferrer" target="_blank">w1a-ig-rules-timing.md</a> TL;DR 4 (all accessed 2026-10-29).</p>
+<p>Tag note: <code class="tag plain">observed</code> = measured from this lane's own captures (15 reels, 2026-10-29), equivalent to <code class="tag plain">study (n=15, own capture)</code>.</p>
+<h3>A.1 30 hook templates (w1c section 4)</h3>
+<p>Text on screen at frame 0; hands-first; <code class="tag plain">inferred</code> from the sample, sources in brackets.</p>
+<p>Rules: 3-10 words; "Gone", never "sold"; no "visit", "in store", "come by"; "style", never "interior design"; no safety, electrical or price claims.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Hook line</th>
+<th>Shot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">1</td>
+<td class="ct">One click.<button class="copy" data-copy="One click." type="button">Copy</button></td>
+<td data-label="Shot">Hand turns the lamp on; glow by second 3 [Esthetic Vintage, Ella Grace]</td>
+</tr>
+<tr>
+<td class="kn">2</td>
+<td class="ct">Wait for the glow.<button class="copy" data-copy="Wait for the glow." type="button">Copy</button></td>
+<td data-label="Shot">Dim room, switch, light up</td>
+</tr>
+<tr>
+<td class="kn">3</td>
+<td class="ct">The ring test.<button class="copy" data-copy="The ring test." type="button">Copy</button></td>
+<td data-label="Shot">Hand flicks a glass; sound on [Redeux Style]</td>
+</tr>
+<tr>
+<td class="kn">4</td>
+<td class="ct">Hollie's hands. A [decade] [object].<button class="copy" data-copy="Hollie's hands. A [decade] [object]." type="button">Copy</button></td>
+<td data-label="Shot">Hands lift and turn it</td>
+</tr>
+<tr>
+<td class="kn">5</td>
+<td class="ct">Turn it over.<button class="copy" data-copy="Turn it over." type="button">Copy</button></td>
+<td data-label="Shot">Hand flips the piece to show base and mark</td>
+</tr>
+<tr>
+<td class="kn">6</td>
+<td class="ct">Weigh it.<button class="copy" data-copy="Weigh it." type="button">Copy</button></td>
+<td data-label="Shot">Hand lifts brass or cut glass, no talking</td>
+</tr>
+<tr>
+<td class="kn">7</td>
+<td class="ct">Fancy some [Hollywood glamour]?<button class="copy" data-copy="Fancy some [Hollywood glamour]?" type="button">Copy</button></td>
+<td data-label="Shot">Object, slow push-in [A Hundred Stories]</td>
+</tr>
+<tr>
+<td class="kn">8</td>
+<td class="ct">Real or reproduction? Check the seam.<button class="copy" data-copy="Real or reproduction? Check the seam." type="button">Copy</button></td>
+<td data-label="Shot">Two pieces, hand finds the seam [More Than a Fad]</td>
+</tr>
+<tr>
+<td class="kn">9</td>
+<td class="ct">Why does this lamp click three times?<button class="copy" data-copy="Why does this lamp click three times?" type="button">Copy</button></td>
+<td data-label="Shot">Hand cycles the switch [Esthetic Vintage caption]</td>
+</tr>
+<tr>
+<td class="kn">10</td>
+<td class="ct">How do you know it's [cut glass]?<button class="copy" data-copy="How do you know it's [cut glass]?" type="button">Copy</button></td>
+<td data-label="Shot">Question text, hand test</td>
+</tr>
+<tr>
+<td class="kn">11</td>
+<td class="ct">What is this?<button class="copy" data-copy="What is this?" type="button">Copy</button></td>
+<td data-label="Shot">Odd object, hands only, answer in the caption</td>
+</tr>
+<tr>
+<td class="kn">12</td>
+<td class="ct">Buy the ugly lamp.<button class="copy" data-copy="Buy the ugly lamp." type="button">Copy</button></td>
+<td data-label="Shot">Before shot, hands [snippet DZCx7tqRpuB]</td>
+</tr>
+<tr>
+<td class="kn">13</td>
+<td class="ct">I found this [rare thing] in [unlikely place].<button class="copy" data-copy="I found this [rare thing] in [unlikely place]." type="button">Copy</button></td>
+<td data-label="Shot">Found-story label card [snippet Dbk_XEFvtDJ]</td>
+</tr>
+<tr>
+<td class="kn">14</td>
+<td class="ct">How to read a vintage lamp in 20 seconds.<button class="copy" data-copy="How to read a vintage lamp in 20 seconds." type="button">Copy</button></td>
+<td data-label="Shot">Reel or carousel: base, socket, cord, shade, drop</td>
+</tr>
+<tr>
+<td class="kn">15</td>
+<td class="ct">Words that find good [lamps].<button class="copy" data-copy="Words that find good [lamps]." type="button">Copy</button></td>
+<td data-label="Shot">Text-only how-to [Arvin Olano, 4,984 likes]</td>
+</tr>
+<tr>
+<td class="kn">16</td>
+<td class="ct">What "good condition" means here.<button class="copy" data-copy='What "good condition" means here.' type="button">Copy</button></td>
+<td data-label="Shot">Close-up of one honest flaw</td>
+</tr>
+<tr>
+<td class="kn">17</td>
+<td class="ct">Three things on a shelf: the triangle.<button class="copy" data-copy="Three things on a shelf: the triangle." type="button">Copy</button></td>
+<td data-label="Shot">Hands build a group of three [Alexandra England]</td>
+</tr>
+<tr>
+<td class="kn">18</td>
+<td class="ct">How it leaves.<button class="copy" data-copy="How it leaves." type="button">Copy</button></td>
+<td data-label="Shot">Hands wrap pink glass; ASMR [BC Modern]</td>
+</tr>
+<tr>
+<td class="kn">19</td>
+<td class="ct">Wrapping [pink glass]. No talking.<button class="copy" data-copy="Wrapping [pink glass]. No talking." type="button">Copy</button></td>
+<td data-label="Shot">Packing, original sound</td>
+</tr>
+<tr>
+<td class="kn">20</td>
+<td class="ct">Unboxing the find. Part 1.<button class="copy" data-copy="Unboxing the find. Part 1." type="button">Copy</button></td>
+<td data-label="Shot">Box, hands, items out [Candese and Kelly]</td>
+</tr>
+<tr>
+<td class="kn">21</td>
+<td class="ct">New shade, same lamp.<button class="copy" data-copy="New shade, same lamp." type="button">Copy</button></td>
+<td data-label="Shot">Before and after, only if the piece is restyled [Hanna Henderson]</td>
+</tr>
+<tr>
+<td class="kn">22</td>
+<td class="ct">[Object] No. [n] of the week.<button class="copy" data-copy="[Object] No. [n] of the week." type="button">Copy</button></td>
+<td data-label="Shot">Fixed title, one object [Palm Beach Regency "Top Six", via d1]</td>
+</tr>
+<tr>
+<td class="kn">23</td>
+<td class="ct">Hollie's Top Three.<button class="copy" data-copy="Hollie's Top Three." type="button">Copy</button></td>
+<td data-label="Shot">Three objects, fast cuts</td>
+</tr>
+<tr>
+<td class="kn">24</td>
+<td class="ct">Part 1 of [n].<button class="copy" data-copy="Part 1 of [n]." type="button">Copy</button></td>
+<td data-label="Shot">Series label over the first object</td>
+</tr>
+<tr>
+<td class="kn">25</td>
+<td class="ct">Act [n]: [theme].<button class="copy" data-copy="Act [n]: [theme]." type="button">Copy</button></td>
+<td data-label="Shot">A drop named like a set (d1)</td>
+</tr>
+<tr>
+<td class="kn">26</td>
+<td class="ct">Same corner. More plot.<button class="copy" data-copy="Same corner. More plot." type="button">Copy</button></td>
+<td data-label="Shot">Bare corner, then dressed (d1 skeleton)</td>
+</tr>
+<tr>
+<td class="kn">27</td>
+<td class="ct">Some want designer bags. Hollie wants a lamp.<button class="copy" data-copy="Some want designer bags. Hollie wants a lamp." type="button">Copy</button></td>
+<td data-label="Shot">Text on a lamp; original audio [Arvin Olano, 1,234 likes]</td>
+</tr>
+<tr>
+<td class="kn">28</td>
+<td class="ct">POV: the room agrees.<button class="copy" data-copy="POV: the room agrees." type="button">Copy</button></td>
+<td data-label="Shot">Light on, room reacts</td>
+</tr>
+<tr>
+<td class="kn">29</td>
+<td class="ct">One lamp, three corners.<button class="copy" data-copy="One lamp, three corners." type="button">Copy</button></td>
+<td data-label="Shot">Same piece moved three ways</td>
+</tr>
+<tr>
+<td class="kn">30</td>
+<td class="ct">Gone. Someone has taste.<button class="copy" data-copy="Gone. Someone has taste." type="button">Copy</button></td>
+<td data-label="Shot">Day-after still with a neon-pink GONE stamp (d1)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>A.2 12 repeatable series formats, ranked by effort in minutes per post (w1c section 5)</h3>
+<p>Reach is not measured, so rank = effort, with evidence strength beside it. Faceless = no face needed.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Format</th>
+<th>Length</th>
+<th>Shot list</th>
+<th>Who does what</th>
+<th>Min</th>
+<th>Faceless</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">Rank 1</td>
+<td class="ct">"Gone." stamp</td>
+<td data-label="Length">6 s</td>
+<td data-label="Shot list">Real listing photo plus stamp</td>
+<td data-label="Who does what">Claude or Codex templates the photo; Hollie approves</td>
+<td data-label="Min">3</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">d1 snippets only; weak</td>
+</tr>
+<tr>
+<td class="kn">Rank 2</td>
+<td class="ct">Teaser "Tomorrow: [object]"</td>
+<td data-label="Length">6-8 s</td>
+<td data-label="Shot list">One close-up, no price</td>
+<td data-label="Who does what">Hollie shoots; Claude writes caption</td>
+<td data-label="Min">5</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">d1, 4 accounts (snippet)</td>
+</tr>
+<tr>
+<td class="kn">Rank 3</td>
+<td class="ct">Drop-day carousel, "Here" tags</td>
+<td data-label="Length">3-5 slides</td>
+<td data-label="Shot list">Photos already shot</td>
+<td data-label="Who does what">Claude drafts; Hollie approves</td>
+<td data-label="Min">5</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">d1; needs real stock</td>
+</tr>
+<tr>
+<td class="kn">Rank 4</td>
+<td class="ct">"One click" lamp reveal</td>
+<td data-label="Length">8-12 s</td>
+<td data-label="Shot list">Locked phone, hand, switch, light at 2-3 s</td>
+<td data-label="Who does what">Hollie films 5 lamps in 30 min</td>
+<td data-label="Min">10</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">2 of 15 reels open on a hand or light reveal; moderate</td>
+</tr>
+<tr>
+<td class="kn">Rank 5</td>
+<td class="ct">Text-meme on original sound</td>
+<td data-label="Length">12 s</td>
+<td data-label="Shot list">Object plus about 8-word text</td>
+<td data-label="Who does what">Claude writes text; Hollie films</td>
+<td data-label="Min">10</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">Arvin Olano 1,234 vs 129 likes, same account; mixed</td>
+</tr>
+<tr>
+<td class="kn">Rank 6</td>
+<td class="ct">Packing ASMR "How it leaves"</td>
+<td data-label="Length">30-60 s</td>
+<td data-label="Shot list">Tissue, tape, note card, box</td>
+<td data-label="Who does what">Hollie films a real order; blur labels</td>
+<td data-label="Min">15</td>
+<td data-label="Faceless">yes (hands)</td>
+<td data-label="Evidence">1 reel, 74 likes; weak</td>
+</tr>
+<tr>
+<td class="kn">Rank 7</td>
+<td class="ct">"Read the lamp" education carousel</td>
+<td data-label="Length">6-8 slides</td>
+<td data-label="Shot list">Close-ups of base, socket, cord, shade</td>
+<td data-label="Who does what">Hollie shoots; Claude lays out</td>
+<td data-label="Min">20</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">vendor study: carousels lead saves and views; moderate</td>
+</tr>
+<tr>
+<td class="kn">Rank 8</td>
+<td class="ct">Haul or unboxing, Part 1 and 2</td>
+<td data-label="Length">60-110 s</td>
+<td data-label="Shot list">Boxes, items, text labels</td>
+<td data-label="Who does what">Hollie films; sound off is fine</td>
+<td data-label="Min">25</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">1 reel, 16 comments per 100 likes; weak</td>
+</tr>
+<tr>
+<td class="kn">Rank 9</td>
+<td class="ct">Voiceover fact, hands on object</td>
+<td data-label="Length">20-60 s</td>
+<td data-label="Shot list">Hand demo plus recorded voice</td>
+<td data-label="Who does what">Hollie records a line; Claude writes the script</td>
+<td data-label="Min">30</td>
+<td data-label="Faceless">voice only</td>
+<td data-label="Evidence">education reels led raw likes; confounded</td>
+</tr>
+<tr>
+<td class="kn">Rank 10</td>
+<td class="ct">Restyle process (new shade, new cord)</td>
+<td data-label="Length">30-60 s</td>
+<td data-label="Shot list">Before, steps, after</td>
+<td data-label="Who does what">Hollie; no safety claims</td>
+<td data-label="Min">40</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">1 reel, 399 likes; only if the shop restyles</td>
+</tr>
+<tr>
+<td class="kn">Rank 11</td>
+<td class="ct">"Same corner. More plot."</td>
+<td data-label="Length">15 s</td>
+<td data-label="Shot list">Bare, then dressed</td>
+<td data-label="Who does what">Hollie moves pieces</td>
+<td data-label="Min">45</td>
+<td data-label="Faceless">yes</td>
+<td data-label="Evidence">d1 skeleton; no sample evidence</td>
+</tr>
+<tr>
+<td class="kn">Rank 12</td>
+<td class="ct">"Hollie has notes" series</td>
+<td data-label="Length">120-170 s</td>
+<td data-label="Shot list">A reader sends a space; Hollie styles it</td>
+<td data-label="Who does what">Hollie on camera or voice</td>
+<td data-label="Min">60+</td>
+<td data-label="Faceless">no</td>
+<td data-label="Evidence">16K likes (Alexandra England), a different niche; wait for Hire Hollie</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cross-use (note only): formats 1-8 re-export clean for Facebook and TikTok; keep the Instagram logo out.</p>
+<h3>A.3 Caption formulas (w1c section 6)</h3>
+<p>Open with a searchable phrase (Hootsuite and Socialinsider both say Instagram search leans on caption keywords; <code class="tag plain">vendor claim</code>). At most 5 hashtags.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Formula</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Short, 8-30 words</td>
+<td data-label="Formula">[Keyword phrase]. [One feeling line]. Piece [No.], link in bio.</td>
+<td data-label="Example">Brass tulip lamp, 1980s. The room agrees. Piece 14, link in bio.<button class="copy" data-copy="Brass tulip lamp, 1980s. The room agrees. Piece 14, link in bio." type="button">Copy</button></td>
+</tr>
+<tr>
+<td class="ct">Medium, 31-60 words (Reels, carousels)</td>
+<td data-label="Formula">[Keyword hook]. [Era, material, size]. [One honest flaw]. [Where the page is].</td>
+<td data-label="Example">Pink pressed-glass bowl, 1950s. About 9 inches across. One small rim chip, shown in slide 3. Everything is on the listing page, link in bio, piece 22.<button class="copy" data-copy="Pink pressed-glass bowl, 1950s. About 9 inches across. One small rim chip, shown in slide 3. Everything is on the listing page, link in bio, piece 22." type="button">Copy</button></td>
+</tr>
+<tr>
+<td class="ct">Long, 60-90 words (education, story)</td>
+<td data-label="Formula">[Question]. [3 short facts]. [Hollie's rule]. [Save line]. [Page].</td>
+<td data-label="Example">How do you spot cut glass? It rings when flicked. It is heavier than it looks. The edges are sharp. Hollie's rule: test it in your hand, not by the photo. Save this. The piece list is in the link in bio.<button class="copy" data-copy="How do you spot cut glass? It rings when flicked. It is heavier than it looks. The edges are sharp. Hollie's rule: test it in your hand, not by the photo. Save this. The piece list is in the link in bio." type="button">Copy</button></td>
+</tr>
+<tr>
+<td class="ct">Gone edit</td>
+<td data-label="Formula">Gone. [Piece]. [One provenance line]. [Next drop day].</td>
+<td data-label="Example">Gone. Pink pressed-glass bowl, 1950s. Found in [town]. Next drop [DROP DAY].<button class="copy" data-copy="Gone. Pink pressed-glass bowl, 1950s. Found in [town]. Next drop [DROP DAY]." type="button">Copy</button></td>
+</tr>
+</tbody>
+</table></div>
+<h3>A.4 The 10 CTA lines that survive the constraints (w1c section 7)</h3>
+<ol>
+<li value="1">Piece [No.] is on the listing page. Link in bio.<button class="copy" data-copy="Piece [No.] is on the listing page. Link in bio." type="button">Copy</button></li>
+<li value="2">Full photos and honest condition: link in bio, piece [No.].<button class="copy" data-copy="Full photos and honest condition: link in bio, piece [No.]." type="button">Copy</button></li>
+<li value="3">Comment LINK and Hollie sends the page by message. (Delivery by DM; <a href="#s3">see section 3</a>.)
+<blockquote>
+<p><strong>Note on CTA 3:</strong> In a public comment a URL is not tappable; see the manual's link rule (w1c, w2d).</p>
+</blockquote>
+<button class="copy" data-copy="Comment LINK and Hollie sends the page by message. (Delivery by DM; see section 3 .)" type="button">Copy</button></li>
+<li value="4">Save this for the day you stand in front of a [lamp].<button class="copy" data-copy="Save this for the day you stand in front of a [lamp]." type="button">Copy</button></li>
+<li value="5">Send this to the friend with a [pink glass] list.<button class="copy" data-copy="Send this to the friend with a [pink glass] list." type="button">Copy</button></li>
+<li value="6">Tomorrow: [object]. Follow to see it first.<button class="copy" data-copy="Tomorrow: [object]. Follow to see it first." type="button">Copy</button></li>
+<li value="7">The page shows what is Here and what is Gone.<button class="copy" data-copy="The page shows what is Here and what is Gone." type="button">Copy</button></li>
+<li value="8">Tell Hollie what you are hunting. Name the object.<button class="copy" data-copy="Tell Hollie what you are hunting. Name the object." type="button">Copy</button></li>
+<li value="9">Which corner next? Comment 1, 2 or 3.<button class="copy" data-copy="Which corner next? Comment 1, 2 or 3." type="button">Copy</button></li>
+<li value="10">Same piece, more angles: link in bio.<button class="copy" data-copy="Same piece, more angles: link in bio." type="button">Copy</button></li>
+</ol>
+<h3>A.5 Reply wording, one canned line each (w1c section 7)</h3>
+<p><strong>Reply wording (one canned line each):</strong></p>
+<ul>
+<li>Live, "is this available?": "The listing page is the only truth. If it says Here, it is here. If it says Gone, it is Gone. Pieces can't be held. Link in bio, piece [No.]."<button class="copy" data-copy="The listing page is the only truth. If it says Here, it is here. If it says Gone, it is Gone. Pieces can't be held. Link in bio, piece [No.]." type="button">Copy</button></li>
+<li>Live, "price?": "Price, condition and measurements are on the listing page. Prices are fixed. Link in bio, piece [No.]."<button class="copy" data-copy="Price, condition and measurements are on the listing page. Prices are fixed. Link in bio, piece [No.]." type="button">Copy</button></li>
+<li>Pre-launch (use until real stock exists): "Hollie is still building the shop. The first real drop is announced here first."<button class="copy" data-copy="Hollie is still building the shop. The first real drop is announced here first." type="button">Copy</button></li>
+<li>"LINK": a DM or private reply with the page URL only.
+<ul>
+<li><strong>Note on "LINK":</strong> In a public comment a URL is not tappable; see the manual's link rule (w1c, w2d).</li>
+</ul>
+</li>
+</ul>
+<h3>A.6 Link rule, as carried by the source reports (for reference; the manual owns the rule)</h3>
+<blockquote>
+<ul>
+<li><strong>FIXED-CONSTRAINT CONFLICT, not resolved here: a URL typed into a public Instagram comment is not tappable</strong> (<code class="tag plain">vendor claim</code>, Aug 2026). "Reply LINK with the link" only works as a DM or private reply, a Story link sticker, or link-in-bio plus a piece number. <a href="#s3">See section 3</a>.</li>
+</ul>
+<p>(w1c TL;DR, <code class="tag plain">vendor claim</code>, Aug 2026; section 3 of w1c holds the link-delivery options table.)</p>
+<ol start="4">
+<li value="4"><strong>Link conflict, recommendation:</strong> link in bio plus piece number on every post (primary, zero platform risk); "comment LINK" as an optional convenience that triggers a public reply plus a private-reply DM carrying only the listing URL; Story link sticker by hand on drop days. A bare URL in a public comment is not the plan.</li>
+</ol>
+<p><strong>Recommendation.</strong> Every CTA offers A first: "Link in bio, piece No. 14. Or comment LINK and Hollie will message it." That keeps B a convenience, not a gate. B starts by hand (Hollie, free). Automate B only after real stock exists and comments are real. C by hand on drop days.</p>
+<p>(Route letters in the line above are w2d section 1's: A. Link in bio plus "piece No. [n]"; B. Public reply plus private-reply DM with the URL; C. Story link sticker; D. Bare URL in public comment.)</p>
+<p>(w2d TL;DR 4 and section 1, accessed 2026-10-29. Open question for Ricky in w2d: does a DM carrying the listing URL plus one automated-message line satisfy "reply LINK with the link, nothing else"? Not applied silently.)</p>
+</blockquote>
+<h3>A.7 X verified, Y need review (w1c section 10, plus w1a)</h3>
+<ul>
+<li>Caption length: 2023 study verified (under 30 words); Oct 2026 study verified (carousels under 60, Reels 30-90); both vendor; which applies to a new account needs review.</li>
+<li>Reel length: Jan 2025 official page verified (3 min eligible); the sample has a 249 s reel; current cap need review (w1a).</li>
+<li>Reels vs carousels: the leader flips with account size (Reels under 5K, carousels above); the engagement formula excludes views and saves.</li>
+<li>Sound: the ads page (undated) says most feed video is watched muted; trade press says 80%+ of Reels are watched with sound on (unverified). Design for both: text on screen plus native sound.</li>
+<li>Hashtag cap of five: trade press only; the sample is consistent.</li>
+<li>Comment URLs not tappable: vendor claims only, no official page read; caption links verified as a press report (Meta Verified test).</li>
+<li>Comment-DM conversion 12-30%: vendors disagree; no study.</li>
+</ul>
+<p>Cross-report check on the hashtag cap, both shown:</p>
+<blockquote>
+<ol start="4">
+<li value="4"><strong>Hashtags: the Help Center now says up to 5 per post</strong> <code class="tag good">verified</code>. Instagram says fewer, targeted tags do better <code class="tag plain">press</code> (2025-12-18). Mosseri has said tags do not raise reach <code class="tag plain">press</code>. Keywords belong in caption, handle, Name and bio (Search rule, 2021) <code class="tag good">verified</code>.</li>
+</ol>
+<p>Need review: w1c tags the five-hashtag cap <code class="tag warn">unverified (search snippet)</code> (trade press only); w1a read the Help Center and tags it <code class="tag good">verified</code>. Both are shown here; the manual should cite w1a's source.</p>
+</blockquote>
+</div></details>
+<details class="bank" id="appx-b"><summary><span class="num">B</span> <span>12-month calendar, Nov 2026 to Oct 2027</span></summary><div class="bank-body"><p>Source: <a href="http://w1d-audience-calendar.md" rel="noopener noreferrer" target="_blank">w1d-audience-calendar.md</a> sections 2, 3, 4 and 5, TL;DR 4, 8 and 6, the "X verified, Y need review" list and the fixed-constraint flags (accessed 2026-10-29). Times are Eastern (SWFL).</p>
+<p>Tags: <code class="tag good">verified</code> read live this session. <code class="tag plain">vendor claim</code> the vendor's own marketing. <code class="tag plain">study (n=, date)</code> stated sample. <code class="tag warn">unverified (search snippet)</code> not read on a page. <code class="tag plain">inferred</code> my reading. <code class="tag plain">computed</code> calendar arithmetic. Times are Eastern (SWFL).</p>
+<h3>B.1 Read first (w1d TL;DR 4 and 8)</h3>
+<p>(w1d TL;DR 4:)</p>
+<ol start="4">
+<li value="4">
+<p><strong>Pinterest wants seasonal content live 4-6 weeks ahead ("if the moment peaks in June, launch in April") and says holiday activity spikes in September.</strong> The native queue holds 30 days and 10 Pins, so a Pin can be queued only within 30 days of its go-live date. <strong>Consequence:</strong> the shop has no Pinterest, Instagram, TikTok or Facebook accounts yet, so a brand-new Pinterest account opened in November cannot be on time for December gifting by Pinterest's own rule; the first moment it can hit with a proper lead is Valentine's (Pins live Dec 20-Jan 3). <code class="tag plain">vendor claim</code>; caps <code class="tag good">verified</code> (d1); the consequence is <code class="tag plain">inferred</code>.
+(w1d TL;DR 8, a separate item of the same list:)</p>
+</li>
+<li value="8">
+<p><strong>No calendar row is usable until the accounts exist, and product-link rows also need real stock.</strong> The calendar's gate column says which (A = accounts only, S = accounts plus stock); November is a setup month.</p>
+</li>
+</ol>
+<h3>B.2 Lead times per platform (w1d section 2)</h3>
+<p>How far ahead people plan (all Pinterest, <code class="tag plain">vendor claim</code>, text <code class="tag good">verified</code>):</p>
+<ul>
+<li>"If the moment peaks in June, launch in April" (Jan 15, 2026, <a href="https://business.pinterest.com/en-ca/blog/pinterest-brand-moments-guide-2026/" rel="noopener noreferrer" target="_blank">business.pinterest.com/en-ca/blog/pinteres…</a>).</li>
+<li>"Aim to launch your content 4-6 weeks before big moments" (Aug 27, 2025, <a href="https://create.pinterest.com/blog/leverage-seasonal-trends-moments/" rel="noopener noreferrer" target="_blank">create.pinterest.com/blog/leverage-seasona…</a>).</li>
+<li>Holiday: "go live as early as possible between September and November"; "holiday activity spikes as early as September" (Jul 30, 2026, <a href="https://business.pinterest.com/blog/holiday-2026-starts-now-a-pinterest-guide-to-success/" rel="noopener noreferrer" target="_blank">business.pinterest.com/blog/holiday-2026-s…</a>).</li>
+<li>Self-gifting wishlists "build momentum from October and peak in November, followed by a surge in gift ideas for others in December" (festive-gifting page above).</li>
+<li>NRF: 43% of holiday shoppers plan to start before November (2026). A Medill write-up of a Prosper/NRF survey says 51.9% start by October (<a href="https://spiegel.medill.northwestern.edu/?p=5640" rel="noopener noreferrer" target="_blank">spiegel.medill.northwestern.edu/?p=5640</a>, <code class="tag warn">unverified (search snippet)</code>).</li>
+</ul>
+<p><strong>Scheduling caps (verified in d1):</strong> Pinterest native 30 days ahead and 10 Pins; TikTok Studio 10 days; Buffer free 10 posts per channel. Lead time (4-8 weeks before the moment) is longer than the queue (30 days), so a Pin can be queued only within 30 days of its go-live date. Assets get made early; queues get filled monthly. The caps also limit how long Hollie can be away: about 3 weeks of Pins, 10 days of TikTok.</p>
+<h3>B.3 The calendar with its gate column (w1d section 3)</h3>
+<p>Lead-time rule used in every row: <strong>Pin</strong> live about 6 weeks before the moment (Pinterest says 4-6; use 8 for gifts); <strong>IG/FB</strong> 7-14 days before (<code class="tag plain">inferred</code>; no first-party source); <strong>TikTok</strong> at most 10 days (cap). Gate: <strong>A</strong> needs the shop's accounts (Instagram Professional, Facebook Page, Pinterest business, TikTok; none exist yet, so <strong>no row is usable before they do</strong>); <strong>S</strong> needs accounts plus real stock and an Etsy or Shopify listing. Rules carried: no discounts or codes; no "visit", "stop by", "in store"; the mirror ball is "sometimes"; "style" not "interior design"; link = listing page only. The "Angle" column is H&amp;V's own plan; what vintage sellers post at each moment was not studied here (d1 covers drop, teaser and packing patterns only; w1c or w1f may cover it).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Moments (dates)</th>
+<th>H&amp;V angle</th>
+<th>Lead</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct"><strong>Nov 2026</strong></td>
+<td data-label="Moments (dates)">Art Walk Nov 6 (d6); Thanksgiving Nov 26; Black Friday Nov 27; Small Business Saturday Nov 28; Cyber Monday Nov 30 (<code class="tag plain">computed</code>); Pinterest self-gifting peak</td>
+<td data-label="H&amp;V angle"><strong>Setup month:</strong> confirm or claim handles, open the accounts, shoot the hands-only batch (d1), write the caption bank. Once accounts exist, world-building posts only (neon, mirror ball, room). Black Friday as the no-sale moment ("No codes. No sale. One of one.") and Small Business Saturday ("shop small, from your couch") only as brand posts, no product links</td>
+<td data-label="Lead">Gift Pins for Christmas are already late (see TL;DR 4). IG for BF: Nov 13-20</td>
+<td data-label="Gate"><strong>A</strong>; BF/CM product posts <strong>S</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Dec 2026</strong></td>
+<td data-label="Moments (dates)">Design Miami Dec 1-6 and Art Basel Miami Beach Dec 4-6 (<code class="tag good">verified</code>); Hanukkah Dec 4-12 (USPS); Pinterest Predicts 2027 expected; Pantone 2027 color expected early Dec (<code class="tag warn">unverified</code>); USPS Dec 17/18/19; Christmas Fri Dec 25; Q5 Dec 26-Jan 1; NYE Thu Dec 31</td>
+<td data-label="H&amp;V angle">If stock exists: last-order card (Ground Advantage Dec 17 minus 3 days for double-boxing: order by Dec 14, <code class="tag plain">inferred</code>) and an ASMR packing reel (d1 format). Otherwise: NYE mirror ball ("sometimes in the box") and Opera Aesthetic mood; Miami Art Week commentary; Predicts-2027 reaction</td>
+<td data-label="Lead">NYE Pins by Nov 19 only if the Pinterest account exists then; IG Dec 17-24</td>
+<td data-label="Gate"><strong>A</strong>; last-order card <strong>S</strong> and a shipping policy</td>
+</tr>
+<tr>
+<td class="ct"><strong>Jan 2027</strong></td>
+<td data-label="Moments (dates)">New Year reset; Vintage Market Days Jan 29-31 (d6); SWFL peak begins (Lee Jan-Mar = 33.9% of visitor spending, d6)</td>
+<td data-label="H&amp;V angle">"New year, new lamp"; maker-mark guides (d5); pink glass for Valentine's; VMD teaser only if a booth is booked</td>
+<td data-label="Lead">Valentine Pins Dec 20-Jan 3 (first lead-timed moment the new accounts can hit)</td>
+<td data-label="Gate"><strong>A</strong>; VMD also needs a booth (fee unpublished)</td>
+</tr>
+<tr>
+<td class="ct"><strong>Feb 2027</strong></td>
+<td data-label="Moments (dates)">Palm Beach Show Feb 11-16 (<code class="tag good">verified</code>); Galentine's Sat Feb 13; Valentine's Sun Feb 14 (<code class="tag plain">computed</code>); Edison Festival of Light (February pattern; 2027 dates not yet posted)</td>
+<td data-label="H&amp;V angle">Pink glass and burgundy; "set the bar cart" for Galentine's; lamp content around Edison week</td>
+<td data-label="Lead">IG Feb 1-10; TikTok Feb 4+</td>
+<td data-label="Gate"><strong>A</strong>; gift posts <strong>S</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Mar 2027</strong></td>
+<td data-label="Moments (dates)">Spring refresh (equinox Mar 20); Easter Sun Mar 28 (<code class="tag plain">computed</code>)</td>
+<td data-label="H&amp;V angle">Mirrors and art for the wall refresh; before-and-after of Hollie's own corner (d1 found none in its sample); butter yellow and pastels against burgundy</td>
+<td data-label="Lead">Mother's Day Pins Mar 14-28</td>
+<td data-label="Gate"><strong>A</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Apr 2027</strong></td>
+<td data-label="Moments (dates)">Naples by Design Apr 7-8 (d6); High Point Market Apr 10-14 (trade only); Salone del Mobile Apr 13-18 (Milan; Euroluce lighting hall likely, <code class="tag plain">inferred</code>); snowbirds leave</td>
+<td data-label="H&amp;V angle">"Milan is showing lamps. Here is a brass one." "Send it north" shipping reassurance (d6)</td>
+<td data-label="Lead">IG for Mother's Day Apr 25-May 2</td>
+<td data-label="Gate"><strong>A</strong>; gifts <strong>S</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>May 2027</strong></td>
+<td data-label="Moments (dates)">Mother's Day Sun May 9; Memorial Day May 31 (<code class="tag plain">computed</code>)</td>
+<td data-label="H&amp;V angle">Gift with a story; glass sets; last-order card (USPS 2027 dates not yet published; use the handling rule)</td>
+<td data-label="Lead">Father's Day Pins May 9</td>
+<td data-label="Gate"><strong>S</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Jun 2027</strong></td>
+<td data-label="Moments (dates)">Father's Day Sun Jun 20; wedding peak (The Knot: usually a Saturday in October, September or June); hurricane season starts Jun 1 (NHC)</td>
+<td data-label="H&amp;V angle">Bar cart and barware; wedding and hostess glassware; estate-sale sourcing stories only if sourcing is ch. 538 compliant (d6)</td>
+<td data-label="Lead">Pins May 9; IG Jun 6-13</td>
+<td data-label="Gate"><strong>S</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Jul 2027</strong></td>
+<td data-label="Moments (dates)">July 4 Sun; estate-sale search peak (index 1.16)</td>
+<td data-label="H&amp;V angle">Cold-glass entertaining; evergreen guides; batch the holiday Pins</td>
+<td data-label="Lead">Holiday Pins built now</td>
+<td data-label="Gate"><strong>A</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Aug 2027</strong></td>
+<td data-label="Moments (dates)">Back to school; hurricane peak approaching</td>
+<td data-label="H&amp;V angle">"First apartment lamp": cord and socket spec carousel (d1); Halloween Pins (masquerade)</td>
+<td data-label="Lead">Halloween Pins Sep 5-19 (8-6 weeks)</td>
+<td data-label="Gate"><strong>A</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Sep 2027</strong></td>
+<td data-label="Moments (dates)">Labor Day Sep 6; weddings; Pinterest holiday go-live window opens; Design Miami Seoul (Sept)</td>
+<td data-label="H&amp;V angle">Burgundy season; holiday gift Pins go live; the "Gone" archive as proof</td>
+<td data-label="Lead">Holiday Pins from Sep 1</td>
+<td data-label="Gate"><strong>S</strong></td>
+</tr>
+<tr>
+<td class="ct"><strong>Oct 2027</strong></td>
+<td data-label="Moments (dates)">High Point Market Oct 23-27 (trade); Design Miami Paris (Oct); Halloween Sun Oct 31 (<code class="tag plain">computed</code>); self-gifting wishlists start</td>
+<td data-label="H&amp;V angle">Mirror ball and masquerade; first gifting posts; one-year recap</td>
+<td data-label="Lead">BF Pins Oct 15</td>
+<td data-label="Gate"><strong>S</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Hurricane rule (<code class="tag plain">inferred</code>; season Jun 1-Nov 30, <code class="tag good">verified</code> at <a href="https://www.nhc.noaa.gov/climo/" rel="noopener noreferrer" target="_blank">nhc.noaa.gov/climo</a>): pause scheduled posts when a named storm threatens SWFL; no jokes or glamour posts during landfall or recovery; add a shipping-delay line to listings; check the queue before each storm. Moments not checked: NYCxDesign, AD Design Show, Maison&amp;Objet, ICFF, Atlanta Market.</p>
+<h3>B.4 Southwest Florida angle (w1d section 4)</h3>
+<ul>
+<li><strong>Season (d6, <code class="tag good">verified</code>):</strong> Lee 2025: Oct-Dec most visitors (913,200); Jan-Mar most visitor-days (6.19m), spending ($1.12b, 33.9% of the year) and occupancy (73.2%). The "November through April" season comes from a real-estate blog (<code class="tag warn">unverified</code>). Collier quarterly figures were not reached; one snippet says Collier's first-quarter 2026 hotel bookings were "mostly flat" (<code class="tag warn">unverified (search snippet)</code>).</li>
+<li><strong>Content angles without showroom language:</strong> "Sourced in Naples, shipped anywhere"; "Send it north" in April; lamp content tied to Edison Festival week; Palm Beach Show chatter (about 2.5 hours away, <code class="tag plain">inferred</code>); a Naples by Design pitch (d6); Vintage Market Days as an event the shop attends, never as the shop being open.</li>
+<li><strong>Estate sales and downsizing:</strong> no estate-sale data found. Proxies: Naples real-estate guides call Jan-Apr the peak and May-Sep thinner. Google's national "estate sale" interest peaks in July and bottoms in December. Hypothesis (<code class="tag plain">inferred</code>): snowbird close-outs land Apr-Jun, so sourcing stories belong May-Jul. <strong>Test:</strong> Hollie logs the Naples and Fort Myers listing counts at <a href="http://estatesales.net" rel="noopener noreferrer" target="_blank">estatesales.net</a> weekly for 12 months (d6 saw 34 in Naples on 2026-10-29).</li>
+<li><strong>Already decided (d6):</strong> one spelling everywhere; Google Business Profile only if Hollie visits homes; free Nextdoor page; Lee 6.5% and Collier 6% for local delivery.</li>
+</ul>
+<h3>B.5 Verified dates (w1d TL;DR 6 and section 3 date sources)</h3>
+<ol start="6">
+<li value="6"><strong>USPS 2026 send-by dates, lower 48 (verified):</strong> Ground Advantage and First-Class Thu Dec 17, Priority Fri Dec 18, Express Sat Dec 19. A third-party guide shows Dec 19 and Dec 21 for the last two; the USPS page wins.</li>
+</ol>
+<p>Date sources: <a href="https://www.usps.com/holiday/holiday-shipping-dates.htm" rel="noopener noreferrer" target="_blank">usps.com/holiday/holiday-shipping-dates.htm</a>; <a href="https://www.artbasel.com/miami-beach" rel="noopener noreferrer" target="_blank">artbasel.com/miami-beach</a>; <a href="https://designmiami.com/" rel="noopener noreferrer" target="_blank">designmiami.com</a>; <a href="https://www.highpointmarket.org/" rel="noopener noreferrer" target="_blank">highpointmarket.org</a> (Spring Apr 10-14 and Fall Oct 23-27, 2027); <a href="https://www.salonemilano.it/en/" rel="noopener noreferrer" target="_blank">salonemilano.it/en</a> (13-18 April 2027); <a href="https://palmbeachshow.com/" rel="noopener noreferrer" target="_blank">palmbeachshow.com</a> ("24th Annual ... February 11-16, 2027"); <a href="https://edisonfestival.org/2027-events/" rel="noopener noreferrer" target="_blank">edisonfestival.org/2027-events</a> (page still lists 2026 dates); <a href="https://www.theknot.com/content/fall-most-popular-wedding-season" rel="noopener noreferrer" target="_blank">theknot.com/content/fall-most-popular-wedd…</a>. Pantone's own page names Cloud Dancer as 2026 color; the 2027 announcement date was not read.</p>
+<h3>B.6 When to post: composite hypotheses (w1d section 5)</h3>
+<p>w1d numbers its hypotheses H1-H4 and H6-H8; the source has no H5. These are w1d's list, not w1a's (<a href="#appx-e">section E</a> uses its own H1-H5).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Hypothesis</th>
+<th>Evidence</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">H1</td>
+<td class="ct">Fix the weekly drop at <strong>Wed 7:00 pm ET</strong>, teaser <strong>Tue 12:00 pm ET</strong>, never moved</td>
+<td data-label="Evidence">Dealers state a fixed slot: Mill Street Wed 2 pm CT, Select Vintage Wed 7 pm ET, Lucy Mon 6 pm ET, Ca Marche Tue 2 pm MT (d1 bios). Sprout: Tue/Wed best days</td>
+<td data-label="Tag">dealer practice (d1); vendor study</td>
+</tr>
+<tr>
+<td class="kn">H2</td>
+<td class="ct">Non-drop Reels and carousels: test <strong>Tue/Wed 12-1 pm ET</strong> against <strong>Sun 8 pm ET</strong></td>
+<td data-label="Evidence">Sprout: Instagram Tue 1-7 pm local; Sunday worst. GenSumo: Pinterest Sunday +22% over median, evening peak 8-10 pm</td>
+<td data-label="Tag">vendor study, conflicting</td>
+</tr>
+<tr>
+<td class="kn">H3</td>
+<td class="ct">Pinterest: test <strong>Tue-Thu 10 am-1 pm ET</strong> against <strong>Sat 9 am or Sun 8-10 pm ET</strong></td>
+<td data-label="Evidence">Sprout (about 2 billion engagements, 307,000 profiles, Nov 27, 2025-Feb 27, 2026, local time; <a href="https://sproutsocial.com/insights/best-times-to-post-on-social-media/" rel="noopener noreferrer" target="_blank">sproutsocial.com/insights/best-times-to-po…</a>): Tue/Wed/Thu 10a-1p. GenSumo (n=173,000+ pins, 2025-26, US about 58%; <a href="https://gensumo.pages.dev/research/pinterest-best-time-to-post-report/" rel="noopener noreferrer" target="_blank">gensumo.pages.dev/research/pinterest-best-…</a>): Sunday best, Thu/Fri weakest, home decor Saturday morning</td>
+<td data-label="Tag">vendor study, conflicting</td>
+</tr>
+<tr>
+<td class="kn">H4</td>
+<td class="ct">Facebook Tue/Wed 12-8 pm ET; TikTok (content channel only) Tue-Fri 2-6 pm ET</td>
+<td data-label="Evidence">Sprout; TikTok 10-day cap</td>
+<td data-label="Tag">vendor study</td>
+</tr>
+<tr>
+<td class="kn">H6</td>
+<td class="ct">Zones: SWFL is Eastern; snowbird buyers sit mostly Eastern and Central (<code class="tag plain">inferred</code>). 12-1 pm ET is 11-12 CT; 8 pm ET is 7 pm CT. Both slots work for both zones</td>
+<td data-label="Evidence">none first-party</td>
+<td data-label="Tag">inferred</td>
+</tr>
+<tr>
+<td class="kn">H7</td>
+<td class="ct">On Pinterest, lead time and keywords beat clock time: Pins are search results, and Pinterest says its trends last "nearly 2x longer"</td>
+<td data-label="Evidence">Pinterest Predicts blog</td>
+<td data-label="Tag">vendor claim; inferred</td>
+</tr>
+<tr>
+<td class="kn">H8</td>
+<td class="ct">Seasonal posts follow the calendar lead times, not a "best time"</td>
+<td data-label="Evidence">section 3</td>
+<td data-label="Tag">inferred</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Two-slot test (free, native Insights):</strong> hold the drop slot fixed. For 8 weeks alternate non-drop posts between slot A (midweek midday) and slot B (Sunday evening or Saturday morning), same format, same caption style, at least 8 posts per slot. Compare saves plus shares per reach (Instagram) and saves per impression (Pinterest). With samples this small, switch only if one slot wins by a wide margin for 3 weeks running. Sprout's window is Nov-Feb only (SWFL's peak season); the pattern may shift in summer.</p>
+<p>Need review: w1d H1 (drop Wed 7:00 pm ET, teaser Tue 12:00 pm ET, a guess) and its two-slot test (midweek midday against Sunday evening or Saturday morning) differ from w1a's Latin square in <a href="#appx-e">section E</a> (Tue 8 am, Wed 12:30 pm, Thu 7 pm, Sat 11 am), where w1a H5 leaves the drop slot to Ricky and outside the experiment. Both are shown; running both at once would confound them, so pick one design.</p>
+<h3>B.7 X verified, Y need review (w1d)</h3>
+<ul>
+<li>Pinterest lead time (4-6 weeks; "April for June"; holiday Sep-Nov) verified; which number suits a small shop needs review.</li>
+<li>Sprout (Pinterest Tue-Thu midday, Sunday worst) verified; GenSumo (Pinterest Sunday best, evenings) verified; which is right for decor needs review.</li>
+<li>USPS Priority Dec 18 and Express Dec 19 verified; a third-party site's Dec 19 and Dec 21 needs review (USPS wins).</li>
+<li>1stDibs burgundy 7% to 21% and 1970s decline verified; fit with 60s-80s stock needs review.</li>
+<li>Neo Deco and Opera Aesthetic percentages: via trade press; the official page was not read.</li>
+<li>Google Trends indices verified (lamps reproduced on a rescaled pull); the Apr-Jun 2026 jump and the "mirror ball" confound need review.</li>
+<li>NRF 43% verified, n not stated; the 51.9% and The Knot's 17% (n=16,956) are snippets.</li>
+<li>Euroluce 2027 is inferred; Edison 2027 dates not posted.</li>
+</ul>
+<p>None of these findings changes a fixed constraint. Two tensions: (1) NRF's top gift is a gift card (47%), which the shop does not sell; not a constraint, a product idea for Ricky. (2) Pinterest advises Product Pins for Black Friday; pre-owned Product Pins are disallowed (d1), so Pins stay plain.</p>
+</div></details>
+<details class="bank" id="appx-c"><summary><span class="num">C</span> <span>Cover system</span></summary><div class="bank-body"><p>Source: <a href="http://w1e-covers-thumbnails.md" rel="noopener noreferrer" target="_blank">w1e-covers-thumbnails.md</a> sections 4, 1 and 9 and its source list S1-S29, plus <a href="http://w2b-cover-automation.md" rel="noopener noreferrer" target="_blank">w2b-cover-automation.md</a> section 5 and section 7 (accessed 2026-10-29). Coordinates are on the 1080x1920 master unless stated.</p>
+<p>Lane w1e, written 2026-10-29. All pages accessed 2026-10-29. Raw captures: <code>research/social-2026-10-29/raw/w1e-*.md</code>. Tags: <code class="tag good">verified</code> (read on the live page this session), <code class="tag plain">vendor claim</code>, <code class="tag plain">study (n=, date)</code>, <code class="tag warn">unverified (snippet or search-tool summary)</code>, <code class="tag plain">inferred</code>. Sources are coded S1-S29 in the list at the end. Not read: Instagram, TikTok and Meta help pages (walled; WebFetch returned only "Help Center"), so no Instagram or TikTok cover spec is <code class="tag good">verified</code>.</p>
+<h3>C.1 Master canvas, type scale, colors, photo rules, six templates, alt text (w1e section 4)</h3>
+<p><strong>Master canvas</strong> 1080x1920. Ground burgundy <code>#451c2b</code>, vignette <code>#321520</code>. One build, then crop per surface:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Canvas</th>
+<th>Text zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Reel / TikTok / Facebook Reel cover</td>
+<td data-label="Canvas">1080x1920</td>
+<td data-label="Text zone">x 90-990, <strong>y 420-1500</strong> (hard-safe square)</td>
+</tr>
+<tr>
+<td class="ct">IG carousel or photo</td>
+<td data-label="Canvas">1080x1350 (4:5)</td>
+<td data-label="Text zone">x 90-990, y 120-1230 (grid trims about 34 px each side)</td>
+</tr>
+<tr>
+<td class="ct">Story</td>
+<td data-label="Canvas">1080x1920</td>
+<td data-label="Text zone">x 90-990, y 300-1240 (Meta ad zone, <code class="tag plain">inferred</code> for organic)</td>
+</tr>
+<tr>
+<td class="ct">YouTube Short</td>
+<td data-label="Canvas">2160x3840 (the master at 2x)</td>
+<td data-label="Text zone">same ratios as master</td>
+</tr>
+<tr>
+<td class="ct">Pinterest</td>
+<td data-label="Canvas"><strong>separate 1000x1500 file</strong>, not cropped from the master</td>
+<td data-label="Text zone">title top y 120-420, frame middle, detail bottom y 1180-1380 (S7: visuals in the middle, text top and bottom)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Type scale on the 1080 canvas.</strong> A phone is about 390 CSS px wide (assumption). Full-screen factor 1080/390 = 2.77. Profile-grid tile about 129 CSS px (3 columns, <code class="tag plain">inferred</code>), factor 8.4. Pin in a 2-column feed about 185 CSS px, factor 5.4 (<code class="tag plain">inferred</code>).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Face and setting</th>
+<th>Master px</th>
+<th>Pin px (1000 wide)</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Display (grid-readable)</td>
+<td data-label="Face and setting">Bodoni Moda 700, <code>opsz</code> pinned 12</td>
+<td data-label="Master px">168 (20 CSS px at grid size)</td>
+<td data-label="Pin px (1000 wide)">108 floor, use 150</td>
+<td data-label="Rule">1-3 words, 10 characters per line max</td>
+</tr>
+<tr>
+<td class="ct">Headline (read on open)</td>
+<td data-label="Face and setting">Bodoni Moda 700, <code>opsz</code> 14</td>
+<td data-label="Master px">120, floor 56 (20 CSS px full-screen)</td>
+<td data-label="Pin px (1000 wide)">112</td>
+<td data-label="Rule">2 lines max</td>
+</tr>
+<tr>
+<td class="ct">Sub</td>
+<td data-label="Face and setting">DM Sans 600</td>
+<td data-label="Master px">64</td>
+<td data-label="Pin px (1000 wide)">72</td>
+<td data-label="Rule">floor 44 (16 px body)</td>
+</tr>
+<tr>
+<td class="ct">Label</td>
+<td data-label="Face and setting">DM Sans 600 caps, tracking 0.08em</td>
+<td data-label="Master px">44, floor 34 (12 px)</td>
+<td data-label="Pin px (1000 wide)">floor 65</td>
+<td data-label="Rule">decoration only: nothing a buyer needs</td>
+</tr>
+<tr>
+<td class="ct">Series number</td>
+<td data-label="Face and setting">Space Mono (Courier Prime pending Hollie's pick)</td>
+<td data-label="Master px">56</td>
+<td data-label="Pin px (1000 wide)">65</td>
+<td data-label="Rule">write "NO. 3"; no №, ★ or ✦ glyph exists in the three faces</td>
+</tr>
+</tbody>
+</table></div>
+<p>Why <code>opsz</code> pinned low and weight 700: Bodoni hairlines are about 0.2 CSS px at any size and vanish when shrunk; auto optical sizing at 168 px picks opsz 96, the thinnest cut (<code>docs/type-and-spacing.md</code>, lane C). Render each cover at 129 px and 185 px wide before approving. <code class="tag plain">inferred</code></p>
+<p><strong>Colors (house rule)</strong>, contrast computed 2026-10-29 with the WCAG formula:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Ratio</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Cream <code>#f6efdf</code> on burgundy <code>#451c2b</code> / <code>#321520</code></td>
+<td data-label="Ratio">12.61 / 14.51</td>
+<td data-label="Use">all text on the ground</td>
+</tr>
+<tr>
+<td class="ct">Pink <code>#e5a6b4</code> on burgundy / deep</td>
+<td data-label="Ratio">7.18 / 8.27</td>
+<td data-label="Use">accents, stamps, any size</td>
+</tr>
+<tr>
+<td class="ct">Burgundy on white frame</td>
+<td data-label="Ratio">14.44</td>
+<td data-label="Use">the only text allowed inside the frame</td>
+</tr>
+<tr>
+<td class="ct">Pink on white / on cream</td>
+<td data-label="Ratio">2.01 / 1.75</td>
+<td data-label="Use"><strong>never</strong></td>
+</tr>
+<tr>
+<td class="ct">Hot pink <code>#e33fa6</code> on burgundy / deep</td>
+<td data-label="Ratio">3.80 / 4.37</td>
+<td data-label="Use">large stamps only (66 px+ canvas); sampled from a 320 px video frame, may include clothing. <code class="tag plain">inferred</code>; Hollie's call; not a brand token</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rule: body-size text 4.5:1; large text (24 px CSS, about 66 px full-screen canvas; 18.5 px bold) 3:1 (S20 <code class="tag good">verified</code>). WCAG exempts text inside a picture, so this is a <strong>house rule, not a legal one</strong>. The white frame is for the product photo only, never the full background. Pinterest tints white-background Pins 4% (S4), irrelevant on burgundy.</p>
+<p><strong>Photo rules</strong> (all templates): real photo of the real piece only. Cutouts in <code>site/assets/editorial/</code> contain generated pixels (<code>urn-lamp.webp</code> had its shade top "completed"; <code>disco-ball.webp</code> is fully generated) and are <strong>banned from any selling cover</strong>. The ball image would also imply a promised gift. Check the provenance of <code>site/assets/cutouts</code> and <code>demo</code> before use; the sample listings are not stock. No price, no discount, no "visit", no claim wording on any cover.</p>
+<h3>The six templates (coordinates on the 1080x1920 master)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Template</th>
+<th>Layout</th>
+<th>Photo</th>
+<th>Copy (one line)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">1</td>
+<td class="ct"><strong>Drop day</strong></td>
+<td data-label="Layout">Frame x 237-843, y 430-1240 (3:4 incl. 28 px white mat, shadow 0 24 60 black 45%). Display "Open." baseline y 1400, centered, cream. Label "DROP 07 - THURSDAY" y 330-375 and "HERE, THEN GONE" y 1440-1480, pink.</td>
+<td data-label="Photo">one hero piece, real photo in frame</td>
+<td data-label="Copy (one line)">"Open. Here. Then gone."</td>
+</tr>
+<tr>
+<td class="kn">2</td>
+<td class="ct"><strong>Here / Gone</strong></td>
+<td data-label="Layout">Same frame at y 430-1130. <strong>Here:</strong> cream label chip "HERE" on deep ground y 1180-1240. <strong>Gone:</strong> the same cover re-rendered; stamp "GONE." Bodoni 168, pink with glow (0 0 24 px at 40%), y 1230-1400, <strong>on the burgundy, never over the photo</strong>; sub "Someone has taste." DM Sans 64 cream. Photo stays full color.</td>
+<td data-label="Photo">same photo</td>
+<td data-label="Copy (one line)">"Gone." Caption begins "Gone." and stays up</td>
+</tr>
+<tr>
+<td class="kn">3</td>
+<td class="ct"><strong>Teaser</strong></td>
+<td data-label="Layout">Frame shows a tight real detail of the piece, no name, no price, x 237-843, y 430-1130. Display "Tomorrow." y 1300-1420. Sub "Details after." 64.</td>
+<td data-label="Photo">real close-up</td>
+<td data-label="Copy (one line)">"Tomorrow: lamps. Details after."</td>
+</tr>
+<tr>
+<td class="kn">4</td>
+<td class="ct"><strong>Spec-card carousel cover</strong> (1080x1350)</td>
+<td data-label="Layout">Headline Bodoni 700 120 px, 3 lines max, top-left x 90, y 150-520. Frame bottom-right x 480-990, y 600-1230. Label "1 OF 6" y 1260. <strong>Slide 2 gets a full cover treatment</strong> (second-chance rule, <code class="tag warn">unverified</code>).</td>
+<td data-label="Photo">piece with a real detail</td>
+<td data-label="Copy (one line)">"Before you fall in love, read the spec."</td>
+</tr>
+<tr>
+<td class="kn">5</td>
+<td class="ct"><strong>Room reveal</strong></td>
+<td data-label="Layout">Full-bleed real room photo, 4:5 safe center. Headline "Same corner. More plot." Bodoni 120 in cream, y 480-780, over a deep-burgundy gradient (never text on a busy photo). Before-inset 300x400 at x 90, y 1100, <strong>cream border, not white</strong> (white is product-only). Hollie's own corner only; say "styled by Hollie", never "interior design".</td>
+<td data-label="Photo">context photo (Pinterest real-life evidence)</td>
+<td data-label="Copy (one line)">"Same corner. More plot."</td>
+</tr>
+<tr>
+<td class="kn">6</td>
+<td class="ct"><strong>Series cover</strong></td>
+<td data-label="Layout">Series name Bodoni 700 120 top, y 440-700. "NO. 3" Space Mono 56, pink rule y 720. Small frame x 560-990, y 800-1400 (right on odd, left on even episodes, for grid rhythm).</td>
+<td data-label="Photo">one representative piece</td>
+<td data-label="Copy (one line)">"Hollie's Top Three. NO. 3"</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Context variant (all templates, one each):</strong> swap the isolated frame for the piece in the room, frame as an inset. Addresses S14 and S15. Hollie picks.</p>
+<p><strong>Alt text</strong> (Instagram: Advanced settings &gt; Write alt text; reels on the caption screen; edit later via post menu &gt; Edit &gt; Edit Alt Text, S22, <code class="tag warn">unverified (search-tool summary)</code>). Formula: <code>[object] in [material/colour], on a white frame against a burgundy wall. Cover text: "[exact cover words]". [Here|Gone]</code>. Use only fields that are real on the listing; never invent era, maker or size. Pinterest: put the same sentence plus search words in the title and description (description is not shown in feed but used for relevance, S4).</p>
+<p><strong>Gates:</strong> templates 1 and 2 unposted until real stock exists and checkout is live; template 5's Hire Hollie link only after the inbox exists. "Gone" stays readable (7.18:1) and visible on the grid.</p>
+<h3>C.2 Platform specs, 2026 (w1e section 1)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Spec</th>
+<th>Source and tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">IG Reel cover</td>
+<td data-label="Spec">1080x1920 (9:16). Profile grid shows 3:4 (1013x1350 rendered, 240 px lost top and bottom). Reels feed shows 4:5 (1080x1350). Grid moved from squares in Jan 2025.</td>
+<td data-label="Source and tag">Planoly S9, Hopper S10: <code class="tag plain">vendor claim</code>. Meta help page S28 via search-tool summary: Reels 1.91:1 to 9:16, min 30 fps, min 720p: <code class="tag warn">unverified</code></td>
+</tr>
+<tr>
+<td class="ct">IG cover edit</td>
+<td data-label="Spec">Hopper: no edit after posting. Planoly: "Adjust Preview" (three dots) repositions the grid thumbnail.</td>
+<td data-label="Source and tag"><code class="tag plain">vendor claim</code>, conflict, see section 9</td>
+</tr>
+<tr>
+<td class="ct">IG photo / carousel</td>
+<td data-label="Spec">3:4 now accepted natively "exactly as you shot it"; 1:1 and 4:5 still work. 4:5 is cropped to 3:4 in the grid.</td>
+<td data-label="Source and tag">SMT S11 quoting Instagram, 2025-05-28: <code class="tag plain">vendor claim</code> (trade press quoting Instagram)</td>
+</tr>
+<tr>
+<td class="ct">IG Stories / Reels safe zone</td>
+<td data-label="Spec">Keep 14% top, 35% bottom, 6% sides free of text and logos (y 269-1248, x 65-1015 on 1080x1920). Stated for Reels <strong>ads</strong>; image ad spec is 1440x2560, JPG/PNG.</td>
+<td data-label="Source and tag">Meta S8: <code class="tag good">verified</code> for ads. For organic: <code class="tag plain">inferred</code></td>
+</tr>
+<tr>
+<td class="ct">IG carousel first slide</td>
+<td data-label="Spec">The first slide is the cover in the grid. Mosseri: a non-swiped carousel is re-served, often starting at slide 2, so slide 2 needs cover quality.</td>
+<td data-label="Source and tag">S25 blog relaying Mosseri: <code class="tag warn">unverified</code></td>
+</tr>
+<tr>
+<td class="ct">TikTok cover</td>
+<td data-label="Spec">The upload page lets you "edit the cover image" (<code class="tag good">verified</code> S23, undated blog). Third-party: 1080x1920, JPG/PNG; grid crop either square (1080x1080) or other; the first caption line may print over the bottom.</td>
+<td data-label="Source and tag">S26: <code class="tag warn">unverified (snippet)</code>. Grid crop unresolved</td>
+</tr>
+<tr>
+<td class="ct">Pinterest Pin</td>
+<td data-label="Spec">2:3, 1000x1500; taller than 2:3 "might get cut off"; PNG/JPEG; 20 MB web; title 100 chars; description 800 chars, not shown in feed. Full-bleed 9:16 (1080x1920) safe zone: top 270, left 65, right 195, bottom 790 (organic) or 440 (ads).</td>
+<td data-label="Source and tag">S4, S5: <code class="tag good">verified</code></td>
+</tr>
+<tr>
+<td class="ct">Pinterest text</td>
+<td data-label="Spec">"Not all Pins need text"; use it "thoughtfully", "headlines or hooks". Ad text overlay: no more than 10 words.</td>
+<td data-label="Source and tag">S6, S5: <code class="tag good">verified</code></td>
+</tr>
+<tr>
+<td class="ct">YouTube Short</td>
+<td data-label="Spec">Custom thumbnail: Studio, computer only, verified account. 9:16 recommended, 2160x3840, min height 640 px, JPG/PNG, 50 MB desktop. A 16:9 custom on a vertical video is replaced by an auto 4:5 on Home, Explore, Subscriptions. A Short is up to 3 min and square or taller.</td>
+<td data-label="Source and tag">S1, S2: <code class="tag good">verified</code></td>
+</tr>
+<tr>
+<td class="ct">Facebook Reels</td>
+<td data-label="Spec">No official cover spec read. API docs: 9:16, cover matches video ratio, 10 MB.</td>
+<td data-label="Source and tag">Ayrshare S27: <code class="tag plain">vendor claim</code>; grid crop unknown</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Where covers matter</strong> (<code class="tag plain">inferred</code>): autoplay feeds (Reels tab, TikTok For You) show the video, not the cover. Covers decide taps on profile grids, search and Explore grids, Pinterest, YouTube, and shared-link previews. Weight effort there. Where a custom upload is impossible, put the designed card as a one-frame end card so a frame picker can select it. <code class="tag plain">inferred</code></p>
+<h3>C.3 Boxed flag from w2b (carried, not fixed)</h3>
+<blockquote>
+<p><strong>FLAG, w2b section 7 and section 5: template 1's top label sits outside the hard-safe square, and covers need a per-listing focal box.</strong> Template 1's label "DROP 07 - THURSDAY" at y 330-375 is above the hard-safe square (y 420-1500). w2b did not edit the spec.</p>
+<ul>
+<li>
+<p><strong>w1e template 1 spec</strong>: the top label at y 330-375 sits outside w1e's own hard-safe square (y 420-1500). It survives the 3:4 grid crop (y 240-1680) and the 4:5 crop (y 285-1635), but a square TikTok crop would cut it. In my render "Open." cap tops start about 15 px under the frame's bottom edge and the "p" descender ends about 20 px above the "HERE, THEN GONE" label. Both are eyeballed from the PNG; I did not edit the spec.</p>
+</li>
+<li>
+<p><strong>Blind <code>object-fit: cover</code> cropped the lamp photo</strong> so the wall switch, a hanger and the Elvis frame all ended up in the cover (see the test PNG). Real automation needs a per-listing focal box. The cutout tool's alpha bounding box can supply it even when the original is shown; otherwise Claude proposes a crop box from viewing the photo and a human confirms.</p>
+</li>
+</ul>
+</blockquote>
+<p>Need review (compiler's cross-check from the two reports' own numbers, <code class="tag plain">inferred</code>): w1e gives two safe boxes. The cover text zone is x 90-990, y 420-1500 (grid-crop logic); the Meta ad safe zone, repeated in w1h, is 14% top, 35% bottom, 6% sides, i.e. y 269-1248 and x 65-1015 (stated for ads; <code class="tag plain">inferred</code> for organic). The boxes overlap only at y 420-1248. Template 1's "HERE, THEN GONE" label (y 1440-1480) and "Open." baseline (y 1400), template 2's "GONE." stamp (y 1230-1400) and template 3's "Tomorrow." (y 1300-1420) reach below y 1248. Which box governs a cover shown under the Reels interface needs review before the six templates are built.</p>
+<h3>C.4 X verified, Y need review (w1e section 9)</h3>
+<ul>
+<li>Reel cover editable after posting: Hopper says no, Planoly says "Adjust Preview" exists. Likely both (image fixed, grid crop adjustable). <code class="tag plain">inferred</code></li>
+<li>Instagram photo range: older help page 1.91:1 to 4:5, newer 1.91:1 to 3:4 (search-tool summary); SMT says 3:4 supported May 2025.</li>
+<li>Grid change: Jan 2025 (Hopper, Planoly) vs a "late 2025 3:4 grid preview" (search snippet).</li>
+<li>Meta 14/35/6 safe zone <code class="tag good">verified</code> for ads; a checker site gives 895x980 (snippet).</li>
+<li>Pinterest bottom margin: 790 (organic, S4) vs 440 (ads, S5), both <code class="tag good">verified</code>.</li>
+<li>TikTok grid crop: square (some sources) vs other. Unresolved.</li>
+<li>Bakhshi corpus: 1M (abstract) vs 1.1M (press release).</li>
+<li>YouTube A/B page was <code>/answer/13861714</code> and now redirects to <code>/answer/16391400</code>, retitled "A/B test titles &amp; thumbnails".</li>
+<li>Pinterest text: S14 (less is better) vs S15 (5-8 words doubles clicks). Both weak; compatible.</li>
+<li>Vendor contrast claims disagree (vidIQ: not a differentiator; mer.vin: 6.5% vs 4.7%).</li>
+</ul>
+<h3>C.5 Sources S1-S29 (w1e), accessed 2026-10-29</h3>
+<p>S1 <a href="https://support.google.com/youtube/answer/72431" rel="noopener noreferrer" target="_blank">support.google.com/youtube/answer/72431</a> · S2 <a href="https://support.google.com/youtube/answer/16391400" rel="noopener noreferrer" target="_blank">support.google.com/youtube/answer/16391400</a> · S3 <a href="https://support.google.com/youtube/answer/12340300" rel="noopener noreferrer" target="_blank">support.google.com/youtube/answer/12340300</a> · S4 <a href="https://help.pinterest.com/en/article/review-pin-specs" rel="noopener noreferrer" target="_blank">help.pinterest.com/en/article/review-pin-s…</a> · S5 <a href="https://help.pinterest.com/en/business/article/pinterest-product-specs" rel="noopener noreferrer" target="_blank">help.pinterest.com/en/business/article/pin…</a> · S6 <a href="https://create.pinterest.com/fundamentals/" rel="noopener noreferrer" target="_blank">create.pinterest.com/fundamentals</a> · S7 <a href="https://business.pinterest.com/creative-best-practices/" rel="noopener noreferrer" target="_blank">business.pinterest.com/creative-best-pract…</a> · S8 <a href="https://www.facebook.com/business/ads-guide/update/image/instagram-reels" rel="noopener noreferrer" target="_blank">facebook.com/business/ads-guide/update/ima…</a> · S9 <a href="https://planoly.com/blog/guide-to-instagrams-new-vertical-grid" rel="noopener noreferrer" target="_blank">planoly.com/blog/guide-to-instagrams-new-v…</a> · S10 <a href="https://www.hopperhq.com/blog/instagram-reel-size/" rel="noopener noreferrer" target="_blank">hopperhq.com/blog/instagram-reel-size</a> · S11 <a href="https://www.socialmediatoday.com/news/instagram-adds-support-phone-camera-aspect-ratio-images/749205/" rel="noopener noreferrer" target="_blank">socialmediatoday.com/news/instagram-adds-s…</a> · S12 <a href="https://vidiq.com/research/youtube-thumbnail-study/" rel="noopener noreferrer" target="_blank">vidiq.com/research/youtube-thumbnail-study</a> · S13 <a href="https://www.news.gatech.edu/news/2014/03/20/face-it-instagram-pictures-faces-are-more-popular" rel="noopener noreferrer" target="_blank">news.gatech.edu/news/2014/03/20/face-it-in…</a> · S14 <a href="https://wwd.com/business-news/media/feature/pinterest-studies-supercharge-fashion-content-10544628" rel="noopener noreferrer" target="_blank">wwd.com/business-news/media/feature/pinter…</a> · S15 <a href="https://gensumo.pages.dev/research/pinterest-pin-design-report/" rel="noopener noreferrer" target="_blank">gensumo.pages.dev/research/pinterest-pin-d…</a> · S16 <a href="https://community.pinterest.biz/t/designing-pins-text-overlays-dos-donts/661" rel="noopener noreferrer" target="_blank">community.pinterest.biz/t/designing-pins-t…</a> (Feb 2022, community member: large, bold, brief text; test in a phone feed) · S17 <a href="https://www.tomsguide.com/ai/instagram-says-ai-killed-the-curated-feed-now-its-scrambling-to-prove-whats-real" rel="noopener noreferrer" target="_blank">tomsguide.com/ai/instagram-says-ai-killed-…</a> · S18 <a href="https://coveteur.com/vintage-furniture-shops-instagram" rel="noopener noreferrer" target="_blank">coveteur.com/vintage-furniture-shops-insta…</a> · S19 <a href="https://bedthreads.com/blogs/journal/best-vintage-furniture-on-instagram" rel="noopener noreferrer" target="_blank">bedthreads.com/blogs/journal/best-vintage-…</a> · S20 <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" rel="noopener noreferrer" target="_blank">w3.org/WAI/WCAG22/Understanding/contrast-m…</a> · S21 <a href="https://www.canva.com/pricing/" rel="noopener noreferrer" target="_blank">canva.com/pricing</a> · S22 <a href="https://help.instagram.com/503708446705527" rel="noopener noreferrer" target="_blank">help.instagram.com/503708446705527</a> · S23 <a href="https://ads.tiktok.com/business/en-US/blog/introducing-video-scheduler-now-you-can-plan-tiktoks-in-advance" rel="noopener noreferrer" target="_blank">ads.tiktok.com/business/en-US/blog/introdu…</a> · S24 <a href="https://creators.instagram.com/blog/instagram-trial-reels" rel="noopener noreferrer" target="_blank">creators.instagram.com/blog/instagram-tria…</a> · S25 <a href="https://ccstartup.com/blog/2024/10/21/why-instagram-carousels-sometimes-start-on-the-second-slide/" rel="noopener noreferrer" target="_blank">ccstartup.com/blog/2024/10/21/why-instagra…</a> · S26 <a href="https://socialrails.com/sizes/tiktok/thumbnail" rel="noopener noreferrer" target="_blank">socialrails.com/sizes/tiktok/thumbnail</a> and <a href="https://mergeimages.net/ja/blog/tiktok-thumbnail-design-2026" rel="noopener noreferrer" target="_blank">mergeimages.net/ja/blog/tiktok-thumbnail-d…</a> · S27 <a href="https://ayrshare.com/docs/media-guidelines/facebook_pages" rel="noopener noreferrer" target="_blank">ayrshare.com/docs/media-guidelines/faceboo…</a> · S28 <a href="https://help.instagram.com/1038071743007909" rel="noopener noreferrer" target="_blank">help.instagram.com/1038071743007909</a> · S29 <a href="https://oakgen.ai/blog/instagram-reels-covers-guide" rel="noopener noreferrer" target="_blank">oakgen.ai/blog/instagram-reels-covers-guide</a> , <a href="https://www.lovart.ai/es/blog/how-to-chat-generate-reels-lovart" rel="noopener noreferrer" target="_blank">lovart.ai/es/blog/how-to-chat-generate-ree…</a> · microgh0st: <code>C:\Users\ethan\microgh0st\.firecrawl\psychology-clicks.md</code>.</p>
+</div></details>
+<details class="bank" id="appx-d"><summary><span class="num">D</span> <span>90-minute shoot, camera settings, safe-zone and reflection rules, gear kits</span></summary><div class="bank-body"><p>Source: <a href="http://w1h-capture-ingest.md" rel="noopener noreferrer" target="_blank">w1h-capture-ingest.md</a> sections 1.1, 1.2 and 1.3, plus the phone and safe-zone lines of its section 3 (accessed 2026-10-29).</p>
+<p>Tags: <code class="tag good">verified</code> (read live or measured this session), <code class="tag plain">vendor claim</code>, <code class="tag plain">practitioner</code>, <code class="tag warn">unverified (search summary)</code>, <code class="tag plain">inferred</code>. "Not read" means I could not reach the page and did not fill it from memory. Search and WebFetch summaries are tool-written and tagged unverified unless I also crawled the page.</p>
+<h3>D.1 Camera settings, the recipe (w1h section 1.1)</h3>
+<p>Apple's guide pages describe the iOS 27 generation (iPhone 18 Pro, "iPhone Duo"); the phone above is on iOS 26.5.1, so menu names may differ. Sources, all accessed 2026-10-29: <a href="https://support.apple.com/guide/iphone/change-video-recording-settings-iphc1827d32f/ios" rel="noopener noreferrer" target="_blank">support.apple.com/guide/iphone/change-vide…</a> , <a href="https://support.apple.com/guide/iphone/record-a-video-iph61f49e4bb/ios" rel="noopener noreferrer" target="_blank">support.apple.com/guide/iphone/record-a-vi…</a> , <a href="https://support.apple.com/guide/iphone/iph3dc593597/ios" rel="noopener noreferrer" target="_blank">support.apple.com/guide/iphone/iph3dc59359…</a> , <a href="https://support.apple.com/en-us/116944" rel="noopener noreferrer" target="_blank">support.apple.com/en-us/116944</a> (read via WebFetch; the crawl returned 0 bytes).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Do this</th>
+<th>Why</th>
+<th>Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Format</td>
+<td data-label="Do this">Settings &gt; Camera &gt; Formats &gt; Most Compatible for month one</td>
+<td data-label="Why">Apple: "All new photos and videos will now use JPEG or H.264 format." Meta's Reels ad spec also names "H.264 compression" (<a href="https://www.facebook.com/business/ads-guide/update/video/instagram-reels" rel="noopener noreferrer" target="_blank">facebook.com/business/ads-guide/update/vid…</a>)</td>
+<td data-label="Tag">verified</td>
+</tr>
+<tr>
+<td class="ct">Resolution / fps</td>
+<td data-label="Do this">1080p30 default; 4K30 for hero clips you may crop</td>
+<td data-label="Why">Apple: "Faster frame rates and higher resolutions result in larger video files." Instagram's help page reportedly wants 30 fps minimum (<a href="https://help.instagram.com/1038071743007909" rel="noopener noreferrer" target="_blank">help.instagram.com/1038071743007909</a>, walled)</td>
+<td data-label="Tag">verified / unverified (search summary)</td>
+</tr>
+<tr>
+<td class="ct">Avoid PAL</td>
+<td data-label="Do this">Never "HD (PAL)" or 25 fps</td>
+<td data-label="Why">US mains are 60 Hz; 25 fps against LEDs bands (forum consensus)</td>
+<td data-label="Tag">verified (option exists) / practitioner</td>
+</tr>
+<tr>
+<td class="ct">Auto FPS</td>
+<td data-label="Do this">Off in this dark room</td>
+<td data-label="Why">Apple: "automatically reducing the frame rate to 24 fps" in low light</td>
+<td data-label="Tag">verified; value inferred</td>
+</tr>
+<tr>
+<td class="ct">Lock White Balance</td>
+<td data-label="Do this">On (Settings &gt; Camera &gt; Record Video)</td>
+<td data-label="Why">Apple documents it; keeps burgundy from drifting past neon, brass, lamps</td>
+<td data-label="Tag">verified; use inferred</td>
+</tr>
+<tr>
+<td class="ct">HDR Video</td>
+<td data-label="Do this">Off, explicitly</td>
+<td data-label="Why">Apple: other devices "receive an SDR version". I did not verify that Most Compatible turns it off</td>
+<td data-label="Tag">verified (option) / inferred</td>
+</tr>
+<tr>
+<td class="ct">Exposure</td>
+<td data-label="Do this">Touch and hold a mid-tone wall until "AE/AF Lock"; slide exposure down until neon tubes keep colour</td>
+<td data-label="Why">Apple (photo section): "touch and hold the focus area until you see AE/AF Lock"; same in Video per <a href="https://primalvideo.com/video-creation/shooting/filming-videos-with-iphone-fix-lighting-and-exposure-changes-with-auto-exposure-lock" rel="noopener noreferrer" target="_blank">primalvideo.com/video-creation/shooting/fi…</a></td>
+<td data-label="Tag">verified / practitioner</td>
+</tr>
+<tr>
+<td class="ct">Neon</td>
+<td data-label="Do this">Dim the sign to its lowest setting if it has a dimmer</td>
+<td data-label="Why">YellowPop (a neon seller): "use the dimmer to put it on the lowest brightness setting... adjust and lock exposure settings" (<a href="https://www.yellowpop.com/blogs/news/how-to-take-good-pictures-of-your-neon-sign" rel="noopener noreferrer" target="_blank">yellowpop.com/blogs/news/how-to-take-good-…</a>)</td>
+<td data-label="Tag">vendor claim</td>
+</tr>
+<tr>
+<td class="ct">Slow-mo</td>
+<td data-label="Do this">120 fps for ball and glass, under the room's lamps rather than cheap LED panels</td>
+<td data-label="Why">Ulanzi (sells panels, dated Sep 15 2026): panels use PWM and can band at 120/240 fps; "test your exact camera and light" (<a href="https://www.ulanzi.com/blogs/knowledges/why-led-panels-flicker-120fps-240fps" rel="noopener noreferrer" target="_blank">ulanzi.com/blogs/knowledges/why-led-panels…</a>)</td>
+<td data-label="Tag">vendor claim</td>
+</tr>
+<tr>
+<td class="ct">Stabilisation</td>
+<td data-label="Do this">Action mode or a tripod</td>
+<td data-label="Why">Apple: Action mode "works best in bright light"</td>
+<td data-label="Tag">verified</td>
+</tr>
+<tr>
+<td class="ct">Audio</td>
+<td data-label="Do this">Record normally, strip in the edit</td>
+<td data-label="Why">Apple: iPhone 16+ record Spatial Audio by default; both probed clips carry a 4-channel second audio stream</td>
+<td data-label="Tag">verified</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Capture-format options</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Cost</th>
+<th>Wins when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Most Compatible, 1080p30</td>
+<td data-label="Cost">Smallest H.264 files that every Windows tool opens (bitrate unmeasured)</td>
+<td data-label="Wins when">Default for month one; ingest caps matter</td>
+</tr>
+<tr>
+<td class="ct">Most Compatible, 4K30 for hero clips only</td>
+<td data-label="Cost">About 193 MB/min at 4K30 H.264 (other phone); hits 20 MB and 50 MB caps first</td>
+<td data-label="Wins when">You will crop in for a vertical re-frame or pull 4K Pin stills</td>
+</tr>
+<tr>
+<td class="ct">High Efficiency (HEVC) 4K</td>
+<td data-label="Cost">Smaller files (Apple: better compression), but HEVC needs conversion for the Fedora box and some editors</td>
+<td data-label="Wins when">You only edit in Edits/Photos and never ingest to the box</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Safe-zone framing.</strong> Meta's Reels ad guide: leave "at least 14% of the top, 35% of the bottom, and 6% on each side" free of text and key elements; 9:16; MP4/MOV; AAC 128 kbps+ (same URL). That is ad guidance applied to organic posts: <code class="tag plain">inferred</code>. Practical box: subject inside the middle 88% wide, between 14% and 65% of the height. w1e owns the grid crop and covers.</p>
+<p><strong>Reflections (mirrors, glass, mirror ball).</strong> All <code class="tag plain">practitioner</code> (forum and Q&amp;A consensus via a search summary; the UniquePhoto page was walled): (1) camera off the mirror's centre line, farther back, 2x/3x not 0.5x; (2) black foam board with a lens hole, or black cloth where the reflection falls (the photo checklist already lists a black foam board); (3) dark clothing, no white shirt; (4) light the frame and the reflected surface separately, keep the camera side dark; (5) polarizer evidence conflicts. <strong>Flag:</strong> a mirror shot can show Hollie's face by accident; on-camera or not is Ricky's/Hollie's call, and this recipe keeps hands-first intact.</p>
+<p><strong>Colour temperature.</strong> Warm lamps and brass read right near 3200K. The Neewer NL-36AI offers 3200K / 4100K / 5600K and CRI 97+ (<code class="tag good">verified</code>, product page). Set 3200K (<code class="tag plain">inferred</code>).</p>
+<h3>D.2 One 90-minute shoot (w1h section 1.2)</h3>
+<p>Ordered by light state to minimise resets. Post numbers are d1's (<code>research/round-d/d1-social-video.md</code>). Clips 8-15 s unless noted, vertical.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Min</th>
+<th>Block</th>
+<th>Clips</th>
+<th>Feeds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">0-5 min</td>
+<td class="ct">Test</td>
+<td data-label="Clips">One 5 s clip per light; check banding and colour on the phone</td>
+<td data-label="Feeds">all</td>
+</tr>
+<tr>
+<td class="kn">5-35 min</td>
+<td class="ct"><strong>Lights on</strong></td>
+<td data-label="Clips">Slow pan along the burgundy wall past lamps and art, 3 passes (3). Hands wrap pink glass in tissue, tape, write the note card (3). Hand reads a lamp: base, socket, cord, wattage tag (3 x 6 s). Bare corner locked off, then dressed (2). Hands on a video call, post only after booking exists (1)</td>
+<td data-label="Feeds">#2, #7, #11, #12, #16, #17</td>
+</tr>
+<tr>
+<td class="kn">35-60 min</td>
+<td class="ct"><strong>Lamps and glass, mood light</strong></td>
+<td data-label="Clips">Hand clicks a lamp, the room warms (2). Teaser close-up, no price (1). Hand runs along brass (1). Backlit cut glass on a lazy Susan, hand turns it (2). Light through facets, 120 fps (1). One honest flaw close-up (1)</td>
+<td data-label="Feeds">#6, #8, #13, #14</td>
+</tr>
+<tr>
+<td class="kn">60-75 min</td>
+<td class="ct"><strong>Neon</strong></td>
+<td data-label="Clips">Hand flips the pink "do it for the plot" neon on (2, 120 fps once). Slow push-in, exposure locked (1). Neon off-axis in a mirror (1). Neon behind a brass lamp (1)</td>
+<td data-label="Feeds">#1</td>
+</tr>
+<tr>
+<td class="kn">75-90 min</td>
+<td class="ct"><strong>Mirror ball</strong></td>
+<td data-label="Clips">Ball turning in one narrow beam, 15 s (2). Light spots sweeping the wall (1). Facet close-up (1). 120 fps hand spin (1)</td>
+<td data-label="Feeds">#4</td>
+</tr>
+</tbody>
+</table></div>
+<p>About 34 clips: 20 Instagram posts, 12 TikTok re-cuts (3 a week, same clips), 12 Pins from 4K frame grabs plus the photo-checklist stills. <code class="tag plain">inferred</code>; I did not time a shoot. Per the BRIEF gate, drop-day posts wait for real stock. Keep on-screen text free of "visit", "in store", "our doors".</p>
+<p><strong>Audio.</strong> Silent hands clips plus room-mood music. Business-account music limits are w1a's; the implication here is that CapCut's library is off the table (1.4). The already-chosen option is the four Kevin MacLeod CC BY 4.0 tracks in <code>docs/music-and-lights-notes.md</code> (condition: visible credit, per his FAQ read 2026-10-26), mixed into the file and credited in the caption. Content ID claims on CC tracks are possible (<code class="tag plain">inferred</code>).</p>
+<h3>D.3 Gear: the two kits (w1h section 1.3)</h3>
+<p><strong>Caution: prices as of 2026-10-29, re-checked in the manual.</strong> Kit B's RGB61 price is a sale price that may end, the turntable line is <code class="tag warn">unverified (search snippet)</code>, the gimbal price is not read from DJI, and tax and shipping are excluded.</p>
+<p>Neewer's page: "prices vary by location" (tariffs, logistics); free shipping over $50 shown on the page. The room has its own lamps and neon; add small fill, do not flatten the mood.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Kit</th>
+<th>Items</th>
+<th>Sum</th>
+<th>Wins when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct"><strong>A, under $100</strong></td>
+<td data-label="Items">DS034 desk mount, C-clamp, phone holder $29.99 (<a href="https://neewer.com/products/neewer-basics-ds034-camera-desk-mount-stand-with-c-clamp-phone-holder-66610105" rel="noopener noreferrer" target="_blank">neewer.com/products/neewer-basics-ds034-ca…</a>); TP34 flexible phone tripod $25.99 (<a href="https://neewer.com/products/neewer-tp34-flexible-phone-tripod-66610307" rel="noopener noreferrer" target="_blank">neewer.com/products/neewer-tp34-flexible-p…</a>); NL-36AI bi-colour light $22.99 (<a href="https://neewer.com/products/neewer-nl-36ai-camera-soft-light-66600903" rel="noopener noreferrer" target="_blank">neewer.com/products/neewer-nl-36ai-camera-…</a>). Black foam board and lazy Susan already in the kit/kitchen</td>
+<td data-label="Sum"><strong>$78.97</strong></td>
+<td data-label="Wins when">First month; you only need a steady phone and one fill</td>
+</tr>
+<tr>
+<td class="ct"><strong>B, under $300</strong></td>
+<td data-label="Items">DS026 overhead phone stand $44.99 (<a href="https://neewer.com/products/neewer-ds026-overhead-phone-tripod-stand-66609390" rel="noopener noreferrer" target="_blank">neewer.com/products/neewer-ds026-overhead-…</a>); TP34 $25.99; ST180B 180 cm light stand $34.99 (<a href="https://neewer.com/products/neewer-basics-st180b-180cm-photography-light-stand-66609099" rel="noopener noreferrer" target="_blank">neewer.com/products/neewer-basics-st180b-1…</a>); 2x RGB61 RGB light, <strong>sale</strong> $24.99 each, regular $29.99 (<a href="https://neewer.com/products/neewer-rgb61-cri-97-rgb-video-light-360-full-color-led-camera-light-with-3-cold-shoe-66600609" rel="noopener noreferrer" target="_blank">neewer.com/products/neewer-rgb61-cri-97-rg…</a>); NL-36AI $22.99</td>
+<td data-label="Sum"><strong>$178.94</strong> (sale), $188.94 (regular)</td>
+<td data-label="Wins when">Backlit glass and weekly batches; you want a pink or amber rim light</td>
+</tr>
+<tr>
+<td class="ct">B + turntable</td>
+<td data-label="Items">Generic 20 cm motorised USB turntable about $28-31 (<code class="tag warn">unverified (search snippet)</code>)</td>
+<td data-label="Sum">about $209-219</td>
+<td data-label="Wins when">A no-hands object loop is wanted</td>
+</tr>
+<tr>
+<td class="ct">B + gimbal</td>
+<td data-label="Items">DJI Osmo Mobile 8 reportedly $149 (Canon Rumors, via search summary). DJI's own page was not reached: <strong>price not read</strong></td>
+<td data-label="Sum">about $358, over cap</td>
+<td data-label="Wins when">Walkthrough pans; Action mode plus tripod is the free alternative</td>
+</tr>
+</tbody>
+</table></div>
+<p>Turntable references: Foldio360 Smart Turntable $139 (<a href="https://www.orangemonkie.com/products/foldio360-turntable" rel="noopener noreferrer" target="_blank">orangemonkie.com/products/foldio360-turnta…</a>, <code class="tag good">verified</code>, store JSON); B&amp;H Angler motorised $98 (<code class="tag warn">unverified</code>, snapshot reportedly about 9 months old). Hollie's hand on a lazy Susan fits hands-first. Mic: not needed (silent clips). <strong>Skip:</strong> ring lights (round catchlights in glass), softboxes, polarizers for mirrors, shotgun mics, any gimbal before month two (<code class="tag plain">inferred</code>).</p>
+<h3>D.4 X verified, Y need review (w1h section 3, the lines that touch this section)</h3>
+<ul>
+<li>Phone: iPhone 17 Pro verified from the walkthrough's metadata; that it is the shop phone, and whose the 16 Pro Max clip is, need review.</li>
+<li>Meta's safe-zone numbers are ad guidance (verified), applied to organic by inference.</li>
+</ul>
+</div></details>
+<details class="bank" id="appx-e"><summary><span class="num">E</span> <span>Four-week timing experiment</span></summary><div class="bank-body"><p>Source: <a href="http://w1a-ig-rules-timing.md" rel="noopener noreferrer" target="_blank">w1a-ig-rules-timing.md</a> sections 5.4 and 5.6, plus the best-time line of its section 8 (accessed 2026-10-29). Hypotheses are <code class="tag plain">inferred</code> for a U.S. East Coast home-decor audience. These H1-H5 are w1a's list; w1d's H1-H8 (<a href="#appx-b">section B.6</a>) are a different list.</p>
+<h3>E.1 Hypotheses H1-H5 (w1a section 5.4)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Slot (ET)</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">H1</td>
+<td class="ct">Weekday 6:30-8 pm</td>
+<td data-label="Basis">Metricool evening peak; Buffer 6 pm; Hootsuite retail Tue/Fri evening</td>
+</tr>
+<tr>
+<td class="kn">H2</td>
+<td class="ct">Weekday 7:30-9 am</td>
+<td data-label="Basis">Buffer Thu 9 am; Hootsuite retail Mon/Thu morning</td>
+</tr>
+<tr>
+<td class="kn">H3</td>
+<td class="ct">Weekday 12-1 pm</td>
+<td data-label="Basis">Sprout midday Wed/Thu</td>
+</tr>
+<tr>
+<td class="kn">H4</td>
+<td class="ct">Saturday ~11 am</td>
+<td data-label="Basis">Hootsuite Eastern; weekend decor browsing (<code class="tag plain">inferred</code>)</td>
+</tr>
+<tr>
+<td class="kn">H5</td>
+<td class="ct">Fixed weekly drop slot</td>
+<td data-label="Basis">Not a test: DROP DAY is Ricky's call; keep it out of the experiment</td>
+</tr>
+</tbody>
+</table></div>
+<h3>E.2 Reality check, Latin square, metrics, fairness rules, decision rule (w1a section 5.6)</h3>
+<p><strong>Reality check.</strong> At 0 followers a timing test mostly measures noise. Sixteen posts cannot separate slot from weekday or content, so treat the output as a screen to retest. At 100 followers Insights adds "times they're most active" as a second opinion <code class="tag good">verified</code>. After 200 followers, use Trial Reels for hooks.</p>
+<p><strong>Design (Latin square, 4 slots x 4 formats x 4 weeks):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Week</th>
+<th>A: Tue 8 am</th>
+<th>B: Wed 12:30 pm</th>
+<th>C: Thu 7 pm</th>
+<th>D: Sat 11 am</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="kn">Week 1</td>
+<td class="ct">Reel 1 (neon)</td>
+<td data-label="B: Wed 12:30 pm">Reel 2 (lamp click)</td>
+<td data-label="C: Thu 7 pm">Carousel (read a lamp)</td>
+<td data-label="D: Sat 11 am">Reel 3 (wrapping)</td>
+</tr>
+<tr>
+<td class="kn">Week 2</td>
+<td class="ct">Reel 3</td>
+<td data-label="B: Wed 12:30 pm">Reel 1</td>
+<td data-label="C: Thu 7 pm">Reel 2</td>
+<td data-label="D: Sat 11 am">Carousel</td>
+</tr>
+<tr>
+<td class="kn">Week 3</td>
+<td class="ct">Carousel</td>
+<td data-label="B: Wed 12:30 pm">Reel 3</td>
+<td data-label="C: Thu 7 pm">Reel 1</td>
+<td data-label="D: Sat 11 am">Reel 2</td>
+</tr>
+<tr>
+<td class="kn">Week 4</td>
+<td class="ct">Reel 2</td>
+<td data-label="B: Wed 12:30 pm">Carousel</td>
+<td data-label="C: Thu 7 pm">Reel 3</td>
+<td data-label="D: Sat 11 am">Reel 1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Each format lands in every slot once. Room and brand content only (no product-link posts until real stock exists).</p>
+<p><strong>Measure per post</strong> (definitions: <a href="https://www.facebook.com/help/instagram/202865988324236" rel="noopener noreferrer" target="_blank">facebook.com/help/instagram/202865988324236</a>): Views, Viewers, <strong>average watch time</strong> (watch time / initial views), likes, <strong>shares (sends)</strong>, saves, follows, and the follower vs non-follower split where shown. Primary: average watch time and <strong>sends per viewer</strong>. Secondary: likes per viewer, follows per 1,000 viewers. Read at <strong>24 h and 7 days</strong> (the FAQ's 7-day comment window). A view/skip rate (first 3 seconds) is mentioned in the Feb 2025 Creators post; its presence in the app is unconfirmed.</p>
+<p><strong>Fairness rules (write before posting):</strong></p>
+<ol>
+<li value="1">Same caption template, hashtag count (3-5), cover style and call to action across all 16.</li>
+<li value="2">No boosting, giveaways or collabs; no extra feed posts within 3 hours of a test post; constant Stories count.</li>
+<li value="3">Same audio rule (room audio or Sound Collection).</li>
+<li value="4">Skip the Thanksgiving to New Year weeks (<code class="tag plain">inferred</code>; the Sprout window shows holiday skew).</li>
+<li value="5">One sheet: post, format, slot, length, hook, audio, metrics at 24 h and 7 d, Account Status check.</li>
+<li value="6"><strong>Decision rule:</strong> a slot qualifies only if it ranks top two of four on both primary metrics in at least 3 of 4 weeks. Otherwise record "no detectable difference" and use the slot easiest for Hollie. Retest the top two vs the bottom one for four more weeks.</li>
+</ol>
+<p>Pipeline note: the same metrics exist in the Instagram Media Insights API (<a href="https://developers.facebook.com/documentation/instagram-platform/reference/instagram-media/insights" rel="noopener noreferrer" target="_blank">developers.facebook.com/documentation/inst…</a>), so Claude can fill the sheet; interpreting it stays with Hollie.</p>
+<h3>E.3 X verified, Y need review</h3>
+<ul>
+<li>Best time: five studies disagree; Instagram: early reactions do not boost.</li>
+</ul>
+<p>Need review: this Latin square and w1d's two-slot test (<a href="#appx-b">section B.6</a>) are two different timing designs with different slots; see the note in B.6.</p>
+</div></details>
+<details class="bank" id="appx-f"><summary><span class="num">F</span> <span>Music and audio rules, AI-label cautions</span></summary><div class="bank-body"><p>Source: <a href="http://w1a-ig-rules-timing.md" rel="noopener noreferrer" target="_blank">w1a-ig-rules-timing.md</a> section 3 (Music: Business vs Creator), the "AI labels" row of section 2 and TL;DR 10 (accessed 2026-10-29); cross-references from <a href="http://w1c-content-hooks.md" rel="noopener noreferrer" target="_blank">w1c-content-hooks.md</a> sections 2 and 8 and <a href="http://w1h-capture-ingest.md" rel="noopener noreferrer" target="_blank">w1h-capture-ingest.md</a> sections 1.2 and 1.4 (accessed 2026-10-29).</p>
+<h3>F.1 Music: Business vs Creator (w1a section 3)</h3>
+<p>Sources <code class="tag good">verified</code>: <a href="https://www.facebook.com/help/instagram/402084904469945" rel="noopener noreferrer" target="_blank">facebook.com/help/instagram/402084904469945</a> (mirror of <a href="http://help.instagram.com" rel="noopener noreferrer" target="_blank">help.instagram.com</a>), <a href="https://www.facebook.com/government-nonprofits/blog/music-for-videos-on-facebook-and-instagram" rel="noopener noreferrer" target="_blank">facebook.com/government-nonprofits/blog/mu…</a>, <a href="https://www.facebook.com/help/instagram/570215404599013" rel="noopener noreferrer" target="_blank">facebook.com/help/instagram/570215404599013</a>, <a href="https://www.facebook.com/help/instagram/329208821595430" rel="noopener noreferrer" target="_blank">facebook.com/help/instagram/329208821595430</a>.</p>
+<ul>
+<li>"The music available in our library is intended for personal, non-commercial use." "Certain business accounts and certain types of posts do not have access to the library."</li>
+<li>Sound Collection: "over 14,000 songs and sounds which are entirely royalty free... can be used for commercial purposes like ads"; the blog adds 1,500+ sound effects. Find it under <strong>Audio</strong> in the Reels camera.</li>
+<li>Boosted reels "can't use licensed music". Licensed tracks "can become muted" if rights deals change.</li>
+<li><strong>Meta does not say which account type gets the licensed library.</strong> Vendor blogs call Creator a "gray area" (<code class="tag warn">unverified</code>). Open Audio on the real account before planning around it.</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Audio option</th>
+<th>Price</th>
+<th>Risk</th>
+<th>Wins when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Room's own recorded audio ("Original audio" under H&amp;V)</td>
+<td data-label="Price">Free</td>
+<td data-label="Risk">Low; music playing in the room is third-party music (<code class="tag plain">inferred</code>)</td>
+<td data-label="Wins when">Neon click, lamp switch, wrapping</td>
+</tr>
+<tr>
+<td class="ct">Meta Sound Collection</td>
+<td data-label="Price">Free</td>
+<td data-label="Risk">Low; may not match "room mood"</td>
+<td data-label="Wins when">Carousels, mood reels</td>
+</tr>
+<tr>
+<td class="ct">Licensed library</td>
+<td data-label="Price">Free</td>
+<td data-label="Risk">Business accounts may lack it; mute risk; no boosting</td>
+<td data-label="Wins when">Only if the account actually shows it</td>
+</tr>
+<tr>
+<td class="ct">Direct license via Rights Manager allow-list</td>
+<td data-label="Price">Not priced</td>
+<td data-label="Risk">Contract effort</td>
+<td data-label="Wins when">A playlist the shop owns</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F.2 Related audio lines in other reports</h3>
+<p>From w1c section 2 (Planoly sells a scheduler, <code class="tag plain">vendor claim</code>):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Source, date</th>
+<th>Tag, bias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Business accounts often cannot use trending licensed audio; use the "Original Audio" filter, or copy the trend with different audio; do not switch to Personal to get it</td>
+<td data-label="Source, date"><a href="https://www.planoly.com/blog/commercially-licensed-vs-trending-sounds-what-can-brands-use" rel="noopener noreferrer" target="_blank">planoly.com/blog/commercially-licensed-vs-…</a> (read live; Planoly sells a scheduler)</td>
+<td data-label="Tag, bias"><code class="tag plain">vendor claim</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>From w1c section 8:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Avoid</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">Trending audio the account cannot use</td>
+<td data-label="Why">Vendor claim: business accounts lose licensed trends. Do not switch to a Personal account to get them (loses insights and contact buttons, per Planoly). Copy the format, change the sound</td>
+</tr>
+</tbody>
+</table></div>
+<p>From w1h section 1.4 (CapCut's library; the Kevin MacLeod CC BY 4.0 option is in the Audio paragraph of D.2):</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>App</th>
+<th>Price</th>
+<th>Watermark / export</th>
+<th>Captions, templates</th>
+<th>Commercial-use music</th>
+<th>Wins when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct"><strong>CapCut</strong> (id1500855883)</td>
+<td data-label="Price">App Store IAP: Standard Monthly $9.99, Pro Monthly $19.99, Yearly $89.99. <a href="http://capcut.com/pricing:" rel="noopener noreferrer" target="_blank">capcut.com/pricing:</a> Pro $19.99/mo or $179.99/yr, Ultra $79/mo, "reference only"</td>
+<td data-label="Watermark / export">Free-tier watermark not on the pricing page: <strong>need review</strong></td>
+<td data-label="Captions, templates">Auto captions, templates, speed 0.1-100x</td>
+<td data-label="Commercial-use music"><strong>Sounds are non-commercial only</strong>; Commercial Sounds may be shared "within CapCut, TikTok and TikTok for Business" (<a href="https://www.capcut.com/clause/material-license-agreement" rel="noopener noreferrer" target="_blank">capcut.com/clause/material-license-agreement</a>)</td>
+<td data-label="Wins when">You want the deepest templates. Export silent, no CapCut music</td>
+</tr>
+</tbody>
+</table></div>
+<p>Need review: w1c (Planoly, <code class="tag plain">vendor claim</code>) says business accounts often cannot use trending licensed audio; w1a (Meta's own pages, <code class="tag good">verified</code>) says Meta does not say which account type gets the licensed library and that vendor blogs call Creator a "gray area" (<code class="tag warn">unverified</code>). Both are shown; open Audio on the real account before planning around either.</p>
+<h3>F.3 AI-label cautions (w1a section 2, AI row; w1a TL;DR 10; w1h section 1.4)</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>What Instagram says (source, date, tag)</th>
+<th>Consequence for H&amp;V</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ct">AI labels</td>
+<td data-label="What Instagram says (source, date, tag)"><strong>AI-generated profile</strong> (renamed from AI creator label, 2026-08-31): for profiles featuring an AI-generated <em>person</em>; unlabeled ones lose reach; "Creators who simply use AI tools as part of their creative process don't need to add the label" (<a href="https://creators.instagram.com/blog/ai-generated-profile-label" rel="noopener noreferrer" target="_blank">creators.instagram.com/blog/ai-generated-p…</a>) <code class="tag good">verified</code>. "AI info" labels appear when industry-standard indicators are detected or the poster discloses (<a href="https://transparency.meta.com/governance/tracking-impact/labeling-ai-content/" rel="noopener noreferrer" target="_blank">transparency.meta.com/governance/tracking-…</a>, updated 2025-02-19) <code class="tag good">verified</code>. API has <code>is_ai_generated</code> <code class="tag good">verified</code></td>
+<td data-label="Consequence for H&amp;V"><code class="tag plain">inferred</code>: generative-fill or upscalers that stamp C2PA metadata could trigger "AI info" on real product photos. Test one export before the pipeline commits to a tool</td>
+</tr>
+</tbody>
+</table></div>
+<ol start="10">
+<li value="10"><strong>AI:</strong> the "AI-generated profile" label (2026-08-31) covers AI-generated <em>people</em> only; ordinary AI tools need no label <code class="tag good">verified</code>. Real-photo policy is unaffected, with one export-metadata caution.</li>
+</ol>
+<p><strong>Constraint flag:</strong> Edits' AI animation/Restyle, CapCut's Seedance / Nano Banana generation and Captions' AI Twin/Actors/B-roll are off-limits on product footage under "real photos of real items only". Captions, cuts, colour and speed are fine.</p>
+</div></details>
+</div>
+</main>
+
+<footer class="foot">
+  <p>Built 2026-10-29 from <code>docs/social-manual.md</code> and <code>docs/social-manual-appendices.md</code>. The Claude Code and Codex build spec (<code>docs/codex-handoff-social-autopilot.md</code>) is not in this edition. Prices were read on 2026-10-29; re-check them on the signup page before paying.</p>
+</footer>
+</div>
+<a class="fab" href="#top">Contents</a>
+<script>
+(function () {
+  function show(id) {
+    var el = id && document.getElementById(id);
+    if (!el) return;
+    var d = el.tagName === "DETAILS" ? el : el.closest("details");
+    if (d) d.open = true;
+    requestAnimationFrame(function () { el.scrollIntoView(); });
+  }
+  function copyText(b) {
+    var t = b.getAttribute("data-copy");
+    function done(ok) {
+      b.textContent = ok ? "Copied" : "Copy failed";
+      b.classList.toggle("ok", ok);
+      setTimeout(function () { b.textContent = "Copy"; b.classList.remove("ok"); }, 1800);
+    }
+    function fallback() {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;opacity:0";
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta); done(ok);
+      } catch (e) { done(false); }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(function () { done(true); }, fallback);
+    } else { fallback(); }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a) setTimeout(function () { show(a.getAttribute("href").slice(1)); }, 0);
+    var b = e.target.closest(".copy");
+    if (b) copyText(b);
+  });
+  window.addEventListener("hashchange", function () { show(location.hash.slice(1)); });
+  var tog = document.getElementById("toggle-banks");
+  tog.addEventListener("click", function () {
+    var open = tog.textContent === "Open all banks";
+    document.querySelectorAll("details.bank").forEach(function (d) { d.open = open; });
+    tog.textContent = open ? "Close all banks" : "Open all banks";
+  });
+  if (location.hash) show(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
