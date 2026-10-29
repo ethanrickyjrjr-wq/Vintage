@@ -156,8 +156,8 @@ html { scroll-padding-top: 96px; }
 /* Fabulous From Online: the done-for-you answer to Your room. */
 .hire { margin-bottom: 90px; padding-top: 56px; border-top: 1px solid var(--line); }
 .hire-intro { display: grid; grid-template-columns: 1.1fr .8fr; align-items: center; gap: 8%; margin-bottom: 56px; }
-.hire-intro h2 { font: 400 clamp(37px, 4vw, 56px)/1.16 var(--display); letter-spacing: -.035em; margin: 0 0 22px; }
-.hire-intro h2 em { color: var(--rust); display: inline-block; padding-bottom: .08em; }
+.hire-intro :is(h1, h2) { font: 400 clamp(37px, 4vw, 56px)/1.16 var(--display); letter-spacing: -.035em; margin: 0 0 22px; }
+.hire-intro :is(h1, h2) em { color: var(--rust); display: inline-block; padding-bottom: .08em; }
 .hire-intro p:not(.eyebrow) { max-width: 48ch; color: var(--muted); font-size: 16px; }
 .hire-photo { width: 100%; max-width: 380px; margin: 0; justify-self: end; }
 .hire-photo img { aspect-ratio: 3/4; height: auto; border: 8px solid #e6dac8; }
@@ -238,9 +238,28 @@ html { scroll-padding-top: 96px; }
   .hire { padding-top: 36px; margin-bottom: 55px; }
   .hire-intro, .hire-ways, .hire-addons { grid-template-columns: 1fr; }
   .hire-intro { gap: 30px; margin-bottom: 36px; }
-  .hire-intro h2 { font-size: 36px; }
+  .hire-intro :is(h1, h2) { font-size: 36px; }
   .hire-intro p:not(.eyebrow) { font-size: 15px; }
   .hire-photo { justify-self: center; }
   .hire-heading { margin-top: 36px; }
 }
 @media (max-width: 560px) { .hire-tiers { grid-template-columns: 1fr; } }
+
+/* Three doors: the room editor, Hire Hollie and the 3D showroom each have their own page. */
+.doors { padding-block: 72px 84px; border-top: 1px solid var(--line); }
+.doors-intro { max-width: 640px; margin-bottom: 40px; }
+.doors-intro h2 { font: 400 clamp(37px, 4vw, 56px)/1.16 var(--display); letter-spacing: -.035em; margin: 0 0 18px; }
+.doors-intro h2 em { color: var(--pink); display: inline-block; padding-bottom: .08em; }
+.doors-intro p { max-width: 52ch; margin: 0; color: var(--muted); font-size: 16px; }
+.door-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.door { display: flex; flex-direction: column; gap: 10px; padding: 18px 18px 26px; border: 1px solid var(--line); background: var(--paper-deep); color: inherit; text-decoration: none; transition: border-color .2s, transform .2s; }
+.door img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 42%; border: 6px solid #e6dac8; margin-bottom: 8px; }
+.door .eyebrow { margin: 0; font: 400 .75rem/1.5 var(--mono); letter-spacing: .08em; color: var(--muted); }
+.door h3 { margin: 0; font: 400 28px/1.2 var(--display); }
+.door p { margin: 0; color: var(--muted); font-size: 15px; }
+.door:hover, .door:focus-visible { border-color: var(--pink); }
+@media (prefers-reduced-motion: no-preference) { .door:hover { transform: translateY(-3px); } }
+.doors-disco { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 34px 0 0; color: var(--muted); font-size: 14px; }
+.doors-disco .disco-motion-toggle { margin: 0; }
+@media (max-width: 900px) { .door-grid { grid-template-columns: 1fr; gap: 20px; } }
+@media (max-width: 767px) { .doors { padding-block: 48px 56px; } .doors-intro h2 { font-size: 36px; } .doors-intro p { font-size: 15px; } }

@@ -437,7 +437,7 @@ select:focus-visible {
 .section-intro {
   margin-bottom: 40px;
 }
-.section-intro h2 {
+.section-intro :is(h1, h2) {
   font-family: var(--display);
   font-weight: 400;
   font-size: 45px;
@@ -1569,7 +1569,7 @@ body:has(dialog[open]) {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .section-intro h2 {
+  .section-intro :is(h1, h2) {
     font-size: 34px;
   }
   .section-intro p {

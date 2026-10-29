@@ -53,7 +53,9 @@ One flag, for Ricky's eyes only: c6 liked "Not for sale. Very much for hire." as
 
 ## Where it lives
 
-**One homepage section, no new page.** Ricky said "section".
+**Superseded 2026-10-29: Hire Hollie now has its own page, `site/hire.html`.** Ricky approved the lighter-homepage layout from the idea room. The section moved there verbatim, the homepage links to it from its nav and the three doors, and old `/#hire-hollie` links redirect.
+
+**Originally: one homepage section, no new page.** Ricky said "section".
 - The section sits directly after **Your room** (`#your-room`) and before the disco note.
 - The room editor is do-it-yourself; this is the done-for-you answer to it.
 - Its anchor is `#hire-hollie`, and a **Hire Hollie** link goes in the header, mobile and footer navs.

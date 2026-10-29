@@ -1,4 +1,4 @@
-// Paste into the browser console on the homepage (local or live). Prints PASS/FAIL per check.
+// Paste into the browser console on the homepage (checks 4–8) or room.html (checks 9–10), local or live. Prints PASS/FAIL per check.
 // Covers docs/codex-handoff-navigation.md acceptance lines 1 (same-document part), 4, 5, 6, 8, 9.
 // ponytail: console script, no test runner. Move to Playwright only when a second page needs it.
 (async () => {
@@ -10,6 +10,7 @@
   const count = () => $("#result-count").textContent;
   const back = () => new Promise((r) => { addEventListener("popstate", () => r(true), { once: true }); setTimeout(() => r(false), 1500); history.back(); });
 
+  if (product) {
   // 4 + 5: a detail must not wipe the search, whether closed by Back or by ×
   search.value = "lamp"; search.dispatchEvent(new Event("input", { bubbles: true })); await sleep(50);
   const lampCount = count();
@@ -44,6 +45,8 @@
   check("8 three category taps add no history entries", history.length === before, `added ${history.length - before}`);
   $('#category-filters [data-category="all"]').click();
 
+  }
+  if (document.getElementById("your-room")) {
   // 9: removing one placed find leaves the other, does not scroll, says so, and Undo restores it
   const id = (s) => document.getElementById(s);
   id("your-room").scrollIntoView({ behavior: "instant" });
@@ -79,6 +82,7 @@
     pageDragIgnored && fileDropLoaded && sampleButtonShown && /Sample room/.test(id("room-photo-label").textContent),
     `pageDragIgnored=${pageDragIgnored} fileDropLoaded=${fileDropLoaded} sampleButton=${sampleButtonShown} label="${id("room-photo-label").textContent}"`);
 
+  }
   console.log(results.join("\n"));
   return results;
 })();

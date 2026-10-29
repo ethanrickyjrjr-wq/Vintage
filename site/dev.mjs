@@ -39,4 +39,4 @@ createServer(async (request, response) => {
     response.writeHead(200, { "content-type": types[path.extname(file)], "cache-control": "no-store" });
     response.end(request.method === "HEAD" ? undefined : await readFile(file));
   } catch { response.writeHead(404); response.end(); }
-}).listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}\nPrivate styling demo: http://127.0.0.1:${port}/demo#your-room`));
+}).listen(port, "127.0.0.1", () => console.log(`Local: http://127.0.0.1:${port}\nRoom editor: http://127.0.0.1:${port}/room.html`));

@@ -54,6 +54,7 @@
 .detail-add { margin-bottom: 12px; }
 .detail-save { margin-bottom: 12px; border: 1px solid var(--line); background: #fff; color: var(--burgundy); min-height: 44px; }
 .detail-save:hover { background: #f7f0f3; color: var(--burgundy); }
+a.detail-save { display: flex; align-items: center; justify-content: center; text-decoration: none; }
 .room-selected-product img, .room-tray img { background: #fff; }
 .room-selected-product img, .room-tray img { object-fit: contain; padding: 8px; }
 .owner-section { display: grid; max-width: 850px; text-align: center; padding: 50px 30px; box-shadow: none; }

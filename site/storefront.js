@@ -14,6 +14,11 @@ if (new URLSearchParams(location.search).get("labels") === "courier") {
   document.addEventListener("click", (event) => {
     if (event.target.closest("#mobile-nav a") || !event.target.closest(".site-header")) closeMenu();
   });
+  // catalog.js opens the menu on the homepage; pages without the collection open it here.
+  if (!document.querySelector("#product-grid")) menuToggle?.addEventListener("click", () => {
+    mobileNav.hidden = !mobileNav.hidden;
+    menuToggle.setAttribute("aria-expanded", String(!mobileNav.hidden));
+  });
   const desktopLayout = matchMedia("(min-width: 1001px)");
   desktopLayout.addEventListener("change", (event) => { if (event.matches) closeMenu(); });
   if ("IntersectionObserver" in window) {

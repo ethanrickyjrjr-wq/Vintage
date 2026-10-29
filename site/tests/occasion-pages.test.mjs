@@ -5,13 +5,13 @@ import vm from "node:vm";
 import { occasions, renderOccasionPage } from "../occasion-pages.mjs";
 
 const read = file => readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
-const homepage = read("storefront.html");
-const links = [...homepage.matchAll(/href="([^"]+)" data-hire="([^"]+)" data-occasion-page/g)];
+const hirePage = read("hire.html");
+const links = [...hirePage.matchAll(/href="([^"]+)" data-hire="([^"]+)" data-occasion-page/g)];
 
 test("every occasion button opens its own matching page", () => {
   assert.equal(links.length, 15);
   assert.equal(new Set(links.map(link => link[1])).size, 15);
-  assert.match(homepage, /id="hire-occasions"/);
+  assert.match(hirePage, /id="hire-occasions"/);
   for (const occasion of occasions) {
     assert.ok(links.some(link => link[1] === `/occasions/${occasion.slug}.html` && link[2] === occasion.name), occasion.name);
   }

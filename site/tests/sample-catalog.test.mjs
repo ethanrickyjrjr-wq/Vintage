@@ -62,7 +62,7 @@ test("the homepage initializes the sample collection before catalog and room con
   const page = read("storefront.html");
   assert.ok(page.indexOf('src="demo-products.js"') > page.indexOf('src="room-products.js"'));
   assert.ok(page.indexOf('src="demo-products.js"') < page.indexOf('src="catalog.js'));
-  assert.ok(page.indexOf('id="collection"') < page.indexOf('class="departments'));
+  assert.ok(page.indexOf('id="collection"') < page.indexOf('class="doors'));
   assert.ok(!page.includes('id="load-more"'), "all finds are present without another click");
   assert.match(page, /Illustrative prices in USD/);
   assert.match(page, /disabled>Checkout coming soon/);

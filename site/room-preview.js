@@ -171,7 +171,7 @@ function startEditor() {
     $("room-product-title").textContent = product.title;
     const price = HNV_PRICES[product.id];
     $("room-product-price").textContent = product.overlay ? price ? `$${price.target.toLocaleString("en-US")} ${price.sample ? "sample price" : "guide price"}` : "Pricing pending" : "A clear product photo is needed to place this find.";
-    $("room-product-details").href = `#item-${product.id}`; refresh();
+    $("room-product-details").href = `/#item-${product.id}`; refresh();
   }
   async function place(id, point) {
     const product = productMap.get(id); if (state.busy || !state.photo || !product?.overlay) return;
@@ -390,5 +390,8 @@ function startEditor() {
     $("your-room").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     if (state.photo && productMap.get(id).overlay) place(id); else (state.photo ? $("room-product") : $("room-upload-button")).focus({ preventScroll: true });
   });
+  // "Try it in your room" on a homepage find arrives as room.html?try=<id>: the find is waiting in the picks.
+  const tryId = new URLSearchParams(location.search).get("try");
+  if (productMap.has(tryId)) { $("room-product").value = tryId; state.picks.push(tryId); history.replaceState(null, "", `${location.pathname}#your-room`); }
   updateProduct();
 }

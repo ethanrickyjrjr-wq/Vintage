@@ -329,7 +329,7 @@
       <p class="detail-price"><strong>${price ? money(price.target) : "Pricing pending"}</strong><small>${price?.sample ? "Sample price · USD" : "Guide price"}</small></p>
       ${item.entrance ? "" : `<button class="product-add detail-add" type="button" data-add-bag="${id}">Add to bag <span aria-hidden="true">+</span></button>
       <button class="detail-save" type="button" data-save="${id}" aria-pressed="${saved.has(id)}">${saved.has(id) ? "♥ Saved to your finds" : "♡ Save this find"}</button>`}
-      ${canTryRoom ? `<button class="detail-save" type="button" data-try-room="${id}">Try it in your room ↗</button>` : ""}
+      ${canTryRoom ? `<a class="detail-save" href="room.html?try=${encodeURIComponent(id)}">Try it in your room ↗</a>` : ""}
       <div class="detail-notes"><h3>About this find</h3><p>${statusNotes[item.chip]}</p>${extra ? `<p>${extra}</p>` : ""}<p>${price?.sample ? `Explore the bag${canTryRoom ? " and try this piece in your room" : ""}. Checkout is coming soon; this sample shop does not accept orders or payments.` : "Prices are provisional research guides from October 26, 2026. This preview does not take orders or payments."}</p>${item.source ? `<p><a class="photo-source" href="${escape(item.source)}" target="_blank" rel="noopener noreferrer">Sample photo source ↗</a></p>` : ""}
       ${price && !price.sample ? `<details><summary>Price research</summary><p>Comparable range: ${money(price.low)} to ${money(price.high)}.</p><p>${escape(price.conf)}</p></details>` : ""}</div></div></div>`;
     syncBag();

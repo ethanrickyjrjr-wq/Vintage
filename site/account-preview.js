@@ -103,9 +103,10 @@
     dialog.querySelector("#account-room-save-title").textContent = view === "save" ? "Save this little world." : "Leave room for later.";
     renderFinds();
   }
-  function leaveFor(target) {
+  function leaveFor(target, fallback) {
     opener = null;
     dialog.close();
+    if (!target) { location.href = fallback; return; }
     target.click();
     target.focus({ preventScroll: true });
   }
@@ -130,8 +131,8 @@
       showView(target.dataset.accountView);
       tabs.find(tab => tab.dataset.accountTab === target.dataset.accountView).focus();
     }
-    if (target.hasAttribute("data-account-browse")) leaveFor(document.querySelector('[data-browse-category="all"]') || document.querySelector('.salon-actions a[href="#collection"]'));
-    if (target.hasAttribute("data-account-room")) leaveFor(document.querySelector('.desktop-nav a[href="#your-room"]'));
+    if (target.hasAttribute("data-account-browse")) leaveFor(document.querySelector('[data-browse-category="all"]') || document.querySelector('.salon-actions a[href="#collection"]'), "/#collection");
+    if (target.hasAttribute("data-account-room")) leaveFor(document.querySelector('.desktop-nav a[href="room.html"]'), "room.html");
     if (target.dataset.accountMode) {
       const create = target.dataset.accountMode === "create";
       dialog.querySelectorAll("[data-account-mode]").forEach(button => button.setAttribute("aria-pressed", String(button === target)));

@@ -4,6 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
+      // The room editor and Hire Hollie have their own pages; old links still arrive.
+      {
+        const moved = { "#your-room": "room.html", "#hire-hollie": "hire.html", "#hire-occasions": "hire.html#hire-occasions", "#hire-contact": "hire.html#hire-contact" };
+        if (moved[location.hash]) location.replace(moved[location.hash]);
+      }
       // Fresh visits and reloads open at the entrance. Back and Forward return to where you were.
       {
         const type = performance.getEntriesByType("navigation")[0]?.type;
@@ -16,8 +21,7 @@
           window.addEventListener("pageshow", (event) => {
             if (event.persisted) return;
             if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-            // With manual restoration a reload keeps its address but skips the fragment. The room editor
-            // claims #your-room while in use, so a reload mid-decorate lands back on the room.
+            // With manual restoration a reload keeps its address but skips the fragment, so return to it here.
             else if (type === "reload") {
               let target = null;
               try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch {}
@@ -56,20 +60,18 @@
     <link rel="preload" as="font" href="assets/fonts/bodoni-moda-normal-latin.woff2" type="font/woff2" crossorigin />
     <link rel="preload" as="font" href="assets/fonts/bodoni-moda-italic-latin.woff2" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
-    <link rel="stylesheet" href="storefront.css" />
+    <link rel="stylesheet" href="storefront.css?v=2" />
     <link rel="stylesheet" href="atmosphere.css" />
-    <link rel="stylesheet" href="room-preview.css" />
-    <link rel="stylesheet" href="homepage.css" />
-    <link rel="stylesheet" href="sample-shop.css" />
+    <link rel="stylesheet" href="homepage.css?v=2" />
+    <link rel="stylesheet" href="sample-shop.css?v=2" />
     <link rel="stylesheet" href="account-preview.css" />
     <link rel="stylesheet" href="category-colors.css?v=2" />
     <script src="catalog-data.js" defer></script>
     <script src="room-products.js" defer></script>
     <script src="demo-products.js" defer></script>
-    <script src="catalog.js?v=2" defer></script>
-    <script src="room-preview.js" type="module"></script>
-    <script src="storefront.js" defer></script>
-    <script src="account-preview.js" defer></script>
+    <script src="catalog.js?v=3" defer></script>
+    <script src="storefront.js?v=2" defer></script>
+    <script src="account-preview.js?v=2" defer></script>
     <script src="disco-music.js" defer></script>
     <script src="disco.js" defer></script>
   </head>
@@ -83,8 +85,8 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#collection">The collection</a>
         <a href="showroom.html">3D showroom</a>
-        <a href="#your-room">Try it in your room</a>
-        <a href="#hire-hollie">Hire Hollie</a>
+        <a href="room.html">Try it in your room</a>
+        <a href="hire.html">Hire Hollie</a>
         <a href="#story">The room <span aria-hidden="true">↗</span></a>
         <a href="#story">Our kind of vintage</a>
       </nav>
@@ -121,8 +123,8 @@
         <a href="#collection">The collection</a
         ><a href="showroom.html">3D showroom</a
         ><button type="button" data-open-walkthrough>The room ↗</button
-        ><a href="#your-room">Try it in your room</a
-        ><a href="#hire-hollie">Hire Hollie</a
+        ><a href="room.html">Try it in your room</a
+        ><a href="hire.html">Hire Hollie</a
         ><a href="#story">Our kind of vintage</a><a href="#owner">The owner</a>
       </nav>
     </header>
@@ -156,16 +158,6 @@
         </div>
         <div class="salon-ledge" aria-hidden="true"></div>
       </section>
-      <nav class="browse-nav page-width" aria-label="Browse vintage categories">
-        <span>Find your thing</span>
-        <a href="#furniture" data-browse-category="furniture">Furniture</a>
-        <a href="#lighting" data-browse-category="lighting">Lighting</a>
-        <a href="#fashion" data-browse-category="fashion">Fashion</a>
-        <a href="#decor" data-browse-category="decor">Glass &amp; objects</a>
-        <a href="#rugs" data-browse-category="rugs">Rugs &amp; hides</a>
-        <a href="#art" data-browse-category="art">Art &amp; mirrors</a>
-        <a href="#media" data-browse-category="media">Music &amp; media</a>
-      </nav>
       <section
         class="collection page-width"
         id="collection"
@@ -241,295 +233,32 @@
           </p>
         </div>
       </section>
-      <section
-        class="departments display-shelves page-width"
-        aria-labelledby="departments-title"
-      >
-        <div class="section-intro reveal">
-          <h2 id="departments-title">Find your kind of vintage.</h2>
-          <p>Pick a corner of the collection and make yourself at home.</p>
+      <section class="doors page-width" id="story" aria-labelledby="story-title">
+        <div class="doors-intro reveal">
+          <h2 id="story-title">Nothing matches.<br /><em>Everything belongs.</em></h2>
+          <p>Brass beside chrome. Pink glass under neon. A painting that holds its own against all of it. The original room was the beginning. The next mix is yours.</p>
         </div>
-        <div class="department-grid">
-          <a
-            class="department department-lighting reveal"
-            href="#lighting"
-            data-browse-category="lighting"
-            ><div class="department-image">
-              <img src="assets/demo/lamp-pink-glass-gold-base.webp" alt="Pink glass urn lamp" width="640" height="800" loading="lazy" />
-            </div>
-            <div class="department-label">
-              <h3>Lighting</h3>
-              <span aria-hidden="true">↗</span>
-            </div>
-            <p>Brass, glass &amp; a little drama.</p></a
-          >
-          <a
-            class="department department-fashion reveal"
-            href="#fashion"
-            data-browse-category="fashion"
-            ><div class="department-image">
-              <img src="assets/demo/red-orange-shaggy-faux-fur-jacket.webp" alt="Shaggy sunset jacket" width="640" height="800" loading="lazy" />
-            </div>
-            <div class="department-label">
-              <h3>Fashion</h3>
-              <span aria-hidden="true">↗</span>
-            </div>
-            <p>For making an entrance.</p></a
-          >
-          <a
-            class="department department-art reveal"
-            href="#art"
-            data-browse-category="art"
-            ><div class="department-image">
-              <img src="assets/demo/mirror-gold-oval-rococo.webp" alt="Gilded rococo mirror" width="640" height="800" loading="lazy" />
-            </div>
-            <div class="department-label">
-              <h3>Art &amp; mirrors</h3>
-              <span aria-hidden="true">↗</span>
-            </div>
-            <p>Good company for your walls.</p></a
-          >
-          <a
-            class="department department-furniture reveal"
-            href="#furniture"
-            data-browse-category="furniture"
-            ><div class="department-image">
-              <img src="assets/demo/gilded-emerald-velvet-regency-armchair.webp" alt="Emerald velvet armchair" width="640" height="800" loading="lazy" />
-            </div>
-            <div class="department-label">
-              <h3>Furniture</h3>
-              <span aria-hidden="true">↗</span>
-            </div>
-            <p>A seat with a story.</p></a
-          >
+        <div class="door-grid">
+          <a class="door reveal" href="room.html">
+            <img src="assets/thumbnails/rooms-example-room--480.webp" srcset="assets/thumbnails/rooms-example-room--480.webp 480w, assets/thumbnails/rooms-example-room--960.webp 960w" sizes="(max-width: 767px) 92vw, 30vw" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" />
+            <span class="eyebrow">A little room for possibility.</span>
+            <h3>Try it in your room <span aria-hidden="true">↗</span></h3>
+            <p>Found something you love? Add a photo, pick a find, and give it a place.</p>
+          </a>
+          <a class="door reveal" href="hire.html">
+            <img src="assets/thumbnails/photos-IMG_6611--480.webp" srcset="assets/thumbnails/photos-IMG_6611--480.webp 480w, assets/thumbnails/photos-IMG_6611--960.webp 960w" sizes="(max-width: 767px) 92vw, 30vw" width="960" height="1280" alt="A feathered hat on a lace head beside cut crystal in the original Holliewood and Vine room" loading="lazy" />
+            <span class="eyebrow">Holliewood &amp; Vine Fabulous From Online</span>
+            <h3>Hire Hollie <span aria-hidden="true">↗</span></h3>
+            <p>You bring the plot. Hollie dresses the set.</p>
+          </a>
+          <a class="door reveal" href="showroom.html">
+            <img src="assets/thumbnails/photos-IMG_6610--480.webp" srcset="assets/thumbnails/photos-IMG_6610--480.webp 480w, assets/thumbnails/photos-IMG_6610--960.webp 960w" sizes="(max-width: 767px) 92vw, 30vw" width="960" height="1280" alt="Pink glass, silver busts and neon in the original Holliewood and Vine room" loading="lazy" />
+            <span class="eyebrow">A different angle on good design.</span>
+            <h3>Explore in 3D <span aria-hidden="true">↗</span></h3>
+            <p>Turn a piece around. Try another color. Eleven interactive sample models.</p>
+          </a>
         </div>
-      </section>
-      <section class="showroom-invitation page-width" aria-labelledby="showroom-title">
-        <div>
-          <h2 id="showroom-title">A different angle<br /><em>on good design.</em></h2>
-          <p>Turn a piece around. Try another color. Explore eleven interactive sample models in our 3D showroom.</p>
-          <a class="button button-cream" href="showroom.html">Explore in 3D <span aria-hidden="true">↗</span></a>
-          <small>Eleven interactive 3D models to explore alongside our sample collection.</small>
-        </div>
-        <figure><img src="assets/thumbnails/photos-IMG_6610--960.webp" width="960" height="1280" alt="Pink glass, silver busts and neon in the original Holliewood and Vine room" loading="lazy" /><figcaption>A little perspective changes everything.</figcaption></figure>
-      </section>
-      <section
-        class="design-story"
-        id="story"
-        aria-labelledby="story-title"
-      >
-        <div class="design-story-inner page-width">
-          <div class="design-collage reveal">
-            <figure class="design-room"><img src="assets/thumbnails/photos-IMG_6610--960.webp" width="960" height="1280" alt="Chrome busts, pink glass and a neon sign together on the original room’s brass shelf" loading="lazy" /><figcaption>The room that started it.</figcaption></figure>
-            <button class="design-detail" type="button" data-open-item="A10" aria-label="Explore the pink stemware"><img src="assets/demo/pink-coupes.webp" width="640" height="800" alt="A closer look at the pink stemware" loading="lazy" /><span>A little pink goes a long way. ↗</span></button>
-          </div>
-          <div class="design-copy reveal">
-            <h2 id="story-title">Nothing matches.<br /><em>Everything belongs.</em></h2>
-            <p>Brass beside chrome. Pink glass under neon. A painting that holds its own against all of it.</p>
-            <p>That’s the eye behind Holliewood and Vine: bringing things together until the unexpected feels right. The original room was the beginning. The next mix is yours.</p>
-            <div class="material-pairings" aria-label="Explore the mix">
-              <button type="button" data-open-item="A8">A flash of chrome <span aria-hidden="true">↗</span></button>
-              <button type="button" data-open-item="A10">A little pink glass <span aria-hidden="true">↗</span></button>
-              <button type="button" data-open-item="A3">Something for the walls <span aria-hidden="true">↗</span></button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="room-preview page-width" id="your-room" aria-labelledby="room-title">
-        <div class="section-intro">
-          <div><p class="eyebrow">A little room for possibility.</p><h2 id="room-title">Your room.<br /><em>Our kind of character.</em></h2></div>
-          <p>Found something you love? See how it feels at home. Add a photo, pick a find, and give it a place.</p>
-        </div>
-        <div class="room-studio">
-          <div class="room-workspace">
-            <div class="room-project-bar">
-              <div><strong>Your room project</strong><span>Here for this visit. Saving is coming soon.</span></div>
-              <div class="room-project-buttons"><button type="button" class="account-text-link" data-account-open="rooms" aria-haspopup="dialog">My Rooms <span aria-hidden="true">↗</span></button><button type="button" class="room-save-preview" data-account-open="save" aria-haspopup="dialog">Save room <span class="account-preview-label">Coming soon</span></button></div>
-            </div>
-            <div class="room-toolbar">
-              <span id="room-photo-label">Start with your space</span>
-              <div class="room-history">
-                <button type="button" id="room-discofy" aria-pressed="false" hidden>Discofy ✦</button>
-                <button type="button" id="room-before" aria-pressed="false" disabled>Show original</button>
-                <button type="button" id="room-undo" disabled>Undo</button>
-                <button type="button" id="room-delete" disabled>Remove find</button>
-                <button type="button" id="room-reset" disabled>Clear the room</button>
-              </div>
-            </div>
-            <div class="room-stage" id="room-stage">
-              <div class="room-upload" id="room-upload">
-                <span class="room-upload-mark" aria-hidden="true">+</span>
-                <h3>Make yourself at home.</h3>
-                <p>Drop in a photo of your room.<br />A clear, well-lit photo works best.</p>
-                <button type="button" class="button button-burgundy" id="room-upload-button">Choose a room photo <span aria-hidden="true">↗</span></button>
-                <small>JPG, PNG or WebP · up to 15 MB</small>
-                <div class="room-example"><img src="assets/thumbnails/rooms-example-room--480.webp" width="1536" height="1024" alt="Sample living room with a cream sofa, walnut tables, simple lamp and framed artwork" loading="lazy" draggable="false" /><button type="button" id="room-use-example">Or try our sample room ↗</button><small>AI-generated example room</small></div>
-              </div>
-              <canvas id="room-canvas" width="1200" height="800" tabindex="0" aria-label="Room editor. Select a find, drag to move it, or drag its corner to resize. Arrow keys move the selected find; Delete removes it." aria-describedby="room-editor-help" hidden></canvas>
-              <button class="room-disco disco-ball" type="button" id="room-disco" aria-label="Stop the disco: music, spinning and lights" aria-pressed="true" title="Stop the disco" hidden><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="" /><canvas class="disco-sphere"></canvas></button>
-              <div class="room-working" id="room-working" hidden>
-                <div class="room-disco-drop" aria-hidden="true"><div class="room-loading-ball"><img src="assets/editorial/disco-ball--240.webp" width="240" height="240" alt="" /><canvas class="disco-sphere"></canvas></div></div>
-                <p class="eyebrow">A little vintage magic</p>
-                <strong id="room-working-title" role="status" aria-live="polite" aria-atomic="true">Setting the scene…</strong>
-                <span id="room-working-label">Loading the room guide on your device.</span>
-                <progress id="room-progress" max="100" aria-label="Room guide download"></progress>
-                <button type="button" id="room-cancel">Cancel</button>
-              </div>
-            </div>
-            <input id="room-file" type="file" accept="image/jpeg,image/png,image/webp" hidden />
-            <div class="room-bottom-bar">
-              <p id="room-status" role="status" aria-live="polite">Your room photo stays on this device.</p>
-              <button type="button" id="room-sample-photo" hidden>Use the sample room</button>
-              <button type="button" id="room-change-photo" hidden>Change photo</button>
-            </div>
-          </div>
-          <form class="room-controls" id="room-form">
-            <p class="room-label" id="room-picks-label">01 / Make your picks</p>
-            <p class="room-help">Browse by category. Open a group to choose a find.</p>
-            <input type="hidden" id="room-product" />
-            <div class="room-product-groups" id="room-product-groups" role="group" aria-labelledby="room-picks-label"></div>
-            <div class="room-selected-product"><img id="room-product-image" alt="" width="120" height="140" loading="lazy" draggable="false" /><div><p id="room-product-title"></p><span id="room-product-price"></span><a id="room-product-details" href="#collection">View this find ↗</a></div></div>
-            <button type="submit" class="room-add" id="room-add">Add to my picks +</button>
-            <ul class="room-tray" id="room-tray" aria-label="My picks"></ul>
-            <p class="room-help" id="room-tray-empty">Build a little collection here, then place each find or let us start.</p>
-            <div class="room-decorate"><p class="room-label">02 / A starting arrangement <span>Beta</span></p>
-              <button type="button" class="button button-burgundy room-generate" id="room-decorate-picks" disabled>Decorate with my picks ↗</button>
-              <button type="button" class="room-secondary" id="room-decorate-favorites" disabled>Decorate with my favorites <span id="room-favorites-count">0</span></button>
-            </div>
-            <div class="room-layer-controls" id="room-layer-controls" hidden><p class="room-label">03 / Make it yours</p>
-              <ul class="room-layers" id="room-layers" aria-label="Finds in your room"></ul>
-              <label class="room-label" for="room-size">Selected find size <output id="room-size-value" for="room-size">25%</output></label><input id="room-size" type="range" min="3" max="85" value="25" step="1" />
-              <div class="room-layer-actions"><button type="button" id="room-flip">Flip</button><button type="button" id="room-front">Bring forward</button></div>
-            </div>
-            <div class="room-unplaced" id="room-unplaced" hidden><p class="room-label">Left out of this layout</p><ul id="room-unplaced-list"></ul></div>
-            <div class="room-account-actions"><button class="room-save-preview" type="button" data-account-open="save" aria-haspopup="dialog">Save room <span class="account-preview-label">Coming soon</span></button><button class="account-text-link" type="button" data-account-open="rooms" aria-haspopup="dialog">My Rooms <span aria-hidden="true">↗</span></button><p class="room-help">Room saving is coming soon. For now, download a picture to keep your idea.</p></div>
-            <button type="button" class="room-download" id="room-download" disabled>Download your room ↓</button>
-          </form>
-          <div class="room-directions" aria-labelledby="room-directions-title">
-            <h3 id="room-directions-title">Make it yours</h3>
-            <p class="room-help" id="room-editor-help">Drag a pick into the photo, or choose Place. Drag a find to move it; use its corner or the size slider to resize. Arrow keys move the selected find; Shift moves it farther. Remove find takes out the selected find; Undo brings it back. Proportions are approximate.</p>
-            <p class="room-help">The Decorate buttons suggest a layout from your picks or favorites. If a layout is available, it replaces your current one; Undo brings it back. Pieces that don’t fit are listed under “Left out of this layout.”</p>
-            <p class="room-help room-privacy">Your photo and arrangement stay in this tab. The sample room is ready to decorate. For your own photo, Decorate downloads a room guide once (about 45 MB plus its runtime) and runs on your device. Closing or reloading clears your room. Previews don’t guarantee fit.</p>
-          </div>
-        </div>
-      </section>
-      <section class="hire page-width" id="hire-hollie" aria-labelledby="hire-title">
-        <div class="hire-intro">
-          <div>
-            <p class="eyebrow">Holliewood &amp; Vine Fabulous From Online</p>
-            <h2 id="hire-title">You bring the plot.<br /><em>Hollie dresses the set.</em></h2>
-            <p>Rather not do it yourself? Hire Hollie to find the piece, style a corner, dress a room or take on the whole house. Show Hollie the space on a video call, send a few photos, or describe it in one good email.</p>
-          </div>
-          <figure class="hire-photo">
-            <img src="assets/thumbnails/photos-IMG_6611--960.webp"
-              srcset="assets/thumbnails/photos-IMG_6611--480.webp 480w, assets/thumbnails/photos-IMG_6611--960.webp 960w"
-              sizes="(max-width: 767px) 80vw, 380px" width="960" height="1280" loading="lazy"
-              alt="A feathered hat on a lace head beside cut crystal in the original Holliewood and Vine room" />
-            <figcaption>From the original room.</figcaption>
-          </figure>
-        </div>
-
-        <h3 class="hire-heading" id="hire-occasions">What’s the occasion?</h3>
-        <ul class="hire-occasions">
-          <li><a href="/occasions/cocktail-hour.html" data-hire="Cocktail hour" data-occasion-page><strong>Cocktail hour</strong><span>Brass, mirrors, a little chrome. You bring the ice.</span></a></li>
-          <li><a href="/occasions/dinner-party.html" data-hire="Dinner party" data-occasion-page><strong>Dinner party</strong><span>Dinner at eight. The table arrives at six, in brass and pink glass.</span></a></li>
-          <li><a href="/occasions/the-party.html" data-hire="The party" data-occasion-page><strong>The party</strong><span>Any excuse works. The lighting does the rest.</span></a></li>
-          <li><a href="/occasions/disco-night.html" data-hire="Disco night" data-occasion-page><strong>Disco night</strong><span>Oscars, New Year’s, a Tuesday. Red carpet optional. Mirrors mandatory.</span></a></li>
-          <li><a href="/occasions/bachelorette.html" data-hire="Bachelorette" data-occasion-page><strong>Bachelorette</strong><span>The house gets styled. The guest of honor gets photographed.</span></a></li>
-          <li><a href="/occasions/proposal.html" data-hire="Proposal" data-occasion-page><strong>Proposal</strong><span>Somebody is about to say yes. The room should say it first.</span></a></li>
-          <li><a href="/occasions/photo-set.html" data-hire="Photo set" data-occasion-page><strong>Photo set</strong><span>A corner built for the camera, ready before the light changes.</span></a></li>
-          <li><a href="/occasions/after-the-remodel.html" data-hire="After the remodel" data-occasion-page><strong>After the remodel</strong><span>The walls are done. The room isn’t.</span></a></li>
-          <li><a href="/occasions/guest-room.html" data-hire="Guest room" data-occasion-page><strong>Guest room</strong><span>Guests land Friday. Make it look like you planned this.</span></a></li>
-          <li><a href="/occasions/spare-room.html" data-hire="Spare room" data-occasion-page><strong>Spare room</strong><span>A room with potential and a treadmill.</span></a></li>
-          <li><a href="/occasions/home-office.html" data-hire="Home office" data-occasion-page><strong>Home office</strong><span>Your coworkers have seen enough beige.</span></a></li>
-          <li><a href="/occasions/snowbird-season.html" data-hire="Snowbird season" data-occasion-page><strong>Snowbird season</strong><span>You land. The house is already dressed.</span></a></li>
-          <li><a href="/occasions/reading-nook.html" data-hire="Reading nook" data-occasion-page><strong>Reading nook</strong><span>A chair, a lamp, a reason to stay home.</span></a></li>
-          <li><a href="/occasions/gift-a-room.html" data-hire="Gift a room" data-occasion-page><strong>Gift a room</strong><span>Give a room instead of a candle.</span></a></li>
-          <li><a href="/occasions/something-else.html" data-hire="Something else" data-occasion-page><strong>Something else</strong><span>Whatever it is, do it for the plot.</span></a></li>
-        </ul>
-
-        <h3 class="hire-heading">Three ways in.</h3>
-        <ol class="hire-ways">
-          <li><h4>Screen Test</h4><p class="hire-line">Pan slowly. Hollie has notes.</p><p>A free video call to walk Hollie through the space. Ask for one in your email.</p></li>
-          <li><h4>Stills</h4><p class="hire-line">Send photos.</p><p>Daylight, lamps off, and please don’t tidy. The checklist is below.</p></li>
-          <li><h4>The Logline</h4><p class="hire-line">Describe it in an email. Free.</p><p>A sentence or three. Hollie replies with a plan and a price.</p></li>
-        </ol>
-
-        <h3 class="hire-heading">Pick your billing.</h3>
-        <ul class="hire-tiers">
-          <li><h4>Casting Call</h4><p class="hire-scope">One find</p><p>Tell Hollie the part. Hollie finds the piece to play it.</p><p class="hire-price">from $95 <span>credited toward the piece</span></p></li>
-          <li><h4>Close-Up</h4><p class="hire-scope">A corner or section</p><p>A shelf, a bar cart, the spot by the door, a party table. One corner gets all the attention.</p><p class="hire-price">from $295</p></li>
-          <li><h4>Leading Role</h4><p class="hire-scope">A room</p><p>Living room, bedroom, spare room, the one after the remodel. Top billing.</p><p class="hire-price">from $750</p></li>
-          <li><h4>Full Production</h4><p class="hire-scope">A studio or the whole house</p><p>Every room, one vision, no continuity errors.</p><p class="hire-price">by the room <span>10% off each room after the first</span></p></li>
-        </ul>
-        <div class="hire-addons">
-          <div><h4>The Cameo</h4><p class="hire-line">Hollie, in person.</p><p>$150 an hour with a two-hour minimum, or $1,200 for a styling day. Lee and Collier counties included; farther out, travel time is billed.</p></div>
-          <div><h4>Rushes</h4><p class="hire-line">Need it now?</p><p>+25% to start within a week, +50% within 48 hours, $75 minimum. Rush styles with pieces already in the collection.</p></div>
-        </div>
-        <p class="hire-note">Starting prices. Hollie quotes after the logline. Plus applicable sales tax.</p>
-
-        <h3 class="hire-heading">How it works.</h3>
-        <ol class="hire-steps">
-          <li><strong>The Logline.</strong> Email Hollie. Free.</li>
-          <li><strong>The Screen Test.</strong> A video call, booked online, so Hollie sees the real room. Photos work too.</li>
-          <li><strong>The board.</strong> Pay your billing online, and in 7 to 10 business days you get a plan and options, each labeled From the collection or Sourced for you. Two rounds of changes included.</li>
-          <li><strong>You approve.</strong> In writing, piece by piece. You pay for a sourced piece before Hollie buys it. Collection pieces hold for 48 hours.</li>
-          <li><strong>That’s a wrap.</strong> Hollie places it in person, or you get the list and the pieces, shipped.</li>
-        </ol>
-
-        <div class="hire-disclosure">
-          <h3>Yes, Hollie sells things too.</h3>
-          <p>Some of what you’re shown comes from the Holliewood &amp; Vine collection. Some is found elsewhere. Every option is labeled <strong>From the collection</strong> or <strong>Sourced for you</strong>, so you always know whose shelf it came from. Collection pieces are the listed price. Sourced pieces carry a 10% sourcing fee on its own line, and you see the full price before anything is bought. No mystery math.</p>
-        </div>
-
-        <details class="hire-details">
-          <summary>Photo checklist</summary>
-          <ul>
-            <li>A wide shot from the doorway.</li>
-            <li>One photo of each corner.</li>
-            <li>Each wall, straight on, with a little ceiling and floor.</li>
-            <li>Daylight, lamps off. No wide-angle lens.</li>
-            <li>Don’t tidy. Hollie needs the real room.</li>
-            <li>Rough measurements: room length and width, windows, doors.</li>
-            <li>What you’re keeping, what’s a maybe, what’s a hard no.</li>
-            <li>A budget number.</li>
-          </ul>
-        </details>
-        <details class="hire-details">
-          <summary>The fine print</summary>
-          <ul>
-            <li>Homes only: houses, condos, apartments and studios.</li>
-            <li>Book and pay online before any visit. No money changes hands in your home.</li>
-            <li>Fees cover Hollie’s time and taste and are paid upfront. The Casting Call fee is credited toward the piece.</li>
-            <li>If Hollie comes up empty, the fee becomes store credit for 90 days.</li>
-            <li>Rush applies to the service fee, never to item prices, and uses pieces already in the collection.</li>
-            <li>In person, Hollie places furniture, hangs art and mirrors, sets lamps and styles. No electrical work, no plumbing, nothing that needs a permit, and no hiring trades for you: your own trades work for you directly.</li>
-            <li>Sourced pieces are final once you approve them against condition photos, unless they arrive damaged or different from what you were shown. Collection pieces follow the shop’s usual policy.</li>
-            <li>Prices are starting points, plus applicable sales tax.</li>
-          </ul>
-        </details>
-
-        <div class="hire-cta" id="hire-contact">
-          <button class="button button-outline" type="button" disabled>Booking opens soon</button>
-          <p>Hollie is setting up the booking line. The occasions above show what’s on offer.</p>
-        </div>
-
-        <blockquote class="hire-epigraph">
-          <p>“There never was a house so bad that it couldn’t be made over into something worth while.”</p>
-          <footer>Elsie de Wolfe, <cite>The House in Good Taste</cite>, 1913</footer>
-        </blockquote>
-      </section>
-      <section class="disco-note page-width" id="disco" aria-labelledby="disco-title">
-        <div class="disco-note-image disco-ball reveal">
-          <img src="assets/editorial/disco-ball.webp" width="600" height="600" alt="Silver mirror disco ball" loading="lazy" />
-          <canvas class="disco-sphere" aria-hidden="true"></canvas>
-        </div>
-        <div class="reveal">
-          <h2 id="disco-title">A little<br /><em>disco to go.</em></h2>
-          <p>A little gift for our buyers: a mirror ball to carry the Holliewood &amp; Vine feeling home.</p>
-          <p class="disco-signoff">Find a sunny spot. Let it dance.</p>
-          <button class="disco-motion-toggle" type="button" aria-pressed="false">Start the disco ♪</button>
-        </div>
+        <p class="doors-disco">A little gift for our buyers: a mirror ball to carry the Holliewood &amp; Vine feeling home. <button class="disco-motion-toggle" type="button" aria-pressed="false">Start the disco ♪</button></p>
       </section>
       <section
         class="owner-section page-width reveal"
@@ -591,7 +320,7 @@
           >Holliewood <span>&amp; Vine</span></a
         >
         <p>Vintage with a past.<br />For whatever comes next.</p>
-        <nav class="footer-nav" aria-label="Explore Holliewood and Vine"><a href="#collection">The collection</a><a href="showroom.html">3D showroom</a><a href="#your-room">Try it in your room</a><a href="#hire-hollie">Hire Hollie</a><a href="#story">Our kind of vintage</a><a href="#notes-title">Before you buy</a><a href="#home">Back to top ↑</a></nav>
+        <nav class="footer-nav" aria-label="Explore Holliewood and Vine"><a href="#collection">The collection</a><a href="showroom.html">3D showroom</a><a href="room.html">Try it in your room</a><a href="hire.html">Hire Hollie</a><a href="#story">Our kind of vintage</a><a href="#notes-title">Before you buy</a><a href="#home">Back to top ↑</a></nav>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Holliewood and Vine</span

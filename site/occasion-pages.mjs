@@ -126,13 +126,13 @@ export function renderOccasionPage(occasion) {
   <header class="occasion-header">
     <a class="wordmark" href="/" aria-label="Holliewood and Vine home">Holliewood <span>&amp; Vine</span></a>
     <nav aria-label="Main navigation">
-      <a href="/#hire-occasions">All occasions <span aria-hidden="true">↗</span></a>
+      <a href="/hire.html#hire-occasions">All occasions <span aria-hidden="true">↗</span></a>
       <a href="/#collection">Shop the collection <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <main id="main">
     <div class="scene-breadcrumb page-width">
-      <a href="/#hire-hollie">Hire Hollie</a><span aria-hidden="true">/</span><span>${escape(occasion.name)}</span>
+      <a href="/hire.html">Hire Hollie</a><span aria-hidden="true">/</span><span>${escape(occasion.name)}</span>
       <span class="scene-number">${number} <span aria-hidden="true">/</span> 15</span>
     </div>
     <section class="scene-hero page-width" aria-labelledby="scene-title">
@@ -173,14 +173,14 @@ export function renderOccasionPage(occasion) {
       <h2 id="contact-title">Can you picture it at your place?</h2>
       <p>Keep the idea. Start collecting your inspiration.<br />Hollie’s booking line is getting its finishing touches.</p>
       <button class="scene-button" type="button" disabled>Booking opens soon</button>
-      <a class="text-link" href="/#hire-hollie">Meet Hollie &amp; explore the styling service <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="/hire.html">Meet Hollie &amp; explore the styling service <span aria-hidden="true">↗</span></a>
     </section>
     <nav class="scene-explore page-width" aria-label="Explore occasions">
       <div class="section-intro"><h2>Another excuse to be fabulous.</h2><a class="text-link" href="/occasions/${next.slug}.html">Next scene: ${escape(next.name)} <span aria-hidden="true">→</span></a></div>
       <ul>${occasions.map(item => `<li><a href="/occasions/${item.slug}.html"${item === occasion ? ' aria-current="page"' : ""}>${escape(item.name)}</a></li>`).join("\n        ")}</ul>
     </nav>
   </main>
-  <footer class="occasion-footer page-width"><a class="wordmark" href="/">Holliewood <span>&amp; Vine</span></a><p>Vintage with a past. Rooms with a future.</p><a href="/#hire-occasions">Back to all occasions <span aria-hidden="true">↗</span></a></footer>
+  <footer class="occasion-footer page-width"><a class="wordmark" href="/">Holliewood <span>&amp; Vine</span></a><p>Vintage with a past. Rooms with a future.</p><a href="/hire.html#hire-occasions">Back to all occasions <span aria-hidden="true">↗</span></a></footer>
 </body>
 </html>
 `;

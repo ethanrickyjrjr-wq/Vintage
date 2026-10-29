@@ -7,16 +7,17 @@ import vm from "node:vm";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const read = (file) => readFileSync(path.join(root, file), "utf8");
-const page = read("storefront.html");
+const home = read("storefront.html");
+const page = read("hire.html");
 const script = read("storefront.js");
 const section = page.match(/<section[^>]*id="hire-hollie"[\s\S]*?<\/section>/)?.[0] ?? "";
 
 test("the hire section carries Ricky's name and every nav reaches it", () => {
   assert.ok(section, "section#hire-hollie is missing");
   assert.match(section, /Holliewood &amp; Vine Fabulous From Online/);
-  for (const nav of ["desktop-nav", "mobile-nav", "footer-nav"]) {
-    const block = page.match(new RegExp(`<nav[^>]*class="${nav}"[\\s\\S]*?</nav>`))?.[0] ?? "";
-    assert.match(block, /href="#hire-hollie"/, `${nav} needs a Hire Hollie link`);
+  for (const [name, html] of [["storefront.html", home], ["hire.html", page]]) for (const nav of ["desktop-nav", "mobile-nav", "footer-nav"]) {
+    const block = html.match(new RegExp(`<nav[^>]*class="${nav}"[\\s\\S]*?</nav>`))?.[0] ?? "";
+    assert.match(block, /href="hire\.html"/, `${name} ${nav} needs a Hire Hollie link`);
   }
 });
 

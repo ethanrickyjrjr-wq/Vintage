@@ -42,12 +42,21 @@ the page-wide background. Keep the burgundy atmosphere throughout. The original 
 objects; do not substitute sample catalog photographs at the top of the homepage. Their details
 refer to the original objects, independently of sample listings that reuse the inventory IDs.
 
-**Fabulous From Online (2026-10-28):** a homepage section where people hire Hollie to find a piece or style a corner, a room or a whole home. Six Sonnet reports are in `research/fabulous-from-online/`. Decisions are in `docs/fabulous-from-online-design.md`, and the build spec is in `docs/codex-handoff-fabulous-from-online.md`. The headline is "You bring the plot. Hollie dresses the set."
+**Fabulous From Online (2026-10-28):** a section, now on its own page (`site/hire.html`, since 2026-10-29), where people hire Hollie to find a piece or style a corner, a room or a whole home. Six Sonnet reports are in `research/fabulous-from-online/`. Decisions are in `docs/fabulous-from-online-design.md`, and the build spec is in `docs/codex-handoff-fabulous-from-online.md`. The headline is "You bring the plot. Hollie dresses the set."
 - Homes only, no rentals in v1, and payment online before any visit.
 - Rush uses collection pieces only (Florida ch. 538 holds).
 - Built and published in demo state ("Booking opens soon") as Sites version 27 on 2026-10-28; implementation commit `5675a95`. Ricky approved the written prices, free Screen Test and Hire Hollie nav label. Booking activates when Ricky gives the inbox address (block 0 of the handoff); no Cal.com link is configured. Verification and release details are at the top of the handoff.
 
 **Type and spacing (2026-10-29):** research only; nothing in `site/` has changed. Four Sonnet lanes are in `research/type-and-spacing-2026-10-29/`. The synthesis, decisions and build order are in `docs/type-and-spacing.md`. Bodoni Moda and DM Sans stay; Space Mono vs Courier Prime is Hollie's pick. Floors: no text under 12px, body 16px, no Bodoni under 20px. Phase 1 waits on Ricky's word, and Codex publishes. The desk rules page is `Chief Of Staff/wiki/web-type-and-spacing.md`.
+
+**Lighter homepage (2026-10-29):** Ricky approved the idea room's lighter-homepage layout.
+- The homepage runs: entrance, collection, three doors, owner, honest details.
+- The doors section carries the story (`#story`) and the disco line. Its doors are Try it in your room, Hire Hollie and the 3D showroom.
+- The room editor lives on `site/room.html`, with its directions directly under the photo.
+- Hire Hollie lives on `site/hire.html`.
+- Departments and the browse bar are gone; the collection's own filters remain.
+- Old `/#your-room` and `/#hire-*` links redirect. "Try it in your room" on a find opens `room.html?try=<id>`.
+- Checks are in `site/tests/pages.test.mjs`.
 
 **Round D research (2026-10-29):** research only; nothing in `site/` changed.
 - Seven Sonnet lanes are in `research/round-d/`: social, shipping, email/SMS, reviews, search, local Southwest Florida, pricing.
