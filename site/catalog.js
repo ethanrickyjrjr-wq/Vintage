@@ -147,7 +147,7 @@
 
   function card(item) {
     const price = HNV_PRICES[item.id];
-    return `<article class="product-card" id="item-${item.id}">
+    return `<article class="product-card" id="item-${item.id}" data-product-category="${escape(item.cat)}">
       <div class="product-visual">
         <button class="product-image" type="button" data-open-item="${item.id}" aria-label="View ${escape(item.title)}">
           <img src="${escape(item.img)}" ${photoSources(item)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" loading="lazy" decoding="async" width="640" height="800" draggable="false">
@@ -222,7 +222,7 @@
     const contents = document.querySelector("#bag-items");
     if (!contents) return;
     const items = inventory.filter(item => bag.has(item.id));
-    contents.innerHTML = items.length ? items.map(item => `<li class="bag-item"><img src="assets/thumbnails/samples-${escape(item.img.split("/").pop().replace(".webp", ""))}--480.webp" alt="${escape(item.title)}" width="96" height="120"><div><button class="bag-item-title" type="button" data-open-item="${item.id}">${escape(item.title)}</button><p>${money(HNV_PRICES[item.id].target)}</p><button class="bag-remove" type="button" data-remove-bag="${item.id}" aria-label="Remove ${escape(item.title)} from bag">Remove</button></div></li>`).join("") : '<li class="bag-empty">Your next good find is waiting.<br>Explore the collection and add a favorite.</li>';
+    contents.innerHTML = items.length ? items.map(item => `<li class="bag-item" data-product-category="${escape(item.cat)}"><img src="assets/thumbnails/samples-${escape(item.img.split("/").pop().replace(".webp", ""))}--480.webp" alt="${escape(item.title)}" width="96" height="120"><div><button class="bag-item-title" type="button" data-open-item="${item.id}">${escape(item.title)}</button><p>${money(HNV_PRICES[item.id].target)}</p><button class="bag-remove" type="button" data-remove-bag="${item.id}" aria-label="Remove ${escape(item.title)} from bag">Remove</button></div></li>`).join("") : '<li class="bag-empty">Your next good find is waiting.<br>Explore the collection and add a favorite.</li>';
     document.querySelector("#bag-subtotal").textContent = money(items.reduce((sum, item) => sum + HNV_PRICES[item.id].target, 0));
     document.querySelector("#bag-summary").hidden = !items.length;
   }
@@ -306,7 +306,7 @@
                   : "";
     detail.innerHTML = `<div class="detail-layout">
       <div class="detail-image"><img src="${escape(item.img)}" ${photoSources(item, true)} alt="${escape(item.title)}" class="${isHidden(item) ? "mature-hidden" : ""}" width="640" height="800" draggable="false">${isHidden(item) ? `<button type="button" class="reveal-cover" data-reveal="${id}">View cover (18+)</button>` : ""}</div>
-      <div class="detail-copy"><p class="detail-category">${categoryNames[item.cat]} / ${originalId}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
+      <div class="detail-copy" data-product-category="${escape(item.cat)}"><p class="detail-category">${categoryNames[item.cat]} / ${originalId}</p><h2 id="detail-title">${escape(item.title)}</h2><span class="status ${item.chip}">${statusNames[item.chip]}</span><p>${escape(item.sub)}</p>
       <p class="detail-price"><strong>${price ? money(price.target) : "Pricing pending"}</strong><small>${price?.sample ? "Sample price · USD" : "Guide price"}</small></p>
       ${item.entrance ? "" : `<button class="product-add detail-add" type="button" data-add-bag="${id}">Add to bag <span aria-hidden="true">+</span></button>
       <button class="detail-save" type="button" data-save="${id}" aria-pressed="${saved.has(id)}">${saved.has(id) ? "♥ Saved to your finds" : "♡ Save this find"}</button>`}
