@@ -63,12 +63,19 @@ One flag, for Ricky's eyes only: c6 liked "Not for sale. Very much for hire." as
 
 ## Section layout (top to bottom)
 
+Ricky, 2026-10-29: lead with occasions after the introduction, before ways to work
+together, pricing and process. Show visitors what they can imagine first.
+
 1. **Eyebrow** "Holliewood & Vine Fabulous From Online" (Ricky's name, exactly), **H2** "You bring the plot. *Hollie dresses the set.*", then a one-paragraph lede. Beside it, a framed real photo from the original room (`IMG_6611`: feather hat, lace head, crystal) captioned "From the original room." There is no invented portfolio and no fake testimonials; the room is the portfolio.
-2. **Three ways in** (c6 names; c1: no rival asks for a video walkthrough, so this is the differentiator):
+2. **What's the occasion?** 15 chips. Each opens an email with the occasion in the subject. Pitches are c3's, trimmed to homes:
+   - Cocktail hour, Dinner party, The party, Disco night, Bachelorette, Proposal, Photo set
+   - After the remodel, Guest room, Spare room, Home office, Snowbird season, Reading nook, Gift a room
+   - Something else ("Whatever it is, do it for the plot.")
+3. **Three ways in** (c6 names; c1: no rival asks for a video walkthrough, so this is the differentiator):
    - **Screen Test**: video call. "Pan slowly. Hollie has notes."
    - **Stills**: send photos.
    - **The Logline**: describe it in an email. Free.
-3. **The billing**, four tiers (c6 names, c1 prices):
+4. **The billing**, four tiers (c6 names, c1 prices):
 
    | Tier | Scope | Starting price | Basis |
    |---|---|---|---|
@@ -77,7 +84,7 @@ One flag, for Ricky's eyes only: c6 liked "Not for sale. Very much for hire." as
    | Leading Role | A room, including a spare room or the one after the remodel | from $750 | c1 independent band $450–$2,800; mid-band, because there is no 3D rendering step |
    | Full Production | A studio or the whole house | quoted by the room, 10% off each room after the first | c1 Decorilla "Save 10%" multi-room, verified |
 
-4. **Two add-ons**:
+5. **Two add-ons**:
    - **The Cameo** (in person): $150 an hour, two-hour minimum, or a $1,200 styling day.
      - c3: in-person hour at 1.5x virtual. Morel's $1,250 day is "6 working + 2 office hours".
      - c1: Havenly in-person $699 vs $199 online.
@@ -86,10 +93,6 @@ One flag, for Ricky's eyes only: c6 liked "Not for sale. Very much for hire." as
      - +25% is where c1 and c3 agree. +50% is c3's freelance benchmark.
      - The $75 floor is c1's. c3's $250 floor would be 260% of a $95 Casting Call.
      - No styling vendor publishes a rush fee (c1, c3), so this price is a first guess; revisit after ten bookings.
-5. **What's the occasion?** 15 chips. Each opens an email with the occasion in the subject. Pitches are c3's, trimmed to homes:
-   - Cocktail hour, Dinner party, The party, Disco night, Bachelorette, Proposal, Photo set
-   - After the remodel, Guest room, Spare room, Home office, Snowbird season, Reading nook, Gift a room
-   - Something else ("Whatever it is, do it for the plot.")
 6. **How it works**, five steps:
    1. The Logline.
    2. The Screen Test: a video call booked online (photos work too).

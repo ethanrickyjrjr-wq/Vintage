@@ -90,6 +90,25 @@ Copy is final unless Ricky edits it. The section reuses existing classes (`page-
     </figure>
   </div>
 
+  <h3 class="hire-heading">What’s the occasion?</h3>
+  <ul class="hire-occasions">
+    <li><a href="#hire-contact" data-hire="Cocktail hour"><strong>Cocktail hour</strong><span>Brass, mirrors, a little chrome. You bring the ice.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Dinner party"><strong>Dinner party</strong><span>Dinner at eight. The table arrives at six, in brass and pink glass.</span></a></li>
+    <li><a href="#hire-contact" data-hire="The party"><strong>The party</strong><span>Any excuse works. The lighting does the rest.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Disco night"><strong>Disco night</strong><span>Oscars, New Year’s, a Tuesday. Red carpet optional. Mirrors mandatory.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Bachelorette"><strong>Bachelorette</strong><span>The house gets styled. The guest of honor gets photographed.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Proposal"><strong>Proposal</strong><span>Somebody is about to say yes. The room should say it first.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Photo set"><strong>Photo set</strong><span>A corner built for the camera, ready before the light changes.</span></a></li>
+    <li><a href="#hire-contact" data-hire="After the remodel"><strong>After the remodel</strong><span>The walls are done. The room isn’t.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Guest room"><strong>Guest room</strong><span>Guests land Friday. Make it look like you planned this.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Spare room"><strong>Spare room</strong><span>A room with potential and a treadmill.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Home office"><strong>Home office</strong><span>Your coworkers have seen enough beige.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Snowbird season"><strong>Snowbird season</strong><span>You land. The house is already dressed.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Reading nook"><strong>Reading nook</strong><span>A chair, a lamp, a reason to stay home.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Gift a room"><strong>Gift a room</strong><span>Give a room instead of a candle.</span></a></li>
+    <li><a href="#hire-contact" data-hire="Something else"><strong>Something else</strong><span>Whatever it is, do it for the plot.</span></a></li>
+  </ul>
+
   <h3 class="hire-heading">Three ways in.</h3>
   <ol class="hire-ways">
     <li><h4>Screen Test</h4><p class="hire-line">Pan slowly. Hollie has notes.</p><p>Book a free video call and walk Hollie through the space.</p></li>
@@ -109,25 +128,6 @@ Copy is final unless Ricky edits it. The section reuses existing classes (`page-
     <div><h4>Rushes</h4><p class="hire-line">Need it now?</p><p>+25% to start within a week, +50% within 48 hours, $75 minimum. Rush styles with pieces already in the collection.</p></div>
   </div>
   <p class="hire-note">Starting prices. Hollie quotes after the logline. Plus applicable sales tax.</p>
-
-  <h3 class="hire-heading">What’s the occasion?</h3>
-  <ul class="hire-occasions">
-    <li><a href="#hire-contact" data-hire="Cocktail hour"><strong>Cocktail hour</strong><span>Brass, mirrors, a little chrome. You bring the ice.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Dinner party"><strong>Dinner party</strong><span>Dinner at eight. The table arrives at six, in brass and pink glass.</span></a></li>
-    <li><a href="#hire-contact" data-hire="The party"><strong>The party</strong><span>Any excuse works. The lighting does the rest.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Disco night"><strong>Disco night</strong><span>Oscars, New Year’s, a Tuesday. Red carpet optional. Mirrors mandatory.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Bachelorette"><strong>Bachelorette</strong><span>The house gets styled. The guest of honor gets photographed.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Proposal"><strong>Proposal</strong><span>Somebody is about to say yes. The room should say it first.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Photo set"><strong>Photo set</strong><span>A corner built for the camera, ready before the light changes.</span></a></li>
-    <li><a href="#hire-contact" data-hire="After the remodel"><strong>After the remodel</strong><span>The walls are done. The room isn’t.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Guest room"><strong>Guest room</strong><span>Guests land Friday. Make it look like you planned this.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Spare room"><strong>Spare room</strong><span>A room with potential and a treadmill.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Home office"><strong>Home office</strong><span>Your coworkers have seen enough beige.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Snowbird season"><strong>Snowbird season</strong><span>You land. The house is already dressed.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Reading nook"><strong>Reading nook</strong><span>A chair, a lamp, a reason to stay home.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Gift a room"><strong>Gift a room</strong><span>Give a room instead of a candle.</span></a></li>
-    <li><a href="#hire-contact" data-hire="Something else"><strong>Something else</strong><span>Whatever it is, do it for the plot.</span></a></li>
-  </ul>
 
   <h3 class="hire-heading">How it works.</h3>
   <ol class="hire-steps">
