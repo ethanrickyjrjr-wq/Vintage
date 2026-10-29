@@ -1,6 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { arrangeRoom, constrainLayer, layerBox, semanticGroup } from "../room-layout.js";
+import { sampleRoomScene } from "../room-sample.js";
 
 const width = 160, height = 100;
 function mask(x, y, w, h) {
@@ -79,5 +82,45 @@ test("moving and resizing stay inside portrait and landscape photos", () => {
     const box = layerBox(layer, aspect);
     assert.ok(box.x >= 0 && box.y >= 0 && box.x + box.w <= 1.000001 && box.y + box.h <= 1.000001);
     assert.ok(layer.w >= .025);
+  }
+});
+
+test("the shipped sample places the reported Egyptian lamp on the empty cabinet", () => {
+  // Pin the reviewed photograph; a replacement image needs a fresh layout review.
+  const photo = readFileSync(new URL("../assets/rooms/example-room.webp", import.meta.url));
+  assert.equal(createHash("sha256").update(photo).digest("hex"), "2cba2ea9e22d50e31d340d10b90b28a048ede38ca564c28b61cd367cd5cc54e2");
+  // Actual visible alpha bounds from the catalog photograph: 895 × 1200 px.
+  const lamp = { id: "A13", kind: "lamp", overlay: "assets/demo/gold-bust-lamp.webp", ratio: 1200 / 895 };
+  const result = arrangeRoom([lamp], sampleRoomScene(), 1.5);
+  assert.equal(result.layers.length, 1);
+  assert.deepEqual(result.unplaced, []);
+  const box = layerBox(result.layers[0], 1.5);
+  assert.ok(box.x >= .73 && box.x + box.w < .88, "base sits on the cabinet, away from the existing vase");
+  assert.ok(Math.abs(box.y + box.h - .498) < .00001, "lamp base meets the cabinet top");
+  assert.ok(box.w >= .1, "the lamp must be visibly useful, not reduced to a tiny marker");
+});
+
+test("all sample table lamps fit individually; a collection shares the available support", () => {
+  // Ratios measured from the same trimmed alpha bounds used by the editor.
+  const lamps = [["A1", 1600 / 1219], ["A13", 1200 / 895], ["A17", 1200 / 368], ["S117373F4", 1600 / 926]]
+    .map(([id, ratio]) => ({ ...product(id, "lamp"), ratio }));
+  for (const lamp of lamps) assert.equal(arrangeRoom([lamp], sampleRoomScene(), 1.5).layers.length, 1, lamp.id);
+  const result = arrangeRoom(lamps, sampleRoomScene(), 1.5);
+  assert.equal(result.layers.length, 1);
+  assert.equal(result.unplaced.length, 3, "never stack lamps or put them on the coffee table");
+  assert.deepEqual(result, arrangeRoom([...lamps].reverse(), sampleRoomScene(), 1.5));
+  assert.equal(arrangeRoom([lamps[1]], grid([]), 1.5).layers.length, 0, "uploaded rooms must not inherit sample positions");
+});
+
+test("sample arrangements keep mixed finds bounded and separated", () => {
+  const products = [product("A13", "lamp"), product("A3", "art"), product("A10", "decor"), product("A16", "media"), product("A2", "ceiling"), product("A15", "floor")];
+  const result = arrangeRoom(products, sampleRoomScene(), 1.5);
+  assert.equal(result.layers.length, products.length);
+  const boxes = result.layers.map(layer => layerBox(layer, 1.5));
+  for (const [index, box] of boxes.entries()) {
+    assert.ok(box.x >= .01 && box.y >= .01 && box.x + box.w <= .99 && box.y + box.h <= .99);
+    for (const other of boxes.slice(index + 1)) {
+      assert.ok(box.x + box.w <= other.x || other.x + other.w <= box.x || box.y + box.h <= other.y || other.y + other.h <= box.y);
+    }
   }
 });

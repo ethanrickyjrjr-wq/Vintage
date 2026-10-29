@@ -1,4 +1,5 @@
 import { arrangeRoom, constrainLayer, layerBox } from "./room-layout.js";
+import { sampleRoomScene } from "./room-sample.js";
 
 const form = document.querySelector("#room-form");
 if (form) startEditor();
@@ -191,6 +192,7 @@ function startEditor() {
     const analysisWorker = worker, id = ++requestId;
     const photo = document.createElement("canvas"), scale = Math.min(1, 1000 / Math.max(canvas.width, canvas.height));
     photo.width = Math.round(canvas.width * scale); photo.height = Math.round(canvas.height * scale);
+    if (state.sample) return sampleRoomScene();
     const ctx = photo.getContext("2d"); ctx.drawImage(state.photo, 0, 0, photo.width, photo.height);
     const pixels = ctx.getImageData(0, 0, photo.width, photo.height).data.buffer;
     return new Promise((resolve, reject) => {
@@ -227,7 +229,7 @@ function startEditor() {
   }
   async function decorate(ids) {
     if (state.busy || !state.photo || !ids.length) return;
-    state.busy = true; state.cancelled = false; $("room-working-label").textContent = "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); claimHash(); refresh(); loading(true);
+    state.busy = true; state.cancelled = false; $("room-working-label").textContent = state.sample ? "Arranging your finds in the sample room…" : "Loading the room guide on your device…"; $("room-progress").removeAttribute("value"); claimHash(); refresh(); loading(true);
     if (matchMedia("(max-width: 767px)").matches) $("room-stage").scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     try {
       const usable = [], excluded = [];
@@ -242,8 +244,14 @@ function startEditor() {
       const scene = usable.length ? await analyze() : null;
       if (scene) state.scene = scene;
       const result = scene ? arrangeRoom(usable, scene, photoAspect()) : { layers: [], unplaced: [] };
-      remember(); Object.assign(state, { layers: result.layers, selected: result.layers.at(-1)?.id ?? null, unplaced: [...excluded, ...result.unplaced], comparing: false });
-      status(result.layers.length ? `${result.layers.length} ${result.layers.length === 1 ? "find placed" : "finds placed"}${state.unplaced.length ? `; ${state.unplaced.length} left out` : ""}. Drag any find to make the arrangement yours.` : "No clear positions were found for this collection. See the list of pieces left out, or place available cutouts by hand.");
+      remember(); state.unplaced = [...excluded, ...result.unplaced];
+      if (result.layers.length) {
+        Object.assign(state, { layers: result.layers, selected: result.layers.at(-1).id, comparing: false });
+        status(`${result.layers.length} ${result.layers.length === 1 ? "find placed" : "finds placed"}${state.unplaced.length ? `; ${state.unplaced.length} left out` : ""}. Drag any find to make the arrangement yours.`);
+      } else {
+        const detail = state.unplaced.length === 1 ? state.unplaced[0].reason : "See the pieces left out below for details.";
+        status(`We couldn’t suggest a starting position. ${detail}${state.layers.length ? " Your existing arrangement is unchanged." : " You can place available finds by hand."}`);
+      }
     } catch (error) { status(error.message, true); }
     finally { state.busy = false; refresh(); loading(false); }
   }

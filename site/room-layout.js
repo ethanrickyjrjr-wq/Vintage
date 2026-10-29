@@ -132,7 +132,7 @@ const noSlot = {
 };
 
 export function arrangeRoom(products, grid, photoAspect) {
-  const scene = roomSlots(grid);
+  const scene = grid.slots ? grid : roomSlots(grid);
   const layers = [], unplaced = [], used = new Set();
   const rank = { ceiling: 0, art: 1, lamp: 2, floor: 3, media: 4, decor: 5 };
   const ordered = [...products].sort((a, b) => (rank[a.kind] ?? 9) - (rank[b.kind] ?? 9) || a.id.localeCompare(b.id, "en", { numeric: true }));
@@ -151,11 +151,15 @@ export function arrangeRoom(products, grid, photoAspect) {
         const layer = { id: product.id, kind: product.kind, x: slot.x, y: slot.bottom + (slot.anchorTop ? h / 2 : -h / 2), w, ratio: product.ratio, flip: false };
         const box = layerBox(layer, photoAspect);
         if (box.x < .01 || box.y < .01 || box.x + box.w > .99 || box.y + box.h > .99) continue;
-        if (product.kind === "art" && coverage(scene.masks.wall, grid, box) < .88) continue;
-        if (product.kind === "ceiling" && coverage(scene.masks.ceiling, grid, { x: layer.x - .01, y: box.y, w: .02, h: .01 }) < .6) continue;
-        if (product.kind === "floor" && coverage(scene.masks.floor, grid, { x: box.x, y: box.y + box.h - .015, w: box.w, h: .015 }) < .8) continue;
-        if (coverage(scene.masks.obstacle, grid, box) > .03) continue;
-        if (["sofa", "table", "cabinet"].some(group => coverage(scene.masks[group], grid, { ...box, h: Math.max(.001, box.h - .012) }) > .05)) continue;
+        // Uploaded rooms need mask checks. The shipped sample has reviewed
+        // empty bounds instead; both paths retain size, capacity and overlap checks.
+        if (scene.masks) {
+          if (product.kind === "art" && coverage(scene.masks.wall, grid, box) < .88) continue;
+          if (product.kind === "ceiling" && coverage(scene.masks.ceiling, grid, { x: layer.x - .01, y: box.y, w: .02, h: .01 }) < .6) continue;
+          if (product.kind === "floor" && coverage(scene.masks.floor, grid, { x: box.x, y: box.y + box.h - .015, w: box.w, h: .015 }) < .8) continue;
+          if (coverage(scene.masks.obstacle, grid, box) > .03) continue;
+          if (["sofa", "table", "cabinet"].some(group => coverage(scene.masks[group], grid, { ...box, h: Math.max(.001, box.h - .012) }) > .05)) continue;
+        }
         if (layers.some(other => overlap(box, layerBox(other, photoAspect)) > .05)) continue;
         layers.push(layer); used.add(slot.id); placed = true; break;
       }

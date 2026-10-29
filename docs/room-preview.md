@@ -1,5 +1,26 @@
 # Room previews
 
+## Sample-room placement repair — 2026-10-28
+
+The Gold Egyptian bust lamp (A13) reproduced a zero-placement result in our own
+sample photograph: the detector did not provide a usable confirmed support.
+The earlier ten-room pilot had placed no lamps, so its passing checks did not
+establish that this basic sample-room flow worked.
+
+`site/room-sample.js` now supplies reviewed placement bounds for the fixed
+1536 × 1024 sample photograph. The lamp goes on the empty left end of the
+credenza, clear of the existing vase; coffee-table objects, wall pieces,
+ceiling lighting and a foreground floor position have separate bounds.
+The sample skips the model download/inference entirely. Uploaded photographs
+still use the local model and cannot inherit the sample's placement map.
+Both paths use the same size, capacity, overlap and editability checks.
+
+A zero-placement result now preserves existing layers and reports the specific
+reason for a single rejected find. Successful suggestions remain undoable.
+The automated regressions pin the sample image hash, check the reported lamp
+using its actual cutout proportions, cover all four table lamps individually,
+enforce support capacity and verify a bounded, separated mixed arrangement.
+
 ## Room disco publication — 2026-10-28
 
 Sites **version 22** is live publicly at https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site .

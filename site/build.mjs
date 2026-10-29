@@ -62,6 +62,7 @@ for (const file of [
   "room-preview.js",
   "room-layout.js",
   "room-segmentation.js",
+  "room-sample.js",
   "favicon.svg",
   "showroom.html",
   "showroom.css",
