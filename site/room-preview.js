@@ -10,6 +10,10 @@ function startEditor() {
   const inventory = new Map(HNV_ITEMS.map(item => [item.id, item]));
   const products = HNV_ROOM_PRODUCTS.map(product => ({ ...inventory.get(product.id), ...product }));
   const productMap = new Map(products.map(product => [product.id, product]));
+  const categoryNames = { lighting: "Lighting", furniture: "Furniture", decor: "Glass & objects", rugs: "Rugs & hides", art: "Art & mirrors", media: "Music & media" };
+  const productGroups = Object.entries(categoryNames).map(([cat, title]) => ({ cat, title,
+    products: products.filter(product => product.cat === cat).sort((a, b) => a.title.localeCompare(b.title)),
+  })).filter(group => group.products.length);
   const textures = new Map();
   const state = { photo: null, sample: false, layers: [], picks: [], selected: null, history: [], unplaced: [], scene: null, busy: false, comparing: false, drag: null };
   const savedKey = "hollywood-and-vine-saved";
@@ -99,17 +103,25 @@ function startEditor() {
   function refresh() {
     const hasPhoto = !!state.photo, layer = selectedLayer();
     $("room-tray").replaceChildren(); $("room-tray-empty").hidden = state.picks.length > 0;
-    for (const id of state.picks) {
-      const product = productMap.get(id), row = document.createElement("li"), title = document.createElement("span");
-      const image = document.createElement("img"); image.src = product.img; image.alt = ""; image.width = 34; image.height = 42; image.draggable = false;
-      row.dataset.productCategory = product.cat;
-      title.textContent = product.title; row.append(image, title);
-      const present = state.layers.some(item => item.id === id);
-      row.draggable = !!product.overlay && !present && !state.busy;
-      row.addEventListener("dragstart", event => { event.dataTransfer.setData("application/x-hnv-find", id); event.dataTransfer.effectAllowed = "copy"; });
-      row.append(button(present ? "In room" : product.overlay ? "Place" : "Photo needed", `Place ${product.title}`, () => place(id), state.busy || !hasPhoto || present || !product.overlay));
-      row.append(button("×", `Remove ${product.title} from my picks`, () => { state.picks = state.picks.filter(item => item !== id); refresh(); }, state.busy));
-      $("room-tray").append(row);
+    for (const group of productGroups) {
+      const picks = group.products.filter(product => state.picks.includes(product.id));
+      if (!picks.length) continue;
+      const section = document.createElement("li"), heading = document.createElement("h3"), list = document.createElement("ul");
+      section.className = "room-picks-group"; section.dataset.productCategory = group.cat;
+      heading.textContent = `${group.title} (${picks.length})`; list.className = "room-tray-items";
+      section.append(heading, list); $("room-tray").append(section);
+      for (const { id } of picks) {
+        const product = productMap.get(id), row = document.createElement("li"), title = document.createElement("span");
+        const image = document.createElement("img"); image.src = product.img; image.alt = ""; image.width = 34; image.height = 42; image.draggable = false;
+        row.dataset.productCategory = product.cat;
+        title.textContent = product.title; row.append(image, title);
+        const present = state.layers.some(item => item.id === id);
+        row.draggable = !!product.overlay && !present && !state.busy;
+        row.addEventListener("dragstart", event => { event.dataTransfer.setData("application/x-hnv-find", id); event.dataTransfer.effectAllowed = "copy"; });
+        row.append(button(present ? "In room" : product.overlay ? "Place" : "Photo needed", `Place ${product.title}`, () => place(id), state.busy || !hasPhoto || present || !product.overlay));
+        row.append(button("×", `Remove ${product.title} from my picks`, () => { state.picks = state.picks.filter(item => item !== id); refresh(); }, state.busy));
+        list.append(row);
+      }
     }
     $("room-layers").replaceChildren();
     for (const item of state.layers) {
@@ -133,6 +145,7 @@ function startEditor() {
     const picked = state.picks.includes(selectedProduct().id);
     $("room-add").textContent = picked ? "In my picks ✓" : "Add to my picks +"; $("room-add").disabled = state.busy || picked;
     $("room-product").disabled = state.busy; $("room-file").disabled = state.busy;
+    for (const control of $("room-product-groups").querySelectorAll("button")) control.disabled = state.busy;
     $("room-sample-photo").hidden = !hasPhoto || state.sample; $("room-sample-photo").disabled = state.busy;
     for (const id of ["room-change-photo", "room-upload-button", "room-use-example"]) $(id).disabled = state.busy;
     $("room-working").hidden = !state.busy; $("room-stage").setAttribute("aria-busy", String(state.busy));
@@ -150,6 +163,11 @@ function startEditor() {
     $("room-product").dataset.productCategory = product.cat;
     $("room-add").dataset.productCategory = product.cat;
     document.querySelector(".room-selected-product").dataset.productCategory = product.cat;
+    for (const control of $("room-product-groups").querySelectorAll("button")) {
+      const selected = control.dataset.roomProduct === product.id;
+      control.setAttribute("aria-pressed", String(selected));
+      if (selected) control.closest("details").open = true;
+    }
     $("room-product-title").textContent = product.title;
     const price = HNV_PRICES[product.id];
     $("room-product-price").textContent = product.overlay ? price ? `$${price.target.toLocaleString("en-US")} ${price.sample ? "sample price" : "guide price"}` : "Pricing pending" : "A clear product photo is needed to place this find.";
@@ -263,7 +281,23 @@ function startEditor() {
   function readFavorites() {
     try { const stored = JSON.parse(localStorage.getItem(savedKey) || "[]"); favorites = Array.isArray(stored) ? [...new Set(stored.filter(id => inventory.has(id) && id !== "OWNER"))] : []; } catch { /* Keep session saves when storage is blocked. */ }
   }
-  for (const product of products) { const option = document.createElement("option"); option.value = product.id; option.dataset.productCategory = product.cat; option.textContent = `${product.title}${product.overlay ? "" : " (photo needed)"}`; $("room-product").append(option); }
+  for (const group of productGroups) {
+    const section = document.createElement("details"), heading = document.createElement("summary"), title = document.createElement("h3"), count = document.createElement("span"), list = document.createElement("div");
+    section.className = "room-product-group"; section.name = "room-product-category"; section.dataset.productCategory = group.cat;
+    title.textContent = group.title; count.textContent = `${group.products.length} finds`;
+    heading.append(title, count); list.className = "room-product-options";
+    for (const product of group.products) {
+      const control = button("", `Choose ${product.title}`, () => { $("room-product").value = product.id; updateProduct(); });
+      control.dataset.roomProduct = product.id; control.dataset.productCategory = product.cat;
+      const image = document.createElement("img"), name = document.createElement("span");
+      image.src = product.img.replace("assets/demo/", "assets/thumbnails/samples-").replace(".webp", "--480.webp");
+      image.alt = ""; image.width = 40; image.height = 48; image.loading = "lazy";
+      name.textContent = `${product.title}${product.overlay ? "" : " (photo needed)"}`;
+      control.append(image, name); list.append(control);
+    }
+    section.append(heading, list); $("room-product-groups").append(section);
+  }
+  $("room-product").value = productGroups[0].products[0].id;
   readFavorites();
   document.addEventListener("hnv:saved-changed", ({ detail }) => { favorites = [...new Set(detail.filter(id => inventory.has(id) && id !== "OWNER"))]; refresh(); });
   window.addEventListener("storage", event => { if (event.key === savedKey || event.key === null) { readFavorites(); refresh(); } });

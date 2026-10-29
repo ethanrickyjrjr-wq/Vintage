@@ -35,6 +35,20 @@
 .room-label > span { font-weight: 400; color: var(--muted); }
 .room-label output { float: right; font-weight: 400; }
 .room-controls select { width: 100%; background: var(--paper); color: var(--text); border: 1px solid var(--line); padding: 10px; font-size: 13px; border-radius: 0; }
+.room-product-groups { display: grid; gap: 8px; }
+.room-product-group { border: 1px solid var(--category-color); border-left-width: 4px; background: var(--paper-deep); }
+.room-product-group summary { display: flex; align-items: center; gap: 8px; padding: 12px 10px; cursor: pointer; list-style: none; min-height: 48px; }
+.room-product-group summary::-webkit-details-marker { display: none; }
+.room-product-group summary::after { content: "+"; margin-left: auto; font-size: 20px; line-height: 1; }
+.room-product-group[open] summary::after { content: "−"; }
+.room-product-group h3 { margin: 0; color: inherit; font: 600 14px/1.4 var(--body); }
+.room-product-group summary > span { font-size: 11px; white-space: nowrap; }
+.room-product-options { display: grid; max-height: 260px; overflow-y: auto; padding: 0 6px 6px; gap: 4px; }
+.room-product-options button { display: grid; grid-template-columns: 40px minmax(0,1fr); align-items: center; gap: 10px; width: 100%; min-height: 56px; padding: 6px; border: 1px solid transparent; text-align: left; font-size: 12px; line-height: 1.4; }
+.room-product-options button:hover, .room-product-options button[aria-pressed="true"] { border-color: currentColor; background: var(--paper); }
+.room-product-options button[aria-pressed="true"] span { text-decoration: underline; text-underline-offset: 3px; }
+.room-product-options img { width: 40px; height: 48px; padding: 4px; object-fit: contain; background: #fff; }
+.room-product-group :is(summary, button):focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }
 .room-selected-product { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 12px; align-items: center; margin: 18px 0 24px; }
 .room-selected-product img { width: 64px; height: 80px; object-fit: cover; }
 .room-selected-product p { margin: 0 0 4px; font-size: 13px; line-height: 1.4; }
@@ -47,7 +61,10 @@
 .room-controls button:disabled { opacity: .45; cursor: default; }
 .room-tray, .room-layers, .room-unplaced ul { list-style: none; margin: 12px 0 18px; padding: 0; }
 .room-tray { max-height: 260px; overflow-y: auto; }
-.room-tray li { display: grid; grid-template-columns: 34px minmax(0,1fr) auto 24px; gap: 7px; align-items: center; border-bottom: 1px solid var(--line); padding: 9px 0; }
+.room-picks-group { margin-bottom: 16px; }
+.room-picks-group h3 { margin: 0; padding: 8px 0; border-bottom: 2px solid currentColor; font: 600 12px/1.4 var(--body); }
+.room-tray-items { list-style: none; margin: 0; padding: 0; }
+.room-tray-items > li { display: grid; grid-template-columns: 34px minmax(0,1fr) auto 24px; gap: 7px; align-items: center; border-bottom: 1px solid var(--line); padding: 9px 0; }
 .room-tray img { width: 34px; height: 42px; object-fit: cover; }
 .room-tray span { font-size: 11px; line-height: 1.45; overflow-wrap: anywhere; }
 .room-tray button { font-size: 10px; min-height: 32px; padding: 4px; text-decoration: underline; text-underline-offset: 3px; }

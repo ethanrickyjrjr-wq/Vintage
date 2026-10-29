@@ -377,8 +377,10 @@
             </div>
           </div>
           <form class="room-controls" id="room-form">
-            <label class="room-label" for="room-product">01 / Make your picks</label>
-            <select id="room-product"></select>
+            <p class="room-label" id="room-picks-label">01 / Make your picks</p>
+            <p class="room-help">Browse by category. Open a group to choose a find.</p>
+            <input type="hidden" id="room-product" />
+            <div class="room-product-groups" id="room-product-groups" role="group" aria-labelledby="room-picks-label"></div>
             <div class="room-selected-product"><img id="room-product-image" alt="" width="120" height="140" loading="lazy" draggable="false" /><div><p id="room-product-title"></p><span id="room-product-price"></span><a id="room-product-details" href="#collection">View this find ↗</a></div></div>
             <button type="submit" class="room-add" id="room-add">Add to my picks +</button>
             <ul class="room-tray" id="room-tray" aria-label="My picks"></ul>
