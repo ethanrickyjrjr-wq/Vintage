@@ -1,0 +1,21 @@
+[1440] elements=651 aligned=True Space Mono els=15 scrollWidth base=1440 over=1440 taller=0 wider=3
+[390] elements=641 aligned=True Space Mono els=15 scrollWidth base=390 over=390 taller=1 wider=3
+    taller: span.owner-ticket 'NOT FOR SALE' 9px ls=1.35px h 50.5 -> 52.3  w 121.9 -> 133.4
+[320] elements=641 aligned=True Space Mono els=15 scrollWidth base=320 over=320 taller=2 wider=3
+    taller: p.eyebrow 'A little room for possibility.' 11px ls=1.54px h 16.5 -> 33  w 280 -> 280
+    taller: span.owner-ticket 'NOT FOR SALE' 9px ls=1.35px h 50.5 -> 52.3  w 121.9 -> 133.4
+INVENTORY (1440):
+   334 DM Sans|400|normal
+   105 DM Sans|500|normal
+   95 Bodoni Moda|400|normal
+   53 Arial|400|normal
+   17 DM Sans|600|normal
+   16 Bodoni Moda|400|italic
+   15 Space Mono|400|normal
+   8 DM Sans|700|normal
+   5 Bodoni Moda|500|normal
+   2 DM Sans|400|italic
+   1 Bodoni Moda|500|italic
+BODONI > 500: []
+FONTS: Bodoni Moda italic 400 500 loaded | Bodoni Moda normal 400 500 loaded | DM Sans normal 400 700 loaded | Space Mono normal 400 loaded
+MONO size/ls/tt combos: [('10px', '1.4px', 'uppercase'), ('10px', 'normal', 'none'), ('11px', '0.44px', 'uppercase'), ('11px', '1.65px', 'none'), ('13px', '1.82px', 'uppercase'), ('20px', '0.6px', 'uppercase'), ('8px', '1.12px', 'uppercase'), ('8px', 'normal', 'none')]

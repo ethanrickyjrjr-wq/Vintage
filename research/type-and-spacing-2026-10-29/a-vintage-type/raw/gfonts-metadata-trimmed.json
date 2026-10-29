@@ -1,0 +1,892 @@
+// SOURCE: https://fonts.google.com/metadata/fonts (the JSON that backs fonts.google.com/specimen/<Family>), fetched 2026-10-29; trimmed to the 16 families under review.
+[
+ {
+  "family": "Bodoni Moda",
+  "category": "Serif",
+  "stroke": "Serif",
+  "classifications": [],
+  "designers": [
+   "Owen Earl"
+  ],
+  "axes": [
+   {
+    "tag": "opsz",
+    "min": 6.0,
+    "max": 96.0,
+    "defaultValue": 11.0
+   },
+   {
+    "tag": "wght",
+    "min": 400.0,
+    "max": 900.0,
+    "defaultValue": 400.0
+   }
+  ],
+  "dateAdded": "2020-11-25",
+  "lastModified": "2025-09-16",
+  "popularity": 68,
+  "fonts": {
+   "400": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "400i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "500": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "500i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "600": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "600i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "700": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "700i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "800": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "800i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "900": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   },
+   "900i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.525
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext",
+   "math",
+   "symbols"
+  ]
+ },
+ {
+  "family": "Courier Prime",
+  "category": "Monospace",
+  "stroke": "Serif",
+  "classifications": [
+   "Monospace"
+  ],
+  "designers": [
+   "Alan Dague-Greene"
+  ],
+  "axes": [],
+  "dateAdded": "2019-12-05",
+  "lastModified": "2025-09-11",
+  "popularity": 38,
+  "fonts": {
+   "400": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.123046875
+   },
+   "400i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.123046875
+   },
+   "700": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.123046875
+   },
+   "700i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.123046875
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Cutive Mono",
+  "category": "Monospace",
+  "stroke": "Serif",
+  "classifications": [
+   "Monospace"
+  ],
+  "designers": [
+   "Vernon Adams"
+  ],
+  "axes": [],
+  "dateAdded": "2012-10-26",
+  "lastModified": "2025-09-11",
+  "popularity": 67,
+  "fonts": {
+   "400": {
+    "thickness": 4,
+    "slant": 1,
+    "width": 8,
+    "lineHeight": 1.10107421875
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "DM Sans",
+  "category": "Sans Serif",
+  "stroke": "Sans Serif",
+  "classifications": [],
+  "designers": [
+   "Colophon Foundry"
+  ],
+  "axes": [
+   {
+    "tag": "opsz",
+    "min": 9.0,
+    "max": 40.0,
+    "defaultValue": 14.0
+   },
+   {
+    "tag": "wght",
+    "min": 100.0,
+    "max": 1000.0,
+    "defaultValue": 400.0
+   }
+  ],
+  "dateAdded": "2019-06-11",
+  "lastModified": "2025-09-11",
+  "popularity": 6,
+  "fonts": {
+   "100": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "1000": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.0
+   },
+   "1000i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.0
+   },
+   "100i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "200": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "200i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "300": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "300i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "400": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "400i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "500": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "500i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "600": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "600i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "700": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "700i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "800": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "800i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "900": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   },
+   "900i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.302
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Italiana",
+  "category": "Sans Serif",
+  "stroke": "Sans Serif",
+  "classifications": [
+   "Display"
+  ],
+  "designers": [
+   "Santiago Orozco"
+  ],
+  "axes": [],
+  "dateAdded": "2012-03-14",
+  "lastModified": "2025-06-25",
+  "popularity": 125,
+  "fonts": {
+   "400": {
+    "thickness": 4,
+    "slant": 1,
+    "width": 7,
+    "lineHeight": 1.178
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin"
+  ]
+ },
+ {
+  "family": "Josefin Sans",
+  "category": "Sans Serif",
+  "stroke": "Sans Serif",
+  "classifications": [
+   "Display"
+  ],
+  "designers": [
+   "Santiago Orozco"
+  ],
+  "axes": [
+   {
+    "tag": "wght",
+    "min": 100.0,
+    "max": 700.0,
+    "defaultValue": 400.0
+   }
+  ],
+  "dateAdded": "2010-11-17",
+  "lastModified": "2025-09-04",
+  "popularity": 26,
+  "fonts": {
+   "100": {
+    "thickness": 1,
+    "slant": 1,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "100i": {
+    "thickness": 1,
+    "slant": 4,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "200": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.0
+   },
+   "200i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.0
+   },
+   "300": {
+    "thickness": 3,
+    "slant": 1,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "300i": {
+    "thickness": 3,
+    "slant": 3,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "400": {
+    "thickness": 4,
+    "slant": 1,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "400i": {
+    "thickness": 4,
+    "slant": 3,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "500": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.0
+   },
+   "500i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.0
+   },
+   "600": {
+    "thickness": 5,
+    "slant": 1,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "600i": {
+    "thickness": 5,
+    "slant": 3,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "700": {
+    "thickness": 6,
+    "slant": 1,
+    "width": 6,
+    "lineHeight": 1.0
+   },
+   "700i": {
+    "thickness": 6,
+    "slant": 3,
+    "width": 6,
+    "lineHeight": 1.0
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext",
+   "vietnamese"
+  ]
+ },
+ {
+  "family": "Jost",
+  "category": "Sans Serif",
+  "stroke": "Sans Serif",
+  "classifications": [],
+  "designers": [
+   "Owen Earl"
+  ],
+  "axes": [
+   {
+    "tag": "wght",
+    "min": 100.0,
+    "max": 900.0,
+    "defaultValue": 400.0
+   }
+  ],
+  "dateAdded": "2020-02-11",
+  "lastModified": "2025-09-10",
+  "popularity": 9,
+  "fonts": {
+   "100": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "100i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "200": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "200i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "300": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "300i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "400": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "400i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "500": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "500i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "600": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "600i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "700": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "700i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "800": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "800i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "900": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   },
+   "900i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.445
+   }
+  },
+  "subsets": [
+   "menu",
+   "cyrillic",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Limelight",
+  "category": "Display",
+  "stroke": "Sans Serif",
+  "classifications": [
+   "Display"
+  ],
+  "designers": [
+   "Nicole Fally",
+   "Sorkin Type"
+  ],
+  "axes": [],
+  "dateAdded": "2011-05-25",
+  "lastModified": "2025-09-16",
+  "popularity": 111,
+  "fonts": {
+   "400": {
+    "thickness": 8,
+    "slant": 1,
+    "width": 8,
+    "lineHeight": 1.21728515625
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Monoton",
+  "category": "Display",
+  "stroke": "Sans Serif",
+  "classifications": [
+   "Display"
+  ],
+  "designers": [
+   "Vernon Adams"
+  ],
+  "axes": [],
+  "dateAdded": "2011-08-24",
+  "lastModified": "2025-09-16",
+  "popularity": 99,
+  "fonts": {
+   "400": {
+    "thickness": 6,
+    "slant": 1,
+    "width": 8,
+    "lineHeight": 1.556640625
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Pinyon Script",
+  "category": "Handwriting",
+  "stroke": null,
+  "classifications": [
+   "Handwriting",
+   "Display"
+  ],
+  "designers": [
+   "Nicole Fally"
+  ],
+  "axes": [],
+  "dateAdded": "2011-10-12",
+  "lastModified": "2025-09-10",
+  "popularity": 67,
+  "fonts": {
+   "400": {
+    "thickness": 5,
+    "slant": 9,
+    "width": 6,
+    "lineHeight": 1.24755859375
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext",
+   "vietnamese"
+  ]
+ },
+ {
+  "family": "Poiret One",
+  "category": "Display",
+  "stroke": "Sans Serif",
+  "classifications": [
+   "Display"
+  ],
+  "designers": [
+   "Denis Masharov"
+  ],
+  "axes": [],
+  "dateAdded": "2012-02-29",
+  "lastModified": "2025-09-11",
+  "popularity": 176,
+  "fonts": {
+   "400": {
+    "thickness": 2,
+    "slant": 1,
+    "width": 7,
+    "lineHeight": 1.17
+   }
+  },
+  "subsets": [
+   "menu",
+   "cyrillic",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Sacramento",
+  "category": "Handwriting",
+  "stroke": null,
+  "classifications": [
+   "Handwriting",
+   "Display"
+  ],
+  "designers": [
+   "Astigmatic"
+  ],
+  "axes": [],
+  "dateAdded": "2012-11-01",
+  "lastModified": "2025-09-11",
+  "popularity": 47,
+  "fonts": {
+   "400": {
+    "thickness": 4,
+    "slant": 1,
+    "width": 5,
+    "lineHeight": 1.45947265625
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Space Mono",
+  "category": "Monospace",
+  "stroke": null,
+  "classifications": [
+   "Monospace"
+  ],
+  "designers": [
+   "Colophon Foundry"
+  ],
+  "axes": [],
+  "dateAdded": "2016-06-15",
+  "lastModified": "2025-06-25",
+  "popularity": 75,
+  "fonts": {
+   "400": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.481
+   },
+   "400i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.481
+   },
+   "700": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.481
+   },
+   "700i": {
+    "thickness": null,
+    "slant": null,
+    "width": null,
+    "lineHeight": 1.481
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext",
+   "vietnamese"
+  ]
+ },
+ {
+  "family": "Special Elite",
+  "category": "Display",
+  "stroke": null,
+  "classifications": [
+   "Display"
+  ],
+  "designers": [
+   "Astigmatic"
+  ],
+  "axes": [],
+  "dateAdded": "2011-04-20",
+  "lastModified": "2025-09-08",
+  "popularity": 71,
+  "fonts": {
+   "400": {
+    "thickness": 4,
+    "slant": 1,
+    "width": 8,
+    "lineHeight": 1.0
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Yellowtail",
+  "category": "Handwriting",
+  "stroke": null,
+  "classifications": [
+   "Handwriting",
+   "Display"
+  ],
+  "designers": [
+   "Astigmatic"
+  ],
+  "axes": [],
+  "dateAdded": "2011-07-20",
+  "lastModified": "2025-09-08",
+  "popularity": 61,
+  "fonts": {
+   "400": {
+    "thickness": 6,
+    "slant": 8,
+    "width": 5,
+    "lineHeight": 1.36279296875
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ },
+ {
+  "family": "Yesteryear",
+  "category": "Handwriting",
+  "stroke": null,
+  "classifications": [
+   "Handwriting",
+   "Display"
+  ],
+  "designers": [
+   "Astigmatic"
+  ],
+  "axes": [],
+  "dateAdded": "2011-12-19",
+  "lastModified": "2025-09-11",
+  "popularity": 237,
+  "fonts": {
+   "400": {
+    "thickness": 6,
+    "slant": 7,
+    "width": 5,
+    "lineHeight": 1.46728515625
+   }
+  },
+  "subsets": [
+   "menu",
+   "latin",
+   "latin-ext"
+  ]
+ }
+]

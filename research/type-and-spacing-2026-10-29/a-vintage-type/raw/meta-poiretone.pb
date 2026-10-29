@@ -1,0 +1,27 @@
+# SOURCE: https://raw.githubusercontent.com/google/fonts/main/ofl/poiretone/METADATA.pb  (fetched 2026-10-29T05:11:22Z)
+name: "Poiret One"
+designer: "Denis Masharov"
+license: "OFL"
+category: "DISPLAY"
+date_added: "2012-02-29"
+fonts {
+  name: "Poiret One"
+  style: "normal"
+  weight: 400
+  filename: "PoiretOne-Regular.ttf"
+  post_script_name: "PoiretOne-Regular"
+  full_name: "Poiret One Regular"
+  copyright: "Copyright 2011 The Poiret One Project Authors (https://github.com/alexeiva/poiretone)"
+}
+subsets: "cyrillic"
+subsets: "cyrillic-ext"
+subsets: "latin"
+subsets: "latin-ext"
+subsets: "menu"
+subsets: "vietnamese"
+source {
+  repository_url: "https://github.com/alexeiva/poiretone"
+  commit: "74eec8d29c9b5179cbd63b1c3d152233aa537123"
+}
+stroke: "SANS_SERIF"
+classifications: "DISPLAY"

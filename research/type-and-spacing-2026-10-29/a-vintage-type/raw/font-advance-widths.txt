@@ -1,0 +1,7 @@
+# SOURCE: hmtx of woff2 files from fonts.gstatic.com (see gfonts-latin-woff2-sizes.txt), fontTools 4.68, 2026-10-29. Advance widths in em.
+# NOTE: the "with size-adjust 120%" column only applies to Courier Prime; read it as the Courier row. Space Mono at 100% = 23.26em vs Courier Prime at 120% = 27.34em for the same 38-char string (+17.5% wider).
+spacemono  advance(a)=0.612em  mean a-z=0.612em  eyebrow string (38 chars) = 23.26em ; with size-adjust 120% = 27.91em
+courier    advance(a)=0.600em  mean a-z=0.600em  eyebrow string (38 chars) = 22.79em ; with size-adjust 120% = 27.34em
+dmsans     advance(a)=0.551em  mean a-z=0.527em  eyebrow string (38 chars) = 21.84em ; with size-adjust 120% = 26.21em
+jost       advance(a)=0.481em  mean a-z=0.466em  eyebrow string (38 chars) = 21.86em ; with size-adjust 120% = 26.23em
+cutive     advance(a)=0.605em  mean a-z=0.605em  eyebrow string (38 chars) = 23.01em ; with size-adjust 120% = 27.61em

@@ -1,0 +1,29 @@
+# SOURCE: https://fonts.googleapis.com/css2?... (Google Fonts CSS2 API, Chrome UA, woff2). Fetched 2026-10-29T05:12:14Z. Bytes = size of the file served for the /* latin */ unicode-range block.
+css2 family spec                                   bytes  woff2 url
+Bodoni+Moda:opsz,wght@6..96,400..500               46260  https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2
+Bodoni+Moda:opsz,wght@6..96,400..900               46260  https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2
+Bodoni+Moda:ital,opsz,wght@1,6..96,400..500        53756  https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeKrcWw.woff2
+Bodoni+Moda:wght@400..900                          25884  https://fonts.gstatic.com/s/bodonimoda/v28/aFTH7PxzY382XsXX63LUYL6GYFcan6NJrKp-VPj1KOxQ.woff2
+DM+Sans:opsz,wght@9..40,400..700                   62724  https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZOIHQ.woff2
+DM+Sans:wght@400..700                              36932  https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2
+DM+Sans:wght@400                                   14200  https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxRSW32.woff2
+Space+Mono:wght@400                                16520  https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2
+Jost:wght@400..700                                 26576  https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2
+Jost:wght@400                                       9404  https://fonts.gstatic.com/s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7myjJTVBNIg.woff2
+Josefin+Sans:wght@400..700                         28528  https://fonts.gstatic.com/s/josefinsans/v34/Qw3aZQNVED7rKGKxtqIqX5EUDXx4.woff2
+Courier+Prime:wght@400                             18640  https://fonts.gstatic.com/s/courierprime/v11/u-450q2lgwslOqpF_6gQ8kELawFpWg.woff2
+Courier+Prime:wght@400;700                         18640  https://fonts.gstatic.com/s/courierprime/v11/u-450q2lgwslOqpF_6gQ8kELawFpWg.woff2
+Cutive+Mono                                        21824  https://fonts.gstatic.com/s/cutivemono/v23/m8JWjfRfY7WVjVi2E-K9H6RCTm4.woff2
+Special+Elite                                      53296  https://fonts.gstatic.com/s/specialelite/v20/XLYgIZbkc4JPUL5CVArUVL0ntnAOSA.woff2
+Monoton                                            16492  https://fonts.gstatic.com/s/monoton/v22/5h1aiZUrOngCibe4TkHLQg.woff2
+Yesteryear                                         23008  https://fonts.gstatic.com/s/yesteryear/v21/dg4g_p78rroaKl8kRKo1n7sNTg.woff2
+Pinyon+Script                                      39044  https://fonts.gstatic.com/s/pinyonscript/v24/6xKpdSJbL9-e9LuoeQiDRQR8WOXaOg.woff2
+Italiana                                           10100  https://fonts.gstatic.com/s/italiana/v21/QldNNTtLsx4E__B0XQmWaXw.woff2
+Limelight                                          23080  https://fonts.gstatic.com/s/limelight/v21/XLYkIZL7aopJVbZJHDuoOulH.woff2
+Poiret+One                                          7824  https://fonts.gstatic.com/s/poiretone/v18/UqyVK80NJXN4zfRgbdfbo55cVw.woff2
+Sacramento                                         23708  https://fonts.gstatic.com/s/sacramento/v17/buEzpo6gcdjy0EiZMBUG4C0f_Q.woff2
+Yellowtail                                         18308  https://fonts.gstatic.com/s/yellowtail/v25/OZpGg_pnoDtINPfRIlLohlvHwQ.woff2
+Sacramento&text=do%20it%20for%20the%20plot          2988  https://fonts.gstatic.com/l/font?kit=buEzpo6gcdjy0EiZMBUG0C8N8_QuB0tIG-ImQing&skey=81ec871a4d9062d2&v=v17
+Yesteryear&text=do%20it%20for%20the%20plot          3076  https://fonts.gstatic.com/l/font?kit=dg4g_p78rroaKl8kRKo1r7kfQCJC5kvRL1CXUk5W&skey=1784a02b79d76d06&v=v21
+Monoton&text=do%20it%20for%20the%20plot             1572  https://fonts.gstatic.com/l/font?kit=5h1aiZUrOngCibe4fkPZTEzeaCghzh2EHA0h&skey=6851b793dcae5a6c&v=v22
+Bodoni+Moda:ital,opsz,wght@1,6..96,400..900  53756  https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeKrcWw.woff2

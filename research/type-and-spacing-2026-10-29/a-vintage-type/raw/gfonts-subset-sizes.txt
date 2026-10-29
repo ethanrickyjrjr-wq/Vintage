@@ -1,0 +1,6 @@
+# Google Fonts CSS2 API woff2 sizes (subset requests via text=, and Courier Prime variants), measured 2026-10-29 by lane A; moved from repo root by the parent session.
+sacramento-az 6172 bytes
+yesteryear-az 6228 bytes
+sacramento-phrase2 3624 bytes
+Courier+Prime:wght@700 19348 bytes
+Courier+Prime:ital@1 21556 bytes
