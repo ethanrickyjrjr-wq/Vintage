@@ -390,6 +390,8 @@ function startEditor() {
     $("your-room").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     if (state.photo && productMap.get(id).overlay) place(id); else (state.photo ? $("room-product") : $("room-upload-button")).focus({ preventScroll: true });
   });
+  // On phones the directions start folded, so the picks sit right under the photo.
+  if (matchMedia("(max-width: 767px)").matches) $("room-directions")?.removeAttribute("open");
   // "Try it in your room" on a homepage find arrives as room.html?try=<id>: the find is waiting in the picks.
   const tryId = new URLSearchParams(location.search).get("try");
   if (productMap.has(tryId)) { $("room-product").value = tryId; state.picks.push(tryId); history.replaceState(null, "", `${location.pathname}#your-room`); }

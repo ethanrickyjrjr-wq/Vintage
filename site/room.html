@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="storefront.css?v=2" />
     <link rel="stylesheet" href="atmosphere.css" />
-    <link rel="stylesheet" href="room-preview.css?v=2" />
+    <link rel="stylesheet" href="room-preview.css?v=3" />
     <link rel="stylesheet" href="homepage.css?v=2" />
     <link rel="stylesheet" href="sample-shop.css?v=2" />
     <link rel="stylesheet" href="account-preview.css" />
@@ -25,7 +25,7 @@
     <script src="catalog-data.js" defer></script>
     <script src="room-products.js" defer></script>
     <script src="demo-products.js" defer></script>
-    <script src="room-preview.js?v=2" type="module"></script>
+    <script src="room-preview.js?v=3" type="module"></script>
     <script src="storefront.js?v=2" defer></script>
     <script src="account-preview.js?v=2" defer></script>
     <script src="disco-music.js" defer></script>
@@ -122,12 +122,12 @@
               <button type="button" id="room-change-photo" hidden>Change photo</button>
             </div>
           </div>
-          <div class="room-directions" aria-labelledby="room-directions-title">
-            <h3 id="room-directions-title">Make it yours</h3>
+          <details class="room-directions" id="room-directions" open>
+            <summary><h3 id="room-directions-title">Make it yours</h3><span class="room-directions-hint">How it works</span></summary>
             <p class="room-help" id="room-editor-help">Drag a pick into the photo, or choose Place. Drag a find to move it; use its corner or the size slider to resize. Arrow keys move the selected find; Shift moves it farther. Remove find takes out the selected find; Undo brings it back. Proportions are approximate.</p>
             <p class="room-help">The Decorate buttons suggest a layout from your picks or favorites. If a layout is available, it replaces your current one; Undo brings it back. Pieces that don’t fit are listed under “Left out of this layout.”</p>
             <p class="room-help room-privacy">Your photo and arrangement stay in this tab. The sample room is ready to decorate. For your own photo, Decorate downloads a room guide once (about 45 MB plus its runtime) and runs on your device. Closing or reloading clears your room. Previews don’t guarantee fit.</p>
-          </div>
+          </details>
           <form class="room-controls" id="room-form">
             <p class="room-label" id="room-picks-label">01 / Make your picks</p>
             <p class="room-help">Browse by category. Open a group to choose a find.</p>
