@@ -21,6 +21,18 @@ The automated regressions pin the sample image hash, check the reported lamp
 using its actual cutout proportions, cover all four table lamps individually,
 enforce support capacity and verify a bounded, separated mixed arrangement.
 
+Verified with all 26 automated tests and a production build. Chrome checks
+covered the exact A13 sample-room flow, Favorites, Remove/Undo, switching to an
+uploaded photo, preservation of a manually placed lamp after real inference
+returned no position, and switching back to the sample. The published flow
+also reports **1 find placed**, visibly on the cabinet.
+
+Published as Sites **version 25**, deployment
+`appgdep_6ae2be6123e08191bc600ac81427de43` (succeeded), at
+https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site . GitHub repair:
+`2fa1abd`; Sites source: `f6b54aac61b357936305fc774343249d677dc190`.
+Local screenshot: `artifacts/qa/room-lamp-fixed-live.png`.
+
 ## Room disco publication — 2026-10-28
 
 Sites **version 22** is live publicly at https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site .
