@@ -4,10 +4,7 @@
   // Visual preparation only. No authentication, email collection, uploads or room persistence.
   const header = document.querySelector(".header-actions");
   if (!header) return;
-  header.insertAdjacentHTML("afterbegin", '<button class="account-nav" type="button" data-account-open="welcome" aria-haspopup="dialog">Account</button>');
-  document.querySelector("#mobile-nav")?.insertAdjacentHTML("beforeend", '<button type="button" data-account-open="finds" aria-haspopup="dialog">My Finds <span class="account-preview-label">Preview</span></button><button type="button" data-account-open="rooms" aria-haspopup="dialog">My Rooms <span class="account-preview-label">Preview</span></button>');
-  document.querySelector(".collection-context")?.insertAdjacentHTML("afterend", '<div class="account-collection-note"><p>A place for your favorites, wherever you find them.</p><button type="button" data-account-open="finds" aria-haspopup="dialog">Explore My Finds <span class="account-preview-label">Preview</span> <span aria-hidden="true">↗</span></button></div>');
-  document.querySelector("#room-download")?.insertAdjacentHTML("beforebegin", '<div class="room-account-actions"><button class="room-save-preview" type="button" data-account-open="save" aria-haspopup="dialog">Save room <span class="account-preview-label">Preview</span></button><button class="account-text-link" type="button" data-account-open="rooms" aria-haspopup="dialog">My Rooms <span aria-hidden="true">↗</span></button><p class="room-help">Room saving isn’t available yet. You can still download a picture below.</p></div>');
+  // Entry points live in storefront.html so their placement is explicit in the published page.
 
   document.body.insertAdjacentHTML("beforeend", `
     <dialog class="account-dialog" id="account-dialog" aria-labelledby="account-title" aria-describedby="account-preview-note">
@@ -15,7 +12,7 @@
         <div><p class="eyebrow">Your little corner of Holliewood</p><h2 id="account-title">Make yourself at home.</h2></div>
         <button class="account-close" type="button" aria-label="Close account preview" autofocus>×</button>
       </header>
-      <p class="account-preview-note" id="account-preview-note"><strong>Just a preview.</strong> Accounts and room saving aren’t available yet.</p>
+      <p class="account-preview-note" id="account-preview-note"><strong>Coming soon.</strong> Accounts and saved rooms are on their way. Explore the preview below.</p>
       <div class="account-tabs" role="tablist" aria-label="Account preview">
         <button type="button" id="account-tab-welcome" role="tab" aria-selected="true" aria-controls="account-panel-welcome" data-account-tab="welcome">Account</button>
         <button type="button" id="account-tab-finds" role="tab" aria-selected="false" aria-controls="account-panel-finds" tabindex="-1" data-account-tab="finds">My Finds <span id="account-find-count">0</span></button>
@@ -38,7 +35,7 @@
             <p id="account-entry-copy">The future home for your favorite finds and unfinished rooms.</p>
             <label for="account-email-preview">Email address</label>
             <input id="account-email-preview" type="email" placeholder="you@example.com" disabled aria-describedby="account-entry-note" />
-            <button class="account-primary" id="account-entry-submit" type="button" disabled>Create account</button>
+            <button class="account-primary" id="account-entry-submit" type="button" disabled>Create account · Coming soon</button>
             <p class="account-fine-print" id="account-entry-note">A preview of the sign-up screen. No email is collected and no account is created.</p>
           </div>
         </div>
@@ -49,7 +46,7 @@
         <ul class="account-finds" id="account-finds" aria-label="Favorites in this browser"></ul>
       </section>
       <section class="account-panel" id="account-panel-rooms" role="tabpanel" aria-labelledby="account-tab-rooms" tabindex="0" hidden>
-        <div class="account-section-heading"><div><h3>A room of your own.</h3><p>A look at where your room projects could live.</p></div><button class="account-text-link" type="button" data-account-room>Back to the room editor <span aria-hidden="true">↗</span></button></div>
+        <div class="account-section-heading"><div><h3>A room of your own.</h3><p>Saved rooms are coming soon. Here’s a look at where your projects will live.</p></div><button class="account-text-link" type="button" data-account-room>Back to the room editor <span aria-hidden="true">↗</span></button></div>
         <div class="account-rooms">
           <article class="account-room-card"><img src="assets/thumbnails/rooms-example-room--480.webp" alt="Example project: a living room with a cream sofa, framed art and walnut tables" width="1536" height="1024" loading="lazy" /><div><p class="account-caption">Example project · AI-generated room</p><h4>The living room</h4><p>A little brass. A little character. A work in progress.</p><button class="account-text-link" type="button" disabled>Continue editing <span aria-hidden="true">↗</span></button><span class="account-fine-print">Example only. No saved project.</span></div></article>
           <div class="account-room-save"><p class="eyebrow">For your next good idea</p><h4 id="account-room-save-title">Leave room for later.</h4><p>Name a room and return to your arrangement when account saving is available.</p><label for="account-room-name">Room name</label><input id="account-room-name" type="text" placeholder="My living room" disabled /><button class="account-primary" type="button" disabled>Save to My Rooms</button><p class="account-fine-print" id="account-room-save-note">This is a preview. Your current room is not saved and clears when this page reloads or closes.</p></div>
@@ -140,7 +137,7 @@
       dialog.querySelectorAll("[data-account-mode]").forEach(button => button.setAttribute("aria-pressed", String(button === target)));
       dialog.querySelector("#account-entry-title").textContent = create ? "Make a little space." : "Back for another look?";
       dialog.querySelector("#account-entry-copy").textContent = create ? "The future home for your favorite finds and unfinished rooms." : "Your finds and rooms, ready for your next good idea.";
-      dialog.querySelector("#account-entry-submit").textContent = create ? "Create account" : "Email me a sign-in code";
+      dialog.querySelector("#account-entry-submit").textContent = create ? "Create account · Coming soon" : "Sign in · Coming soon";
       dialog.querySelector("#account-entry-note").textContent = create ? "A preview of the sign-up screen. No email is collected and no account is created." : "A preview of the sign-in screen. No email is collected and no code is sent.";
     }
   });

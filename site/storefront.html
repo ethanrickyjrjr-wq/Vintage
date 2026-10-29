@@ -96,10 +96,13 @@
           aria-label="View saved finds (0)"
         >
           <span aria-hidden="true">♡</span
-          ><span class="saved-label">Saved finds</span
+          ><span class="saved-label">My Finds</span
           ><span class="saved-count" aria-hidden="true">0</span>
         </button>
+        <button class="account-nav" type="button" data-account-open="rooms" aria-haspopup="dialog"><span>My Rooms</span><small>Coming soon</small></button>
+        <button class="account-nav" type="button" data-account-open="welcome" aria-haspopup="dialog"><span>Account</span><small>Coming soon</small></button>
         <button class="bag-nav" type="button" id="header-bag" aria-label="Open shopping bag (0)" aria-haspopup="dialog">Bag <span class="bag-count">0</span></button>
+      </div>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -109,7 +112,6 @@
         >
           Menu <span aria-hidden="true">☰</span>
         </button>
-      </div>
       <nav
         id="mobile-nav"
         class="mobile-nav"
@@ -219,6 +221,7 @@
             ♡ Saved finds <span class="saved-count">0</span>
           </button>
         </div>
+        <div class="account-collection-note"><p>Your favorites stay in this browser. Account syncing is coming soon.</p><button type="button" data-account-open="finds" aria-haspopup="dialog">Explore My Finds <span aria-hidden="true">↗</span></button></div>
         <div class="product-grid" id="product-grid"></div>
         <div class="empty-state" id="empty-state" hidden>
           <span aria-hidden="true">♡</span>
@@ -339,6 +342,10 @@
         </div>
         <div class="room-studio">
           <div class="room-workspace">
+            <div class="room-project-bar">
+              <div><strong>Your room project</strong><span>Here for this visit. Saving is coming soon.</span></div>
+              <div class="room-project-buttons"><button type="button" class="account-text-link" data-account-open="rooms" aria-haspopup="dialog">My Rooms <span aria-hidden="true">↗</span></button><button type="button" class="room-save-preview" data-account-open="save" aria-haspopup="dialog">Save room <span class="account-preview-label">Coming soon</span></button></div>
+            </div>
             <div class="room-toolbar">
               <span id="room-photo-label">Start with your space</span>
               <div class="room-history">
@@ -397,6 +404,7 @@
             </div>
             <p class="room-help" id="room-editor-help">Drag a pick into the photo, or choose Place. Drag a find to move it; use its corner or the size slider to resize. Arrow keys move the selected find; Shift moves it farther. Remove find takes out the selected find; Undo brings it back. Proportions are approximate.</p>
             <div class="room-unplaced" id="room-unplaced" hidden><p class="room-label">Left out of this layout</p><ul id="room-unplaced-list"></ul></div>
+            <div class="room-account-actions"><button class="room-save-preview" type="button" data-account-open="save" aria-haspopup="dialog">Save room <span class="account-preview-label">Coming soon</span></button><button class="account-text-link" type="button" data-account-open="rooms" aria-haspopup="dialog">My Rooms <span aria-hidden="true">↗</span></button><p class="room-help">Room saving is coming soon. For now, download a picture to keep your idea.</p></div>
             <button type="button" class="room-download" id="room-download" disabled>Download your room ↓</button>
             <p class="room-help room-privacy">Your photo and arrangement stay in this tab. The sample room is ready to decorate. For your own photo, Decorate downloads a room guide once (about 45 MB plus its runtime) and runs on your device. Closing or reloading clears your room. Previews don’t guarantee fit.</p>
           </form>
