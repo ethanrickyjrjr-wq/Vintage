@@ -2,6 +2,13 @@
 
 2026-10-29. Implements Ricky's five-item follow-up to `type-and-spacing.md`.
 
+**Published: Sites version 34**, in the combined release with the occasion pages and idea room.
+Typography implementation: GitHub `56fde52`, Sites source `4df431bc2f704c48d87b22cb28604a4b0006ce23`.
+Combined published source: `9939f99c5363347abfd294bb5cf2b76d07cf6d09`.
+Deployment `appgdep_6ae340cd18648191902668d705740849` succeeded.
+Live review: https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/type-review.html .
+The review heading and both full-shop links were checked on the published page.
+
 ## Decisions made
 
 | Item | Decision and delivered behavior |
@@ -34,11 +41,11 @@ To finalize Courier, change `--mono` in `site/storefront.css` to `"Courier Prime
 
 ## Verification and limits
 
-- All 33 existing tests and the production build pass.
+- All 33 existing tests and the production build pass. After integrating the other sessions' additions, all 40 tests and the build pass.
 - Chromium review at 320, 390, 820, 1100 and 1440 CSS px: no page-level horizontal overflow; hero copy and actions remain inside the growing stage.
 - Root text size enlarged to 200% at 320, 390, 820 and 1440px: phone headline becomes 104px, wrapping is allowed, and copy stays inside the stage. This is a text-size fixture, not certification of the entire site's zoom accessibility.
 - Equal-size tracking A/B and both real label faces reviewed; Courier Prime loads successfully. Bag still shows illustrative prices and disabled checkout.
 - The text-spacing override (1.5 line-height, .12em tracking, .16em word spacing and 2em paragraph margins) leaves the hero contained at 320 and 1440px. It exposes an existing 13px overflow in the owner's price/copy at 320px; that belongs with the broader type audit above.
-- The publication result is recorded below when complete. Safari and Firefox still need a real-device/browser pass; this environment supplied Chrome. Both existing burgundy themes need to remain part of that cross-browser check.
+- Both existing burgundy themes were exercised in Chrome. Safari and Firefox still need a real-device/browser pass; this environment supplied Chrome.
 
 Work was isolated in `C:/Users/ethan/dev/Vintage-storefront-finishing` to preserve the original checkout's staged work and live processes. GitHub changes are pushed to `origin/master`; Sites publication uses its existing project and public audience.
