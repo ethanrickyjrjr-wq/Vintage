@@ -26,16 +26,6 @@
 .product-meta { margin-bottom: 5px; }
 .product-meta .status { font-size: 10px; letter-spacing: .06em; }
 .product-title { font-size: 23px; min-height: 2.6em; }
-/* Light category colors stay readable on both burgundy themes. Keep names
-   consistent across the collection, item details and shopping bag. */
-[data-product-category="fashion"] { --product-title-color: #edb6c8; }
-[data-product-category="lighting"] { --product-title-color: #e9cd91; }
-[data-product-category="furniture"] { --product-title-color: #b9d2af; }
-[data-product-category="decor"] { --product-title-color: #a9d8cf; }
-[data-product-category="rugs"] { --product-title-color: #e8b68f; }
-[data-product-category="art"] { --product-title-color: #c8bfec; }
-[data-product-category="media"] { --product-title-color: #b0cfe8; }
-.product-title, .detail-copy h2, .bag-item-title { color: var(--product-title-color, var(--text)); }
 .product-bottom { margin-top: auto; padding-top: 10px; align-items: center; }
 .product-price { font-size: 16px; font-variant-numeric: tabular-nums; }
 .product-arrow { min-width: 44px; min-height: 44px; }

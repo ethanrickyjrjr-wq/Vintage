@@ -35,6 +35,11 @@
   };
   const curatedIds = ["A1", "A10", "B1", "A14", "B6", "A3", "B10", "A16"];
   const inventory = HNV_ITEMS.filter((item) => item.id !== "OWNER");
+  document.querySelectorAll("[data-open-item]").forEach(control => {
+    const item = inventory.find(item => item.id === control.dataset.openItem) ||
+      HNV_ENTRANCE_ITEMS.find(item => item.id === control.dataset.openItem);
+    if (item) control.dataset.productCategory = item.cat;
+  });
   const curated = [...inventory].sort((a, b) => {
     const aRank = curatedIds.indexOf(a.id);
     const bRank = curatedIds.indexOf(b.id);
@@ -61,6 +66,11 @@
   const revealed = new Set();
   const search = document.querySelector("#search-input");
   const sort = document.querySelector("#sort-select");
+  const collectionIntro = document.querySelector(".collection-intro");
+  const collectionTitle = document.querySelector("#collection-title");
+  const allFindsTitle = collectionTitle.innerHTML;
+  const collectionDescription = collectionIntro.querySelector("p");
+  const allFindsDescription = collectionDescription.textContent;
   const productDialog = document.querySelector("#product-dialog");
   const tourDialog = document.querySelector("#walkthrough-dialog");
   const bagDialog = document.querySelector("#bag-dialog");
@@ -241,6 +251,15 @@
 
   function render() {
     const items = matches();
+    if (state.category === "all") {
+      delete collectionIntro.dataset.productCategory;
+      collectionTitle.innerHTML = allFindsTitle;
+      collectionDescription.textContent = allFindsDescription;
+    } else {
+      collectionIntro.dataset.productCategory = state.category;
+      collectionTitle.textContent = categoryNames[state.category];
+      collectionDescription.textContent = `${items.length} ${items.length === 1 ? "piece" : "pieces"} to explore. Find your favorite and make yourself at home.`;
+    }
     grid.innerHTML = items.map(card).join("");
     const count = document.querySelector("#result-count");
     if (count)

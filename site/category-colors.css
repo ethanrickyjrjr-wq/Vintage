@@ -1,0 +1,79 @@
+/* One palette for every public page. Attach the category key to new product
+   or category UI so names never acquire a different color in another view. */
+:root {
+  --category-fashion: #edb6c8;
+  --category-lighting: #e9cd91;
+  --category-furniture: #b9d2af;
+  --category-decor: #a9d8cf;
+  --category-rugs: #e8b68f;
+  --category-art: #c8bfec;
+  --category-media: #b0cfe8;
+}
+:is([data-product-category="fashion"], [data-category="fashion"], [data-browse-category="fashion"]) { --category-color: var(--category-fashion); }
+:is([data-product-category="lighting"], [data-category="lighting"], [data-browse-category="lighting"]) { --category-color: var(--category-lighting); }
+:is([data-product-category="furniture"], [data-category="furniture"], [data-browse-category="furniture"]) { --category-color: var(--category-furniture); }
+:is([data-product-category="decor"], [data-category="decor"], [data-browse-category="decor"]) { --category-color: var(--category-decor); }
+:is([data-product-category="rugs"], [data-category="rugs"], [data-browse-category="rugs"]) { --category-color: var(--category-rugs); }
+:is([data-product-category="art"], [data-category="art"], [data-browse-category="art"]) { --category-color: var(--category-art); }
+:is([data-product-category="media"], [data-category="media"], [data-browse-category="media"]) { --category-color: var(--category-media); }
+
+[data-product-category],
+a[data-browse-category], a[data-browse-category]:hover,
+.category-filters button[data-category]:not([data-category="all"]) {
+  color: var(--category-color, var(--text));
+}
+/* Keep selected text the exact same hex; use a burgundy fill and outline
+   instead of reversing it onto a light background. */
+.category-filters button[data-category]:not([data-category="all"])[aria-pressed="true"] {
+  background: var(--paper-deep);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+.category-filters button[data-category]:not([data-category="all"]):hover,
+a[data-browse-category]:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+.department[data-browse-category] :is(.department-label, h3, p),
+.collection-intro[data-product-category] :is(h2, h2 em, p),
+.product-card[data-product-category] :is(.product-title, .product-price, .product-price small, .product-meta .status),
+.detail-copy[data-product-category] :is(h2, .detail-category, .detail-price, .detail-price small, .detail-notes, .detail-notes h3),
+.detail-copy[data-product-category] > p,
+.bag-item[data-product-category] :is(.bag-item-title, p, .bag-remove),
+.room-selected-product[data-product-category] :is(p, span, a),
+.room-unplaced li[data-product-category],
+.model-credit[data-product-category] {
+  color: var(--category-color);
+}
+
+.product-card[data-product-category] .product-add,
+.detail-copy[data-product-category] :is(.product-add, .detail-save) {
+  color: var(--category-color);
+  background: var(--paper-deep);
+  border-color: currentColor;
+}
+.product-card[data-product-category] .product-add:hover,
+.detail-copy[data-product-category] :is(.product-add, .detail-save):hover {
+  background: var(--paper);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+select[data-product-category], option[data-product-category] { color: var(--category-color); background: var(--paper-deep); }
+.room-layers button[data-product-category][aria-pressed="true"] { border-color: currentColor; }
+.room-tray li[data-product-category] button:disabled { opacity: 1; text-decoration: none; }
+.room-layers button[data-product-category]:disabled { opacity: 1; }
+
+/* Product captions can sit beside white photographs; give the text its own
+   burgundy backing so the shared pastel remains readable. */
+[data-product-category] .object-caption { color: var(--category-color); }
+.material-pairings button[data-product-category] { color: var(--category-color); }
+.design-detail[data-product-category] > span { color: var(--category-color); background: var(--burgundy); }
+.viewer-status[data-product-category] { color: var(--category-color); background: var(--burgundy); }
+.piece-category { margin: 0 0 18px; font: 11px var(--mono); text-transform: uppercase; letter-spacing: .05em; }
+.viewer-controls[data-product-category] :is(.chip, .controls-note),
+.viewer-column[data-product-category] .viewer-help { color: var(--category-color); }
+.viewer-controls[data-product-category] .chip[aria-pressed="true"] {
+  background: var(--paper-deep);
+  border-color: var(--category-color);
+  box-shadow: inset 0 0 0 1px var(--category-color);
+}
+.viewer-controls[data-product-category] .chip:hover { border-color: var(--category-color); }
+.viewer-column[data-product-category] .thumb span { display: block; color: var(--category-color); background: var(--burgundy); padding: 4px 2px; }

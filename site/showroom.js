@@ -1,19 +1,21 @@
     const MODELS = [
-      { title: "Glam velvet sofa", src: "assets/demo/models/GlamVelvetSofa.glb", yaw: 0, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlamVelvetSofa", credit: "Glam Velvet Sofa, © 2021 Wayfair, LLC, Eric Chadwick. CC BY 4.0." },
-      { title: "Damask lounge chair", src: "assets/demo/models/ChairDamaskPurplegold.glb", yaw: 0, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ChairDamaskPurplegold", credit: "Chair Damask Purple Gold, © 2021 Wayfair. CC BY 4.0." },
-      { title: "Sneaker colorways", src: "assets/demo/models/MaterialsVariantsShoe.glb", yaw: 90, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe", credit: "Materials Variants Shoe, © 2021 Shopify. CC BY 4.0." },
-      { title: "8mm film projector", src: "assets/demo/models/filmstrip_projector_8mm/filmstrip_projector_8mm_1k.gltf", yaw: 90, page: "https://polyhaven.com/a/filmstrip_projector_8mm", credit: "Filmstrip Projector 8mm by PeterM, Poly Haven. CC0." },
-      { title: "Vintage oil lamp", src: "assets/demo/models/vintage_oil_lamp/vintage_oil_lamp_1k.gltf", yaw: 0,
+      { title: "Glam velvet sofa", cat: "furniture", src: "assets/demo/models/GlamVelvetSofa.glb", yaw: 0, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/GlamVelvetSofa", credit: "Glam Velvet Sofa, © 2021 Wayfair, LLC, Eric Chadwick. CC BY 4.0." },
+      { title: "Damask lounge chair", cat: "furniture", src: "assets/demo/models/ChairDamaskPurplegold.glb", yaw: 0, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ChairDamaskPurplegold", credit: "Chair Damask Purple Gold, © 2021 Wayfair. CC BY 4.0." },
+      { title: "Sneaker colorways", cat: "fashion", src: "assets/demo/models/MaterialsVariantsShoe.glb", yaw: 90, page: "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe", credit: "Materials Variants Shoe, © 2021 Shopify. CC BY 4.0." },
+      { title: "8mm film projector", cat: "media", src: "assets/demo/models/filmstrip_projector_8mm/filmstrip_projector_8mm_1k.gltf", yaw: 90, page: "https://polyhaven.com/a/filmstrip_projector_8mm", credit: "Filmstrip Projector 8mm by PeterM, Poly Haven. CC0." },
+      { title: "Vintage oil lamp", cat: "lighting", src: "assets/demo/models/vintage_oil_lamp/vintage_oil_lamp_1k.gltf", yaw: 0,
         // The chimney is a BLEND material whose texture has no alpha channel, so it renders as an opaque black rod. Make it smoked glass.
         fix: (viewer) => viewer.model.getMaterialByName("vintage_oil_lamp_glass")?.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0.16]),
         page: "https://polyhaven.com/a/vintage_oil_lamp", credit: "Vintage Oil Lamp by Monsta3D, Poly Haven. CC0." },
-      { title: "Mid-century lounge chair", src: "assets/demo/models/mid_century_lounge_chair/mid_century_lounge_chair_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/mid_century_lounge_chair", credit: "Mid Century Lounge Chair by Kuutti Siitonen, Poly Haven. CC0." },
-      { title: "Brass chandelier", src: "assets/demo/models/Chandelier_01/Chandelier_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/Chandelier_01", credit: "Chandelier 01 by Kirill Sannikov, Poly Haven. CC0." },
-      { title: "80s boombox", src: "assets/demo/models/boombox/boombox_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/boombox", credit: "Boombox by Thomas Paul Mouilleron, Poly Haven. CC0." },
-      { title: "Vintage video camera", src: "assets/demo/models/vintage_video_camera/vintage_video_camera_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/vintage_video_camera", credit: "Vintage Video Camera, model and photography by Jenelle van Heerden, textures by James Ray Cock, Poly Haven. CC0." },
-      { title: "Marble bust", src: "assets/demo/models/marble_bust_01/marble_bust_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/marble_bust_01", credit: "Marble Bust 01 by Rico Cilliers, Poly Haven. CC0." },
-      { title: "Porcelain horse", src: "assets/demo/models/horse_statue_01/horse_statue_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/horse_statue_01", credit: "Horse Statue 01 by Rico Cilliers, Poly Haven. CC0." },
+      { title: "Mid-century lounge chair", cat: "furniture", src: "assets/demo/models/mid_century_lounge_chair/mid_century_lounge_chair_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/mid_century_lounge_chair", credit: "Mid Century Lounge Chair by Kuutti Siitonen, Poly Haven. CC0." },
+      { title: "Brass chandelier", cat: "lighting", src: "assets/demo/models/Chandelier_01/Chandelier_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/Chandelier_01", credit: "Chandelier 01 by Kirill Sannikov, Poly Haven. CC0." },
+      { title: "80s boombox", cat: "media", src: "assets/demo/models/boombox/boombox_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/boombox", credit: "Boombox by Thomas Paul Mouilleron, Poly Haven. CC0." },
+      { title: "Vintage video camera", cat: "media", src: "assets/demo/models/vintage_video_camera/vintage_video_camera_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/vintage_video_camera", credit: "Vintage Video Camera, model and photography by Jenelle van Heerden, textures by James Ray Cock, Poly Haven. CC0." },
+      { title: "Marble bust", cat: "art", src: "assets/demo/models/marble_bust_01/marble_bust_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/marble_bust_01", credit: "Marble Bust 01 by Rico Cilliers, Poly Haven. CC0." },
+      { title: "Porcelain horse", cat: "decor", src: "assets/demo/models/horse_statue_01/horse_statue_01_1k.gltf", yaw: 0, page: "https://polyhaven.com/a/horse_statue_01", credit: "Horse Statue 01 by Rico Cilliers, Poly Haven. CC0." },
     ];
+
+const categoryNames = { furniture: "Furniture", fashion: "Fashion", media: "Music & media", lighting: "Lighting", art: "Art & mirrors", decor: "Glass & objects" };
 
 const $ = (selector) => document.querySelector(selector);
 const node = (tag, attrs = {}, text) => {
@@ -161,6 +163,8 @@ function clearGallery() {
 function showModel(index) {
   clearGallery(); stopSpin(); loaded = false;
   current = MODELS[index]; select.value = String(index);
+  for (const element of [select, status, controls, galleryButton, $("#credit"), $("#piece-category"), $(".piece-selection"), $(".viewer-column")]) element.dataset.productCategory = current.cat;
+  $("#piece-category").textContent = categoryNames[current.cat];
   status.textContent = `Loading ${current.title.toLowerCase()}…`;
   stage.setAttribute("aria-busy", "true");
   controls.disabled = true; galleryButton.disabled = true;
@@ -205,8 +209,11 @@ mv.addEventListener("error", () => {
   status.textContent = "This piece could not load. Choose another piece, or reload to try again.";
 });
 MODELS.forEach((model, index) => {
-  select.append(node("option", { value: String(index) }, model.title));
+  const option = node("option", { value: String(index) }, model.title);
+  option.dataset.productCategory = model.cat;
+  select.append(option);
   const li = node("li", {}, model.credit + " ");
+  li.dataset.productCategory = model.cat;
   li.append(node("a", { href: model.page, target: "_blank", rel: "noreferrer" }, "Source ↗"));
   $("#credits").append(li);
 });

@@ -102,6 +102,7 @@ function startEditor() {
     for (const id of state.picks) {
       const product = productMap.get(id), row = document.createElement("li"), title = document.createElement("span");
       const image = document.createElement("img"); image.src = product.img; image.alt = ""; image.width = 34; image.height = 42; image.draggable = false;
+      row.dataset.productCategory = product.cat;
       title.textContent = product.title; row.append(image, title);
       const present = state.layers.some(item => item.id === id);
       row.draggable = !!product.overlay && !present && !state.busy;
@@ -113,6 +114,7 @@ function startEditor() {
     $("room-layers").replaceChildren();
     for (const item of state.layers) {
       const row = document.createElement("li"), control = button(productMap.get(item.id).title, `Select ${productMap.get(item.id).title}`, () => { state.selected = item.id; state.comparing = false; refresh(); }, state.busy);
+      control.dataset.productCategory = productMap.get(item.id).cat;
       control.setAttribute("aria-pressed", String(item.id === state.selected)); row.append(control); $("room-layers").append(row);
     }
     $("room-layer-controls").hidden = !hasPhoto;
@@ -139,12 +141,15 @@ function startEditor() {
     $("room-discofy").hidden = !state.layers.length; $("room-discofy").disabled = state.busy;
     $("room-unplaced").hidden = !state.unplaced.length; $("room-unplaced-list").replaceChildren();
     for (const item of state.unplaced) {
-      const row = document.createElement("li"); row.textContent = `${inventory.get(item.id)?.title || item.id}: ${item.reason}`; $("room-unplaced-list").append(row);
+      const row = document.createElement("li"); row.dataset.productCategory = inventory.get(item.id)?.cat || ""; row.textContent = `${inventory.get(item.id)?.title || item.id}: ${item.reason}`; $("room-unplaced-list").append(row);
     }
     draw();
   }
   function updateProduct() {
     const product = selectedProduct(); $("room-product-image").src = product.img; $("room-product-image").alt = product.title;
+    $("room-product").dataset.productCategory = product.cat;
+    $("room-add").dataset.productCategory = product.cat;
+    document.querySelector(".room-selected-product").dataset.productCategory = product.cat;
     $("room-product-title").textContent = product.title;
     const price = HNV_PRICES[product.id];
     $("room-product-price").textContent = product.overlay ? price ? `$${price.target.toLocaleString("en-US")} ${price.sample ? "sample price" : "guide price"}` : "Pricing pending" : "A clear product photo is needed to place this find.";
@@ -258,7 +263,7 @@ function startEditor() {
   function readFavorites() {
     try { const stored = JSON.parse(localStorage.getItem(savedKey) || "[]"); favorites = Array.isArray(stored) ? [...new Set(stored.filter(id => inventory.has(id) && id !== "OWNER"))] : []; } catch { /* Keep session saves when storage is blocked. */ }
   }
-  for (const product of products) { const option = document.createElement("option"); option.value = product.id; option.textContent = `${product.title}${product.overlay ? "" : " (photo needed)"}`; $("room-product").append(option); }
+  for (const product of products) { const option = document.createElement("option"); option.value = product.id; option.dataset.productCategory = product.cat; option.textContent = `${product.title}${product.overlay ? "" : " (photo needed)"}`; $("room-product").append(option); }
   readFavorites();
   document.addEventListener("hnv:saved-changed", ({ detail }) => { favorites = [...new Set(detail.filter(id => inventory.has(id) && id !== "OWNER"))]; refresh(); });
   window.addEventListener("storage", event => { if (event.key === savedKey || event.key === null) { readFavorites(); refresh(); } });

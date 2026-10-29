@@ -51,6 +51,7 @@ for (const file of [
   "atmosphere.css",
   "homepage.css",
   "sample-shop.css",
+  "category-colors.css",
   "storefront.js",
   "disco.js",
   "disco-music.js",
