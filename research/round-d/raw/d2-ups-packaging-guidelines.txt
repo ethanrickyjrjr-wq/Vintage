@@ -1,0 +1,382 @@
+Packaging Guidelines
+
+To help ensure your shipments are adequately and securely wrapped, packed, and cushioned for transportation, we offer these general
+packaging guidelines. From preparing small package shipments to palletizing your freight, we cover the basics on how to pack your
+shipments properly and securely. For specific guidance on preparing your shipments, please refer to the UPS Packaging Tips at
+ups.com/packaging.
+
+The following information are only general guidelines to help UPS customers reduce loss or damage to shipments due to improper
+packaging, and do not represent the full extent of the UPS packaging guidelines. For more information and additional guidelines,
+please refer to ups.com/packaging, the UPS Rate and Service Guide and the UPS Tariff/Terms and Conditions of Service.
+
+*Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of t he Shipper
+to ensure that proper packaging is used and that contents are adequately and securely packed in a container, wrapped, and cushioned
+for transportation. Please refer to the UPS Rate and Service Guide and UPS Tariff/Terms and Conditions of Service for applicable
+terms, conditions, and limitations.
+
+Shipping Checklist                                               · Remove or conceal any labels, hazardous materials
+                                                                      indicators and other previous shipment markings on the
+       · Use a rigid box with flaps attached.                         box that are no longer applicable.
+       · Avoid re-using boxes.
+       · Use the Box Strength Guidelines chart to determine the  · Securely affix to each package a UPS-issued paper
+                                                                      shipping document or label generated through an
+            proper strength of your shipping container.               approved UPS automated shipping system that contains
+       · Use adequate cushioning material.                            clear, complete delivery and return information,
+       · Use strong tape designed for shipping.                       including, among other things, the UPS tracking number,
+       · Never use string or paper over-wrap.                         shipper name and address, and consignee name and
+       · Wrap all items separately.                                   address.
+
+                                                                 · Place a duplicate address label inside the box.
+
+General Packaging Guidelines
+
+     · To prepare packages for UPS shipment, you can use your own packaging, if boxes are new or almost new, or one of a variety
+          of containers provided free of charge that can be used with certain, selected UPS services. Customers with a UPS account can
+          request supplies at Packaging and Shipping Supplies | UPS - United States or by calling 1-800-PICK-UPS®.
+
+     · Goods that are susceptible to damage from normal handling or to exposure to dirt, water, scratches or marks, should be
+          placed in a protective outer box.
+
+                                                                         1
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Types of Packaging Material
+
+Air-Encapsulated Plastic (Cell Bubble Sheeting)
+     · Designed to protect and cushion lightweight items.
+     · Used in multiple wraps and layers to ensure that the item is completely protected, especially on corners and edges.
+     · When wrapping product, use flat surface of bubble wrap (bubbles facing away from product).
+
+Inflatable Packaging (Air Bags)
+     · Used primarily as void-fill material for lightweight items.
+     · Not recommended for items with sharp corners or edges.
+     · Extreme hot or cold temperatures may affect the ability of air bags to provide adequate product protection.
+
+Expanded Polystyrene "Peanuts" (Loose Fill)
+     · Used primarily as void-fill material for lightweight items.
+     · Do not use with flat or narrow products that may move to the edge or bottom of the box in transit.
+     · Due to the shifting and settling properties of peanuts, use a minimum of two inches of cushioning around the contents of the
+          box.
+     · Flat pieces of corrugated fiberboard may also be used between contents and peanuts to help prevent migration.
+     · Peanuts cause static electricity and may damage electronic items. Use anti-static peanuts for electronic items, along with
+          bubble sheeting around the item.
+
+Engineered Foam Closures
+     · Materials may include polystyrene, polyethylene, polypropylene, or copolymers.
+     · Enclosures should be pre-engineered for specific products.
+
+Corrugate Liners and Inserts
+     · May be added to the package to increase box strength.
+
+Crumpled Kraft Paper
+     · Used primarily as void-fill material for lightweight, non-fragile items. Must be tightly crumpled.
+     · Place at least two inches of paper between contents and outer box.
+
+                                                                         2
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Small Package Shipments
+
+General Packing Methods
+
+Method 1: One-Box
+
+When to Use:       Pre-packaged    Soft, durable                  Easily soiled goods Tiny, granular goods
+                        goods          goods
+
+Step 1: Choose your box.
+Step 2: Fill empty spaces within the box with any of the following filler materials to limit movement during shipping: cell bubble
+sheeting, loose-fill peanuts, kraft paper, and other similar material.
+Step 3: Tape closures and seams to seal your package.
+
+Method 2: Two-Box
+
+When to Use:       Sharp, fragile   Bags and                      Travel goods  Luxury goods
+                        goods      accessories
+
+Step 1: Choose your box.                                                             Helpful Hints
+
+Step 2: Fill empty spaces within the box with any of the          · Always add an extra label with the addresses/phone
+following filler materials to limit movement during shipping:          numbers of the shipper and recipient to the box.
+cell bubble sheeting, loose-fill peanuts, kraft paper, and other
+similar material.                                                 · Position individual items towards the center of the
+                                                                       box.
+Step 3: For the outer box, use a box that has a depth, width,
+and length 6" greater than the inner box.                         · Seal and place bottles/containers in plastic or spill-
+                                                                       proof bags.
+Step 4: Secure your box with an additional 3" of cushioning
+material around the inner box to fill the spaces between the      · Wrap items with cushioning material.
+inner box and outer box.
+
+Step 5: Fill the box with more filler material of your choice to
+cover any remaining empty spaces.
+
+Step 6: Tape closures and seams to seal your package.
+
+                                                                         3
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Step-by-Step Guide ­ Small Package Shipments
+
+The following steps cover the key considerations in packing most articles to help allow for safe transport through the
+distribution environment.
+
+1. Ship freight in corrugated boxes (avoid reusing              Weight  Size Limit Bursting Edge Crush Recommended Walls
+     boxes), crates or shipping containers.                     (Lbs.)   (Inches) Test (lbs. Test (lbs. per
+
+2. Use a container strong enough to support the weight          0 - 30                 per sq. in.) in. width)
+     of contents. See Box Strength Guidelines. Never
+     exceed the maximum gross weight limit for the                      < 75  200        32
+     box, which is printed on the Box Maker's Certificate
+     on the bottom flap of most boxes.                                                        Single Wall
+
+                                                                31 - 50 75 - 85 250      44
+
+                                                                                              Single Wall
+
+3. Use at least two inches of appropriate cushioning            51 - 65 85 - 96 275      55
+
+material to protect internal items from each other                                            Single Wall
+                                                                                              Single Wall
+and the corners, sides, top and bottom of containers.
+
+Appropriate cushioning material would include                   66 - 80 95 - 105 350     N/A
+corrugated fiberboard, multiple layers of folded
+
+newspaper, Styrofoam sheets, packing blankets,
+
+etc.                                                            81 - 100 95 - 105 350    61
+
+4. Reinforce edges to protect from bending.                                                   Double Walls
+
+                                                                101 - 120 105 - 110 400  71
+
+5. Securely seal closures and seams with reinforced                                           Double Walls
+     tape. Do not use masking, cellophane, duct or
+     water activated paper tapes. Also, do not use              121 - 140 110 - 115 500  82
+     string or paper over-wrap.
+          a. Can use pressure sensitive plastic or nylon                                      Double Walls
+                reinforced filament tape.
+          b. For regular slotted containers, where the          141 - 150 115 - 120 600  N/A
+                flaps meet in the center, apply three strips
+                of tape to the top and bottom of the box.                                     Double Walls
+          c. For corrugated containers where the flaps
+                overlap, apply three strips of tape to the top  The above box strengths are only guidelines to help assure the containment and
+                and bottom.                                     protection of products transported through single-package distribution
+                                                                environments. They are not to be considered packaging specifications, and all
+6. Label each piece with telephone numbers and                  packaged products should be tested in accordance with the International Safe
+     complete address information, including postal code        Transit Association (ISTA) Test Procedure 3A to ensure the most appropriate
+     of the shipper and consignee.                              level of product protection is achieved.
+          a. Do not place the label on a seam, edge,
+                closure or on top of sealing tape.              * The size limits on the above chart refer to the maximum size of a box that can
+                                                                be manufactured based on the strength of the corrugated material. The size
+                                                                limits specified in this chart and on the Box Maker's Certificate are unrelated
+                                                                to length and girth measurements used by UPS for dimensional measurements
+                                                                please refer to the Checking Shipment Size and Weight.
+
+                                                                         4
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Freight/Palletized Shipments
+
+What Are Pallets?
+
+Pallets are portable rigid platforms used to consolidate shipments and allow for ease of freight movement. Quality pallets ar e
+commonly made of either wood or plastic and can weigh between 20 and 70 pounds. Pallets should be large enough to accommodate
+the shipment without overhang. Anything overhanging the pallet edges may be damaged from punctures, abrasions and compression.
+UPS Worldwide Express Freight Midday and UPS Worldwide Express Freight shipments must be palletized, stackable, able to be
+lifted by forklift and shrink-wrapped or banded to the pallet. For Air Freight or UPS Worldwide Expedited Ground Freight shipments,
+if your non-palletized shipment does not meet the minimum billable weight per piece, consider palletizing prior to UPS pickup.
+Palletized vs. Non-Palletized Freight
+Palletizing freight helps multiple-piece shipments remain together and provides increased protection from damage. Each pallet,
+including its contents, is considered one piece.
+In contrast, loose items, such as boxes or containers that have not been secured to a pallet, are considered non-palletized freight. Each
+loose item is considered one piece and can be shipped via Air Freight or UPS Worldwide Expedited Ground Freight services.
+UPS Worldwide Express Freight Services
+UPS Worldwide Express Freight Services are for palletized shipments. Pre-authorization is required for all pallets exceeding
+maximum size or weight restrictions (which vary by origin and destination) as set forth at UPS Worldwide Express Freight® Services.
+For UPS Worldwide Express Freight Services, scheduling a pickup or drop-off is required on all shipments through WorldShip®,
+ups.com shipping and UPS CampusShip® systems, a UPS Ready® solution, UPS® Developer Kit, ups.com or by calling 1-800-
+PICK-UPS.
+Air Freight and UPS Worldwide Expedited Ground Freight
+Air Freight and UPS Worldwide Expedited Ground Freight shipments can include combinations of palletized items or boxes that a re
+too large to ship using other UPS services. They can also include multiple non-palletized pieces. UPS will accept freight shipments of
+any weight. However, minimum weight charges apply. Pre-authorization is required for Air Freight and UPS Worldwide Expedited
+Ground Freight shipments that exceed 120 inches in length, 84 inches in width, 76 inches in height or 5,000 pounds in weight .
+
+                                                                         5
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Step-by-Step Guide ­ Freight/Palletized Shipments
+
+The following are basic step-by-step instructions for palletizing your freight shipments.
+
+     1. Select Pallets.
+
+     2. Stack Boxes on Pallet.
+
+     3. Secure Shipment to Pallet.
+                o For Air Freight and UPS Worldwide Expedited Ground Freight, label all handling units with shipper/consignee
+                     information and PRO (progressive rotating order) Numbers (at minimum all four vertical sides, interior and exterior
+                     of the stretch wrapping); use markers if having adhesion issues.
+
+     4. Label Shipment.
+
+                o For UPS Worldwide Express Freight Midday and UPS Worldwide Express Freight shipments, apply labels to each
+                     side of the pallet and on top of the pallet ­ each label should have telephone numbers and complete address
+                     information, including postal code of the shipper and the consignee.
+
+                o For Air Freight and UPS Worldwide Expedited Ground Freight, label each pallet with telephone numbers and
+                     complete address information, including postal code of the shipper and consignee.
+
+Preparing for Pickup
+
+Your freight pickup request is initiated when you Create a Shipment for freight using UPS® Freight Forwarding Services or UPS®
+Forwarding Hub.
+
+Some Air Freight and UPS Worldwide Expedited Ground Freight shipment pickup requests require preauthorization.
+
+Do's and Don'ts:                                                                           Don't
+
+                                  Do                                         Do not pyramid, ship or accept
+                                                                                 prohibited items or freight that
+         Choose pallets large enough to prevent overhang of shipment             overhangs the pallet.
+             pieces.
+                                                                             Never exceed the rated capacity of your
+         Select pallets with closely spaced pallet deck boards.                  pallet.
+         Choose pallets with four-way forklift entry are preferred as they
+                                                                             Do not select pallets with broken boards
+             help to improve handling and reduce damage to the shipment.         or protruding nail heads.
+         Use a minimum of 60-gauge stretch wrap, five revolutions
+
+             recommended: tie to pallet and across top to prevent shifting
+         Use corner boards and banding to ensure stability.
+         Use three-way locking ­ nailed corners (not staples) on crates;
+
+             angle board must extend from the deck board to the top of the
+             pallet load.
+         Insert layers of cardboard between layers of freight to absorb
+             vibration; distribute the weight evenly.
+         Ensure information on the Bill of Lading (BOL) matches the
+             shipment.
+         Indicate in proper location on the BOL and check contract/tariff
+             for liability limits if excess declared value is needed.
+
+                                                                         6
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Protecting Your Freight Shipment
+
+        Solution                              Description
+
+Corner/Edge Boards         o Increases vertical stacking strength, helps to prevent damage to corner
+Strapping or Banding            edges and stabilize the load.
+Stretch Wrapping
+                           o Should extend to the full height and length of the load and should be used
+Top/Bottom Load Protector       on all corners.
+
+                           o Helps to prevent pieces from getting lost or separated from the load.
+                           o Should be drawn tightly to the load, possibly requiring running it
+
+                                underneath the top deck boards of the pallet.
+
+                           o Use as an effective way to keep all pieces of a shipment together.
+                           o Should first be applied around the pallet and continued upward around the
+
+                                load.
+                           o Must be tight to prevent load shifting.
+                           o Capture the pallet when wrapping bottom layer.
+                           o Designed to stabilize the load, not to secure it to the pallet ­ Strapping or
+
+                                banding should be used in conjunction with stretch wrap to secure the
+                                load to the pallet.
+
+                           o Layers of corrugated fiberboard or heavy paperboard.
+                           o Use to help evenly distribute the weight of shipments that can be stacked
+
+                                upon one another.
+
+                                                                         7
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+Special Packaging Needs
+
+Irregularly Shaped Items and Bare Metals
+
+Tape the address label on a flat surface of the item being shipped. Cover the label with clear tape. Do not use "flying tags" attached by string
+or metal. Blunt all sharp or protruding edges with taped-on, corrugated cardboard pieces. Protect the surface of the item as needed. An
+Additional Handling charge will apply.
+
+Bundled or Strapped Boxes
+
+Only same-sized boxes may be strapped together. Use a minimum of four crisscrossed bands, two in each direction. An address label must be
+placed on each box. When strapping boxes together, each box must be strong enough to hold the total weight of the strapped bundle. For
+example, if two 15-pound boxes are banded together into a 30-pound package, both components should be in boxes with at least a 30-pound
+weight capacity. An Additional Handling charge may apply.
+
+Large and/or Heavy Packages
+
+Packaging materials need to be evaluated carefully for packages weighing more than 50 pounds. A UPS Heavy Package sticker is required
+whenever you ship packages weighing more than 50 pounds. Place the sticker to the right of the address label and write the package's weight
+in the white box. It also helps to highlight every side of your package with Heavy Package highlight tape. This sends a warni ng to those who
+will lift your package, both your employees and ours. Customers with a UPS account can request su pplies at Packaging and Shipping
+Supplies | UPS - United States or by calling 1-800-PICK-UPS®. An Additional Handling charge will apply.
+
+Tires
+
+Apply a wide band of pressure-sensitive tape through the center and completely around the body of the tire so that the tape is attached to
+itself. Attach your address label to the tape band where it covers the tread. Cover the entire label with clear tape. An Additional Handling
+charge will apply.
+
+Batteries
+
+A variety of batteries are regulated as hazardous materials by the U.S. Department of Transportation (DOT). For assistance in determining
+whether or not your battery shipment is regulated, please call the DOT's Hazardous Materials Info -line at 1-800-4674922. Batteries requiring
+shipping papers may only be tendered by shippers authorized by a hazardous materials shipping contract with UPS to tender such shipments.
+Any device with batteries installed must have their on/off switch protected from being activated, or have the batteries removed with the
+terminals protected. Simple devices like flashlights or rechargeable drills can generate a dangerous amount of heat if accidentally activated.
+Electronic items sent for repair, such as computers and cell phones, should be sent without batteries. For additional information regarding the
+shipment of batteries, please go to How To Ship Batteries.
+
+Electronic Media
+
+To ship electronic media that contain sensitive personal information (such as personal financial or health information), we r ecommend that
+you do not use an envelope, letter packaging, UPS Express® Envelope, UPS Express Envelope ­ Reusable, UPS Express® Pak or UPS
+Express® Pad Pak. UPS provides special packaging, the UPS Express® Hard Pak, which is designed to help you ship sensitive electronic
+media. Call 1-800-PICK-UPS® or your sales representative for more information. You can also ship electronic media containing sensitive
+personal information by packaging it with a duplicate shipping label in an inner container that can be securely sealed. Place the inner
+container in a new outer corrugated box. Seal all flaps securely. Prior to packaging, mark the electronic media with identifiable information
+such as your company name, reference number or your UPS shipping number. Additionally, the shipper should retain a copy of th e data and
+secure the data on the electronic media through encryption or other technolog ical means.
+
+Fabric and Wallpaper
+
+Rolled goods travel best when shipped in corrugated boxes. If a fabric or wallpaper roll is shipped in a bag, UPS recommends a bag with a
+minimum thickness of six mils. Make sure the bag is tightly wrapped and taped against the roll to reduce the risk of t earing. A tail on an item
+shipped in a bag must be compressed to the body of the item using tape. Place the address label on a flat surface of the item being shipped.
+Place duplicate address labels inside cores or between top layers of material. An Additio nal Handling charge may apply.
+
+Hazardous Materials and Dangerous Goods
+
+For additional information on this contract-only service, refer to ups.com/hazmat.
+
+                                                                         8
+
+Please note: UPS does not make any warranties, express or implied, regarding this information. It is the responsibility of the Shipper to ensure that proper packaging is
+used and that contents are adequately and securely packed in a container, wrapped, and cushioned for transportation. Please refer to the UPS Rate and Service Guide
+and UPS Tariff/Terms and Conditions of Service for applicable terms, conditions, and limitations.
+

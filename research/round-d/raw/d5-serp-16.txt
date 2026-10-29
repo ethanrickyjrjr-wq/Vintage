@@ -1,0 +1,14 @@
+# query: Holliewood & Vine vintage
+# run: 2026-10-29T12:48Z via tools/search.sh
+https://www.npmjs.com/package/nocache | nocache - npm | bing
+https://www.instagram.com/holliewoodandvine/ | Holliewood and Vine (@holliewoodandvine) - Instagram | startpage
+https://outlook.live.com/owa/ | Outlook | yahoo
+https://stackoverflow.com/questions/38333569/adding-nocache-1-to-every-url-including-the-assets-like-stylesheet-behind-the | regex - Adding ?nocache=1 to every url (including the assets like ... | bing
+https://poshmark.com/brand/Hollywood%20&%20Vine?srsltid=AYCX9vJJtekbZLIpkBA5mXHsCyOQQt_swJYaP748NQDE-gQqz-LW2VcJ | Hollywood & Vine Products for Sale up to 90% Off Retail - Poshmark | startpage
+https://outlook.live.com/tasks/ | Welcome to To Do - Outlook | yahoo
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control | Cache-Control header - HTTP | MDN - MDN Web Docs | bing
+https://www.facebook.com/groups/1030320337396188/posts/1747778985650316/ | Vintage photo of Hollywood and Vine in 1965 - Facebook | startpage
+https://outlook.live.com/owa/calendar/00000000-0000-0000-0000-000000000000/720a3608-103b-49ee-89d4-09962e2b62df/cid-7208C31F26AE4D50/calendar.ics | Outlook | yahoo
+https://github.com/helmetjs/nocache | GitHub - helmetjs/nocache: Middleware to disable client-side caching | bing
+https://www.etsy.com/market/hollywood_and_vine | Hollywood and Vine - Etsy | startpage
+https://outlook.live.com/mail/0/mailcache.manifest?manifestVersion=2 | Outlook | yahoo

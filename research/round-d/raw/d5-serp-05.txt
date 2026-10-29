@@ -1,0 +1,14 @@
+# query: Stiffel brass table lamp vintage
+# run: 2026-10-29T12:35Z via tools/search.sh (SearXNG on Fedora: google cse/bing/startpage/yahoo)
+https://www.npmjs.com/package/nocache | nocache - npm | bing
+https://stiffel.com/product-category/hospitality/table-lamps-hospitality/ | Table Lamps Archives - Stiffel Lighting | Made in USA | startpage
+https://www.chamberofcommerce.com/business-directory/new-york/jamaica/truck-dealer/2012984395-hino-of-queens-jfk | Hino of Queens JFK in Jamaica, NY 11434 - 718-977... | yahoo
+https://stackoverflow.com/questions/38333569/adding-nocache-1-to-every-url-including-the-assets-like-stylesheet-behind-the | regex - Adding ?nocache=1 to every url (including the assets like ... | bing
+https://remains.com/products/vintage-turned-brass-stiffel-lamps-atl1999 | Vintage Turned Brass Stiffel Lamps - Remains Lighting | startpage
+https://www.hinoofqueens.com/ | Hino of Queens - Hino Light and Medium Duty Truck Dealer in... | yahoo
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control | Cache-Control header - HTTP | MDN - MDN Web Docs | bing
+https://stiffel.lightingnewyork.com/?srsltid=AYCX9vJuLxOW1Q86YhoshbsH4mGtEhzIQx2lOwzA1rEt4GsE7rsC64rR | Stiffel at Lighting New York | startpage
+https://www.loc8nearme.com/new-york/queens/hino-of-queens-jfk/7867495/ | HINO OF QUEENS JFK - 153-20 S Conduit Ave, Queens NY 11434 -... | yahoo
+https://github.com/Feh/nocache/blob/master/README | nocache/README at master · Feh/nocache · GitHub | bing
+https://www.facebook.com/groups/antiquelightingcollectors/posts/861857951998649/ | How to identify a Stiffel lamp and determine its age and value? | startpage
+https://www.hinoofqueensjfk.com/ | Hino of Queens JFK - Hino Light and Medium Duty Truck Dealer in... | yahoo

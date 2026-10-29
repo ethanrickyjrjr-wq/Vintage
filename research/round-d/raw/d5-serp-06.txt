@@ -1,0 +1,14 @@
+# query: how to date a Stiffel lamp
+# run: 2026-10-29T12:35Z via tools/search.sh (SearXNG on Fedora: google cse/bing/startpage/yahoo)
+https://www.timeanddate.com/ | timeanddate.com | bing
+https://www.calendardate.com/todays.htm | Today's Date - CalendarDate.com | bing
+https://todaydateandtime.com/ | Today's Date and Time - Current Date, Time & More | bing
+https://www.timeanddate.com/date/dateadd.html | Date Calculator: Add to or Subtract From a Date | bing
+https://lightingnewyork.com/k/lighting/wall-lights/lamps/how-to-identify-a-stiffel-lamp?srsltid=AYCX9vIHn5WRG-gR4YIwkCCugsDGDVEJfj4661xrQV_ZeVdzHdGxUmL0 | How To Identify a Stiffel Lamp: A Collector's Guide - Lighting New York | startpage
+https://www.calculator.net/date-calculator.html | Date Calculator | bing
+https://tomorrowcalendar.com/today-calendar/ | Today Calendar — What Is Today's Date & Day? | bing
+https://todaysdateandtime.com/today/ | What Is Today's Date? — Live Date, Time & Week Number ... | bing
+https://en.m.wikipedia.org/wiki/DATE | Date - Wikipedia | bing
+https://www.facebook.com/groups/antiquelightingcollectors/posts/861857951998649/ | How to identify a Stiffel lamp and determine its age and value? | startpage
+https://todaysdatenow.com/ | Today's Date | bing
+https://todaytimedate.com/ | Today's Date & Current Time | Today Time Date | bing

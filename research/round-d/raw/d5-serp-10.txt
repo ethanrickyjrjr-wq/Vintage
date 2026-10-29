@@ -1,0 +1,2 @@
+# query: vintage chrome and glass coffee table
+# run: 2026-10-29T12:35Z via tools/search.sh (SearXNG on Fedora: google cse/bing/startpage/yahoo)

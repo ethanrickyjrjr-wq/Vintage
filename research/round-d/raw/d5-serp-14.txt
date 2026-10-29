@@ -1,0 +1,12 @@
+# query: vintage chrome glass coffee table for sale
+# run: 2026-10-29T12:35Z via tools/search.sh (SearXNG on Fedora: google cse/bing/startpage/yahoo)
+https://www.etsy.com/market/vintage_chrome_glass_coffee_table | Vintage Chrome Glass Coffee Table - Etsy | startpage
+https://sunbeamvintage.com/collections/coffee-tables | Vintage & Modern Coffee Tables | startpage
+https://www.1stdibs.com/buy/chrome-glass-coffee-tables/ | Chrome Glass Coffee Tables - 668 For Sale on 1stDibs | startpage
+https://www.ebay.com/b/Chrome-Antique-Coffee-Tables/20091/bn_54739850 | 25+ Chrome Antique Coffee Tables for sale | Updated Oct 2026 - eBay | startpage
+https://www.chairish.com/collection/coffee-tables/glass | Vintage Glass Coffee Tables | Chairish | startpage
+https://www.pinterest.com/ideas/chrome-and-glass-coffee-table/960414001770/ | Chrome and Glass Coffee Table - Pinterest | startpage
+https://www.whoppah.com/furniture/tables/coffee-tables/chrome | Second-hand Chrome Coffee tables (731) - Whoppah | startpage
+https://www.reddit.com/r/Mid_Century/comments/i50omz/any_info_on_these_baughmanish_chromesmoked/ | Any info on these Baughman-ish chrome/smoked glass/wood end ... | startpage
+https://www.theparadiseantiques.com/products/vintage-1950s-glass-brass-and-chrome-coffee-table | French Vintage 1950s Glass, Brass and Chrome Coffee Table | startpage
+https://foter.com/by/caroline-patterson/chrome-coffee-tables | Chrome Coffee Tables - Designer Picks - Foter | startpage

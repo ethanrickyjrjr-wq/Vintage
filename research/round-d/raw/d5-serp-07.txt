@@ -1,0 +1,14 @@
+# query: vintage brass table lamp
+# run: 2026-10-29T12:35Z via tools/search.sh (SearXNG on Fedora: google cse/bing/startpage/yahoo)
+https://www.ebay.com/sch/i.html?_nkw=vintage+brass+table+lamp&_sop=12&msockid=180f72a2770963be3f416aa3760a62d1 | Vintage Brass Table Lamp for sale - eBay | bing
+https://www.1stdibs.com/furniture/lighting/table-lamps/material/brass/ | Brass Table Lamps - 13,949 For Sale at 1stDibs | bing
+https://www.ebay.com/sch/i.html?_nkw=vintage+brass+table+lamp&_sop=12 | Vintage Brass Table Lamp for sale - eBay | yahoo
+https://www.scullyandscully.com/home-decor/luxury-lamps/brass-lamps?srsltid=AYCX9vIVkjoWg7Ph7FS20SRU5HkXAH_h0BhV2FBeIAzbpgUqSas5U8kg | Brass Lamps | Scully & Scully | startpage
+https://www.chairish.com/collection/table-lamps/brass | Vintage Brass Table Lamps | Chairish | bing
+https://www.etsy.com/market/vintage_table_brass_lamp?msockid=180f72a2770963be3f416aa3760a62d1 | Vintage Table Brass Lamp - Etsy | bing
+https://www.1stdibs.com/buy/vintage-brass-lamps/ | Vintage Brass Lamps - 2,118 For Sale on 1stDibs | bing
+https://www.etsy.com/market/vintage_table_brass_lamp | Vintage Table Brass Lamp - Etsy | yahoo
+https://www.rejuvenation.com/shop/lighting/antique-brass+table-lamps-lighting/finish-m-finishes-ff000816fe20-1/ | Antique Brass Table Lamps - Rejuvenation | startpage
+https://www.potterybarn.com/shopping/antique-brass-table-lamp/ | Antique Brass Table Lamps - Pottery Barn | yahoo
+https://www.ebay.com/sch/i.html?_nkw=vintage+solid+brass+lamps&_sop=12&msockid=180f72a2770963be3f416aa3760a62d1 | Vintage Solid Brass Lamps for sale - eBay | bing
+https://www.ebay.com/sch/i.html?_nkw=vintage+solid+brass+lamps&_sop=12 | Vintage Solid Brass Lamps for sale - eBay | yahoo
