@@ -1,0 +1,45 @@
+[Instagram] Setting up session
+[Instagram] Extracting URL: https://www.instagram.com/p/DFFyRp-pINJ/
+[Instagram] DFFyRp-pINJ: Checking post accessibility
+[Instagram] DFFyRp-pINJ: Downloading JSON metadata
+[info] DFFyRp-pINJ: Downloading 1 format(s): dash-773765182248262v+dash-595250956555173a
+[info] There are no subtitles for the requested languages
+[info] Writing video metadata as JSON to: /tmp/tmp6mizlkqg/DFFyRp-pINJ.info.json
+[Instagram] Setting up session
+[Instagram] Extracting URL: https://www.instagram.com/p/DFFyRp-pINJ/
+[Instagram] DFFyRp-pINJ: Checking post accessibility
+[Instagram] DFFyRp-pINJ: Downloading JSON metadata
+[info] DFFyRp-pINJ: Downloading 1 format(s): dash-595250956555173a
+[info] Writing video metadata as JSON to: /tmp/tmp6mizlkqg/DFFyRp-pINJ.info.json
+[download] Destination: /tmp/tmp6mizlkqg/DFFyRp-pINJ.m4a
+[download]   0.2% of  623.90KiB at  Unknown B/s ETA Unknown[download]   0.5% of  623.90KiB at    1.74MiB/s ETA 00:00  [download]   1.1% of  623.90KiB at    3.10MiB/s ETA 00:00[download]   2.4% of  623.90KiB at  782.48KiB/s ETA 00:00[download]   5.0% of  623.90KiB at    1.13MiB/s ETA 00:00[download]  10.1% of  623.90KiB at    1.52MiB/s ETA 00:00[download]  20.4% of  623.90KiB at    2.20MiB/s ETA 00:00[download]  40.9% of  623.90KiB at    3.19MiB/s ETA 00:00[download]  81.9% of  623.90KiB at    4.99MiB/s ETA 00:00[download] 100.0% of  623.90KiB at    5.49MiB/s ETA 00:00[download] 100% of  623.90KiB in 00:00:00 at 3.07MiB/s   
+[FixupM4a] Correcting container of "/tmp/tmp6mizlkqg/DFFyRp-pINJ.m4a"
+[ExtractAudio] Destination: /tmp/tmp6mizlkqg/DFFyRp-pINJ.wav
+Deleting original file /tmp/tmp6mizlkqg/DFFyRp-pINJ.m4a (pass -k to keep)
+
+saved: /home/stanicky/clipfeed/out/DFFyRp-pINJ.txt
+# Video by mosseri
+# https://www.instagram.com/p/DFFyRp-pINJ/
+# fetched 2026-10-29T13:16:11 via whisper small
+
+[detected language: en (1.00)]
+
+[   0.0s] I'm going to try and explain as best I can how ranking works on Instagram in a series of videos,
+[   4.3s] and this is the first one, because the more you know, the better you can leverage the platform,
+[   8.8s] and the more success you can have, and the better Instagram will be.
+[  12.0s] So at a high level, there are two types of ranking on Instagram. There's one for accounts you
+[  18.6s] follow, we call that connected reach, and there's another for accounts that do not follow you
+[  23.4s] yet, we call that recommendations or unconnected reach. Now for both, the most important signals
+[  29.3s] are the same three. They are how much of a video we think someone is going to watch,
+[  33.8s] and whether or not we think they're going to like that video, or they're going to actually
+[  37.1s] send that video to a friend. And so what you need to look at is average watch time,
+[  42.3s] likes per reach, and sends per reach. Now if you really want to understand the nuances,
+[  47.8s] likes are actually slightly more important than sends for connected content,
+[  51.4s] and sends are actually a little bit more important than like for unconnected content,
+[  56.0s] but time is the most important for both. So if you're trying to understand why one
+[  60.0s] reel may have done better than another, check out your insights and look at those metrics.
+[  64.3s] And if you're specifically worried about posting too much, I highly encourage you to take a look
+[  69.4s] at our trials feature, which allows you to bypass the entire connected ranking system,
+[  74.2s] and just go straight to the unconnected recommendations, so you don't risk bothering
+[  78.3s] people who will follow you with too much content, and you can just upgrade the content that does
+[  82.5s] best to your followers and to your profile. More to come soon. Peace.

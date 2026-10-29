@@ -35,5 +35,10 @@ Shared stage taxonomy for finds: ingest > edit > caption > cover > publish > rep
 - Apify spend for measured competitor engagement data? Not authorized; clipfeed used instead.
 - Hollie on camera or hands only?
 
+## Corrections found by wave 1
+- A Facebook Page is NOT a prerequisite for Instagram-only publishing (w1a, Meta developer docs: Unified Login and Instagram Login need no Page; own-account API use is Standard Access with no App Review). Page is still needed for Facebook posting, cross-posting, some ads/shopping tools. Wave 3 step order: claim handles > Business account > scheduler/API > (Page only when Facebook posting starts).
+- hire.html line 121 and docs/fabulous-from-online-design.md line 87 carry "10% off each room after the first" (Full Production). Ricky approved the written prices; w1g flags it against the no-discounts rule. Ricky decides; not changed.
+
 ## Status log
 - 2026-10-29: BRIEF.md and PLAN.md written. Wave 1 launching.
+- 2026-10-29: wave 1 reports saved: w1a (saved by parent from inline return), w1b, w1e, w1f, w1g. Still running: w1c (hooks, clipfeed), w1d (calendar), w1h (capture/ingest).

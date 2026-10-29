@@ -1,0 +1,40 @@
+[download]   0.2% of  525.70KiB at    3.06KiB/s ETA 02:51[download]   0.6% of  525.70KiB at    9.16KiB/s ETA 00:57[download]   1.3% of  525.70KiB at   21.33KiB/s ETA 00:24[download]   2.9% of  525.70KiB at   45.67KiB/s ETA 00:11[download]   5.9% of  525.70KiB at   89.23KiB/s ETA 00:05[download]  12.0% of  525.70KiB at  173.54KiB/s ETA 00:02[download]  24.2% of  525.70KiB at  332.76KiB/s ETA 00:01[download]  48.5% of  525.70KiB at  629.93KiB/s ETA 00:00[download]  97.2% of  525.70KiB at    1.15MiB/s ETA 00:00[download] 100.0% of  525.70KiB at    1.18MiB/s ETA 00:00[download] 100% of  525.70KiB in 00:00:00 at 947.13KiB/s 
+
+saved: /home/stanicky/clipfeed/out/DDPU_hfSgnZ.txt
+# Video by mosseri
+# https://www.instagram.com/reel/DDPU_hfSgnZ
+# fetched 2026-10-29T13:17:38 via whisper small
+
+[detected language: en (1.00)]
+
+[   0.0s] Creators are asking me a lot how often they should post
+[   2.6s] on Instagram and though there's no one perfect answer,
+[   5.3s] two things are true.
+[   6.6s] One is the more you post in general,
+[   9.7s] the more reach you're gonna get.
+[  11.4s] The other is if you commit to too much content creation,
+[  15.5s] you're gonna burn out
+[  16.6s] because creator burnout is a real thing.
+[  19.0s] So my advice is try to come up with a schedule
+[  22.2s] that you can sustain over the long run
+[  24.4s] and you can continue to enjoy
+[  25.8s] because if you're enjoying making this content,
+[  27.8s] if you're enjoying being creative,
+[  29.4s] the content is gonna be better for it.
+[  31.4s] And I have seen creators that are very successful
+[  34.3s] that create only one thing a month
+[  36.0s] and I've seen creators that are very successful
+[  37.4s] that create five reels a day.
+[  39.8s] For every person, it's gonna be different
+[  41.8s] but pick some pace that is sustainable for you.
+[  45.0s] My other advice is define a few patterns,
+[  48.0s] things that you can do on the regular
+[  49.7s] so it's easier to create content
+[  51.8s] when you might be facing writer's block.
+[  54.3s] So for me, I do my Ask Anything every Friday.
+[  56.7s] I try to highlight a creator every week or two.
+[  59.4s] I try to do advice videos
+[  60.9s] so I always have a few patterns that I can go back to
+[  63.7s] if I'm not sure what I wanna create on any given day.
+[  65.9s] Hopefully this advice helps a little bit more to come.
+[  68.6s] Peace.

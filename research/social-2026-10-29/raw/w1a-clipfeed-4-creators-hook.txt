@@ -1,0 +1,32 @@
+[download]   0.3% of  327.29KiB at  Unknown B/s ETA Unknown[download]   0.9% of  327.29KiB at    2.03MiB/s ETA 00:00  [download]   2.1% of  327.29KiB at    2.93MiB/s ETA 00:00[download]   4.6% of  327.29KiB at    4.58MiB/s ETA 00:00[download]   9.5% of  327.29KiB at    1.50MiB/s ETA 00:00[download]  19.2% of  327.29KiB at    1.83MiB/s ETA 00:00[download]  38.8% of  327.29KiB at    2.70MiB/s ETA 00:00[download]  77.9% of  327.29KiB at    2.55MiB/s ETA 00:00[download] 100.0% of  327.29KiB
+
+saved: /home/stanicky/clipfeed/out/DA0ua3-yuDg.txt
+# Video by mosseri
+# https://www.instagram.com/p/DA0ua3-yuDg/
+# fetched 2026-10-29T13:21:16 via whisper small
+
+[detected language: en (1.00)]
+
+[   0.0s] The first three seconds of a reel are super important.
+[   3.4s] Now we call this the hook.
+[   4.6s] Now that doesn't necessarily mean you need to bait the user
+[   7.3s] or have a cliffhanger,
+[   8.7s] but you do need to get the user's attention
+[  10.9s] because as they're scrolling through feed,
+[  12.3s] you have a brief moment
+[  14.0s] where you might actually get them invested
+[  16.3s] in hearing what else you have to say.
+[  18.7s] A couple things I recommend.
+[  20.0s] One, use text when possible
+[  22.2s] because a lot of times people
+[  23.3s] actually have to sound off to start.
+[  25.6s] And two, set expectations.
+[  27.4s] Let people know what you're gonna talk about
+[  29.0s] so they know if they are interested
+[  30.8s] in viewing a bit further.
+[  32.9s] Try this out, let me know.
+[  34.2s] There's different ways of creating hooks
+[  36.2s] and hopefully if you experiment enough,
+[  38.1s] you'll find it'll help you reach.
+[  40.0s] Let me know below in the comments what you think.
+[  42.1s] Peace.
