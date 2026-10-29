@@ -1,5 +1,25 @@
 # Room previews
 
+## Separate room page and phone directions (2026-10-29)
+
+Live publicly as **Sites version 36** at
+https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/room.html .
+The release includes the lighter homepage and separate Room/Hire Hollie pages
+(`e0ba6f2`), collapsed phone directions (`db03e13`), and the concurrent removal
+of the completed homepage idea preview. Sites source is
+`9dbc12c89d0d4a3131e3dbe54f2ac136bbdf4bd2`; deployment
+`appgdep_6ae36012168c819182470deaf2102f16` succeeded with environment revision 2.
+The matching concurrent publication was reused rather than deployed twice.
+
+All 42 tests and the production build passed for that Sites source. Live Chrome
+at 390px confirmed the directions start closed, expand and collapse, and keep
+the picks close to the photo. The sample-room chandelier can be added and
+placed with its resize handle; no console errors appeared. The menu opens,
+there is no horizontal overflow, and the homepage's three doors stack in one
+column. At 1440px the directions start open. These are browser viewport checks;
+finger dragging still needs a real-phone check. The existing roughly 116px
+sticky phone header remains unchanged.
+
 ## Sample-room placement repair — 2026-10-28
 
 The Gold Egyptian bust lamp (A13) reproduced a zero-placement result in our own
