@@ -19,20 +19,31 @@
 - DR-15DSS 2026: Lee .5% to Dec 31, 2028; Collier none; Charlotte 1% ending Dec 31, 2026.
 - Vintage Market Days: "January 29 - 31, 2027". Pine Ridge: "$160.00". River District Art Walk: "$50".
 - eBay Best Offer study (NBER w24306): first offers average 61% of list, bargained sales 73%. Chairish: "more than 50%" of transactions through offers. 16 CFR 233.1: "reasonably substantial period of time". Etsy: an accepted offer does not reserve the item.
+- Pinterest merchant guidelines, under "We don't allow the following products to be product Pins": "Pre-owned products", with a Shopping Ads carve-out. Also "Resale or consignment marketplaces are only eligible for Ads distribution".
+- TikTok Shop: pre-owned apparel, jewelry and watches "are invite-only categories". "Only eligible sellers may offer Antique Collectibles".
+- Meta commerce policy: the only used-goods ban is "cosmetics that have been used". Services can't be sold except through appointments. Buffer free: "10 scheduled posts per channel".
 
-**Two corrections to the agents.**
+**Three corrections to the agents.**
+- **Pinterest Product Pins.** d5 recommends Product Pins from the Shopify listings. Pinterest's merchant guidelines don't allow pre-owned products as Product Pins (d1, re-checked). Organic Pinterest for this shop means plain Pins and Article Pins that link to pages.
 - **Shipsurance and stained glass.** d2 says both Shipsurance policies exclude stained glass. The Etsy terms list "windows, plate glass, float glass"; only the Shopify terms add "stained glass". Neon is excluded on both. Verified: neon, float glass. Needs review: stained glass on Etsy-bought cover.
 - **The Worker.** d3 says the Worker already has an `/api/hire` route. It doesn't. The only route is `/api/room-preview`, so a subscribe route would be the second.
 
 ## A fact from the code that gates several lanes
 
 Items open as `#item-<id>` hash routes inside a dialog (`site/catalog.js`), and `storefront.html` carries no JSON-LD.
-- Google indexes the page, not the fragment, so the sold archive, product structured data, Merchant Center and Pinterest Rich Pins all need **one real URL per piece**.
+- Google indexes the page, not the fragment, so the sold archive, product structured data, Merchant Center and Pinterest pins all need **one real URL per piece**.
 - `build.mjs` can generate those static pages from `demo-products.js`. Another session has uncommitted edits to `build.mjs`, so this is a Codex task after that lands.
 
 ## Top findings by lane
 
-**d1 social and short video.** _Placeholder: d1 was still running when this was written. Its findings are added below when its report lands._
+**d1 social and short video.**
+- Niche accounts sell on a fixed weekly drop slot stated in the bio, a teaser the day before, and claims by comment or DM. The repo has already ruled out DM-to-buy because of the double-sell risk, so the only call to action is the listing page: reply "LINK" with the link.
+- The answer to "is this still available?" is the page: "It's very difficult for us to hold an item as it could sell at any time" (Palm Beach Regency). Palm Beach Regency is a Florida shop in the same Hollywood Regency lane.
+- **TikTok Shop has no lane** for 1960s–80s lamps and glass. Pre-owned there means authenticated luxury, and antiques must be pre-1930. Use TikTok for content only.
+- **Instagram and Facebook Shops:** used goods are allowed, but Shops now use website checkout. The site's "checkout coming soon" blocks them. Hire Hollie can't be a catalog item.
+- Check Meta's animal-parts rule against the cowhide and feather pieces before any catalog upload.
+- Free schedulers fit a weekly batch: Buffer, Publer, Metricool, or Pinterest's own 30-day queue.
+- Deliverable: a four-week, hands-only content plan from the real room, the neon and the mirror ball (section "4-week content skeleton" of d1).
 
 **d2 shipping and the unboxing.**
 - The packing standard doubles as the claims defense. USPS refuses damage claims where articles were "not properly wrapped" or where the container shows no damage.
@@ -62,7 +73,7 @@ Items open as `#item-<id>` hash routes inside a dialog (`site/catalog.js`), and 
 - Buy-intent searches go to marketplaces. "Identify / markings" searches go to guides and Facebook threads. That is the opening: maker-and-marks guides shot from the shop's own pieces.
 - Sold pages stay up at HTTP 200, marked SOLD, with `OutOfStock` and the real price kept.
 - Every piece is `UsedCondition`. Never `Refurbished`: Google defines it as warranty-backed restoration.
-- Merchant listings and Pinterest Product Pins need checkout on the site. Until then: product-snippet markup on the site, and Product Pins from Shopify.
+- Google merchant listings need checkout on the site. Until then, the site gets product-snippet markup. Pinterest doesn't allow pre-owned Product Pins at all (d1), so pins are plain or Article Pins.
 - Brand collision: searching "Holliewood & Vine vintage" returns Poshmark and Etsy "Hollywood" pages. An Instagram handle `@holliewoodandvine` and a Facebook page also exist; ownership is unknown.
 
 **d6 local Southwest Florida.**
@@ -96,7 +107,10 @@ Items open as `#item-<id>` hash routes inside a dialog (`site/catalog.js`), and 
    - leave it as is
    Nothing is changed in the build.
 2. **Offers.** The owner line says "Absolutely no offers." d7's ladder adds "offers open at day 30". My pick: keep no-offers as the brand, and let the markdown ladder be the quiet discount. One voice, no haggling anchor.
-3. **Will the site take payment?** This sharpens decision 2 of the earlier synthesis. Without checkout, the site gets product-snippet markup only, and Product Pins and Google free listings come from Shopify.
+3. **Will the site take payment?** This sharpens decision 2 of the earlier synthesis. Without checkout on the site:
+- the site gets product-snippet markup only
+- Google free listings come from Shopify
+- Instagram and Facebook Shops stay closed (d1)
 4. **One spelling everywhere.** Google's name rule wants the name used "consistently". Pick "Holliewood and Vine" or "Holliewood & Vine" for Google, Etsy, Nextdoor and the site.
 5. **Are `@holliewoodandvine` on Instagram and the matching Facebook page yours?** If not, claim a handle now.
 6. **Google Business Profile** only if Hollie really will visit homes (the Cameo). Video calls alone don't qualify.
@@ -113,6 +127,7 @@ Items open as `#item-<id>` hash routes inside a dialog (`site/catalog.js`), and 
 | 6 | Maker-and-marks guides shot from her own stock (Stiffel base, pink glass, cut vs pressed) | **keep** | Identification searches are won by guides, and first-hand photos beat the retailer guide (d5) |
 | 7 | Vintage Market Days booth Jan 29–31 as a lead source, with a Screen Test QR card | **keep** | The only true vintage audience locally, and it falls in the January–March peak (d6) |
 | 8 | Fixed shipping classes A–D, "ships double-boxed, insured to sale price" on the listing, a lamp parts bag | **keep** | Calculated shipping undercharges double boxes, and the line supports the "matches description" test (d2) |
+| 8b | Four weeks of hands-only posts from the real room: a fixed drop slot in the bio, a teaser the day before, a "Here / Gone" legend, captions edited to "Gone.", "LINK" replies only | **keep** | It is how the niche sells, minus DM claims, and needs no new stock to start (d1) |
 | 9 | "Found a home, here's its cousin" email sent by hand after each sale | maybe | Nobody has a template, so it's hers to own. It's manual work every sale (d3) |
 | 10 | "Send it north": ship to the buyer's northern home after the season | maybe | Real seasonality (Lee January–March). Needs shipping classes first (d6) |
 | 11 | 48-hour hold card used everywhere | maybe | Chairish holds expire at 48 hours. Overlaps the decided list-member hold (d7) |
@@ -122,8 +137,9 @@ Items open as `#item-<id>` hash routes inside a dialog (`site/catalog.js`), and 
 | 15 | Etsy free-shipping guarantee turned on shop-wide | cut | It covers every item at $35 and up, which is the whole shop, heavy glass included (d2, d7) |
 | 16 | Offers from day 30 | cut | Conflicts with "Absolutely no offers" and anchors buyers at 61% (d7), unless Ricky decides otherwise |
 | 17 | Review incentives of any kind, including the mirror ball after a review | cut | Google and Shopify ban them (d4) |
+| 18 | TikTok Shop, Instagram/Facebook Shops, Pinterest Product Pins | cut for now | No TikTok lane for this stock. Meta needs site checkout. Pinterest bars pre-owned Product Pins (d1) |
 
-Ideas 1–8 become idea-room pages or amendments (`docs/codex-handoff-idea-room.md`, the "Round D" part of section 5).
+Ideas 1–8, 8b and 11–12 become idea-room pages or amendments (`docs/codex-handoff-idea-room.md`, section 8).
 
 ## Needs a lawyer, an accountant or an account
 
@@ -133,6 +149,7 @@ Ideas 1–8 become idea-room pages or amendments (`docs/codex-handoff-idea-room.
   - layaway terms
   - was/now price wording
   - whether a free Screen Test needs disclosing on testimonials
+  - whether a live sale with claims or bids is a regulated auction in Florida (d1; the source covers only Colorado and South Carolina)
 - **CPA (Florida):** tax on shipping and handling charges, and on gifts in the box.
 - **One email:** ask Shipsurance in writing whether framed mirrors, stained-glass shades and neon are covered.
 - **Accounts Ricky creates:**
@@ -141,7 +158,7 @@ Ideas 1–8 become idea-room pages or amendments (`docs/codex-handoff-idea-room.
   - a PO box for the CAN-SPAM address
   - Etsy and Shopify
   - Google Search Console
-  - a Pinterest business account
+  - Instagram Professional, a Facebook Page, a TikTok Business account and a Pinterest business account
   - Nextdoor
   - Google Business Profile, only with the Cameo live
   - a Vintage Market Days vendor profile (free)

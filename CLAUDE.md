@@ -49,6 +49,12 @@ refer to the original objects, independently of sample listings that reuse the i
 
 **Type and spacing (2026-10-29):** research only; nothing in `site/` has changed. Four Sonnet lanes are in `research/type-and-spacing-2026-10-29/`. The synthesis, decisions and build order are in `docs/type-and-spacing.md`. Bodoni Moda and DM Sans stay; Space Mono vs Courier Prime is Hollie's pick. Floors: no text under 12px, body 16px, no Bodoni under 20px. Phase 1 waits on Ricky's word, and Codex publishes. The desk rules page is `Chief Of Staff/wiki/web-type-and-spacing.md`.
 
+**Round D research (2026-10-29):** research only; nothing in `site/` changed.
+- Seven Sonnet lanes are in `research/round-d/`: social, shipping, email/SMS, reviews, search, local Southwest Florida, pricing.
+- The decision layer is `docs/round-d-synthesis.md`: re-checked quotes, three corrections to the agents, decisions for Ricky and ranked ideas.
+- Eight new idea pages plus two amendments are specced in `docs/codex-handoff-idea-room.md` section 8, for a second Codex build.
+- Gating fact: items are `#item-<id>` hash routes today, so search and sold-page ideas need one real URL per piece.
+
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
 

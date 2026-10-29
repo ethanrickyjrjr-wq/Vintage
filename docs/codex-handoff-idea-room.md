@@ -2,6 +2,10 @@
 
 Written 2026-10-29 by Claude for Codex.
 
+**Status (2026-10-29).**
+- Sections 1–7 are built and published as Sites version 34 (`docs/idea-room-release.md`).
+- Round D adds eight more pages and amends two. That is a second build: **section 8**. The 13 built pages stay as they are, except the two amendments in 8.4.
+
 Ricky, 2026-10-29:
 > "let's set it all up on different pages. we don't have to make it work exactly, just a lay out so she can see and decide. but don't put everything on homepage like it is now. Way too much there already."
 
@@ -429,3 +433,186 @@ test("only shipped images, and the shop is never spelled Hollywood", () => {
 Commit only the new files and the `build.mjs` list edit, with a message that says what changed. `git pull --rebase`, then push.
 
 **Publishing.** The pages ship with the site, unlinked and noindex. Ricky publishes as usual, then sends Hollie `<site>/ideas.html`. Record the Sites version at the top of this file.
+
+## 8. Round D additions (2026-10-29, a second build)
+
+Sections 1–7 are built and published as Sites version 34 (`docs/idea-room-release.md`). This section is a delta on top of that build: **eight new idea pages, two amended pages and a seventh hub group.** Sections 2–4 (shell, `ideas.js`, `ideas.css`) and the section 1 rules apply unchanged.
+
+The ideas come from `docs/round-d-synthesis.md`, ranked ideas 1–8, 8b and 11–12, with evidence in `research/round-d/d1..d7-*.md`.
+
+**Picks Hollie has already made stay put.** They are keyed by `data-idea`, and no existing `data-idea` changes.
+
+### 8.1 Files
+
+| File | Synthesis idea | Title (h1) | Eyebrow |
+|---|---|---|---|
+| `idea-own-page.html` | 1 | Every piece gets its own address. | Getting found · round D |
+| `idea-travel.html` | 2, 8 | How it travels. | Shipping · round D |
+| `idea-letters.html` | 3, 9 | Letters from Hollie. | Keeping people · round D |
+| `idea-proof.html` | 4 | Proof before the stars. | Trust · round D |
+| `idea-slow-burn.html` | 5, 11, 12 | The slow burn. | Pricing · round D |
+| `idea-marks.html` | 6 | Read the marks. | Getting found · round D |
+| `idea-local.html` | 7, 10, 13 | Around here, in season. | Local · round D |
+| `idea-four-weeks.html` | 8b | Four weeks from the room. | Social · round D |
+
+- Add the eight files to the `build.mjs` list.
+- `data-idea` values: `own-page`, `travel`, `letters`, `proof`, `slow-burn`, `marks`, `local`, `four-weeks`.
+- Each page's "Why" line names its round D report and the synthesis, for example `From: research/round-d/d5; docs/round-d-synthesis.md.`
+
+### 8.2 The hub (`ideas.html`)
+
+- **Lede:** "Ideas from three rounds of research" becomes "Ideas from four rounds of research".
+- **Count line:** "13 ideas to open. Six groups. No wrong answers." becomes "21 ideas to open. Seven groups. No wrong answers."
+- **New seventh group:** "07 / 8 possibilities", heading "Found, kept and shipped", after "Flash and the homepage". It has one card per new page, with the same fieldset markup as the other cards.
+- **Claude's pick badges:** own-page, travel and letters. The other five get "A possibility".
+- **Card pitches:**
+  - own-page: "One real page per piece, kept up after it sells. Search, Pinterest and the sold archive all start here."
+  - travel: "A plain box, a card that says open it on camera, and shipping prices that cover the double box."
+  - letters: "First dibs an hour early, a wish-list match, and the email that says it's gone, here's its cousin."
+  - proof: "No stars yet. Show what's true instead: what sold, what Hollie checked, where pieces landed."
+  - slow-burn: "No offers. Pieces step down quietly on drop day, and the old price is shown honestly."
+  - marks: "Guides built from Hollie's own photos of stamps, labels and bases."
+  - local: "One market worth a booth, a delivery note for Lee and Collier, and shipping north in April."
+  - four-weeks: "A month of posts shot from the room: hands, neon, the mirror ball. Every post points to a page."
+
+### 8.3 The new pages
+
+Sample pieces, titles and prices come from `demo-products.js`, as in section 1. A computed sample price uses the stated rule and is labeled "sample". Every person, review, quote, count and date is a labeled placeholder; no invented buyers. Never write "Hollywood" next to "Vine", even to explain a search collision; "Hollywood Regency" is fine.
+
+#### `idea-own-page.html`: one page per piece
+
+**Why:** items open as `#item-<id>` inside a dialog today, and Google indexes the page, not the fragment. So the sold archive, search markup and Pinterest pins all need one real URL per piece, kept at HTTP 200 after it sells (d5; synthesis).
+
+**Mock:** two side-by-side frames of the same piece, `gold-bust-lamp`.
+- **Frame 1, for sale.** A fake address bar reading `…/pieces/gold-bust-lamp`. Below it: the title and price, a condition line "Used. Rewired. Brass polished by hand. (sample)" and an Add to bag button.
+- **Frame 2, sold.** Same address bar, the same photo with the GONE ribbon from `idea-gone`, "Sold for $245 (sample)" and a **Find me one like it** button.
+- **Under the frames,** a small "What search engines read" panel in `var(--mono)`: two short JSON-like snippets for the two frames. They show only `"itemCondition": "UsedCondition"` and `"availability": "InStock"` vs `"OutOfStock"`, with the price kept.
+- **A note:** "The page stays up when it sells. Only the label changes. Never 'Refurbished': Google means a warranty by that."
+
+#### `idea-travel.html`: how it travels
+
+**Why:** the insurer won't pay a loss claim if the box hints at what's inside. USPS denies damage claims without packing evidence. Etsy's calculated shipping prices the item before it's double-boxed (d2; Shipsurance, USPS DMM 609 and Etsy captures re-checked in the synthesis).
+
+**Mock, three bands:**
+1. **The box.** Two drawn boxes side by side, in CSS, no photos: a plain kraft outer box labeled "Outside: plain. Says nothing." and an open inner box labeled "Inside: tissue, the card, sometimes something shiny (never promised)."
+2. **The card line.** A 5×7 card reading: "Open it on camera. Keep the box until you're happy. Anything wrong? Tell Hollie within 48 hours."
+3. **Shipping classes, as a four-row table.** A small glass · B table lamp or one parcel · C mirror or art box · D oversize, local or quoted. Every price cell reads "$— (from a real label quote)".
+
+**Also on the page:**
+- A lamp **parts bag** tag reading "HARP · FINIAL · BULB".
+- The listing line "Ships double-boxed, insured to the sale price."
+
+#### `idea-letters.html`: letters from Hollie
+
+**Why:** an email list, sold as first dibs, fits the weekly drop. Kit's free plan covers 10,000 subscribers with unlimited sends but no automations. Buyers are invited by the box-card QR, never added (d3).
+
+**Mock:**
+- **Five email cards stacked like letters.** Each has the subject line and three lines, copied from `research/round-d/d3-email-sms.md` section 6 with `{placeholders}` left visible:
+  - Welcome
+  - Drop alert
+  - Wish-list match
+  - It's gone, here's its cousin
+  - After purchase, find me another
+- **The footer line** under the last card: "Holliewood & Vine, {postal address} … Unsubscribe in one click, no hard feelings."
+- **A signup box** (dead) beside the cards. Microcopy: "Get the door an hour early. One email a week. Leave any time." Fields: Email, and "What are you hunting?" chips (Lamps · Glass · Mirrors · Chairs · Fashion) that read as tags.
+- **A greyed "Texts" card:** "Parked: texts wait for a lawyer to read the consent wording."
+
+#### `idea-proof.html`: proof before the stars
+
+**Why:** one-of-one listings lose their reviews when they sell, and most small vintage shops show no stars at all. The FTC rule allows asking every buyer the same honest question. Google and Shopify ban any reward for a review, and so does this shop (d4).
+
+**Mock, four blocks:**
+1. **A "Rehomed" counter.** Large numeral "—", with the line "Counts real sales only. None yet."
+2. **"Checked by Hollie" on a lamp card** (`lamp-ruby-glass-brass`): cord · socket · harp, each with an empty checkbox and "(sample)".
+3. **"Where it landed."** Three empty white frames labeled "A buyer's photo goes here, with their yes on file". Each credit line reads "First name, city (placeholder)". Under the frames: "Photos from buyers who were invited to send one and told we might feature it. Nobody was paid."
+4. **"The ask, word for word."**
+   - The card line: "Good, bad or somewhere in the middle, tell people where you found it."
+   - A small rules list:
+     - same ask to everyone
+     - no gifts or discounts for reviews
+     - no reviews from family or friends
+     - newest first
+
+No stars and no quotes anywhere on the page.
+
+#### `idea-slow-burn.html`: the slow burn
+
+**Why:** buyers anchor offers low. On eBay, first offers average 61% of list. The shop's line is "Absolutely no offers." A quiet markdown ladder on drop day keeps that true. "Was / now" is a legal claim, so the old price is shown with its date (d7; 16 CFR 233.1).
+
+**Mock:**
+- **A ladder graphic:** day 30 → 10% off · day 60 → 20% · day 90 → 30%, then "back to Hollie's shelf or a new photo".
+- **A "Recently reduced" shelf of three cards.** Each shows "Listed at $X on {date}. Now $Y. (sample)", where Y = the demo price × (1 − step), rounded down to the nearest $5:
+  - `gold-bust-lamp` $245 → day 30 → $220
+  - `southwestern-armchair` $325 → day 60 → $260
+  - `mirror-gold-oval-rococo` $225 → day 90 → $155
+- **A 48-hour hold card:** "Held for you until {time}. Then it goes back on the rack."
+- **A greyed "Layaway, $300 and up" card:** "Parked: a lawyer reads the terms first."
+
+#### `idea-marks.html`: read the marks
+
+**Why:** searches about identifying or dating a piece are won by guides and collector threads, not marketplaces. A guide built from the shop's own photos beats a generic retailer guide (d5).
+
+**Mock:**
+- **One guide page laid out:**
+  - h2 "Is that brass lamp a Stiffel? Check the base before you get excited."
+  - sections: What it is · Features · Marks and numbers · Value · Questions
+  - three empty frames labeled "Hollie's photo: base stamp", "Hollie's photo: paper label" and "Hollie's photo: cord tag"
+  - body text that is visibly placeholder: "Facts to be sourced before publishing."
+- **A rail of the other four titles** from d5's deliverable, as cards:
+  - "Pink glass, interrogated"
+  - "Hollywood Regency without the costume"
+  - "The bar cart is a stage"
+  - "Cut glass or merely pressed?"
+- **Rule: state no maker facts on the mock.**
+
+#### `idea-local.html`: around here, in season
+
+**Why:** a booth at a real vintage market, a line for local delivery tax, and shipping north when the season ends (d6; the Lee County 2025 visitor table puts 33.9% of visitor spending in January–March).
+
+**Mock:**
+- **An event card:** "Vintage Market Days · Lee Civic Center, Fort Myers · January 29–31, 2027 · booth fee: asking". Under it, a small card: "Scan for a free Screen Test" with a square labeled "QR goes here".
+- **"Send it north."** "Bought it here in February? We'll ship it to your other address in April." No price shown.
+- **A delivery-tax note:** "Delivered in Lee: 6.5% sales tax. In Collier: 6%."
+- **A greyed Google card:** "A Google listing only when Hollie visits homes (the Cameo)."
+
+#### `idea-four-weeks.html`: four weeks from the room
+
+**Why:** niche shops sell on a fixed weekly drop slot stated in the bio, a teaser the day before, and sold pieces marked in place. This shop skips comment or DM claims, because one-of-one stock on three channels can sell twice. Every post points to a page (d1).
+
+**Mock:**
+- **A four-column calendar,** one column per week, each with its theme as the column head:
+  - Enter the Room
+  - Lights On
+  - Pink, Cut and Wrapped
+  - Dress the Set
+- **Five post tiles per column.** Each is a small 4:5 frame, with the post's one line under it and the page it links to in `var(--mono)`. Copy the lines and targets from the table in `research/round-d/d1-social-video.md` ("4-week content skeleton"). Each frame:
+  - uses `photos-IMG_66xx--480.webp` or a sample cutout on burgundy
+  - is labeled "Reel", "Carousel" or "Still" in the corner
+- **A "Here / Gone" legend strip** above the calendar: a white chip "HERE" and a pink chip "GONE", with the line "When it sells, the caption starts with Gone. The post stays up."
+- **A phone-sized bio card:** "Holliewood & Vine · one of one, always · drops every {DROP DAY} · link below". Under it, the canned reply "Is this still available?" → "If the page says Here, yes. Here's the link."
+- **A greyed "Shops" card:** "TikTok Shop, Instagram Shop, Pinterest Product Pins: parked. No lane for this stock, or the site needs checkout first."
+- Week 4's video-call post and the live carry the tag "after booking opens".
+
+### 8.4 Amend two built pages
+
+- **`idea-box.html`.** Add one line to the back of the card: "Good, bad or somewhere in the middle, tell people where you found it." Add a note under the card: "The mirror ball is never tied to a review. Google and Shopify ban gifts for reviews (round D, d4)." Keep everything else.
+- **`idea-item.html`.** In the right column, under the shipping line, add:
+  - "Ships double-boxed, insured to the sale price."
+  - a "Checked by Hollie: cord · socket · harp (sample)" line
+  - the condition line "Used. Rewired. Brass polished by hand. (sample)"
+
+  Keep the existing grade legend.
+
+### 8.5 Test change
+
+In `site/tests/idea-room.test.mjs`, change `assert.equal(pages.length, 13);` to `assert.equal(pages.length, 21);`. Everything else in the test already covers the new pages: the build list, noindex, banner, `data-idea`, the hub link, the hub fieldset, shipped images and the spelling rule.
+
+### 8.6 Acceptance
+
+- Section 7 applies to all 21 pages and the hub.
+- Also check:
+  1. The eight new cards sit in group 07.
+  2. Hollie's existing picks still load on the hub after the rebuild.
+  3. Copy my picks now produces 21 lines.
+  4. `git diff --stat site/storefront.html site/storefront.js` is empty.
+- Record the new Sites version in `docs/idea-room-release.md`.
