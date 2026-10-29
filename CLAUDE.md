@@ -47,6 +47,8 @@ refer to the original objects, independently of sample listings that reuse the i
 - Rush uses collection pieces only (Florida ch. 538 holds).
 - Built and published in demo state ("Booking opens soon") as Sites version 27 on 2026-10-28; implementation commit `5675a95`. Ricky approved the written prices, free Screen Test and Hire Hollie nav label. Booking activates when Ricky gives the inbox address (block 0 of the handoff); no Cal.com link is configured. Verification and release details are at the top of the handoff.
 
+**Type and spacing (2026-10-29):** research only; nothing in `site/` has changed. Four Sonnet lanes are in `research/type-and-spacing-2026-10-29/`. The synthesis, decisions and build order are in `docs/type-and-spacing.md`. Bodoni Moda and DM Sans stay; Space Mono vs Courier Prime is Hollie's pick. Floors: no text under 12px, body 16px, no Bodoni under 20px. Phase 1 waits on Ricky's word, and Codex publishes. The desk rules page is `Chief Of Staff/wiki/web-type-and-spacing.md`.
+
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
 

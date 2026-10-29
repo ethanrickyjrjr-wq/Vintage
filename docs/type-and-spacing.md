@@ -62,6 +62,14 @@ These come from lane C's token block, amended by A, B and D. The full CSS is in 
 | Meta (size, condition) | 13.3 → 14.4px | DM Sans 400 | 1.45 | 0 |
 | Label | 12px, with an 11px floor for decorative tags only | mono, uppercase | 1.3 | 0.08em (allowed 0.06 to 0.12) |
 
+**Where the hero is set today:** lane D's measurements win over lane C's line references.
+- The `.salon h1` font sizes in `atmosphere.css` (lines 72, 284, 301 and 360) are shadowed.
+- The live sizes are in `homepage.css`:
+  - `:19`: `clamp(74px, 7.8vw, 118px)` on desktop.
+  - `:86`: a bare `8.8vw` on tablet. This is the real WCAG F94 instance.
+  - `:101`: `clamp(43px, 11.9vw, 78px)` on phones.
+- The `-.055em` tracking at `atmosphere.css:73` does render, because no later rule sets letter-spacing on `.salon h1`. That is from a cascade read at `b4ef6fd`, not measured in a browser.
+
 Rules that come with the roles:
 - **No Bodoni under 20px, and none on prices, sizes, conditions or buttons.** Lane C measured the hairline at about 0.2 CSS px at every size, and `opsz: auto` doesn't thicken it. From 20 to 31px, use `font-optical-sizing: none`, which doubles the hairline. No Bodoni italic under 28px.
   - **X verified, Y needs review:** the existing 23px italic disco sign-off fails this rule on C's measurement, but lane A judged it to read well by eye. Check it on a 1x Windows monitor before changing it.
@@ -104,22 +112,26 @@ Optional extras:
 ## 6. Decisions for Ricky (and Hollie, who picks the looks)
 
 1. **Labels: Space Mono or Courier Prime?** I recommend building both as a preview and letting Hollie pick. Courier Prime fits the screenplay voice; Space Mono costs nothing to keep.
-2. **Hero on phones.**
-   - Keep the 52px floor, which fits on one line but grows only 1.42x at 300% zoom.
-   - Or raise it to 80px and let it wrap, which reaches 2x at 300% zoom and is WCAG 1.4.4-safe.
-3. **Hero tracking.** Today it's -0.055em, about 3.4x what optical-size serifs use. The research suggests -0.02em, or at most -0.03em. It's the signature look, so it needs an eyeball A/B, not a rule.
+2. **Hero on phones.** Today's floor is 43px (`homepage.css:101`).
+   - Raise it to 52px. That keeps "Bad influence." on one line at 320px, but at 300% zoom it grows only 1.42x.
+   - Or raise it to 80px and let it wrap. That reaches 2x at 300% zoom and is WCAG 1.4.4-safe.
+   - Either way, the bare `8.8vw` tablet rule gets a rem term.
+3. **Hero tracking.** Today it's -0.055em, and it does render. That's about 3.4x what optical-size serifs use. The research suggests -0.02em, or at most -0.03em. It's the signature look, so it needs an eyeball A/B, not a rule.
 4. **Which vintage elements ship.** My order is 1 → 3 → 2 → 5 → 4. Lot numbers need the `lot` data field first.
 5. **A neon script line, yes or no?** If yes, Sacramento above the Hire contact. If no, zero bytes.
 
 ## 7. Build order once approved
 
-**Phase 1: fixes that don't change the look** (about 35 lines; lane D's quick wins):
+**Phase 1: mechanical fixes** (about 35 lines; lane D's quick wins). These are visible changes, not a redesign: labels go from 9px to 12px and body from 15px to 16px.
 - Raise the labels, kickers, phone cards and product dialog to 12px.
 - Raise body text to 16px.
 - Cap prose at about 65 characters and fix the Hire grids at 820 and 1100px.
 - Add `text-wrap: balance` to headings and `text-wrap: pretty` to paragraphs.
 - Convert the 5 px trackings to em, which restores the monogram.
-- Move the 2 faux-italics to Bodoni italic, then add `font-synthesis-weight: none`.
+- Set the 2 faux-italics (`p.owner-aside` at 12–13px, and the Hire epigraph's `<cite>` at 12px) to `font-style: normal`. That costs 0 bytes.
+  - Lane D's "use `var(--display)`" would break the floor above: no Bodoni under 20px, no Bodoni italic under 28px.
+  - A real DM Sans italic is the alternative, but only after measuring its woff2 size from the CSS2 API.
+- Add `:root { font-synthesis-weight: none; }` as a guard against faux-bold. MDN lists it as Baseline widely available since March 2023, verified 2026-10-29.
 - Widen Bodoni to 400–900.
 - Add the fallback faces and preload DM Sans.
 
