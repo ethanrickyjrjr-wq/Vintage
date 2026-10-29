@@ -100,9 +100,9 @@ if (new URLSearchParams(location.search).get("labels") === "courier") {
   });
 })();
 
-// Fabulous From Online: every hire link opens the same email brief; occasion links add their occasion.
+// Fabulous From Online: booking links open an email brief; occasion cards keep their own pages.
 (() => {
-  const inbox = ""; // Ricky's inbox address. Empty = demo state: links stay on #hire-contact ("Booking opens soon").
+  const inbox = ""; // Ricky's inbox address. Empty = demo booking state ("Booking opens soon").
   if (!inbox) return;
   const brief = (occasion) => [
     "Hi Hollie,",
@@ -124,6 +124,7 @@ if (new URLSearchParams(location.search).get("labels") === "courier") {
     "Photos attached: a wide shot of each space and each corner, in daylight.",
   ].join("\r\n");
   for (const link of document.querySelectorAll("[data-hire]")) {
+    if (link.dataset.occasionPage !== undefined) continue;
     const occasion = link.dataset.hire;
     const subject = ["Fabulous From Online", occasion, "Holliewood & Vine"].filter(Boolean).join(" - ");
     link.href = `mailto:${inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(brief(occasion))}`;

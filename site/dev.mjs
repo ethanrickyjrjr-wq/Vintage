@@ -3,6 +3,7 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRoomWorker } from "./room-worker.mjs";
+import { occasions, renderOccasionPage } from "./occasion-pages.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 4173);
@@ -11,6 +12,11 @@ const worker = createRoomWorker();
 createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
+    const occasion = occasions.find(item => url.pathname === `/occasions/${item.slug}.html`);
+    if (occasion && ["GET", "HEAD"].includes(request.method)) {
+      response.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
+      response.end(request.method === "HEAD" ? undefined : renderOccasionPage(occasion)); return;
+    }
     if (url.pathname === "/api/room-preview") {
       const init = { method: request.method, headers: request.headers };
       if (!["GET", "HEAD"].includes(request.method)) { init.body = request; init.duplex = "half"; }

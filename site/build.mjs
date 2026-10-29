@@ -11,6 +11,7 @@ import {
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
+import { occasions, renderOccasionPage } from "./occasion-pages.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const dist = path.join(root, "dist");
@@ -51,6 +52,7 @@ for (const file of [
   "storefront.css",
   "atmosphere.css",
   "homepage.css",
+  "occasions.css",
   "sample-shop.css",
   "account-preview.css",
   "account-preview.js",
@@ -94,6 +96,10 @@ writeFileSync(
   path.join(output, "index.html"),
   readFileSync(path.join(root, "storefront.html")),
 );
+mkdirSync(path.join(output, "occasions"), { recursive: true });
+for (const occasion of occasions) {
+  writeFileSync(path.join(output, "occasions", `${occasion.slug}.html`), renderOccasionPage(occasion));
+}
 cpSync(path.join(root, "assets"), path.join(output, "assets"), {
   recursive: true,
   filter: shipAsset,
