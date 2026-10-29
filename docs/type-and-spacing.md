@@ -1,9 +1,11 @@
 # Type and spacing: what to fix, what to adopt
 
-**Status (2026-10-29):** research done, nothing built. Ricky asked for a check that the site uses the
-right fonts and spacing, with vintage styles worked in. Four Sonnet lanes reported; this document
-reconciles them. **No `site/` change is made until Ricky approves**: the decisions are in section 6.
-The live site deploys through Ricky via Codex, so a git push does not change it.
+**Status (2026-10-29):** Ricky authorized the five decisions in section 6. The targeted implementation,
+selected treatments, review links and remaining work are in [the handoff](type-and-spacing-handoff.md).
+Space Mono stays default while Hollie compares Courier Prime; the phone headline is 52px in rem,
+tracking is -0.03em, Hire and the bag gain print details, and no extra neon line is added.
+The broader type/spacing migration below remains research and proposed work. A git push does not
+publish the live site; publication is recorded in the handoff.
 
 Evidence (read these for sources; every number below is traced there):
 

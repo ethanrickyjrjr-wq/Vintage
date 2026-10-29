@@ -1,6 +1,17 @@
 /* Latin subsets self-hosted from Google Fonts; licenses included alongside these files. */
 
 @font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 120%;
+  src: url(./courier-prime-normal-latin.woff2) format('woff2');
+}
+
+:root[data-labels="courier"] { --mono: 'Courier Prime', 'Courier New', monospace; }
+
+@font-face {
   font-family: 'Bodoni Moda';
   font-style: italic;
   font-weight: 400 500;

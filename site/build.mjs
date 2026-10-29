@@ -47,6 +47,7 @@ function shipAsset(file) {
 mkdirSync(output, { recursive: true });
 for (const file of [
   "storefront.html",
+  "type-review.html",
   "storefront.css",
   "atmosphere.css",
   "homepage.css",

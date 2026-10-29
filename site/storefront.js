@@ -1,3 +1,8 @@
+// Opt-in art-direction comparison; normal visits retain Space Mono.
+if (new URLSearchParams(location.search).get("labels") === "courier") {
+  document.documentElement.dataset.labels = "courier";
+}
+
 (() => {
   const menuToggle = document.querySelector("#menu-toggle");
   const mobileNav = document.querySelector("#mobile-nav");
