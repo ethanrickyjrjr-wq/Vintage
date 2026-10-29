@@ -11,7 +11,9 @@ const hub = read("ideas.html");
 const build = read("build.mjs");
 
 test("the idea room has its pages and ships them", () => {
-  assert.equal(pages.length, 13);
+  assert.equal(pages.length, 12);
+  assert.doesNotMatch(hub, /idea-homepage\.html|data-idea="homepage"/);
+  assert.doesNotMatch(build, /"idea-homepage\.html"/);
   for (const file of ["ideas.html", "ideas.css", "ideas.js", ...pages]) assert.match(build, new RegExp(`"${file}"`), `${file} missing from build.mjs`);
 });
 

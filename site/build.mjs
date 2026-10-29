@@ -87,7 +87,6 @@ for (const file of [
   "idea-sell.html",
   "idea-flash.html",
   "idea-box.html",
-  "idea-homepage.html",
   "showroom.html",
   "showroom.css",
   "showroom.js",
