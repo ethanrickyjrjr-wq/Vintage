@@ -172,6 +172,31 @@ report its output verbatim. Add the Sites version number to this file under a "P
 
 ## Published
 
+Sites version 23 was published publicly on 2026-10-28 from the `8d95c22` site source.
+A fresh extraction of that commit passed all 23 tests and rebuilt successfully. The matching build
+was saved with Sites source commit `c98b10a8b9d15f6ebfddf1f3e1ec8dc8905e2a01`;
+deployment `appgdep_6ae2a1d4e358819185465cce09d5c3c4` succeeded. Live URL:
+https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site
+
+Live acceptance checks 11–13 ran in Chrome at desktop (2560 px) and 390 px:
+- **11 PASS:** placing one find shows Discofy first in the toolbar, with no ball in the photo.
+  Discofy drops the ball, starts advancing audio and spinning, and clips lights to the photo.
+  Both the button and the settled ball stop playback and hide the ball. Clear hides Discofy and
+  stops playback; Undo restores the find and Discofy silently. The entrance disco works independently.
+- **12 QUALIFIED:** two fresh-room Decorate runs at each width showed the loading ball; an active
+  room disco stopped first. Results retained `#your-room`, with no detail or category opening.
+  Desktop stayed at scrollY 11856 throughout loading and completion. At 390 px the existing code
+  deliberately centers the photo when Decorate starts (scrollY settled at 15003), then stays there
+  through completion. Thus the literal zero-scroll requirement does not pass on mobile, although
+  the reported jump to a product/category did not recur. Both runs reported no clear positions
+  for the selected lamp; the photo remained available for manual placement.
+- **13 PASS:** a grid detail's Try it in your room closes the detail, reaches the room and retains
+  `#your-room`. Reload leaves the empty room section in view, with no product or category opened.
+
+Only requested lines 11–13 were exercised; the older navigation console script was not rerun.
+The temporary viewport was restored and playback stopped. Evidence (ignored):
+`artifacts/room-disco/sites-v23-loading-desktop.png` and `artifacts/room-disco/sites-v23-live.png`.
+
 Sites version 22 was published publicly on 2026-10-28 from the `ef4f9b3` site build.
 `npm test` passed all 23 tests, followed by a successful `node build.mjs`.
 The console check was skipped as requested; Claude will run it against the live site.
