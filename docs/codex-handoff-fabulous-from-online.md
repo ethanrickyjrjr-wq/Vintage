@@ -1,5 +1,15 @@
 # Handoff for Codex: the Fabulous From Online section (hire Hollie)
 
+**Occasion styling updated 2026-10-29: Sites version 29.** All 15 occasions now
+have distinct opaque poster colors, contrasting type, and selected invitation,
+camera and record details. Terra researched the visual references; Sol checked
+the palette; both reviewed the desktop rendering. Design rationale and sources
+are recorded in `fabulous-from-online-design.md`. All 33 tests, the build, both
+themes and desktop/390/320px checks passed; Lighthouse accessibility is 100.
+GitHub: `1281f65`. Sites source: `720b090cf33ec3ff97714ade7c351cdc4d68fe9b`.
+Deployment `appgdep_6ae2d58b6f248191ad0fd1df4993802d` succeeded. Booking remains
+in demo state. The subtle-tint intermediate release (version 28) is superseded.
+
 **Published 2026-10-28: Sites version 27, demo state.** Inbox is blank, there is no
 Cal.com link, Screen Test is free, prices are as written, and the nav says Hire Hollie.
 The CTA is “Booking opens soon”; all 15 occasions lead to it. GitHub implementation:
