@@ -11,7 +11,7 @@ Tags: `verified` (read on the live page), `vendor claim`, `inferred` (my reading
 1. **Start free and native this week.** Business Instagram account, Instagram's own Edits app, one 90-minute shoot, the room and Hollie's hands. No scheduler, no bots, no spend. Nothing automatic can run yet anyway: no accounts, no real stock, no checkout.
 2. **Add Buffer Free in week 2.** It gives 3 channels, 10 queued posts each, and an API **and an MCP server on the free plan**, so Claude can draft and queue posts for Hollie to approve in Buffer. This is the cheapest real autonomy (`verified`: Buffer pricing and MCP pages; Claude driving it is `inferred`, untested).
 3. **Build the full pipeline later, in this order of payoff:** Claude-drafted captions, code-rendered covers, a JSON edit list rendered by ffmpeg, a metrics sheet, then own-API publishing. Replies stay by hand until the Meta question in section 9 is settled.
-4. **Instagram first, then Pinterest, YouTube Shorts and a Facebook Page. TikTok in month 3.** Skip Whatnot, Poshmark, Depop, Lemon8 and Facebook Groups.
+4. **Instagram first, then Pinterest, YouTube Shorts and a Facebook Page. TikTok in month 3** (make the account now to hold the handle). How to grow is section 3A. Skip Whatnot, Poshmark, Depop, Lemon8 and Facebook Groups.
 5. **No best time to post exists.** Five 2026 studies give five answers. Run the four-week test in Appendix E and use Hollie's own numbers.
 6. **Nothing links to a product until real stock exists.** November is a setup month, not a posting month for products. Room and brand posts can start the day the accounts exist.
 
@@ -76,6 +76,25 @@ A URL typed in a public Instagram comment is **not tappable** (`vendor claim`, t
 
 ---
 
+## 3A. How to grow
+
+Ranked by how well the evidence holds. Every line is from Instagram's own statements or a lane-verified source; none is a promise.
+
+1. **Make reels people send.** Sends per reach is one of Instagram's three top signals, and slightly more important than likes for non-followers; watch time is the most important for both (Mosseri, 2025-01-21, transcript read). A reel that makes someone text it to a friend ("this lamp") beats one that earns a like.
+2. **Clear the five gates to reach non-followers:** no watermarks, add audio (especially on carousels), 3 minutes or less, original, good account status (Mosseri, 2025-01-23). Photos and carousels fall under the originality rules from 2026-04-30. Your own photos and video count as original.
+3. **Post enough, and keep one lane.** 10 or more reels a month (Instagram FAQ), 3 to 5 feed posts a week (Buffer study), and mix in carousels. Instagram says staying on a theme your audience already responds to earns similar distribution: lamps, pink glass, the burgundy room.
+4. **Put the keywords where Search reads them:** the Name field, bio and captions (not comments), plus 3 to 5 niche hashtags (up to 5 allowed). Hashtags describe a post; they do not raise reach.
+5. **Reply to comments within 7 days** (Instagram FAQ).
+6. **Trial Reels once you reach 200 followers** on a professional account: they go only to non-followers first, so you can test hooks before your followers see them.
+7. **Collab posts with adjacent accounts** (vintage dealers, stylists, designers) are an approved collaboration tool for originality (`verified`), but they cannot be scheduled, so post them live. Eligibility details were not read; the advice to pick adjacent, not competing, accounts is `inferred`.
+8. **A Broadcast channel as the drop list** (text, video, voice, polls; no claims in it). Eligibility was not read; using it as the "tell me when the drop opens" list is `inferred`.
+9. **Pinterest is the long-lead search channel** (plain Pins to real pages, live 4 to 6 weeks before a season); **Shorts mirror** the same cuts.
+10. **A signup-only hunt list** (w1f, ranked first for your rules): collect emails or Broadcast followers for "find me a piece" requests before stock exists, with no listing link until it does.
+
+**What no source gives:** a time to the first 1,000 followers or to steady sales. The nearest case is 7,100 followers in about 12 months (Halifax, 2019 to 2020), and the growth stories are mostly 2018 to 2021 winners. Anchor on nothing; use the four-week test in Appendix E and Instagram Insights.
+
+---
+
 ## 4. Step by step
 
 Each step: what, where, cost, time, who. Prices as read 2026-10-29.
@@ -97,7 +116,7 @@ Do them in this order. Nothing here needs a legal entity or an ID check, as the 
 | 3 | **Meta Business Suite** | https://business.facebook.com/latest | Facebook login | Free scheduling for Facebook and Instagram |
 | 4 | **Pinterest Business** | https://www.pinterest.com, desktop only ([help](https://help.pinterest.com/en/business/article/get-a-business-account)) | An email not already used on Pinterest | Business needed to schedule Pins |
 | 5 | **YouTube channel, then verify** | https://www.youtube.com, then https://www.youtube.com/verify ([help](https://support.google.com/youtube/answer/171664)) | Phone number for the verification code | Verification unlocks Shorts custom thumbnails (Studio on a computer only) |
-| 6 | **TikTok, then Business** | https://www.tiktok.com | Phone, email or third-party login | **Month 3.** Business gives the Commercial Music Library; scheduling is 10 days ahead on desktop (TikTok's old undated blog; 30 days is a snippet, `need review`) |
+| 6 | **TikTok, then Business** | https://www.tiktok.com | Phone, email or third-party login | **Create the account now to hold the handle; post from month 3.** Business gives the Commercial Music Library; scheduling is 10 days ahead on desktop (TikTok's old undated blog; 30 days is a snippet, `need review`) |
 | 7 | **Threads** (optional mirror) | https://www.threads.com | Sign in with Instagram or Facebook | Cut-down mirror only |
 
 **Not yet:** a Meta developer account and app (Tier C only; needs a phone and email code, https://developers.facebook.com/async/registration); Etsy and Shopify (separate project).
@@ -164,7 +183,7 @@ Click evidence is thin everywhere: no controlled Instagram or TikTok cover study
 | Zernio (formerly Late) | $12 for four accounts (usage-based) | API is the product | Newer; whether it runs on its own approved apps was not verified |
 | Later, Hootsuite, Planoly | Trials or $14 and up | Not read | Skipped |
 
-TikTok rule (w2c): unaudited apps post `SELF_ONLY`, and TikTok's guidelines name "a utility tool to help upload contents to the account(s) you or your team manages" as not acceptable. So public TikTok posting goes **through a scheduler that holds the approved app**, not your own app.
+TikTok rule (w2c): unaudited apps post `SELF_ONLY`, and TikTok's guidelines name "a utility tool to help upload contents to the account(s) you or your team manages" as not acceptable. So public TikTok posting goes **through a scheduler that holds the approved app**, not your own app. **Untested:** whether Buffer Free actually publishes a public TikTok from a Business account is smoke test SA-1 in the handoff; Buffer's own posts guide omits TikTok while its MCP page includes it. Until SA-1 passes, post TikTok by hand in TikTok Studio.
 
 ### Phase 8: replies
 
@@ -282,7 +301,7 @@ Full table with gates is Appendix B. **November is a setup month**: Pinterest as
 | Private reply or DM | **Unclear.** Three Meta pages disagree on Standard Access |
 | Counter-quote (Business Verification page) | "If your app will only be used by app users who have a role on the app itself you do not need to complete verification ... all features are always active." |
 
-One hour settles it: a throwaway Meta app, a tester account and one non-tester commenting account (nine steps, `research/social-2026-10-29/w3d-meta-arbiter.md`). **The desk wiki line "our own pages need no review" is true for posting and wrong for comment webhooks; I will fix the wiki page.**
+One hour settles it: a throwaway Meta app, a tester account and one non-tester commenting account (nine steps, `research/social-2026-10-29/w3d-meta-arbiter.md`). **The desk wiki line "our own pages need no review" is true for posting and contested for comment webhooks until the one-hour test; the wiki page will say that, not "wrong".**
 
 **Other tests worth an afternoon:**
 
@@ -302,7 +321,7 @@ One hour settles it: a throwaway Meta app, a tester account and one non-tester c
 
 1. `site/hire.html:121` and `docs/fabulous-from-online-design.md:87`: the 10% multi-room line (decision 6).
 2. Cover template 1's top label (y 330) and the per-listing focal box (Appendix C).
-3. The desk wiki page `Chief Of Staff/wiki/social-comment-ai.md`: comment webhooks are not covered by "our own pages need no review."
+3. The desk wiki page `Chief Of Staff/wiki/social-comment-ai.md`: "our own pages need no review" holds for posting; for comment webhooks it is contested until the throwaway-app test.
 4. The 4-week skeleton in `research/round-d/d1-social-video.md`: add 2 to 3 reels and carousels (cadence).
 5. If approval mode B is chosen, `docs/dashboard-handoff.md`'s "no auto-publish" rule.
 6. Pages the posts point to: piece-number pages (`/p/<n>`), a link-in-bio page, a sold archive (Codex builds these; handoff).
