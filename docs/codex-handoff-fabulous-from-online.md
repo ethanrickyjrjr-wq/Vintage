@@ -1,5 +1,23 @@
 # Handoff for Codex: the Fabulous From Online section (hire Hollie)
 
+**Published 2026-10-28: Sites version 27, demo state.** Inbox is blank, there is no
+Cal.com link, Screen Test is free, prices are as written, and the nav says Hire Hollie.
+The CTA is “Booking opens soon”; all 15 occasions lead to it. GitHub implementation:
+`5675a95`. Sites source: `b97b83a863d66833c026c81f83fa4df4b7742273`. Deployment
+`appgdep_6ae2c11e9b848191b90cf90681d59013` succeeded at
+https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/#hire-hollie .
+
+Verified: all 33 `npm test` checks and the production build passed. Browser checks
+covered 1440, 900, 390 and 320 CSS px, all three nav links, mobile-menu closure,
+keyboard disclosures and focus rings, both burgundy palettes, saved finds, bag,
+room editor and disco. Lighthouse accessibility: 100. All six navigation-script
+checks passed after replacing its two fixed dialog-close delays with bounded
+waits for the actual history/bag state. Email subject/body encoding was tested for
+the generic brief and every occasion with a fixture inbox; opening a real mail
+client and Cal.com booking are deferred until contact details are supplied.
+Local reports and screenshots are in ignored `artifacts/fabulous-from-online/`.
+The release preserves the sample-room repair already published in version 25.
+
 Written 2026-10-28 by Claude for Codex. **You can build this and land it on master now.**
 - With no inbox in block 0, it lands in **demo state**. The call to action reads "Booking opens soon", like the bag's checkout, and the email script does nothing. Any publish of unrelated work stays safe.
 - It goes live when Ricky supplies the inbox.
