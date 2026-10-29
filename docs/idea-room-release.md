@@ -1,5 +1,20 @@
 # Idea room release — 2026-10-29
 
+## Latest update — Sites version 36
+
+Removed the completed **A lighter homepage** preview, its hub card, build entry and unused diagram styles. The hub now contains **twelve ideas**; copied picks contain twelve lines and omit the removed idea. GitHub change: `757e58b`.
+
+- Sites source: `9dbc12c89d0d4a3131e3dbe54f2ac136bbdf4bd2`.
+- Saved version: `appgprj_6adfa102ca188191b5cd6634c734894a~appgver_88487720e37c8191bbb4718f809b2f11`.
+- Deployment: `appgdep_6ae36012168c819182470deaf2102f16`, succeeded.
+- Live link: https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/ideas.html.
+
+`npm test` passed all **42 tests**, and the build passed. The hub has no horizontal scroll at 1440, 390 or 320 CSS px. The removed page is absent from the build output. Verified twelve live hub cards and no link to the completed homepage idea. The approved lighter homepage and separate room/Hire Hollie pages from `e0ba6f2`, plus the folded mobile room directions from `db03e13`, are preserved in the publication; this task made no new homepage edits.
+
+Emailed Hollie the updated link with subject **Holliewood & Vine — the idea room** and instructions for Keep / Maybe / Cut and Copy my picks. Gmail confirmed **Message sent**.
+
+## Initial release — Sites version 34
+
 Published as **Sites version 34** at https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/ideas.html.
 
 - Sites source: `9939f99c5363347abfd294bb5cf2b76d07cf6d09`.
@@ -47,4 +62,4 @@ Local visual and machine-readable evidence is in ignored `artifacts/idea-room/`,
 
 After publication, verified the live hub and sold-archive page in Chrome; all eight archive photographs loaded and no console errors were reported. A separate command-line HTTP probe was blocked with HTTP 403 by the hosted service, so full live URL coverage is not claimed; complete image-URL checks above were against the local build.
 
-Hollie delivery: waiting for an email address or messaging contact; neither signed-in Gmail account yielded an identifiable matching contact.
+Hollie delivery was completed with the version 36 update above.
