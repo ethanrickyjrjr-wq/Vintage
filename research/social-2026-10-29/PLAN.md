@@ -42,3 +42,5 @@ Shared stage taxonomy for finds: ingest > edit > caption > cover > publish > rep
 ## Status log
 - 2026-10-29: BRIEF.md and PLAN.md written. Wave 1 launching.
 - 2026-10-29: wave 1 reports saved: w1a (saved by parent from inline return), w1b, w1e, w1f, w1g. Still running: w1c (hooks, clipfeed), w1d (calendar), w1h (capture/ingest).
+- 2026-10-29: w1c and w1d saved. Open conflict from w1c: a URL in a public Instagram comment is not tappable, so "reply LINK with the link" needs DM/private reply, Story sticker, or link-in-bio + piece number (BRIEF2 sends this to w2d).
+- 2026-10-29: wave 2 launched (BRIEF2.md): w2b covers, w2c publish, w2d reply, w2e GitHub, w2f Hugging Face. HELD until w1h lands: w2a editing, w2g runtime (they need the ingest findings). Still running from wave 1: w1h.
