@@ -45,7 +45,7 @@ refer to the original objects, independently of sample listings that reuse the i
 **Fabulous From Online (2026-10-28):** a homepage section where people hire Hollie to find a piece or style a corner, a room or a whole home. Six Sonnet reports are in `research/fabulous-from-online/`. Decisions are in `docs/fabulous-from-online-design.md`, and the build spec is in `docs/codex-handoff-fabulous-from-online.md`. The headline is "You bring the plot. Hollie dresses the set."
 - Homes only, no rentals in v1, and payment online before any visit.
 - Rush uses collection pieces only (Florida ch. 538 holds).
-- Nothing is built yet. Publishing is blocked on Ricky's inbox address and price sign-off (block 0 of the handoff).
+- Nothing is built yet. Codex can land it now in demo state ("Booking opens soon"). It goes live when Ricky gives the inbox address and signs off the prices (block 0 of the handoff).
 
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.

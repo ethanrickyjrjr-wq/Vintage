@@ -73,8 +73,8 @@ One flag, for Ricky's eyes only: c6 liked "Not for sale. Very much for hire." as
    - Something else ("Whatever it is, do it for the plot.")
 6. **How it works**, five steps:
    1. The Logline.
-   2. The Screen Test, booked and paid online.
-   3. The board in 7–10 business days, with options labeled *From the collection* or *Sourced for you*, two rounds of changes.
+   2. The Screen Test: a video call booked online (photos work too).
+   3. Pay the billing online, then the board in 7–10 business days, with options labeled *From the collection* or *Sourced for you*, two rounds of changes.
    4. You approve each piece in writing and pay before Hollie buys anything sourced; collection pieces hold 48 hours.
    5. That's a wrap.
 
@@ -149,10 +149,12 @@ The page says "styling and selections for your remodel", never "we handle your r
   Only if v2 proves demand.
 - **Not on Etsy.** Etsy's Help Center says services are generally not allowed; the policy pages were walled. Shopify allows selling a service once a store exists.
 
-## Ricky decides (blocks publishing, not building)
+## Ricky decides (a blank answer takes the default; without an inbox the section ships in demo state)
 
-1. **The inbox address** for Email Hollie. This is required; the build's test fails until it is filled.
+1. **The inbox address** for Email Hollie. Without it the section ships safely in demo state: the call to action reads "Booking opens soon", like checkout. The test fails only on a half-filled section.
 2. **The Cal.com Screen Test link**, or none. With none, the Screen Test card says "Ask for one in your email".
+   - **Screen Test price.** Free by default. If paid, turn on Cal.com's Stripe payments for that event and credit the fee toward the billing.
+   - **Nav label.** "Hire Hollie" by default, or Ricky's own "Fabulous From Online".
 3. **The starting prices** above: confirm or change. They will read as a real offer.
 4. **Where Hollie is based and how far The Cameo travels.**
    - The copy assumes Lee and Collier counties included, with travel time billed beyond.

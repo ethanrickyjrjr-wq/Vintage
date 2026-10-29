@@ -1,6 +1,10 @@
 # Handoff for Codex: the Fabulous From Online section (hire Hollie)
 
-Written 2026-10-28 by Claude for Codex. **Build it; do not publish until block 0 is filled.** Ricky publishes through the Codex app; pushing does not deploy.
+Written 2026-10-28 by Claude for Codex. **You can build this and land it on master now.**
+- With no inbox in block 0, it lands in **demo state**. The call to action reads "Booking opens soon", like the bag's checkout, and the email script does nothing. Any publish of unrelated work stays safe.
+- It goes live when Ricky supplies the inbox.
+- Step 5's test passes in both states and fails only on a half-filled section.
+- Ricky publishes through the Codex app; pushing does not deploy.
 
 - **Why:** `docs/fabulous-from-online-design.md` (every price and rule has its source there).
 - **Evidence:** `research/fabulous-from-online/c1..c6-*.md`.
@@ -15,21 +19,18 @@ Ricky, 2026-10-28: "a section where users hire Hollie to find items, decorate en
 - The spelling is **Hollie**, with ie. Never write "Hollywood" for the shop.
 - Refer to Hollie by name. No pronouns: none are known.
 
-## 0. Ricky fills before publishing (the test in step 5 fails until 1 and 2 are done)
+## 0. Ricky fills (blank rows take the default; a blank inbox means demo state)
 
 | # | What | Where it goes | Default if Ricky says "go with yours" |
 |---|---|---|---|
-| 1 | Inbox address for Email Hollie | the `inbox` constant in step 3 | none: required |
-| 2 | Cal.com Screen Test link | `__BOOKING_URL__` in step 2 | delete the Book a Screen Test button and change the Screen Test card's last line to "Ask for one in your email." |
+| 1 | Inbox address for Email Hollie | the `inbox` constant in step 3 | `""`: demo state. Use the demo `.hire-cta` from step 2. |
+| 2 | Cal.com Screen Test link | `__BOOKING_URL__` in step 2 | Delete the Book a Screen Test button. Change the Screen Test card's last line to "Ask for one in your email." |
+| 2b | Screen Test price | Screen Test card | Free. If Ricky sets a price, turn on Stripe payments for that Cal.com event; Cal.com Free lists "Accept Stripe & PayPal payments". Change "a free video call" to "a $X video call, credited toward your billing". |
+| 2c | Nav label | step 1 | "Hire Hollie". Ricky's own name for the section is "Fabulous From Online"; ask which goes in the nav. |
 | 3 | Starting prices: $95 / $295 / $750 / by the room; Cameo $150 an hour, two-hour minimum, $1,200 a day; Rushes +25% / +50%, $75 minimum | step 2 markup | keep as written |
 | 4 | Where Hollie is based and how far The Cameo travels | The Cameo paragraph | "Lee and Collier counties included; farther out, travel time is billed." |
 | 5 | Nothing found: store credit or refund | fine print, bullet 4 | 90-day store credit |
 | 6 | Is the owner in the owner section Hollie? | placement | no: the section goes after `#your-room` |
-
-If Ricky wants it live before giving an inbox, he can publish in demo state instead:
-- Replace the two CTAs with one `<button class="button button-outline" type="button" disabled>Booking opens soon</button>`, the same pattern as the bag's checkout.
-- Drop the `data-hire` attributes.
-- Skip the publish-gate test.
 
 ## 1. Navigation (three one-line edits in `site/storefront.html`)
 
@@ -63,7 +64,7 @@ Copy is final unless Ricky edits it. The section reuses existing classes (`page-
 
   <h3 class="hire-heading">Three ways in.</h3>
   <ol class="hire-ways">
-    <li><h4>Screen Test</h4><p class="hire-line">Pan slowly. Hollie has notes.</p><p>Book a video call and walk Hollie through the space.</p></li>
+    <li><h4>Screen Test</h4><p class="hire-line">Pan slowly. Hollie has notes.</p><p>Book a free video call and walk Hollie through the space.</p></li>
     <li><h4>Stills</h4><p class="hire-line">Send photos.</p><p>Daylight, lamps off, and please don’t tidy. The checklist is below.</p></li>
     <li><h4>The Logline</h4><p class="hire-line">Describe it in an email. Free.</p><p>A sentence or three. Hollie replies with a plan and a price.</p></li>
   </ol>
@@ -103,8 +104,8 @@ Copy is final unless Ricky edits it. The section reuses existing classes (`page-
   <h3 class="hire-heading">How it works.</h3>
   <ol class="hire-steps">
     <li><strong>The Logline.</strong> Email Hollie. Free.</li>
-    <li><strong>The Screen Test.</strong> A video call or your photos, so Hollie sees the real room. Booked and paid online, before anything else happens.</li>
-    <li><strong>The board.</strong> In 7 to 10 business days: a plan and options, each labeled From the collection or Sourced for you. Two rounds of changes included.</li>
+    <li><strong>The Screen Test.</strong> A video call, booked online, so Hollie sees the real room. Photos work too.</li>
+    <li><strong>The board.</strong> Pay your billing online, and in 7 to 10 business days you get a plan and options, each labeled From the collection or Sourced for you. Two rounds of changes included.</li>
     <li><strong>You approve.</strong> In writing, piece by piece. You pay for a sourced piece before Hollie buys it. Collection pieces hold for 48 hours.</li>
     <li><strong>That’s a wrap.</strong> Hollie places it in person, or you get the list and the pieces, shipped.</li>
   </ol>
@@ -146,6 +147,12 @@ Copy is final unless Ricky edits it. The section reuses existing classes (`page-
     <a class="button button-outline" href="__BOOKING_URL__" target="_blank" rel="noopener">Book a Screen Test <span aria-hidden="true">↗</span></a>
     <p>Or write to <a href="#hire-contact" data-hire="" data-hire-inbox>the shop inbox</a>. Attach your photos to the email that opens; it can’t attach them for you.</p>
   </div>
+  <!-- Demo state (block 0 row 1 empty): use this .hire-cta instead of the one above.
+  <div class="hire-cta" id="hire-contact">
+    <button class="button button-outline" type="button" disabled>Booking opens soon</button>
+    <p>Hollie is setting up the booking line. The occasions above show what’s on offer.</p>
+  </div>
+  -->
 
   <blockquote class="hire-epigraph">
     <p>“There never was a house so bad that it couldn’t be made over into something worth while.”</p>
@@ -170,11 +177,13 @@ Every `[data-hire]` link opens one brief; occasion links add their occasion to t
 - `encodeURIComponent` turns the `&` in "Holliewood & Vine" into `%26`. A raw `&` would split the query (RFC 6068).
 - Files can't be attached through `mailto:`, hence the line under the buttons.
 - The fallback `href="#hire-contact"` keeps links harmless if the script doesn't run.
+- In demo state (`inbox` empty) that fallback is the whole behavior: an occasion block scrolls to "Booking opens soon".
 
 ```js
 // Fabulous From Online: every hire link opens the same email brief; occasion links add their occasion.
 (() => {
-  const inbox = "__HIRE_INBOX__"; // Ricky supplies this before publishing; tests/fabulous-from-online.test.mjs fails until then.
+  const inbox = ""; // Ricky's inbox address. Empty = demo state: links stay on #hire-contact ("Booking opens soon").
+  if (!inbox) return;
   const brief = (occasion) => [
     "Hi Hollie,",
     "",
@@ -205,11 +214,14 @@ Every `[data-hire]` link opens one brief; occasion links add their occasion to t
 
 The encoded href is about 780 characters, under the roughly 2,000 that c4 treats as the practical ceiling. That ceiling is inferred; RFC 6068 sets none.
 
-Claude dry-ran steps 2, 3 and 5 on copies of the real files in a scratch folder on 2026-10-28.
-- With the placeholders in, 4 tests pass and the publish gate fails, as designed.
-- With a dummy inbox and Cal.com link, all 5 pass.
-- A stub DOM decoded Email Hollie to the subject "Fabulous From Online - Holliewood & Vine", and Dinner party to "Fabulous From Online - Dinner party - Holliewood & Vine" with the body line "The occasion: Dinner party".
-- The CSS and the browser checks are untested; they are yours.
+Claude dry-ran steps 1, 2, 3 and 5 on copies of the real files in a scratch folder on 2026-10-28, in three states:
+- **Demo** (empty inbox, demo CTA): 5 of 5 pass.
+- **Live** (dummy inbox and Cal.com link): 5 of 5 pass.
+- **Half-filled** (live CTA, empty inbox): fails with "with no inbox the section must ship the demo CTA".
+
+A stub DOM decoded Dinner party to the subject "Fabulous From Online - Dinner party - Holliewood & Vine", with the body line "The occasion: Dinner party"; the link is 798 characters.
+
+The CSS and the browser checks are untested; they are yours.
 
 ## 4. Styles (`site/homepage.css`, append; aim for about 40 lines)
 
@@ -234,7 +246,7 @@ Claude dry-ran steps 2, 3 and 5 on copies of the real files in a scratch folder 
 
 ## 5. Test (`site/tests/fabulous-from-online.test.mjs`, new)
 
-`npm test` runs it with the others. The publish-gate test is **meant to fail** until Ricky supplies the inbox (block 0). Say so in your final message rather than weakening it.
+`npm test` runs it with the others. It passes in demo state and in live state. It fails on a half-filled section: a placeholder left in, a live-looking CTA with no inbox, or an inbox that isn't an address.
 
 ```js
 import assert from "node:assert/strict";
@@ -258,9 +270,18 @@ test("the hire section carries Ricky's name and every nav reaches it", () => {
   }
 });
 
-test("publish gate: the inbox and booking link are filled in", () => {
-  assert.doesNotMatch(script, /__HIRE_INBOX__/, "Ricky has not supplied the inbox address yet");
+test("live or demo, never half-filled", () => {
+  const inbox = script.match(/const inbox = "([^"]*)"/)?.[1];
+  assert.notEqual(inbox, undefined, "the hire script is missing from storefront.js");
   assert.doesNotMatch(section, /__BOOKING_URL__/, "add the Cal.com link or remove the Book a Screen Test button");
+  const cta = section.match(/<div class="hire-cta"[\s\S]*?<\/div>/)?.[0] ?? "";
+  if (inbox) {
+    assert.match(inbox, /^[^@\s"]+@[^@\s"]+\.[a-z]{2,}$/i, "inbox is not an email address");
+    assert.match(cta, /data-hire=""/, "live state needs the Email Hollie link");
+  } else {
+    assert.match(cta, /disabled>Booking opens soon</, "with no inbox the section must ship the demo CTA");
+    assert.doesNotMatch(cta, /data-hire/, "demo state must not show a live Email Hollie link");
+  }
 });
 
 test("the section keeps to the Florida wording guardrails", () => {
@@ -283,7 +304,7 @@ test("the shop is never spelled Hollywood", () => {
 
 ## 6. Acceptance (browser, before Ricky publishes)
 
-Run `npm test` in `site/`. Everything passes except the publish gate while block 0 is open.
+Run `npm test` in `site/`. Everything passes, in demo state or live.
 
 Then `npm run dev` (or `python -m http.server <port> --bind 127.0.0.1` from `site/`) and check:
 
@@ -301,4 +322,9 @@ Then `npm run dev` (or `python -m http.server <port> --bind 127.0.0.1` from `sit
 
 Commit the three edited files plus the test with a message that says what changed. Then `git pull --rebase` and push.
 
-Codex does not publish until Ricky fills block 0. When he has, publish `site/dist` to the existing Sites project as usual and record the version number at the top of this file.
+Demo state is safe to publish. When Ricky fills block 0 row 1:
+1. Swap in the live `.hire-cta`.
+2. Set `inbox`.
+3. Rerun the tests and checks 3–4.
+4. Publish as usual.
+5. Record the version number at the top of this file.
