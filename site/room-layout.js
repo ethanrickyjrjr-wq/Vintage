@@ -87,6 +87,8 @@ export function roomSlots(grid) {
     slots.push({ id: slots.length, kind, x, bottom, w, h, ...extra });
   };
   for (const seat of sofas.slice(0, 2)) add("art", seat.x + seat.w / 2, seat.y - .025, seat.w * .66, Math.min(.34, seat.y - .05));
+  // Cushions rest on a detected sofa seat; no sofa, no cushion slot.
+  if (sofa) for (const fraction of [.5, .32, .68]) add("cushion", sofa.x + sofa.w * fraction, sofa.y + sofa.h * .55, sofa.w * .17, sofa.h * .5);
   const walls = components(masks.wall, width, height);
   for (const wall of walls.slice(0, 2)) {
     for (const vertical of [.6, .4, .8]) for (const fraction of [.5, .25, .75]) {
@@ -128,13 +130,14 @@ const noSlot = {
   art: "No clear wall space was found.", ceiling: "No clear ceiling position was found.",
   lamp: "No confirmed side table or console has room for this lamp.",
   decor: "No clear tabletop position was found.", media: "No clear tabletop position was found.",
+  cushion: "No clear sofa seat was found for this cushion.",
   floor: "No clear floor position was found.",
 };
 
 export function arrangeRoom(products, grid, photoAspect) {
   const scene = grid.slots ? grid : roomSlots(grid);
   const layers = [], unplaced = [], used = new Set();
-  const rank = { ceiling: 0, art: 1, lamp: 2, floor: 3, media: 4, decor: 5 };
+  const rank = { ceiling: 0, art: 1, lamp: 2, floor: 3, cushion: 4, media: 5, decor: 6 };
   const ordered = [...products].sort((a, b) => (rank[a.kind] ?? 9) - (rank[b.kind] ?? 9) || a.id.localeCompare(b.id, "en", { numeric: true }));
   for (const product of ordered) {
     if (!product.overlay || !product.ratio) { unplaced.push({ id: product.id, reason: "A clear product cutout is needed. You can still save this find." }); continue; }
@@ -158,9 +161,12 @@ export function arrangeRoom(products, grid, photoAspect) {
           if (product.kind === "ceiling" && coverage(scene.masks.ceiling, grid, { x: layer.x - .01, y: box.y, w: .02, h: .01 }) < .6) continue;
           if (product.kind === "floor" && coverage(scene.masks.floor, grid, { x: box.x, y: box.y + box.h - .015, w: box.w, h: .015 }) < .8) continue;
           if (coverage(scene.masks.obstacle, grid, box) > .03) continue;
-          if (["sofa", "table", "cabinet"].some(group => coverage(scene.masks[group], grid, { ...box, h: Math.max(.001, box.h - .012) }) > .05)) continue;
+          // A cushion must sit on the sofa; everything else must stay off it.
+          if (product.kind === "cushion" && coverage(scene.masks.sofa, grid, box) < .75) continue;
+          if ((product.kind === "cushion" ? ["table", "cabinet"] : ["sofa", "table", "cabinet"]).some(group => coverage(scene.masks[group], grid, { ...box, h: Math.max(.001, box.h - .012) }) > .05)) continue;
         }
-        if (layers.some(other => overlap(box, layerBox(other, photoAspect)) > .05)) continue;
+        // Tabletop finds stand in front of the sofa (and draw after cushions), so they may cover part of one.
+        if (layers.some(other => !(other.kind === "cushion" && ["decor", "media"].includes(product.kind)) && overlap(box, layerBox(other, photoAspect)) > .05)) continue;
         layers.push(layer); used.add(slot.id); placed = true; break;
       }
       if (placed) break;

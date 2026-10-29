@@ -78,7 +78,7 @@ function startEditor() {
       const box = layerBox(layer, photoAspect());
       const x = box.x * canvas.width, y = box.y * canvas.height, w = box.w * canvas.width, h = box.h * canvas.height;
       context.save();
-      if (["lamp", "floor", "decor", "media"].includes(layer.kind)) {
+      if (["lamp", "floor", "decor", "media", "cushion"].includes(layer.kind)) {
         context.globalCompositeOperation = "multiply"; context.fillStyle = "rgb(35 20 18 / .24)";
         context.shadowColor = "rgb(20 12 10 / .35)"; context.shadowBlur = Math.max(3, w * .035);
         context.beginPath(); context.ellipse(x + w / 2, y + h - Math.max(1, w * .007), w * .37, Math.max(2, w * .025), 0, 0, Math.PI * 2); context.fill();
@@ -211,11 +211,11 @@ function startEditor() {
   }
   async function analyze(attempt = 0) {
     if (state.scene) return Promise.resolve(state.scene);
+    if (state.sample) return sampleRoomScene();
     worker ??= new Worker(new URL("./room-segmentation.js", import.meta.url), { type: "module" });
     const analysisWorker = worker, id = ++requestId;
     const photo = document.createElement("canvas"), scale = Math.min(1, 1000 / Math.max(canvas.width, canvas.height));
     photo.width = Math.round(canvas.width * scale); photo.height = Math.round(canvas.height * scale);
-    if (state.sample) return sampleRoomScene();
     const ctx = photo.getContext("2d"); ctx.drawImage(state.photo, 0, 0, photo.width, photo.height);
     const pixels = ctx.getImageData(0, 0, photo.width, photo.height).data.buffer;
     return new Promise((resolve, reject) => {

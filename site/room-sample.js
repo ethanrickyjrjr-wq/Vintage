@@ -11,6 +11,9 @@ export function sampleRoomScene() {
     // Blank wall to either side of the existing framed painting.
     { id: "wall-left", kind: "art", x: .31, bottom: .435, w: .14, h: .25 },
     { id: "wall-right", kind: "art", x: .77, bottom: .36, w: .18, h: .23 },
+    // Bare back cushion between the sofa's existing throw pillows, resting on the seat.
+    { id: "sofa-center-left", kind: "cushion", x: .44, bottom: .615, w: .085, h: .13 },
+    { id: "sofa-center-right", kind: "cushion", x: .525, bottom: .615, w: .085, h: .13 },
     // Ceiling to the right of the existing pendant, and open foreground rug.
     { id: "ceiling-right", kind: "ceiling", x: .73, bottom: .035, w: .16, h: .20, anchorTop: true },
     { id: "floor-left", kind: "floor", x: .19, bottom: .92, w: .18, h: .20 },

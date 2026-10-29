@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import vm from "node:vm";
 import { arrangeRoom, constrainLayer, layerBox, semanticGroup } from "../room-layout.js";
 import { sampleRoomScene } from "../room-sample.js";
 
@@ -122,5 +123,52 @@ test("sample arrangements keep mixed finds bounded and separated", () => {
     for (const other of boxes.slice(index + 1)) {
       assert.ok(box.x + box.w <= other.x || other.x + other.w <= box.x || box.y + box.h <= other.y || other.y + other.h <= box.y);
     }
+  }
+});
+
+// What each kind of find may rest on in the shipped sample. Cushions once landed on the floor and a credenza.
+const allowedSlots = { lamp: ["lamp-or-decor"], decor: ["decor", "lamp-or-decor"], media: ["decor", "lamp-or-decor"],
+  art: ["art"], ceiling: ["ceiling"], floor: ["floor"], cushion: ["cushion"] };
+const read = file => readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
+const { roomProducts } = vm.runInNewContext(`${read("catalog-data.js")}\n${read("room-products.js")}\n${read("demo-products.js")}\n({ roomProducts: HNV_ROOM_PRODUCTS })`);
+
+test("every sample find lands on a surface that suits its kind", () => {
+  const scene = sampleRoomScene();
+  assert.equal(roomProducts.length, 40);
+  for (const found of roomProducts) {
+    assert.ok(allowedSlots[found.kind], `${found.id} has an unknown kind: ${found.kind}`);
+    const result = arrangeRoom([{ id: found.id, kind: found.kind, overlay: found.overlay, ratio: 1 }], scene, 1.5);
+    assert.equal(result.layers.length, 1, `${found.id} (${found.kind}) has nowhere to go`);
+    const slot = scene.slots.find(candidate => candidate.x === result.layers[0].x);
+    assert.ok(allowedSlots[found.kind].includes(slot.kind), `${found.id} (${found.kind}) landed on a ${slot.kind} slot`);
+  }
+});
+
+test("sample cushions sit on the sofa between its throw pillows, never the floor or a table", () => {
+  const cushions = roomProducts.filter(found => found.kind === "cushion");
+  assert.deepEqual(Array.from(cushions, found => found.id).sort(), ["SB05192FF", "SB067D22F"]);
+  const withOthers = [...cushions.map(found => ({ ...product(found.id, "cushion"), ratio: .95 })),
+    product("A15", "floor"), product("A10", "decor"), product("A16", "media"), product("A13", "lamp")];
+  const result = arrangeRoom(withOthers, sampleRoomScene(), 1.5);
+  const placed = result.layers.filter(layer => layer.kind === "cushion");
+  assert.equal(placed.length, 2);
+  for (const layer of placed) {
+    const box = layerBox(layer, 1.5);
+    assert.ok(box.x >= .39 && box.x + box.w <= .58, "between the existing left and right throw pillows");
+    assert.ok(Math.abs(box.y + box.h - .615) < .00001 && box.y > .45, "resting on the seat in front of the back cushion");
+  }
+  assert.equal(result.layers.filter(layer => layer.kind !== "cushion").length, withOthers.length - 2, "nothing else is displaced");
+});
+
+test("uploaded rooms put cushions on a detected sofa and leave them out without one", () => {
+  const sofa = segment("couch", [.25, .4, .5, .25]);
+  const cushion = { ...product("SB05192FF", "cushion"), ratio: .95 };
+  const result = arrangeRoom([cushion], grid([sofa]), 1.6);
+  assert.equal(result.layers.length, 1);
+  const box = layerBox(result.layers[0], 1.6);
+  assert.ok(box.x >= .25 && box.x + box.w <= .75 && box.y >= .4 && box.y + box.h <= .65, "inside the sofa's bounds");
+  for (const segments of [[], [segment("LABEL_190", [0, .6, 1, .4])], [segment("LABEL_189", [.3, .5, .4, .2])]]) {
+    const none = arrangeRoom([cushion], grid(segments), 1.6);
+    assert.equal(none.layers.length, 0); assert.match(none.unplaced[0].reason, /sofa/);
   }
 });
