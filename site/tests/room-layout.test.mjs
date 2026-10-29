@@ -128,7 +128,7 @@ test("sample arrangements keep mixed finds bounded and separated", () => {
 
 // What each kind of find may rest on in the shipped sample. Cushions once landed on the floor and a credenza.
 const allowedSlots = { lamp: ["lamp-or-decor"], decor: ["decor", "lamp-or-decor"], media: ["decor", "lamp-or-decor"],
-  art: ["art"], ceiling: ["ceiling"], floor: ["floor"], cushion: ["cushion"] };
+  art: ["art"], ceiling: ["ceiling"], floor: ["floor"], cushion: ["cushion"], rug: ["rug"] };
 const read = file => readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
 const { roomProducts } = vm.runInNewContext(`${read("catalog-data.js")}\n${read("room-products.js")}\n${read("demo-products.js")}\n({ roomProducts: HNV_ROOM_PRODUCTS })`);
 
@@ -188,4 +188,23 @@ test("sample finds are drawn at believable sizes relative to one another", () =>
   assert.ok(chair.h > .3 && chair.h < .4, "a chair nearest the camera is large");
   assert.ok(cushion.w <= .1, "a cushion is no wider than the existing throw pillows");
   assert.equal(arrangeRoom([size("A13", "lamp", 1.34)], grid([]), 1.5).layers.length, 0, "uploaded rooms have no scale and keep fit-to-slot");
+});
+
+test("rugs lie flat on the open floor in front of the table and draw underneath other finds", () => {
+  const rugs = [["A19", .87], ["S4BE9AE76", 1.03], ["SC208AED4", .72], ["SF78FB89E", 1.4], ["SCA6C185E", 1.26], ["S8337BECB", 1.45], ["S27580263", 1.15], ["S1FE21145", .66]];
+  for (const [id, ratio] of rugs) {
+    const rug = { ...product(id, "rug"), ratio, cm: roomProducts.find(found => found.id === id).cm };
+    const result = arrangeRoom([rug], sampleRoomScene(), 1.5);
+    assert.equal(result.layers.length, 1, id);
+    assert.ok(result.layers[0].ratio < ratio * .3, "foreshortened, not drawn face-on");
+    const box = layerBox(result.layers[0], 1.5);
+    assert.ok(box.y >= .85 && box.y + box.h <= .99, "on open floor, below the coffee table's feet");
+  }
+  const withChair = arrangeRoom([product("A15", "floor"), { ...product("S1FE21145", "rug"), ratio: .66, cm: 180 }], sampleRoomScene(), 1.5);
+  assert.deepEqual(Array.from(withChair.layers, layer => layer.kind), ["rug", "floor"], "the rug draws first, so a chair can stand on it");
+  const floor = segment("LABEL_190", [0, .55, 1, .45]), rug = { ...product("A19", "rug"), ratio: .87 };
+  const upload = arrangeRoom([rug], grid([floor]), 1.6);
+  assert.equal(upload.layers.length, 1);
+  assert.ok(layerBox(upload.layers[0], 1.6).y >= .55, "uploaded rooms place a rug inside the detected floor");
+  assert.match(arrangeRoom([rug], grid([]), 1.6).unplaced[0].reason, /open floor/);
 });

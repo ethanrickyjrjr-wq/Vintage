@@ -118,3 +118,5 @@ Each sample find carries `cm`, an illustrative real-world size of its longest si
 A find is drawn at `cm × ppm`, capped to its slot and never enlarged. If the slot can hold less than 70% of real size, the find is left out as "Too big for the open space in this room" (the three sofas, because the sample already has one). Uploaded rooms have no scale reference, so they keep fitting finds to the slot. Deriving a scale from a detected sofa is the next step there.
 
 The `.1` width floor on the Egyptian-lamp test still guards the fit-to-slot path. At real size that lamp is about `.088` wide, the same scale as the lamp already in the photo.
+
+Rugs and hides are their own `rug` kind. They lie flat: `flat.rug` foreshortens the layer's stored `ratio`, so drawing, dragging, resizing and hit-testing need no special case. They go in the open foreground band below the coffee table's feet, draw underneath everything else, and may be shown down to 50% of real size (furniture: 70%, otherwise "Too big for the open space in this room"). Uploaded rooms place a rug inside the detected floor.

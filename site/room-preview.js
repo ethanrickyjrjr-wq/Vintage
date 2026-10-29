@@ -1,4 +1,4 @@
-import { arrangeRoom, constrainLayer, layerBox } from "./room-layout.js";
+import { arrangeRoom, constrainLayer, flat, layerBox } from "./room-layout.js";
 import { sampleRoomScene } from "./room-sample.js";
 
 const form = document.querySelector("#room-form");
@@ -180,7 +180,7 @@ function startEditor() {
     try {
       const image = await texture(product); if (version !== photoVersion || state.busy || state.layers.some(layer => layer.id === id)) return;
       change(() => {
-        const layer = constrainLayer({ id, kind: product.kind, x: point?.x ?? .5, y: point?.y ?? .5, w: product.kind === "art" ? .2 : .17, ratio: image.height / image.width, flip: false }, photoAspect());
+        const layer = constrainLayer({ id, kind: product.kind, x: point?.x ?? .5, y: point?.y ?? .5, w: product.kind === "art" ? .2 : .17, ratio: image.height / image.width * (flat[product.kind] ?? 1), flip: false }, photoAspect());
         state.layers.push(layer); state.selected = id; state.unplaced = state.unplaced.filter(item => item.id !== id);
       });
       claimHash();

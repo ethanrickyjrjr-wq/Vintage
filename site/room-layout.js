@@ -11,6 +11,10 @@ export function semanticGroup(label) {
   return "obstacle";
 }
 
+// Rugs lie on the floor, so the camera sees them foreshortened: stored as the layer's ratio, so
+// drawing, dragging, resizing and hit-testing all get the flat shape without special cases.
+export const flat = { rug: .28 };
+
 export function layerBox(layer, photoAspect) {
   const height = layer.w * layer.ratio * photoAspect;
   return { x: layer.x - layer.w / 2, y: layer.y - height / 2, w: layer.w, h: height };
@@ -122,6 +126,7 @@ export function roomSlots(grid) {
   for (const floor of components(masks.floor, width, height).slice(0, 2)) {
     const positions = sofa ? [sofa.x - .075, sofa.x + sofa.w + .075] : [floor.x + floor.w * .2, floor.x + floor.w * .8];
     for (const x of positions) add("floor", x, Math.min(.94, floor.y + floor.h * .9), .14, .42);
+    add("rug", floor.x + floor.w / 2, Math.min(.96, floor.y + floor.h * .95), Math.min(.5, floor.w * .5), .14);
   }
   return { slots, masks, ...grid };
 }
@@ -130,33 +135,35 @@ const noSlot = {
   art: "No clear wall space was found.", ceiling: "No clear ceiling position was found.",
   lamp: "No confirmed side table or console has room for this lamp.",
   decor: "No clear tabletop position was found.", media: "No clear tabletop position was found.",
-  cushion: "No clear sofa seat was found for this cushion.",
+  cushion: "No clear sofa seat was found for this cushion.", rug: "No clear open floor was found for this rug.",
   floor: "No clear floor position was found.",
 };
 
 export function arrangeRoom(products, grid, photoAspect) {
   const scene = grid.slots ? grid : roomSlots(grid);
   const layers = [], unplaced = [], used = new Set();
-  const rank = { ceiling: 0, art: 1, lamp: 2, floor: 3, cushion: 4, media: 5, decor: 6 };
+  const rank = { rug: -1, ceiling: 0, art: 1, lamp: 2, floor: 3, cushion: 4, media: 5, decor: 6 };
   const ordered = [...products].sort((a, b) => (rank[a.kind] ?? 9) - (rank[b.kind] ?? 9) || a.id.localeCompare(b.id, "en", { numeric: true }));
   for (const product of ordered) {
     if (!product.overlay || !product.ratio) { unplaced.push({ id: product.id, reason: "A clear product cutout is needed. You can still save this find." }); continue; }
     let placed = false, tooBig = false;
+    const ratio = product.ratio * (flat[product.kind] ?? 1);
     for (const slot of scene.slots) {
-      if (used.has(slot.id)) continue;
       const legal = product.kind === "lamp" ? slot.kind === "lamp-or-decor" :
         ["decor", "media"].includes(product.kind) ? ["decor", "lamp-or-decor"].includes(slot.kind) : slot.kind === product.kind;
       if (!legal || product.kind === "art" && layers.filter(layer => layer.kind === "art").length >= 2 || product.kind === "floor" && layers.filter(layer => layer.kind === "floor").length >= 2) continue;
       // Real size: a find with a size in cm, in a slot with a scale, is drawn at that size,
       // capped to the slot and never enlarged. Under 70% of real size, the slot cannot hold it.
-      const fit = Math.min(slot.w, slot.h / (product.ratio * photoAspect));
+      const fit = Math.min(slot.w, slot.h / (ratio * photoAspect));
       const real = product.cm && slot.ppm ? product.cm / 100 / Math.max(1, product.ratio) * slot.ppm : Infinity;
-      if (real < Infinity && fit < real * .7) { tooBig = true; continue; }
+      // A rug shown somewhat smaller still reads as that rug (nothing nearby gives away its size); furniture does not.
+      if (real < Infinity && fit < real * (product.kind === "rug" ? .5 : .7)) { tooBig = true; continue; }
+      if (used.has(slot.id)) continue;
       for (const scale of [1, .85, .7]) {
         const w = Math.min(fit, real) * scale;
         if (w < Math.min(.035, real * .7)) continue;
-        const h = w * product.ratio * photoAspect;
-        const layer = { id: product.id, kind: product.kind, x: slot.x, y: slot.bottom + (slot.anchorTop ? h / 2 : -h / 2), w, ratio: product.ratio, flip: false };
+        const h = w * ratio * photoAspect;
+        const layer = { id: product.id, kind: product.kind, x: slot.x, y: slot.bottom + (slot.anchorTop ? h / 2 : -h / 2), w, ratio, flip: false };
         const box = layerBox(layer, photoAspect);
         if (box.x < .01 || box.y < .01 || box.x + box.w > .99 || box.y + box.h > .99) continue;
         // Uploaded rooms need mask checks. The shipped sample has reviewed
@@ -164,6 +171,7 @@ export function arrangeRoom(products, grid, photoAspect) {
         if (scene.masks) {
           if (product.kind === "art" && coverage(scene.masks.wall, grid, box) < .88) continue;
           if (product.kind === "ceiling" && coverage(scene.masks.ceiling, grid, { x: layer.x - .01, y: box.y, w: .02, h: .01 }) < .6) continue;
+          if (product.kind === "rug" && coverage(scene.masks.floor, grid, box) < .8) continue;
           if (product.kind === "floor" && coverage(scene.masks.floor, grid, { x: box.x, y: box.y + box.h - .015, w: box.w, h: .015 }) < .8) continue;
           if (coverage(scene.masks.obstacle, grid, box) > .03) continue;
           // A cushion must sit on the sofa; everything else must stay off it.
@@ -171,7 +179,7 @@ export function arrangeRoom(products, grid, photoAspect) {
           if ((product.kind === "cushion" ? ["table", "cabinet"] : ["sofa", "table", "cabinet"]).some(group => coverage(scene.masks[group], grid, { ...box, h: Math.max(.001, box.h - .012) }) > .05)) continue;
         }
         // Tabletop finds stand in front of the sofa (and draw after cushions), so they may cover part of one.
-        if (layers.some(other => !(other.kind === "cushion" && ["decor", "media"].includes(product.kind)) && overlap(box, layerBox(other, photoAspect)) > .05)) continue;
+        if (layers.some(other => other.kind !== "rug" && !(other.kind === "cushion" && ["decor", "media"].includes(product.kind)) && overlap(box, layerBox(other, photoAspect)) > .05)) continue;
         layers.push(layer); used.add(slot.id); placed = true; break;
       }
       if (placed) break;

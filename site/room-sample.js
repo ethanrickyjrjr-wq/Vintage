@@ -18,6 +18,8 @@ export function sampleRoomScene() {
     // Blank wall to either side of the existing framed painting.
     { id: "wall-left", kind: "art", x: .31, bottom: .435, w: .14, h: .25, ppm: .21 },
     { id: "wall-right", kind: "art", x: .77, bottom: .36, w: .18, h: .23, ppm: .21 },
+    // Open foreground rug in front of the coffee table's feet; rugs lie flat and draw underneath.
+    { id: "rug-front", kind: "rug", x: .5, bottom: .985, w: .62, h: .13, ppm: .30 },
     // Ceiling to the right of the existing pendant.
     { id: "ceiling-right", kind: "ceiling", x: .73, bottom: .035, w: .16, h: .20, anchorTop: true, ppm: .19 },
     // Nearest corner of the room: this close to the camera a chair is large, and it
