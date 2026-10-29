@@ -1,5 +1,7 @@
 # Occasion pages
 
+Published on 2026-10-29 as **Sites version 33** at https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site. Audience remains public. GitHub implementation: `a6152b7`; Sites source: `c6fa483e4b8185b6aafb7f315560142b94c6025b`; deployment: `appgdep_6ae3401a21a88191bc6412b6c81686c4`, succeeded with environment revision 2. The live bachelorette page and its navigation/placeholder content were checked in Chrome after publication. Source was reconciled with version 32 before building, preserving its changes.
+
 Each of the 15 “What’s the occasion?” cards opens its own /occasions/<slug>.html page. One shared HTML renderer in site/occasion-pages.mjs supplies the same layout, with a different image, title, short headline, description, alt text and accent color for each occasion. site/occasions.css carries the existing burgundy atmosphere and self-hosted Bodoni Moda, DM Sans and Space Mono fonts.
 
 The shared sections provide placeholders for the moodboard, finishing touches, and packages/booking. Booking remains in demo state. Each page links to all other occasions, the styling service, and the collection. The existing homepage poster colors and typography remain unchanged. Occasion links retain data-hire for their poster styles and use data-occasion-page to prevent the future live-inbox script from replacing them with mailto links.
