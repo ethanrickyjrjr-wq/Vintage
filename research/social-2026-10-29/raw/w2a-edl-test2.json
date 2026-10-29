@@ -1,0 +1,14 @@
+{
+  "id": "test-lamp-reel-02",
+  "output": "../out/test2.mp4",
+  "out": {"preset": "veryfast", "crf": 20},
+  "fonts": {"bodoni": "../fonts/BodoniModa-700-opsz14.ttf", "dm": "../fonts/DMSans-500-opsz14.ttf"},
+  "clips": [
+    {"src": "Walkthrough_real.mov", "in": 0.0, "out": 3.0, "speed": 0.5, "fit": "pad"},
+    {"src": "A.mov", "in": 5.0, "out": 9.0, "speed": 1.0, "fit": "cover"}
+  ],
+  "hook": {"lines": ["One click.", "The whole room", "warms."], "size": 112, "y": 560, "t1": 3.0},
+  "end_card": {"dur": 1.5, "lines": ["Holliewood", "& Vine"], "size": 150, "sub": "Link in bio",
+               "credit": ["Music: Stringed Disco, Kevin MacLeod", "(incompetech.com) CC BY 4.0"]},
+  "music": {"src": "stringed-disco.mp3", "start": 4, "gain_db": 0, "fade_in": 0.5, "fade_out": 1.5, "lufs": -14, "tp": -1.5}
+}

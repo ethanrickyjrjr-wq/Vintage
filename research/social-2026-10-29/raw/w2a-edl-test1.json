@@ -1,0 +1,14 @@
+{
+  "id": "test-lamp-reel-01",
+  "output": "../out/test1.mp4",
+  "fonts": {"bodoni": "../fonts/BodoniModa-700-opsz14.ttf", "dm": "../fonts/DMSans-500-opsz14.ttf"},
+  "clips": [
+    {"src": "A.mov", "in": 0.5, "out": 4.5, "speed": 1.0, "fit": "cover"},
+    {"src": "B.mov", "in": 2.0, "out": 6.0, "speed": 2.0, "fit": "cover"},
+    {"src": "Walkthrough_real.mov", "in": 3.0, "out": 6.0, "speed": 1.0, "fit": "cover"}
+  ],
+  "hook": {"lines": ["Why does", "this lamp click", "three times?"], "size": 112, "y": 520, "t1": 3.0},
+  "end_card": {"dur": 1.5, "lines": ["Holliewood", "& Vine"], "size": 150, "sub": "Link in bio",
+               "credit": ["Music: Kevin MacLeod (incompetech.com)", "CC BY 4.0"]},
+  "music": {"src": "tone:220", "gain_db": 0, "fade_in": 0.5, "fade_out": 1.5, "lufs": -14, "tp": -1.5}
+}

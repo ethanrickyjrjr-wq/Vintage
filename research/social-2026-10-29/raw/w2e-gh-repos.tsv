@@ -1,0 +1,285 @@
+# w2e GitHub scan provenance, read 2026-10-29 by gh CLI (authenticated). Columns: repo, stars, last_push, license_spdx, archived, language, latest_release@date, open_issues, last_closed_issue, last_merged_pr, forks
+# Part A: GraphQL verification batches q1..q4 (one gh call per batch, many repos per call)
+## batch q1
+gitroomhq/postiz-app	40085	2026-10-28	AGPL-3.0	-	TypeScript	rel:v2.25.3@2026-10-24	openI:130	lastClosedI:2026-10-29	lastMergedPR:2026-10-28	forks:7600
+gitroomhq/postiz-agent	557	2026-10-22	NOASSERTION	-	TypeScript	rel:v2.0.26@2026-10-20	openI:6	lastClosedI:	lastMergedPR:2026-10-20	forks:117
+gitroomhq/postiz-n8n	67	2025-10-07	MIT	-	TypeScript	rel:none@	openI:5	lastClosedI:2025-07-11	lastMergedPR:	forks:31
+SamurAIGPT/postiz-cheap	1370	2026-10-26	MIT	-	JavaScript	rel:v0.2.7@2026-06-15	openI:2	lastClosedI:2026-09-07	lastMergedPR:2026-10-26	forks:155
+inovector/mixpost	3883	2026-03-16	MIT	-	Vue	rel:2.6.0@2026-03-16	openI:28	lastClosedI:2026-10-22	lastMergedPR:2026-03-13	forks:586
+cogsend/cogsend	249	2026-10-22	MIT	-	TypeScript	rel:v1.20.2@2026-10-21	openI:1	lastClosedI:2026-10-18	lastMergedPR:2026-10-11	forks:35
+n8n-io/n8n	209016	2026-10-29	NOASSERTION	-	TypeScript	rel:n8n@2.45.6@2026-10-29	openI:335	lastClosedI:2026-10-29	lastMergedPR:2026-10-29	forks:61305
+activepieces/activepieces	25279	2026-10-29	NOASSERTION	-	TypeScript	rel:0.92.3-hotfix.2@2026-10-28	openI:475	lastClosedI:2026-10-27	lastMergedPR:2025-10-14	forks:4404
+mikusnuz/meta-mcp	31	2026-10-19	MIT	-	TypeScript	rel:v2.2.2@2026-10-19	openI:1	lastClosedI:2026-10-19	lastMergedPR:2026-08-04	forks:13
+Seym0n/tiktok-mcp	208	2026-08-19	MIT	-	JavaScript	rel:v2.2.0@2026-02-27	openI:1	lastClosedI:2026-01-09	lastMergedPR:	forks:29
+anwerj/youtube-uploader-mcp	62	2026-09-20	MIT	-	Go	rel:v0.3.0@2026-09-20	openI:3	lastClosedI:2026-09-20	lastMergedPR:2026-09-20	forks:28
+jakemeany523/buffer-mcp	1	2026-06-17	none	-	Python	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:0
+clugtu/pinterest-mcp	8	2026-03-12	MIT	-	Python	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:2
+aymandakirgh/pinterest-mcp	2	2026-09-11	MIT	-	TypeScript	rel:v0.3.0@2026-09-11	openI:0	lastClosedI:	lastMergedPR:	forks:2
+MookieLian/n8n-nodes-instagram	30	2026-03-17	MIT	-	JavaScript	rel:v3.4.0@2026-03-17	openI:3	lastClosedI:2026-04-04	lastMergedPR:2026-03-08	forks:12
+TiagoGrosso/instagram-graph-api-lib	95	2025-11-24	MIT	-	TypeScript	rel:v7.0.0@2024-08-08	openI:5	lastClosedI:2021-08-22	lastMergedPR:2023-05-18	forks:13
+flam-ing/instagram-comment-skill	5	2026-08-23	none	-	?	rel:v1.0.0@2026-08-23	openI:0	lastClosedI:	lastMergedPR:	forks:0
+chatwoot/chatwoot	38554	2026-10-29	NOASSERTION	-	Ruby	rel:v4.19.1@2026-10-24	openI:1053	lastClosedI:2026-10-29	lastMergedPR:2026-10-29	forks:9388
+## batch q2
+WyattBlue/auto-editor	5658	2026-10-28	Unlicense	-	Nim	rel:31.7.2@2026-10-03	openI:1	lastClosedI:2026-10-24	lastMergedPR:2026-07-31	forks:703
+remotion-dev/remotion	68844	2026-10-29	NOASSERTION	-	TypeScript	rel:v4.0.539@2026-10-26	openI:162	lastClosedI:2026-10-29	lastMergedPR:2026-10-29	forks:5629
+remotion-dev/skills	5869	2026-10-26	none	-	TypeScript	rel:none@	openI:11	lastClosedI:2026-10-24	lastMergedPR:	forks:655
+kingbootoshi/video-alchemy	10	2026-07-27	MIT	-	Python	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:1
+harper-carroll/reel-studio-skill	7	2026-08-03	NOASSERTION	-	TypeScript	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:0
+RayVentura/ShortGPT	8089	2025-02-10	MIT	-	Python	rel:v0.3.0@2025-02-10	openI:74	lastClosedI:2026-06-10	lastMergedPR:2024-02-11	forks:1170
+harry0703/MoneyPrinterTurbo	136276	2026-10-29	MIT	-	Python	rel:v1.3.9@2026-10-21	openI:20	lastClosedI:2026-10-28	lastMergedPR:2026-10-29	forks:21687
+gyoridavid/short-video-maker	1445	2025-06-21	MIT	-	TypeScript	rel:none@	openI:25	lastClosedI:2025-06-02	lastMergedPR:2025-05-12	forks:441
+Anil-matcha/AI-Youtube-Shorts-Generator	5650	2026-10-24	MIT	-	Python	rel:none@	openI:10	lastClosedI:2026-09-03	lastMergedPR:2026-06-22	forks:1021
+mifi/editly	5572	2025-05-12	MIT	-	TypeScript	rel:v0.15.0-rc.1@2025-01-19	openI:73	lastClosedI:2026-03-08	lastMergedPR:2025-02-20	forks:387
+mifi/lossless-cut	45434	2026-10-29	GPL-2.0	-	TypeScript	rel:v3.70.2@2026-10-28	openI:150	lastClosedI:2026-10-29	lastMergedPR:2026-10-21	forks:2290
+BtbN/FFmpeg-Builds	11892	2026-10-28	MIT	-	Shell	rel:latest@2026-10-28	openI:25	lastClosedI:2026-10-28	lastMergedPR:2026-10-26	forks:1561
+eugeneware/ffmpeg-static	1407	2026-03-21	GPL-3.0	-	JavaScript	rel:b6.1.1@2025-11-14	openI:28	lastClosedI:2020-02-03	lastMergedPR:2022-07-31	forks:206
+imageio/imageio-ffmpeg	304	2026-10-28	BSD-2-Clause	-	Python	rel:v0.7.0@2026-10-28	openI:19	lastClosedI:2026-10-28	lastMergedPR:2026-10-28	forks:66
+PyAV-Org/PyAV	3321	2026-10-28	BSD-3-Clause	-	Python	rel:v19.0.2@2026-10-21	openI:6	lastClosedI:2026-10-28	lastMergedPR:2026-10-28	forks:466
+kkroening/ffmpeg-python	11012	2024-08-04	Apache-2.0	-	Python	rel:none@	openI:478	lastClosedI:2026-10-28	lastMergedPR:2022-07-11	forks:947
+fluent-ffmpeg/node-fluent-ffmpeg	8229	2025-05-22	MIT	ARCH	JavaScript	rel:none@	openI:367	lastClosedI:2025-05-15	lastMergedPR:2025-05-22	forks:933
+ffmpegwasm/ffmpeg.wasm	17919	2026-09-29	MIT	-	C	rel:v12.15@2025-01-07	openI:386	lastClosedI:2026-10-21	lastMergedPR:2026-09-29	forks:1122
+jianfch/stable-ts	2282	2026-05-30	MIT	ARCH	Python	rel:2.0.0@2023-03-17	openI:0	lastClosedI:2026-05-30	lastMergedPR:2025-10-02	forks:248
+m-bain/whisperX	24927	2026-10-22	BSD-2-Clause	-	Python	rel:v3.8.6@2026-05-25	openI:178	lastClosedI:2025-05-25	lastMergedPR:2026-10-22	forks:2509
+vercel/satori	14145	2026-10-23	MPL-2.0	-	TypeScript	rel:0.63.2@2026-10-20	openI:102	lastClosedI:2026-10-20	lastMergedPR:2026-10-20	forks:395
+2boysfromtown/2bft-video-editor	0	2026-10-28	MIT	-	Python	rel:v0.3.1@2026-10-28	openI:0	lastClosedI:	lastMergedPR:	forks:0
+## batch q3
+coreyhaines31/marketingskills	57283	2026-10-29	MIT	-	JavaScript	rel:v2.13.10@2026-10-29	openI:20	lastClosedI:2026-10-13	lastMergedPR:2026-10-29	forks:8441
+ComposioHQ/awesome-claude-skills	78263	2026-09-18	none	-	Python	rel:none@	openI:171	lastClosedI:2026-10-16	lastMergedPR:2026-05-22	forks:9419
+anthropics/skills	184733	2026-10-28	none	-	Python	rel:none@	openI:423	lastClosedI:2026-10-28	lastMergedPR:2026-10-28	forks:21846
+Zie619/n8n-workflows	57118	2026-06-24	MIT	-	Python	rel:dmca-compliance-2025-08-14@2025-08-14	openI:29	lastClosedI:2026-03-26	lastMergedPR:2026-02-08	forks:7692
+enescingoz/awesome-n8n-templates	26164	2026-09-12	NOASSERTION	-	?	rel:none@	openI:7	lastClosedI:2026-10-25	lastMergedPR:2026-09-12	forks:6581
+subzeroid/instagrapi	7040	2026-10-28	NOASSERTION	-	Python	rel:3.2.2@2026-10-27	openI:11	lastClosedI:2026-10-24	lastMergedPR:2026-10-28	forks:1017
+instaloader/instaloader	13717	2026-10-26	MIT	-	Python	rel:v4.16@2026-10-26	openI:42	lastClosedI:2026-10-29	lastMergedPR:2026-10-26	forks:1643
+dilame/instagram-private-api	6488	2024-08-09	MIT	-	TypeScript	rel:none@	openI:381	lastClosedI:2019-06-30	lastMergedPR:2024-03-07	forks:1185
+davidteather/TikTok-Api	6720	2026-08-24	MIT	-	Python	rel:v7.3.3@2026-04-01	openI:139	lastClosedI:2026-10-12	lastMergedPR:2026-05-19	forks:1222
+wkaisertexas/tiktok-uploader	781	2026-02-12	MIT	-	Python	rel:build-uv-v1.7@2026-02-12	openI:14	lastClosedI:2023-09-03	lastMergedPR:2026-02-12	forks:168
+umami-software/umami	39782	2026-10-28	MIT	-	TypeScript	rel:v3.4.1@2026-10-23	openI:75	lastClosedI:2026-10-29	lastMergedPR:2026-10-28	forks:8446
+googleapis/google-api-nodejs-client	12278	2026-10-22	Apache-2.0	-	TypeScript	rel:firebasecrashlytics-v3.4.0@2026-10-22	openI:209	lastClosedI:2026-10-22	lastMergedPR:2026-10-22	forks:2047
+meta/facebook-nodejs-business-sdk	625	2026-09-21	NOASSERTION	-	JavaScript	rel:v26.0.2@2026-09-21	openI:67	lastClosedI:2026-10-16	lastMergedPR:2018-03-30	forks:254
+pipeboard-co/meta-ads-mcp	1341	2026-10-20	NOASSERTION	-	Python	rel:1.0.128@2026-09-23	openI:11	lastClosedI:2026-03-13	lastMergedPR:2026-10-20	forks:281
+postoncehq/instagram-mcp	2	2026-10-22	MIT	-	?	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:1
+thenavidm/instagram-mcp	2	2026-10-27	MIT	-	Python	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:2
+ayrshare/ayrshare-social-media-api-claude-plugin	21	2026-10-12	none	-	Python	rel:none@	openI:1	lastClosedI:	lastMergedPR:2026-10-12	forks:3
+OpenCut-app/OpenCut	96766	2026-09-24	MIT	-	TypeScript	rel:v0.3.0@2026-04-15	openI:288	lastClosedI:2026-10-02	lastMergedPR:2026-04-14	forks:9595
+midrender/revideo	4156	2026-07-15	MIT	-	TypeScript	rel:none@	openI:56	lastClosedI:2026-07-15	lastMergedPR:2026-07-15	forks:218
+heygen-com/hyperframes	75323	2026-10-29	Apache-2.0	-	TypeScript	rel:v0.8.217@2026-10-29	openI:76	lastClosedI:2026-10-28	lastMergedPR:2026-10-29	forks:6853
+browser-use/video-use	30082	2026-10-08	MIT	-	Python	rel:none@	openI:34	lastClosedI:2026-07-18	lastMergedPR:2026-10-08	forks:3496
+what-name/pinterest-mcp	7	2026-03-15	none	-	TypeScript	rel:none@	openI:0	lastClosedI:	lastMergedPR:	forks:0
+postmill-ai/postmill-app	31	2026-10-29	AGPL-3.0	-	TypeScript	rel:v1.4.0@2026-10-29	openI:1	lastClosedI:2026-09-10	lastMergedPR:2026-10-29	forks:10
+agentsmd/agents.md	25210	2026-09-10	MIT	-	TypeScript	rel:none@	openI:99	lastClosedI:2026-10-27	lastMergedPR:2026-08-25	forks:1931
+## batch q4
+rclone/rclone	60617	2026-10-29	MIT	-	Go	rel:v1.75.2@2026-10-09	openI:948	lastClosedI:2026-10-29	lastMergedPR:2026-10-27	forks:5617
+syncthing/syncthing	89867	2026-10-29	MPL-2.0	-	Go	rel:v2.1.7@2026-10-21	openI:380	lastClosedI:2026-10-27	lastMergedPR:2026-10-27	forks:5555
+immich-app/immich	117598	2026-10-29	AGPL-3.0	-	TypeScript	rel:v3.3.5@2026-10-21	openI:496	lastClosedI:2026-10-29	lastMergedPR:2026-10-29	forks:7401
+grammyjs/grammY	3786	2026-10-16	MIT	-	TypeScript	rel:v1.46.0@2026-08-26	openI:13	lastClosedI:2026-10-16	lastMergedPR:2026-10-16	forks:160
+SYSTRAN/faster-whisper	26294	2026-10-25	MIT	-	Python	rel:v1.2.1@2025-10-31	openI:6	lastClosedI:2026-10-15	lastMergedPR:2026-10-16	forks:2187
+ggml-org/whisper.cpp	54766	2026-10-29	MIT	-	C++	rel:v1.9.5@2026-10-06	openI:176	lastClosedI:2026-10-29	lastMergedPR:2026-10-29	forks:6254
+openai/whisper	111533	2026-08-31	MIT	-	Python	rel:v20250625@2025-06-26	openI:0	lastClosedI:	lastMergedPR:2026-03-27	forks:13510
+microsoft/playwright	98813	2026-10-29	Apache-2.0	-	TypeScript	rel:v1.64.1@2026-10-14	openI:190	lastClosedI:2026-10-29	lastMergedPR:2026-10-29	forks:6734
+lovell/sharp	32807	2026-10-29	Apache-2.0	-	JavaScript	rel:v0.35.5@2026-09-27	openI:116	lastClosedI:2026-10-22	lastMergedPR:2026-10-23	forks:1447
+btafoya/mixpost-api	2	2025-10-24	MIT	-	PHP	rel:v1.0.0@2025-10-24	openI:0	lastClosedI:	lastMergedPR:	forks:1
+Could not resolve to a Repository with the name 'binwiederhall/ntfy'.
+# Part B: gh search repos results (columns: repo, stars, last_push, license_key, archived, description). Query text shown; multi-term queries sched2, sched3, sched5, cap1, n8n1, ana1, mcp6 returned zero rows.
+## search sched1
+cogsend/cogsend	249	2026-10-22	mit	-	Self-hosted social media scheduler. Write once, publish to any connected platform. Runs on
+realchandan/post-scheduler	20	2026-07-05	agpl-3.0	-	Self-hosted social media scheduling. Deploy on Cloudflare in under a minute. Free forever.
+azeemkafridi/openpublish	2	2026-09-29	agpl-3.0	-	Open source, self-hosted social media scheduler for 16 platforms — compose once, publish e
+MeltiplyOrg/meltiply	1	2026-10-29	other	-	Self-hostable social media scheduling and publishing.
+Fredyss/kronaut	0	2026-10-29	other	-	Self-hostable social media scheduler
+thehomelab-lol/container-postiz	0	2026-04-11		-	Postiz self-hosted social media scheduling
+shelpakovzhenya-art/seo-tool-postiz	0	2026-06-09		-	Postiz: Self-hosted social media scheduling tool.
+arcadiajules/social-scheduler	0	2026-03-27		-	Self-hosted social media scheduling dashboard - schedule posts across Twitter, Instagram, 
+rubenalejandrocalderoncorona/socialflow	0	2026-05-13	agpl-3.0	-	Postiz fork — self-hosted social media scheduler with per-org OAuth credentials UI
+dnlrbbrt/curb	0	2026-06-18		-	Self-hosted social media scheduler. Your queue, your server, no per-channel fees.
+AdrielleU/marketingmanager-app	0	2026-10-29	mit	-	MIT-licensed, self-hostable social media scheduler: composer, calendar, Bluesky/X/LinkedIn
+SchulzOli/postwerk	0	2026-10-25	mit	-	Self-hosted social media scheduling. Connect your accounts with one click, write a post on
+## search sched4
+gitroomhq/postiz-app	40085	2026-10-28	agpl-3.0	-	📨 The ultimate agentic social media scheduling tool 🤖
+SamurAIGPT/postiz-cheap	1370	2026-10-26	mit	-	Free, open-source Postiz alternative: self-host a social media scheduler with an AI post w
+gitroomhq/postiz-agent	557	2026-10-22	other	-	Postiz Agents CLI - connect it to Claude / OpenClaw / etc, to schedule social media posts 
+athcagithub/postiz-leaked	157	2026-10-26	agpl-3.0	-	The full Postiz source code. Leaked.
+gitroomhq/postiz-docker-compose	75	2026-07-30	agpl-3.0	-	Docker Compose to run Postiz
+leamsigc/MagicSync	68	2026-10-28		-	MagicSync is the ultimate open-source social media and content management platform. Design
+gitroomhq/postiz-n8n	67	2025-10-07	mit	-	This is the Postiz n8n custom node repository
+gitroomhq/postiz-docs	51	2026-10-20	mit	-	Official documentation repo for postiz-app.
+gitroomhq/postiz-helmchart	34	2025-01-02	apache-2.0	-	Helm for Postiz
+postmill-ai/postmill-app	31	2026-10-29	agpl-3.0	-	Open-source, AI-native social media management, design & scheduling platform for 45+ chann
+softsweb/self-hosted-postiz	20	2026-06-29		-	🚀 One-command setup for Postiz - a self-hosted social media management platform. Easily de
+gitroomhq/postiz-mobile	17	2026-10-21		-	
+## search mcp1
+pipeboard-co/meta-ads-mcp	1341	2026-10-20	other	-	Meta Ads (Facebook/Instagram) MCP server for Claude, ChatGPT, Perplexity & Cursor — the Me
+Bob-lance/instagram-engagement-mcp	47	2025-04-26	mit	-	📢 Instagram MCP Server – A powerful Model Context Protocol (MCP) server for tracking Insta
+HasData/instagram-mcp	15	2026-10-29	mit	-	Hosted Instagram MCP server from HasData. Public profile and post-feed tools by handle, st
+arjun1194/insta-mcp	13	2025-12-28		-	Instagram MCP Server - Provides AI assistants with tools for Instagram analytics, insights
+caicai-yao/social-trends-mcp	6	2026-03-20	mit	-	Real-time trending topics from X, TikTok, YouTube & Instagram — MCP Server + REST API with
+CDataSoftware/instagram-mcp-server-by-cdata	4	2025-10-18	mit	-	This read-only MCP Server allows you to connect to Instagram data from Claude Desktop thro
+dr-ashraf-s-MCP-LABS/instagram-mcp	2	2026-06-08	mit	-	Instagram MCP server — control Instagram via Claude Desktop & Claude Web
+ishan-parihar/instagram-lyr	2	2026-10-27	mit	-	Instagram MCP server using direct httpx API (no browser)
+thenavidm/instagram-mcp	2	2026-10-27	mit	-	Instagram MCP server for Claude Code and AI agents. Posts, insights, comments, DMs, publis
+xishandong/instagram-mcp	2	2026-04-14		-	Instagram MCP Server - 通过 imginn.com 访问 Instagram 公开数据
+postoncehq/instagram-mcp	2	2026-10-22	mit	-	Instagram MCP server for Claude, ChatGPT, Cursor and Codex. Publish and schedule Instagram
+Insightful-Pipe/instagram-mcp-server	1	2026-10-10	mit	-	Hosted Instagram MCP server: 19 actions (11 read, 8 write) for Business account insights, 
+## search mcp2
+Seym0n/tiktok-mcp	208	2026-08-19	mit	-	Model Context Protocol (MCP) with TikTok integration
+yap-audio/tiktok-mcp	77	2025-04-03	mit	-	A Model Context Protocol service for TikTok video discovery and metadata extraction.
+HasData/tiktok-mcp	12	2026-10-29	mit	-	TikTok MCP server by HasData: public profiles, videos, comments and keyword search as JSON
+terrylinhaochen/tiktok_mcp	6	2026-02-19	mit	-	MCP server for analyzing TikTok data for insight extraction
+postoncehq/tiktok-mcp	3	2026-10-22	mit	-	TikTok MCP server for Claude, ChatGPT, Cursor and Codex. Publish and schedule TikTok video
+TheSamLePirate/tiktok-mcp	3	2026-02-11	mit	-	Connecte Tiktok Live a vos IA préférées :)
+0xArtex/tiktok-mcp	2	2026-08-10	mit	-	Post, schedule, manage, and analyze TikTok accounts from any MCP-compatible AI agent.
+adbertram/tiktoken-mcp	2	2025-06-20	mit	-	MCP server for counting tokens using OpenAI's tiktoken library
+AvyanshKatiyar/tiktok-mcp-server	2	2026-04-16		-	TikTok Business API v1.3 MCP server for Smart+ TRAFFIC campaigns. 21 tools: campaigns, tar
+bledny1099/tiktok-mcp	1	2026-10-14	mit	-	Model Context Protocol server for extracting TikTok video metadata, transcribing speech wi
+IvanBBaev/tiktok-mcp	1	2026-10-29	mit	-	Unofficial TikTok MCP server — policy-governed tools over the official Display and Content
+DaisyXuYining/TikTok-mcp-server	1	2025-06-22		-	提取抖音无水印视频链接，视频文案，TikTok-mcp-server
+## search mcp3
+collactivelabs/pinterest-mcp-server	37	2025-05-24		-	A Model Context Protocol (MCP) server for integrating the Pinterest API with AI agents and
+clugtu/pinterest-mcp	8	2026-03-12	mit	-	MCP server for the Pinterest API v5 — create pins, manage boards, track analytics. First o
+what-name/pinterest-mcp	7	2026-03-15		-	Full-coverage Pinterest API v5 MCP server. Create pins, manage boards, research keywords, 
+CDataSoftware/pinterest-mcp-server-by-cdata	6	2025-10-18	mit	-	This read-only MCP Server allows you to connect to Pinterest data from Claude Desktop thro
+Nuu-maan/pinterest-mcp	5	2026-08-26	mit	-	MCP server for searching and downloading Pinterest images and boards
+aymandakirgh/pinterest-mcp	2	2026-09-11	mit	-	MCP server for the Pinterest API v5 — 35 tools across boards, pins, analytics, search and 
+HusamAri/pinterest-mcp	2	2026-05-28		-	Read-only MCP server for the Pinterest API v5 (boards, pins, account).
+postoncehq/pinterest-mcp	2	2026-10-22	mit	-	Pinterest MCP server for Claude, ChatGPT, Cursor and Codex. Publish and schedule Pinterest
+Martin-Code202/pinterest-mcp	1	2026-07-16		-	
+amydojo/pinterest-mcp	1	2026-08-18		-	Pinterest bridge 
+## search mcp4
+anwerj/youtube-uploader-mcp	62	2026-09-20	mit	-	Upload, Update or Schedule videos on Youtube with the help of AI
+ai-martin-lau/youtube-uploader-mcp	0	2026-08-16	mit	-	Upload, Update or Schedule videos on Youtube with the help of AI
+mikeysrecipes/youtube-uploader-mcp	0	2025-07-22		-	
+VladislavDegtyarenko/youtube-upload-mcp	0	2026-06-02		-	
+## search mcp5
+ahernan2/buffer-mcp	4	2026-03-14		-	
+k-rister/ephemeral-buffer-mcp	4	2026-10-29	apache-2.0	-	Ephemeral in-memory command output capture and hybrid search MCP server for coding agents.
+ridwantriafandi355-bit/autonomous-content-engine	4	2026-09-30	mit	-	Autonomous multi-agent content pipeline: 24h tech research, copywriting, headless 4:5 caro
+wjjnew123/buffer-mcp	1	2026-10-25	mit	-	
+jakemeany523/buffer-mcp	1	2026-06-17		-	MCP server for Buffer's GraphQL API. Schedule, manage, and batch social media posts from a
+Thearthman/Openclaw_Gmail_Idle_Service	1	2026-05-05	mit	-	Install script and templates for host-side Gmail MCP (gmail-mcp-imap), a buffer MCP for em
+MusaMusaevAI/BufferMCPmedia	0	2026-09-18		-	
+tn819/buffer-mcp	0	2026-03-04		-	MCP server for Buffer social media scheduling
+mohamedreyad11111/buffer-mcp	0	2026-07-28	apache-2.0	-	
+damusix/buffer-mcp	0	2026-05-25		-	MCP for Buffer social media posting
+## search mixpost
+inovector/mixpost	3883	2026-03-16	mit	-	📅 Schedule, 📢 publish, and ⚡ manage your social media content on your server. No subscript
+inovector/MixpostApp	133	2025-05-28		-	Standalone application with the Laravel Package of Mixpost Lite pre-installed and configur
+macagua/mixpost_docker	14	2023-03-15	mit	-	Mixpost Installation with Docker Containers
+inovector/MixpostProTeamApp	13	2026-09-29		-	Standalone Mixpost Pro Team application for self-hosted social media management
+inovector/MixpostEnterpriseApp	10	2026-09-29		-	Standalone application with Mixpost Enterprise's Laravel package pre-installed and configu
+inovector/mixpost-auth	5	2025-05-28	mit	-	Mixpost's authentication feature
+tjventurini/mixpost-setup	2	2024-06-15		-	Setup for Mixpost (https://mixpost.app/)
+btafoya/mixpost-api	2	2025-10-24	mit	-	REST API add-on for Mixpost - enables n8n and external integrations
+pfarag/mixpost-mcp-server	1	2026-06-05	mit	-	
+imvickykumar999/mixpost	1	2025-08-09		-	Introducing VixPost made in Django which is similar to MixPost, but it only schedules phot
+## search vid1
+xixihhhh/clipforge	1127	2026-10-26	agpl-3.0	-	ClipForge（原『带货剪手』/ daihuo-jianshou）：开源 AI 带货短视频神器——上传一张商品图，AI 自动提炼卖点 + 写种草脚本 + 锁定商品原图不变形 +
+RianNegreiros/AiShortsVideosGenerator	57	2026-03-05		-	Full-Stack ASP.NET Core and Next.js to create AI-Generated Short Videos with Captions usin
+nachat-ayoub/wyr-shorts-generator	42	2024-06-20		-	The "Would You Rather" Short Videos Generator is a powerful tool that automatically genera
+kolligopinath/AI_short_video_generator	37	2024-10-30		-	Automated short video generated using Artificial intelligence tools
+lcy362/free-short-video-studio	32	2026-09-28	mit	-	Free AI short video generator that runs fully in the browser — no install, no GPU, no cred
+langrenlibai/Short-Video-AI-Factory	16	2026-08-18		-	AI-powered short video generator based on MoneyPrinterTurbo, with text-to-video and image-
+Ali-Onar/shortform-video-generator	14	2025-05-14		-	This project creates shortform videos (like TikTok, Reels) from plain text using AI tools
+riyaz-pattan/ai-short-video-generator-	10	2026-08-15	mit	-	
+ashishxjhajharia/Short-Video-Generator	9	2025-10-12		-	🎬 This project is an AI-powered short video generator built with Next.js, React, Tailwind 
+davide97l/short-video-generator-streamlit	8	2024-04-10		-	
+## search vid2
+WyattBlue/auto-editor	5658	2026-10-28	unlicense	-	Effort free video editing!
+HugoBlox/hugo-theme-academic-cv	5084	2026-10-25	mit	-	🎓 Academic portfolio that boosts citations. AI generates pages, you own as Markdown. BibTe
+zufuliu/notepad4	5081	2026-10-29	other	-	Notepad4 (Notepad2⨯2, Notepad2++) is a light-weight Scintilla based text editor for Window
+akinomyoga/ble.sh	4869	2026-10-27	bsd-3-clause	-	Bash Line Editor―a line editor written in pure Bash with syntax highlighting, auto suggest
+wudi/swoole-ide-helper	1118	2021-06-02	other	ARCH	Auto completion, trigger suggest and view docs for Swoole in editor.
+landy22granatt/Kumpulan-Script-Termux	768	2020-06-25		-	Ok, Langsung Saja Ke Materi. Sesuai Judul, Disini Saya Akan Memberikan Kumpulan Script Ter
+neonichu/BBUDebuggerTuckAway	664	2016-06-22	mit	-	Xcode plugin for auto-hiding the debugger once you start typing in the source code editor.
+Taoviqinvicible/Tools-termux	600	2018-11-25		-	1.[Script Termux] -Cmatrix *apt-get update *apt-get upgrade *apt-get install nmap *apt-get
+terhechte/SourceKittenDaemon	525	2021-07-23	mit	-	Swift Auto Completions for any Text Editor
+tranleduy2000/javaide	492	2021-09-29	gpl-3.0	-	Code editor, java auto complete, java compiler, aapt, dx, zipsigner for Android
+## search cap2
+kingbootoshi/video-alchemy	10	2026-07-27	mit	-	Talk into a camera, get back a publish-ready video. AI-agent video editing: word-level tra
+vshukla7/remotion-captions-themes	8	2026-06-23	mit	-	Themeable animated word-level caption library for Remotion — kinetic typography, karaoke h
+harper-carroll/reel-studio-skill	7	2026-08-03	other	-	Cinematic vertical reel pipeline for Claude Code — AI B-roll (Higgsfield) + Remotion capti
+Fats403/remotion-captions-kit	6	2026-08-15	mit	-	Animated caption presets for Remotion. Karaoke, kinetic type, pills, glow, plus proper pag
+williamclay8/arcane-full-blast-video-workflow	1	2026-07-01	mit	-	Agent-ready Arcane Mind short-form video workflow: source fidelity, Grok/xAI planning, Rex
+icantcodefyi/remotion-captions	1	2026-04-23		-	
+sumukhbendre123/Remotion-Captioning-Platform	0	2025-12-16		-	Remotion Captioning Platform
+kofiowusuai-lab/skool-captions	0	2026-10-14		-	Remotion caption renderer for Skool and course clips
+tanner-k/handwriting-font-project	0	2026-10-12		-	Handwriting-to-font pipeline and Remotion captioned video project
+jeetu-89/remote-caption-backend	0	2025-11-21		-	Backend for remote caption .
+## search cap3
+vorniches/cutstorm	21	2026-05-08	mit	-	Open-source video editor with local Whisper captions.
+Mas-inx/lumen-ai-video-editor	16	2026-10-15	mit	-	Open-source AI video editor for Windows: timeline editing, frame-exact export, on-device W
+nuzkyapp/nuzky	13	2026-10-28	gpl-3.0	-	Free, open source video editor for Reels, TikTok and Shorts. A CapCut alternative for Mac,
+fmadore/Live-translation	7	2026-10-29	mit	-	Offline Whisper captions and cloud translation in a transparent Windows overlay for meetin
+AIex7/Local-Whisper-Captions-Chrome-Extension-	4	2026-03-11		-	Chrome extension that:  - Captures **tab audio** (not microphone) - Runs **Whisper locally
+joeytran05/yt-shorts-ai	4	2026-03-29		-	End-to-end AI pipeline for generating and publishing YouTube Shorts with ElevenLabs, Whisp
+dongnguyenvie/bashcut-plugins	3	2026-10-18	mit	-	Official plugin registry for BashCut: signed plugins such as Whisper Captions, VieNeu TTS 
+gobclaw/heygen-shorts-skill	3	2026-03-18	mit	-	Claude skill: end-to-end YouTube Shorts production via HeyGen API + Whisper captions
+ezin-rev/resolve-jcut	3	2026-07-05	mit	-	Silence removal with real J-cuts for DaVinci Resolve — works on the FREE version. Whisper 
+pendig/videocut-cli	3	2026-04-18	mit	-	VideoCut-CLI, AI-powered automation for creators. Automate Download (Bypass 403), AI Auto-
+## search n8n2
+dzmzah/zovu-cdn	0	2026-09-25		-	Publiczny hosting obrazkow dla automatyzacji ZOVU (n8n -> Instagram)
+ThiagoMacedo3/mallvex-post-assets	0	2026-05-31		-	Assets públicos (JPG) para publicaciones automáticas de Mallvex via n8n + Instagram API
+maksudrasulzada-cell/n8n-nodes-aimedia	0	2026-09-04	mit	-	aimedia.az node for n8n — Instagram/Messenger/WhatsApp/Telegram messaging, contact fields,
+Anton-Ognev-AI/n8n-social-automation-toolkit	0	2026-07-11	mit	-	 Security-conscious Python tooling to build, secret-gate, validate, and safely deploy an n
+Felipe14c04/vlaze	0	2026-09-06		-	Financial & inventory management app for retail — React + Supabase, built end-to-end with 
+yourgirltech/instagram-dm-lead-capture	0	2026-10-09		-	n8n Instagram DM auto-reply: Meta webhook, keyword intent routing with LLM fallback, Graph
+abinashdhir/workflows	0	2026-08-08		-	A collection of independent automation workflows: a voice-driven personal assistant, an n8
+## search skill1
+urikkkk/nimble-social-feeds	0	2026-03-21	mit	-	Claude Code skill: Social media data collection and analysis
+## search reply1
+flam-ing/instagram-comment-skill	5	2026-08-23		-	Instagram comment auto-reply + DM via official Meta webhooks on Cloudflare. No polling. Dr
+abuelectric96-ctrl/abu-chat	0	2026-08-21		-	Instagram comment auto-reply SaaS
+Ahmedsz2025/instagram-comment-auto-reply	0	2026-10-15		-	
+XBoy-352/instabot	0	2026-08-11		-	Instagram comment auto-reply bot (Graph API + LLM classification)
+sakthi-byte/instagram-comment-reply-dm-followup	0	2026-07-29		-	A technical breakdown of Instagram comment auto reply combined with a DM follow up, both t
+## search awesome1
+louislikescomputers/Awesome-social-media-automation-tools	0	2026-07-24		-	
+## search claudevid
+vyn-store/claude-code-video-editing	2	2026-05-25		-	
+dominicCyrano/cyrano-clips	2	2026-04-14		-	AI creative studio powered by Claude Code. Video editing, viral clip mining, and intellige
+shaoyuc2/claude-code-video-editing	0	2026-09-01		-	
+2boysfromtown/2bft-video-editor	0	2026-10-28	mit	-	Claude Code video editing skills: auto reframe 16:9 to 9:16 with face tracking, captions, 
+AgentSmoki/Montazh_Agent	0	2026-09-22	mit	-	Claude Code video-editing agent running on 10 skills — memes, images, emoji accents, and m
+## search mktskills
+esref1071/content-marketing-skills-claude-code	1	2026-03-16		-	
+timwuk-git/Marketing-Skills-Claude	0	2026-05-27	mit	-	
+IndoDiego/marketing-skills-claude	0	2026-03-20		-	
+AayushmaanAban/Marketing-skills-claude-	0	2026-03-28	mit	-	
+## search igapi
+jstolpe/instagram-graph-api-php-sdk	137	2024-02-24	mit	-	
+TiagoGrosso/instagram-graph-api-lib	95	2025-11-24	mit	-	An npm package that lets you easily perform requests to the Instagram Graph API
+davidwickerhf/instaclient	56	2022-01-09	gpl-3.0	-	instaclient is a Python library for accessing Instagram's features. With this library, you
+amirsarhang/instagram-php-sdk	53	2026-08-28	mit	-	Instagram Graph API SDK
+imakashsahu/Instagram-Graph-API-Python	42	2020-07-21		-	This Repository Focuses on the Python Script for New Instagram Graph API to Fetch the Inpu
+rakeshpatra/instagram_graph_api	32	2020-12-12	mit	-	This is a version of koala gem which provides commonly used Instagram Graph APIs
+mikusnuz/meta-mcp	31	2026-10-19	mit	-	MCP server for Instagram Graph API, Threads API & Meta platform — 57 tools with Graph API 
+MookieLian/n8n-nodes-instagram	30	2026-03-17	mit	-	This is a community node dedicated for the use of Instagram Graph API in n8n.
+jetrockets/omniauth-instagram-graph	26	2021-03-12	mit	ARCH	OmniAuth strategy for Instagram Graph API.
+Narla-Venkata-Anand-Sai-Kumar/openinstaflow	20	2026-05-31		-	OpenInstaFlow — An MCP server that exposes the Instagram Graph API to any MCP client (Clau
+## search uni1
+ayrshare/ayrshare-social-media-api-claude-plugin	21	2026-10-12		-	The unified social media API for AI agents. Publish, schedule, and analyze across 13+ netw
+bundleglobal/bundlesocial-examples	2	2026-10-13	mit	-	Examples of how to use the bundle.social API a unified social media API with no accounts l
+debroysouvik65/socioeasy	0	2026-02-12		-	Unified Social Media API Platform
+groniz-artifacts/unified-social-media-api-vs-native-apis	0	2026-08-25		-	Compare unified and native social media APIs with a practical build-versus-buy matrix cove
+## search tt1
+wkaisertexas/tiktok-uploader	781	2026-02-12	mit	-	Automatically ⬆️ upload TikTok videos
+haziq-exe/TikTokAutoUploader	308	2026-07-06	mit	-	Python tiktok uploader that lets you upload and schedule tiktoks using favorited/searched 
+MiniGlome/Tiktok-uploader	233	2023-12-19		-	Python3 script to upload and schedule TikTok videos
+edde746/tiktok-uploader	47	2022-11-29		-	Programatically upload TikTok videos with ADB
+azimjohn/yit	47	2022-11-26	mit	-	YouTube shorts, Instagram reels and Tiktok Uploader
+hyqshr/Douyin-Tiktok-Uploader	10	2023-08-07		-	抖音自动发布/上传视频脚本。Pyautogui
+taisprestes01/tiktok-uploader	8	2025-07-09		-	tiktok-uploader is a Python-based project that automates the process of uploading videos t
+YanivGabay/tiktok-uploader	4	2025-12-27	mit	-	Simple TikTok video uploader using Playwright - no API key required
+gagordon1/tiktok-uploader	4	2022-09-26		-	Uses puppeteer to upload tiktok content
+TheBunnies/TiktokUploaderTelegram	3	2024-05-27	gpl-3.0	-	A bot for uploading Tiktok and Twitter videos straight to Telegram
+## search shorts1
+xuanyustudio/LocalMiniDrama	2274	2026-10-29	mit	-	🎬 seedance2接入  开源本地 AI 短剧 & 漫剧生成工具 —— 从故事到成片一站式完成，数据不出本机，短剧工作流管理平台，高灵活度，AI真人剧，AI漫剧本地搞定。 Op
+gyoridavid/short-video-maker	1445	2025-06-21	mit	-	Creates short videos for TikTok, Instagram Reels, and YouTube Shorts using the Model Conte
+SaarD00/AI-Youtube-Shorts-Generator	264	2026-10-13	mit	-	Infinite content, zero manual editing. A fully automated 'faceless' video factory that tur
+ChetanXpro/short-video-automation	186	2025-12-22		-	AI short content automation tool, which can generate short videos for youtube and instagra
+amirreza1307/GPTube	44	2025-10-16		-	Automating top 10 and short YouTube video maker with ChatGPT without API
+leke-adewa/short-video-maker	35	2026-10-12		-	Create short vertical videos for TikTok, YouTube Shorts, and Instagram Reels using AI. Ful
+Kappaemme-git/codex-video-short-maker-skill	35	2026-05-01	mit	-	
+aaurelions/short-video-maker	24	2025-07-02		-	AI to create short vertical videos optimized for platforms such as TikTok, YouTube Shorts,
+wanglongxiao/seedance-drama-maker	21	2026-10-27	mit	-	Seedance Drama Maker — turn one sentence into a cinematic AI short drama. Multi-agent pipe
+coslynx/coslynx	17	2026-10-24		-	We make Content Factory: short-form video for your brand, researched, voiced and animated 
+# Part C: other gh calls: repos/remotion-dev/remotion/license (Remotion License: free for individuals, for-profit orgs up to 3 employees, non-profits); repos/n8n-io/n8n/license (Sustainable Use License: own internal business purposes or non-commercial); orgs/tiktok/repos and orgs/pinterest/repos (official SDK listing); repos/gitroomhq/postiz-docker-compose/contents/docker-compose.yaml (8 services); repos/WyattBlue/auto-editor/releases/latest (31.7.2, 2026-10-03); gh search issues instagram --repo gitroomhq/postiz-app.
+# gh call count: 29 searches (7 empty) + 4 GraphQL + 1 Remotion license + 2 org listings + 1 compose + 1 release + 1 n8n license + 1 issue search = 40, plus 1 failed GraphQL resolution (ntfy) counted in the 4
