@@ -61,7 +61,7 @@ test("room-friendly samples keep their cutouts and fashion stays out of the room
 test("the homepage initializes the sample collection before catalog and room controls", () => {
   const page = read("storefront.html");
   assert.ok(page.indexOf('src="demo-products.js"') > page.indexOf('src="room-products.js"'));
-  assert.ok(page.indexOf('src="demo-products.js"') < page.indexOf('src="catalog.js"'));
+  assert.ok(page.indexOf('src="demo-products.js"') < page.indexOf('src="catalog.js'));
   assert.ok(page.indexOf('id="collection"') < page.indexOf('class="departments'));
   assert.ok(!page.includes('id="load-more"'), "all finds are present without another click");
   assert.match(page, /Illustrative prices in USD/);

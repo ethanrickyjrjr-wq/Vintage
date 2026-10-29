@@ -33,7 +33,7 @@ a[data-browse-category]:hover { text-decoration: underline; text-underline-offse
 
 .department[data-browse-category] :is(.department-label, h3, p),
 .collection-intro[data-product-category] :is(h2, h2 em, p),
-.product-card[data-product-category] :is(.product-title, .product-price, .product-price small, .product-meta .status),
+.product-card[data-product-category] :is(.product-title, .product-title button, .product-price, .product-price small, .product-meta .status),
 .detail-copy[data-product-category] :is(h2, .detail-category, .detail-price, .detail-price small, .detail-notes, .detail-notes h3),
 .detail-copy[data-product-category] > p,
 .bag-item[data-product-category] :is(.bag-item-title, p, .bag-remove),
@@ -41,6 +41,7 @@ a[data-browse-category]:hover { text-decoration: underline; text-underline-offse
 .room-unplaced li[data-product-category],
 .model-credit[data-product-category] {
   color: var(--category-color);
+  -webkit-text-fill-color: currentColor;
 }
 
 .product-card[data-product-category] .product-add,
