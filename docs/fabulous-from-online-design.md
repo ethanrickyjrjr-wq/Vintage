@@ -2,6 +2,25 @@
 
 2026-10-28. Ricky's brief: a section where people hire Hollie to find items, or to decorate a corner, a room, or a whole studio or house. Clients meet by video, send photos, or describe what they want by email. Show ideas (parties, events, remodels, spare rooms). Offer in-person and "need it now" upgrades at higher prices. Lay out the page, set it up for Codex, and write "a really good quote".
 
+**Occasion styling update, 2026-10-29.** Ricky requested distinct background colors
+and expressive type, and rejected faint burgundy tints. Terra researched vintage
+poster art; Sol specified and checked the contrast palette. The 15 occasion links
+now use opaque emerald, saffron, coral, violet, rose, oxblood, cobalt, sage, ochre,
+lavender, petrol, sea-glass, rust, raspberry and citron grounds. Alternating light
+and dark cards sit on the existing burgundy page. The shop's Bodoni Moda, DM Sans
+and Space Mono supply invitation italics, bold party lettering and camera/office
+labels. Selected cards have invitation rules, camera corners or a record motif.
+
+Visual references: Cooper Hewitt's [Edgardo Giménez poster collection](https://www.cooperhewitt.org/2022/06/22/an-avant-garde-argentine-edgardo-gimenez/)
+for bold color and expressive typography, and [E. McKnight Kauffer's poster work](https://www.cooperhewitt.org/2015/04/03/laws-of-attraction/)
+for geometric accents and block lettering. These inform the direction; no artwork
+is copied. Browser measurements give minimum heading/body contrast of 4.99:1 and
+4.92:1. The full fills stay unchanged in both themes and on hover; the gold keyboard
+outline contrasts with the surrounding burgundy. All 33 tests, the build, desktop
+and 390/320px browser checks passed; Lighthouse accessibility is 100. Both agents
+reviewed the rendered design. Screenshots and audit outputs are in ignored
+`artifacts/occasion-styling/`.
+
 Evidence comes from six Sonnet reports in `research/fabulous-from-online/c1..c6-*.md`, with raw crawls in `raw/`. This page is the decision layer; the build spec is `docs/codex-handoff-fabulous-from-online.md`. Research, not legal or tax advice.
 
 **What I re-checked myself against captured live pages.**

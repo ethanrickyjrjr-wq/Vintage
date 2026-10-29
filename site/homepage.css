@@ -175,35 +175,47 @@ html { scroll-padding-top: 96px; }
 .hire-tiers .hire-price { margin-top: auto; padding-top: 24px; font-size: 23px; font-variant-numeric: tabular-nums; }
 .hire-price span { display: block; margin-top: 6px; color: var(--muted); font: 400 12px/1.6 var(--body); }
 .hire-note { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
-.hire-occasions { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-/* Little invitations: each occasion has its own ink, using the shop's three typefaces. */
-.hire-occasions a { --occasion-color: var(--pink); display: flex; flex-direction: column; gap: 20px; height: 100%; min-height: 180px; padding: 22px 20px; border: 1px solid var(--line); border-top: 3px solid var(--occasion-color); background: var(--paper-deep); background: color-mix(in srgb, var(--occasion-color) 6%, var(--paper-deep)); }
-.hire-occasions strong { display: block; color: var(--occasion-color); font: 400 30px/1.15 var(--display); letter-spacing: -.025em; }
-.hire-occasions span { display: block; margin-top: auto; color: var(--muted); font-size: 14px; }
-.hire-occasions a:hover, .hire-occasions a:focus-visible { border-color: var(--occasion-color); outline-color: var(--occasion-color); background: color-mix(in srgb, var(--occasion-color) 11%, var(--paper-deep)); }
-.hire-occasions [data-hire="Cocktail hour"] { --occasion-color: #a9d8cf; }
-.hire-occasions [data-hire="Dinner party"] { --occasion-color: #edd29e; }
-.hire-occasions [data-hire="The party"] { --occasion-color: #f5ac99; }
-.hire-occasions [data-hire="Disco night"] { --occasion-color: #d6b6f4; }
-.hire-occasions [data-hire="Bachelorette"] { --occasion-color: #f2a6ca; }
-.hire-occasions [data-hire="Proposal"] { --occasion-color: #f3c1c0; }
-.hire-occasions [data-hire="Photo set"] { --occasion-color: #c2cee9; }
-.hire-occasions [data-hire="After the remodel"] { --occasion-color: #b9d2af; }
-.hire-occasions [data-hire="Guest room"] { --occasion-color: #e4c390; }
-.hire-occasions [data-hire="Spare room"] { --occasion-color: #cbbfe5; }
-.hire-occasions [data-hire="Home office"] { --occasion-color: #a9cde0; }
-.hire-occasions [data-hire="Snowbird season"] { --occasion-color: #b9dfc6; }
-.hire-occasions [data-hire="Reading nook"] { --occasion-color: #e8b68f; }
-.hire-occasions [data-hire="Gift a room"] { --occasion-color: #e5b5cf; }
-.hire-occasions [data-hire="Something else"] { --occasion-color: #d6da9c; }
+.hire-occasions { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+/* A wall of vintage invitations: opaque colored stock and contrasting inks. */
+.hire-occasions a { --occasion-bg: #164f43; --occasion-heading: #f3ce83; --occasion-ink: #f2e3ce; position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 24px; height: 100%; min-height: 210px; padding: 24px; color: var(--occasion-ink); background: var(--occasion-bg); border: 1px solid var(--occasion-heading); }
+.hire-occasions strong { position: relative; display: block; color: var(--occasion-heading); font: 400 32px/1.15 var(--display); letter-spacing: -.025em; text-wrap: balance; }
+.hire-occasions span { position: relative; display: block; margin-top: auto; color: var(--occasion-ink); font-size: 15px; line-height: 1.55; }
+.hire-occasions a:hover { box-shadow: inset 0 0 0 1px var(--occasion-heading); }
+.hire-occasions a:focus-visible { outline: 3px solid #f3ce83; outline-offset: 4px; }
+.hire-occasions [data-hire="Cocktail hour"] { --occasion-bg: #164f43; --occasion-heading: #f3ce83; --occasion-ink: #f2e3ce; }
+.hire-occasions [data-hire="Dinner party"] { --occasion-bg: #d5a54a; --occasion-heading: #421f31; --occasion-ink: #3d2730; }
+.hire-occasions [data-hire="The party"] { --occasion-bg: #dc735e; --occasion-heading: #351527; --occasion-ink: #351527; }
+.hire-occasions [data-hire="Disco night"] { --occasion-bg: #48237f; --occasion-heading: #f7b8df; --occasion-ink: #f2e3ce; }
+.hire-occasions [data-hire="Bachelorette"] { --occasion-bg: #dc7cae; --occasion-heading: #351527; --occasion-ink: #3d2730; }
+.hire-occasions [data-hire="Proposal"] { --occasion-bg: #7a263f; --occasion-heading: #ffd7c1; --occasion-ink: #f2e3ce; }
+.hire-occasions [data-hire="Photo set"] { --occasion-bg: #284a87; --occasion-heading: #f8d58a; --occasion-ink: #f2e3ce; }
+.hire-occasions [data-hire="After the remodel"] { --occasion-bg: #a4b999; --occasion-heading: #24382a; --occasion-ink: #29342d; }
+.hire-occasions [data-hire="Guest room"] { --occasion-bg: #c38b49; --occasion-heading: #351c25; --occasion-ink: #351c25; }
+.hire-occasions [data-hire="Spare room"] { --occasion-bg: #b09bcc; --occasion-heading: #342445; --occasion-ink: #352b40; }
+.hire-occasions [data-hire="Home office"] { --occasion-bg: #234f66; --occasion-heading: #c3dce4; --occasion-ink: #f2e3ce; }
+.hire-occasions [data-hire="Snowbird season"] { --occasion-bg: #75b6ac; --occasion-heading: #193f3a; --occasion-ink: #243b35; }
+.hire-occasions [data-hire="Reading nook"] { --occasion-bg: #87442f; --occasion-heading: #ffe1ab; --occasion-ink: #f5e5cc; }
+.hire-occasions [data-hire="Gift a room"] { --occasion-bg: #97335b; --occasion-heading: #fff0d3; --occasion-ink: #fff0d3; }
+.hire-occasions [data-hire="Something else"] { --occasion-bg: #c9c65f; --occasion-heading: #333517; --occasion-ink: #33351f; }
 .hire-occasions :is([data-hire="Dinner party"], [data-hire="Bachelorette"], [data-hire="Proposal"], [data-hire="Spare room"], [data-hire="Reading nook"]) strong { font-style: italic; }
-.hire-occasions [data-hire="Cocktail hour"] strong { font-size: 25px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
-.hire-occasions [data-hire="The party"] strong { font: 700 28px/1.1 var(--body); letter-spacing: -.04em; text-transform: uppercase; }
-.hire-occasions [data-hire="Disco night"] strong { font-size: 26px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; text-shadow: 2px 2px 0 #6d486d; }
-.hire-occasions :is([data-hire="Photo set"], [data-hire="Home office"]) strong { font: 400 19px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
-.hire-occasions :is([data-hire="After the remodel"], [data-hire="Something else"]) strong { font: 600 25px/1.15 var(--body); letter-spacing: -.03em; }
+.hire-occasions :is([data-hire="Dinner party"], [data-hire="Proposal"], [data-hire="Gift a room"]) strong { font-size: 34px; }
+.hire-occasions [data-hire="Cocktail hour"] strong { font-size: 26px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
+.hire-occasions [data-hire="The party"] strong { font: 700 38px/1.05 var(--body); letter-spacing: -.04em; text-transform: uppercase; }
+.hire-occasions [data-hire="Disco night"] strong { font-size: 30px; font-weight: 500; letter-spacing: .055em; text-transform: uppercase; }
+.hire-occasions [data-hire="Bachelorette"] strong { font-weight: 500; font-size: 30px; }
+.hire-occasions :is([data-hire="Photo set"], [data-hire="Home office"]) strong { font: 400 20px/1.4 var(--mono); letter-spacing: .03em; text-transform: uppercase; }
+.hire-occasions :is([data-hire="After the remodel"], [data-hire="Something else"]) strong { font: 600 27px/1.15 var(--body); letter-spacing: -.025em; }
 .hire-occasions [data-hire="Snowbird season"] strong { font-weight: 500; letter-spacing: .015em; }
-.hire-occasions [data-hire="Gift a room"] strong { font-weight: 500; font-size: 32px; }
+.hire-occasions [data-hire="Gift a room"] strong { font-weight: 500; }
+/* Invitation rules, camera corners and a record motif stay clear of the copy. */
+.hire-occasions :is([data-hire="Cocktail hour"], [data-hire="Dinner party"], [data-hire="Proposal"])::before { content: ""; position: absolute; inset: 7px; border: 1px solid var(--occasion-heading); opacity: .55; pointer-events: none; }
+.hire-occasions [data-hire="Dinner party"]::before { border: 3px double var(--occasion-heading); }
+.hire-occasions [data-hire="Photo set"]::before, .hire-occasions [data-hire="Photo set"]::after { content: ""; position: absolute; width: 15px; height: 15px; border: solid var(--occasion-heading); pointer-events: none; }
+.hire-occasions [data-hire="Photo set"]::before { top: 9px; left: 9px; border-width: 1px 0 0 1px; }
+.hire-occasions [data-hire="Photo set"]::after { bottom: 9px; right: 9px; border-width: 0 1px 1px 0; }
+.hire-occasions [data-hire="Disco night"] { overflow: hidden; }
+.hire-occasions [data-hire="Disco night"]::before { content: ""; position: absolute; top: -25px; right: -25px; width: 66px; height: 66px; border: 1px solid var(--occasion-heading); border-radius: 50%; box-shadow: 0 0 0 9px var(--occasion-bg), 0 0 0 10px var(--occasion-heading); pointer-events: none; }
+@media (max-width: 560px) { .hire-occasions a { min-height: 170px; padding: 22px; gap: 20px; } }
 .hire-steps { max-width: 78ch; padding-left: 32px; margin: 0 0 32px; }
 .hire-steps li { padding-left: 12px; margin-bottom: 18px; }
 .hire-steps li::marker { font: 400 25px var(--display); color: var(--pink); }
