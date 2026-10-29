@@ -1,0 +1,6 @@
+--- qwen3.5:4b | ['IMG_6612_boots.jpg'] | wall 37.4s | prompt_tok 490 | gen_tok 44 | load 0.0s | prompt_eval 31.5s | eval 5.9s
+{"items":[{"name":"boot","material":"leather","colour":"grey"},{"name":"boot","material":"leather","colour":"grey"}],"blurry":true,"sharp_enough_for_listing":false}
+
+--- qwen3.5:4b | ['IMG_6610_glass.jpg'] | wall 32.3s | prompt_tok 322 | gen_tok 93 | load 0.0s | prompt_eval 19.3s | eval 12.9s
+{"items":[{"name":"champagne glass","material":"glass","colour":"clear"},{"name":"wine glass","material":"glass","colour":"clear"},{"name":"decorative glass","material":"glass","colour":"black with gold design"},{"name":"blue bag","material":"fabric","colour":"blue"},{"name":"polka dot bag","material":"fabric","colour":"white with black dots"}],"blurry":true,"sharp_enough_for_listing":false}
+

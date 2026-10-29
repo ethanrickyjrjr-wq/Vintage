@@ -1,0 +1,24 @@
+--- qwen3.5:4b | ['b02_t2.0s.jpg'] | wall 12.8s | prompt_tok 234 | gen_tok 30 | load 0.0s | prompt_eval 8.8s | eval 3.9s
+{
+"subject": "A cozy corner with a patterned armchair and vinyl records",
+"score": 4.5
+}
+
+--- qwen3.5:4b | ['b05_t7.5s.jpg'] | wall 18.8s | prompt_tok 234 | gen_tok 32 | load 0.0s | prompt_eval 14.5s | eval 4.2s
+{
+"subject": "A cluttered room with mannequins, a lamp, and various items.",
+"score": 3
+}
+
+--- qwen3.5:4b | ['b08_t13.5s.jpg'] | wall 19.4s | prompt_tok 234 | gen_tok 38 | load 0.0s | prompt_eval 13.9s | eval 5.4s
+{
+"subject": "A clothing boutique interior with racks of colorful garments, a chalkboard sign, and decorative items like an oil lamp.",
+"score": 3
+}
+
+--- qwen3.5:4b | ['b12_t20.5s.jpg'] | wall 18.2s | prompt_tok 234 | gen_tok 25 | load 0.0s | prompt_eval 14.6s | eval 3.5s
+{
+"subject": "Interior design showcase with coat and rug",
+"score": 6.5
+}
+
