@@ -1,5 +1,15 @@
 # Handoff for Codex: the Fabulous From Online section (hire Hollie)
 
+**Occasions moved first 2026-10-29: verified live in Sites version 31.** The
+introduction now leads directly into "What's the occasion?", followed by Three
+ways in, Pick your billing, and How it works. All 33 tests and the production
+build passed; 1440/390/320px checks confirmed the order, 15 cards, and no page
+overflow. GitHub implementation: `fde01ad`. The change was incorporated into
+the concurrent version 31 publication, whose source is
+`3605d07288ceee9bcced041c5fe93b52a4eaeec4`; deployment
+`appgdep_6ae2d95386748191a5b8dc1f0d7dc216` succeeded. The live browser confirmed
+the order. Screenshot: `artifacts/occasion-styling/occasions-first-live.png`.
+
 **Occasion styling updated 2026-10-29: Sites version 29.** All 15 occasions now
 have distinct opaque poster colors, contrasting type, and selected invitation,
 camera and record details. Terra researched the visual references; Sol checked
