@@ -1,0 +1,10 @@
+[![OpenAI](https://help.openai.com/logo.png)](https://help.openai.com/en)
+  1. [All collections](https://help.openai.com/en)
+  2. ChatGPT Sites
+
+
+# ChatGPT Sites
+Learn how to create, publish, and manage websites and apps with ChatGPT Sites.
+[ Complying with data protection laws for ChatGPT SitesUnderstand your data protection responsibilities when creating and operating a ChatGPT Site. ](https://help.openai.com/en/articles/20001340-complying-with-data-protection-laws-for-chatgpt-sites)[ Connecting ChatGPT Sites to private services with tunnelsLearn how tunnels connect Sites to services on your company’s private network and what access you need. ](https://help.openai.com/en/articles/20001606-connecting-chatgpt-sites-to-private-services-with-tunnels)[ Creating and using ChatGPT SitesCreate, edit, publish, share, and manage Sites in ChatGPT. ](https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites)[ Hosting a plugin with ChatGPT SitesLearn how to host MCP tools on a Site, use them through a plugin, and share access with your workspace. ](https://help.openai.com/en/articles/20001547-hosting-a-plugin-with-chatgpt-sites)[ Managing ChatGPT Sites for your workspaceManage Site creation, publishing, sharing, and connected-app access for your workspace. ](https://help.openai.com/en/articles/20001338-managing-chatgpt-sites-for-your-workspace)[ Preparing a privacy policy for your ChatGPT SiteLearn what to include in a privacy policy for your ChatGPT Site. ](https://help.openai.com/en/articles/20001341-preparing-a-privacy-policy-for-your-chatgpt-site)[ Understanding responsibilities for your ChatGPT SitesLearn your responsibilities for reviewing, publishing, and operating a ChatGPT Site. ](https://help.openai.com/en/articles/20001337-understanding-responsibilities-for-your-chatgpt-sites)
+![OpenAI logo](https://help.openai.com/favicon.png)[ChatGPT](https://chatgpt.com)[API](https://platform.openai.com/docs/)[Service Status](https://status.openai.com)Cookie Preferences
+
