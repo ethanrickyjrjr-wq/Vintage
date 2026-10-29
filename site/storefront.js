@@ -20,7 +20,7 @@
         else link.removeAttribute("aria-current");
       });
     }, { rootMargin: "-15% 0px -65% 0px" });
-    document.querySelectorAll("#home, #collection, #your-room, #story").forEach((section) => sectionObserver.observe(section));
+    document.querySelectorAll("#home, #collection, #your-room, #hire-hollie, #story").forEach((section) => sectionObserver.observe(section));
   }
   // Small foreground/background offsets make the assembled display feel spatial.
   // No scroll handler, continuous loop, or motion on touch/reduced-motion devices.
@@ -93,4 +93,35 @@
       localStorage.setItem("hnv-theme", theme);
     } catch {}
   });
+})();
+
+// Fabulous From Online: every hire link opens the same email brief; occasion links add their occasion.
+(() => {
+  const inbox = ""; // Ricky's inbox address. Empty = demo state: links stay on #hire-contact ("Booking opens soon").
+  if (!inbox) return;
+  const brief = (occasion) => [
+    "Hi Hollie,",
+    "",
+    "What I need (one find / a corner / a room / the whole house):",
+    `The occasion: ${occasion}`,
+    "Where (city; house, condo, apartment or studio):",
+    "Rooms or areas:",
+    "Budget:",
+    "Needed by (or rush):",
+    "How I'd like to work (video call / photos / in person):",
+    "Things I love:",
+    "Things I'm keeping:",
+    "Hard no's:",
+    "Inspiration link:",
+    "Best times for a call:",
+    "Name and phone:",
+    "",
+    "Photos attached: a wide shot of each space and each corner, in daylight.",
+  ].join("\r\n");
+  for (const link of document.querySelectorAll("[data-hire]")) {
+    const occasion = link.dataset.hire;
+    const subject = ["Fabulous From Online", occasion, "Holliewood & Vine"].filter(Boolean).join(" - ");
+    link.href = `mailto:${inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(brief(occasion))}`;
+  }
+  for (const node of document.querySelectorAll("[data-hire-inbox]")) node.textContent = inbox;
 })();

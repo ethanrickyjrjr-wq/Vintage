@@ -151,3 +151,59 @@ html { scroll-padding-top: 96px; }
   .collection-intro h2 { font-size: 30px; }
   .collection-context { gap: 10px; }
 }
+
+/* Fabulous From Online: the done-for-you answer to Your room. */
+.hire { margin-bottom: 90px; padding-top: 56px; border-top: 1px solid var(--line); }
+.hire-intro { display: grid; grid-template-columns: 1.1fr .8fr; align-items: center; gap: 8%; margin-bottom: 56px; }
+.hire-intro h2 { font: 400 clamp(37px, 4vw, 56px)/1.16 var(--display); letter-spacing: -.035em; margin: 0 0 22px; }
+.hire-intro h2 em { color: var(--rust); display: inline-block; padding-bottom: .08em; }
+.hire-intro p:not(.eyebrow) { max-width: 48ch; color: var(--muted); font-size: 16px; }
+.hire-photo { width: 100%; max-width: 380px; margin: 0; justify-self: end; }
+.hire-photo img { aspect-ratio: 3/4; height: auto; border: 8px solid #e6dac8; }
+.hire-photo figcaption { margin-top: 14px; font-size: 12px; color: var(--muted); }
+.hire-heading { font: 400 clamp(28px, 3vw, 34px)/1.25 var(--display); margin: 48px 0 22px; }
+.hire-ways, .hire-tiers, .hire-addons, .hire-occasions { display: grid; gap: 16px; padding: 0; margin: 0; list-style: none; }
+.hire-ways { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hire-tiers { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hire-addons { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; }
+.hire-ways > li, .hire-tiers > li, .hire-addons > div, .hire-disclosure { padding: 24px; border: 1px solid var(--line); background: var(--paper-deep); }
+.hire h4, .hire-disclosure h3 { font: 400 27px/1.25 var(--display); margin: 0 0 14px; }
+.hire-ways p, .hire-tiers p, .hire-addons p, .hire-disclosure p { margin: 12px 0 0; }
+.hire-line { font: 400 22px/1.4 var(--display); color: var(--pink); }
+.hire-scope { font: 400 11px/1.7 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.hire-tiers > li { display: flex; flex-direction: column; }
+.hire-tiers .hire-price { margin-top: auto; padding-top: 24px; font-size: 23px; font-variant-numeric: tabular-nums; }
+.hire-price span { display: block; margin-top: 6px; color: var(--muted); font: 400 12px/1.6 var(--body); }
+.hire-note { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
+.hire-occasions { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.hire-occasions a { display: block; height: 100%; min-height: 44px; padding: 14px 16px; border: 1px solid var(--line); }
+.hire-occasions strong { display: block; margin-bottom: 6px; }
+.hire-occasions span { display: block; color: var(--muted); font-size: 14px; }
+.hire-occasions a:hover, .hire-occasions a:focus-visible { border-color: var(--rust); }
+.hire-steps { max-width: 78ch; padding-left: 32px; margin: 0 0 32px; }
+.hire-steps li { padding-left: 12px; margin-bottom: 18px; }
+.hire-steps li::marker { font: 400 25px var(--display); color: var(--pink); }
+.hire-disclosure { margin-bottom: 32px; }
+.hire-disclosure p { max-width: 90ch; }
+.hire-details { border-bottom: 1px solid var(--line); }
+.hire-details summary { cursor: pointer; min-height: 44px; padding: 16px 0; font: 400 25px/1.4 var(--display); }
+.hire-details ul { max-width: 85ch; padding-left: 24px; margin: 4px 0 24px; }
+.hire-details li { margin-bottom: 10px; }
+.hire-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 32px; }
+.hire-cta p { flex-basis: 100%; color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+.hire-cta p a { text-decoration: underline; text-underline-offset: 4px; }
+.hire-cta .button:disabled { color: var(--muted); border-color: var(--line); background: transparent; transform: none; }
+.hire-epigraph { max-width: 40ch; margin: 56px auto 0; text-align: center; font: italic 400 clamp(24px, 2.4vw, 32px)/1.5 var(--display); }
+.hire-epigraph p { margin: 0 0 16px; }
+.hire-epigraph footer { color: var(--muted); font: 400 12px/1.8 var(--body); }
+@media (max-width: 1000px) { .hire-tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) {
+  .hire { padding-top: 36px; margin-bottom: 55px; }
+  .hire-intro, .hire-ways, .hire-addons { grid-template-columns: 1fr; }
+  .hire-intro { gap: 30px; margin-bottom: 36px; }
+  .hire-intro h2 { font-size: 36px; }
+  .hire-intro p:not(.eyebrow) { font-size: 15px; }
+  .hire-photo { justify-self: center; }
+  .hire-heading { margin-top: 36px; }
+}
+@media (max-width: 560px) { .hire-tiers { grid-template-columns: 1fr; } }

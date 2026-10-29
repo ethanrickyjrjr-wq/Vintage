@@ -20,7 +20,9 @@
   await sleep(600); // a person pauses between Back and the next tap; two traversals inside ~300 ms can be dropped by the browser
   search.value = "lamp"; search.dispatchEvent(new Event("input", { bubbles: true })); await sleep(50);
   $("#product-grid .product-image").click(); await sleep(50);
-  product.querySelector("[data-close-dialog]").click(); await sleep(400);
+  product.querySelector("[data-close-dialog]").click();
+  // Closing the native dialog queues its close event and asynchronous history traversal.
+  for (let i = 0; i < 30 && location.hash.startsWith("#item-"); i++) await sleep(50);
   check("5 × closes detail, keeps search, clears #item hash", !product.open && search.value === "lamp" && !location.hash.startsWith("#item-"),
     `open=${product.open} search="${search.value}" hash=${location.hash}`);
   search.value = ""; search.dispatchEvent(new Event("input", { bubbles: true })); await sleep(50);
@@ -30,7 +32,8 @@
   $("#header-bag").click(); await sleep(50);
   const bagItems = bag.querySelectorAll(".bag-item").length;
   bag.querySelector(".bag-item-title").click(); await sleep(50);
-  product.querySelector("[data-close-dialog]").click(); await sleep(300);
+  product.querySelector("[data-close-dialog]").click();
+  for (let i = 0; i < 30 && !bag.open; i++) await sleep(50);
   check("6 closing a detail from the bag reopens the bag", bag.open && bag.querySelectorAll(".bag-item").length === bagItems,
     `bagOpen=${bag.open} items=${bag.querySelectorAll(".bag-item").length}/${bagItems}`);
   if (bag.open) bag.close(); await sleep(100);
