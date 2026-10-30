@@ -43,7 +43,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - `social-manual-phone.html`: derived copy of the two files above. Edit the markdown, then run `python tools/build-phone-manual.py`.
 - [codex-handoff-social-autopilot.md](codex-handoff-social-autopilot.md): the build handoff. Designed, nothing built.
 - Video, three files (each is also a PDF in Ricky's Downloads, built from the markdown):
-  - [video-direction.md](video-direction.md): **Full Picture**. The shows, how it looks, how Hollie talks, scripts, one shoot, decisions.
+  - [video-direction.md](video-direction.md): **Full Picture**, the long version. The shows, how it looks, how Hollie talks, scripts, one shoot, every product and tool with prices, the schedule and calendar, accounts, rules, the shop side, decisions, and what was researched and why. Published as a claude.ai page titled Full Picture.
   - [video-shoot-in-depth.md](video-shoot-in-depth.md): **In depth Video making**. Gear, phone settings, light, sound, shot lists, editing, posting.
   - [video-shoot-quick.md](video-shoot-quick.md): **To the Point Videos**. The two-page shoot-day card.
   - `video-direction-phone.html`: the short phone edition, a public claude.ai artifact. It matches the three files above.
