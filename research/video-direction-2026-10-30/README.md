@@ -1,6 +1,6 @@
 # Video direction research, 2026-10-30
 
-Raw layer for `docs/video-direction.md`. Ask (Ricky, 2026-10-30): what the shots and videos should look and feel like, trying on and showing off and talking about pieces, in a smaller space now that the shop room is gone; how everyday creators do it; how to shoot and how to speak.
+Raw layer for `docs/video-direction.md`. Ask (Ricky, 2026-10-30): what the shots and videos should look and feel like (trying on, showing off, talking about pieces) in a small space; how everyday creators do it; how to shoot and how to speak.
 
 ## What was captured
 
@@ -27,12 +27,12 @@ URL pattern: `https://www.youtube.com/watch?v=<id>`. Found with `yt-dlp "ytsearc
 - Earlier sample, not repeated here: 15 decor and lamp reels with transcripts in `research/social-2026-10-29/raw/w1c-reels/`.
 - Not reached: Instagram and TikTok (walled to these tools), any short-form try-on reel, Instagram's own insight data.
 
-## What failed on the way (so nobody repeats it)
+## Tooling notes (commands that worked)
 
-1. The first YouTube search used the word "shorts" and returned garment shorts. Use `#shorts` plus a niche phrase, and expect keyword spam: two short-form query rounds produced nothing usable.
-2. `-f "best[height<=480]"` fails on YouTube because the 480p streams are split video and audio. Use `-f "bv*[height<=480]+ba/b[height<=480]" --merge-output-format mp4` (needs ffmpeg).
-3. `faster-whisper` through `uv run --with` crashed in PyAV (`open() got an unexpected keyword argument 'metadata_errors'`). Workaround: decode audio with the system ffmpeg to 16 kHz float32 and pass the numpy array to `model.transcribe`.
-4. Windows ffmpeg does not accept glob inputs; pass files explicitly.
+1. **Find:** `uvx yt-dlp --flat-playlist --print "%(id)s|%(duration)s|%(view_count)s|%(channel)s|%(title).70s" "ytsearch14:<query>"`. Short-form queries (`#shorts` plus a niche phrase) returned mostly keyword spam; long-form try-on and styling queries returned usable creators.
+2. **Download the first 75 s:** `uvx yt-dlp -f "bv*[height<=480]+ba/b[height<=480]" --merge-output-format mp4 --download-sections "*0-75" -o "<dir>/%(id)s.%(ext)s" <url>` (needs ffmpeg; YouTube serves split video and audio).
+3. **Transcribe:** decode with the system ffmpeg to 16 kHz mono float32 (`-f f32le -ac 1 -ar 16000 -`) and pass the numpy array to faster-whisper `model.transcribe`, run through `uv run --with faster-whisper python -I`. Its own PyAV decoder errors under `uv run`.
+4. **Contact sheet:** Windows ffmpeg takes explicit input files, not globs; stack with `hstack` and `vstack`.
 
 ## Web sources read this session (2026-10-30)
 

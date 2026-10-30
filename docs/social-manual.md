@@ -2,7 +2,7 @@
 
 **Status (2026-10-29).** Written from 19 research lanes (`research/social-2026-10-29/`, 8 strategy, 7 automation, 4 live re-checks). Every price and link below was read on the vendor's own page on 2026-10-29 unless it says otherwise; **re-check the price on the signup page before paying.** The content banks (hooks, calendar, cover templates, shoot plan, timing test) are in `docs/social-manual-appendices.md`. The build spec for the automated version is `docs/codex-handoff-social-autopilot.md`.
 
-**Update (2026-10-30): the shop room is gone and the space is smaller.** What Hollie films and how she talks is now `docs/video-direction.md`. It replaces Appendix D.2 (the room-based shoot), the room, neon and mirror-ball lines in the d1 four-week skeleton, and makes voice or on-camera the default for decision 4 (Hollie's comfort still open). Everything else here stands.
+**On camera (2026-10-30):** what Hollie films, how she talks and the shoot plan are in `docs/video-direction.md`. Voice or on-camera is the default for decision 4 (Hollie's comfort still open).
 
 Tags: `verified` (read on the live page), `vendor claim`, `inferred` (my reading), `need review` (sources disagree or one page was walled).
 

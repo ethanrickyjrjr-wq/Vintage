@@ -1,6 +1,6 @@
 # Holliewood & Vine on camera: what the shots and videos look and feel like
 
-**Status (2026-10-30).** Direction for what Hollie films and how she talks, now that the shop room is gone and the space is smaller. Written from 23 transcripts (15 decor reels from wave 1, 8 vintage-clothing videos pulled today), one frame per new video, and a handful of practitioner pages. Raw layer and method: `research/video-direction-2026-10-30/README.md`. Nothing here is built or posted.
+**Status (2026-10-30).** What Hollie films and how she talks, shot in one small corner. Written from 23 transcripts (15 decor reels, 8 vintage-clothing videos), one frame per clothing video, and a handful of practitioner pages. Raw layer and method: `research/video-direction-2026-10-30/README.md`. Nothing here is built or posted.
 
 Tags: `observed` (read or watched in this research), `verified` (primary page read), `vendor claim`, `inferred` (my reading, no measurement), `need review`.
 
@@ -12,8 +12,8 @@ Tags: `observed` (read or watched in this research), `verified` (primary page re
 
 Real thoughts, no sugar:
 
-1. **The old plan leaned on a room that no longer exists.** Appendix D's shoot, the d1 four-week skeleton and the "burgundy walls, neon, mirror ball" lines all assumed it. What survives is Hollie's eye and the pieces. So the show is **the piece, then Hollie's take on it**, and the set is one corner you can recognise, not a room you have to tour.
-2. **Talking is how taste gets across; a silent loop cannot say "she has an eye."** Your own words ("trying on, showing off, talking about them") point at voice, so I made voice and on-camera the default and left Hollie's comfort as the open question (section 8). Be straight about the evidence: no source I found measures talking against silent for vintage. The case is Instagram's own signals (watch time and sends per reach, `verified` in the manual, section 3A), the 8 videos below, and judgment. **Test it as the format factor inside the four-week test in Appendix E** (do not run a second test on the same early posts), and treat the result as a first screen, not a verdict: at zero followers that test mostly measures noise.
+1. **The pieces and Hollie are the show.** The show is **the piece, then Hollie's take on it**. The set is one corner you can recognise, not a room you have to tour.
+2. **Talking is how taste gets across; a silent loop cannot say "she has an eye."** Voice and on-camera are the default; Hollie's comfort is the open question (section 8). Be straight about the evidence: no source I found measures talking against silent for vintage. The case is Instagram's own signals (watch time and sends per reach, `verified` in the manual, section 3A), the 8 videos below, and judgment. **Test it as the format factor inside the four-week test in Appendix E** (do not run a second test on the same early posts), and treat the result as a first screen, not a verdict: at zero followers that test mostly measures noise.
 3. **"Looks raw" is not the strategy.** Instagram's head predicts a more raw aesthetic and in the same post says authenticity is "becoming infinitely reproducible" (`verified`, one sentence read on his Threads post; the rest is press paraphrase, section 7). Rough edges will be faked too. What cannot be faked is a **specific real piece, a real flaw said out loud, and a person with an opinion.** Be raw in performance, clean in basics: steady, readable, audible.
 4. **Everyday means a repeatable place and a repeatable show.** Same corner, same framing, same show names. People return to a show, not to a clip.
 
@@ -46,7 +46,7 @@ What the 8 new videos show (one frame each at 40 s, so counts only, `observed`, 
 | **Sound** | The thing that separates everyday from sloppy. A clip-on mic if she will buy one (price not read); otherwise phone close and quiet. Soft things (rug, curtain, a clothing rack) cut echo in a small hard room | At least 3 of 8 wore visible lav mics; echo advice is Ulanzi, `vendor claim`. Whether the first month needs a mic is `inferred` |
 | Text | The hook line on screen from the first frame, and captions on throughout | Manual: 11 of 15 sampled reels had an on-screen hook by about 1 s. Sound-off share is `need review` (no source I trust) |
 | Wearables | Hold it to the camera (6 s), wear it (10 s), turn full-length (8 s), detail: label, closure, flaw (5 s) | `inferred` from the transcripts and the format lists |
-| Mirrors and glass | A mirror fit check is now fine. Keep the **phone** and anything private out of the reflection. Glass and mirrors that are *for sale* are still shot off-axis, farther back, as Appendix D says | Changed from hands-only |
+| Mirrors and glass | A mirror fit check is now fine. Keep the **phone** and anything private out of the reflection. Glass and mirrors that are *for sale* are still shot off-axis, farther back | Appendix D.1 |
 | **Privacy, if this is a home** | Keep out of frame: windows that show the street, house numbers, mail, parcels, labels, a car. City or region tag only. Never "visit", "in store", "stop by" | Manual section 2; the smaller space makes it matter more. Whether this is a home is Ricky's to say |
 
 ---
@@ -115,7 +115,7 @@ Film the pieces silent, then record her voice while watching the clip (a phone's
 
 ## 4. Three scripts (illustrative; the brackets are facts only Hollie has)
 
-The catalog items below come from the old shop (`research/inventory/2026-10-26-catalog.md`). **They may no longer exist; swap in what is on the table.**
+The catalog items below are illustrative (`research/inventory/2026-10-26-catalog.md`). Swap in what is on the table.
 
 **Just in (about 30 s). Illustrative: brass and cream ceramic lamp.**
 Hook on screen: "I have a thing for brass lamps." Spoken: "I have a thing for brass lamps, and this might be the best one I've found. It's [era], [maker or 'unmarked'], brass and cream ceramic with a pineapple finial. *[One proof only she can give: the weight in her hand, a flick, the click of the switch.]* Here's the flaw: [real flaw, close-up]. And when you turn it on, the whole corner changes. [Before stock: Follow so you see the next one first.] [After stock: Piece [No.], link in bio.]"
@@ -128,7 +128,7 @@ No talking, or one line over it. Dark corner. Her hand reaches the switch. Light
 
 ---
 
-## 5. One session in the new space (replaces Appendix D.2)
+## 5. One session
 
 About 90 minutes. **Nobody has timed this.**
 
@@ -143,21 +143,17 @@ About 60 clips cover eight to ten posts (`inferred`). Film some pieces both ways
 
 ---
 
-## 6. What this replaces
+## 6. How it fits the manual
 
-Silent contradictions waste the next session, so here they are:
-
-- **`docs/social-manual-appendices.md`, D.2 (the 90-minute shoot).** Out of date: its blocks are the burgundy wall, the neon and the mirror ball. Section 5 above replaces it. D.1 (camera settings) and D.3 (gear) still apply.
-- **The reflection rules in D.1.** They kept Hollie out of the mirror. They still apply to pieces that are for sale, not to a fit check.
-- **`research/round-d/d1-social-video.md`, the four-week skeleton.** Its lines "Burgundy walls. Brass lamps." and the neon, mirror ball and wall-pan reels are stale.
-- **`docs/social-manual.md`, decision 4** (hands, voiceover or Hollie on camera). Default is now voiceover or Hollie on camera, with her face and her comfort still open.
-- **Unchanged:** every rule in manual section 2, the link rule, the pre-stock gate, the cadence and the tools. `docs/storefront-art-direction.md` already treats the room as a reference only, so it stands.
+- **Shoot plan:** section 5 above. `docs/social-manual-appendices.md` D.1 (camera settings) and D.3 (gear) apply as written; the D.1 reflection rules cover pieces for sale, and a fit check may show a mirror.
+- **Decision 4** in `docs/social-manual.md` (hands, voiceover or Hollie on camera): voiceover or on-camera is the default here; her face is her call.
+- **Unchanged:** every rule in manual section 2, the link rule, the pre-stock gate, the cadence and the tools.
 
 ---
 
 ## 7. X verified, Y need review
 
-- **Mosseri.** `verified`: his Threads post (https://www.threads.com/@mosseri/post/DS76UiklIDf/media) returned one sentence: "authenticity is becoming infinitely reproducible." The dated "raw aesthetic" and "make them look bad" lines come from an Engadget piece of 2025-12-31, so they are **press paraphrase**; my first search summary called it January 2026, which was wrong. Press coverage says he also cautioned that raw will be imitated (search summary, not read in full); the one sentence I read supports using it that way.
+- **Mosseri.** `verified`: his Threads post (https://www.threads.com/@mosseri/post/DS76UiklIDf/media) returned one sentence: "authenticity is becoming infinitely reproducible." The "raw aesthetic" and "make them look bad" lines are **press paraphrase** (Engadget, 2025-12-31). Press coverage also says he cautioned that raw will be imitated (search summary, not read in full).
 - **The sample is long-form YouTube, not Reels.** It shows voice and setup, not a 3-second hook. **No short-form try-on reel was observed**, and no Instagram data (walled). Whisper transcripts have errors.
 - **Single-vendor numbers, not headlined:** "try-on reels bring 3 to 5x link requests" (CreatorFlow, sells tooling); "model shots raise sell-through 60%" (Popsugar AU, citing the Depop handbook, unread); the words-per-minute rule above.
 - **The Vintage Seeker 2022 article is used for format ideas only.** Its "under 10 seconds", "60 fps", "5 to 12 hashtags" and "use trending sounds" conflict with the current manual (5-hashtag cap, 30 fps, business-account music limits).
@@ -166,14 +162,14 @@ Silent contradictions waste the next session, so here they are:
 
 ---
 
-## 8. Decisions I need
+## 8. Decisions
 
-1. **Hollie on camera, neck-down plus voice, or voice only?** I wrote the first as the default. It is her call.
-2. **Is the new space a home?** It decides the privacy rules in section 2, and whether the no-showroom wording stays absolute (I kept it).
-3. **What is actually on the table?** Scripts use brackets; the old catalog may be gone.
+1. **Hollie on camera, neck-down plus voice, or voice only?** The first is the default here. It is her call.
+2. **Is the space a home?** It decides the privacy rules in section 2. The no-showroom wording stays absolute.
+3. **Which pieces are on hand?** Scripts use brackets for facts only Hollie has.
 4. **Send me five videos Hollie loves** (links, any platform). I will transcribe and break them down the same way. It is the cheapest way to fill the one gap: no short-form try-on sample.
 
-A private phone page of this doc was published as a claude.ai artifact on 2026-10-30 (the link is in the session reply; sharing it with Hollie is Ricky's step). The markdown here is the source; the page is rendered from it with markdown-it and is not kept in the repo.
+Phone page, private (Ricky shares it): https://claude.ai/artifact/7dotiMgX41bPvW6z6Vuf8D. The markdown here is the source.
 
 ## Sources (read 2026-10-30)
 
