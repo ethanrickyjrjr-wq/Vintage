@@ -118,7 +118,7 @@ A new key goes into the desk `.env` first, then here. Never into brain-platform.
 
 - `research/` — fetched pages and notes, dated, with the source URL at the top. Raw layer, never rewritten.
 - `tools/` — `crawl.sh`, `search.sh`. Add a script only when a third session would otherwise retype it.
-- `docs/` — design and handoff documents (synthesis, decisions). Rewritten as decisions change.
+- `docs/` — design and handoff documents (synthesis, decisions). Rewritten as decisions change. Index of every doc and research folder: `docs/README.md`.
 - Anything worth keeping past this folder (a decision, a verified vendor fact, a lesson) goes to the
   desk wiki with `/compile <path>`; the wiki lives in `dev/Chief Of Staff/wiki/`.
 
