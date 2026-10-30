@@ -13,7 +13,7 @@ Tags: `observed` (read or watched in this research), `verified` (primary page re
 Real thoughts, no sugar:
 
 1. **The old plan leaned on a room that no longer exists.** Appendix D's shoot, the d1 four-week skeleton and the "burgundy walls, neon, mirror ball" lines all assumed it. What survives is Hollie's eye and the pieces. So the show is **the piece, then Hollie's take on it**, and the set is one corner you can recognise, not a room you have to tour.
-2. **Talking is how taste gets across; a silent loop cannot say "she has an eye."** Your own words ("trying on, showing off, talking about them") point at voice, so I made voice and on-camera the default and left Hollie's comfort as the open question (section 8). Be straight about the evidence: no source I found measures talking against silent for vintage. The case is Instagram's own signals (watch time and sends per reach, `verified` in the manual, section 3A), the 8 videos below, and judgment. **Test it: 4 talking posts against 4 silent in the first month.**
+2. **Talking is how taste gets across; a silent loop cannot say "she has an eye."** Your own words ("trying on, showing off, talking about them") point at voice, so I made voice and on-camera the default and left Hollie's comfort as the open question (section 8). Be straight about the evidence: no source I found measures talking against silent for vintage. The case is Instagram's own signals (watch time and sends per reach, `verified` in the manual, section 3A), the 8 videos below, and judgment. **Test it as the format factor inside the four-week test in Appendix E** (do not run a second test on the same early posts), and treat the result as a first screen, not a verdict: at zero followers that test mostly measures noise.
 3. **"Looks raw" is not the strategy.** Instagram's head predicts a more raw aesthetic and in the same post says authenticity is "becoming infinitely reproducible" (`verified`, one sentence read on his Threads post; the rest is press paraphrase, section 7). Rough edges will be faked too. What cannot be faked is a **specific real piece, a real flaw said out loud, and a person with an opinion.** Be raw in performance, clean in basics: steady, readable, audible.
 4. **Everyday means a repeatable place and a repeatable show.** Same corner, same framing, same show names. People return to a show, not to a clip.
 
@@ -35,7 +35,7 @@ Nothing here needs a person other than Hollie. "Fit check" works neck-down if sh
 
 ## 2. How it looks
 
-What the 8 new videos show (one frame each at 40 s, `observed`, n = 8): locked-off, eye-level, waist-up shots in **ordinary rooms** (bedroom, living room, hallway), a window visible in at least two, a clothing rack or plants behind, the garment **held up to the camera** before being worn, a full-length outfit shot from a hallway, and **a clip-on mic visible in at least three** (one holds hers to the lens). No visible lighting gear or set. One frame is an edited title card.
+What the 8 new videos show (one frame each at 40 s, so counts only, `observed`, n = 8): **ordinary rooms** in 7 of 8 (bedroom, living room, hallway; the eighth is an edited title card), eye-level and waist-up in most, a window visible in at least two, a clothing rack in two and plants in four, a garment held to the camera in one, a full-length outfit from a hallway in one, and **a clip-on mic visible in at least three** (one holds hers to the lens). No lighting gear visible. That the cameras were **locked off**, and that a piece is **held up before it is worn**, cannot be seen in one frame: both are `inferred` from the transcripts and the framing.
 
 | Thing | Do this | Why |
 |---|---|---|
@@ -45,7 +45,7 @@ What the 8 new videos show (one frame each at 40 s, `observed`, n = 8): locked-o
 | Light | A window to the side or front, never behind her. Turn on the lamp being shown as a warm accent; lock exposure and white balance as in Appendix D, section D.1 | Appendix D settings, `verified`; 3200K is `inferred` |
 | **Sound** | The thing that separates everyday from sloppy. A clip-on mic if she will buy one (price not read); otherwise phone close and quiet. Soft things (rug, curtain, a clothing rack) cut echo in a small hard room | At least 3 of 8 wore visible lav mics; echo advice is Ulanzi, `vendor claim`. Whether the first month needs a mic is `inferred` |
 | Text | The hook line on screen from the first frame, and captions on throughout | Manual: 11 of 15 sampled reels had an on-screen hook by about 1 s. Sound-off share is `need review` (no source I trust) |
-| Wearables | Hold it to the camera (6 s), wear it (10 s), turn full-length (8 s), detail: label, closure, flaw (5 s) | `inferred` from the frames and the format lists |
+| Wearables | Hold it to the camera (6 s), wear it (10 s), turn full-length (8 s), detail: label, closure, flaw (5 s) | `inferred` from the transcripts and the format lists |
 | Mirrors and glass | A mirror fit check is now fine. Keep the **phone** and anything private out of the reflection. Glass and mirrors that are *for sale* are still shot off-axis, farther back, as Appendix D says | Changed from hands-only |
 | **Privacy, if this is a home** | Keep out of frame: windows that show the street, house numbers, mail, parcels, labels, a car. City or region tag only. Never "visit", "in store", "stop by" | Manual section 2; the smaller space makes it matter more. Whether this is a home is Ricky's to say |
 
@@ -91,12 +91,13 @@ The brand lines ("do it for the plot", "You bring the plot. Hollie dresses the s
 
 ### 3.4 The close: two modes
 
-| Before real stock exists (now) | After real stock exists |
+| Before real stock exists (now): **only these three, no link** | After real stock exists |
 |---|---|
 | "I'm finding more like this. Follow so you see it first." | "Piece [No.] is on the listing page. Link in bio." (Appendix A.4, line 1) |
-| "Looking for [x]? The hunt list is in the link in bio." (signup only, no listing, manual 3A item 10) | "Full photos and honest condition: link in bio, piece [No.]." |
-| "Save this for the drop." | "Gone." plus next drop day, for a sold piece |
-| "Tell me what you'd put next to it." (a question, not a link) | |
+| "Save this for the drop." | "Full photos and honest condition: link in bio, piece [No.]." |
+| "Tell me what you'd put next to it." (a question, not a link) | "Gone." plus next drop day, for a sold piece |
+
+Later, **once a hunt list page exists** (signup only, no listing; manual 3A item 10; nobody has built it): "Looking for [x]? The hunt list is in the link in bio." Until then the bio points at the sample storefront, whose prices are illustrative, so do not send anyone there from a piece.
 
 ### 3.5 Words that are out
 
@@ -138,7 +139,7 @@ About 90 minutes. **Nobody has timed this.**
 | 55 to 85 | **Objects, 6 pieces**: hold and talk 20 s, one click or turn 8 s, flaw close-up 5 s, dressed corner 8 s | about 24 |
 | 85 to 90 | **Talk**: each hook twice, the three closes from 3.4 | about 12 |
 
-About 60 clips cover eight to ten posts (`inferred`). Hold the same hook for the talking-versus-silent test in section 0, point 2.
+About 60 clips cover eight to ten posts (`inferred`). Film some pieces both ways, talking and silent, so Appendix E's format factor compares like with like (section 0, point 2).
 
 ---
 
@@ -172,7 +173,7 @@ Silent contradictions waste the next session, so here they are:
 3. **What is actually on the table?** Scripts use brackets; the old catalog may be gone.
 4. **Send me five videos Hollie loves** (links, any platform). I will transcribe and break them down the same way. It is the cheapest way to fill the one gap: no short-form try-on sample.
 
-Phone edition of this page: not built; say the word.
+A private phone page of this doc was published as a claude.ai artifact on 2026-10-30 (the link is in the session reply; sharing it with Hollie is Ricky's step). The markdown here is the source; the page is rendered from it with markdown-it and is not kept in the repo.
 
 ## Sources (read 2026-10-30)
 
