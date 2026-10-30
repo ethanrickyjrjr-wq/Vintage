@@ -199,12 +199,12 @@ One cover per post, 1080 x 1920, text and piece inside the safe box. Pick a fram
 ## 12. Caption and post
 
 - **Open with a searchable phrase**, then the facts: "Brass tulip lamp, 1980s."
-- **Short (8 to 30 words):** keyword phrase. One feeling line. Piece number and link in bio.
-- **Medium (31 to 60 words):** keyword phrase. Era, material, size. One honest flaw. Where the page is.
-- **Gone edit:** "Gone." Piece. One line on where it came from. The next drop day.
+- **Short (8 to 30 words):** keyword phrase. One feeling line. Once listed: piece number and link in bio.
+- **Medium (31 to 60 words):** keyword phrase. Era, material, size. One honest flaw. Once listed: where the page is.
+- **Gone edit** (a sold piece, once its listing is live): "Gone." Piece. One line on where it came from. The next drop day.
 - **Up to 5 hashtags**, niche ones only.
 - **City or region tag only.**
-- **Close** from Full Picture: the no-link version until pieces are listed.
+- **Close:** the no-link version from Full Picture until the piece is listed.
 - **Pace:** aim for 10 or more reels a month. Reply to comments within 7 days.
 
 ---
@@ -215,6 +215,7 @@ One cover per post, 1080 x 1920, text and piece inside the safe box. Pick a fram
 - No maker or "signed" unless it is marked.
 - No safety claims on wiring or glass.
 - Nothing identifying in the frame: street, house number, mail, labels.
+- No piece number or link in bio until the piece is listed.
 - The flaw is shown.
 - Captions are correct.
 

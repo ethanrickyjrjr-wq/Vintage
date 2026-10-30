@@ -2,7 +2,7 @@
 
 Holliewood & Vine on camera: what Hollie films, how it looks, how she talks.
 
-Other files: **To the Point Videos** is the one-page shoot-day card. **In depth Video making** has the settings, gear, light, sound, shot lists and editing.
+Other files: **To the Point Videos** is the two-page shoot-day card. **In depth Video making** has the settings, gear, light, sound, shot lists and editing.
 
 ---
 

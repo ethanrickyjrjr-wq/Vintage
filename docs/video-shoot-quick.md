@@ -1,6 +1,6 @@
 # To the Point Videos
 
-The easy shoot, on one card. More in **In depth Video making** and **Full Picture**.
+The easy shoot, on a two-page card. More in **In depth Video making** and **Full Picture**.
 
 **A friend with great taste, showing you what she just found. One corner, one steady take.**
 
