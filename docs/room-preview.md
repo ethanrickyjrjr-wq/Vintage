@@ -120,3 +120,16 @@ A find is drawn at `cm × ppm`, capped to its slot and never enlarged. If the sl
 The `.1` width floor on the Egyptian-lamp test still guards the fit-to-slot path. At real size that lamp is about `.088` wide, the same scale as the lamp already in the photo.
 
 Rugs and hides are their own `rug` kind. They lie flat: `flat.rug` foreshortens the layer's stored `ratio`, so drawing, dragging, resizing and hit-testing need no special case. They go in the open foreground band below the coffee table's feet, draw underneath everything else, and may be shown down to 50% of real size (furniture: 70%, otherwise "Too big for the open space in this room"). Uploaded rooms place a rug inside the detected floor.
+
+## Decision: move the room tool to generative redesign (2026-10-30)
+
+Ricky's call: a room tool should redesign the whole room (several chairs, a rug, lamps, cushions) from the photo in seconds, as established apps do. Browser stickers on fixed spots cannot do that, so they become the free fallback, not the product.
+
+Verified from live vendor docs on 2026-10-30 (raw pages in `research/ai.google.dev_gemini_api_docs_*`, `research/vercel.com_docs_ai_gateway_*`):
+
+- Model `gemini-nano-banana-2.1` (also `gemini-3.1-flash-image`, `gemini-3-pro-image`, `gemini-2.5-flash-image`). Up to 10 high-fidelity object reference images per call on Nano Banana 2.1 and 3.1 Flash Image (Pro: 6 objects, 14 total).
+- Price per output image, paid tier: about $0.034 at 1K, $0.050 at 2K, plus input tokens. The free tier has **no access** to these image models, and free-tier data is used to improve Google's products; paid-tier data is not. Customer room photos must therefore only go through a paid key.
+- Request shape: `POST https://generativelanguage.googleapis.com/v1beta/interactions`, header `x-goog-api-key`, body `{model, input: [{type: "text", text}, {type: "image", mime_type, data(base64)}, ...], response_format: {type: "image", aspect_ratio, image_size}}`. The SDK returns the image as `interaction.output_image.data` (base64). The raw REST response shape is not yet observed.
+- Vercel AI Gateway also exposes `google/gemini-3-pro-image`, `google/gemini-3.1-flash-image-preview`, `openai/gpt-image-2`, `bfl/flux-2-pro` through the AI SDK (`generateText`, images in `result.files`); useful for a quality comparison with one key.
+
+Not yet verified: output quality on our products. A test (sample room plus three chairs, a rug, a lamp, two cushions and a mirror as references in one call) is scripted but could not run: the key store's `GEMINI_API_KEY` is free-tier (limit 0 for these models), `GEMINI_API_KEY_2` has depleted prepaid credits (HTTP 402), `AI_GATEWAY_API_KEY` is rejected (HTTP 401), and `HF_TOKEN` is absent. The previous generative pilot (FLUX.2 Klein 4B on a free ZeroGPU Space, one product per call) stays disabled.
