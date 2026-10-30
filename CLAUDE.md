@@ -9,7 +9,7 @@ video frames live in `assets/` (previews only; originals stay in Ricky's Drive).
 the "needs photo" items. Shop name (Ricky, corrected 2026-10-27): **Holliewood and Vine** or
 **Holliewood & Vine**. The spelling is **Hollie**, with **ie**.
 
-**Space (2026-10-30, Ricky):** smaller now. Which catalogued pieces are on hand, and whether the space is a home, are unconfirmed. On-camera direction (try-ons, show-and-tell, how Hollie talks, the shoot plan) is `docs/video-direction.md`.
+**Space (2026-10-30, Ricky):** smaller now. Which catalogued pieces are on hand, and whether the space is a home, are unconfirmed. On-camera direction is three files: `docs/video-direction.md` (Full Picture: shows, how Hollie talks), `docs/video-shoot-in-depth.md` (gear, settings, shot lists, editing) and `docs/video-shoot-quick.md` (the shoot-day card).
 
 **Dashboard (2026-10-26):** ops dashboard researched (ten Sonnet reports in `research/dashboard/`) and
 designed: `docs/dashboard-design.md` (what and why) and `docs/dashboard-handoff.md` (build order, smoke

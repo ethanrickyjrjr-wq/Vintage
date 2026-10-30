@@ -334,7 +334,7 @@ S1 https://support.google.com/youtube/answer/72431 · S2 https://support.google.
 
 ## D. 90-minute shoot, camera settings, safe-zone and reflection rules, gear kits
 
-> **2026-10-30:** the shoot plan is `docs/video-direction.md` section 5. D.1 (settings) and D.3 (gear) apply as written; the D.1 reflection rules cover pieces for sale.
+> **2026-10-30:** the shoot plan is `docs/video-shoot-in-depth.md` section 9. D.1 (settings) and D.3 (gear) apply as written; the D.1 reflection rules cover pieces for sale.
 
 Source: w1h-capture-ingest.md sections 1.1, 1.2 and 1.3, plus the phone and safe-zone lines of its section 3 (accessed 2026-10-29).
 
