@@ -75,4 +75,5 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 | `music-sources/`, `music-synth/`, `disco-visuals/` | music and light research | [music-and-lights-notes.md](music-and-lights-notes.md) |
 | `3d-capture/`, `demo-photo-sourcing/` | 3D capture docs, photo sourcing lists | [demo-showroom.md](demo-showroom.md), [demo-photo-pack.md](demo-photo-pack.md) |
 | `account-layout-2026-10-29/` | one note | [account-layout.md](account-layout.md) |
+| `vinted-2026-10-30/` | Vinted rules and crosslister support, raw pages plus a README | its README |
 | loose `*.md` in `research/` | pages fetched by `tools/crawl.sh`, named `<host>-<utc>.md` | none |
