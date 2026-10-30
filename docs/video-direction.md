@@ -169,7 +169,7 @@ About 60 clips cover eight to ten posts (`inferred`). Film some pieces both ways
 3. **Which pieces are on hand?** Scripts use brackets for facts only Hollie has.
 4. **Send me five videos Hollie loves** (links, any platform). I will transcribe and break them down the same way. It is the cheapest way to fill the one gap: no short-form try-on sample.
 
-Phone page, private (Ricky shares it): https://claude.ai/artifact/7dotiMgX41bPvW6z6Vuf8D. The markdown here is the source.
+Short phone edition (shows, shoot, say it, one example, one shoot, decisions): https://claude.ai/artifact/7dotiMgX41bPvW6z6Vuf8D, source `docs/video-direction-phone.html`. Change both when the direction changes.
 
 ## Sources (read 2026-10-30)
 

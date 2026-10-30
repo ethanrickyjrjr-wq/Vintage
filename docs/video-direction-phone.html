@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holliewood &amp; Vine on camera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* One short column on burgundy. Same tokens as the phone manual. Source for the longer version: docs/video-direction.md */
+:root {
+  --bg: #321520;
+  --surface: #451c2b;
+  --ink: #f6efdf;
+  --muted: #d6bcc4;
+  --accent: #e5a6b4;
+  --line: #6a3447;
+  --display: "Bodoni Moda", Didot, Georgia, serif;
+  --body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--body); }
+main { max-width: 40rem; margin: 0 auto; padding: 28px 16px 56px; }
+h1, h2 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: 32px; line-height: 1.15; }
+h2 { font-size: 24px; line-height: 1.2; color: var(--accent); margin-bottom: 14px; }
+section { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+.lede { font-size: 18px; color: var(--muted); margin: 12px 0 0; max-width: 34ch; }
+ul, ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.card b { display: block; font-size: 17px; }
+.card span { color: var(--muted); }
+.len { white-space: nowrap; color: var(--accent); font-weight: 700; font-size: 14px; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+ol.beats { counter-reset: n; }
+ol.beats li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; gap: 8px; }
+ol.beats li::before { content: counter(n); color: var(--accent); font-weight: 700; }
+.quote { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; margin: 0; }
+h3 { font-size: 17px; margin: 20px 0 8px; }
+.say { margin: 0; color: var(--muted); }
+.never { color: var(--muted); }
+.never b { color: var(--ink); }
+.note { color: var(--muted); font-size: 14px; margin: 14px 0 0; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Holliewood &amp; Vine on camera</h1>
+<p class="lede">A friend with great taste, showing you what she just found. One corner, one steady take.</p>
+
+<section>
+<h2>The shows</h2>
+<ul>
+  <li class="card"><div class="row"><b>Just in</b><span class="len">20 to 35 s</span></div><span>Hold one piece up. Say what it is and why you grabbed it. The main show.</span></li>
+  <li class="card"><div class="row"><b>Fit check</b><span class="len">15 to 40 s</span></div><span>Held up, worn, full-length turn. Or one piece, three ways.</span></li>
+  <li class="card"><div class="row"><b>Click</b><span class="len">10 to 20 s</span></div><span>Lamp switched on, glass turned in the light, a bare shelf then dressed.</span></li>
+  <li class="card"><div class="row"><b>Found it</b><span class="len">30 to 60 s</span></div><span>The carry-in, cleaning, measuring, packing.</span></li>
+</ul>
+<p class="note">Later, once Hire Hollie opens: Hollie has notes, where she styles someone's space.</p>
+</section>
+
+<section>
+<h2>Shoot it</h2>
+<ul>
+  <li class="card">Phone vertical, locked off, eye level, waist-up. Full-length for fit checks.</li>
+  <li class="card">One corner, shot on the diagonal, with 2 or 3 objects that always sit there.</li>
+  <li class="card">Step back and crop in. Skip the 0.5x lens up close.</li>
+  <li class="card">Window light from the side or front, never behind you. Keep the lamp you're showing on.</li>
+  <li class="card"><b>Sound matters most.</b> <span>A clip-on mic if you can. A rug or a clothes rack cuts the echo.</span></li>
+  <li class="card">Put the hook line on screen from the first frame. Captions on.</li>
+  <li class="card">Keep street windows, house numbers, mail and labels out of frame.</li>
+</ul>
+</section>
+
+<section>
+<h2>Say it</h2>
+<ol class="beats">
+  <li><span><b>Hook.</b> Two seconds or less, also on screen.</span></li>
+  <li><span><b>What it is.</b> One fact: era, maker, material.</span></li>
+  <li><span><b>Why you.</b> "I have a thing for ___."</span></li>
+  <li><span><b>Proof.</b> A flick, a click, a turn, or a measurement shown on screen.</span></li>
+  <li><span><b>One honest flaw.</b> Say it out loud and show it close.</span></li>
+  <li><span><b>Close.</b> See below.</span></li>
+</ol>
+<p class="note">30 to 45 words is about 15 seconds. 70 to 90 is about 30. Talk to one person.</p>
+
+<h3>Pick the lines that sound like you</h3>
+<ul>
+  <li class="card"><b>Hook</b>
+    <p class="say">A. "I have a thing for [x], and this might be the best one I've found."</p>
+    <p class="say">B. "Okay. This one."</p>
+    <p class="say">C. "Would you wear this to [place]?"</p></li>
+  <li class="card"><b>Why you</b>
+    <p class="say">A. "Anything [colour, material] is an immediate yes for me."</p>
+    <p class="say">B. "I saw it across the room and walked straight to it."</p>
+    <p class="say">C. "I'd put it next to [x]. Tell me I'm wrong."</p></li>
+  <li class="card"><b>Sign-off, now and then</b>
+    <p class="say">"Do it for the plot." or "Hollie dresses the set."</p></li>
+</ul>
+
+<h3>Close, no link yet</h3>
+<ul>
+  <li class="card"><span>"I'm finding more like this. Follow so you see it first."</span></li>
+  <li class="card"><span>"Save this for the drop."</span></li>
+  <li class="card"><span>"Tell me what you'd put next to it."</span></li>
+</ul>
+<p class="note">Once pieces are listed: "Piece [No.] is on the listing page. Link in bio."</p>
+
+<h3>Never say</h3>
+<p class="never"><b>Visit, in store, stop by.</b> <b>DM to buy, claim, comment SOLD.</b> <b>Discount, code, offer, giveaway.</b> "Interior design" (say style). Name a maker or "signed" only if it is marked. No safety claims on wiring or glass. Cut "hey guys" and "welcome back."</p>
+</section>
+
+<section>
+<h2>One example</h2>
+<p class="note" style="margin-top:0">Just in, about 30 seconds. Swap the brackets for real facts.</p>
+<blockquote class="quote">
+  <p><b>On screen:</b> I have a thing for brass lamps.</p>
+  <p>"I have a thing for brass lamps, and this might be the best one I've found. It's [era], [maker or unmarked], brass and cream ceramic. [One proof only you can give: the weight in your hand, a flick, the click of the switch.] Here's the flaw: [real flaw, close-up]. And when you turn it on, the whole corner changes. Follow so you see the next one first."</p>
+</blockquote>
+</section>
+
+<section>
+<h2>One shoot, 90 minutes</h2>
+<ul>
+  <li class="card"><div class="row"><b>Set</b><span class="len">15 min</span></div><span>Pick the corner. Clear the frame. Lock exposure. Record 10 seconds of your voice and listen on earbuds.</span></li>
+  <li class="card"><div class="row"><b>Wearables, 6 pieces</b><span class="len">40 min</span></div><span>Hold to camera 6 s, worn 10 s, full-length turn 8 s, detail 5 s.</span></li>
+  <li class="card"><div class="row"><b>Objects, 6 pieces</b><span class="len">30 min</span></div><span>Hold and talk 20 s, one click or turn 8 s, flaw close-up 5 s, dressed corner 8 s.</span></li>
+  <li class="card"><div class="row"><b>Talk</b><span class="len">5 min</span></div><span>Each hook twice. Each close once.</span></li>
+</ul>
+<p class="note">About 60 clips make 8 to 10 posts. Film some pieces both ways, talking and silent. We don't yet know which works better for this shop.</p>
+</section>
+
+<section>
+<h2>To decide</h2>
+<ul>
+  <li class="card">On camera, neck-down plus voice, or voice only? Your call.</li>
+  <li class="card">Is the space a home? It sets what stays out of frame.</li>
+  <li class="card">Which pieces are on hand to film first?</li>
+  <li class="card">Five videos you love. Send the links and we'll break them down.</li>
+</ul>
+</section>
+
+</main>
+</body>
+</html>
