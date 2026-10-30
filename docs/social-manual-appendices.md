@@ -334,6 +334,8 @@ S1 https://support.google.com/youtube/answer/72431 · S2 https://support.google.
 
 ## D. 90-minute shoot, camera settings, safe-zone and reflection rules, gear kits
 
+> **2026-10-30:** the shop room is gone. **D.2 below is out of date** (burgundy wall, neon, mirror ball); `docs/video-direction.md` section 5 replaces it. D.1 (settings) and D.3 (gear) still apply; the D.1 reflection rules now cover pieces for sale, not a fit check.
+
 Source: w1h-capture-ingest.md sections 1.1, 1.2 and 1.3, plus the phone and safe-zone lines of its section 3 (accessed 2026-10-29).
 
 Tags: `verified` (read live or measured this session), `vendor claim`, `practitioner`, `unverified (search summary)`, `inferred`. "Not read" means I could not reach the page and did not fill it from memory. Search and WebFetch summaries are tool-written and tagged unverified unless I also crawled the page.

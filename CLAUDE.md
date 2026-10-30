@@ -9,6 +9,8 @@ video frames live in `assets/` (previews only; originals stay in Ricky's Drive).
 the "needs photo" items. Shop name (Ricky, corrected 2026-10-27): **Holliewood and Vine** or
 **Holliewood & Vine**. The spelling is **Hollie**, with **ie**.
 
+**Update (2026-10-30, Ricky): the shop room is gone; the space is smaller.** The paragraph above describes the old room, so treat it as history. Whether the catalogued stock survived and whether the new space is a home are unconfirmed. On-camera direction for the smaller space (try-ons, show-and-tell, how Hollie talks) is `docs/video-direction.md`, which replaces the room-based shoot in `docs/social-manual-appendices.md` D.2.
+
 **Dashboard (2026-10-26):** ops dashboard researched (ten Sonnet reports in `research/dashboard/`) and
 designed: `docs/dashboard-design.md` (what and why) and `docs/dashboard-handoff.md` (build order, smoke
 tests, schema deltas). Same day, Ricky's call: listing from the phone is in Phase 1 (photos plus one
