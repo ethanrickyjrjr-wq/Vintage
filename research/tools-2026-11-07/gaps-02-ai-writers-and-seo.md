@@ -148,6 +148,23 @@ Method note: WebSearch's shared budget for this turn was already used up when th
 - Etsy help search for "AI listing" returns 227 articles; the only AI-titled one, "How Etsy AI Assistants Work", is about buyer-facing "Support assistant", "Gifting assistant" and "Wedding assistant" with privacy notes. No seller listing writer. No change to the lane's Etsy entries.
 - eBay App Store listing (id282614216): "Create a listing in a snap with the help of AI. Simply upload your photos, add your item description, and we'll handle the rest." This is the US-side confirmation the lane lacked; the UK 2023 notice remains the only help-center source. eBay seller-center, ebayinc.com press and help-search URLs tried today were 404 or navigation-only shells.
 
+## 2b. Defunct, acquired or renamed (with evidence read today)
+
+| Tool | Status | Evidence (verbatim, page read 2026-11-07) | V/U | Source URL |
+|---|---|---|---|---|
+| Reeva AI (on the lane list as U, "dropped") | Defunct as a reseller product. reeva.ai is now an industrial engineering-data company | Page title "Reeva | Engineering Intelligence for Industrial Enterprises"; "Engineering and R&D teams at large manufacturing, industrial equipment, and energy companies use Reeva" | V | https://www.reeva.ai/ |
+| Roketfy (seed lead, Etsy AI listing tool) | Pivoted. No Etsy self-serve product or price; /pricing redirects to the home page | "Roketfy is an AI customer review analytics and e-commerce data platform"; "Optimize product listings on Trendyol and other marketplaces."; "Request a Demo" | V | https://roketfy.com/en/ |
+| EtsyHunt | Renamed EHunt; etsyhunt.com/pricing redirects to ehunt.ai/pricing | "Meet the new EHunt AI! All-in-one AI tools for Etsy product research, store operations, and content creation." | V | https://ehunt.ai/pricing |
+| Copysmith (parent of Describely, which is on the lane list) | Copysmith Inc. now presents three platforms: Frase, Describely, Rytr. Describely is its ecommerce product line | "Describely eCommerce Content Infrastructure"; "Rytr AI Conversation Platform"; "© 2026 Copysmith Inc." | V | https://www.copysmith.ai/ |
+| Rytr | Pivoted from a writing tool to a relationship and communication tool; a free tier remains | "Free forever ... 10,000 characters per month ... 25 active relationships ... 40+ writing use cases"; "Lite ... $9 /mo" | V | https://rytr.me/pricing |
+| SEOAnt (Shopify SEO app) | Renamed SEOWILL | "SEOWILL (formerly SEOAnt): AI SEO & GEO Workflow to Grow Visibility in Google and AI Search" | V | https://apps.shopify.com/seo-master |
+| Copilot Pro (Microsoft) | Replaced by Microsoft 365 Premium; the Copilot Pro store URL redirects there | "Microsoft 365 Premium ... $199.99/year"; "Buy now $19.99/month"; "Try free for 1 month" | V | https://www.microsoft.com/en-us/microsoft-365/p/microsoft-365-premium/cfq7ttc11z3q |
+| EtsyGenerator | Original paid app abandoned; site now a free "restored build" | "The old broken app route now resolves to the free description generator inside this build."; "Old login and subscription gates are bypassed for the free build." | V | https://etsygenerator.com/ |
+| Flyp (crosslister, often listed as free) | Unknown. Home and pricing pages 403 or empty; Google Play guess 404 | "FETCH FAILED ... HTTP 403 and 0 chars of text" | U | https://www.flyp.com/pricing |
+| Title Builder (title-builder.com) | Alive but possibly unmaintained | Footer "Copyright text 2021 by Title Builder" | V | https://title-builder.com/ |
+| OneShop | Alive; footer dated 2024 | "© 2024 Inventory Systems, Inc."; "$45/month" | V | https://oneshop.com/pricing |
+| Lane-listed tools checked only incidentally | No change found for Marmalead, eRank, Alura, Koalanda, EverBee, Sale Samurai, ListifyAI, Listadum (not re-verified; that is the other agent's job) | n/a | n/a | n/a |
+
 ## 3. Recommendation for Hollie
 
 Free first, today:
