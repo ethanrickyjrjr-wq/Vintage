@@ -2,6 +2,17 @@
 
 **Status (2026-11-07):** written in the cloud session that researched and built this; nothing here has run on the Windows PC yet. The script ran here on CPU (Linux, 4 cores) on Ricky's four example photos. Every command below is for Windows PowerShell from the repo folder (`C:\Users\ethan\dev\Vintage`). Decisions and the reasons are in `docs/ebay-photo-studio.md`; the research is in `research/ebay-photo-studio-2026-11-07/`. Expect the first session to take about an hour including the model download.
 
+## The simplest route: cut on the phone, frame on the PC
+
+Ricky's call, 2026-11-07: the tap on the phone cuts better than any of this, so use it. The PC only does what the phone cannot: pure white, the square, 1600 px, the file names and the manifest.
+
+1. On the iPhone, cut the item out. Either press and hold the item in Photos until it glows, lift a finger, choose Copy Subject (or Share, then Save to Files), or select several photos, Share, Save to Files, then in Files select them, Quick Actions, Remove Background. Each gives a PNG with a transparent background. (Menu names from third-party guides, not yet checked on your phone; the gesture is the one you already use.)
+2. Get the PNGs to the PC: the Drive or iCloud folder the PC syncs. Point the script at that folder.
+3. Run the script on the folder (section 3). A transparent PNG is recognised on sight: the model is not loaded, and the photo is only trimmed, centred on pure white, saved at 1600 and 2048, and logged as "cut on the phone, framed here". About one second per photo. Name the PNGs `ITEM-view` as usual if you can; `Background Removed` in the name is fine.
+4. Labels and flaw close-ups still go in as plain photos: they are kept as shot.
+
+The model route below is for a stack of photos where tapping each one would take longer. Both can mix in one folder.
+
 ## 0. Before you sit down
 
 - Ten or so photos to try on, including the ones already in `assets/examples-2026-11-07/` (the navy dress, its label, the framed print).
@@ -65,6 +76,8 @@ python tools\cutout\cutout.py assets\examples-2026-11-07 $env:TEMP\cutout-check
 Do not install TensorRT, a CUDA toolkit or cuDNN by hand, and do not build anything. rembg's own README: "If `rembg[gpu]` doesn't work and you can't install CUDA or `cudnn-devel`, use `rembg[cpu]` with `onnxruntime` instead."
 
 ## 2. First run: what good looks like
+
+If the folder holds only phone cut-outs and close-ups, the run takes seconds and prints no model line at all. The lines below are for the model route.
 
 The check in step 5 writes `%TEMP%\cutout-check\ebay`, `listing`, `site` and `manifest.csv`. Expected report lines, from the cloud run:
 

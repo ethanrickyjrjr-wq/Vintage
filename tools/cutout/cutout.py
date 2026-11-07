@@ -26,6 +26,12 @@ Run:
     --model M    rembg model name, default birefnet-general. Never bria-rmbg (non-commercial licence).
     --force      redo photos whose outputs already exist.
 
+The simplest route, and the one to use for anything the model gets wrong: cut the item out ON THE
+PHONE (press and hold the item in Photos, Copy Subject, or Files > Quick Actions > Remove Background)
+and drop the transparent PNG in the folder. The script sees the transparency, skips the model, and
+only does what the phone cannot: pure white, the square, 1600 px, the naming and the manifest. No
+model is loaded when every photo in the run is already cut.
+
 The file name decides the treatment. Name photos item-view: A13-front.jpg, A13-back.heic, A13-label.jpg.
     front, back, side, hero, or any other word       cut out, pure white background
     label, tag, flaw, detail, close, closeup, inside,
@@ -96,21 +102,41 @@ def mode_for(path, rect_all):
     w = words(path)
     if w & KEEP_WORDS:
         return 'keep'
+    if already_cut(path):  # the phone did the cutting; frame words do not matter any more
+        return 'precut'
     if rect_all or w & RECT_WORDS:
         return 'rect'
     return 'cut'
 
 
-def load(path):
+def load(path, keep_alpha=False):
     img = ImageOps.exif_transpose(Image.open(path))  # HEIC is already upright
+    alpha = img.getchannel('A') if keep_alpha and 'A' in img.getbands() else None
     icc = img.info.get('icc_profile')
     if icc:  # iPhones shoot Display P3; the web and marketplaces assume sRGB
         img = ImageCms.profileToProfile(
             img.convert('RGB'), ImageCms.ImageCmsProfile(io.BytesIO(icc)),
             ImageCms.createProfile('sRGB'), outputMode='RGB')
     img = img.convert('RGB')
+    if alpha is not None:
+        img.putalpha(alpha)
     img.thumbnail((WORK_EDGE, WORK_EDGE), Image.Resampling.LANCZOS)
     return img
+
+
+def already_cut(path):
+    """True for a transparent PNG from the phone (or any editor): real transparency, not just an alpha band."""
+    try:
+        img = Image.open(path)
+    except Exception:  # noqa: BLE001
+        return False
+    if 'A' not in img.getbands() and not (img.mode == 'P' and 'transparency' in img.info):
+        return False
+    a = np.asarray(img.convert('RGBA').getchannel('A'))
+    clear = (a < SPECK).mean()
+    # a frame or box cut on the phone fills its own box, so only the corners are clear: any real
+    # transparency counts, as long as the whole image is not empty
+    return 0.0 < clear < 0.98
 
 
 def provider_name():
@@ -334,12 +360,13 @@ def append_manifest(out, row):
         w.writerow(row)
 
 
-def process(path, out, session, args, provider):
+def process(path, out, get_session, args, provider):
     start = time.time()
     mode = mode_for(path, args.rect)
-    photo = load(path)
+    photo = load(path, keep_alpha=(mode == 'precut'))
     row = dict.fromkeys(MANIFEST_COLS, '')
-    row.update(file=path.name, mode=mode, model=args.model if mode != 'keep' else '', provider=provider,
+    row.update(file=path.name, mode=mode, model=args.model if mode in ('cut', 'rect') else '',
+               provider=provider if mode in ('cut', 'rect') else '',
                processed_utc=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
     notes = []
     if mode == 'keep':
@@ -350,7 +377,13 @@ def process(path, out, session, args, provider):
         append_manifest(out, row)
         print(f'{path.name}: {time.time() - start:.1f}s  kept as shot (close-up), resized only')
         return
-    rgba, kept, solid, added = cut(session, photo, rect=(mode == 'rect'))
+    if mode == 'precut':
+        rgba = photo
+        a = np.asarray(rgba.getchannel('A'))
+        kept, solid, added = 1.0, float((a >= 250).sum()) / max((a > SPECK).sum(), 1), 0.0
+        notes.append('cut on the phone, framed here')
+    else:
+        rgba, kept, solid, added = cut(get_session(), photo, rect=(mode == 'rect'))
     box = rgba.getchannel('A').getbbox()
     if not box:
         print(f'{path.name}: no item found, reshoot on the white sweep')
@@ -380,7 +413,7 @@ def process(path, out, session, args, provider):
     master.save(out / 'listing' / f'{path.stem}.jpg', quality=90)
     ebay, _ = square_on_white(item, EBAY, args.shadow)
     ebay.save(out / 'ebay' / f'{path.stem}.jpg', quality=90)
-    if kept < 0.99:
+    if kept < 0.99 and mode != 'precut':
         notes.append('PIXELS CHANGED, check by eye')
     if solid < 0.5:
         notes.append('mostly see-through (glass?), list the original instead')
@@ -436,17 +469,22 @@ def main():
     for folder in ('site', 'listing', 'ebay'):
         (out / folder).mkdir(parents=True, exist_ok=True)
     register_heif_opener()
-    provider = provider_name()
-    session, provider = open_session(args.model, provider)
-    print(f'model {args.model} on {provider}' + ('' if provider != 'CPUExecutionProvider' else
-          ' (CPU: about 20 s per photo; the GPU install is in docs/ebay-photo-studio-handoff.md)'))
+    state = {'session': None, 'provider': provider_name()}
+
+    def get_session():  # the model loads only when a photo actually needs cutting
+        if state['session'] is None:
+            state['session'], state['provider'] = open_session(args.model, state['provider'])
+            p = state['provider']
+            print(f'model {args.model} on {p}' + ('' if p != 'CPUExecutionProvider' else
+                  ' (CPU: about 20 s per photo; the GPU install is in docs/ebay-photo-studio-handoff.md)'))
+        return state['session']
 
     def run(path):
         if done_before(out, path) and not args.force:
             print(f'{path.name}: done before, skipped (use --force to redo)')
             return
         try:
-            process(path, out, session, args, provider)
+            process(path, out, get_session, args, state['provider'])
         except Exception as exc:  # noqa: BLE001
             print(f'{path.name}: FAILED {exc}')
 

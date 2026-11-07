@@ -59,6 +59,10 @@ Asked by Ricky: how to make eBay-grade photos of vintage clothes on nice vintage
 - `*-cut-birefnet-general*.jpg`: the listing outputs at 1024 px.
 - `memtest.md`: why every multi-photo run died on photo two here (onnxruntime CPU arena growth, 9.7 GB peak) and the fix (arena off, 8.1 GB flat across three photos).
 
+## The turn at the end
+
+After the frame rounds Ricky said the phone's tap cuts it out perfectly and this should be easy. He is right for one-offs, and the script now takes phone cut-outs (transparent PNGs) straight in, skipping the model: it trims, whites, squares and sizes them. Lane 17's phone steps are the ones to confirm on the device.
+
 ## What to do on the PC
 
 `fetch-later.md` holds the 153 blocked URLs and a one-line crawl4ai loop. After that run, the snippet-level lanes (09 to 17) can be re-verified and the prices in the decision doc replaced with fetched ones.
