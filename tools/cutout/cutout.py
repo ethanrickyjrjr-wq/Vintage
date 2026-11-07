@@ -2,7 +2,8 @@
 
 Setup once, from the repo root (Windows, PowerShell or Git Bash):
     uv venv .venv/cutout --python 3.12
-    uv pip install --python .venv/cutout/Scripts/python.exe "rembg[gpu,cli]==2.0.87" "pillow-heif==1.8.1" opencv-python-headless scipy
+    uv pip install --python .venv/cutout/Scripts/python.exe "rembg[gpu,cli]==2.0.87" "onnxruntime-gpu[cuda,cudnn]==1.31.1" "pillow-heif==1.8.1" opencv-python-headless scipy
+    (the [cuda,cudnn] extras put the CUDA and cuDNN DLLs in the venv; without them the model silently runs on the CPU)
     (no NVIDIA card, or the GPU check in docs/ebay-photo-studio-handoff.md fails: install "rembg[cpu,cli]==2.0.87" instead)
     .venv/cutout/Scripts/rembg d birefnet-general          # the model, about 1 GB, downloaded once
 

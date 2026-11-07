@@ -21,7 +21,7 @@ The model route below is for a stack of photos where tapping each one would take
 
 ## 1. Install (once, about 15 minutes plus a 1 GB download)
 
-The GPU route is first because the RTX 4060 Ti turns 20 seconds a photo into a few. Lane 18 found that today's `rembg[gpu]` pulls an onnxruntime built for CUDA 13, so the pin below keeps the CUDA 12.8 build and lets pip supply the CUDA and cuDNN files; no NVIDIA toolkit install needed.
+Done on this PC 2026-11-07: `.venv\cutout` is the GPU venv and `.venv\cutout-cpu` the CPU one, both installed and checked; the steps below are for a rebuild. The GPU route is first because, measured here on the same four photos, the RTX 4060 Ti takes 7 to 8 seconds a photo where the 14700KF takes 21 to 35. `nvidia-smi` here reports CUDA 13.4, so the current `onnxruntime-gpu` is used as is: the ONNX Runtime CUDA provider page (read 2026-11-07) says PyPI GPU packages from 1.27 on are built with CUDA 13.0 and need a 13.0 or newer driver, and pip supplies the CUDA 13 and cuDNN 9 DLLs through the `[cuda,cudnn]` extras; no NVIDIA toolkit install. Only on a driver below CUDA 13.0 pin `onnxruntime-gpu[cuda,cudnn]==1.26.0`, the last CUDA 12.8 build, which pulls the `-cu12` DLL set instead.
 
 ```powershell
 # 0. Driver check. Top right of the table must say CUDA Version 12.8 or higher.
@@ -32,18 +32,18 @@ cd C:\Users\ethan\dev\Vintage
 uv venv .venv\cutout --python 3.12
 .\.venv\cutout\Scripts\Activate.ps1
 
-# 2. rembg with the CUDA 12.8 onnxruntime and pip-supplied CUDA 12 and cuDNN 9 DLLs, plus the script's helpers
-uv pip install "rembg[gpu,cli]==2.0.87" "onnxruntime-gpu[cuda,cudnn]==1.26.0" "pillow-heif==1.8.1" opencv-python-headless scipy
-# if the resolver complains about nvidia-cublas-cu12, add:  "nvidia-cublas-cu12<12.9.3"
+# 2. rembg with onnxruntime-gpu 1.31.1 (CUDA 13.0 build) and the pip-supplied CUDA 13 and cuDNN 9 DLLs, plus the script's helpers. About 5 minutes of downloads here.
+uv pip install "rembg[gpu,cli]==2.0.87" "onnxruntime-gpu[cuda,cudnn]==1.31.1" "pillow-heif==1.8.1" opencv-python-headless scipy
+# driver below CUDA 13.0 only: ==1.26.0 instead (it pulls the -cu12 DLL set)
 
 # 3. Check 1: does the package see the GPU?
 python -c "import onnxruntime as ort; ort.preload_dlls(directory=''); print(ort.__version__); print(ort.get_available_providers())"
-#    good: 1.26.0 and a list containing CUDAExecutionProvider
+#    good (seen here 2026-11-07): 1.31.1 and ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
 #    bad:  only CPUExecutionProvider (or AzureExecutionProvider and CPU): wrong package, go to the CPU route
 
 # 4. The model, once (about 1 GB). Never download bria-rmbg: non-commercial licence.
-$env:REMBG_HOME = "$PWD\models\rembg"
-rembg d birefnet-general birefnet-general-lite
+#    Already on this PC in C:\Users\ethan\.rembg\models\birefnet-general (rembg's default folder, REMBG_HOME unset): skip.
+rembg d birefnet-general
 
 # 5. Check 2, the real test: a session that says which provider it got, with timing
 python tools\cutout\cutout.py assets\examples-2026-11-07 $env:TEMP\cutout-check
@@ -51,7 +51,7 @@ python tools\cutout\cutout.py assets\examples-2026-11-07 $env:TEMP\cutout-check
 #    a WARNING line saying the session runs on CPU means the DLLs were not found: try section 1b once, then the CPU route
 ```
 
-`REMBG_HOME` only lasts for that PowerShell window. Make it permanent with `setx REMBG_HOME "C:\Users\ethan\dev\Vintage\models\rembg"` and open a new window, or leave it unset and the models live in `C:\Users\ethan\.rembg\models`. With it set, the files land in `models\rembg\models\birefnet-general\` (rembg adds its own `models` folder under the root). The `models` folder is not committed; add it to `.gitignore` if git shows it.
+The models live in `C:\Users\ethan\.rembg\models` (rembg's default; `REMBG_HOME` is unset here). Set `REMBG_HOME` only to move them; the repo's `models/` folder is gitignored for that case.
 
 **1b. If check 2 says CPU: one PATH attempt, then stop chasing it.**
 
@@ -79,16 +79,17 @@ Do not install TensorRT, a CUDA toolkit or cuDNN by hand, and do not build anyth
 
 If the folder holds only phone cut-outs and close-ups, the run takes seconds and prints no model line at all. The lines below are for the model route.
 
-The check in step 5 writes `%TEMP%\cutout-check\ebay`, `listing`, `site` and `manifest.csv`. Expected report lines, from the cloud run:
+The check in step 5 writes `%TEMP%\cutout-check\ebay`, `listing`, `site` and `manifest.csv`. Report lines from this PC on the GPU, 2026-11-07 (the cloud box printed the same percentages at 18 to 22 seconds a photo):
 
 ```
-nm-dress-front.jpg: 18.4s  pixels kept 99.9%  solid 98%  OK
-nm-dress-back.jpg:  18.6s  pixels kept 99.9%  solid 98%  OK
-nm-dress-label.jpg: 0.3s   kept as shot (close-up), resized only
-shisa-print.jpg:    21.9s  pixels kept 100.0%  solid 92%  OK            (plain cut; see the note below)
+model birefnet-general on CUDAExecutionProvider
+nm-dress-back.jpg: 7.4s  pixels kept 99.9%  solid 98%  item small in frame, shoot closer
+nm-dress-front.jpg: 7.1s  pixels kept 99.9%  solid 98%  item small in frame, shoot closer
+nm-dress-label.jpg: 0.0s  kept as shot (close-up), resized only
+shisa-print.jpg: 8.3s  pixels kept 100.0%  solid 91%  item small in frame, shoot closer     (plain cut; see the note below)
 ```
 
-Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch and no scar along the top edge even at full zoom, and the report line says `rect repair filled 3.1%`. Add `--check` to get `check\A9-framed-print.jpg`, the cut on green with the patched gaps in magenta. `--straighten` and `--reframe` exist but are not the plan. Seconds on the GPU should be low single digits after the first photo.
+Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch and no scar along the top edge even at full zoom, and the report line says `rect repair filled 3.1%`. Add `--check` to get `check\A9-framed-print.jpg`, the cut on green with the patched gaps in magenta. `--straighten` and `--reframe` exist but are not the plan. Measured here: 7 to 8 seconds a photo on the GPU for a 12 MP phone photo, 6.5 seconds to load the model, 47 seconds for the four-photo folder. The CPU venv on the same folder: 21 to 35 seconds a photo, 80 seconds in all. The masks are identical on both routes.
 
 ## 3. The daily flow
 
@@ -153,7 +154,6 @@ Then ask Claude to re-run the verification against the fetched pages and update 
 - Which forms are on hand, and does any have a removable neck or arms?
 - iPhone model and iOS version; HEIC or JPEG capture.
 - Room depth: can the form stand five or six feet from the backdrop?
-- The GPU numbers: seconds per photo on the 4060 Ti and on the CPU route, for the docs.
 
 ## 8. If something goes wrong
 
