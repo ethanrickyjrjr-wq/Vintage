@@ -54,6 +54,7 @@ Asked by Ricky: how to make eBay-grade photos of vintage clothes on nice vintage
 
 - `before-after.jpg`: dress front, dress back and the framed print, original beside the cut.
 - `frame-six-models-three-repairs.jpg` and `frame-test.py`: six rembg models by raw, closing and convex-hull repair on the print. Only birefnet-general kept the frame; the hull repair completed it.
+- `shisa-print-rect-repair-v1-scar-top-edge.jpg` and `-v2-top-edge.jpg`: Ricky saw the first repair "more broken than before" at full size. v1 restored only pixels the model called background and left the half-transparent band around the old notch, which bled white as a scar and as bites on the right bar. v2 makes the whole interior of the outline solid from the photo, keeping only the outer 3 px soft. `shisa-print-rect-repair-straightened.jpg` adds the `--straighten` perspective correction.
 - `bench-*.jpg` and `19-bench.md`: general, lite and isnet on nine photos. General never failed; lite is 35 to 40 percent faster and matches it on clean garments but loses thin frame bars and shelf contents; isnet failed on seven of nine.
 - `*-cut-birefnet-general*.jpg`: the listing outputs at 1024 px.
 - `memtest.md`: why every multi-photo run died on photo two here (onnxruntime CPU arena growth, 9.7 GB peak) and the fix (arena off, 8.1 GB flat across three photos).

@@ -19,7 +19,9 @@ Inputs: Ricky's four phone photos (`assets/examples-2026-11-07/`) and the Octobe
 | Navy silk dress, front, hanging on a Jeep door in sun | Clean cut, hanger kept, collar and pink button intact | 18.4 s, 99.9% of pixels untouched, 98% solid |
 | Same dress, back | Clean cut | 18.6 s, 99.9%, 98% |
 | Framed shisa print on a dark pegboard, plain cut | Frame lost a notch at the top and a sliver on the right; glass reflections stay | 21.9 s, 100%, 92% |
-| Same print with the rectangle repair | Frame complete, filled with the photo's own pixels | 22.9 s, 3.1% of the outline reclaimed |
+| Same print with the rectangle repair, first version | Outline complete but a scar along the old notch and white bites on the right bar, visible only at full zoom | 22.9 s, 3.1% of the outline reclaimed |
+| Same print, repair corrected | Frame clean at full zoom: the whole interior of the outline is made solid from the photo, only the outer 3 px keep a soft edge | 25.7 s, same 3.1% |
+| Same print with `--straighten` | Four corners found, frame squared up to a true rectangle from the photo's own pixels | proportions estimated, so opt-in |
 | Dressed form in the burgundy room | Form and jacket came off the wall as one object, chains intact | 17.7 s |
 
 Timing is this cloud box: four CPU cores, no graphics card, about 18 to 23 seconds a photo. On the RTX 4060 Ti the same model runs on the GPU; the handoff has the install and the check. The model comparison on the print: `birefnet-general` was the only one of six that kept the whole frame; `birefnet-dis` and `birefnet-massive` dropped the frame, `isnet-general-use` and `u2net` kept only the artwork, and the lite model smeared the right edge. A general morphological "closing" did not fix the notch; the convex-hull repair did.
@@ -85,6 +87,7 @@ Decision: visible form by default. Ghost only clean, structured, flawless pieces
 `tools/cutout/cutout.py` (tested here on CPU; the handoff has the Windows install):
 
 - Reads JPEG, PNG, WebP and iPhone HEIC, rotates by EXIF, converts Display P3 to sRGB.
+- `--straighten` squares up a frame, mirror or box shot at an angle: the four corners of the outline are found and the item is warped to a true rectangle. Real pixels resampled, nothing invented, but the proportions are estimated from the photo, so it is an option to compare, not the default.
 - Decides the treatment from the file name. `front`, `back`, `side` or anything else: cut out onto white. `label`, `tag`, `flaw`, `detail`, `close`, `inside`, `measure`, `fabric`, `hem`, `button`, `zipper`: kept exactly as shot, resized only. `frame`, `framed`, `art`, `mirror`, `painting`, `poster`, `box`, `book`, `sign`, `tray`, `record`, `album`: cut, then the rectangle repair. Not `print` or `canvas`: a floral print dress and a canvas tote are clothes.
 - Writes `ebay/NAME.jpg` (1600 square, item at 85%), `listing/NAME.jpg` (2048 square master), `site/NAME.png` (transparent, our site only), and a `manifest.csv` row with the model, the processor, seconds, the share of pixels untouched, and warnings.
 - `--shadow` adds a soft contact shadow under objects standing on a surface (lamps, shoes, hats, bags); `--shadow drop` gives a faint drop shadow behind a hanging or framed item (whitebg's recipe, MIT). Off for clothes on a form; the PNG never has one.

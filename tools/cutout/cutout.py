@@ -14,6 +14,10 @@ Run:
                  hats, bags). --shadow drop gives a faint drop shadow behind a hanging or framed item
                  instead. Leave both off for clothes on a form. The site PNG never has one.
     --rect       fill the outline of frames, mirrors, boxes and books (see below) for every photo.
+    --straighten square up a frame, mirror or box shot at a slight angle: the four corners of the
+                 outline are found and the item is warped to a true rectangle (real pixels resampled,
+                 nothing invented). Rectangle photos only; proportions are estimated from the photo,
+                 so compare with the plain output before trusting it on a listing.
     --model M    rembg model name, default birefnet-general. Never bria-rmbg (non-commercial licence).
     --force      redo photos whose outputs already exist.
 
@@ -172,11 +176,47 @@ def rect_repair(rgba, photo):
     hull = np.zeros(main.shape, np.uint8)
     cv2.fillConvexPoly(hull, cv2.convexHull(max(cnts, key=cv2.contourArea)), 1)
     hull = hull.astype(bool)
-    added = hull & (alpha < 128)  # background the model missed inside the object's outline
+    # Everything inside the outline is the object. Make it fully solid from the photo, soft alpha
+    # included: a half-transparent band around a notch bleeds white and leaves a scar otherwise.
+    # Only the outermost 3 px keep the model's soft edge.
+    edge = max(3, int(0.002 * max(main.shape)))
+    inner = cv2.erode(hull.astype(np.uint8), np.ones((2 * edge + 1, 2 * edge + 1), np.uint8)).astype(bool)
+    missing = hull & (alpha < 128)  # background the model missed inside the outline
+    fix = inner & (alpha < 255)
     rgba = rgba.copy()
-    rgba[added, :3] = np.asarray(photo)[added]  # the frame's real pixels, straight from the photo
-    rgba[added, 3] = 255
-    return rgba, float(added.sum()) / max(hull.sum(), 1)
+    rgba[fix, :3] = np.asarray(photo)[fix]  # the real pixels, straight from the photo, never redrawn
+    rgba[fix, 3] = 255
+    return rgba, float(missing.sum()) / max(hull.sum(), 1)
+
+
+def straighten(rgba):
+    """Perspective-correct a convex four-cornered object to a true rectangle. Returns (rgba, done)."""
+    import cv2
+    alpha = rgba[..., 3]
+    cnts, _ = cv2.findContours((alpha > 127).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not cnts:
+        return rgba, False
+    hull = cv2.convexHull(max(cnts, key=cv2.contourArea))
+    peri = cv2.arcLength(hull, True)
+    quad = None
+    for eps in (0.01, 0.02, 0.03, 0.05):
+        ap = cv2.approxPolyDP(hull, eps * peri, True)
+        if len(ap) == 4:
+            quad = ap.reshape(4, 2).astype(np.float32)
+            break
+    if quad is None:
+        return rgba, False
+    sums, diffs = quad.sum(1), np.diff(quad, axis=1).ravel()
+    tl, br, tr, bl = quad[np.argmin(sums)], quad[np.argmax(sums)], quad[np.argmin(diffs)], quad[np.argmax(diffs)]
+    w = int(round(max(np.linalg.norm(tr - tl), np.linalg.norm(br - bl))))
+    h = int(round(max(np.linalg.norm(bl - tl), np.linalg.norm(br - tr))))
+    if w < 50 or h < 50:
+        return rgba, False
+    src = np.array([tl, tr, br, bl], np.float32)
+    dst = np.array([[0, 0], [w - 1, 0], [w - 1, h - 1], [0, h - 1]], np.float32)
+    out = cv2.warpPerspective(rgba, cv2.getPerspectiveTransform(src, dst), (w, h),
+                              flags=cv2.INTER_LANCZOS4, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0, 0))
+    return out, True
 
 
 def square_on_white(item, size, shadow=None):
@@ -253,6 +293,13 @@ def process(path, out, session, args, provider):
         return
     # one bbox over everything kept; a stray speck far away widens it. Crop by hand if seen.
     item = rgba.crop(box)
+    if mode == 'rect' and args.straighten:
+        arr, done = straighten(np.array(item))
+        if done:
+            item = Image.fromarray(arr)
+            notes.append('straightened')
+        else:
+            notes.append('not straightened (no four corners found)')
     site = item.copy()
     site.thumbnail((SITE_EDGE, SITE_EDGE), Image.Resampling.LANCZOS)
     site.save(out / 'site' / f'{path.stem}.png', optimize=True)
@@ -302,6 +349,7 @@ def main():
     ap.add_argument('--watch', action='store_true')
     ap.add_argument('--shadow', nargs='?', const='contact', choices=['contact', 'drop'], default=None)
     ap.add_argument('--rect', action='store_true')
+    ap.add_argument('--straighten', action='store_true')
     ap.add_argument('--model', default=DEFAULT_MODEL)
     ap.add_argument('--force', action='store_true')
     args = ap.parse_args()
