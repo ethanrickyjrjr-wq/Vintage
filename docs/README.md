@@ -36,6 +36,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - [codex-handoff-idea-room.md](codex-handoff-idea-room.md): preview pages for Hollie to decide on. Section 8 specs the Round D pages for a second build.
 - [round-d-synthesis.md](round-d-synthesis.md): being found, keeping people, shipping safely. [research-brief-round-d.md](research-brief-round-d.md) is the brief behind it.
 - [site-ideas-and-consignment-synthesis.md](site-ideas-and-consignment-synthesis.md): ten reports on site ideas and consignment, including Florida ch. 538.
+- [tool-stack.md](tool-stack.md): the software stack for the whole process (source, identify and price, shoot, list, crosslist, ship, market, books), researched 2026-11-07 with prices verified on vendor pages that day. Decisions and an install-today list.
 
 ## Social and video
 
@@ -76,4 +77,5 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 | `3d-capture/`, `demo-photo-sourcing/` | 3D capture docs, photo sourcing lists | [demo-showroom.md](demo-showroom.md), [demo-photo-pack.md](demo-photo-pack.md) |
 | `account-layout-2026-10-29/` | one note | [account-layout.md](account-layout.md) |
 | `vinted-2026-10-30/` | Vinted rules and crosslister support, raw pages plus a README | its README |
+| `tools-2026-11-07/` | 16 lanes on software for every step of the process, each with a verify file (adversarial price re-check) and a gaps file (missing and defunct tools) | [tool-stack.md](tool-stack.md) |
 | loose `*.md` in `research/` | pages fetched by `tools/crawl.sh`, named `<host>-<utc>.md` | none |

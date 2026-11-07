@@ -66,6 +66,8 @@ refer to the original objects, independently of sample listings that reuse the i
 - Eight new idea pages plus two amendments are specced in `docs/codex-handoff-idea-room.md` section 8, for a second Codex build.
 - Gating fact: items are `#item-<id>` hash routes today, so search and sold-page ideas need one real URL per piece.
 
+**Tool stack (2026-11-07):** research only; nothing in `site/` changed. Sixteen lanes in `research/tools-2026-11-07/` cover software for every step: listing and crosslisting, AI writers and SEO, photos, comps, identification, online and Southwest Florida sourcing, marketing channels, bookkeeping and tax, shipping tools, automation, desktop video, browser extensions, the free tools inside Etsy, eBay and Shopify, AI assistants and browser agents, and Shopify apps for a one-of-one shop. Each lane has a `verify-` file (prices re-checked on vendor pages the same day) and a `gaps-` file (missing and defunct tools). The decision layer is `docs/tool-stack.md`. crawl4ai was not reachable from the cloud session, so pages were read with WebFetch; every price carries its URL and a quote.
+
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
 
