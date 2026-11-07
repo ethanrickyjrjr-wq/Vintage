@@ -45,6 +45,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 
 ## Social and video
 
+- [mustache-moonwalk.md](mustache-moonwalk.md): the mustached mannequin's backward-moonwalk video and GIF, recovered iPhone handoff, character references, driving clip and generation status.
 - [social-manual.md](social-manual.md): the social media manual. [social-manual-appendices.md](social-manual-appendices.md) holds the content banks.
 - `social-manual-phone.html`: derived copy of the two files above. Edit the markdown, then run `python tools/build-phone-manual.py`.
 - [codex-handoff-social-autopilot.md](codex-handoff-social-autopilot.md): the build handoff. Designed, nothing built.
