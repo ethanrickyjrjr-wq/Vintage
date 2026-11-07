@@ -88,7 +88,7 @@ nm-dress-label.jpg: 0.3s   kept as shot (close-up), resized only
 shisa-print.jpg:    21.9s  pixels kept 100.0%  solid 92%  OK            (plain cut; see the note below)
 ```
 
-Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch and no scar along the top edge even at full zoom, and the report line says `rect repair filled 3.1%`. Add `--straighten` to see it squared up, or `--reframe` for the clean rebuilt frame (the version Ricky asked for). Seconds on the GPU should be low single digits after the first photo.
+Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch and no scar along the top edge even at full zoom, and the report line says `rect repair filled 3.1%`. Add `--check` to get `check\A9-framed-print.jpg`, the cut on green with the patched gaps in magenta. `--straighten` and `--reframe` exist but are not the plan. Seconds on the GPU should be low single digits after the first photo.
 
 ## 3. The daily flow
 
@@ -111,6 +111,7 @@ Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing
 | `--shadow` or `--shadow drop` | contact shadow under standing objects, or a faint drop shadow behind hanging ones; never on the PNG |
 | `--rect` | rectangle repair on every photo in the folder (frames, mirrors, boxes), otherwise by file name |
 | `--straighten` | with the rectangle repair, square up a frame shot at an angle (four corners to a true rectangle); compare with the plain output, proportions are estimated |
+| `--check` | frames: also write `check\NAME.jpg`, the cut on green with the filled gaps in magenta, to see what was patched |
 | `--reframe` | framed art with an undamaged frame: rebuild the frame from its own bar around the untouched mat and picture, mitred corners, straightened first. Never for a chipped or worn frame |
 | `--model birefnet-general-lite` | the 224 MB model, for a laptop or a quick preview; `birefnet-general` is the default |
 | `--force` | redo photos that already have outputs |

@@ -18,6 +18,8 @@ Run:
                  outline are found and the item is warped to a true rectangle (real pixels resampled,
                  nothing invented). Rectangle photos only; proportions are estimated from the photo,
                  so compare with the plain output before trusting it on a listing.
+    --check      for frames: also write check/NAME.jpg, the cut-out on green with the filled gaps in
+                 magenta, so you can see exactly what was patched and with how much.
     --reframe    for framed art: rebuild the frame from its own bar. The widest bar's colour profile
                  (its median across the bar, measured away from the corners, so glare and the model's
                  nicks drop out) is laid around the mat and picture with mitred corners. The mat and
@@ -176,12 +178,12 @@ def open_session(model, provider):
     return new_session(model, sess_opts=opts), 'CPUExecutionProvider'
 
 
-def cut(session, photo, rect=False):
+def cut(session, photo, rect=False, debug_path=None):
     """Return the RGBA cutout, share of solid pixels unchanged, share of item that is solid, hull share added."""
     rgba = np.array(remove(photo, session=session, decontaminate=True))
     added = 0.0
     if rect:
-        rgba, added = rect_repair(rgba, photo)
+        rgba, added = rect_repair(rgba, photo, debug_path)
     alpha = rgba[..., 3]
     alpha[alpha < SPECK] = 0
     rgba[alpha == 0, :3] = 0  # no leftover room colour hiding under transparent pixels
@@ -191,9 +193,12 @@ def cut(session, photo, rect=False):
     return Image.fromarray(rgba), kept, solid.sum() / max((alpha > 0).sum(), 1), added
 
 
-def rect_repair(rgba, photo):
-    """Fill the object's convex hull from the photo. Tested 2026-11-07 on a black frame
-    on a dark pegboard: BiRefNet dropped a notch of frame, the hull put it back exactly."""
+def rect_repair(rgba, photo, debug_path=None):
+    """Fix a cut-out of a frame, mirror or box whose straight edges the model nicked.
+    The outline is a convex shape with straight sides, so its convex hull IS the true edge. Only the
+    gaps between the model's cut and that edge are filled, with the real pixels the photo has at
+    those spots, and the edge itself is the straight hull line, anti-aliased. Nothing is redrawn.
+    debug_path: write the result on green with the filled gaps tinted magenta, to check by eye."""
     import cv2
     from scipy import ndimage
     alpha = rgba[..., 3]
@@ -205,19 +210,22 @@ def rect_repair(rgba, photo):
     main = ndimage.binary_fill_holes(lab == 1 + int(np.argmax(sizes)))
     cnts, _ = cv2.findContours(main.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     hull = np.zeros(main.shape, np.uint8)
-    cv2.fillConvexPoly(hull, cv2.convexHull(max(cnts, key=cv2.contourArea)), 1)
-    hull = hull.astype(bool)
-    # Everything inside the outline is the object. Make it fully solid from the photo, soft alpha
-    # included: a half-transparent band around a notch bleeds white and leaves a scar otherwise.
-    # Only the outermost 3 px keep the model's soft edge.
-    edge = max(3, int(0.002 * max(main.shape)))
-    inner = cv2.erode(hull.astype(np.uint8), np.ones((2 * edge + 1, 2 * edge + 1), np.uint8)).astype(bool)
-    missing = hull & (alpha < 128)  # background the model missed inside the outline
-    fix = inner & (alpha < 255)
-    rgba = rgba.copy()
-    rgba[fix, :3] = np.asarray(photo)[fix]  # the real pixels, straight from the photo, never redrawn
-    rgba[fix, 3] = 255
-    return rgba, float(missing.sum()) / max(hull.sum(), 1)
+    cv2.fillConvexPoly(hull, cv2.convexHull(max(cnts, key=cv2.contourArea)), 255, lineType=cv2.LINE_AA)
+    hull_edge = cv2.GaussianBlur(hull, (3, 3), 0)  # the straight edge, one pixel soft
+    inside = hull > 127
+    gaps = inside & (alpha < 255)  # every pixel the model left short of the straight edge
+    missing = inside & (alpha < 128)
+    out = rgba.copy()
+    out[gaps, :3] = np.asarray(photo)[gaps]  # the real frame at those spots, straight from the photo
+    out[..., 3] = np.maximum(alpha, hull_edge)  # solid inside, straight line at the edge
+    out[~inside & (alpha < 128), 3] = 0
+    if debug_path is not None:
+        green = np.zeros_like(out[..., :3]); green[...] = (0, 200, 0)
+        a = out[..., 3:4].astype(np.float32) / 255
+        view = (out[..., :3] * a + green * (1 - a)).astype(np.uint8)
+        view[missing] = (255, 0, 255)
+        Image.fromarray(view).save(debug_path, quality=85)
+    return out, float(missing.sum()) / max(inside.sum(), 1)
 
 
 def straighten(rgba):
@@ -383,7 +391,10 @@ def process(path, out, get_session, args, provider):
         kept, solid, added = 1.0, float((a >= 250).sum()) / max((a > SPECK).sum(), 1), 0.0
         notes.append('cut on the phone, framed here')
     else:
-        rgba, kept, solid, added = cut(get_session(), photo, rect=(mode == 'rect'))
+        debug = (out / 'check' / f'{path.stem}.jpg') if (args.check and mode == 'rect') else None
+        if debug is not None:
+            debug.parent.mkdir(parents=True, exist_ok=True)
+        rgba, kept, solid, added = cut(get_session(), photo, rect=(mode == 'rect'), debug_path=debug)
     box = rgba.getchannel('A').getbbox()
     if not box:
         print(f'{path.name}: no item found, reshoot on the white sweep')
@@ -457,6 +468,7 @@ def main():
     ap.add_argument('--rect', action='store_true')
     ap.add_argument('--straighten', action='store_true')
     ap.add_argument('--reframe', action='store_true')
+    ap.add_argument('--check', action='store_true', help='also write check/NAME.jpg: the cut on green, filled gaps in magenta')
     ap.add_argument('--model', default=DEFAULT_MODEL)
     ap.add_argument('--force', action='store_true')
     args = ap.parse_args()

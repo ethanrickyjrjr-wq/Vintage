@@ -21,7 +21,7 @@ Inputs: Ricky's four phone photos (`assets/examples-2026-11-07/`) and the Octobe
 | Same dress, back | Clean cut | 18.6 s, 99.9%, 98% |
 | Framed shisa print on a dark pegboard, plain cut | Frame lost a notch at the top and a sliver on the right; glass reflections stay | 21.9 s, 100%, 92% |
 | Same print with the rectangle repair, first version | Outline complete but a scar along the old notch and white bites on the right bar, visible only at full zoom | 22.9 s, 3.1% of the outline reclaimed |
-| Same print, repair corrected | Frame clean at full zoom: the whole interior of the outline is made solid from the photo, only the outer 3 px keep a soft edge | 25.7 s, same 3.1% |
+| Same print, repair as it stands | Ricky's method: the original cut, the straight edges taken from it, only the gaps between cut and edge filled with the real frame pixels the photo has there, and the edge drawn as the straight line. All four edges clean at full zoom. `--check` writes the cut on green with the filled gaps in magenta | 31.4 s, 3.1% of the outline filled |
 | Same print with `--straighten` | Four corners found, frame squared up to a true rectangle from the photo's own pixels | proportions estimated, so opt-in |
 | Same print with `--reframe` | Ricky's call: "it's a rectangle, copy the good part of the frame and frame it." The bar's clean colour profile is laid around the untouched mat and print with mitred corners. Clean black frame; the glass reflections remain because they are in the photo | for undamaged frames only |
 | Dressed form in the burgundy room | Form and jacket came off the wall as one object, chains intact | 17.7 s |
@@ -90,6 +90,7 @@ Decision: visible form by default. Ghost only clean, structured, flawless pieces
 
 - Reads JPEG, PNG, WebP and iPhone HEIC, rotates by EXIF, converts Display P3 to sRGB.
 - A transparent PNG (a cut-out from the phone) is recognised on sight: no model, just trim, pure white, 1600 and 2048, manifest row "cut on the phone, framed here". The model loads only when a photo actually needs cutting.
+- `--check` writes `check/NAME.jpg` for frames: the cut-out on green with the filled gaps tinted magenta, so what was patched is visible at a glance.
 - `--reframe` is for framed art with an undamaged frame: the frame is rebuilt from its own bar (the widest bar's median colour profile, so glare and the model's nicks drop out) around the mat and picture exactly as photographed, with mitred corners. A chipped or worn frame must be shown, not rebuilt, so this stays an option.
 - `--straighten` squares up a frame, mirror or box shot at an angle: the four corners of the outline are found and the item is warped to a true rectangle. Real pixels resampled, nothing invented, but the proportions are estimated from the photo, so it is an option to compare, not the default.
 - Decides the treatment from the file name. `front`, `back`, `side` or anything else: cut out onto white. `label`, `tag`, `flaw`, `detail`, `close`, `inside`, `measure`, `fabric`, `hem`, `button`, `zipper`: kept exactly as shot, resized only. `frame`, `framed`, `art`, `mirror`, `painting`, `poster`, `box`, `book`, `sign`, `tray`, `record`, `album`: cut, then the rectangle repair. Not `print` or `canvas`: a floral print dress and a canvas tote are clothes.
