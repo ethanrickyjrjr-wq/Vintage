@@ -1,0 +1,154 @@
+lane	bytes	status	file	url	reason
+01-rembg	11558	page	github.com_danielgatis_rembg_blob_main_USAGE.md.md	https://github.com/danielgatis/rembg/blob/main/USAGE.md	examples page linked from README
+01-rembg	18412	page	github.com_danielgatis_rembg_pull_843.md	https://github.com/danielgatis/rembg/pull/843	-dc decontamination design notes
+01-rembg	19881	page	github.com_danielgatis_rembg_pull_846.md	https://github.com/danielgatis/rembg/pull/846	-vm ViTMatte design notes and quality claims
+01-rembg	3540	page	onnxruntime.ai_getting_started.md	https://onnxruntime.ai/getting-started	CUDA/cuDNN installation matrix the README points to
+01-rembg	2829	page	raw.githubusercontent.com_danielgatis_rembg_main_rembg_sessions_birefnet_general.md	https://raw.githubusercontent.com/danielgatis/rembg/main/rembg/sessions/birefnet_general.py	preprocessing and whether an HR-matting session exists
+02-models	9781	page	arxiv.org_abs_2401.03407.md	https://arxiv.org/abs/2401.03407	BiRefNet paper
+02-models	8712	page	arxiv.org_abs_2501.06230.md	https://arxiv.org/abs/2501.06230	BEN2 paper for architecture and numbers
+02-models	8214	page	huggingface.co_PramaLLC_BEN2_blob_main_onnx_run.py.md	https://huggingface.co/PramaLLC/BEN2/blob/main/onnx_run.py	BEN2 ONNX inference on Windows
+02-models	19546	page	huggingface.co_ZhengPeng7_BiRefNet.md	https://huggingface.co/ZhengPeng7/BiRefNet	Full main card usage code and the BiRefNet_lite-2K card
+02-models	16563	page	huggingface.co_briaai_RMBG_2.0.md	https://huggingface.co/briaai/RMBG-2.0	Actual licence text and gating terms. hf_fs was denied and the web host is blocked.
+02-models	26270	page	withoutbg.com_models_birefnet_general.md	https://withoutbg.com/models/birefnet-general	Third-party sample results of rembg models, host not tested
+02-models	10300	page	www.reddit.com_r_comfyui_.md	https://www.reddit.com/r/comfyui/	Practitioner threads comparing BiRefNet and BEN2 on garments, glass and lace
+03-hf-spaces	82912	page	github.com_ZhengPeng7_BiRefNet.md	https://github.com/ZhengPeng7/BiRefNet	local install, model zoo, licences
+03-hf-spaces	1199	page	huggingface.co_api_spaces_not_lain_background_removal.md	https://huggingface.co/api/spaces/not-lain/background-removal	runtime stage and hardware JSON
+03-hf-spaces	22775	page	huggingface.co_docs_hub_spaces_zerogpu.md	https://huggingface.co/docs/hub/spaces-zerogpu	ZeroGPU quotas and queue rules
+03-hf-spaces	817	wall	huggingface.co_spaces_ZhengPeng7_BiRefNet_demo.md	https://huggingface.co/spaces/ZhengPeng7/BiRefNet_demo	runtime and hardware, model dropdown
+03-hf-spaces	831	wall	huggingface.co_spaces_not_lain_background_removal.md	https://huggingface.co/spaces/not-lain/background-removal	live status, hardware, limits
+04-ghost-mannequin	24697	page	blog.mannequinmadness.com_2019_05_a_crash_course_in_staging_your_clothing_to_pho.md	https://blog.mannequinmadness.com/2019/05/a-crash-course-in-staging-your-clothing-to-photograph-to-sell-online/	pinning and staging clothes on forms
+04-ghost-mannequin	6274	page	community.ebay.com_t5_Ask_a_Mentor_a_ghost_mannequin_tool_td_p_32239377.md	https://community.ebay.com/t5/Ask-a-Mentor/a-ghost-mannequin-tool/td-p/32239377	eBay seller thread on ghost mannequin tools
+04-ghost-mannequin	10582	page	community.ebay.com_t5_Selling_Using_a_mannequin_to_display_clothing_for_resale_D.md	https://community.ebay.com/t5/Selling/Using-a-mannequin-to-display-clothing-for-resale-Dated/td-p/32785890	eBay seller opinions on mannequin vs flat lay
+04-ghost-mannequin	22347	page	docs.photoroom.com_image_editing_api_plus_plan_ghost_mannequin.md	https://docs.photoroom.com/image-editing-api-plus-plan/ghost-mannequin	official Photoroom ghost spec and pricing
+04-ghost-mannequin	28358	page	fashn.ai_blog_ghost_mannequin_photography_complete_guide.md	https://fashn.ai/blog/ghost-mannequin-photography-complete-guide	shoot method, Photoshop steps, cost
+04-ghost-mannequin	33328	page	github.com_peterpeeterspeter_json_ghost_mannequin_pipeline.md	https://github.com/peterpeeterspeter/json-ghost-mannequin-pipeline	original SDXL/ControlNet/Gemini pipeline, safer than the awekakwe copy
+04-ghost-mannequin	19430	page	huggingface.co_black_forest_labs_FLUX.2_klein_base_9B.md	https://huggingface.co/black-forest-labs/FLUX.2-klein-base-9B	base model license terms for commercial use
+04-ghost-mannequin	12857	page	pixc.com_blog_how_to_create_a_ghost_mannequin_effect_photoshop_.md	https://pixc.com/blog/how-to-create-a-ghost-mannequin-effect-photoshop/	Photoshop steps
+04-ghost-mannequin	50305	page	retouch4.me_blog_how_to_create_the_ghost_mannequin_effect_for_ecommerce_product_.md	https://retouch4.me/blog/how-to-create-the-ghost-mannequin-effect-for-ecommerce-product-photography	step-by-step guide
+04-ghost-mannequin	18148	page	www.retouchingzone.com_edit_ghost_mannequin_photography_in_gimp_.md	https://www.retouchingzone.com/edit-ghost-mannequin-photography-in-gimp/	GIMP steps
+04-ghost-mannequin	39642	page	www.wearview.co_blog_best_ai_ghost_mannequin_tools.md	https://www.wearview.co/blog/best-ai-ghost-mannequin-tools	tool comparison and pricing
+05-ai-tryon	52101	page	community.ebay.com_forum_selling_57920_topic_anyone_use_ai_generated_model_photo.md	https://community.ebay.com/forum/selling-57920/topic/anyone-use-ai-generated-model-photos-for-clothing-464874/	seller experience with AI model photos on used clothing
+05-ai-tryon	24584	page	github.com_Zheng_Chong_CatVTON_issues_8.md	https://github.com/Zheng-Chong/CatVTON/issues/8	Windows install problems
+05-ai-tryon	9957	page	github.com_franciszzj_Leffa_blob_main_LICENSE.md	https://github.com/franciszzj/Leffa/blob/main/LICENSE	confirm Leffa MIT text and dataset caveats
+05-ai-tryon	20113	page	huggingface.co_black_forest_labs_FLUX.2_klein_9B.md	https://huggingface.co/black-forest-labs/FLUX.2-klein-9B	gated licence text for the 9B base
+05-ai-tryon	9483	page	www.ebay.com_help_policies_ebay_user_agreement.md	https://www.ebay.com/help/policies/ebay-user-agreement	seller responsibility for generative-AI listing content
+05-ai-tryon	8129	page	www.ebay.com_help_policies_listing_policies_picture_policy_id_4370.md	https://www.ebay.com/help/policies/listing-policies/picture-policy?id=4370	eBay picture policy, stock-photo and accuracy rules
+05-ai-tryon	21370	page	www.valueaddedresource.net_ebay_tests_ai_fashion_models_alters_images_.md	https://www.valueaddedresource.net/ebay-tests-ai-fashion-models-alters-images/	eBay's own AI fashion model test
+05-ai-tryon	4	wall	www.etsy.com_legal_creativity_standards.md	https://www.etsy.com/legal/creativity-standards	AI disclosure sentence and photo rules
+05-ai-tryon	4	wall	www.etsy.com_legal_sellers.md	https://www.etsy.com/legal/sellers	listing photo requirements and Oct 2026 change
+06-pipeline	36915	page	export.ebay.com_en_manage_listings_photo_tips.md	https://export.ebay.com/en/manage-listings/photo-tips	Confirm 7 MB and 800 to 1600 px statement from eBay's own page
+06-pipeline	9815	page	github.com_jimmyXiang123_whitebg_tree_main_whitebg.md	https://github.com/jimmyXiang123/whitebg/tree/main/whitebg	Read crop, pad, shadow, decontamination source to borrow; also its commits page for last-commit date
+06-pipeline	57058	page	onnxruntime.ai_docs_execution_providers_CUDA_ExecutionProvider.html.md	https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html	CUDA and cuDNN versions needed for onnxruntime-gpu 1.23.x on Windows
+06-pipeline	115364	page	pillow.readthedocs.io_en_stable_reference_ImageCms.html.md	https://pillow.readthedocs.io/en/stable/reference/ImageCms.html	Confirm sRGB profile conversion API
+06-pipeline	4946	page	www.ebay.com_help_selling_listings_listing_pictures.md	https://www.ebay.com/help/selling/listings/listing-pictures	eBay's own picture rules: min size, 7 MB, background and shadow policy (path from memory, find via help search)
+07-enhance	6349	page	community.ebay.com_t5_Selling_Help_How_do_I_get_ACTUAL_Color_depicted_in_my_phot.md	https://community.ebay.com/t5/Selling/Help-How-do-I-get-ACTUAL-Color-depicted-in-my-photos/td-p/27847415	seller colour complaints, quotable
+07-enhance	19960	page	en.wikipedia.org_wiki_Gray_card.md	https://en.wikipedia.org/wiki/Gray_card	grey card reference quote
+07-enhance	290137	page	helpx.adobe.com_photoshop_using_processing_batch_files.html.md	https://helpx.adobe.com/photoshop/using/processing-batch-files.html	Photoshop batch and Image Processor details
+07-enhance	295738	page	imagemagick.org_script_command_line_options.php.md	https://imagemagick.org/script/command-line-options.php	exact flags for resize, unsharp, auto-level, distort, strip
+07-enhance	8395	page	pixelcut.ai.md	https://pixelcut.ai	upscaler pricing
+07-enhance	18934	page	support.apple.com_en_us_102108.md	https://support.apple.com/en-us/102108	iPhone camera lock behaviour
+07-enhance	35305	page	www.alanranger.com_blog_on_photography_how_to_take_product_photos_with_iphone.md	https://www.alanranger.com/blog-on-photography/how-to-take-product-photos-with-iphone	iPhone AE/AF lock steps
+07-enhance	11904	page	www.ebay.com_help_selling_listings_creating_managing_listings_photo_requirements.md	https://www.ebay.com/help/selling/listings/creating-managing-listings/photo-requirements?id=4113	eBay's own image size, zoom and background rules
+07-enhance	3695	page	www.irfanview.com.md	https://www.irfanview.com	IrfanView batch conversion and licence
+07-enhance	49924	page	www.shopify.com_blog_115603781_how_to_color_correct_product_images_in_adobe_ligh.md	https://www.shopify.com/blog/115603781-how-to-color-correct-product-images-in-adobe-lightroom-and-minimize-returns	colour correction and returns
+07-enhance	45513	page	www.topazlabs.com_topaz_photo_ai.md	https://www.topazlabs.com/topaz-photo-ai	Topaz Photo AI price, version, specs
+07-enhance	8367	page	www.xnview.com_en_xnconvert_.md	https://www.xnview.com/en/xnconvert/	XnConvert licence and batch features
+08-prior-work	123851	page	pypi.org_pypi_rembg_json.md	https://pypi.org/pypi/rembg/json	Confirm the current rembg version and Python range (reachable; lane 01 already did).
+08-prior-work	17491	page	www.ebay.com_help_policies_listing_policies_images_videos_text_policy_id_4240.md	https://www.ebay.com/help/policies/listing-policies/images-videos-text-policy?id=4240	Confirm 'take your own images' and any AI-image rule; the repo has only a paraphrase.
+08-prior-work	16775	page	www.ebay.com_help_selling_listings_adding_pictures_listings_id_4148.md	https://www.ebay.com/help/selling/listings/adding-pictures-listings?id=4148	Re-check the 1600 px, 24 photo and background-tool wording and the overhead lighting contradiction.
+08-prior-work	28030	page	www.ebay.com_sellercenter_listings_photo_tips.md	https://www.ebay.com/sellercenter/listings/photo-tips	Seller Center says use bright overhead lighting; help page says avoid it.
+08-prior-work	31411	page	www.ebay.com_sellercenter_selling_selling_clothes.md	https://www.ebay.com/sellercenter/selling/selling-clothes	Re-check the light-on-dark backdrop sentence.
+08-prior-work	32447	page	www.photoroom.com_api_remove_background.md	https://www.photoroom.com/api/remove-background	Price, ghostMannequin parameter and API commercial terms.
+08-prior-work	8738	page	www.remove.bg_pricing.md	https://www.remove.bg/pricing	Confirm the 2026-12-01 shutdown and Leonardo.ai API move.
+08-prior-work	4	wall	www.etsy.com_legal_policy_listing_image_requirements_253962679005.md	https://www.etsy.com/legal/policy/listing-image-requirements/253962679005	Exceptions to the unedited-photo rule; walled earlier.
+09-disc-reddit	18826	page	blondesinheaven.com_blogs_vintage_fashion_guide_how_to_photograph_vintage_clothi.md	https://blondesinheaven.com/blogs/vintage-fashion-guide/how-to-photograph-vintage-clothing	Vintage photography guide
+09-disc-reddit	4629	page	pages.ebay.com_co_en_us_sellerinformation_growing_CSA.html.md	https://pages.ebay.com/co/en-us/sellerinformation/growing/CSA.html	eBay's own clothing photo guidance, quote exact sentence
+09-disc-reddit	35864	page	sellers.depop.com_Depop_Seller_Photography_Guide.pdf.md	https://sellers.depop.com/Depop_Seller_Photography_Guide.pdf	Depop official photography guide
+09-disc-reddit	210	wall	old.reddit.com_r_Depop_search_q_mannequin_restrict_sr_1.md	https://old.reddit.com/r/Depop/search?q=mannequin&restrict_sr=1	Depop mannequin and flat lay opinions
+09-disc-reddit	213	wall	old.reddit.com_r_Flipping_search_q_mannequin_restrict_sr_1.md	https://old.reddit.com/r/Flipping/search?q=mannequin&restrict_sr=1	Core Reddit evidence on mannequin vs flat lay; append .json for structure
+09-disc-reddit	219	wall	old.reddit.com_r_eBaySellers_search_q_dress_form_restrict_sr_1.md	https://old.reddit.com/r/eBaySellers/search?q=dress+form&restrict_sr=1	eBay seller opinions on dress forms and photos
+09-disc-reddit	216	wall	old.reddit.com_r_poshmark_search_q_dress_form_restrict_sr_1.md	https://old.reddit.com/r/poshmark/search?q=dress+form&restrict_sr=1	Poshmark seller form/hanger/flat lay experience
+09-disc-reddit	227	wall	old.reddit.com_r_vintageclothing_search_q_photos_selling_restrict_sr_1.md	https://old.reddit.com/r/vintageclothing/search?q=photos+selling&restrict_sr=1	Vintage-specific photography and pinning advice
+10-disc-youtube	16838	page	botika.com_resources_thethread_how_to_photograph_clothing_on_a_mannequin.md	https://botika.com/resources/thethread/how-to-photograph-clothing-on-a-mannequin	Written pinning and styling guidance; host not tested
+10-disc-youtube	31139	page	www.photorobot.com_tutorials_fashion_photography_styling_tools.md	https://www.photorobot.com/tutorials/fashion-photography-styling-tools	Styling tools, clips and pins; host not tested
+10-disc-youtube	13850	page	www.youtube.com_watch_v_WI4b419vmk.md	https://www.youtube.com/watch?v=-WI4b419vmk	Blazer on ghost mannequin
+10-disc-youtube	10802	page	www.youtube.com_watch_v_9xBRV9UfNBM.md	https://www.youtube.com/watch?v=9xBRV9UfNBM	eBay dresses bright white plus measurements
+10-disc-youtube	7401	page	www.youtube.com_watch_v_EG746TUpw4s.md	https://www.youtube.com/watch?v=EG746TUpw4s	Full-time seller photo station tour
+10-disc-youtube	24049	page	www.youtube.com_watch_v_MNnIvZu_PQ0.md	https://www.youtube.com/watch?v=MNnIvZu-PQ0	Perfect white background lighting
+10-disc-youtube	11665	page	www.youtube.com_watch_v_YYYoNMDF6iI.md	https://www.youtube.com/watch?v=YYYoNMDF6iI	eBay clothing on bright white background
+10-disc-youtube	1474	page	www.youtube.com_watch_v_EvqC0AN864.md	https://www.youtube.com/watch?v=_EvqC0AN864	Batch workflow, 15 items in 15 minutes
+10-disc-youtube	18900	page	www.youtube.com_watch_v_p_YpsLSaYas.md	https://www.youtube.com/watch?v=p-YpsLSaYas	Shoot and edit ghost mannequin: description, chapters, transcript
+10-disc-youtube	1617	page	www.youtube.com_watch_v_r0lYqGRVj4I.md	https://www.youtube.com/watch?v=r0lYqGRVj4I	Reseller photo studio build
+10-disc-youtube	9738	page	www.youtube.com_watch_v_zm7PRDUDlJ0.md	https://www.youtube.com/watch?v=zm7PRDUDlJ0	Dress on ghost mannequin
+11-disc-mannequins	11608	page	atlaslevy.com_Dritz_My_Double_Medium_Adjustable_Dress_Form_p_49.html.md	https://atlaslevy.com/Dritz-My-Double-Medium-Adjustable-Dress-Form_p_49.html	live Dritz price and size chart
+11-disc-mannequins	8600	page	forums.vintagefashionguild.org_threads_using_a_dress_form_with_vintage_clothing..md	https://forums.vintagefashionguild.org/threads/using-a-dress-form-with-vintage-clothing.64881/	first-hand vintage seller form advice
+11-disc-mannequins	44027	page	listingtofreedom.com_best_mannequin_for_photography_.md	https://listingtofreedom.com/best-mannequin-for-photography/	reseller-oriented form pick
+11-disc-mannequins	31286	page	mannequinmall.com_collections_female_dress_forms.md	https://mannequinmall.com/collections/female-dress-forms	vintage-look linen tier prices
+11-disc-mannequins	25256	page	theshopcompany.com_products_the_ultimate_dress_form_fitting_pad_system_by_fabulo.md	https://theshopcompany.com/products/the-ultimate-dress-form-fitting-pad-system-by-fabulous-fit	padding system price and size table
+11-disc-mannequins	367385	page	www.amazon.com_pinnable_dress_form_s_k_pinnable_dress_form.md	https://www.amazon.com/pinnable-dress-form/s?k=pinnable+dress+form	live prices for forms under $60
+11-disc-mannequins	6977	page	www.fadedfragments.com_products_mannequin_antique_dress_form_with_antique_wood_b.md	https://www.fadedfragments.com/products/mannequin-antique-dress-form-with-antique-wood-base	antique linen form listing
+11-disc-mannequins	5090	page	www.walmart.com_seller_13733.md	https://www.walmart.com/seller/13733	Roxy Display prices
+11-disc-mannequins	174	wall	www.ebay.com_sch_i.html_nkw_acme_adjustable_dress_form_vintage_sop_12.md	https://www.ebay.com/sch/i.html?_nkw=acme+adjustable+dress+form+vintage&_sop=12	Acme sold prices (use the Sold filter)
+11-disc-mannequins	4	wall	www.etsy.com_seller_handbook_article_how_to_photograph_challenging_items_1468638.md	https://www.etsy.com/seller-handbook/article/how-to-photograph-challenging-items/146863877358	exact Etsy wording on pins, tape and tissue
+12-disc-lighting	27363	page	neewer.com_collections_shooting_tent.md	https://neewer.com/collections/shooting-tent	light tent sizes and prices
+12-disc-lighting	50613	page	neewer.com_products_lighting_studio_66600013.md	https://neewer.com/products/lighting-studio-66600013	live price, bulb specs, stand height
+12-disc-lighting	4687	page	pages.ebay.com_co_en_us_sellerinformation_howtosell_guides_clothes.html.md	https://pages.ebay.com/co/en-us/sellerinformation/howtosell/guides/clothes.html	eBay backdrop guidance full text
+12-disc-lighting	21058	page	www.bhphotovideo.com_c_product_45607_REG_Savage_1_1253_Widetone_Seamless_Backgro.md	https://www.bhphotovideo.com/c/product/45607-REG/Savage_1_1253_Widetone_Seamless_Background_Paper.html	paper stock, widths including 107in roll
+12-disc-lighting	540	wall	www.bhphotovideo.com_c_product_1739483_REG_godox_sl60iibi_kit_sl60iibi_2_light_k.md	https://www.bhphotovideo.com/c/product/1739483-REG/godox_sl60iibi_kit_sl60iibi_2_light_kit.html	Godox kit contents and price
+12-disc-lighting	221	wall	www.reddit.com_r_Flipping_.md	https://www.reddit.com/r/Flipping/	reseller threads on white backdrops, mannequins, cut-outs
+13-disc-ebay-ai	12527	page	community.ebay.com_forum_selling_57920_topic_ai_clothing_model_cover_photo_15270.md	https://community.ebay.com/forum/selling-57920/topic/ai-clothing-model-cover-photo-152705/	seller experience with AI model cover photos
+13-disc-ebay-ai	9129	page	community.ebay.com_t5_Announcements_List_faster_and_easier_with_our_magical_AI_p.md	https://community.ebay.com/t5/Announcements/List-faster-and-easier-with-our-magical-AI-powered-bulk-listing/ba-p/34685758/	bulk Magical Listing announcement
+13-disc-ebay-ai	16653	page	community.ebay.com_t5_Selling_Listing_Clothes_How_to_take_proper_pictures_td_p_3.md	https://community.ebay.com/t5/Selling/Listing-Clothes-How-to-take-proper-pictures/td-p/34490503	seller advice on mannequins for clothing
+13-disc-ebay-ai	36863	page	export.ebay.com_en_first_steps_manage_listings_photo_tips_.md	https://export.ebay.com/en/first-steps/manage-listings/photo-tips/	confirm or kill the model/dress form/mannequin sentence
+13-disc-ebay-ai	26840	page	export.ebay.com_en_first_steps_manage_listings_the_perfect_clothing_ad_.md	https://export.ebay.com/en/first-steps/manage-listings/the-perfect-clothing-ad/	clothing photo checklist, possible mannequin guidance
+13-disc-ebay-ai	12251	page	innovation.ebayinc.com_stories_background_swap_tool_turns_any_photo_into_a_studi.md	https://innovation.ebayinc.com/stories/background-swap-tool-turns-any-photo-into-a-studio-quality-product-image/	AI background tool launch and availability
+13-disc-ebay-ai	11361	page	innovation.ebayinc.com_stories_ebay_reduces_the_time_to_list_on_mobile_with_new_.md	https://innovation.ebayinc.com/stories/ebay-reduces-the-time-to-list-on-mobile-with-new-simplified-selling-tool-now-featuring-magical-listing-ai-technology/	Magical Listing scope
+13-disc-ebay-ai	7837	page	www.ebay.com_help_policies_listing_policies_picture_policy_ebay_pictures_policy_.md	https://www.ebay.com/help/policies/listing-policies/picture-policy-ebay-pictures-policy?id=4370	re-check for AI wording
+13-disc-ebay-ai	162393	page	www.ebay.com_help_policies_member_behavior_policies_user_agreement_id_4259.md	https://www.ebay.com/help/policies/member-behavior-policies/user-agreement?id=4259	generative-AI responsibility clause
+13-disc-ebay-ai	9481	page	www.ebay.com_help_policies_prohibited_restricted_items_used_clothing_policy_id_4.md	https://www.ebay.com/help/policies/prohibited-restricted-items/used-clothing-policy?id=4281	full used clothing policy text
+13-disc-ebay-ai	33097	page	www.ebay.com_sellercenter_resources_seller_updates_2024_october_tools.md	https://www.ebay.com/sellercenter/resources/seller-updates/2024-october/tools	eBay AI tools list
+13-disc-ebay-ai	23602	page	www.valueaddedresource.net_ebay_images_altered_by_ai_without_knowledge_.md	https://www.valueaddedresource.net/ebay-images-altered-by-ai-without-knowledge/	altered images report
+14-disc-hosted	14613	page	claid.ai_api_pricing.md	https://claid.ai/api-pricing	API credit prices, terms
+14-disc-hosted	7740	page	help.photoroom.com_en_articles_14182832_create_ghost_mannequin_images_for_a_batc.md	https://help.photoroom.com/en/articles/14182832-create-ghost-mannequin-images-for-a-batch-web-app	batch limits
+14-disc-hosted	96621	page	helpx.adobe.com_express_web_image_creation_and_editing_edit_images_remove_backgr.md	https://helpx.adobe.com/express/web/image-creation-and-editing/edit-images/remove-background.html	free limits and commercial terms
+14-disc-hosted	13091	page	innovation.ebayinc.com_stories_ebay_uses_computer_vision_to_enable_sellers_to_cr.md	https://innovation.ebayinc.com/stories/ebay-uses-computer-vision-to-enable-sellers-to-create-cleaner-images/	current eBay in-app tool
+14-disc-hosted	10591	page	pixian.ai_pricing.md	https://pixian.ai/pricing	dollar per credit, HEIC, terms
+14-disc-hosted	78113	page	www.canva.com_help_background_remover_.md	https://www.canva.com/help/background-remover/	Canva remover plan and bulk
+14-disc-hosted	19739	page	www.photoroom.com_api_pricing.md	https://www.photoroom.com/api/pricing	plan minimums and per-image prices
+14-disc-hosted	21865	page	www.photoroom.com_customer_stories_depop.md	https://www.photoroom.com/customer-stories/depop	confirm Depop integration
+14-disc-hosted	59222	page	www.photoroom.com_legal_terms_and_conditions.md	https://www.photoroom.com/legal/terms-and-conditions	exact commercial and API terms
+14-disc-hosted	6398	page	www.pixelcut.ai_api_background_remover.md	https://www.pixelcut.ai/api/background-remover	verify $0.05 and terms
+14-disc-hosted	7423	page	www.remove.bg_faq.md	https://www.remove.bg/faq	migration facts and date
+15-disc-competitors	83427	page	ar5iv.labs.arxiv.org_html_1406.3561.md	https://ar5iv.labs.arxiv.org/html/1406.3561	Confirm the eBay paper's flat, mannequin and person numbers and its sample
+15-disc-competitors	25067	page	help.etsy.com_hc_en_us_articles_115015628707_Listing_a_Physical_Item.md	https://help.etsy.com/hc/en-us/articles/115015628707-Listing-a-Physical-Item	Etsy official 20 photos and video limit
+15-disc-competitors	12603	page	productscene.com_product_photography_clothing_product_photos_for_etsy.md	https://productscene.com/product-photography/clothing-product-photos-for-etsy	Etsy clothing photo advice and conversion claim source
+15-disc-competitors	51126	page	www.photoroom.com_blog_sell_fast_on_depop.md	https://www.photoroom.com/blog/sell-fast-on-depop	Campervan Vintage quote and Business Insider link
+15-disc-competitors	17321	page	www.scavengerlife.com_forums_topic_using_a_mannequin_or_posing_clothes_for_ebay_.md	https://www.scavengerlife.com/forums/topic/using-a-mannequin-or-posing-clothes-for-ebay-listings-which-is-better/	Seller forum thread on mannequin vs posing
+15-disc-competitors	33179	page	www.thevintageseeker.ca_magazine_listing_tips_from_a_seller_simplify_your_listin.md	https://www.thevintageseeker.ca/magazine/listing-tips-from-a-seller-simplify-your-listings-process-with-this-advice-from-lemons-loot	A working vintage seller's listing process
+15-disc-competitors	35201	page	www.underpriced.app_blog_photograph_thrift_clothes_for_ebay_guide_2026.md	https://www.underpriced.app/blog/photograph-thrift-clothes-for-ebay-guide-2026	eBay clothing photo guide with mannequin vs flat lay discussion
+15-disc-competitors	520	wall	www.emerald.com_jrim_article_abstract_17_3_470_250559_Can_you_imagine_yourself_w.md	https://www.emerald.com/jrim/article-abstract/17/3/470/250559/Can-you-imagine-yourself-wearing-this-product	Mannequin vs human model study abstract
+15-disc-competitors	4	wall	www.etsy.com_seller_handbook_article_1347574487014.md	https://www.etsy.com/seller-handbook/article/1347574487014	Etsy photo size and count
+16-disc-ebay-community	13315	page	community.ebay.com_forum_selling_57920_topic_ebay_forcing_white_background_on_im.md	https://community.ebay.com/forum/selling-57920/topic/ebay-forcing-white-background-on-images-looks-terrible-sitewide-111796/	white panels and 1:1
+16-disc-ebay-community	17994	page	community.ebay.com_forum_selling_57920_topic_photo_back_ground_is_white_needed_1.md	https://community.ebay.com/forum/selling-57920/topic/photo-back-ground-is-white-needed-156571/	is white required
+16-disc-ebay-community	6309	page	community.ebay.com_t5_Report_eBay_Technical_Issues_The_new_AI_background_removal.md	https://community.ebay.com/t5/Report-eBay-Technical-Issues/The-new-AI-background-removal-tool-started-this-June-2024-A/td-p/34507676	remover failure modes
+16-disc-ebay-community	6376	page	community.ebay.com_t5_Seller_Tools_Which_apps_or_software_are_good_to_remove_bac.md	https://community.ebay.com/t5/Seller-Tools/Which-apps-or-software-are-good-to-remove-background-for/td-p/32890333	third-party app opinions
+16-disc-ebay-community	25393	page	community.ebay.com_t5_Selling_Background_Remover_is_distorting_pictures_td_p_346.md	https://community.ebay.com/t5/Selling/Background-Remover-is-distorting-pictures/td-p/34679136	remover pitfalls
+16-disc-ebay-community	7827	page	community.ebay.com_t5_Selling_Best_photo_size_to_avoid_compressed_grainy_images_.md	https://community.ebay.com/t5/Selling/Best-photo-size-to-avoid-compressed-grainy-images/td-p/33747607	size and compression claims
+16-disc-ebay-community	27159	page	community.ebay.com_t5_Selling_Do_the_quality_of_photos_really_matter_or_matter_e.md	https://community.ebay.com/t5/Selling/Do-the-quality-of-photos-really-matter-or-matter-enough-based-on/td-p/34960307	photo effort vs return for clothing
+16-disc-ebay-community	10375	page	community.ebay.com_t5_Selling_Ebay_s_Background_Removing_Tool_Greatly_Improved_t.md	https://community.ebay.com/t5/Selling/Ebay-s-Background-Removing-Tool-Greatly-Improved/td-p/33965767	built-in remover quality
+16-disc-ebay-community	6385	page	community.ebay.com_t5_Selling_Less_than_6_photos_affect_search_impressions_per_L.md	https://community.ebay.com/t5/Selling/Less-than-6-photos-affect-search-impressions-per-Listing-Quality/td-p/32120944	photos vs search impressions
+16-disc-ebay-community	6346	page	community.ebay.com_t5_Selling_Lighting_for_clothing_photography_how_can_I_improv.md	https://community.ebay.com/t5/Selling/Lighting-for-clothing-photography-how-can-I-improve/td-p/24348100	lighting and backdrop tips
+16-disc-ebay-community	6307	page	community.ebay.com_t5_Selling_Selling_clothing_Flay_lay_vs_Mannequin_td_p_325659.md	https://community.ebay.com/t5/Selling/Selling-clothing-Flay-lay-vs-Mannequin/td-p/32565924	flat lay vs mannequin sell-through
+16-disc-ebay-community	7026	page	community.ebay.com_t5_Selling_Using_a_background_remover_for_photos_m_p_35334934.md	https://community.ebay.com/t5/Selling/Using-a-background-remover-for-photos/m-p/35334934	editing policy statement
+16-disc-ebay-community	42311	page	community.ebay.com_t5_Selling_eBay_Changing_White_Backgrounds_in_Search_MAKING_T.md	https://community.ebay.com/t5/Selling/eBay-Changing-White-Backgrounds-in-Search-MAKING-THEM-GRAY/td-p/33812316	graying of white backgrounds
+16-disc-ebay-community	6445	page	community.ebay.com_t5_Share_eBay_Technical_Issues_Issues_with_eBay_photo_editor_.md	https://community.ebay.com/t5/Share-eBay-Technical-Issues/Issues-with-eBay-photo-editor-picture-colors-change-Adds-a-layer/td-p/29533194	color tint in eBay editor
+17-disc-phone-builtin	21032	page	maketecheasier.com_iphone_batch_edit_photos_videos_.md	https://maketecheasier.com/iphone-batch-edit-photos-videos/	Files Quick Action batch behaviour
+17-disc-phone-builtin	14106	page	matthewcassinelli.com_shortcuts_remove_background_from_photo_.md	https://matthewcassinelli.com/shortcuts/remove-background-from-photo/	Downloadable single-image shortcut
+17-disc-phone-builtin	44401	page	routinehub.co_.md	https://routinehub.co/	Search for batch remove-background shortcuts
+17-disc-phone-builtin	22414	page	store.google.com_intl_en_in_ideas_articles_magic_editor.md	https://store.google.com/intl/en_in/ideas/articles/magic-editor	Magic Editor details (low priority; Ricky has an iPhone)
+17-disc-phone-builtin	19045	page	support.apple.com_121429.md	https://support.apple.com/121429	Official Clean Up requirements
+17-disc-phone-builtin	131255	page	support.apple.com_guide_iphone_.md	https://support.apple.com/guide/iphone/	Official Lift subject steps and iOS version (search 'Lift a subject from the photo background')
+17-disc-phone-builtin	15305	page	support.apple.com_guide_shortcuts_.md	https://support.apple.com/guide/shortcuts/	Official Shortcuts action list; confirm the Remove Background action name and iOS version
+17-disc-phone-builtin	20266	page	support.microsoft.com_.md	https://support.microsoft.com/	Windows Photos and Paint background removal: versions and exact steps
+17-disc-phone-builtin	16556	page	www.valueaddedresource.net_ebay_sellers_lose_background_removal_in_app_.md	https://www.valueaddedresource.net/ebay-sellers-lose-background-removal-in-app/	Full text on the removed eBay in-app remover
+17-disc-phone-builtin	921	wall	discussions.apple.com_thread_254979394.md	https://discussions.apple.com/thread/254979394	Repeat with Each pattern for batch Remove Background
