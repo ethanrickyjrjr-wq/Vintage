@@ -66,6 +66,8 @@ refer to the original objects, independently of sample listings that reuse the i
 - Eight new idea pages plus two amendments are specced in `docs/codex-handoff-idea-room.md` section 8, for a second Codex build.
 - Gating fact: items are `#item-<id>` hash routes today, so search and sold-page ideas need one real URL per piece.
 
+**eBay photo studio (2026-11-07):** Ricky asked how to make eBay-grade photos of clothes on vintage forms with the background whited out, as automatically as possible, ready for when he is back at the PC. Two Sonnet sweeps (21 lanes plus 30 claim checks) are in `research/ebay-photo-studio-2026-11-07/`; decisions are in `docs/ebay-photo-studio.md`, the PC setup card in `docs/ebay-photo-studio-handoff.md`. Decided: real garment on a visible form on pure white from our own cut-out, close-ups kept as shot, no ghost mannequin or AI try-on by default. `tools/cutout/cutout.py` grew a 1600 px eBay export, keep-as-shot close-ups by file name, a rectangle repair for frames (tested on Ricky's framed print), a soft shadow option, watch mode and a manifest. The cloud session's network blocked eBay, Reddit, YouTube, Hugging Face web and vendor sites; `fetch-later.md` lists 153 URLs to crawl from the PC. `tools/crawl-cloud.sh` is the cloud stand-in for crawl.sh.
+
 Global rules (`~/.claude/CLAUDE.md`) apply: Vendor First, Plan Mode First, shell syntax matches the
 tool, Claude pushes. Standalone workspace: nothing here touches brain-platform / SWFL Data Gulf.
 

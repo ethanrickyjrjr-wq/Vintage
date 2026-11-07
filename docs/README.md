@@ -26,6 +26,12 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - [codex-handoff-sample-room-and-star.md](codex-handoff-sample-room-and-star.md): the 2026-10-27 handoff for a way back to the sample room, plus the green-star report.
 - [idea-room-release.md](idea-room-release.md): release log for the idea room.
 
+## eBay photo studio (clothes on forms, white backgrounds)
+
+- [ebay-photo-studio.md](ebay-photo-studio.md): the decisions (visible form on white, honest close-ups, no ghost mannequin or AI try-on by default), the rules, the tools, the shoot, what the tests showed, what is still unverified.
+- [ebay-photo-studio-handoff.md](ebay-photo-studio-handoff.md): the card for the Windows PC: install, GPU check, first run, daily flow, shopping list, fetching the blocked pages.
+- `tools/cutout/cutout.py` is the script both describe; `tools/crawl-cloud.sh` is the cloud-session page fetcher the research lanes used.
+
 ## Hire Hollie (Fabulous From Online)
 
 - [fabulous-from-online-design.md](fabulous-from-online-design.md): decisions, prices and occasion styling.
@@ -76,4 +82,6 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 | `3d-capture/`, `demo-photo-sourcing/` | 3D capture docs, photo sourcing lists | [demo-showroom.md](demo-showroom.md), [demo-photo-pack.md](demo-photo-pack.md) |
 | `account-layout-2026-10-29/` | one note | [account-layout.md](account-layout.md) |
 | `vinted-2026-10-30/` | Vinted rules and crosslister support, raw pages plus a README | its README |
+| `ebay-clothing-photos-2026-10-30/` | eBay photo and clothing pages fetched 2026-10-30, with a README of the rules | [ebay-photo-studio.md](ebay-photo-studio.md) |
+| `ebay-photo-studio-2026-11-07/` | 21 Sonnet lanes on photographing clothes for eBay (models, rembg, ghost mannequin, AI try-on, pipeline, gear, eBay rules, hosted services, phone tools), raw pages, test results on Ricky's photos, a verification table, `fetch-later.md` | [ebay-photo-studio.md](ebay-photo-studio.md) |
 | loose `*.md` in `research/` | pages fetched by `tools/crawl.sh`, named `<host>-<utc>.md` | none |

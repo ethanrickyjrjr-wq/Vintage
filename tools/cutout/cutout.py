@@ -1,53 +1,93 @@
-"""Cut real item photos into site cutouts and marketplace JPEGs; mask only, never redrawn.
+"""Cut real item photos into marketplace JPEGs and site cutouts; mask only, never redrawn.
 
-Setup once, from the repo root (Windows):
+Setup once, from the repo root (Windows, PowerShell or Git Bash):
     uv venv .venv/cutout --python 3.12
-    uv pip install --python .venv/cutout/Scripts/python.exe "rembg[cpu]==2.0.86" "pillow-heif==1.8.1"
+    uv pip install --python .venv/cutout/Scripts/python.exe "rembg[gpu,cli]==2.0.87" "pillow-heif==1.8.1" opencv-python-headless scipy
+    (no NVIDIA card, or the GPU check in docs/ebay-photo-studio-handoff.md fails: install "rembg[cpu,cli]==2.0.87" instead)
+    .venv/cutout/Scripts/rembg d birefnet-general          # the model, about 1 GB, downloaded once
 
-Run (the first run downloads the model, about 1 GB, to ~/.u2net or ~/.rembg):
-    .venv/cutout/Scripts/python.exe tools/cutout/cutout.py PHOTOS_FOLDER [OUTPUT_FOLDER] [--rect]
+Run:
+    .venv/cutout/Scripts/python.exe tools/cutout/cutout.py PHOTOS_FOLDER [OUTPUT_FOLDER] [options]
+    --watch      keep running and process each photo as it lands (iCloud, AirDrop, USB). Stop with
+                 Ctrl+C or by creating a file named stop.txt in PHOTOS_FOLDER.
+    --shadow     soft contact shadow under the item, for objects that would otherwise float (lamps,
+                 shoes, hats, bags). Leave it off for clothes on a form. The site PNG never has one.
+    --rect       fill the outline of frames, mirrors, boxes and books (see below) for every photo.
+    --model M    rembg model name, default birefnet-general. Never bria-rmbg (non-commercial licence).
+    --force      redo photos whose outputs already exist.
 
-Rectangle repair (frames, mirrors, boxes, books, anything with no inward corners):
-a dark frame on a dark wall loses notches to the model. --rect fills the object's
-convex hull with the photo's own pixels, so nothing is redrawn. It is also applied
-automatically to files whose name contains frame, print, art, mirror, painting,
-poster, box, book, sign, tray or record (A5-frame.jpg). Never for clothes: a hull
-would fill between sleeve and body. Needs opencv-python-headless and scipy.
+The file name decides the treatment. Name photos item-view: A13-front.jpg, A13-back.heic, A13-label.jpg.
+    front, back, side, hero, or any other word       cut out, pure white background
+    label, tag, flaw, detail, close, closeup, inside,
+    measure, stitch, fabric, hem, button, zipper      kept exactly as shot, only resized: buyers must see
+                                                      the real thing in close-ups
+    frame, framed, print, art, mirror, painting,
+    poster, box, book, sign, tray, record, canvas     cut out, then the rectangle repair (same as --rect)
 
-For every JPEG/HEIC/PNG/WebP in PHOTOS_FOLDER it writes, under OUTPUT_FOLDER
-(default PHOTOS_FOLDER/cutouts):
-    site/NAME.png      transparent, trimmed, 2048 px max: our storefront only
-    listing/NAME.jpg   2048x2048 on white, item fills 85%: Etsy, eBay, Shopify
-Marketplaces never get the PNG (Etsy renders transparent pixels black). Keep the
-untouched original as well: Etsy wants one unedited photo per listing.
+Rectangle repair: a dark frame on a dark wall loses notches to the model. The repair fills the
+object's convex hull with the photo's own pixels, so nothing is redrawn. Never for clothes: a
+hull would fill between sleeve and body.
+
+Outputs under OUTPUT_FOLDER (default PHOTOS_FOLDER/cutouts):
+    ebay/NAME.jpg      1600x1600 on white, item fills 85%: upload this to eBay (the crosslister
+                       carries it to Etsy and Shopify)
+    listing/NAME.jpg   2048x2048 on white: the archive master, Shopify's preferred square
+    site/NAME.png      transparent, trimmed, 2048 px max: our storefront only (Etsy renders
+                       transparent pixels black, so marketplaces never get the PNG)
+    manifest.csv       one row per photo: mode, model, provider, seconds, pixels kept, warnings
+Keep the untouched original as well: Etsy wants one unedited photo per listing.
 Glass (chandelier, stemware, decanter): do not cut; list the original sweep shot.
 
-Each line of the report gives "pixels kept": the share of solid item pixels
-identical to the photo. Below 99% means something was altered; check by eye.
-Sources: rembg https://github.com/danielgatis/rembg (PyPI 2.0.86, 2026-10-28),
-BiRefNet https://github.com/ZhengPeng7/BiRefNet (MIT weights).
+Each report line gives "pixels kept": the share of solid item pixels identical to the photo.
+Below 99% means something was altered; check by eye.
+Sources: rembg https://github.com/danielgatis/rembg (MIT; PyPI 2.0.87, 2026-11-06),
+BiRefNet https://github.com/ZhengPeng7/BiRefNet (MIT weights). Decisions and tests:
+docs/ebay-photo-studio.md, research/ebay-photo-studio-2026-11-07/.
 """
 
+import argparse
+import csv
 import io
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageCms, ImageOps
+from PIL import Image, ImageCms, ImageFilter, ImageOps
 from pillow_heif import register_heif_opener
 from rembg import new_session, remove
 
 # Always name the model: rembg's default (bria-rmbg) is licensed non-commercial only.
-MODEL = 'birefnet-general'
+DEFAULT_MODEL = 'birefnet-general'
 EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.heic', '.heif'}
 WORK_EDGE = 4096  # caps 48 MP phone shots; the model itself runs at 1024
 SITE_EDGE = 2048
-LISTING = 2048
+MASTER = 2048  # listing/ square, Shopify's preferred size
+EBAY = 1600  # ebay/ square, eBay's recommended size (500 minimum, 12 MB cap)
 FILL = 0.85  # Google recommends the item fill 75-90% of the main image
 SPECK = 8  # alpha below this is dust, not item
 RECT_WORDS = {'frame', 'framed', 'print', 'art', 'artwork', 'mirror', 'painting', 'poster',
               'box', 'book', 'sign', 'tray', 'record', 'album', 'canvas'}
+KEEP_WORDS = {'label', 'tag', 'flaw', 'detail', 'close', 'closeup', 'inside', 'measure',
+              'measurements', 'stitch', 'stitching', 'fabric', 'hem', 'button', 'zipper', 'mark',
+              'signature', 'stamp'}
+SHADOW_OPACITY = 0.25
+MANIFEST_COLS = ['file', 'mode', 'model', 'provider', 'seconds', 'pixels_kept', 'solid', 'rect_filled',
+                 'scale', 'notes', 'ebay', 'listing', 'site', 'processed_utc']
+
+
+def words(path):
+    return set(''.join(c if c.isalnum() else ' ' for c in path.stem.lower()).split())
+
+
+def mode_for(path, rect_all):
+    w = words(path)
+    if w & KEEP_WORDS:
+        return 'keep'
+    if rect_all or w & RECT_WORDS:
+        return 'rect'
+    return 'cut'
 
 
 def load(path):
@@ -60,6 +100,18 @@ def load(path):
     img = img.convert('RGB')
     img.thumbnail((WORK_EDGE, WORK_EDGE), Image.Resampling.LANCZOS)
     return img
+
+
+def provider_name():
+    try:
+        import onnxruntime as ort
+        avail = ort.get_available_providers()
+    except Exception:  # noqa: BLE001
+        return 'unknown'
+    for p in ('CUDAExecutionProvider', 'DmlExecutionProvider', 'ROCMExecutionProvider'):
+        if p in avail:
+            return p
+    return 'CPUExecutionProvider'
 
 
 def cut(session, photo, rect=False):
@@ -75,11 +127,6 @@ def cut(session, photo, rect=False):
     diff = np.abs(rgba[..., :3].astype(int) - np.asarray(photo).astype(int)).max(-1)
     kept = float((diff[solid] <= 3).mean()) if solid.any() else 0.0
     return Image.fromarray(rgba), kept, solid.sum() / max((alpha > 0).sum(), 1), added
-
-
-def wants_rect(path, flag):
-    words = set(''.join(c if c.isalnum() else ' ' for c in path.stem.lower()).split())
-    return flag or bool(words & RECT_WORDS)
 
 
 def rect_repair(rgba, photo):
@@ -105,56 +152,165 @@ def rect_repair(rgba, photo):
     return rgba, float(added.sum()) / max(hull.sum(), 1)
 
 
-def listing(item):
-    scale = FILL * LISTING / max(item.size)
-    item = item.resize((round(item.width * scale), round(item.height * scale)),
-                       Image.Resampling.LANCZOS)
-    canvas = Image.new('RGB', (LISTING, LISTING), 'white')
-    canvas.paste(item, ((LISTING - item.width) // 2, (LISTING - item.height) // 2), item)
+def square_on_white(item, size, shadow=False):
+    """Centre the RGBA item on a white size x size canvas at FILL, optional soft contact shadow."""
+    scale = FILL * size / max(item.size)
+    item = item.resize((round(item.width * scale), round(item.height * scale)), Image.Resampling.LANCZOS)
+    canvas = Image.new('RGB', (size, size), 'white')
+    x, y = (size - item.width) // 2, (size - item.height) // 2
+    if shadow:
+        # the item's own footprint, squashed to a sliver, centred on the bottom edge, blurred, 25% black
+        sh = max(8, int(item.height * 0.12))
+        foot = item.getchannel('A').resize((item.width, sh), Image.Resampling.LANCZOS)
+        layer = Image.new('L', (size, size), 0)
+        layer.paste(foot, (x, y + item.height - sh // 2))
+        layer = layer.filter(ImageFilter.GaussianBlur(max(4, int(item.height * 0.025))))
+        layer = layer.point(lambda v: int(v * SHADOW_OPACITY))
+        canvas.paste(Image.new('RGB', (size, size), 'black'), (0, 0), layer)
+    canvas.paste(item, (x, y), item)
     return canvas, scale
 
 
+def fit(photo, edge):
+    """Keep mode: the photo as shot, long side at most edge."""
+    out = photo.copy()
+    out.thumbnail((edge, edge), Image.Resampling.LANCZOS)
+    return out
+
+
+def done_before(out, path):
+    return (out / 'ebay' / f'{path.stem}.jpg').exists()
+
+
+def append_manifest(out, row):
+    path = out / 'manifest.csv'
+    new = not path.exists()
+    with path.open('a', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=MANIFEST_COLS)
+        if new:
+            w.writeheader()
+        w.writerow(row)
+
+
+def process(path, out, session, args, provider):
+    start = time.time()
+    mode = mode_for(path, args.rect)
+    photo = load(path)
+    row = dict.fromkeys(MANIFEST_COLS, '')
+    row.update(file=path.name, mode=mode, model=args.model if mode != 'keep' else '', provider=provider,
+               processed_utc=datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+    notes = []
+    if mode == 'keep':
+        fit(photo, EBAY).save(out / 'ebay' / f'{path.stem}.jpg', quality=90)
+        fit(photo, MASTER).save(out / 'listing' / f'{path.stem}.jpg', quality=90)
+        row.update(ebay=f'ebay/{path.stem}.jpg', listing=f'listing/{path.stem}.jpg',
+                   notes='kept as shot', seconds=f'{time.time() - start:.1f}')
+        append_manifest(out, row)
+        print(f'{path.name}: {time.time() - start:.1f}s  kept as shot (close-up), resized only')
+        return
+    rgba, kept, solid, added = cut(session, photo, rect=(mode == 'rect'))
+    box = rgba.getchannel('A').getbbox()
+    if not box:
+        print(f'{path.name}: no item found, reshoot on the white sweep')
+        row.update(notes='no item found', seconds=f'{time.time() - start:.1f}')
+        append_manifest(out, row)
+        return
+    # one bbox over everything kept; a stray speck far away widens it. Crop by hand if seen.
+    item = rgba.crop(box)
+    site = item.copy()
+    site.thumbnail((SITE_EDGE, SITE_EDGE), Image.Resampling.LANCZOS)
+    site.save(out / 'site' / f'{path.stem}.png', optimize=True)
+    master, scale = square_on_white(item, MASTER, args.shadow)
+    master.save(out / 'listing' / f'{path.stem}.jpg', quality=90)
+    ebay, _ = square_on_white(item, EBAY, args.shadow)
+    ebay.save(out / 'ebay' / f'{path.stem}.jpg', quality=90)
+    if kept < 0.99:
+        notes.append('PIXELS CHANGED, check by eye')
+    if solid < 0.5:
+        notes.append('mostly see-through (glass?), list the original instead')
+    if scale > 1.25:
+        notes.append('item small in frame, shoot closer')
+    if mode == 'rect':
+        notes.append(f'rect repair filled {added:.1%}')
+    if args.shadow:
+        notes.append('shadow')
+    secs = time.time() - start
+    row.update(seconds=f'{secs:.1f}', pixels_kept=f'{kept:.4f}', solid=f'{solid:.3f}',
+               rect_filled=f'{added:.4f}' if mode == 'rect' else '', scale=f'{scale:.3f}',
+               notes='; '.join(notes), ebay=f'ebay/{path.stem}.jpg', listing=f'listing/{path.stem}.jpg',
+               site=f'site/{path.stem}.png')
+    append_manifest(out, row)
+    print(f'{path.name}: {secs:.1f}s  pixels kept {kept:.1%}  solid {solid:.0%}  {"; ".join(notes) or "OK"}')
+
+
+def photos_in(src):
+    return sorted(p for p in src.iterdir()
+                  if p.suffix.lower() in EXTS and not p.name.startswith('.') and p.is_file())
+
+
+def stable(path, seen):
+    """True once the file size has held still across two polls (a copy that has finished)."""
+    try:
+        size = path.stat().st_size
+    except OSError:
+        return False
+    last = seen.get(path)
+    seen[path] = size
+    return last is not None and last == size and size > 0
+
+
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith('--')]
-    rect_all = '--rect' in sys.argv
-    if not args:
-        sys.exit(__doc__)
-    src = Path(args[0])
-    out = Path(args[1]) if len(args) > 1 else src / 'cutouts'
-    photos = sorted(p for p in src.iterdir() if p.suffix.lower() in EXTS)
-    if not photos:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('src', type=Path)
+    ap.add_argument('out', type=Path, nargs='?')
+    ap.add_argument('--watch', action='store_true')
+    ap.add_argument('--shadow', action='store_true')
+    ap.add_argument('--rect', action='store_true')
+    ap.add_argument('--model', default=DEFAULT_MODEL)
+    ap.add_argument('--force', action='store_true')
+    args = ap.parse_args()
+    if args.model.startswith('bria'):
+        sys.exit('bria-rmbg weights are licensed for non-commercial use only; pick a birefnet model')
+    src = args.src
+    out = args.out or src / 'cutouts'
+    if not args.watch and not photos_in(src):
         sys.exit(f'No photos found in {src}')
-    for folder in ('site', 'listing'):
+    for folder in ('site', 'listing', 'ebay'):
         (out / folder).mkdir(parents=True, exist_ok=True)
     register_heif_opener()
-    session = new_session(MODEL)
-    for path in photos:
-        start = time.time()
-        rect = wants_rect(path, rect_all)
-        rgba, kept, solid, added = cut(session, load(path), rect)
-        box = rgba.getchannel('A').getbbox()
-        if not box:
-            print(f'{path.name}: no item found, reshoot on the white sweep')
-            continue
-        # ponytail: one bbox over everything kept; a stray speck far away widens it. Crop by hand if seen.
-        item = rgba.crop(box)
-        site = item.copy()
-        site.thumbnail((SITE_EDGE, SITE_EDGE), Image.Resampling.LANCZOS)
-        site.save(out / 'site' / f'{path.stem}.png', optimize=True)
-        jpg, scale = listing(item)
-        jpg.save(out / 'listing' / f'{path.stem}.jpg', quality=90)
-        notes = []
-        if kept < 0.99:
-            notes.append('PIXELS CHANGED, check by eye')
-        if solid < 0.5:
-            notes.append('mostly see-through (glass?), list the original instead')
-        if scale > 1.25:
-            notes.append('item small in frame, shoot closer')
-        if rect:
-            notes.append(f'rect repair filled {added:.1%}')
-        print(f'{path.name}: {time.time() - start:.1f}s  pixels kept {kept:.1%}  '
-              f'solid {solid:.0%}  {"; ".join(notes) or "OK"}')
-    print(f'Done: {out}')
+    provider = provider_name()
+    print(f'model {args.model} on {provider}' + ('' if provider != 'CPUExecutionProvider' else
+          ' (CPU: about 20 s per photo; the GPU install is in docs/ebay-photo-studio-handoff.md)'))
+    session = new_session(args.model)
+
+    def run(path):
+        if done_before(out, path) and not args.force:
+            print(f'{path.name}: done before, skipped (use --force to redo)')
+            return
+        try:
+            process(path, out, session, args, provider)
+        except Exception as exc:  # noqa: BLE001
+            print(f'{path.name}: FAILED {exc}')
+
+    for path in photos_in(src):
+        run(path)
+    if not args.watch:
+        print(f'Done: {out}')
+        return
+    print(f'Watching {src} (create stop.txt there or press Ctrl+C to stop)')
+    seen, handled = {}, set(photos_in(src))
+    try:
+        while not (src / 'stop.txt').exists():
+            for path in photos_in(src):
+                if path in handled:
+                    continue
+                if stable(path, seen):
+                    run(path)
+                    handled.add(path)
+            time.sleep(2)
+    except KeyboardInterrupt:
+        pass
+    print(f'Stopped: {out}')
 
 
 if __name__ == '__main__':
