@@ -55,7 +55,7 @@ Method. The shared WebSearch budget for this turn was already used up when this 
 | Klap | AI clipper | Basic "100 clips/mo $14.50 /mo $174 billed yearly"; Pro "$39.50 /mo" | "Try Klap free on 1 video. No credit card required." | Web | Low | V | https://klap.app/pricing ; https://klap.app/ |
 | Munch Studio (formerly Munch) | AI clipper and repurposer | "Essential is $68 a month on a month to month plan or $38 a month billed yearly" | "7-day free trial" only | Web | Low; over budget | V | https://www.munchstudio.com/pricing |
 | Gling | Removes silences, bad takes and filler words | Plus "$20/mon"; "$40/mon"; "$100/mon" | "$0": "1 hour of AI edited media per month", "Unlimited video export with watermark" | Web | Low-medium for talking clips | V | https://www.gling.ai/pricing |
-| TimeBolt | Desktop silence and filler-word remover, free 4K screen capture | "$17/mo, $97/yr or $347 Lifetime"; "Full power. No limits. No watermark." on paid | "FREE ... exports are watermarked"; "Record screen and camera in native 4K, free, local, and watermark-free." | "Mac + Windows · Local-first editing · No cloud upload" | Low-medium; only if Hollie records long takes | V | https://www.timebolt.io/pricing ; https://www.timebolt.io/ |
+| TimeBolt | Desktop silence and filler-word remover, free 4K screen capture | "$17/mo, $97/yr or $347 Lifetime"; "Full power. No limits. No watermark." on paid | "FREE ... exports are watermarked"; "free, local, and watermark-free" (4K screen capture) | "Mac + Windows · Local-first editing · No cloud upload" | Low-medium; only if Hollie records long takes | V | https://www.timebolt.io/pricing ; https://www.timebolt.io/ |
 | Pictory | Script or article to video with stock footage | Starter "$25" per month billed annually ("$29" monthly); Professional "$35"/"$59" | "14 days free" trial | Web | Low | V | https://pictory.ai/pricing/ |
 | InVideo AI | AI video generator and editor | Starter "$20 $10 per seat/mo, billed annually"; Pro "$60 $30" | A free editor tier is shown; limits not readable | Web | Low | V (prices), U (free limits) | https://invideo.io/pricing/ |
 | Lumen5 | Text to video with templates | Basic "$19 USD per month, billed yearly"; Professional "$59 USD" | "$0/forever": "Contains Lumen5 branded outro", "Max 2-minute long videos", "5 videos per month" | Web | Low | V | https://lumen5.com/pricing/ |
@@ -131,7 +131,7 @@ Only facts from pages read today. No complaints were read on any page.
 - **HitFilm (FXhome): status unknown.** https://fxhome.com/ failed (tunnel error) and https://artlist.io/hitfilm returned an empty page. U. Do not recommend until a vendor page loads.
 - **Camtasia's pricing URL moved.** techsmith.com/camtasia/pricing/ is a 404; prices live at techsmith.com/store/camtasia. V.
 - **Adobe Premiere Rush and OpenAI Sora** were already marked gone by the lane; nothing read today changes that.
-- **Not defunct, checked:** TikTok Studio exists but as a phone app with a limited web mode (V). Loom's pricing page saved by lane 12 today was grepped for "Atlassian"; the result is printed above this file's write command and is not relied on here (U).
+- **Not defunct, checked:** TikTok Studio exists but as a phone app with a limited web mode (V). Loom (on the lane list) is sold through Atlassian: its pricing page, read today by lane 12, asks "What's the difference between buying Loom on Loom.com versus Atlassian.com?" and lists "Atlassian Guard Standard (SSO, SCIM)". V. Pricing facts on the lane stand.
 
 ## 4. Recommendation for Hollie
 
