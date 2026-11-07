@@ -142,7 +142,7 @@ Then ask Claude to re-run the verification against the fetched pages and update 
 
 - `No module named cv2` or `scipy`: the venv is missing the helpers; rerun the install line in section 1.
 - `bria-rmbg weights are licensed for non-commercial use only`: the script refusing `--model bria-rmbg`, as intended.
-- A photo fails with a memory error on CPU: close other programs, or run with `--model birefnet-general-lite`.
+- A photo fails with a memory error on CPU: the script already turns off onnxruntime's CPU memory arena (with it on, the second photo in a run was killed here at a 16 GB limit; off, three photos ran flat at about 8 GB). If it still happens, close other programs or run with `--model birefnet-general-lite`. The GPU route uses far less system memory.
 - HEIC files skipped or unreadable: `pillow-heif` missing; rerun the install line.
 - Edges with a thin coloured halo: already handled by rembg's decontamination; if it persists on one photo, shoot that item against a backdrop of the opposite tone (eBay's clothing page: dark clothes on light, light clothes on dark).
 - A notch or missing piece on a frame or box: the file name needs a rectangle word (`frame`, `box`, `mirror`), or run the folder with `--rect`.

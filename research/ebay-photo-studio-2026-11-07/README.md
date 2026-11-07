@@ -56,6 +56,7 @@ Asked by Ricky: how to make eBay-grade photos of vintage clothes on nice vintage
 - `frame-six-models-three-repairs.jpg` and `frame-test.py`: six rembg models by raw, closing and convex-hull repair on the print. Only birefnet-general kept the frame; the hull repair completed it.
 - `bench-*.jpg` and `19-bench.md`: general, lite and isnet on nine photos. General never failed; lite is 35 to 40 percent faster and matches it on clean garments but loses thin frame bars and shelf contents; isnet failed on seven of nine.
 - `*-cut-birefnet-general*.jpg`: the listing outputs at 1024 px.
+- `memtest.md`: why every multi-photo run died on photo two here (onnxruntime CPU arena growth, 9.7 GB peak) and the fix (arena off, 8.1 GB flat across three photos).
 
 ## What to do on the PC
 

@@ -124,15 +124,21 @@ def provider_name():
 
 
 def open_session(model, provider):
-    """Ask for the named provider plus CPU, so TensorRT is never attempted and a CPU fallback is explicit."""
+    """Ask for the named provider plus CPU, so TensorRT is never attempted and a CPU fallback is explicit.
+    The onnxruntime CPU memory arena is switched off: with it on, the second photo in one process grew
+    the arena past the memory limit here (measured 2026-11-07: 9.7 GB peak and killed on photo two;
+    arena off, 8.1 GB peak and flat across three photos, about 2 s slower each)."""
+    import onnxruntime as ort
+    opts = ort.SessionOptions()
+    opts.enable_cpu_mem_arena = False
     if provider in ('CUDAExecutionProvider', 'ROCMExecutionProvider', 'DmlExecutionProvider'):
-        session = new_session(model, providers=[provider, 'CPUExecutionProvider'])
+        session = new_session(model, sess_opts=opts, providers=[provider, 'CPUExecutionProvider'])
         running = session.inner_session.get_providers()[0] if hasattr(session, 'inner_session') else provider
         if running != provider:
             print(f'WARNING: {provider} was requested but the session runs on {running}; '
                   'see the GPU check in docs/ebay-photo-studio-handoff.md')
         return session, running
-    return new_session(model), 'CPUExecutionProvider'
+    return new_session(model, sess_opts=opts), 'CPUExecutionProvider'
 
 
 def cut(session, photo, rect=False):

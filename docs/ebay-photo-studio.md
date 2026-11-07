@@ -91,6 +91,7 @@ Decision: visible form by default. Ghost only clean, structured, flawless pieces
 - `--watch` keeps running and processes each photo two seconds after it stops growing in the folder, so it can run while Ricky shoots and the phone syncs. `stop.txt` in the folder or Ctrl+C ends it. Photos already done are skipped unless `--force`.
 - Warns when fewer than 99% of the item's pixels match the photo, when the item is mostly see-through (glass: list the original), and when the item is small in the frame.
 - Refuses the Bria model.
+- Holds memory flat across a batch: onnxruntime's CPU memory arena is off, because with it on the second photo of every run here was killed at the 16 GB limit (9.7 GB peak), and with it off three photos ran at a flat 8.1 GB, about two seconds slower each. On the GPU route this matters less.
 
 Not built, on purpose: ghost mannequin, any generative fill, upscaling. Glass is still "list the original sweep shot".
 
