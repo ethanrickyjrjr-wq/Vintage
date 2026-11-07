@@ -48,6 +48,19 @@ Also seen today, below the 12-row cap (all V unless marked):
 | Red Barn Flea Market (Bradenton) | Indoor flea market, "more than 600 flea market booths and shops" | free entry (not stated) | n/a | in person | medium-low; hours page text did not render (U) | V (site), U (hours) | https://redbarnfleamarket.com/ |
 | Florida Estate Sales & Antiquities LLC | Estate sale company new in 2025 on the Punta Gorda and Sarasota directories | n/a | none shown | web, in person | low; no alert sign-up on the page | V | https://www.flestatesalesllc.com/ |
 
+## 1b. Defunct, acquired or renamed (evidence read today)
+
+- **Sarasota Architectural Salvage (Sarasota).** Not on the lane list, but the obvious lamp-and-decor salvage source anyone would suggest. Its site says "our flagship store at 1093 Central Avenue in Sarasota, which is now permanently closed" and "we are currently in transition as we renovate our new home". Remaining stock is a Google Photos album. V. https://www.sarasotasalvage.com/
+- **Letgo.** Folded into OfferUp: "OfferUp and Letgo have come together as one online marketplace". Do not list Letgo separately. V. https://apps.apple.com/us/app/offerup-buy-sell-marketplace/id468996152
+- **Gulf Coast Auction House (Bonita Springs), on the lane list via its HiBid subdomain.** Now also runs its own site at gcauctionhouse.com ("© 2026 Gulf Coast Auction House", "Auctioneer License #AU5688") and appears on EstateSales.net as "Gulf Coast Auctions & Estates", "Member Since 2026". Same company, new domain and trade name; the site adds "Buy It Now" and "Storage unit discoveries, Local pickup auctions". V. https://www.gcauctionhouse.com/
+- **EstateSales.org (on the lane list) and gsalr.com share one owner.** gsalr.com's footer: "Partner Sites gsalr.ca EstateSales.org Snaplist.com", "© 2007-2026 Treasure Listings, LLC". Count them as one net, not two. V. https://gsalr.com/
+- **Grasons.** No Grasons franchise in Lee or Collier. A new "Grasons Of Sarasota-Venice, FL" is "Member Since 2026" on EstateSales.net and has its own page. Launched, not defunct. V. https://www.estatesales.net/companies/FL/Sarasota-Bradenton
+- **MaxSold (on the lane list as U).** Still operating: the help desk answered today with "At MaxSold, the buyer's premium is 18%". The main site returns HTTP 403 to the fetcher, so SWFL activity remains U. V for the premium. https://support.maxsold.com/hc/en-us/search?query=buyer%27s+premium
+- **King's Road Auctions (Naples, EstateSales.net member since 2025).** HiBid page is live but empty today: "(Please check back soon as upcoming auction information is posted regularly.)" Possibly dormant; join its "Email List" and wait. V. https://kingsroadauctions.hibid.com/
+- **Burchard Galleries (on the lane list).** Its Nov 14, 2026 Discovery Auction on HiBid is "Live Onsite Only Auction", "No Internet Bidding", absentee bids by phone or email only. Online bidding is not a given for every Burchard sale. V. https://hibid.com/florida/auctions?zip=34236&miles=40
+- **AuctionNinja.** Not defunct, but absent from SWFL: "Florida 2 sales", both on the east coast. V. https://www.auctionninja.com/auctions?state=FL
+- **Gulf Coast Humane Society (Fort Myers) thrift store.** No thrift page exists on the site today (guessed URL 404, home page lists only adoption and clinics). If a roundup names a GCHS thrift shop, treat it as stale. V. https://gulfcoasthumanesociety.org/thrift-store/
+
 ## 2. Notes per tool
 
 **YardSaleSearch.com.** The Fort Myers page lists sales with photo counts (one sale had 74 photos), a radius filter from 1 to 100 miles, a date range, keyword search and sale-type filters including "Estate Sale". The alert is per area, free, after registering. It is a listing site, not a marketplace; nothing to buy online. No terms problem for a shopper.
