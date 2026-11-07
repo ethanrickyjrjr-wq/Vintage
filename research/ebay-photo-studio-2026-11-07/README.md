@@ -65,4 +65,4 @@ After the frame rounds Ricky said the phone's tap cuts it out perfectly and this
 
 ## What to do on the PC
 
-`fetch-later.md` holds the 153 blocked URLs and a one-line crawl4ai loop. After that run, the snippet-level lanes (09 to 17) can be re-verified and the prices in the decision doc replaced with fetched ones.
+Done 2026-11-07. `fetch-later.md`'s URLs were crawled into `raw/fetched-on-pc/`: 139 pages, 18 walls, 157 in all once four Apple step articles were added on the PC (`_index.tsv` maps each URL to its lane and marks page or wall). The lanes were then re-verified against the fetched pages by six Sonnet agents, one topic cluster each; their reports are in `verify-on-pc/`, saved as returned. Still unread: the five Etsy policy pages, the Reddit searches, the eBay sold search and the two Hugging Face Space pages (walls from the Windows box; Etsy and eBay need the signed-in Chrome tab).

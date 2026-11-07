@@ -6,7 +6,7 @@
 
 Ricky's call, 2026-11-07: the tap on the phone cuts better than any of this, so use it. The PC only does what the phone cannot: pure white, the square, 1600 px, the file names and the manifest.
 
-1. On the iPhone, cut the item out. Either press and hold the item in Photos until it glows, lift a finger, choose Copy Subject (or Share, then Save to Files), or select several photos, Share, Save to Files, then in Files select them, Quick Actions, Remove Background. Each gives a PNG with a transparent background. (Menu names from third-party guides, not yet checked on your phone; the gesture is the one you already use.)
+1. On the iPhone, cut the item out. Apple's iPhone User Guide (iOS 27 page, read 2026-11-07) says: open the photo in full screen, touch and hold the item, and when an outline appears tap Copy or Copy Subject, then paste it, or tap Share and choose a sharing option. Apple does not say what file type that produces. For a stack of photos, the Files route (select the photos, Share, Save to Files, then in Files select them, the three-dot button, Quick Actions, Remove Background) is described only by a March 2026 Make Tech Easier article, not by Apple. Confirm on your phone that you end up with a transparent PNG; the script takes transparent PNG.
 2. Get the PNGs to the PC: the Drive or iCloud folder the PC syncs. Point the script at that folder.
 3. Run the script on the folder (section 3). A transparent PNG is recognised on sight: the model is not loaded, and the photo is only trimmed, centred on pure white, saved at 1600 and 2048, and logged as "cut on the phone, framed here". About one second per photo. Name the PNGs `ITEM-view` as usual if you can; `Background Removed` in the name is fine.
 4. Labels and flaw close-ups still go in as plain photos: they are kept as shot.
@@ -121,33 +121,33 @@ Lace, fringe, feathers and fur: the general model is the starting point; if edge
 
 ## 5. Shopping list
 
-Prices are asking prices seen in search results on 2026-11-07; the pages themselves could not be opened from the cloud session, so check live before ordering (`fetch-later.md` has every URL).
+Prices below are from the vendor pages opened on the PC on 2026-11-07 unless marked unchecked; the reports are in `research/ebay-photo-studio-2026-11-07/verify-on-pc/`. Check live before ordering.
 
 **Form and pinning**
 
-- One adjustable, pinnable dress form with an adjustable pole, sized at or under the smallest size Hollie sells, padded up with batting for larger sizes. Dritz My Double about $155; Roxy linen forms $136 to $188; used Acme adjustable $50 to $250 on Marketplace and estate sales.
-- The cream linen vintage-look form as the room piece that also appears in photos: Mannequin Mall French forms $183 to $305, Etsy linen forms from $125, antique linen on a spindle base $375.
-- Pinning kit, under $60 total: binder clips, spring clamps, dressmaker pins, tissue, transparent tape, quilt batting, a black cloth for sheers.
+- One adjustable, pinnable dress form with an adjustable pole, sized at or under the smallest size Hollie sells, padded up with batting for larger sizes. Dritz My Double Medium $155.00 (bust 39½ to 45½ in, so too big for a 6 to 8); Dritz Sew You Small/Medium $129.99, SINGER Small/Medium $174.99 and PDM 6 to 14 $139.99 on Amazon; Bonnlo pinnable foam torsos on a tripod $29.99 to $49.99 plus $19.99 delivery; Roxy linen forms and used Acme adjustables unchecked. Prefer removable or collapsible arms and shoulders.
+- The cream linen vintage-look form as the room piece that also appears in photos: Mannequin Mall French forms from $182.99 (regular $305.00), their professional form with collapsible shoulders from $427.99; the antique linen spindle-base form was $375.00 and is sold out; Etsy linen forms from $125 unchecked.
+- Pinning kit, under $60 total: dressmaker pins, tissue, binder clips and spring clamps (clips, not pins, on sheers), painter's tape (test on a hidden seam; gaffer tape leaves residue), quilt batting, a black cloth for sheers. Fabulous Fit's padding system, Medium for women's 6 to 10, from $85.00 if batting is not enough.
 
-**Light and backdrop, cheapest tier that works (about $165 to $230)**
+**Light and backdrop, cheapest tier that works (about $222 to $265)**
 
-- Two Neewer 24-inch softbox kits with stands, $80 to $120.
-- A 10 by 7 foot backdrop stand with clamps, $30 to $46.
-- Savage 53-inch pure white seamless paper roll, about $45 (check whether coats and the feather hat need the 107-inch roll).
-- A phone tripod with a Bluetooth remote, $7 to $20.
-- Same bulbs in every light, 5500 to 5700 K, CRI 90 or better. Add a third light on the backdrop only if the white reads grey.
+- One Neewer NK200 kit: two 24-inch softboxes, two 35 W 5700 K bulbs, two 83-inch stands, a bag. "From $139.99" at neewer.com, before its sale banner.
+- A 10 by 7 foot backdrop stand with clamps: Neewer's own $59.99; Walmart and EMART $30 to $46 unchecked.
+- Savage #01 Super White seamless paper, 53 in by 36 ft, $44.99 at B&H. B&H calls 53 in the one-person width; 86 and 107 in rolls exist, unpriced. Check whether coats and the feather hat need the wider roll.
+- A phone tripod with a Bluetooth remote, $7 to $20 (unchecked).
+- Same bulbs in every light, 5500 to 5700 K, CRI 90 or better; the Neewer kit's bulbs state 5700 K and no CRI, and its E26 sockets take other bulbs. Add a third light on the backdrop only if the white reads grey.
 
 Already on hand per the earlier docs: foam boards, a lazy Susan, a steamer, hangers, a rack, tape, a lint roller.
 
 ## 6. Fetch the pages the cloud could not
 
-The cloud session's network blocked eBay, Reddit, YouTube, Hugging Face's website, Amazon and the vendor sites, so every price above and several seller claims are snippet-level. From Git Bash on the PC, one loop fetches all 153 pages with crawl4ai into `research/ebay-photo-studio-2026-11-07/raw/fetched-on-pc/`:
+Done from the PC 2026-11-07. The cloud session's network had blocked eBay, Reddit, YouTube, Hugging Face's website, Amazon and the vendor sites, so the prices and seller claims were snippet-level. The loop below ran once: 139 of 157 pages landed (four Apple step articles were added on the PC after lane 17's re-check found the list held Apple's guide roots) in `research/ebay-photo-studio-2026-11-07/raw/fetched-on-pc/` (`_fetch-log.tsv` has bytes per URL, `_index.tsv` joins each page to the lane that asked for it and marks page or wall). 18 were bot walls from this box: every `www.etsy.com` and `old.reddit.com` URL, two `huggingface.co` Space pages, one `www.ebay.com` sold search, and one each on reddit.com, bhphotovideo.com, emerald.com and discussions.apple.com. community.ebay.com, which the cloud could not open at all, crawled fine, all 21 threads. The re-verification of the lanes against the fetched pages is in `research/ebay-photo-studio-2026-11-07/verify-on-pc/`. For a rerun:
 
 ```bash
 grep -oE "^- https?://[^ ]+" research/ebay-photo-studio-2026-11-07/fetch-later.md | cut -c3- | while read -r u; do tools/crawl.sh "$u" "research/ebay-photo-studio-2026-11-07/raw/fetched-on-pc/$(echo "$u" | sed -E 's#https?://##; s#[^A-Za-z0-9.]+#_#g' | cut -c1-80).md"; done
 ```
 
-Then ask Claude to re-run the verification against the fetched pages and update `docs/ebay-photo-studio.md`. Reddit may still wall the Windows box; the Fedora container is the fallback (`old.reddit.com` URLs with a `.json` suffix).
+Still unread: the five Etsy policy pages (listing image requirements, creativity standards, seller policy, two Seller Handbook articles), the Reddit searches, the eBay sold search for Acme forms and the two Hugging Face Space pages. Etsy, Reddit and eBay search wall crawl4ai outright and user-agent tricks are off the table, so those need the signed-in Chrome tab (the extension was not connected on 2026-11-07) or the Fedora container, which was off the LAN that day.
 
 ## 7. Questions to answer while you are there
 

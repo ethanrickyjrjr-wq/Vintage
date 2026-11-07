@@ -83,5 +83,5 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 | `account-layout-2026-10-29/` | one note | [account-layout.md](account-layout.md) |
 | `vinted-2026-10-30/` | Vinted rules and crosslister support, raw pages plus a README | its README |
 | `ebay-clothing-photos-2026-10-30/` | eBay photo and clothing pages fetched 2026-10-30, with a README of the rules | [ebay-photo-studio.md](ebay-photo-studio.md) |
-| `ebay-photo-studio-2026-11-07/` | 21 Sonnet lanes on photographing clothes for eBay (models, rembg, ghost mannequin, AI try-on, pipeline, gear, eBay rules, hosted services, phone tools), raw pages, test results on Ricky's photos, a verification table, `fetch-later.md` | [ebay-photo-studio.md](ebay-photo-studio.md) |
+| `ebay-photo-studio-2026-11-07/` | 21 Sonnet lanes on photographing clothes for eBay (models, rembg, ghost mannequin, AI try-on, pipeline, gear, eBay rules, hosted services, phone tools), raw pages, test results on Ricky's photos, a verification table, `fetch-later.md`, `raw/fetched-on-pc/` (the pages crawled from the PC on 2026-11-07) and `verify-on-pc/` (six re-verification reports against them) | [ebay-photo-studio.md](ebay-photo-studio.md) |
 | loose `*.md` in `research/` | pages fetched by `tools/crawl.sh`, named `<host>-<utc>.md` | none |

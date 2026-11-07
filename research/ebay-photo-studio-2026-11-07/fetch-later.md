@@ -522,3 +522,14 @@ Reddit: if the Windows box is walled too, the Fedora box crawl4ai container sits
 
 - https://store.google.com/intl/en_in/ideas/articles/magic-editor  
   17-disc-phone-builtin: Magic Editor details (low priority; Ricky has an iPhone)
+
+## Added on the PC 2026-11-07 (lane 17's re-check found the list held Apple guide roots, not the step articles)
+
+- https://support.apple.com/guide/iphone/lift-a-subject-from-the-photo-background-iphfe4809658/ios  
+  17-disc-phone-builtin: Apple's own steps for lifting a subject and the menu wording (Copy Subject, Share)
+- https://support.apple.com/guide/shortcuts/navigate-the-action-list-apdc33e4f4da/ios  
+  17-disc-phone-builtin: the Shortcuts action list, to see whether a Remove Background action exists
+- https://support.apple.com/guide/iphone/transfer-files-between-devices-iph339bafff3/ios  
+  17-disc-phone-builtin: how photos move from the phone to the PC
+- https://support.apple.com/guide/iphone/connect-iphone-and-your-computer-with-a-cable-iph42d9b3178/ios  
+  17-disc-phone-builtin: cable transfer and the Most Compatible setting
