@@ -75,7 +75,7 @@ nm-dress-label.jpg: 0.3s   kept as shot (close-up), resized only
 shisa-print.jpg:    21.9s  pixels kept 100.0%  solid 92%  OK            (plain cut; see the note below)
 ```
 
-Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch and no scar along the top edge even at full zoom, and the report line says `rect repair filled 3.1%`. Add `--straighten` to see it squared up. Seconds on the GPU should be low single digits after the first photo.
+Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch and no scar along the top edge even at full zoom, and the report line says `rect repair filled 3.1%`. Add `--straighten` to see it squared up, or `--reframe` for the clean rebuilt frame (the version Ricky asked for). Seconds on the GPU should be low single digits after the first photo.
 
 ## 3. The daily flow
 
@@ -87,7 +87,8 @@ Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing
    It processes what is already there, then each new photo two seconds after it stops growing. Stop with Ctrl+C or by creating `stop.txt` in the inbox.
 3. Upload `cutouts\ebay\*.jpg` to eBay (1600 square, under 12 MB, no text or marks). The crosslister carries them on. `listing\` is the 2048 master for Shopify; `site\*.png` is for our storefront only and never goes to a marketplace.
 4. Read `manifest.csv` or the console: `PIXELS CHANGED` means check that photo by eye; `mostly see-through` means glass, list the original sweep shot; `item small in frame` means reshoot closer; `no item found` means reshoot on the white sweep.
-5. Objects that stand on a surface (lamps, shoes, hats, bags) can take a soft contact shadow: run their folder with `--shadow`. Hanging or framed things can take `--shadow drop`. Clothes on the form: no shadow.
+5. Framed art: run its folder with `--reframe` when the frame is undamaged; the frame comes out as a clean rectangle built from its own bar, and the mat and picture stay as shot. Reflections in the glass are in the photo, so shoot framed pieces with the window light from the side and black boards just outside the frame.
+6. Objects that stand on a surface (lamps, shoes, hats, bags) can take a soft contact shadow: run their folder with `--shadow`. Hanging or framed things can take `--shadow drop`. Clothes on the form: no shadow.
 
 ## 4. Options
 
@@ -97,6 +98,7 @@ Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing
 | `--shadow` or `--shadow drop` | contact shadow under standing objects, or a faint drop shadow behind hanging ones; never on the PNG |
 | `--rect` | rectangle repair on every photo in the folder (frames, mirrors, boxes), otherwise by file name |
 | `--straighten` | with the rectangle repair, square up a frame shot at an angle (four corners to a true rectangle); compare with the plain output, proportions are estimated |
+| `--reframe` | framed art with an undamaged frame: rebuild the frame from its own bar around the untouched mat and picture, mitred corners, straightened first. Never for a chipped or worn frame |
 | `--model birefnet-general-lite` | the 224 MB model, for a laptop or a quick preview; `birefnet-general` is the default |
 | `--force` | redo photos that already have outputs |
 

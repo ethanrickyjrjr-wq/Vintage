@@ -18,6 +18,11 @@ Run:
                  outline are found and the item is warped to a true rectangle (real pixels resampled,
                  nothing invented). Rectangle photos only; proportions are estimated from the photo,
                  so compare with the plain output before trusting it on a listing.
+    --reframe    for framed art: rebuild the frame from its own bar. The widest bar's colour profile
+                 (its median across the bar, measured away from the corners, so glare and the model's
+                 nicks drop out) is laid around the mat and picture with mitred corners. The mat and
+                 the picture stay exactly as photographed. Implies --straighten. Only for an undamaged
+                 frame: a chipped or worn frame must be shown, not rebuilt.
     --model M    rembg model name, default birefnet-general. Never bria-rmbg (non-commercial licence).
     --force      redo photos whose outputs already exist.
 
@@ -219,6 +224,67 @@ def straighten(rgba):
     return out, True
 
 
+def reframe(rgba):
+    """Rebuild a picture frame from its own bar around the untouched mat and picture.
+    Expects a straightened frame. Returns (rgb_image, done)."""
+    from PIL import ImageDraw
+    W, H = rgba.size
+    arr = np.array(rgba)
+    lum = np.array(rgba.convert('L')).astype(int)
+    alpha = arr[..., 3]
+
+    def first_light(line, a):
+        idx = np.where((line > 110) & (a > 200))[0]
+        return int(idx[0]) if len(idx) else None
+
+    rows = range(int(H * 0.25), int(H * 0.75))
+    cols = range(int(W * 0.25), int(W * 0.75))
+    seen = {}
+    for name, vals in (
+        ('left', (first_light(lum[y], alpha[y]) for y in rows)),
+        ('right', (first_light(lum[y][::-1], alpha[y][::-1]) for y in rows)),
+        ('top', (first_light(lum[:, x], alpha[:, x]) for x in cols)),
+        ('bottom', (first_light(lum[:, x][::-1], alpha[:, x][::-1]) for x in cols)),
+    ):
+        vals = [v for v in vals if v is not None]
+        if not vals:
+            return None, False
+        seen[name] = int(np.median(vals))
+    w = max(seen.values())  # the bar seen most face-on
+    if w < 8 or w > min(W, H) * 0.25:
+        return None, False
+    pad = int(1.5 * w)
+    if w == seen['left']:
+        patch = arr[pad:H - pad, 0:w, :3]
+    elif w == seen['right']:
+        patch = arr[pad:H - pad, W - w:W, :3][:, ::-1]
+    elif w == seen['top']:
+        patch = np.transpose(arr[0:w, pad:W - pad, :3], (1, 0, 2))
+    else:
+        patch = np.transpose(arr[H - w:H, pad:W - pad, :3], (1, 0, 2))[:, ::-1]
+    profile = np.median(patch, axis=0).astype(np.uint8)  # outer edge to inner edge
+    inner = rgba.crop((seen['left'] + 1, seen['top'] + 1, W - seen['right'] - 1, H - seen['bottom'] - 1)).convert('RGB')
+    iw, ih = inner.size
+    NW, NH = iw + 2 * w, ih + 2 * w
+    out = Image.new('RGB', (NW, NH), 'white')
+    out.paste(inner, (w, w))
+    bar_v = Image.fromarray(np.tile(profile[None, :, :], (NH, 1, 1)))
+    bar_h = Image.fromarray(np.tile(profile[:, None, :], (1, NW, 1)))
+    pieces = (
+        (bar_h, (0, 0), [(0, 0), (NW, 0), (NW - w, w), (w, w)]),
+        (bar_h.transpose(Image.FLIP_TOP_BOTTOM), (0, NH - w), [(0, NH), (NW, NH), (NW - w, NH - w), (w, NH - w)]),
+        (bar_v, (0, 0), [(0, 0), (w, w), (w, NH - w), (0, NH)]),
+        (bar_v.transpose(Image.FLIP_LEFT_RIGHT), (NW - w, 0), [(NW, 0), (NW - w, w), (NW - w, NH - w), (NW, NH)]),
+    )
+    for img, pos, poly in pieces:
+        layer = Image.new('RGB', (NW, NH))
+        layer.paste(img, pos)
+        mask = Image.new('L', (NW, NH), 0)
+        ImageDraw.Draw(mask).polygon(poly, fill=255)
+        out.paste(layer, (0, 0), mask)
+    return out, True
+
+
 def square_on_white(item, size, shadow=None):
     """Centre the RGBA item on a white size x size canvas at FILL. shadow: None, 'contact' or 'drop'."""
     scale = FILL * size / max(item.size)
@@ -293,11 +359,18 @@ def process(path, out, session, args, provider):
         return
     # one bbox over everything kept; a stray speck far away widens it. Crop by hand if seen.
     item = rgba.crop(box)
-    if mode == 'rect' and args.straighten:
+    if mode == 'rect' and (args.straighten or args.reframe):
         arr, done = straighten(np.array(item))
         if done:
             item = Image.fromarray(arr)
             notes.append('straightened')
+            if args.reframe:
+                rebuilt, ok = reframe(item)
+                if ok:
+                    item = rebuilt.convert('RGBA')
+                    notes.append('frame rebuilt from its own bar')
+                else:
+                    notes.append('not reframed (frame bars not found)')
         else:
             notes.append('not straightened (no four corners found)')
     site = item.copy()
@@ -350,6 +423,7 @@ def main():
     ap.add_argument('--shadow', nargs='?', const='contact', choices=['contact', 'drop'], default=None)
     ap.add_argument('--rect', action='store_true')
     ap.add_argument('--straighten', action='store_true')
+    ap.add_argument('--reframe', action='store_true')
     ap.add_argument('--model', default=DEFAULT_MODEL)
     ap.add_argument('--force', action='store_true')
     args = ap.parse_args()
