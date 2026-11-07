@@ -10,8 +10,9 @@ Run:
     .venv/cutout/Scripts/python.exe tools/cutout/cutout.py PHOTOS_FOLDER [OUTPUT_FOLDER] [options]
     --watch      keep running and process each photo as it lands (iCloud, AirDrop, USB). Stop with
                  Ctrl+C or by creating a file named stop.txt in PHOTOS_FOLDER.
-    --shadow     soft contact shadow under the item, for objects that would otherwise float (lamps,
-                 shoes, hats, bags). Leave it off for clothes on a form. The site PNG never has one.
+    --shadow     soft contact shadow under the item, for objects standing on a surface (lamps, shoes,
+                 hats, bags). --shadow drop gives a faint drop shadow behind a hanging or framed item
+                 instead. Leave both off for clothes on a form. The site PNG never has one.
     --rect       fill the outline of frames, mirrors, boxes and books (see below) for every photo.
     --model M    rembg model name, default birefnet-general. Never bria-rmbg (non-commercial licence).
     --force      redo photos whose outputs already exist.
@@ -103,8 +104,15 @@ def load(path):
 
 
 def provider_name():
+    """Name the fastest provider onnxruntime offers. On Windows the pip-installed CUDA and cuDNN DLLs
+    (onnxruntime-gpu[cuda,cudnn]) are only found after preload_dlls(); rembg itself never calls it."""
     try:
         import onnxruntime as ort
+        if hasattr(ort, 'preload_dlls'):
+            try:
+                ort.preload_dlls()
+            except Exception:  # noqa: BLE001
+                pass
         avail = ort.get_available_providers()
     except Exception:  # noqa: BLE001
         return 'unknown'
@@ -112,6 +120,18 @@ def provider_name():
         if p in avail:
             return p
     return 'CPUExecutionProvider'
+
+
+def open_session(model, provider):
+    """Ask for the named provider plus CPU, so TensorRT is never attempted and a CPU fallback is explicit."""
+    if provider in ('CUDAExecutionProvider', 'ROCMExecutionProvider', 'DmlExecutionProvider'):
+        session = new_session(model, providers=[provider, 'CPUExecutionProvider'])
+        running = session.inner_session.get_providers()[0] if hasattr(session, 'inner_session') else provider
+        if running != provider:
+            print(f'WARNING: {provider} was requested but the session runs on {running}; '
+                  'see the GPU check in docs/ebay-photo-studio-handoff.md')
+        return session, running
+    return new_session(model), 'CPUExecutionProvider'
 
 
 def cut(session, photo, rect=False):
@@ -152,20 +172,29 @@ def rect_repair(rgba, photo):
     return rgba, float(added.sum()) / max(hull.sum(), 1)
 
 
-def square_on_white(item, size, shadow=False):
-    """Centre the RGBA item on a white size x size canvas at FILL, optional soft contact shadow."""
+def square_on_white(item, size, shadow=None):
+    """Centre the RGBA item on a white size x size canvas at FILL. shadow: None, 'contact' or 'drop'."""
     scale = FILL * size / max(item.size)
     item = item.resize((round(item.width * scale), round(item.height * scale)), Image.Resampling.LANCZOS)
     canvas = Image.new('RGB', (size, size), 'white')
     x, y = (size - item.width) // 2, (size - item.height) // 2
-    if shadow:
+    layer = None
+    if shadow == 'contact':
         # the item's own footprint, squashed to a sliver, centred on the bottom edge, blurred, 25% black
         sh = max(8, int(item.height * 0.12))
         foot = item.getchannel('A').resize((item.width, sh), Image.Resampling.LANCZOS)
         layer = Image.new('L', (size, size), 0)
         layer.paste(foot, (x, y + item.height - sh // 2))
         layer = layer.filter(ImageFilter.GaussianBlur(max(4, int(item.height * 0.025))))
-        layer = layer.point(lambda v: int(v * SHADOW_OPACITY))
+    elif shadow == 'drop':
+        # the whole silhouette, blurred and nudged down and right (whitebg's recipe, MIT), 20% black
+        dx, dy = round(size * 0.009), round(size * 0.015)
+        layer = Image.new('L', (size, size), 0)
+        layer.paste(item.getchannel('A'), (x + dx, y + dy))
+        layer = layer.filter(ImageFilter.GaussianBlur(max(1.0, size * 0.02)))
+    if layer is not None:
+        opacity = SHADOW_OPACITY if shadow == 'contact' else 0.20
+        layer = layer.point(lambda v: int(v * opacity))
         canvas.paste(Image.new('RGB', (size, size), 'black'), (0, 0), layer)
     canvas.paste(item, (x, y), item)
     return canvas, scale
@@ -233,7 +262,7 @@ def process(path, out, session, args, provider):
     if mode == 'rect':
         notes.append(f'rect repair filled {added:.1%}')
     if args.shadow:
-        notes.append('shadow')
+        notes.append(f'{args.shadow} shadow')
     secs = time.time() - start
     row.update(seconds=f'{secs:.1f}', pixels_kept=f'{kept:.4f}', solid=f'{solid:.3f}',
                rect_filled=f'{added:.4f}' if mode == 'rect' else '', scale=f'{scale:.3f}',
@@ -264,7 +293,7 @@ def main():
     ap.add_argument('src', type=Path)
     ap.add_argument('out', type=Path, nargs='?')
     ap.add_argument('--watch', action='store_true')
-    ap.add_argument('--shadow', action='store_true')
+    ap.add_argument('--shadow', nargs='?', const='contact', choices=['contact', 'drop'], default=None)
     ap.add_argument('--rect', action='store_true')
     ap.add_argument('--model', default=DEFAULT_MODEL)
     ap.add_argument('--force', action='store_true')
@@ -279,9 +308,9 @@ def main():
         (out / folder).mkdir(parents=True, exist_ok=True)
     register_heif_opener()
     provider = provider_name()
+    session, provider = open_session(args.model, provider)
     print(f'model {args.model} on {provider}' + ('' if provider != 'CPUExecutionProvider' else
           ' (CPU: about 20 s per photo; the GPU install is in docs/ebay-photo-studio-handoff.md)'))
-    session = new_session(args.model)
 
     def run(path):
         if done_before(out, path) and not args.force:

@@ -1,0 +1,5 @@
+hf://models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX (MCP_DATA 2026-11-07). license mit; base_model ZhengPeng7/BiRefNet_dynamic; library transformers.js.
+Files: onnx/model.onnx 972495971; onnx/model_fp16.onnx 489811221; config.json 30; preprocessor_config.json 391; README.md 4307.
+Usage in card is Transformers.js only: model({ input_image: pixel_values }) -> output_image; mask = output_image[0].sigmoid().mul(255) (so output is logits).
+Sibling hf://models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA: files onnx/, README.md 5870, manifest.json 1190 (tags: onnxruntime, cuda, triton); not read further.
+Hub search "onnx birefnet" (27 repos) also listed: onnx-community/BiRefNet-ONNX, BiRefNet_lite-ONNX, BiRefNet-portrait-ONNX, BiRefNet_512x512-ONNX, BiRefNet-HRSOD_DHU-ONNX, BiRefNet-DIS5K-ONNX, BiRefNet-COD-ONNX; PinkPixel/birefnet-hr-matting-onnx; emrikol/birefnet-matting-onnx; anakhiu/birefnet-onnx-int8; many lite exports. No ZhengPeng7-owned .onnx (hf_fs find returned empty for ZhengPeng7/BiRefNet and ZhengPeng7/BiRefNet-matting etc.; each repo ls shows only safetensors).
