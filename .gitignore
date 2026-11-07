@@ -17,3 +17,6 @@ research/site-ideas/raw/a2-img/
 research/site-ideas/raw/a2-kitschy-home.html
 research/site-ideas/raw/*.html
 research/consignment/raw/*.pdf
+
+# rembg model weights downloaded by tools/cutout/cutout.py (REMBG_HOME under the repo), about 1 GB each
+models/

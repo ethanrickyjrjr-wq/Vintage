@@ -22,8 +22,9 @@ The file name decides the treatment. Name photos item-view: A13-front.jpg, A13-b
     label, tag, flaw, detail, close, closeup, inside,
     measure, stitch, fabric, hem, button, zipper      kept exactly as shot, only resized: buyers must see
                                                       the real thing in close-ups
-    frame, framed, print, art, mirror, painting,
-    poster, box, book, sign, tray, record, canvas     cut out, then the rectangle repair (same as --rect)
+    frame, framed, art, mirror, painting, poster,
+    box, book, sign, tray, record, album              cut out, then the rectangle repair (same as --rect)
+    (not print or canvas: a floral print dress and a canvas tote are clothes)
 
 Rectangle repair: a dark frame on a dark wall loses notches to the model. The repair fills the
 object's convex hull with the photo's own pixels, so nothing is redrawn. Never for clothes: a
@@ -68,8 +69,8 @@ MASTER = 2048  # listing/ square, Shopify's preferred size
 EBAY = 1600  # ebay/ square, eBay's recommended size (500 minimum, 12 MB cap)
 FILL = 0.85  # Google recommends the item fill 75-90% of the main image
 SPECK = 8  # alpha below this is dust, not item
-RECT_WORDS = {'frame', 'framed', 'print', 'art', 'artwork', 'mirror', 'painting', 'poster',
-              'box', 'book', 'sign', 'tray', 'record', 'album', 'canvas'}
+RECT_WORDS = {'frame', 'framed', 'art', 'artwork', 'mirror', 'painting', 'poster',
+              'box', 'book', 'sign', 'tray', 'record', 'album'}  # not 'print' or 'canvas': fabrics and totes
 KEEP_WORDS = {'label', 'tag', 'flaw', 'detail', 'close', 'closeup', 'inside', 'measure',
               'measurements', 'stitch', 'stitching', 'fabric', 'hem', 'button', 'zipper', 'mark',
               'signature', 'stamp'}

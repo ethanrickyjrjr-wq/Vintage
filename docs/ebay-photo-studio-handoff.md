@@ -40,7 +40,7 @@ python tools\cutout\cutout.py assets\examples-2026-11-07 $env:TEMP\cutout-check
 #    a WARNING line saying the session runs on CPU means the DLLs were not found: try section 1b once, then the CPU route
 ```
 
-`REMBG_HOME` only lasts for that PowerShell window. Make it permanent with `setx REMBG_HOME "C:\Users\ethan\dev\Vintage\models\rembg"` and open a new window, or leave it unset and the models live in `C:\Users\ethan\.rembg\models`.
+`REMBG_HOME` only lasts for that PowerShell window. Make it permanent with `setx REMBG_HOME "C:\Users\ethan\dev\Vintage\models\rembg"` and open a new window, or leave it unset and the models live in `C:\Users\ethan\.rembg\models`. With it set, the files land in `models\rembg\models\birefnet-general\` (rembg adds its own `models` folder under the root). The `models` folder is not committed; add it to `.gitignore` if git shows it.
 
 **1b. If check 2 says CPU: one PATH attempt, then stop chasing it.**
 
@@ -72,14 +72,14 @@ The check in step 5 writes `%TEMP%\cutout-check\ebay`, `listing`, `site` and `ma
 nm-dress-front.jpg: 18.4s  pixels kept 99.9%  solid 98%  OK
 nm-dress-back.jpg:  18.6s  pixels kept 99.9%  solid 98%  OK
 nm-dress-label.jpg: 0.3s   kept as shot (close-up), resized only
-shisa-print.jpg:    22.9s  pixels kept 100.0%  solid 93%  rect repair filled 3.1%
+shisa-print.jpg:    21.9s  pixels kept 100.0%  solid 92%  OK            (plain cut; see the note below)
 ```
 
-Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the whole black frame, no notch. If the print shows a notch, its file name lost the word `print` or `frame`; rename and run again with `--force`. Seconds on the GPU should be low single digits after the first photo.
+Open `ebay\nm-dress-front.jpg`: the dress on pure white with the hanger, nothing else. Open `ebay\shisa-print.jpg`: the frame will show a notch at the top, because this test file is not named with a rectangle word. Rename it `A9-framed-print.jpg` (or run the folder with `--rect`) and run again with `--force`: the whole black frame, no notch, and the report line says `rect repair filled 3.1%`. Seconds on the GPU should be low single digits after the first photo.
 
 ## 3. The daily flow
 
-1. Shoot per the shot list in `docs/ebay-photo-studio.md` section 5, and name the files `ITEM-view`: `B12-front.heic`, `B12-back.heic`, `B12-room.heic`, `B12-label.heic`, `B12-fabric.heic`, `B12-flaw1.heic`, `B12-measure.heic`. The view word decides the treatment: `front`, `back`, `side` and anything unlisted are cut out onto white; `label`, `tag`, `flaw`, `detail`, `close`, `inside`, `measure`, `fabric`, `hem`, `button`, `zipper` are kept exactly as shot; `frame`, `print`, `art`, `mirror`, `painting`, `poster`, `box`, `book`, `sign`, `tray`, `record` get the rectangle repair. The in-room shot (`room`) will be cut too, so give the unedited original to Etsy from the phone, or name it `B12-room-detail.heic` to keep it as shot.
+1. Shoot per the shot list in `docs/ebay-photo-studio.md` section 5, and name the files `ITEM-view`: `B12-front.heic`, `B12-back.heic`, `B12-room.heic`, `B12-label.heic`, `B12-fabric.heic`, `B12-flaw1.heic`, `B12-measure.heic`. The view word decides the treatment: `front`, `back`, `side` and anything unlisted are cut out onto white; `label`, `tag`, `flaw`, `detail`, `close`, `inside`, `measure`, `fabric`, `hem`, `button`, `zipper` are kept exactly as shot; `frame`, `framed`, `art`, `mirror`, `painting`, `poster`, `box`, `book`, `sign`, `tray`, `record`, `album` get the rectangle repair (not `print` or `canvas`: a print dress and a canvas tote are clothes). The in-room shot (`room`) will be cut too, so give the unedited original to Etsy from the phone, or name it `B12-room-detail.heic` to keep it as shot.
 2. Start the watcher before shooting, in the venv window:
    ```powershell
    python tools\cutout\cutout.py C:\Users\ethan\Pictures\inbox C:\Users\ethan\Pictures\inbox\cutouts --watch

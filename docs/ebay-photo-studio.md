@@ -1,6 +1,6 @@
 # eBay photo studio: what we are doing and why
 
-**Status (2026-11-07):** decisions from the two Sonnet sweeps in `research/ebay-photo-studio-2026-11-07/` (21 lanes, 30 claim checks) plus tests on Ricky's four example photos in this cloud session. The script is built and tested on CPU here; the Windows install and the first GPU run happen when Ricky is at the PC (`docs/ebay-photo-studio-handoff.md`). Prices for gear are asking prices seen in search results that day, not opened pages, and are marked so. Every eBay rule quoted below comes from eBay pages fetched 2026-10-30 (`research/ebay-clothing-photos-2026-10-30/`).
+**Status (2026-11-07):** decisions from the two Sonnet sweeps in `research/ebay-photo-studio-2026-11-07/` (21 lanes, 30 claim checks; the verdicts are in that folder's README) plus tests on Ricky's four example photos in this cloud session. The script is built and tested on CPU here; the Windows install and the first GPU run happen when Ricky is at the PC (`docs/ebay-photo-studio-handoff.md`). Prices for gear are asking prices seen in search results that day, not opened pages, and are marked so. Every eBay rule quoted below comes from eBay pages fetched 2026-10-30 (`research/ebay-clothing-photos-2026-10-30/`).
 
 ## 1. The short answer
 
@@ -24,6 +24,8 @@ Inputs: Ricky's four phone photos (`assets/examples-2026-11-07/`) and the Octobe
 
 Timing is this cloud box: four CPU cores, no graphics card, about 18 to 23 seconds a photo. On the RTX 4060 Ti the same model runs on the GPU; the handoff has the install and the check. The model comparison on the print: `birefnet-general` was the only one of six that kept the whole frame; `birefnet-dis` and `birefnet-massive` dropped the frame, `isnet-general-use` and `u2net` kept only the artwork, and the lite model smeared the right edge. A general morphological "closing" did not fix the notch; the convex-hull repair did.
 
+The bench (lane 19, three models on nine photos, every sheet judged by eye): `birefnet-general` never failed. The lite model is 35 to 40 percent faster and matches general on clean garment shots but loses thin frame bars and shelf contents. `isnet-general-use` failed on seven of nine, including washing the Neiman Marcus label to white. So the default stays general; lite is only for a laptop and clean garments.
+
 Two things to change on the shoot side, seen in the photos: take the price tag off before shooting (it stayed in the cut, as the chandelier's tag did in October), and shoot labels in shade so the fabric is not blown out.
 
 ## 3. The rules we are inside
@@ -31,19 +33,19 @@ Two things to change on the shoot side, seen in the photos: take the price tag o
 eBay, quoted from eBay's own pages (fetched 2026-10-30):
 
 - "You can add up to 24 pictures." The first is the search thumbnail: "Make it your best shot, with your item centered and fully visible."
-- "Images should have a minimum resolution of 500 x 500 pixels but we recommend images that are about 1600 x 1600." "photos in a 1:1 or 16:9 aspect ratio look best". "maximum 12MB each". Accepted: "JPEG, PNG, GIF, TIFF, BMP, WEBP, HEIC, or AVIF".
+- "Images should have a minimum resolution of 500 x 500 pixels but we recommend images that are about 1600 x 1600." The picture policy words the floor differently: "at least one photo that is 500 pixels on the longest side". "photos in a 1:1 or 16:9 aspect ratio look best". "maximum 12MB each" (per file). Accepted: "JPEG, PNG, GIF, TIFF, BMP, WEBP, HEIC, or AVIF".
 - "White backgrounds are generally best, but for shiny or reflective items like a piece of jewelry, a darker background may work better." eBay's clothing page: "Use a white or light-colored background for darker clothes, and a black or dark background for lighter clothes."
 - Not allowed: "Photos that don't accurately represent the item", "Stock photos for used, damaged, or defective items", "Photos with added borders", "Photos with added text, artwork or marketing material", "Watermarks of any type, including those used for ownership attributions". "You can't use a catalog or stock photo if you're listing an item as used."
 - eBay's own listing tool has a Background button that will "automatically replace the background with a solid white color"; the app adds AI scenes and says "Try to only use this option for a few photos". A white cut-out of our own photo is therefore the same thing eBay offers, not a stock photo.
 - Flaws: "show clear, closeup images of them". Pre-owned clothing grades are Excellent, Good and Fair, and "every imperfection must be shown and described".
 
-Etsy and Shopify (from `research/cutouts/01-channel-image-rules.md`, fetched 2026-10-27): Etsy renders transparent PNG pixels black and wants "at least one unedited photo of the actual item against a real background"; 2000 px recommended, up to 20 photos. Shopify: "For square product images, a size of 2048 x 2048 px usually displays best". So the script writes a 1600 square for eBay, a 2048 square master for Shopify, and keeps the transparent PNG for our own site only. eBay's current page on AI-edited photos could not be opened from here; the picture policy we hold says nothing about AI and everything about accuracy.
+Etsy and Shopify (from `research/cutouts/01-channel-image-rules.md`, fetched 2026-10-27): Etsy's help page says "If a file contains transparency, the transparent parts of the image will appear black on Etsy" and wants "at least one unedited photo of the actual item against a real background"; 2000 px recommended, up to 20 photos. Shopify: "For square product images, a size of 2048 x 2048 px usually displays best". eBay's handling of transparency is unverified, so the safe rule is flat JPEG everywhere: the script writes a 1600 square for eBay, a 2048 square master for Shopify, and keeps the transparent PNG for our own site only. eBay's current page on AI-edited photos could not be opened from here; the picture policy we hold says nothing about AI and everything about accuracy.
 
 ## 4. The tools
 
 **Use:**
 
-- **rembg 2.0.87** (MIT, PyPI 2026-11-06, Python 3.11 to 3.13) running the **BiRefNet general** model (MIT weights, confirmed on the Hugging Face card and the GitHub LICENSE). This is `tools/cutout/cutout.py`. Always with the model named: rembg's default model is Bria's RMBG-2.0, whose README says commercial use needs a paid agreement, and the script refuses it.
+- **rembg 2.0.87** (MIT, PyPI 2026-11-06; Python 3.12 is the safe pick, since its README caps at 3.14 and onnxruntime's wheels decide) running the **BiRefNet general** model. The weights are MIT on the GitHub LICENSE and on the Hugging Face cards of every variant we would use (one untagged research checkpoint aside), and MIT permits selling and sublicensing. This is `tools/cutout/cutout.py`. Always with the model named: rembg's default model is Bria's RMBG-2.0, and its README says "RMBG-2.0 is released under a BRIA license that requires a paid agreement for commercial use"; the script refuses it.
 - **The rectangle repair** for frames, mirrors, boxes and books (automatic from the file name, or `--rect`).
 - **Hugging Face Spaces as the no-install backup:** `not-lain/background-removal` (BiRefNet, MIT, 2,984 likes) gives a transparent PNG to flatten onto white at home; `ZhengPeng7/BiRefNet_demo` offers the HR and matting variants for lace and fringe. Avoid `Xenova/remove-background-web`: it runs RMBG-1.4, which its card calls "source-available ... for non-commercial use".
 - **Later, for lace, fringe, feathers and fur:** BiRefNet HR-matting at 2048 px through the `transformers` route on the GPU (lane 21 has the snippet). rembg cannot load that variant by name.
@@ -56,7 +58,7 @@ Etsy and Shopify (from `research/cutouts/01-channel-image-rules.md`, fetched 202
 - Upscalers on 12 MP phone photos headed for 1600 px: nothing to gain, and Upscayl describes itself as "guessing what the details could be". Downscale well, sharpen once lightly, done.
 - eBay's in-app remover and AI scenes for clothing: seller reports (snippet-level) of tint, lost tools and forced backgrounds; use its White button only as a benchmark.
 
-**Paid fallback, only if Ricky agrees:** Photoroom's API at "$0.02 per image" (fetched 2026-10-27), on a paid plan because free accounts are personal and non-commercial. Its single-photo ghost mannequin mode exists but regenerates pixels, so it would need a side-by-side check against the real garment before any listing uses it.
+**Paid fallback, only if Ricky agrees:** Photoroom's API at "$0.02 per image" (the page saved 2026-10-27 says so and lists PNG, JPEG, WEBP or HEIC; one of two checkers could not re-find it, so re-check on the PC), on a paid plan because the free account is for personal, non-commercial use. Its single-photo ghost mannequin mode exists but regenerates pixels, so it would need a side-by-side check against the real garment before any listing uses it.
 
 **Phone-only stopgap (unverified on device):** iPhone Photos lift-subject and the Files Quick Action "Remove Background" produce transparent PNGs; nothing built in fills white, so the PC pipeline stays the real route. Skip third-party shortcuts that upload photos to someone's server.
 
@@ -83,9 +85,9 @@ Decision: visible form by default. Ghost only clean, structured, flawless pieces
 `tools/cutout/cutout.py` (tested here on CPU; the handoff has the Windows install):
 
 - Reads JPEG, PNG, WebP and iPhone HEIC, rotates by EXIF, converts Display P3 to sRGB.
-- Decides the treatment from the file name. `front`, `back`, `side` or anything else: cut out onto white. `label`, `tag`, `flaw`, `detail`, `close`, `inside`, `measure`, `fabric`, `hem`, `button`, `zipper`: kept exactly as shot, resized only. `frame`, `print`, `art`, `mirror`, `painting`, `poster`, `box`, `book`, `sign`, `tray`, `record`: cut, then the rectangle repair.
+- Decides the treatment from the file name. `front`, `back`, `side` or anything else: cut out onto white. `label`, `tag`, `flaw`, `detail`, `close`, `inside`, `measure`, `fabric`, `hem`, `button`, `zipper`: kept exactly as shot, resized only. `frame`, `framed`, `art`, `mirror`, `painting`, `poster`, `box`, `book`, `sign`, `tray`, `record`, `album`: cut, then the rectangle repair. Not `print` or `canvas`: a floral print dress and a canvas tote are clothes.
 - Writes `ebay/NAME.jpg` (1600 square, item at 85%), `listing/NAME.jpg` (2048 square master), `site/NAME.png` (transparent, our site only), and a `manifest.csv` row with the model, the processor, seconds, the share of pixels untouched, and warnings.
-- `--shadow` adds a soft contact shadow under objects that would otherwise float (lamps, shoes, hats, bags). Off for clothes on a form; the PNG never has one.
+- `--shadow` adds a soft contact shadow under objects standing on a surface (lamps, shoes, hats, bags); `--shadow drop` gives a faint drop shadow behind a hanging or framed item (whitebg's recipe, MIT). Off for clothes on a form; the PNG never has one.
 - `--watch` keeps running and processes each photo two seconds after it stops growing in the folder, so it can run while Ricky shoots and the phone syncs. `stop.txt` in the folder or Ctrl+C ends it. Photos already done are skipped unless `--force`.
 - Warns when fewer than 99% of the item's pixels match the photo, when the item is mostly see-through (glass: list the original), and when the item is small in the frame.
 - Refuses the Bria model.
