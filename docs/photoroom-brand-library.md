@@ -1,8 +1,11 @@
 # Photoroom Brand Library for Holliewood & Vine
 
-Written 2026-11-08. Ricky asked to "set up all of this" at
-https://app.photoroom.com/brand-library/assets. The Claude Chrome extension was not connected that
-session, so the Photoroom side is not done; everything below is ready to upload in one sitting.
+Set up in Photoroom on 2026-11-08 (Space "Holliewood & Vine", Pro plan) by Claude through the Chrome
+extension, from the kit below: three logos, one seven-color palette named "Holliewood & Vine", eight font
+styles (Bodoni Moda Regular, Medium, Italic; DM Sans Regular, Medium, Bold; Space Mono Regular, Bold; all
+from Photoroom's built-in list, so the TTFs were not needed) and Brand info with name, description, website
+and brand style. Instagram was left blank until the handle is confirmed. The Brand style field had a stray
+"jones new york" in it and was replaced. Proof: `assets/brand/photoroom-brand-library-2026-11-08.jpg`.
 Every Photoroom fact here was read from Photoroom's own pages on 2026-11-08 (files in `research/`,
 named `help.photoroom.com_*` and `www.photoroom.com_pricing-*`).
 
