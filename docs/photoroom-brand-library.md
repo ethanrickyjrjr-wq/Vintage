@@ -15,6 +15,12 @@ Save worked. Verified by watching the request: Save sends a PATCH to
 `brandWebsiteUrl`, `brandInstagramHandle` (`holliewoodandvine`) and `brandMoreInfo` with our values. So
 the data is on Photoroom's side; the page just does not read it back into the form. Do not retype it
 on sight of empty fields; if a future session needs proof, hook `fetch` and press Save once more.
+Re-checked 2026-11-08 07:52 UTC after Ricky saw the tab empty: logos (3), palette (7) and fonts (8) are
+all present; only Brand info reads back blank. The page fills the form from a client-side store loaded
+once at start-up, and no later tab switch, remount or focus refetches it, so a Save is never shown back
+on the same visit or the next. Each Save still returns 200 with every field. If the values must be
+re-entered, set them through the DOM (React setter plus an input event) and click Save through the DOM;
+screen coordinates drift with the window size and a missed click looks like a save.
 
 ## What Photoroom's Brand Library takes (verified)
 
