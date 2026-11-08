@@ -345,26 +345,27 @@ Strongest first.
 6. **rembg BiRefNet.** Two confirmations. The README now makes bria-rmbg "The default" and its licence "requires a paid agreement for commercial use" (V, verify-03); the cutout handoff already pins `-m birefnet-general -dc`. Etsy renders transparent PNG areas black (V, lane 03); the handoff already sends flattened JPEGs to every channel. Refinements from gaps-03: MIT "BiRefNet_HR" weights, and withoutBG "Apache-2.0" as a second engine.
 7. **Canva Free.** The lane said background removal was "listed under Pro" at "US$ 144 /year for one person"; verify found no such line, and Canva's feature page says "Remove your photo's background for free" (V, verify-03). Canva Free stands; the free quota is U.
 8. **Buffer Free and Instagram Edits.** Buffer Free confirmed: "Connect up to 3 channels", "10 scheduled posts per channel" (V, verify-08); the paid "$5 /month" is "$60 billed yearly" and the monthly price did not render. Nothing touches Instagram Edits.
-9. **Fixed Etsy shipping classes.** Supported by "99 custom shipping profiles" on Shopify (verify-16) and Etsy's rejection of furniture for calculated shipping (gaps-14). Three facts to fold in: the USPS "temporary 8% rate increase ... through January 17, 2027", the "$4 fee" for "Cylindrical rolls" (verify-10), and Etsy's search preference for domestic shipping under $6 (verify-14). Re-check the classes in January 2027.
+9. **Fixed Etsy shipping classes.** Supported by "99 custom shipping profiles" on Shopify (verify-16) and Etsy's rejection of furniture for calculated shipping (gaps-14). Three facts to fold in: the USPS "temporary 8% rate increase ... through January 17, 2027", the "$4 fee" for "Cylindrical rolls" (lane 10, gaps-14), and Etsy's search preference for domestic shipping under $6 (lane 14). Re-check the classes in January 2027.
 10. **Shopify as hub: no.** Confirmed: Marketplace Connect says "New connections to Etsy can't be made at this time" (V, gaps-14). The free Shopify-to-eBay leg is still worth a test once the store exists, against whatever crosslister Ricky picks.
+11. **No offers as the brand.** Lane 16 picks Magical Make an Offer, "Free to install" with "1% on paid orders only", and Offerly Pro "$20 / month" once offer sales pass about $2,000 a month (V, lane 16, verify-16). `docs/round-d-synthesis.md` kept no-offers as the brand and cut offers from day 30, so neither app is in a ladder. Ricky decides.
 
 ## What the research could not read
 
 - WorthPoint, worthpoint.com/pricing, 403 on every fetch. Assumed Apple's in-app list: "Price Guide Monthly $26.99", "MARKS Premium Monthly $19.99". Confirm on the web before buying.
 - Flyp, flyp.com, 403. Assumed unavailable; a reported "$9/month" with a "100-day free trial" and Etsy support is unverified.
 - Mavin, 130point, Replacements.com, 925-1000.com, Barnebys, Heritage, Audiogon, LiveAuctioneers price results (dead URL), Wright past auctions: bot walls or 404s. Assumed free to browse; none relied on.
-- Etsy legal and handbook pages: etsy.com/legal/api, creativity standards, the title-guidance article, the shop set-up fee screen, all 403. Assumed no clause bars third-party listing tools, title guidance "less than 15 words", and a one-time set-up fee of unknown amount.
+- Etsy legal and handbook pages: etsy.com/legal/api, creativity standards and the title-guidance article, all 403. Assumed no clause bars third-party listing tools and title guidance "less than 15 words". The fees help page loaded but prints no set-up fee amount: "If applicable, the set-up fee will be displayed and charged as part of the shop set-up process" (gaps-14).
 - eBay help pages behind captcha: image specs, International Shipping caps, ShipCover rates, the US Seller Hub "Multiple listings from photos". Image specs rest on the lane's read; EIS caps and ShipCover rates are U; the bulk tool was read on the UK page only.
 - Shopify Sidekick help page, 403. Assumed the description writer is on Basic; the marketing page says "BUILT INTO EVERY STORE".
 - Make.com and ManyChat pricing, 403. Assumed free tiers exist; prices unknown; neither is in a ladder.
 - Poshmark fee policy, Facebook Marketplace fees, TikTok Shop fees, Ruby Lane fees, Whatnot's US tier table, EBTH commission: unread. None of these channels is in the plan.
-- Monthly-billing toggles that did not render: Swiftlisted, VendorSnap, EverBee, EHunt, Photoroom, Pixelcut, PicWish, Shippo, CapCut, Veed, Epidemic Sound, Buffer paid per channel, Grammarly, Superwhisper. Yearly figures are used as written; monthly is U.
+- Monthly-billing toggles that did not render: Swiftlisted, VendorSnap, EverBee, EHunt, Pixelcut, PicWish, Shippo, CapCut, Veed, Epidemic Sound, Buffer paid per channel, Grammarly, Superwhisper. Yearly figures are used as written; monthly is U. Photoroom's monthly price is in the page's JSON-LD, "Pro (monthly)" "12.99" USD (verify-03).
 - Canva free background-remover quota, Google Photos Magic Editor quotas, Text Blaze free snippet count: U.
 - CapCut terms of service, 404, 500 and 502. Assumed library music is not cleared for a shop; none used.
 - MaxSold, 403. The 18% premium came from its help desk; Lee or Collier activity unknown.
 - HiBid and Invaluable alert settings, ShopGoodwill saved-search email, Facebook Marketplace saved-search alerts: unread. Assumed alerts exist and are set by hand.
 - Florida DOR registration fee and Collier County receipt fee: no page states them.
-- Judge.me Forever Free Etsy sync: the listing says "Sync with Shop App, Etsy, Amazon"; whether it shows Hollie's shop reviews is untested. If not, Reputon "$6.99 / month".
+- Judge.me Forever Free Etsy sync: the listing says "Sync with Shop App, Etsy, Amazon"; whether it shows Hollie's shop reviews is untested. If not, Reputon "$6.99 / month" (lane 16, gaps-16).
 - Secnd's eBay connection, Vendoo's trial card requirement, QuickSync's free-tier eligibility, Phone Link iPhone photo support: U.
 - Device facts: Clean Up and Apple Visual Intelligence need a qualifying iPhone; NVIDIA Broadcast needs an RTX 2060 or newer. Ricky checks Settings and dxdiag.
 
@@ -375,9 +376,11 @@ Strongest first.
 3. Shopify timing. Open Basic at "$29 USD/mo" yearly now, or hold it until the storefront takes checkout? This decides the about-$50 line.
 4. Offsite Ads. Leave on for 60 days and read attribution, or opt out while under $10,000?
 5. Facebook Marketplace alerts. Accept the Meta-terms risk of Sift or Dibs in Hollie's own browser, or keep Marketplace a phone habit?
-6. Chairish. List furniture, lighting and art over about $300 there at "30% Flat Commission" from 10 listings, with Chairish-managed shipping, or keep every piece on the three channels?
+6. Chairish. List furniture, lighting and art over about $300 there at "30% Flat Commission" from 10 listings, with Chairish-managed shipping, or keep every piece on the three channels? And can its offers be turned off, since the brand rule is no offers?
 7. Hardware. Buy Munbyn RW403B "$79.99" and IPS03 "$39.99" now while the sale holds, or use USPS Label Broker until the first sales?
 8. Which county is the room in? Lee means 0.5% surtax and a "$50" October to March receipt; Collier means no surtax and an unread fee.
+9. Mercari and live selling. Add Mercari under $200 as a fourth channel, hand-delisted because no free crosslister here covers it, and try one Palmstreet live at "a minimum of 20-40 items", or hold the three channels? The social manual skips Whatnot.
+10. Offers on Shopify. Keep no offers as the brand, or install Magical Make an Offer, "Free to install" with "1% on paid orders only"?
 
 ## Sources
 
