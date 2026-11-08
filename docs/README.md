@@ -77,5 +77,5 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 | `3d-capture/`, `demo-photo-sourcing/` | 3D capture docs, photo sourcing lists | [demo-showroom.md](demo-showroom.md), [demo-photo-pack.md](demo-photo-pack.md) |
 | `account-layout-2026-10-29/` | one note | [account-layout.md](account-layout.md) |
 | `vinted-2026-10-30/` | Vinted rules and crosslister support, raw pages plus a README | its README |
-| `tools-2026-11-07/` | 16 lanes on software for every step of the process, each with a verify file (adversarial price re-check) and a gaps file (missing and defunct tools) | [tool-stack.md](tool-stack.md) |
+| `tools-2026-11-07/` | 16 lanes on software for every step of the process, each with a verify file (adversarial price re-check) and a gaps file (missing and defunct tools); `digests/` folds each lane's three files into one corrected view | [tool-stack.md](tool-stack.md) |
 | loose `*.md` in `research/` | pages fetched by `tools/crawl.sh`, named `<host>-<utc>.md` | none |
