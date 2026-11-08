@@ -33,6 +33,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - [photoroom-brand-library.md](photoroom-brand-library.md): the Photoroom Brand Library kit for Holliewood & Vine (logos in `assets/brand/`, palette, fonts, brand info), what Photoroom accepts, and the ten-minute upload card.
 - [../research/instagram-and-marketplaces-2026-11-08.md](../research/instagram-and-marketplaces-2026-11-08.md): what the public `@holliewoodandvine` Instagram, the `holliewoodandvinellc` eBay store and the Depop page showed on 2026-11-08, and what it changes for the Photoroom kit, the social manual, the site and the eBay and Shopify plans.
 - [ebay-photo-studio-handoff.md](ebay-photo-studio-handoff.md): the card for the Windows PC: install, GPU check, first run, daily flow, shopping list, fetching the blocked pages.
+- [ebay-drive-items.md](ebay-drive-items.md): the rule of one Drive folder per eBay item (photos plus `listing.txt`), the script that builds and checks it, and the 2026-11-08 check.
 - `tools/cutout/cutout.py` is the script both describe; `tools/crawl-cloud.sh` is the cloud-session page fetcher the research lanes used.
 
 ## Hire Hollie (Fabulous From Online)

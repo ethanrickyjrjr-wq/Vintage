@@ -1,6 +1,6 @@
 # How to use this document
 
-Each item below is ready to paste into the eBay app: the Title line goes in the title box, the Description block in the description, the Item specifics into eBay's specifics fields. Every ____ is a number from the tape; the number in brackets is the estimate from the photo, close but not a substitute. Replace the [condition] line after you have checked the garment in daylight. Delete the "Before you publish" lines; they are notes for you, not the buyer. Photos for each item are in the folder "2026-11-08 batch images" next to this document.
+Each item below is ready to paste into the eBay app: the Title line goes in the title box, the Description block in the description, the Item specifics into eBay's specifics fields. Every ____ is a number from the tape; the number in brackets is the estimate from the photo, close but not a substitute. Replace the [condition] line after you have checked the garment in daylight. Delete the "Before you publish" lines; they are notes for you, not the buyer. Photos for each item are in the folder "2026-11-08 batch images" next to this document, and each item also has its own folder under "Items" with its photos and this text as listing.txt.
 
 # 1. Liz Claiborne leopard shirt dress
 
