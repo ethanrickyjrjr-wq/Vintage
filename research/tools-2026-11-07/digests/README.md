@@ -1,0 +1,3 @@
+# Lane digests (2026-11-07)
+
+One file per lane, written by a digest agent that read the lane report, its `verify-` file and its `gaps-` file together. Where the verify file refuted or corrected the lane, the digest carries the correction. Each digest has a bottom line, a table of the tools worth keeping with price, free tier, platform, verdict, V/U and source, the picks (use now, pay when it earns it, skip), contradictions with earlier repo decisions, and a "check by hand" list for Ricky's own browser. The lane, verify and gaps files in the parent folder are the raw layer; these are the map. The decision layer is `docs/tool-stack.md`.
