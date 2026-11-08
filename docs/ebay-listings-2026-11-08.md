@@ -106,9 +106,12 @@ Item 6 has no size on the Starlo label. Look for a second tag at the side seam; 
 ## Photo estimates (2026-11-08) and the fill-in workbook
 
 The fill-in sheet Ricky asked for is `C:\Users\ethan\Downloads\Holliewood eBay batch 2026-11-08 - fill in.xlsx`
-(snapshot in `assets/ebay-2026-11-08/fill-in-2026-11-08.xlsx`). Sheet "To fill in": one row per missing fact per
-garment, yellow cells to type into, grey cells carrying the photo estimate and its low/high band. "Inputs" holds the
-three calibration numbers; "Pixels" the raw readings; "Listings" the titles and copy.
+(snapshot in `assets/ebay-2026-11-08/fill-in-2026-11-08.xlsx`), built by `tools/ebay-batch-workbook.py`. Sheet "To fill
+in" (rebuilt 2026-11-08 after Ricky saw the first layout as "7 or more of each": it had one row per missing fact, so every
+garment name repeated 7 to 12 times): one row per garment, measurements across the columns (length, pit to pit, shoulder,
+sleeve, waist, hip, rise, inseam, outseam, leg opening), then fabric, other questions, flaws, comps, price and status. Yellow
+cells to type into, grey cells carrying the photo estimate (type the tape over it), white cells not needed for that piece.
+"Inputs" holds the calibration numbers; "Pixels" the raw readings; "Listings" the titles and copy.
 
 **Method.** Each 1200 px preview was masked and the garment measured in pixels. The scale comes from one object in the
 same plane as the garment: the velvet hanger where it is fully visible (slip dress, shorts, jeans), otherwise the Jeep
