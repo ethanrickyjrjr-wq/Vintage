@@ -412,6 +412,57 @@ for i, row in enumerate(listings, start=2):
 for col, w in zip('ABCDEF', (5, 40, 55, 60, 16, 14)): wl.column_dimensions[col].width = w
 wl[f'A{len(listings) + 3}'] = 'Prices are ballparks from memory, not sold comps. Images: assets/ebay-2026-11-08/ebay/ in the Vintage repo.'; wl[f'A{len(listings) + 3}'].font = font
 
+# ---------------- Other items (not clothing, one row each) ----------------
+wo = wb.create_sheet('Other items')
+OCOLS = ['Item', 'Piece', 'Photos', 'Dimensions to tape', 'Labels and marks to check', 'Condition and flaws', 'Other questions',
+         'Sold comps (3 recent eBay sold)', 'List price', 'Status / eBay URL', 'Notes from the photos', 'Ballpark (unverified)']
+wo.append(OCOLS)
+for c in range(1, len(OCOLS) + 1): wo.cell(1, c).font = head; wo.cell(1, c).fill = headfill; wo.cell(1, c).alignment = Alignment(wrap_text=True, vertical='center')
+wo.freeze_panes = 'C2'
+# (item, piece, photos, dimensions, marks, questions, notes, ballpark)
+others = [
+    (21, 'Dogs in hats at the Louvre, crystal glass wall art', 'art-louvre-dogs', 'H x W x depth', 'Back label: brand, name, SKU; hanger type', 'Is item 45 its box?', 'New: corner protectors and front label still on. Local cut shows shop background; use the Photoroom version.', '$35 to $60'),
+    (22, 'Darling, be daring canvas', 'canvas-darling-be-daring (front, detail)', 'H x W x depth', 'Back label', '', 'Edge rubbing and a white scuff at the lower left corner.', '$15 to $28'),
+    (23, "'It's only sex' black cap", 'cap-its-only-sex', '', 'Inside tags: brand, size, fabric; closure type', '', 'Mannequin and jacket in the local cut; use the Photoroom version.', '$12 to $20'),
+    (24, 'U.S. Army est. 1775 digital camo rope cap', 'cap-us-army', '', 'Inside tags: brand, size; closure; licensed tag?', '', 'Mannequin head in the local cut; use the Photoroom version.', '$12 to $22'),
+    (25, 'Ribbon-rose floral garland or headpiece', 'flowers-dried', 'Length, width', '', 'What is it: headpiece, garland, swag? Comb, clip or wire?', 'Chartreuse satin ribbon roses, lilac organza, chenille and bead sprays.', '$10 to $18'),
+    (26, 'Mr. Peanut on the Kress building, framed print', 'frame-banana-figure (front, front2, detail)', 'Frame H x W; visible print H x W', 'Red signature at the top: read it, search the artist; back label', '', 'White chips on the frame edge, lower left and right side. Shop tag on the frame reads $45.', '$35 to $60'),
+    (27, 'Black-and-white fashion photo, model with horse, framed', 'frame-fashion-photo', 'Frame H x W; image H x W', 'Photographer credit or magazine source on the back or under the mat', '', 'Heavy glare in the photo: reshoot square-on with the lights off.', '$25 to $45'),
+    (28, 'Hand-painted macaw feather, Costa Rica, framed', 'frame-feather-red', 'Frame H x W', "Artist surname (reads Claudio ...)", '', 'Straighten failed on this one: needs the square-on reshoot.', '$20 to $40'),
+    (29, 'Red Porsche 356 C cabriolet photo, black mat', 'frame-porsche-356 (front, detail)', 'Overall H x W; photo H x W', 'Framed or mat only? Photographer or date on the back', '', 'New York plate IMA 356C. Needs the square-on reshoot.', '$20 to $40'),
+    (30, 'Silver Porsche 911 whale tail photo, oak frame', 'frame-porsche-911', 'Frame H x W; photo H x W', 'Photographer or date on the back', '', 'Connecticut plate VYSOK. Stray yellow paper in the local cut; use the Photoroom version.', '$20 to $40'),
+    (31, 'Akiyo Yagi red shisa lion print, signed and numbered, framed', 'frame-shisa-lion (front, front2, detail)', 'Frame H x W; image H x W', 'Edition number (x of 30); technique if written on the back', '', 'Pencil-signed Akiyo Yagi, 2010.7.6. Pink marker on the glass: wipe it. Needs the square-on reshoot.', '$40 to $80'),
+    (32, 'Steam locomotive 3D relief plaque, gold frame', 'frame-train-shadowbox', 'H x W x depth', "Maker's mark on the back; resin or wood?", '', 'White price tag at the bottom shows in the photo: remove it.', '$25 to $45'),
+    (33, "'Trust me, you can dance. - Vodka' print, rose-gold frame", 'frame-trust-me-dance', 'Frame H x W', 'Easel back as well as a hanger?', '', 'Looks like an 8 x 10 print.', '$12 to $22'),
+    (34, 'Wagon Wheel lyrics canvas, black float frame', 'frame-wagon-wheel', 'Frame H x W', '', 'Personalised "Nathan and Meghan - 2016": list cheap, or keep the float frame for the shop?', '', '$10 to $20'),
+    (35, 'Black wavy frame, convex glass, underwater portrait', 'frame-wavy-gold-dress (front, front2, detail)', 'H x W x depth', 'Frame material (resin or wood); is the glass domed?', '', 'Glass reflects the whole shop: reshoot with the lights off, square-on.', '$18 to $35'),
+    (36, 'Ornate gilt rococo frame with river landscape print', 'gold-ornate-landscape', 'Frame H x W; image H x W', 'Metal or resin? Mark on the back; easel or hanger', '', 'Gilt bright; a few dark spots on the left side.', '$25 to $50'),
+    (37, 'Dooney & Bourke signature DB satchel, ivory and navy', 'handbag-dooney-bourke', 'W x H x D; handle drop', 'Inside red-white-blue tag and serial; style name', 'Shoulder strap included? Interior condition and odour', 'Handles darkened; water spotting on the leather corners and trim; canvas clean.', '$45 to $90'),
+    (38, 'Fashion Manor wooden jewelry box, red velvet', 'jewelry-case-open', 'L x W x H', 'Fashion Manor foil label (JCPenney)', 'Velvet bald spots? Clasp works?', 'Photograph it empty; the contents are item 39.', '$20 to $35'),
+    (39, 'Costume jewelry lot from the box', 'jewelry-case-open', '', 'Backs of the cameos and cufflinks (Spain / Toledo?)', 'One lot, or cameos and cufflinks separately? Pull the two disco balls if they are giveaways. Remove the paper price tags.', 'Two cameo brooches, faux pearl circle pin, leaf brooch, pearl cluster earrings, ornate gold-tone buckle brooch, damascene-style cufflinks, leopard acetate cuff, hoop, two mirror balls.', '$25 to $60'),
+    (40, 'Navy perforated leather driving loafers, EU 45', 'loafers-navy (front, side, sole)', 'Insole length; width at the ball', 'Brand on the footbed or tongue (reads Mida); size stamp', '', 'Sole says 45 and Mocassino; orange heel insert; chalky dust on the soles: clean before the reshoot.', '$30 to $55'),
+    (41, 'Stacy Adams tan bit loafers, white sneaker sole', 'loafers-tan (front, side, sole)', 'Insole length', 'Size and style name inside', '', 'Lightly worn: soles bright white with faint marks. Photoroom used grey behind the white soles.', '$35 to $60'),
+    (42, 'Mozone ceramic pipe mug', 'mug-pipe-mozone', 'Height; width handle to rim', 'Base stamp', 'Residue in the bowl? Chips on the rim?', 'List under Tobacciana > Pipes; tobacco wording only.', '$18 to $35'),
+    (43, 'Small oval black frame, convex glass, roses print', 'oval-floral', 'H x W', 'Back: wood or plastic', '', 'Paper price tag hanging off it: remove.', '$15 to $30'),
+    (44, 'La Ermita, Cali, Colombia ceramic relief plaque', 'plaque-church-ceramic', 'H x W x depth', 'Signature on the back', '', 'Titled by hand at the top; metal hanging ring; string tag to remove.', '$25 to $45'),
+    (45, 'Black backless halter tuxedo vest, blue paisley front', 'vest-black-halter', 'Front length; waist strap min to max', 'Size and brand label; fabric', 'Front not photographed: shoot the paisley side on the form.', 'Hook-and-loop neck, elastic waist strap with slide buckle.', '$12 to $22'),
+    (46, 'Crystal Glass wall art box', 'wallart-crystal-glass', '', '', 'Is this the box for item 21, or a second boxed piece? Open it.', 'Box reads "Ready to hang wall art, Crystal Glass, Verre en cristal"; corner crushed.', ''),
+]
+r = 2
+for item, piece, photos, dims, marks, q, notes, ball in others:
+    vals = [item, piece, photos, dims or None, marks or None, None, q or None, None, None, None, notes or None, ball or None]
+    for ci, v in enumerate(vals, start=1):
+        c_ = wo.cell(r, ci); c_.value = v; c_.font = font; c_.border = box; c_.alignment = wrap
+        if ci in (4, 5, 6, 7, 8, 9, 10) and (v or ci in (6, 8, 9, 10)): c_.fill = yellow
+        elif item % 2 == 0: c_.fill = band
+    wo.row_dimensions[r].height = 80
+    r += 1
+wo[f'A{r+1}'] = ('Nothing here was measured; yellow is for you. Photos: rough local cut-outs are in Drive "2026-11-08 other items - rough local cuts"; the clean white set is the Photoroom batch '
+                 '"Frames Shoes Vest 11 08". Five frames still need a square-on reshoot: feather, Porsche 356, shisa lion, darling canvas, wavy frame. Paste-ready copy is in the listings document, items 21 to 45.')
+wo.merge_cells(f'A{r+1}:L{r+2}'); wo[f'A{r+1}'].alignment = wrap; wo[f'A{r+1}'].font = font
+for ci, w in enumerate((5, 34, 24, 18, 30, 18, 30, 22, 9, 22, 46, 12), start=1): wo.column_dimensions[get_column_letter(ci)].width = w
+wo.row_dimensions[1].height = 32
+
 wb.calculation.fullCalcOnLoad = True
 for o in OUT: wb.save(o); print('saved', o)
 # python check of the estimates (what Excel will show)

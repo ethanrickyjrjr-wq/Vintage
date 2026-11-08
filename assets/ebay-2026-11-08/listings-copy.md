@@ -714,3 +714,646 @@ Ships from Southwest Florida, smoke-free.
 
 ## Before you publish
 - Read the care label; check whether it is lined.
+
+# Other items from the same shoot (not clothing)
+
+Items 21 to 45 are the frames, shoes, bag, jewelry box, caps and oddments shot in the shop on 2026-11-07. None of them was measured: every ____ is a tape number you fill in, and the "Before you publish" lines are the labels and marks to check. Rough local cut-outs are in the Drive folder "2026-11-08 other items - rough local cuts"; the clean white-background set is the Photoroom batch "Frames Shoes Vest 11 08" in the Holliewood & Vine space (download from there before listing). Prices are ballparks from memory, not sold comps.
+
+# 21. Dogs at the Louvre crystal glass wall art
+
+## Title
+Dogs in Bowler Hats at the Louvre Crystal Glass Wall Art Ready to Hang New
+
+## Description
+Five dogs in bowler and top hats sit in a row in front of the Louvre in this glossy "Crystal Glass" ready-to-hang wall art. Photo-quality print under a thick glass face with a natural wood edge. Still has its corner protectors and the manufacturer's label on the front: never hung.
+
+Condition: new, unused, corner protectors still on. [Note any chip or scratch on the glass edge.]
+
+Size: ____ x ____ in, about ____ in deep. Hanging hardware on the back: [describe].
+
+Ships from Southwest Florida, boxed and corner-protected. Large and heavy: shipping is calculated.
+
+## Item specifics
+- Type: Wall Art, Glass Print
+- Subject: Dogs, Paris, Louvre
+- Style: Modern, Whimsical
+- Color: Beige, Brown, Natural wood
+- Material: Glass, Wood
+- Features: Ready to Hang
+- Item Height / Width: ____ in / ____ in
+- Condition: New
+
+## Before you publish
+- Tape height, width and depth. Photograph the back label (brand, item name, SKU) and the hanger.
+- The local cut-out shows shop background through the frame; use the Photoroom version.
+- Item 45 may be this piece's box. Check before listing it separately.
+- Ballpark: $35 to $60. Shipping will decide if it is worth listing online or selling local.
+
+# 22. Darling, be daring canvas
+
+## Title
+Darling Be Daring Gold Foil Canvas Wall Art Black White Glam Sequin Portrait
+
+## Description
+Stretched canvas print: a black-and-white glamour portrait of a woman in a sequined gown and chandelier earrings on a grey ground, with "darling, BE DARING" in metallic gold foil script across the bottom. Hangs without a frame.
+
+Condition: pre-owned. Light rubbing on the edges and a small white scuff at the lower left corner, see photo. Print surface clean.
+
+Size: ____ x ____ in, ____ in deep.
+
+## Item specifics
+- Type: Canvas Print
+- Theme: Fashion, Quotes & Sayings
+- Color: Grey, Gold, Black, White
+- Material: Canvas, Wood stretcher
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Tape it. Photograph the back for a brand label and the hanger.
+- Photograph the corner scuffs in daylight.
+- Ballpark: $15 to $28.
+
+# 23. "It's only sex" cap
+
+## Title
+It's Only Sex Embroidered Black Baseball Cap Pink Blue Letters Novelty Hat
+
+## Description
+Black baseball cap with "IT'S ONLY SEX" embroidered across the front, pink top line and blue bottom line, curved brim. Novelty cap.
+
+Condition: pre-owned, [clean / note any sweat marks inside the band].
+
+Size: [one size / fitted ____]. Closure: [snapback / strapback / fitted].
+
+## Item specifics
+- Type: Baseball Cap
+- Department: Unisex Adult
+- Color: Black
+- Theme: Novelty, Humor
+- Features: Embroidered
+- Brand / Size / Closure: from the inside tags
+
+## Before you publish
+- Photograph the inside tags: brand, size, fabric. Confirm the closure type.
+- The local cut-out shows the mannequin and jacket; use the Photoroom version.
+- Ballpark: $12 to $20.
+
+# 24. U.S. Army digital camo cap
+
+## Title
+US Army Est 1775 Digital Camo Flat Bill Rope Brim Cap Embroidered Hat
+
+## Description
+Five-panel cap in grey-green digital camouflage with "U.S. ARMY EST. 1775" embroidered in black, a black rope across the brim and a flat bill. [Official licensed product if the tag says so.]
+
+Condition: pre-owned, [clean / note wear on the sweatband].
+
+Size: [one size]. Closure: [snapback / strapback].
+
+## Item specifics
+- Type: Baseball Cap, Rope Hat
+- Department: Unisex Adult
+- Color: Grey, Green, Camouflage
+- Theme: Military, U.S. Army
+- Features: Embroidered, Flat Bill, Rope Brim
+- Brand / Size / Closure: from the inside tags
+
+## Before you publish
+- Photograph the inside tags and the closure. Say "officially licensed" only if the tag says so.
+- Use the Photoroom version (mannequin head in the local cut).
+- Ballpark: $12 to $22.
+
+# 25. Ribbon-rose floral garland
+
+## Title
+Artificial Ribbon Rose Floral Garland Headpiece Chartreuse Lilac Organza Boho
+
+## Description
+Handmade artificial floral piece: chartreuse satin ribbon roses, lilac organza loops, chenille and bead sprays on a curved base. [Headpiece / garland / mantel swag: say what it is once checked.]
+
+Condition: pre-owned, [note any crushed petals or loose threads].
+
+Length ____ in, width ____ in.
+
+## Item specifics
+- Type: [Headpiece / Garland]
+- Color: Green, Purple
+- Material: Satin ribbon, Organza, Chenille
+- Occasion: Wedding, Party, Decor
+- Handmade: Yes
+- Condition: Used
+
+## Before you publish
+- Decide what it is (is there a comb, clip or wire loop?). Tape the length.
+- Ballpark: $10 to $18.
+
+# 26. Mr. Peanut on the Kress building, framed print
+
+## Title
+Mr Peanut Fire Breathing Dancing on Kress Building Pop Art Print Black Frame
+
+## Description
+Pop-art print of a monocled Mr. Peanut in a top hat, cane raised, breathing fire as he dances on the roof of a Kress department store, over a distressed orange and cream ground. Matte black wood frame, glass front. Red marker signature at the top of the print.
+
+Condition: pre-owned. Small white chips on the frame edge at the lower left and right side, see photo. Print and glass clean.
+
+Frame ____ x ____ in; print about ____ x ____ in.
+
+## Item specifics
+- Type: Art Print
+- Subject: Mr. Peanut, Advertising, Architecture
+- Style: Pop Art, Street Art
+- Color: Orange, Black, Yellow
+- Material: Paper, Wood frame, Glass
+- Signed: [Yes, by the artist in red / describe]
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Read the red signature and search the artist; it may change the title and price. Check the back for a label.
+- Tape the frame and the visible print. Photograph the chips.
+- The shop tag on the frame says $45; remove it for the photos.
+- Ballpark: $35 to $60.
+
+# 27. Framed black-and-white fashion photograph
+
+## Title
+Black White Fashion Photo Print Model Heels with Horse Matted Black Wood Frame
+
+## Description
+Black-and-white fashion photograph: a model in a one-shoulder bodysuit, strappy heels and dark lipstick beside the legs of a dark horse on a wet stone terrace. Cream mat, stepped black wood frame, glass front.
+
+Condition: pre-owned. Glass and mat clean [check the mat for foxing]; frame [note any rubs].
+
+Frame ____ x ____ in; image about ____ x ____ in.
+
+## Item specifics
+- Type: Photograph / Print
+- Subject: Fashion, Horse
+- Color: Black, White
+- Material: Paper, Wood frame, Glass
+- Photographer: [from the back or the print margin]
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Look for a photographer credit or magazine source on the back or under the mat.
+- Shoot it square-on with no reflections; the current photo has glare.
+- Ballpark: $25 to $45.
+
+# 28. Hand-painted feather, Costa Rica
+
+## Title
+Hand Painted Feather Blue Gold Macaw Parrot Costa Rica Signed Claudio Framed
+
+## Description
+A natural feather hand-painted with a blue-and-gold macaw on a branch, with green foliage at the tip, mounted on white and framed under glass in a slim gold-tone frame. Signed "Costa Rica" at the left and by the artist at the right.
+
+Condition: pre-owned, [glass and mount clean / note].
+
+Frame ____ x ____ in.
+
+## Item specifics
+- Type: Folk Art, Painting on feather
+- Subject: Birds, Macaw
+- Origin: Costa Rica
+- Signed: Yes
+- Color: Blue, Yellow, Green, Gold
+- Material: Feather, Paint, Glass, Metal frame
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Read the artist's surname (starts Claudio ...) and spell it right in the title.
+- Tape the frame. Check the hanger. This one still needs the square-on reshoot.
+- Ballpark: $20 to $40.
+
+# 29. Red Porsche 356 C photo, matted
+
+## Title
+Vintage Photo Red Porsche 356 C Cabriolet New York Plate Black Mat Framed
+
+## Description
+Color photograph of a red Porsche 356 C cabriolet, top down, chrome bumper guards, New York plate "IMA 356C", parked on gravel under trees. Black mat with a gold bevel. [Framed in ____ / mat only.]
+
+Condition: pre-owned. Photo bright; [mat corners / frame: describe].
+
+Overall ____ x ____ in; photo ____ x ____ in.
+
+## Item specifics
+- Type: Photograph
+- Subject: Porsche 356, Classic Cars
+- Color: Red, Black
+- Material: Photo paper, Mat board, [Glass]
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Is it framed or mat only? Photograph the back; look for a photographer or date.
+- This one still needs the square-on reshoot.
+- Ballpark: $20 to $40; Porsche buyers pay for original photos.
+
+# 30. Porsche 911 photo in oak frame
+
+## Title
+Vintage Photo Print Silver Porsche 911 Whale Tail Stone Cottages Oak Frame
+
+## Description
+Color photograph of a silver Porsche 911 with the whale-tail spoiler and flared arches, parked in front of honey-stone cottages, Connecticut plate "VYSOK". Ribbed oak frame, no mat.
+
+Condition: pre-owned. Photo bright; frame [describe rubs].
+
+Frame ____ x ____ in; photo ____ x ____ in.
+
+## Item specifics
+- Type: Photograph
+- Subject: Porsche 911, Classic Cars
+- Color: Silver, Brown
+- Material: Photo paper, Wood frame, Glass
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Photograph the back. Look for a photographer or date.
+- The local cut has a stray yellow paper at the bottom; use the Photoroom version.
+- Ballpark: $20 to $40.
+
+# 31. Akiyo Yagi shisa lion print
+
+## Title
+Akiyo Yagi Red Shisa Lion Okinawa Art Print Signed Numbered /30 2010 Framed
+
+## Description
+Red Okinawan shisa lion with curling mane and bared teeth on textured washi, with calligraphy and a red artist's seal. Pencil-signed Akiyo Yagi, dated 2010.7.6 and numbered out of 30 in the margin. White mat, slim black frame, glass front.
+
+Condition: pre-owned. Print clean; [pink marker mark on the glass wipes off].
+
+Frame ____ x ____ in; image ____ x ____ in.
+
+## Item specifics
+- Artist: Akiyo Yagi
+- Type: Print, limited edition
+- Subject: Shisa, Okinawa, Lion
+- Style: Japanese Folk Art
+- Signed / Numbered: Yes / ____ of 30
+- Year: 2010
+- Material: Washi paper, Wood frame, Glass
+- Condition: Used
+
+## Before you publish
+- Read the edition number exactly and the technique if written on the back (stencil, woodblock or screen print).
+- Wipe the pink marker off the glass. Still needs the square-on reshoot.
+- Ballpark: $40 to $80.
+
+# 32. Steam locomotive relief plaque
+
+## Title
+3D Steam Locomotive Train Railroad Crossing Relief Wall Plaque Shadow Box Framed
+
+## Description
+Hand-painted three-dimensional relief of a black steam locomotive and tender on the rails, with a railroad crossing sign, signal lantern, crossed flags and a crossing gate against a woodgrain ground. Mustard-gold wooden frame. [Resin / carved wood.]
+
+Condition: pre-owned, [note chips to the raised details].
+
+____ x ____ in, ____ in deep.
+
+## Item specifics
+- Type: Wall Plaque, Shadow Box
+- Subject: Trains, Railroad
+- Color: Gold, Black, Brown
+- Material: [Resin / Wood]
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Photograph the back for a maker's mark. Tape it.
+- The white price tag at the bottom shows in the photo; remove it.
+- Ballpark: $25 to $45.
+
+# 33. "Trust me, you can dance" print
+
+## Title
+Trust Me You Can Dance Vodka Gold Foil Print Rose Gold Metal Frame Bar Sign
+
+## Description
+"Trust me, you can dance. - Vodka" in gold foil serif capitals on white, in a rose-gold metal frame with a white mat. Bar cart or kitchen sign.
+
+Condition: pre-owned, [glass clean / note scratches].
+
+Frame ____ x ____ in (looks like an 8 x 10 print).
+
+## Item specifics
+- Type: Framed Print, Sign
+- Theme: Quotes & Sayings, Bar
+- Color: Gold, White, Rose Gold
+- Material: Paper, Metal frame, Glass
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Tape it. Check whether it has an easel back as well as a hanger.
+- Ballpark: $12 to $22.
+
+# 34. Wagon Wheel lyrics canvas
+
+## Title
+Wagon Wheel Old Crow Medicine Show Lyrics Spiral Canvas Art Black Float Frame
+
+## Description
+Canvas print of the Wagon Wheel lyrics set in a spiral around a round photo, titled "Wagon Wheel, Old Crow Medicine Show", in a black floater frame. Personalised at the bottom "Nathan and Meghan - 2016".
+
+Condition: pre-owned, [clean / note].
+
+Frame ____ x ____ in.
+
+## Item specifics
+- Type: Canvas Print
+- Theme: Music, Lyrics
+- Color: White, Black
+- Material: Canvas, Wood float frame
+- Personalised: Yes (names and 2016)
+- Condition: Used
+
+## Before you publish
+- It carries someone else's names, so it will sell low or as a frame. Consider keeping the float frame for the shop instead.
+- Ballpark: $10 to $20.
+
+# 35. Wavy black frame with underwater portrait
+
+## Title
+Black Wavy Scalloped Frame Convex Glass Gothic Woman Underwater Feather Gown Art
+
+## Description
+Matte black frame with a triple wavy scalloped border and a domed convex glass, holding an art print of a dark-haired woman in a black feathered gown floating underwater, eyes closed. Gothic, romantic, very on trend.
+
+Condition: pre-owned, [frame clean / note rubs; glass clear].
+
+____ x ____ in, ____ in deep.
+
+## Item specifics
+- Type: Framed Print
+- Style: Gothic, Romantic
+- Color: Black
+- Material: [Resin / Wood] frame, Glass
+- Features: Convex Glass, Wavy Frame
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Is the glass truly domed? Is the frame resin or wood? Tape it.
+- Shoot it with the room lights off; the glass reflects the whole shop. Still needs the square-on reshoot.
+- Ballpark: $18 to $35.
+
+# 36. Ornate gilt rococo frame with landscape
+
+## Title
+Ornate Gold Rococo Pierced Scroll Frame Dutch River Cottage Landscape Print
+
+## Description
+Small gilt frame in the rococo taste: pierced scrolling corners, shell and flower crests, beaded inner border. Holds a moody river landscape print with a thatched cottage, poplars and figures at the water. Glass front.
+
+Condition: pre-owned. Gilt bright with a few dark spots on the left side, see photo. [Easel back / hanger.]
+
+Frame ____ x ____ in; image ____ x ____ in.
+
+## Item specifics
+- Type: Framed Print
+- Style: Rococo, Baroque, Victorian
+- Color: Gold
+- Material: [Cast metal / Resin], Glass
+- Subject: Landscape, River, Cottage
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+## Before you publish
+- Is the frame metal (cold, heavy) or resin? Photograph the back and any mark.
+- Ballpark: $25 to $50; the frame carries the value.
+
+# 37. Dooney & Bourke signature satchel
+
+## Title
+Dooney & Bourke Signature DB Logo Ivory Navy Satchel Tan Leather Trim Zip Top
+
+## Description
+Dooney & Bourke satchel in the ivory signature coated canvas with the navy DB monogram, tan vachetta leather trim, double rolled handles, brass-tone buckles on the front straps, leather-capped corners and a zip top. Side rings for a shoulder strap.
+
+Condition: pre-owned. Handles have darkened with use and the leather corners and trim show water spotting, see photos. Canvas clean. [Interior: describe. Shoulder strap: included / not included.]
+
+Measurements: ____ in wide x ____ in tall x ____ in deep; handle drop ____ in.
+
+## Item specifics
+- Brand: Dooney & Bourke
+- Style: Satchel
+- Color: Ivory, Navy, Tan
+- Exterior Material: Coated Canvas, Leather
+- Pattern: Signature Logo, Monogram
+- Closure: Zip
+- Hardware: Brass-tone
+- Features: Double Handles, Leather Trim
+- Condition: Used, see photos
+
+## Before you publish
+- Photograph the inside red-white-blue tag and the serial, the lining and any stains. Look up the style name from the tag.
+- Say whether the shoulder strap is there.
+- Ballpark: $45 to $90 depending on how the leather reads in daylight.
+
+# 38. Fashion Manor jewelry box
+
+## Title
+Vintage Fashion Manor Wooden Jewelry Box Red Velvet Lining Hinged Lid Ring Rolls
+
+## Description
+Vintage Fashion Manor (JCPenney) jewelry box: light wood case with a hinged lid, red velvet lining with ring rolls and pin slots in the lid, open tray below, metal clasp. Original foil label inside.
+
+Condition: pre-owned, [velvet bright / note bald spots; clasp works].
+
+____ x ____ x ____ in.
+
+## Item specifics
+- Brand: Fashion Manor
+- Type: Jewelry Box
+- Material: Wood, Velvet
+- Color: Natural, Red
+- Vintage: Yes
+- Condition: Used
+
+## Before you publish
+- Photograph it empty: the costume jewelry is item 39.
+- Ballpark: $20 to $35.
+
+# 39. Costume jewelry lot (from the jewelry box)
+
+## Title
+Vintage Costume Jewelry Lot Cameo Brooches Faux Pearl Cufflinks Leopard Cuff
+
+## Description
+Lot of vintage and vintage-style costume jewelry: two cameo brooches (one rhinestone-set, one gold-tone frame on coral), a faux pearl circle pin, a gold-tone leaf brooch with pearl, faux pearl cluster earrings, an ornate gold-tone buckle brooch, a pair of black and gold damascene-style cufflinks, a leopard-print acetate cutout cuff bracelet, a gold-tone hoop and two small mirror disco balls. ____ pieces in all.
+
+Condition: pre-owned, [note missing stones, worn plating, bent pins].
+
+## Item specifics
+- Type: Mixed Lot
+- Style: Vintage, Brooch, Cuff, Cufflinks
+- Material: Gold-tone metal, Faux pearl, Acetate, Rhinestone
+- Condition: Used
+
+## Before you publish
+- Decide: one lot or the cameos and cufflinks on their own. Check the backs for marks (cufflinks may say Spain or Toledo).
+- The disco balls are the shop's giveaway; pull them if they are not for sale. Remove the paper price tags.
+- Ballpark: $25 to $60 as a lot.
+
+# 40. Navy perforated driving loafers
+
+## Title
+Mida Navy Blue Perforated Leather Driving Moccasin Loafers Men's EU 45 US 11.5
+
+## Description
+Navy blue perforated leather driving moccasins with whip-stitched toe seams, brown anatomic footbed and a navy rubber sole with an orange heel insert and "Mocassino" badge. Slip-resistant sole. Size 45 on the sole.
+
+Condition: pre-owned. Light wear to the soles and a few scuffs, see photos; footbeds [describe].
+
+Insole length ____ in. Width across the ball ____ in.
+
+## Item specifics
+- Brand: [Mida, confirm from the insole]
+- Style: Driving Moccasins, Loafers
+- Department: Men
+- Size: EU 45 (about US 11.5 to 12)
+- Color: Navy Blue
+- Upper Material: Leather (perforated)
+- Sole: Rubber
+- Features: Anatomic footbed, Slip resistant
+- Condition: Used
+
+## Before you publish
+- Read the brand off the footbed or tongue (the red logo looks like Mida, Ukrainian). Measure the insole for the US conversion.
+- Clean the soles; the sole photo shows chalky dust.
+- Ballpark: $30 to $55.
+
+# 41. Stacy Adams tan bit loafers
+
+## Title
+Stacy Adams Tan Cognac Leather Bit Loafers White Sneaker Sole Men's Size ____
+
+## Description
+Stacy Adams hybrid loafers: cognac tan burnished leather upper with a silver-tone crest bit on the strap, apron toe, and a white lightweight sneaker sole with the Stacy Adams crest. Padded brown footbed with the Stacy Adams logo.
+
+Condition: pre-owned, lightly worn: soles bright white with faint marks, uppers unmarked, see photos.
+
+Size ____ (from the inside). Insole length ____ in.
+
+## Item specifics
+- Brand: Stacy Adams
+- Style: Bit Loafers, Hybrid Dress Sneaker
+- Department: Men
+- Size: ____
+- Color: Tan, Cognac
+- Upper Material: Leather
+- Sole: White rubber
+- Condition: Used, lightly worn
+
+## Before you publish
+- Read the size and style name inside. Photograph the size stamp.
+- White soles were shot on grey in Photoroom so the edge reads; keep that version.
+- Ballpark: $35 to $60.
+
+# 42. Mozone ceramic pipe mug
+
+## Title
+Mozone Ceramic Pipe Mug Brown Glaze Novelty Tobacco Pipe Coffee Cup Cartoon Girl
+
+## Description
+Novelty ceramic mug with a built-in tobacco pipe: brown glossy glaze, pipe bowl at the base of the handle and a mouthpiece at the top, "MOZONE" and a cartoon girl in pigtails on the front.
+
+Condition: pre-owned, [no chips or cracks / describe]. Unused: [yes / no].
+
+____ in tall, ____ in wide handle to rim.
+
+## Item specifics
+- Type: Pipe Mug, Novelty Mug
+- Brand: Mozone
+- Material: Ceramic
+- Color: Brown
+- Condition: Used
+
+## Before you publish
+- Check the bowl for residue and the rim for chips; photograph the base stamp.
+- List under Collectibles > Tobacciana > Pipes and keep the wording to tobacco; anything else gets the listing pulled.
+- Ballpark: $18 to $35.
+
+# 43. Small oval frame with roses, convex glass
+
+## Title
+Vintage Small Oval Black Frame Convex Bubble Glass Roses Floral Still Life Print
+
+## Description
+Small vintage oval frame in black with a stepped profile and domed convex glass over a dark floral still life print of red and pink roses. Hangs or sits.
+
+Condition: pre-owned, [frame edge rubs / glass clear].
+
+____ x ____ in.
+
+## Item specifics
+- Type: Framed Print
+- Shape: Oval
+- Color: Black
+- Material: [Wood / Plastic], Glass
+- Features: Convex Glass
+- Vintage: Yes
+- Condition: Used
+
+## Before you publish
+- Remove the paper price tag. Tape it, check the back.
+- Ballpark: $15 to $30.
+
+# 44. La Ermita ceramic plaque, Cali
+
+## Title
+La Ermita Cali Colombia Ceramic Relief Wall Plaque Gothic Church Handmade Art
+
+## Description
+Hand-built ceramic wall plaque of La Ermita, the Gothic church in Cali, Colombia, in white clay with green glaze washed into the spires and windows. Titled by hand "La Ermita, Cali, Colombia" at the top, with a metal hanging ring.
+
+Condition: pre-owned, [no chips / describe].
+
+____ x ____ in, ____ in deep.
+
+## Item specifics
+- Type: Wall Plaque
+- Subject: Church, Architecture, Cali
+- Origin: Colombia
+- Material: Ceramic
+- Color: White, Green
+- Handmade: Yes
+- Condition: Used
+
+## Before you publish
+- Photograph the back for a signature. Remove the string tag.
+- Ballpark: $25 to $45.
+
+# 45. Black halter tuxedo vest, paisley front
+
+## Title
+Men's Black Backless Halter Tuxedo Vest Blue Paisley Jacquard Front Adjustable
+
+## Description
+Backless halter-style tuxedo vest: royal blue and black paisley jacquard front, black back strap with a hook-and-loop neck fastening and an adjustable elastic waist strap with a slide buckle. Formalwear, prom or wedding.
+
+Condition: pre-owned, [clean / note].
+
+Size: ____ (label). Front length ____ in, waist strap ____ to ____ in.
+
+## Item specifics
+- Department: Men
+- Type: Tuxedo Vest, Backless
+- Color: Blue, Black
+- Pattern: Paisley
+- Material: [from the label]
+- Features: Adjustable
+- Size: ____
+- Condition: Used
+
+## Before you publish
+- Only the back was photographed: shoot the paisley front on the form. Photograph the size and brand label.
+- Ballpark: $12 to $22.
