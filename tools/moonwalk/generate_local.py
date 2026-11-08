@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 import gc
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -17,6 +18,7 @@ import time
 import torch
 from diffusers import BitsAndBytesConfig, WanAnimate2DistilledModularPipeline
 from diffusers.modular_pipelines.wan_animate_2.encoders import get_t5_prompt_embeds
+from diffusers.modular_pipelines.wan_animate_2.modular_blocks_wan_animate_2_distilled import WanAnimate2DistilledBlocks
 from diffusers.utils import export_to_video, load_image, load_video
 from transformers import BitsAndBytesConfig as TextQuantization
 from transformers import AutoTokenizer, UMT5EncoderModel
@@ -25,7 +27,8 @@ from local_attention import configure
 
 
 MODEL = "Wan-AI/Wan2.2-Animate-2-14B-Distilled-Diffusers"
-ROOT = Path(__file__).resolve().parents[2]
+REVISION = os.environ.get("MOONWALK_MODEL_REVISION", "main")
+ROOT = Path(os.environ.get("MOONWALK_ROOT", Path(__file__).resolve().parents[2]))
 ASSETS = ROOT / "assets" / "moonwalk"
 REFERENCE_PROMPT = (
     "The central dancer moonwalks backward in profile, with alternating raised "
@@ -35,19 +38,19 @@ REFERENCE_PROMPT = (
 
 
 def prompt_embeddings(prompt):
-    fingerprint = hashlib.sha256((MODEL + prompt + REFERENCE_PROMPT).encode()).hexdigest()[:16]
+    fingerprint = hashlib.sha256((MODEL + REVISION + prompt + REFERENCE_PROMPT).encode()).hexdigest()[:16]
     cache = ROOT / ".venv" / "moonwalk-local" / f"prompt-{fingerprint}.pt"
     if cache.exists():
         return torch.load(cache, map_location="cuda", weights_only=True)
     print("Encoding prompts with 4-bit T5.", flush=True)
     encoder = UMT5EncoderModel.from_pretrained(
-        MODEL, subfolder="text_encoder", torch_dtype=torch.bfloat16,
+        MODEL, revision=REVISION, subfolder="text_encoder", torch_dtype=torch.bfloat16,
         quantization_config=TextQuantization(
             load_in_4bit=True, bnb_4bit_quant_type="nf4",
             bnb_4bit_compute_dtype=torch.bfloat16, bnb_4bit_use_double_quant=True,
         ), device_map={"": "cuda:0"},
     )
-    tokenizer = AutoTokenizer.from_pretrained(MODEL, subfolder="tokenizer")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL, revision=REVISION, subfolder="tokenizer")
     with torch.no_grad():
         embeds = {
             "prompt_embeds": get_t5_prompt_embeds(encoder, tokenizer, prompt, 512, "cuda"),
@@ -81,14 +84,18 @@ def main():
     prompt = (ASSETS / "prompt.txt").read_text(encoding="utf-8")
     embeds = prompt_embeddings(prompt)
     print("Loading 4-bit motion-transfer model; reference cache stays on CPU.", flush=True)
-    pipe = WanAnimate2DistilledModularPipeline.from_pretrained(MODEL)
-    del pipe.blocks.sub_blocks["text_encoder"]
+    blocks = WanAnimate2DistilledBlocks()
+    del blocks.sub_blocks["text_encoder"]
+    pipe = WanAnimate2DistilledModularPipeline(
+        blocks=blocks, pretrained_model_name_or_path=MODEL, revision=REVISION,
+    )
     pipe.load_components(
         names=["image_encoder", "vae", "scheduler", "transformer"],
-        dtype=torch.bfloat16, revision=None,
+        dtype=torch.bfloat16, revision=REVISION,
         quantization_config={"transformer": BitsAndBytesConfig(
             load_in_4bit=True, bnb_4bit_quant_type="nf4",
             bnb_4bit_compute_dtype=torch.bfloat16, bnb_4bit_use_double_quant=True,
+            llm_int8_skip_modules=["text_embedding", "time_embedding", "time_projection", "img_emb", "head"],
         )},
         device_map={"transformer": {"": "cuda:0"}},
     )
@@ -100,7 +107,7 @@ def main():
     frames, fps = load_video(str(ASSETS / "moonwalk-driver-side.mp4"), return_fps=True)
     output = ASSETS / "candidates" / datetime.now(timezone.utc).strftime("local-%Y%m%dT%H%M%SZ")
     output.mkdir(parents=True)
-    settings = {"model": MODEL, "quantization": "NF4 double quantization",
+    settings = {"model": MODEL, "revision": REVISION, "quantization": "NF4 double quantization",
                 "reference_cache": "CPU, original tensor dtype", **vars(args),
                 "driver": "moonwalk-driver-side.mp4", "prompt": prompt,
                 "prompt_ref": REFERENCE_PROMPT, "status": "candidate, needs visual review"}

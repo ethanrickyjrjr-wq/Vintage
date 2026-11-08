@@ -1,0 +1,9 @@
+diffusers==0.42.1
+transformers==5.22.2
+accelerate==1.15.0
+bitsandbytes==0.50.2
+sentencepiece==0.2.3
+ftfy==6.3.1
+imageio==2.38.1
+imageio-ffmpeg==0.8.1
+opencv-python==5.0.0.93

@@ -2,7 +2,7 @@
 
 **Status (2026-11-07):** a continuous-motion **draft** MP4 and GIF are saved in `assets/moonwalk/`, and the iPhone handoff is recovered. The newer modular pipeline preserved the neon room and recognizable outfit and transferred the footwork. The mustache is not reliably visible, the opening faces away, the hat sometimes touches the upper edge, and the loop seam jumps. These are reviewable drafts, not accepted final deliverables. Free ZeroGPU quota blocked the prepared refinement.
 
-**Continuation (2026-11-08):** the retry at approximately 01:04 Eastern was refused again: `188s requested vs. 15s left`, reset in `17:49:52`. A local attempt is being prepared in `.venv/moonwalk-local` using the PC's 16 GB RTX 4060 Ti. `tools/moonwalk/generate_local.py` loads the same distilled model with NF4 weights and holds the original motion-reference KV tensors on CPU; `local_attention.py` uses the demo's SDPA attention approach without compilation. Prompt encoding runs first and is unloaded before the video model loads. These are implementation preparations, not a completed refinement. Large model downloads are the current bottleneck. Do not present the November 7 draft as finished.
+**Continuation (2026-11-08):** the retry at approximately 01:04 Eastern was refused again: `188s requested vs. 15s left`, reset in `17:49:52` (approximately 18:54 Eastern on November 8). The local environment `.venv/moonwalk-local` now works with the PC's 16 GB RTX 4060 Ti. The same distilled model's 45.92 GB of original weights are downloading to the machine's Hugging Face cache; inference will quantize them to NF4. Download speed has been approximately 3–4 MiB/s, so this takes hours. A detached worker is being started; its live state, rather than this note, is authoritative: `.venv/moonwalk-local/job/status.json`. No new video has passed visual review. Do not present the November 7 draft as finished.
 
 When Ricky says "ready for moonwalk" or "mustache moonwalk", this is the project. Do not ask him to explain it again. The earlier ChatGPT conversation is private, but the complete handoff is available locally in [START_HERE_CODEX.md](../assets/moonwalk/START_HERE_CODEX.md).
 
@@ -32,6 +32,34 @@ python tools/moonwalk/generate.py
 ```
 
 The script uses the already configured Hugging Face login, requests 416 square / six distilled steps / seed 57, and writes a timestamped candidate MP4 and GIF with credits under `assets/moonwalk/candidates/`. It never purchases GPU time, substitutes a paid provider, or marks the candidate approved. The Gradio client and Hugging Face Hub packages are already available in the system Python. Review the result against the checklist below before calling it finished.
+
+## Local worker (November 8)
+
+`tools/moonwalk/run_local.py` resumes downloads with aria2, verifies each weight file against Hugging Face's SHA-256, prepares the cached snapshot, and calls `generate_local.py`. The model revision is pinned for the entire run. Video inference uses 384 square / six steps / seed 57 with 49-frame segments. Prompt encoding is unloaded before loading the video model. Sensitive timestep, text, image and output projections stay unquantized. The motion-reference KV cache stays on CPU in its original dtype; SDPA handles the attention mask without compilation. No pose-grid animation or frame interpolation is used.
+
+Validated on this PC: CUDA detection; NF4 loading of a small instance of the actual Wan-Animate-2 architecture; independent prompt embedding inputs to the modular pipeline; masked SDPA against a causal reference; exact CPU-to-GPU KV-cache round trip. These checks validate the implementation, not the quality of an unrendered video.
+
+Environment setup (already completed):
+
+```powershell
+uv venv --python 3.12 .venv/moonwalk-local
+uv pip install --python .venv/moonwalk-local/Scripts/python.exe --index-url https://download.pytorch.org/whl/cu128 'torch==2.11.0+cu128' 'torchvision==0.26.0+cu128'
+uv pip install --link-mode copy --python .venv/moonwalk-local/Scripts/python.exe -r tools/moonwalk/requirements-local.txt
+```
+
+The detached run uses frozen copies of the scripts in `.venv/moonwalk-local/job/code/`, with `MOONWALK_ROOT` set to this repository. Editing the tracked scripts does not change the running worker. Check these machine-local files:
+
+- `.venv/moonwalk-local/job/status.json`: downloading, preparing_cache, rendering, ready_for_visual_review, or failed, plus any error.
+- `.venv/moonwalk-local/job/stdout.log` and `stderr.log`: download and inference progress.
+- `assets/moonwalk/candidates/local-*/`: generated MP4, GIF, settings, credits and contact sheet after a successful render. The worker commits and pushes only its output folder. A candidate still requires visual review and loop finishing.
+
+To resume after a stopped or failed worker (do not start a second worker while the frozen worker is alive):
+
+```powershell
+.venv/moonwalk-local/Scripts/python.exe tools/moonwalk/run_local.py
+```
+
+The PC must remain on and connected for downloading and rendering. No power settings were changed. The Fedora fallback was unreachable on November 8 (`ssh: connect to host 10.0.0.169 port 22: Connection timed out`).
 
 ## Driving motion and credit
 
