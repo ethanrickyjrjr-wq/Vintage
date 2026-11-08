@@ -262,10 +262,10 @@ Decision. Day one is $0: Airtable Free with cost-basis columns, Zoho Books Free 
 | PowerToys; Snipping Tool OCR; Win+V; Ditto; ShareX; Win+H | Resize, OCR, rename, clipboard, capture, dictation | Free | Win+V holds 25 entries, clears on restart except pinned (verify) | Windows | Use now; Ditto when the cap bites | V · verify-13, gaps-13 · https://learn.microsoft.com/en-us/windows/powertoys/install |
 | iCloud for Windows and iCloud+; HEIF and HEVC extensions; LocalSend | Full-resolution iPhone photos in Explorer; HEIC; HEVC; local transfer | iCloud+ "200 GB" "$2.99" "billed monthly"; HEIF "Free"; HEVC "$0.99" once | iCloud "5 GB"; LocalSend "100% free and open source" | Windows 11, iPhone | Use now; $2.99 when 5 GB fills | V · verify-13, gaps-13 · https://support.apple.com/en-us/108047 |
 | Wispr Flow; Superwhisper; Aqua Voice | AI dictation | Wispr Pro "$12/user/mo"; Superwhisper Pro "$8.49/month" yearly | Wispr "$0/mo", "Limited words per week" | Windows, iPhone | Wispr Free a week; Pro when the cap stops a session; skip the others | V · verify-15 · https://wisprflow.ai/pricing |
-| Claude in Chrome; Claude Cowork | Browser agent, "clicks, types, and fills forms" | "Available on all paid plans."; Cowork "Works with a paid plan." | Ricky already pays | Chrome; Windows desktop | Etsy only, Ricky watching, "safety check on each action" on; never eBay, Facebook, Chairish; never scheduled | V · verify-15, gaps-15 · https://claude.com/claude-in-chrome |
+| Claude in Chrome; Claude Cowork | Browser agent, "clicks, types, and fills forms" | "Available on all paid plans."; Cowork "Works with a paid plan." | Ricky already pays | Chrome; Windows desktop | Etsy only, Ricky watching, "safety check on each action" on; never eBay, Facebook, Chairish; never scheduled | V · verify-15, gaps-15, lane 15 · https://claude.com/claude-in-chrome |
 | Gemini auto browse; ChatGPT Work cloud browser; Perplexity Comet; Opera Neon; Nanobrowser | Other agents | Google AI Pro "$19.99/ month" US preview; ChatGPT Plus "$20/month (billed monthly)", cloud browser "excluding Free and Go"; Comet U; Neon "$19.90/month"; Nanobrowser free | Varies | Chrome, web | Skip; ChatGPT agent and Atlas retired; the cloud browser runs unattended | V, Comet U · verify-15 · https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt |
 
-Decision. A free Windows stack covers editing, captions, recording and design: DaVinci, Clipchamp, CapCut without its music, LosslessCut first on every iPhone clip, HandBrake under TikTok's 500 MB, Subtitle Edit, OBS, Affinity, Canva Free, Kittl Free. Music licences matter more than tool prices: Meta Sound Collection only on Facebook and Instagram, Incompetech with a credit line elsewhere. AI video generators are out; the buyer must see the real object, and Sora was "discontinued on April 26, 2026" (verify-12). Dictation is free on both devices; iPhone Dictation needs no signal, which matters in a thrift store. The browser agent is Claude in Chrome on Etsy only; browser sessions and Claude Code draw from "the same pool" (verify-15), API drafts are unaffected. Pay when it earns it: DaVinci Studio once, Veed, Kittl Pro, Bensound, iCloud+.
+Decision. A free Windows stack covers editing, captions, recording and design: DaVinci, Clipchamp, CapCut without its music, LosslessCut first on every iPhone clip, HandBrake under TikTok's 500 MB, Subtitle Edit, OBS, Affinity, Canva Free, Kittl Free. Music licences matter more than tool prices: Meta Sound Collection only on Facebook and Instagram, Incompetech with a credit line elsewhere. AI video generators are out; the buyer must see the real object, and Sora was "discontinued on April 26, 2026" (lane 12). Dictation is free on both devices; iPhone Dictation needs no signal, which matters in a thrift store. The browser agent is Claude in Chrome on Etsy only; browser sessions and Claude Code draw from "the same pool" (lane 15), API drafts are unaffected. Pay when it earns it: DaVinci Studio once, Veed, Kittl Pro, Bensound, iCloud+.
 
 ## Cost ladders
 
@@ -280,7 +280,7 @@ Decision. A free Windows stack covers editing, captions, recording and design: D
 | Write | Marketplace Insights, Etsy Stats, eRank Free, EHunt Free, Alura Free, 3Dsellers Title Builder, one chatbot | $0 |
 | List | Etsy Seller app, eBay app, Secnd Free, VendorSnap Free, Swiftlisted trial | $0 |
 | Ship | Pirate Ship, Etsy labels, eBay Labels, ShipSaving Starter, USPS boxes, Label Broker | $0 plus postage and insurance |
-| Market | Share & Save, Pinterest account, Linktree, QRCode Monkey, Nextdoor, Yelp, Mercari, VMD profile, Buffer Free, Canva Free, Instagram Edits, Kit Free | $0 |
+| Market | Share & Save, Pinterest account, Linktree, QRCode Monkey, Nextdoor, Yelp, VMD profile, Buffer Free, Canva Free, Instagram Edits, Kit Free | $0 |
 | Messages | Etsy Messages, Cal.com Free, Tally, Espanso, Text Replacement, Instagram FAQs, Google Voice | $0 |
 | Books | Airtable Free, Zoho Books Free, TripLog Basic, Avery, FreeTaxUSA, Flippd to 20 items | $0 |
 | Desktop and video | DaVinci, Clipchamp, LosslessCut, HandBrake, Subtitle Edit, OBS, Bitwarden Free, LanguageTool, iCloud 5 GB, LocalSend, Wispr Free, Claude in Chrome on the existing plan | $0 |
@@ -291,13 +291,13 @@ Decision. A free Windows stack covers editing, captions, recording and design: D
 | Line | Price as written | Monthly | Source |
 |---|---|---|---|
 | Shopify Basic | "Pay yearly $29 USD/mo" | $29.00 | verify-14 |
-| Vendoo Starter | "$12.49 Per month, billed yearly" | $12.49 | verify-01 |
+| Vendoo Starter | "$12.49 Per month, billed yearly"; auto-delist excludes Shopify, the gap `docs/dashboard-design.md` section 10 ruled it out for | $12.49 | verify-01 |
 | Seller Ledger | "$10 /month", from the first sale | $10.00 | verify-09 |
 | iCloud+ 200 GB | "$2.99" "billed monthly" | $2.99 | lane 13 |
 | Pushover | "$4.99 USD one-time purchase on each platform" | once | verify-11 |
 | **Total** | | **$54.48 a month, plus $4.99 once** | |
 
-The standing decisions do not fit this line. Crosslist Gold "$39.99 per month" in place of Vendoo makes $81.98. Swiftlisted Starter "$6 USD/mo $72 USD billed yearly" makes $47.99, with Etsy posted through a Chrome extension on a PC that stays on. Holding Shopify until the storefront takes checkout brings the line to between $25.48 and $52.98, depending on the crosslister.
+The standing decisions do not fit this line. Crosslist Gold "$39.99 per month" in place of Vendoo makes $81.98. Swiftlisted Starter "$6 USD/mo $72 USD billed yearly" makes $47.99, with Etsy posted through a Chrome extension on a PC that stays on. Holding Shopify until the storefront takes checkout brings the line to between $18.99 (Swiftlisted) and $52.98 (Crosslist Gold), with Vendoo at $25.48.
 
 ### The everything stack
 
@@ -319,7 +319,6 @@ Every "pay when it earns it" line on at once; yearly prices divided by twelve.
 | eBay Basic Store | "$21.95" on yearly renewal | 21.95 | verify-14 |
 | Judge.me Awesome | "$15 per month" | 15.00 | verify-08 |
 | Shuttle Growth | "$19 / month" | 19.00 | verify-16 |
-| Offerly Pro | "$20 / month" | 20.00 | verify-16 |
 | Appointo Pro | "$14 / month" | 14.00 | verify-11 |
 | Veed Creator | "$12 per user / month billed yearly" | 12.00 | verify-12 |
 | Wispr Flow Pro | "$12/user/mo" | 12.00 | verify-15 |
@@ -331,18 +330,18 @@ Every "pay when it earns it" line on at once; yearly prices divided by twelve.
 | CTBids Premier | "$99/year" | 8.25 | verify-07 |
 | Kovels All Access Online | "$59.99 per year" | 5.00 | verify-05 |
 | Carrd Pro Standard | "$19 / year" | 1.58 | gaps-11 |
-| **Monthly total** | | **$349.65** | |
+| **Monthly total** | | **$329.65** | |
 | One-time: Pushover "$4.99", Munbyn RW403B "$79.99", IPS03 scale "$39.99", NIIMBOT D110 "$20.90" sale, DaVinci Resolve Studio "Now $236" | | **$381.87 once** | verify-11, verify-10, gaps-09, verify-12 |
 
 ## Contradictions with earlier decisions
 
 Strongest first.
 
-1. **Crosslist Gold to trial.** The trial is not free: "20 free listings with our 3-day money-back guarantee", "whichever comes first", a card is required, and annual refunds carry "a small $9.99 processing fee" (V, verify-01, verify-13). Autodelisting is Gold and Diamond only, Gold with the AI add-on is $44.98, and five tools cover Etsy, eBay and Shopify with sale detection on the entry plan for less: Secnd "Free $0 CAD/mo" with "automatic delisting" (gaps-01), Swiftlisted "$6 USD/mo $72 USD billed yearly" (gaps-01), FLUF "Starter $9 /month" (verify-01), Vendoo "$12.49 Per month, billed yearly" without Shopify auto-delist (verify-01), Voolist "$19.99 / month Billed monthly" with auto-delist on every plan (verify-01). Softening facts: Gold is "$32.99 per month billed yearly", the extension is maintained (v3.12.7, Nov 6 2026), and `docs/dashboard-design.md` already ruled out Vendoo for the Shopify gap and FLUF for its 90-minute polling. Ricky decides.
+1. **Crosslist Gold to trial.** The trial is not free: "20 free listings with our 3-day money-back guarantee", "whichever comes first", a card is required, and annual refunds carry "a small $9.99 processing fee" (V, verify-01, verify-13). Autodelisting is Gold and Diamond only, Gold with the AI add-on is $44.98, and five tools cover Etsy, eBay and Shopify with sale detection on the entry plan for less: Secnd "Free $0 CAD/mo" with "automatic delisting" (gaps-01), Swiftlisted "$6 USD/mo $72 USD billed yearly" (gaps-01), FLUF "Starter $9 /month" (verify-01), Vendoo "$12.49 Per month, billed yearly" without Shopify auto-delist (verify-01), Voolist "$19.99 / month Billed monthly" with auto-delist on every plan (verify-01). Softening facts: Gold is "$32.99 per month billed yearly", the extension is maintained (v3.12.7, Nov 6 2026, lane 13), and `docs/dashboard-design.md` already ruled out Vendoo for the Shopify gap and FLUF for its 90-minute polling. Ricky decides.
 2. **Supabase as the one home for inventory and cost basis.** Flippd Pro "$9.99/month" and Inventory Now "$10 BILLED $120 YEARLY" keep cost of goods, fees and net profit per item in their own cloud, with Schedule C reports and marketplace connections (V, gaps-09). Paying either makes a second permanent ledger beside the dashboard; Airtable Free was picked as a stopgap for that reason. Decide one home before paying.
 3. **Pushover and Supabase fed from Shopify.** Shopify Flow is free on Basic, but Send HTTP Request needs Grow at "$79" yearly (V, verify-11, verify-14). Flow cannot call Pushover or Supabase from Basic, so alerts from Shopify events need the Shopify API, a webhook of our own, n8n or Activepieces. A build constraint, not a change of tool.
-4. **Kit Free for email before Shopify.** Lane 08 could not read Kit's fee page and offered Brevo Free, "up to 300 emails per day", as the pre-Shopify tool (V, gaps-08). Round D already rejected Brevo because 300 a day cannot send a drop alert to a list over 300, and chose Kit Free on 2026-10-29. Kit stands.
-5. **Claude Haiku listing drafts.** Not refuted, but partly duplicated: the eBay app writes listings from photos, Shopify Sidekick writes descriptions, and every crosslister bundles a writer, Crosslist at "+$4.99/month" (V, verify-01, verify-02). Etsy has no AI writer, so the Haiku draft keeps its job. Two amendments: a disclosure line whenever a background was replaced, because Etsy asks sellers to note edits (V, lane 03), and no maker or era in a draft without a mark, label or appraiser (verify-05).
+4. **Kit Free for email before Shopify.** The gaps-08 file could not read Kit's fee page, kit.com 403, and offered Brevo Free, "up to 300 emails per day", as the pre-Shopify tool (V, gaps-08). Round D already rejected Brevo because 300 a day cannot send a drop alert to a list over 300, and chose Kit Free on 2026-10-29. Kit stands.
+5. **Claude Haiku listing drafts.** Not refuted, but partly duplicated: the eBay app writes listings from photos, Shopify Sidekick writes descriptions, and every crosslister bundles a writer, Crosslist at "+$4.99/month" (V, verify-01, verify-02). Etsy's own AI listing help is a title-recommendation tool and a quick-list form "that suggests titles, tags, attributes", still in limited test (lane 14, verify-02); neither writes descriptions, so the Haiku draft keeps its job. Two amendments: a disclosure line whenever a background was replaced, because Etsy asks sellers to note edits (V, lane 03), and no maker or era in a draft without a mark, label or appraiser (verify-05).
 6. **rembg BiRefNet.** Two confirmations. The README now makes bria-rmbg "The default" and its licence "requires a paid agreement for commercial use" (V, verify-03); the cutout handoff already pins `-m birefnet-general -dc`. Etsy renders transparent PNG areas black (V, lane 03); the handoff already sends flattened JPEGs to every channel. Refinements from gaps-03: MIT "BiRefNet_HR" weights, and withoutBG "Apache-2.0" as a second engine.
 7. **Canva Free.** The lane said background removal was "listed under Pro" at "US$ 144 /year for one person"; verify found no such line, and Canva's feature page says "Remove your photo's background for free" (V, verify-03). Canva Free stands; the free quota is U.
 8. **Buffer Free and Instagram Edits.** Buffer Free confirmed: "Connect up to 3 channels", "10 scheduled posts per channel" (V, verify-08); the paid "$5 /month" is "$60 billed yearly" and the monthly price did not render. Nothing touches Instagram Edits.
