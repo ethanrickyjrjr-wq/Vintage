@@ -69,6 +69,8 @@ def main():
     parser.add_argument("--steps", type=int, default=6)
     parser.add_argument("--seed", type=int, default=57)
     parser.add_argument("--segment-frames", type=int, default=49)
+    parser.add_argument("--image", type=Path, default=ASSETS / "mannequin_full_body_start.png")
+    parser.add_argument("--driver", type=Path, default=ASSETS / "moonwalk-driver-side.mp4")
     args = parser.parse_args()
     if args.size < 256 or args.size % 16:
         parser.error("--size must be at least 256 and a multiple of 16")
@@ -104,12 +106,13 @@ def main():
             raise RuntimeError(f"Required component did not load: {name}")
     pipe.to("cuda")
     pipe.vae.enable_tiling()
-    frames, fps = load_video(str(ASSETS / "moonwalk-driver-side.mp4"), return_fps=True)
+    frames, fps = load_video(str(args.driver), return_fps=True)
     output = ASSETS / "candidates" / datetime.now(timezone.utc).strftime("local-%Y%m%dT%H%M%SZ")
     output.mkdir(parents=True)
     settings = {"model": MODEL, "revision": REVISION, "quantization": "NF4 double quantization",
-                "reference_cache": "CPU, original tensor dtype", **vars(args),
-                "driver": "moonwalk-driver-side.mp4", "prompt": prompt,
+                "reference_cache": "CPU, original tensor dtype",
+                **{k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
+                "prompt": prompt,
                 "prompt_ref": REFERENCE_PROMPT, "status": "candidate, needs visual review"}
     (output / "generation.json").write_text(json.dumps(settings, indent=2), encoding="utf-8")
     shutil.copyfile(ASSETS / "CREDITS.txt", output / "CREDITS.txt")
@@ -117,7 +120,7 @@ def main():
     started = time.monotonic()
     with torch.no_grad():
         videos = pipe(
-            image=load_image(str(ASSETS / "mannequin_full_body_start.png")),
+            image=load_image(str(args.image)),
             driving_video=frames, driving_video_fps=fps, fps=24,
             height=args.size, width=args.size,
             segment_frame_length=args.segment_frames,
