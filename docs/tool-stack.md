@@ -4,21 +4,21 @@
 
 Sixteen Sonnet lanes ran on 2026-11-07, one per step of the process. Each left three files in `research/tools-2026-11-07/`: a lane report (`NN-name.md`), a verify file (`verify-NN-name.md`) that re-read the lane's picks on the vendor pages the same day and overrides the lane where they disagree, and a gaps file (`gaps-NN-name.md`) for missed, defunct and renamed tools. Sixteen digests in `research/tools-2026-11-07/digests/` fold them together. This page is the decision layer. Prices are quoted as the vendor writes them, with the billing period, and each carries its source file and URL. **V**: an agent read the vendor page on 2026-11-07. **U**: the page would not load or the figure is not in any page text. Where verify refuted a lane figure, the verify figure is used and the correction named. crawl4ai was not reachable from the cloud session, so pages were read with WebFetch; several gaps agents ran after the shared WebSearch budget ran out and worked from direct vendor URLs, so their coverage is thinner. Shorthand: `lane 01` is `01-listing-crosslisting.md`; `verify-01` and `gaps-01` are its verify and gaps files. Full names are under Sources.
 
-Prior decisions inherited: Crosslist Gold to trial (`docs/dashboard-design.md` section 10); rembg pinned to `-m birefnet-general`, flattened JPEGs to every channel (`docs/cutout-catalog-handoff.md`); Buffer Free, Canva Free, Instagram Edits (`docs/social-manual.md` section 7); Claude Haiku listing drafts, Supabase, Pushover (`docs/dashboard-design.md` section 9); Kit Free before Shopify and fixed Etsy shipping classes (`docs/round-d-synthesis.md`). They stand unless the Contradictions section says otherwise.
+Prior decisions inherited: Crosslist Gold to trial (`docs/dashboard-design.md` section 10); rembg pinned to `-m birefnet-general -dc`, flattened JPEGs to every channel (`docs/cutout-catalog-handoff.md`); Buffer Free, Canva Free, Instagram Edits (`docs/social-manual.md` section 7); Claude Haiku listing drafts, Supabase, Pushover (`docs/dashboard-design.md` section 9); Kit Free before Shopify and fixed Etsy shipping classes (`docs/round-d-synthesis.md`). They stand unless the Contradictions section says otherwise.
 
 ## Read this first
 
 - The stack in one breath. The Etsy Seller app and the eBay app list. Haiku drafts the Etsy listing in the planned dashboard. rembg cuts out, ImageMagick flattens. Pirate Ship and Etsy labels ship. Airtable Free and Zoho Books Free keep the books. EstateSales.net, Trove and CTBids find stock. Buffer, Canva and Instagram Edits post. Cal.com and Tally book Hire Hollie. A crosslister fans Etsy out to eBay and Shopify.
 - The free stack is $0 a month. The only money is platform fees: Etsy "$0.20 per listing", "6.5% of the total order amount", "3% + 0.25 USD"; eBay "13.6%" plus "$0.30" or "$0.40" per order, 250 free listings a month (V, verify-14, which corrected the lane's flat $0.40).
-- The paid stack on the standing decisions is Shopify Basic "$29 USD/mo" yearly plus Crosslist Gold "$39.99 per month": $68.99 before anything else, so it does not fit a $50 line. The everything stack is about $350 a month plus about $382 once.
+- The paid stack on the standing decisions is Shopify Basic "$29 USD/mo" yearly plus Crosslist Gold "$39.99 per month": $68.99 before anything else, so it does not fit a $50 line. The everything stack is about $330 a month plus about $382 once.
 - Time saver 1: eBay Product Research, "free to all sellers", "the last 3 years of eBay sales data" (V, verify-04). No paid comps subscription in year one.
 - Time saver 2: Etsy's own auto-replies, quick replies and writing assistant, free, and auto-replies count toward Star Seller (V, verify-11).
 - Time saver 3: native alerts. EstateSales.net email, Trove's eBay push "usually within 60 seconds", CTBids bidding with local pickup. Free, and nothing is scraped (V, verify-06, gaps-06, verify-07).
-- Contradiction: Crosslist Gold is not a free trial. "20 free listings with our 3-day money-back guarantee", card required, "a small $9.99 processing fee" on annual refunds (V, verify-01, verify-13). Five cheaper tools cover all three channels with sale detection on the entry plan. Ricky decides.
+- Contradiction: Crosslist Gold is not a free trial. "20 free listings with our 3-day money-back guarantee", card required, "a small $9.99 processing fee" on annual refunds (V, verify-01, verify-13). Four cheaper tools cover all three channels with sale detection on the entry plan; Vendoo is a fifth whose auto-delist excludes Shopify. Ricky decides.
 - Soft contradiction: Flippd and Inventory Now keep the cost ledger in their own cloud while the plan makes Supabase the home. Decide one home before paying.
-- rembg's README now makes bria-rmbg "The default", and that licence "requires a paid agreement for commercial use" (V, verify-03). Every call passes `-m birefnet-general`. Etsy renders transparent PNG black, so every cutout is flattened. Both already decided, now confirmed on vendor pages.
+- rembg's README now makes bria-rmbg "The default", and that licence "requires a paid agreement for commercial use" (V, verify-03). Every call passes `-m birefnet-general -dc`, as the cutout handoff pins. Etsy renders transparent PNG black, so every cutout is flattened. Both already decided, now confirmed on vendor pages.
 - remove.bg closes "from 1 December 2026 at 9:00am CET" (V, verify-03). Windows 11 Photos and Paint remove backgrounds locally, free.
-- Claude in Chrome and Cowork are "Available on all paid plans" (V, verify-15). eBay bans "LLM-driven bots" without permission. Browser agent on Etsy only, Ricky watching; eBay through the API.
+- Claude in Chrome is "Available on all paid plans" and Cowork "Works with a paid plan" (V, verify-15, gaps-15). eBay bans "LLM-driven bots" without permission. Browser agent on Etsy only, Ricky watching; eBay through the API.
 - Share & Save refunds "6.5% back" through January 4, then "4% off the eligible order total" (V, verify-08). On from day one. Decide Offsite Ads before the first sale.
 
 ## Install today
@@ -28,9 +28,9 @@ Free only, ordered by payoff.
 **Windows PC**
 
 1. Bitwarden Free, every key from day one. $0. lane 13.
-2. PowerToys: Image Resizer with 2000px and 1600px presets, Text Extractor, Advanced Paste. $0. lane 13.
+2. PowerToys: Image Resizer with a 2048px preset, Text Extractor, Advanced Paste. $0. lane 13.
 3. Windows 11 Photos and Paint background removal, built in. $0. verify-03, gaps-03.
-4. rembg in a venv, every call `-m birefnet-general`, plus ImageMagick to flatten. $0, MIT. verify-03.
+4. rembg in a venv, every call `-m birefnet-general -dc` as the cutout handoff pins, plus ImageMagick to flatten. $0, MIT. verify-03.
 5. Upscayl. $0. verify-03.
 6. Caesium Image Compressor. $0. gaps-03.
 7. Affinity by Canva, "free for individuals (seriously)". $0. verify-03.
