@@ -2,6 +2,8 @@
 
 **Status (2026-11-07):** a continuous-motion **draft** MP4 and GIF are saved in `assets/moonwalk/`, and the iPhone handoff is recovered. The newer modular pipeline preserved the neon room and recognizable outfit and transferred the footwork. The mustache is not reliably visible, the opening faces away, the hat sometimes touches the upper edge, and the loop seam jumps. These are reviewable drafts, not accepted final deliverables. Free ZeroGPU quota blocked the prepared refinement.
 
+**Continuation (2026-11-08):** the retry at approximately 01:04 Eastern was refused again: `188s requested vs. 15s left`, reset in `17:49:52`. A local attempt is being prepared in `.venv/moonwalk-local` using the PC's 16 GB RTX 4060 Ti. `tools/moonwalk/generate_local.py` loads the same distilled model with NF4 weights and holds the original motion-reference KV tensors on CPU; `local_attention.py` uses the demo's SDPA attention approach without compilation. Prompt encoding runs first and is unloaded before the video model loads. These are implementation preparations, not a completed refinement. Large model downloads are the current bottleneck. Do not present the November 7 draft as finished.
+
 When Ricky says "ready for moonwalk" or "mustache moonwalk", this is the project. Do not ask him to explain it again. The earlier ChatGPT conversation is private, but the complete handoff is available locally in [START_HERE_CODEX.md](../assets/moonwalk/START_HERE_CODEX.md).
 
 ## Deliverable and character
