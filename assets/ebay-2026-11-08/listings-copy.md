@@ -717,7 +717,7 @@ Ships from Southwest Florida, smoke-free.
 
 # Other items from the same shoot (not clothing)
 
-Items 21 to 45 are the frames, shoes, bag, jewelry box, caps and oddments shot in the shop on 2026-11-07. None of them was measured: every ____ is a tape number you fill in, and the "Before you publish" lines are the labels and marks to check. Rough local cut-outs are in the Drive folder "2026-11-08 other items - rough local cuts"; the clean white-background set is the Photoroom batch "Frames Shoes Vest 11 08" in the Holliewood & Vine space (download from there before listing). Prices are ballparks from memory, not sold comps.
+Items 21 to 45 are the frames, shoes, bag, jewelry box, caps and oddments shot in the shop on 2026-11-07. None of them was measured: every ____ is a tape number you fill in, and the "Before you publish" lines are the labels and marks to check. Photos: the Photoroom set (37 white-background JPEGs from the batch "Frames Shoes Vest 11 08", downloaded 2026-11-08) is in Drive at "Holliewood eBay/2026-11-08 other items" and in the repo at assets/ebay-2026-11-08/other-items/. Use only those; the rough local cut-outs were deleted the same day. Prices are ballparks from memory, not sold comps.
 
 # 21. Dogs at the Louvre crystal glass wall art
 
@@ -745,7 +745,6 @@ Ships from Southwest Florida, boxed and corner-protected. Large and heavy: shipp
 
 ## Before you publish
 - Tape height, width and depth. Photograph the back label (brand, item name, SKU) and the hanger.
-- The local cut-out shows shop background through the frame; use the Photoroom version.
 - Item 45 may be this piece's box. Check before listing it separately.
 - Ballpark: $35 to $60. Shipping will decide if it is worth listing online or selling local.
 
@@ -796,7 +795,6 @@ Size: [one size / fitted ____]. Closure: [snapback / strapback / fitted].
 
 ## Before you publish
 - Photograph the inside tags: brand, size, fabric. Confirm the closure type.
-- The local cut-out shows the mannequin and jacket; use the Photoroom version.
 - Ballpark: $12 to $20.
 
 # 24. U.S. Army digital camo cap
@@ -821,7 +819,6 @@ Size: [one size]. Closure: [snapback / strapback].
 
 ## Before you publish
 - Photograph the inside tags and the closure. Say "officially licensed" only if the tag says so.
-- Use the Photoroom version (mannequin head in the local cut).
 - Ballpark: $12 to $22.
 
 # 25. Ribbon-rose floral garland
@@ -976,7 +973,6 @@ Frame ____ x ____ in; photo ____ x ____ in.
 
 ## Before you publish
 - Photograph the back. Look for a photographer or date.
-- The local cut has a stray yellow paper at the bottom; use the Photoroom version.
 - Ballpark: $20 to $40.
 
 # 31. Akiyo Yagi shisa lion print
