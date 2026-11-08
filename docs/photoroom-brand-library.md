@@ -4,10 +4,17 @@ Set up in Photoroom on 2026-11-08 (Space "Holliewood & Vine", Pro plan) by Claud
 extension, from the kit below: three logos, one seven-color palette named "Holliewood & Vine", eight font
 styles (Bodoni Moda Regular, Medium, Italic; DM Sans Regular, Medium, Bold; Space Mono Regular, Bold; all
 from Photoroom's built-in list, so the TTFs were not needed) and Brand info with name, description, website
-and brand style. Instagram was left blank until the handle is confirmed. The Brand style field had a stray
+and brand style. Instagram `@holliewoodandvine` was added after Ricky confirmed the handle. The Brand style field had a stray
 "jones new york" in it and was replaced. Proof: `assets/brand/photoroom-brand-library-2026-11-08.jpg`.
 Every Photoroom fact here was read from Photoroom's own pages on 2026-11-08 (files in `research/`,
 named `help.photoroom.com_*` and `www.photoroom.com_pricing-*`).
+
+**Brand info quirk (2026-11-08):** the Brand info form comes back empty after a reload even though
+Save worked. Verified by watching the request: Save sends a PATCH to
+`api.photoroom.com/v1/brand-kits/<id>/` and the 200 response carries `brandName`, `brandDescription`,
+`brandWebsiteUrl`, `brandInstagramHandle` (`holliewoodandvine`) and `brandMoreInfo` with our values. So
+the data is on Photoroom's side; the page just does not read it back into the form. Do not retype it
+on sight of empty fields; if a future session needs proof, hook `fetch` and press Save once more.
 
 ## What Photoroom's Brand Library takes (verified)
 
@@ -37,7 +44,7 @@ from website), 17731971 (logos), 17741971 (fonts), 17744222 (colors).
 | Name | Holliewood & Vine |
 | Description | Vintage with a past. Lighting, furniture, fashion, rugs and beautiful oddities from Southwest Florida, sold online and styled by Hollie. |
 | Website | https://hollywood-and-vine-vintage.allstatecoop.chatgpt.site/ |
-| Instagram | `@holliewoodandvine` is the planned handle. Nobody has confirmed it is ours (`social-manual.md`, item 1). Leave blank until Ricky claims it. |
+| Instagram | `@holliewoodandvine`, confirmed by Ricky 2026-11-08 and entered in Photoroom the same day. |
 
 The description is a draft from the site's meta description; Hollie can rewrite it in the app.
 
@@ -93,7 +100,7 @@ Google Fonts' download zip has static instances.
    Delete the auto palettes Photoroom made from the logos if they clutter the list.
 5. **Fonts > Add +**: search Bodoni Moda, DM Sans, Space Mono; switch on Regular and Italic (and
    Bold for Space Mono). Upload the TTFs only for a family the search cannot find.
-6. **Brand info**: name, description, website. Instagram only once the handle is confirmed.
+6. **Brand info**: name, description, website. Instagram handle `holliewoodandvine` (no @).
 7. Screenshot the finished library into `assets/brand/` and note the date here.
 
 With the Claude Chrome extension connected (claude.ai/chrome, signed in as the same account),

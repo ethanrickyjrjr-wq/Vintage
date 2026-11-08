@@ -38,6 +38,7 @@ Tags: `verified` (read on the live page), `vendor claim`, `inferred` (my reading
 **Blocking (answer first):**
 
 1. **Is `@holliewoodandvine` yours?** Instagram's pages are walled to my tools, so nobody has checked. Search the handle in the app. If it is taken, pick one name and claim it on every platform before posting anything.
+   **Confirmed by Ricky 2026-11-08:** `@holliewoodandvine` is the shop's Instagram account.
 2. **Is there, or will there be, a registered business entity?** It does not gate posting. It gates taking a Meta app Live (Business Verification, up to 14 business days; desk read 2026-10-12, not re-read) and so probably automatic comment replies on your own app, and a TikTok developer app. Without one, use third-party tools that hold Meta's approved app.
 3. **Does Hollie approve every post, or only the exceptions?** Default I used: approve everything for the first 60 days, then exceptions only (prices, claims, faces, complaints, anything touching the rules). Approving by exception reverses the dashboard handoff's "no auto-publish" rule, so it needs your word.
 4. **Hands only, voiceover, or Hollie on camera?** Default is hands-first. Evidence on faces is thin (`vendor claim`: vidIQ, n=500; a 2014 Instagram study); a mirror shot can show her by accident, and the shoot plan is built to avoid that.
