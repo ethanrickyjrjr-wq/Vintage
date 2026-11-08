@@ -1,5 +1,7 @@
 # eBay photo studio: the card for the PC
 
+**Status (2026-11-08, Ricky's call):** Photoroom does the cutting and the white. Ricky ran the clothes from the 2026-11-06 Jeep shoot through the Photoroom app himself ("Jeep Shirts", 60 images, in the Batch history of the Holliewood & Vine space, Pro plan). Claude ran the 37 non-clothes photos (frames, two pairs of loafers, the halter vest, caps, bag, jewelry case, mug, flowers, plaque) through Photoroom web Batch from the signed-in Chrome tab as the batch "Frames Shoes Vest 11 08": White template on all, Neutral 02 grey on the white-soled tan loafers' side and sole shots, the white ceramic plaque and the crystal-glass box so the edges read. Photoroom cannot square a frame shot at an angle, so the local script's `--straighten` pass was used on eleven tilted frames; seven came out square and replaced the originals in the batch (louvre dogs, both banana-figure fronts, fashion photo, Porsche 911, trust-me-dance, wagon wheel); it failed on the feather, the Porsche 356 and the shisa lion (it grabbed the mat or the photo instead of the frame), and those plus the darling canvas and the wavy frame's angled shot still need a square-on reshoot. The local GPU cut-out stays as the straightening and fallback tool, not the default. The paragraph below is the pre-Photoroom setup card.
+
 **Status (2026-11-07):** written in the cloud session that researched and built this; nothing here has run on the Windows PC yet. The script ran here on CPU (Linux, 4 cores) on Ricky's four example photos. Every command below is for Windows PowerShell from the repo folder (`C:\Users\ethan\dev\Vintage`). Decisions and the reasons are in `docs/ebay-photo-studio.md`; the research is in `research/ebay-photo-studio-2026-11-07/`. Expect the first session to take about an hour including the model download.
 
 ## The simplest route: cut on the phone, frame on the PC
@@ -16,7 +18,7 @@ The model route below is for a stack of photos where tapping each one would take
 ## 0. Before you sit down
 
 - Ten or so photos to try on, including the ones already in `assets/examples-2026-11-07/` (the navy dress, its label, the framed print).
-- A folder where the phone drops photos (iCloud Photos folder, AirDrop target, or a USB copy). Name it, for example `C:\Users\ethan\Pictures\inbox`.
+- A folder where the phone drops photos. Since 2026-11-08 that is Google Drive: Drive for desktop (133.0.2.0, installed by winget) streams the signed-in account at `G:\My Drive`, and the shoot folders sit there (`G:\My Drive\Clothes 11 06 Jeep` was the first). The stream reads at about 25 s a photo on first touch, so copy the shoot folder to `C:\Users\ethan\Pictures\inbox\<folder>` with robocopy before anything runs, stage the chosen photos under `ITEM-view.heic` names in a run folder, and copy the finished `ebay\` JPEGs back under `G:\My Drive` so they reach the phone.
 - Nothing to buy for this part. The shopping list is section 5.
 
 ## 1. Install (once, about 15 minutes plus a 1 GB download)
