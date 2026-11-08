@@ -62,6 +62,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 
 - [hermes-telegram-automation.md](hermes-telegram-automation.md): what the Hermes Agent and its Telegram gateway on the PC can do for the shop (list from the phone, cut-outs back to the phone, estate-sale digest, lot watch, a New Finds channel), the fixes needed first, and what not to build. Ideas only, nothing built. The Hermes docs crawled 2026-11-08 are in `research/hermes/`.
 - [sourcing-2026-11.md](sourcing-2026-11.md): where to buy cheap, easy-to-list stock (online bulk, local SWFL venues, what to buy and the buy ceilings), from three Sonnet lanes in `research/sourcing-2026-11-08/`.
+- [sourcing-calendar-2026-11.md](sourcing-calendar-2026-11.md): the dated field calendar for November with a link per sale (the Lockerfox mannequin lot included), rendered to Ricky's Drive (`G:\My Drive\Holliewood sourcing\`) with `tools/md-doc.py`, which turns simple markdown into a .docx with live hyperlinks.
 
 ## Ops dashboard
 

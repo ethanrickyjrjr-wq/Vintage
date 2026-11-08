@@ -2,7 +2,7 @@
 
 **Status (2026-11-08): decision layer over three Sonnet lanes, nothing bought.** Lanes and their verbatim reports: online bulk and wholesale (`research/sourcing-2026-11-08/online-bulk.md`), local Southwest Florida for the next three weeks (`local-swfl.md`), what to buy with buy ceilings and the fee math (`what-to-buy.md`). Every number below was read from a page crawled on 2026-11-08 unless it is marked *needs review*; the raw crawls sit in `research/` with 2026-11-08T07 timestamps. SearXNG was down (Fedora unplugged), so the lanes discovered with WebSearch and fetched with crawl4ai. eBay sold pages, Etsy, Reddit and Facebook are walled to this machine and were not used.
 
-The companion doc is [`hermes-telegram-automation.md`](hermes-telegram-automation.md); section 5 here names what Hermes can automate from this.
+The companion doc is [`hermes-telegram-automation.md`](hermes-telegram-automation.md); section 5 here names what Hermes can automate from this. The field version, in date order with one link per sale, is [`sourcing-calendar-2026-11.md`](sourcing-calendar-2026-11.md), also on Ricky's Drive as a Word file that Google Docs opens with the links live.
 
 ## 1. The answer in one screen
 
