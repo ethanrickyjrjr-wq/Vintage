@@ -9,7 +9,7 @@ Prior decisions inherited: Crosslist Gold to trial (`docs/dashboard-design.md` s
 ## Read this first
 
 - The stack in one breath. The Etsy Seller app and the eBay app list. Haiku drafts the Etsy listing in the planned dashboard. rembg cuts out, ImageMagick flattens. Pirate Ship and Etsy labels ship. Airtable Free and Zoho Books Free keep the books. EstateSales.net, Trove and CTBids find stock. Buffer, Canva and Instagram Edits post. Cal.com and Tally book Hire Hollie. A crosslister fans Etsy out to eBay and Shopify.
-- The free stack is $0 a month. The only money is platform fees: Etsy "$0.20 per listing", "6.5% of the total order amount", "3% + 0.25 USD"; eBay "13.6%" plus "$0.30" or "$0.40" per order, 250 free listings a month (V, verify-14).
+- The free stack is $0 a month. The only money is platform fees: Etsy "$0.20 per listing", "6.5% of the total order amount", "3% + 0.25 USD"; eBay "13.6%" plus "$0.30" or "$0.40" per order, 250 free listings a month (V, verify-14, which corrected the lane's flat $0.40).
 - The paid stack on the standing decisions is Shopify Basic "$29 USD/mo" yearly plus Crosslist Gold "$39.99 per month": $68.99 before anything else, so it does not fit a $50 line. The everything stack is about $350 a month plus about $382 once.
 - Time saver 1: eBay Product Research, "free to all sellers", "the last 3 years of eBay sales data" (V, verify-04). No paid comps subscription in year one.
 - Time saver 2: Etsy's own auto-replies, quick replies and writing assistant, free, and auto-replies count toward Star Seller (V, verify-11).
@@ -25,9 +25,39 @@ Prior decisions inherited: Crosslist Gold to trial (`docs/dashboard-design.md` s
 
 Free only, ordered by payoff.
 
-**Windows PC.** 1. Bitwarden Free, every key from day one (lane 13). 2. PowerToys: Image Resizer with 2000px and 1600px presets, Text Extractor, Advanced Paste (lane 13). 3. Windows 11 Photos and Paint background removal, built in (verify-03, gaps-03). 4. rembg in a venv, every call `-m birefnet-general`, plus ImageMagick to flatten (verify-03). 5. Upscayl (verify-03). 6. Caesium Image Compressor (gaps-03). 7. Affinity by Canva, "free for individuals (seriously)" (verify-03). 8. eRank extension with a free account (lane 13). 9. Google Lens in Chrome plus Search by Image (gaps-13). 10. LanguageTool or Harper, one (lane 13). 11. Espanso, once ten listings of boilerplate exist (lane 11). 12. iCloud for Windows plus the free HEIF Image Extension (lane 13, gaps-13). 13. LocalSend (lane 13). 14. Pirate Ship account, "No monthly fees" (verify-10). 15. DaVinci Resolve, LosslessCut, HandBrake, Subtitle Edit, OBS Studio (lane 12, gaps-12). 16. changedetection.io on the Fedora box, Pushover through Apprise (lane 06).
+**Windows PC**
 
-**iPhone.** 1. Etsy Seller app (lane 14). 2. eBay app (lane 01). 3. Trove - Smart Alerts for eBay, "Free to use" (gaps-06). 4. EstateSales.net app and Estate Sale Finder (lane 06, gaps-06). 5. Snapseed (verify-03). 6. Microsoft Designer (gaps-03). 7. Google app for Lens (lane 05). 8. TripLog Basic, "Free forever" (verify-09). 9. ShipSaving, Starter "Free/ month" (gaps-10). 10. Text Replacement in Settings for canned replies (gaps-11). 11. LocalSend and Bitwarden (lane 13). 12. Already decided: Instagram Edits, Buffer, Canva (`docs/social-manual.md`).
+1. Bitwarden Free, every key from day one. $0. lane 13.
+2. PowerToys: Image Resizer with 2000px and 1600px presets, Text Extractor, Advanced Paste. $0. lane 13.
+3. Windows 11 Photos and Paint background removal, built in. $0. verify-03, gaps-03.
+4. rembg in a venv, every call `-m birefnet-general`, plus ImageMagick to flatten. $0, MIT. verify-03.
+5. Upscayl. $0. verify-03.
+6. Caesium Image Compressor. $0. gaps-03.
+7. Affinity by Canva, "free for individuals (seriously)". $0. verify-03.
+8. eRank extension with a free account. $0. lane 13.
+9. Google Lens in Chrome plus Search by Image. $0. gaps-13.
+10. LanguageTool or Harper, one of them. $0. lane 13.
+11. Espanso, once ten listings of boilerplate exist. $0. lane 11.
+12. iCloud for Windows plus the free HEIF Image Extension. $0 to 5 GB. lane 13, gaps-13.
+13. LocalSend. $0. lane 13.
+14. Pirate Ship account, "No monthly fees". $0. verify-10.
+15. DaVinci Resolve, LosslessCut, HandBrake, Subtitle Edit, OBS Studio. $0. lane 12, gaps-12.
+16. changedetection.io on the Fedora box, Pushover through Apprise. $0. lane 06.
+
+**iPhone**
+
+1. Etsy Seller app. "Free". lane 14.
+2. eBay app. Free. lane 01.
+3. Trove - Smart Alerts for eBay, "Free to use". gaps-06.
+4. EstateSales.net app and Estate Sale Finder. Free. lane 06, gaps-06.
+5. Snapseed. "Free". verify-03.
+6. Microsoft Designer. Free with a Microsoft account. gaps-03.
+7. Google app for Lens. Free. lane 05.
+8. TripLog Basic, "Free forever". verify-09.
+9. ShipSaving, Starter "Free/ month". gaps-10.
+10. Text Replacement in Settings for canned replies. Built in. gaps-11.
+11. LocalSend and Bitwarden. Free. lane 13.
+12. Already decided and still free: Instagram Edits, Buffer, Canva. `docs/social-manual.md` section 7.
 
 ## 1. Source
 
@@ -92,9 +122,8 @@ Decision. Lens plus the marks folder is the whole identification stack for $0. A
 | WorthPoint Price Guide | eBay and auction sold prices, "nearly 2 decades" | Apple: "Price Guide Monthly $26.99", "Annual $249.99"; web 403 | Locked | Web, iOS | One month when a backlog is older than eBay's 3 years; cancel | V Apple, U web · verify-04 · https://apps.apple.com/us/app/worthpoint/id1472512649 |
 | Artnet Price Database | "items estimated at $500 and above" | Decorative Art "$34 /30 days*" | None | Web | Only for a $500-plus signed piece | V · verify-04 · https://www.artnet.com/price-database/ |
 | WatchCount | eBay sold search | Price "unknown"; search works | Free web | Web | By hand only; terms ban AI access | V · gaps-04 · https://www.watchcount.com/ |
-| Etsy estimators: eRank, EverBee, Alura, Marmalead, Sale Samurai, EHunt, Koalanda | Estimates, no sold prices | Section 5 | Varies | Web | Skip for pricing | V · verify-04 · https://erank.com/plans |
 
-Decision. Etsy exposes no sold prices, so pricing runs on eBay Product Research, EBTH, Invaluable's free 12 months, Chairish for the ceiling and Google Shopping for the new-equivalent ceiling. Pay per need: Lot-Art Day Pass $9.90, WorthPoint $26.99 for one month, Artnet only for a $500-plus signed piece. The dashboard cannot scrape eBay or WatchCount; the only sanctioned feed is the Marketplace Insights API, docs behind a developer sign-in (U, gaps-04), so the comps panel stays live links, as `docs/dashboard-design.md` section 10 says. Dead: Algopix, Checkaflip, Prices4Antiques, ShelfTrend; EtsyHunt is now EHunt (gaps-04).
+Decision. Etsy exposes no sold prices, and the Etsy estimators in section 5 sell keyword data, not sales, so pricing runs on eBay Product Research, EBTH, Invaluable's free 12 months, Chairish for the ceiling and Google Shopping for the new-equivalent ceiling. Pay per need: Lot-Art Day Pass $9.90, WorthPoint $26.99 for one month, Artnet only for a $500-plus signed piece. The dashboard cannot scrape eBay or WatchCount; the only sanctioned feed is the Marketplace Insights API, docs behind a developer sign-in (U, gaps-04), so the comps panel stays live links, as `docs/dashboard-design.md` section 10 says. Dead: Algopix, Checkaflip, Prices4Antiques, ShelfTrend; EtsyHunt is now EHunt (gaps-04).
 
 ## 4. Shoot and edit photos
 
