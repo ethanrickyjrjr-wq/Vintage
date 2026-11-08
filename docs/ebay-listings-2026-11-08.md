@@ -135,3 +135,5 @@ Brooks Brothers 10. The shorts' and jeans' waist readings agree with their label
 the hanger assumption.
 
 Drive copy (2026-11-08): the workbook is also at `G:\My Drive\Holliewood eBay\Holliewood eBay batch 2026-11-08 - fill in.xlsx` (open in Google Sheets; File > Save as Google Sheets to edit natively), with the 21 eBay images beside it in `2026-11-08 batch images`. Ricky has no Excel, so the Drive copy is the live one.
+
+Listing copy for pasting (2026-11-08): `assets/ebay-2026-11-08/listings-copy.md` is the source; `tools/ebay-listings-doc.py` renders it to .docx and .txt. Drive copies: `G:\My Drive\Holliewood eBay\Holliewood eBay listings 2026-11-08.docx` (opens in Google Docs) and the matching .txt.
