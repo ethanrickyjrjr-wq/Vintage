@@ -102,3 +102,34 @@ Item 6 has no size on the Starlo label. Look for a second tag at the side seam; 
 - Same light, same hanger works. For the model's sake, hang dark items on the pale hanger and pale items on the black one, and keep the car's chrome handle out of the frame (it sits behind the shorts in shot 2335 and the model has to guess around it).
 - Add a measurements-card shot per item (tape visible on pit to pit and length), a fabric close-up, and every flaw. eBay allows 24 photos; aim for eight.
 - Shoot the care label as well as the brand label: fabric content was missing for items 2, 3, 5 and 7.
+
+## Photo estimates (2026-11-08) and the fill-in workbook
+
+The fill-in sheet Ricky asked for is `C:\Users\ethan\Downloads\Holliewood eBay batch 2026-11-08 - fill in.xlsx`
+(snapshot in `assets/ebay-2026-11-08/fill-in-2026-11-08.xlsx`). Sheet "To fill in": one row per missing fact per
+garment, yellow cells to type into, grey cells carrying the photo estimate and its low/high band. "Inputs" holds the
+three calibration numbers; "Pixels" the raw readings; "Listings" the titles and copy.
+
+**Method.** Each 1200 px preview was masked and the garment measured in pixels. The scale comes from one object in the
+same plane as the garment: the velvet hanger where it is fully visible (slip dress, shorts, jeans), otherwise the Jeep
+rear door's hinge spacing (top of upper hinge to top of lower hinge), otherwise the window opening height (blouse only).
+No published Jeep spec gives those door dimensions, so they are inferred from the hanger: black velvet hanger assumed
+17.5 in tip to tip (the common standard; unverified), which puts the hinge span at 10.0 in, the grey clip hanger at
+16.5 in and the window at 17 in. One tape measurement of the hinge span or of the hanger, typed into Inputs, recalibrates
+everything. Reading noise is about 5 percent; the blouse is rougher. Widths of hanging dresses (bust, hip, sweep) were
+not estimated because fabric bunches on a hanger.
+
+| # | Item | Estimate (in) |
+|---|------|---------------|
+| 1 | Liz Claiborne shirt dress | length collar to hem about 44 (43.6 front, 45.3 back); short sleeve about 10.5 |
+| 2 | Future Collective slip | top edge to hem about 32; strap as tied about 8 |
+| 3 | Ronny Kobo plunge dress | shoulder to hem point 45 front, 47 back; sleeve about 24 |
+| 4 | Brooks Brothers shorts | waist flat about 16 (waist about 32); outseam 16; front rise about 8.5; inseam about 8.5; leg opening flat about 10 |
+| 5 | The Limited blouse | collar to hem about 24 front, 27 back; sleeve about 23 (rough, window-scaled) |
+| 6 | Starlo dress | shoulder to hem about 42; sleeve about 24; elastic waist flat relaxed 13 to 14 (about 26 to 28 around) |
+| 7 | We The Free jeans | waist flat about 15.8 (waist about 31.5); front rise about 12; outseam about 36; inseam about 23.5; leg opening flat about 10 |
+
+Two things the photos say that change a listing: the jeans read as a **cropped** length (inseam about 23 to 24 in on a
+36 in outseam), so confirm before writing "full length"; and the shorts' waist reads about 32 in, which matches a
+Brooks Brothers 10. The shorts' and jeans' waist readings agree with their label sizes, which is the sanity check on
+the hanger assumption.
