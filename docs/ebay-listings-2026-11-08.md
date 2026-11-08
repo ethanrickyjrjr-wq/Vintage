@@ -137,3 +137,25 @@ the hanger assumption.
 Drive copy (2026-11-08): the workbook is also at `G:\My Drive\Holliewood eBay\Holliewood eBay batch 2026-11-08 - fill in.xlsx` (open in Google Sheets; File > Save as Google Sheets to edit natively), with the 21 eBay images beside it in `2026-11-08 batch images`. Ricky has no Excel, so the Drive copy is the live one.
 
 Listing copy for pasting (2026-11-08): `assets/ebay-2026-11-08/listings-copy.md` is the source; `tools/ebay-listings-doc.py` renders it to .docx and .txt. Drive copies: `G:\My Drive\Holliewood eBay\Holliewood eBay listings 2026-11-08.docx` (opens in Google Docs) and the matching .txt.
+
+## The rest of the shoot (added 2026-11-08, later the same day)
+
+The 21 photos Ricky first handed over were 7 of the 20 garments in the 2026-11-06 Jeep shoot (`G:\My Drive\Clothes 11 06 Jeep`, 131 files, copied to `C:\Users\ethan\Pictures\inbox\Clothes 11 06 Jeep`). Items 8 to 20 were staged from that copy and run through the same pipeline; the local model did all of these cuts (the Photoroom free calls were spent on batch 1), except two transparent PNGs Ricky had already exported from the Photoroom app (IMG_2288, IMG_2292), which the script framed as-is. Ricky's own Photoroom app batch ("Jeep Shirts", 60 images) sits in the app's Batch history and was never exported, so it is not on the PC or in Drive.
+
+| # | Item | Tag | Photo estimates (in) |
+|---|------|-----|----------------------|
+| 8 | Free People mixed print blouse | S/P, Vietnam | length about 22, sleeve 23.5 (rough) |
+| 9 | merged into 11 | the fence jacket is the adidas sample | |
+| 10 | Lew Magram Collection black jersey faux-wrap maxi | 8, 100% poly, USA | length 44.5, sleeve 22 |
+| 11 | adidas SAMPLE grey satin track jacket | US S, Thailand | length 26, sleeve 27 (rough) |
+| 12 | Connie Rizza orange floral jersey dress | no size | length 35, sleeve 23.5 (rough) |
+| 13 | Jones New York ivory flap-pocket blouse | 8, 100% poly, Korea | length 25.5, sleeve 25 (rough) |
+| 14 | Ghost London geometric plunge midi dress | XXS | length 43.5, sleeve 26 |
+| 15 | White coral-print high-waist trousers | no tag photographed | waist flat 12, outseam 40, inseam 24.5, leg opening 5.5 |
+| 16 | Denim & Flower Ricky Singh cream bomber | L; ink marks (two flaw photos) | none: no reference in frame |
+| 17 | Neiman Marcus navy 100% silk shirt dress | 12, Hong Kong | length 42, sleeve 25.5, elastic waist flat 12 |
+| 18 | Zara cream utility jumpsuit | S, Bangladesh | total length 50, waist flat 13 |
+| 19 | Columbia PFG vented fishing shirt | men's L, Vietnam | length 31.5, sleeve 13 (rough) |
+| 20 | Bonnie & Norma paisley elastic-waist midi skirt | 12 | length 26, waist flat 14, hip flat 17 |
+
+Lesson from this pass: hinge positions read by eye were wrong often enough that the front/back cross-check (and a sleeve-length sanity check, 22 to 26 in for a long sleeve) decided which reference to trust; the rear-door window height only applies when the garment hangs on the rear door. Items marked rough have one usable reference or a window-only scale. The paste-ready copy for all 20 is in `assets/ebay-2026-11-08/listings-copy.md` and the Drive docx; the workbook has fill-in rows for all 20 (item 16 has blanks only). Not clothing, and handled by another session on 2026-11-08: the halter vest, loafers, framed art, caps, bag, jewelry box, mug, flowers and plaque (`C:\Users\ethan\Pictures\inbox\nonclothes-2026-11-08`).
