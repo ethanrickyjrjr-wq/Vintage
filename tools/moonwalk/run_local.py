@@ -12,6 +12,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 
 from huggingface_hub import HfApi, constants, snapshot_download
 from filelock import FileLock, Timeout
@@ -31,30 +32,41 @@ def state(phase, **details):
     print(json.dumps(payload), flush=True)
 
 
+def download_weights(info, blobs):
+    manifest = JOB / "model-downloads.txt"
+    for attempt in range(1, 4):
+        entries = []
+        for item in info.siblings:
+            if item.lfs and item.rfilename.startswith(("transformer/", "text_encoder/", "image_encoder/", "vae/")):
+                # Refresh the redirect instead of reusing a cached, expired signed CDN URL.
+                entries.extend([
+                    f"https://huggingface.co/{MODEL}/resolve/{info.sha}/{item.rfilename}?download=true&retry={time.time_ns()}",
+                    f"  dir={blobs}", f"  out={item.lfs.sha256}",
+                    f"  checksum=sha-256={item.lfs.sha256}",
+                ])
+        manifest.write_text("\n".join(entries) + "\n", encoding="utf-8")
+        state("downloading", revision=info.sha, files=len(entries) // 4, attempt=attempt)
+        result = subprocess.run([
+            shutil.which("aria2c") or "aria2c", f"--input-file={manifest}",
+            "--max-concurrent-downloads=3", "--max-connection-per-server=16", "--split=16",
+            "--min-split-size=1M", "--file-allocation=none", "--continue=true",
+            "--auto-file-renaming=false", "--allow-overwrite=true", "--check-integrity=true",
+            "--summary-interval=60", "--show-console-readout=false", "--console-log-level=warn",
+            "--download-result=hide",
+        ], cwd=ROOT)
+        if result.returncode == 0:
+            return
+        if result.returncode != 22 or attempt == 3:
+            result.check_returncode()
+        print("Refreshing expired HTTP download links and resuming saved pieces.", flush=True)
+
+
 def main():
     info = HfApi().model_info(MODEL, files_metadata=True)
     env = dict(os.environ, MOONWALK_ROOT=str(ROOT), MOONWALK_MODEL_REVISION=info.sha)
     blobs = Path(constants.HF_HUB_CACHE) / ("models--" + MODEL.replace("/", "--")) / "blobs"
     blobs.mkdir(parents=True, exist_ok=True)
-    entries = []
-    for item in info.siblings:
-        if item.lfs and item.rfilename.startswith(("transformer/", "text_encoder/", "image_encoder/", "vae/")):
-            entries.extend([
-                f"https://huggingface.co/{MODEL}/resolve/{info.sha}/{item.rfilename}",
-                f"  dir={blobs}", f"  out={item.lfs.sha256}",
-                f"  checksum=sha-256={item.lfs.sha256}",
-            ])
-    manifest = JOB / "model-downloads.txt"
-    manifest.write_text("\n".join(entries) + "\n", encoding="utf-8")
-    state("downloading", revision=info.sha, files=len(entries) // 4)
-    subprocess.run([
-        shutil.which("aria2c") or "aria2c", f"--input-file={manifest}",
-        "--max-concurrent-downloads=3", "--max-connection-per-server=16", "--split=16",
-        "--min-split-size=1M", "--file-allocation=none", "--continue=true",
-        "--auto-file-renaming=false", "--allow-overwrite=true", "--check-integrity=true",
-        "--summary-interval=60", "--show-console-readout=false", "--console-log-level=warn",
-        "--download-result=hide",
-    ], check=True, cwd=ROOT)
+    download_weights(info, blobs)
     state("preparing_cache", revision=info.sha)
     snapshot_download(MODEL, revision=info.sha, allow_patterns=PATTERNS, max_workers=2)
     state("rendering", revision=info.sha)
