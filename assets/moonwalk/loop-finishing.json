@@ -1,0 +1,18 @@
+{
+  "source": "assets/moonwalk/candidates/local-20261108T170457Z/candidate.mp4",
+  "source_frames": [
+    46,
+    97
+  ],
+  "mask_model": "u2netp",
+  "provider": "CUDAExecutionProvider",
+  "background": "disco-background.png",
+  "overlap_frames": 4,
+  "cycle_frames": 48,
+  "repeats": 2,
+  "fps": 24,
+  "frames": 96,
+  "seconds": 4.0,
+  "edits": "character matte, fixed backdrop, head/foot framing normalization, soft reflection, four-frame character dissolve",
+  "motion": "continuous model-generated frames; no pose grid, reversed playback or optical-flow frame interpolation"
+}

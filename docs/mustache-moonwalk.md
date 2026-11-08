@@ -1,10 +1,26 @@
 # Mustache moonwalk
 
-**Status (2026-11-07):** a continuous-motion **draft** MP4 and GIF are saved in `assets/moonwalk/`, and the iPhone handoff is recovered. The newer modular pipeline preserved the neon room and recognizable outfit and transferred the footwork. The mustache is not reliably visible, the opening faces away, the hat sometimes touches the upper edge, and the loop seam jumps. These are reviewable drafts, not accepted final deliverables. Free ZeroGPU quota blocked the prepared refinement.
+**Status (2026-11-08): finished files are saved.** [MP4](../assets/moonwalk/mustache-moonwalk-final.mp4) and [looping GIF](../assets/moonwalk/mustache-moonwalk-final.gif), both four seconds. The new local render keeps the black mustache visible and the entire cap and both shoes in frame, with actual heel lifts and sliding footwork. A fixed room and a brief character-only dissolve remove the camera/background jump. The two-second motion cycle repeats twice in each four-second file. Visual inspection and file checks passed; Ricky has not yet reviewed or approved the result. The original November 7 files remain historical drafts.
+
+Delivery: [ZIP with MP4, GIF, credits and prompt records](../assets/moonwalk/mustache-moonwalk.zip). Verification is in [final-verification.json](../assets/moonwalk/final-verification.json); edit details are in [loop-finishing.json](../assets/moonwalk/loop-finishing.json).
+
+The complete new model output is preserved at `assets/moonwalk/candidates/local-20261108T170457Z/candidate.mp4`: 384 square, 24 fps, 108 decoded frames, 4.5 seconds. It used NF4 / six steps / seed 57 and completed inference in 302 seconds on the RTX 4060 Ti. Finishing retains continuous generated footage, isolates the mannequin with u2netp video mattes, stabilizes head/foot framing, composites onto a fixed room and adds a soft reflection. Source frames 46–97 form a 48-frame cycle after a four-frame character dissolve, then repeat twice. No reversed playback, pose-grid animation or optical-flow frame synthesis was used.
+
+The MP4 is 384 × 384, 96 frames at 24 fps, four seconds. The GIF is 480 × 480, 60 frames over four seconds, with infinite repeat. The wrap-frame RGB difference is 5.50 versus a maximum internal difference of 5.15; there is no hard camera cut at the loop join. A little motion softness remains in the generated fabric and the brief dissolve.
+
+Built-in ImageGen made two supporting bitmap edits, both saved in the workspace: [wider character reference](../assets/moonwalk/mannequin_full_body_wide.png) and [empty fixed room](../assets/moonwalk/disco-background.png). Exact prompts: [wide-reference-prompt.txt](../assets/moonwalk/wide-reference-prompt.txt) and [background-plate-prompt.txt](../assets/moonwalk/background-plate-prompt.txt). The animation itself comes from Wan motion transfer, not the still-image generator.
+
+Recreate the finishing edit with the existing cutout environment:
+
+```powershell
+.venv/cutout/Scripts/python.exe tools/moonwalk/finish_loop.py assets/moonwalk/candidates/local-20261108T170457Z/candidate.mp4
+```
+
+**Historical November 7 state:** only drafts existed; mustache visibility, framing and the loop had not passed. The first local render on November 8 also failed those checks and was only 3.583 seconds because its input driver was short. The corrected 4.5-second driver and wider reference resolved the face and framing problems.
 
 **Continuation (2026-11-08):** the retry at approximately 01:04 Eastern was refused again: `188s requested vs. 15s left`, reset in `17:49:52` (approximately 18:54 Eastern on November 8). The local environment `.venv/moonwalk-local` now works with the PC's 16 GB RTX 4060 Ti. The same distilled model's 45.92 GB of original weights are downloading to the machine's Hugging Face cache; inference will quantize them to NF4. Download speed has been approximately 3–4 MiB/s, so this takes hours. A detached worker was started at 01:27 Eastern and verified alive; its live state, rather than this note, is authoritative: `.venv/moonwalk-local/job/status.json`. No new video has passed visual review. Do not present the November 7 draft as finished.
 
-**Recovery (November 8, 11:44 Eastern):** the overnight worker stopped at 04:15 Eastern with aria2 exit 22 / HTTP 403. Signed CDN links expired while the large downloads ran; two transformer shards were at 97–98%. No local render was produced. `run_local.py` now regenerates uncached resolve links and retries HTTP failures up to three times while retaining aria2's saved pieces and SHA-256 validation. A mock integration check confirmed a failed HTTP attempt refreshes URLs without changing the pinned revision or disabling resume/integrity checks. The frozen worker was refreshed and restarted at 11:44 Eastern. Read `job/status.json` for its phase and `job/worker.json` for the current log filenames; the original `stdout.log` and `stderr.log` are retained historical logs of the failed run.
+**Recovery (November 8, 11:44 Eastern):** the overnight worker stopped at 04:15 Eastern with aria2 exit 22 / HTTP 403. Signed CDN links expired while the large downloads ran; two transformer shards were at 97–98%. No local render had been produced at that point. `run_local.py` now regenerates uncached resolve links and retries HTTP failures up to three times while retaining aria2's saved pieces and SHA-256 validation. A mock integration check confirmed a failed HTTP attempt refreshes URLs without changing the pinned revision or disabling resume/integrity checks. The frozen worker was refreshed and restarted at 11:44 Eastern, and all model weights subsequently completed and passed SHA-256 checks. The final refinement and finishing work above followed. The original `stdout.log` and `stderr.log` remain historical logs of the failed run.
 
 When Ricky says "ready for moonwalk" or "mustache moonwalk", this is the project. Do not ask him to explain it again. The earlier ChatGPT conversation is private, but the complete handoff is available locally in [START_HERE_CODEX.md](../assets/moonwalk/START_HERE_CODEX.md).
 
@@ -51,7 +67,7 @@ uv pip install --link-mode copy --python .venv/moonwalk-local/Scripts/python.exe
 
 The detached run uses frozen copies of the scripts in `.venv/moonwalk-local/job/code/`, with `MOONWALK_ROOT` set to this repository. Editing the tracked scripts does not change the running worker. Check these machine-local files:
 
-- `.venv/moonwalk-local/job/status.json`: downloading, preparing_cache, rendering, ready_for_visual_review, or failed, plus any error.
+- `.venv/moonwalk-local/job/status.json`: downloading, preparing_cache, rendering, ready_for_visual_review, failed, or finished after the finishing edit and review, plus any error.
 - `.venv/moonwalk-local/job/worker.json`: current process metadata and stdout/stderr log filenames. Follow those log names for download and inference progress; the original `stdout.log` and `stderr.log` are the failed overnight run.
 - `assets/moonwalk/candidates/local-*/`: generated MP4, GIF, settings, credits and contact sheet after a successful render. The worker commits and pushes only its output folder. A candidate still requires visual review and loop finishing.
 

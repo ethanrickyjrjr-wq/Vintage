@@ -1,0 +1,15 @@
+{
+  "model": "Wan-AI/Wan2.2-Animate-2-14B-Distilled-Diffusers",
+  "revision": "main",
+  "quantization": "NF4 double quantization",
+  "reference_cache": "CPU, original tensor dtype",
+  "size": 384,
+  "steps": 6,
+  "seed": 57,
+  "segment_frames": 49,
+  "image": "assets\\moonwalk\\mannequin_full_body_wide.png",
+  "driver": "assets\\moonwalk\\moonwalk-driver-facing.mp4",
+  "prompt": "A campy shop mannequin with a LARGE THICK BLACK FAKE MUSTACHE prominently stuck under her nose. The comical black moustache must remain clearly visible throughout the video. Same pale mannequin face and short tousled blonde wig under a black baseball cap with pink and aqua text. Shiny purple satin blouse with extravagant orange ruffled collar and cuffs and purple-orange patterned sleeves. Exactly the same white high-waisted flared pants with intricate orange branching designs, purple flourishes, orange and dark side stripes and gold waistband buttons, and chunky white platform shoes. She performs a convincing smooth backward moonwalk, sliding backwards while facing screen right, with alternating high heel lifts and flat backward-sliding soles. Her torso and head remain gently angled toward the viewer so we can see her oversized black mustache. Relaxed slight arm sway. Same neon-purple disco studio, large mirror ball and magenta grid floor as the reference image. One mannequin only. Fixed wide full-body camera with generous headroom and floor space. Entire hat, head and both shoes visible all the time. Smooth continuous fluid dance, consistent face and exact costume, no cuts.",
+  "prompt_ref": "The central dancer moonwalks backward in profile, with alternating raised heels and backward sliding flat feet. Transfer his footwork and subtle arm sway, keep the reference character face visible.",
+  "status": "candidate, needs visual review"
+}

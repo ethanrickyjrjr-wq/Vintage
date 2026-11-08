@@ -1,0 +1,36 @@
+{
+  "video": {
+    "file": "mustache-moonwalk-final.mp4",
+    "frames": 96,
+    "fps": 24.0,
+    "seconds": 4.0,
+    "size": [
+      384,
+      384
+    ]
+  },
+  "gif": {
+    "file": "mustache-moonwalk-final.gif",
+    "frames": 60,
+    "seconds": 4.0,
+    "size": [
+      480,
+      480
+    ],
+    "loop": 0
+  },
+  "seam": {
+    "wrap_mean_rgb_difference": 5.503209997106482,
+    "median_internal_mean_rgb_difference": 2.318232783564815,
+    "maximum_internal_mean_rgb_difference": 5.151948151765047
+  },
+  "visual_review": {
+    "mustache_visible": true,
+    "full_hat_and_shoes_visible": true,
+    "heel_lifts_and_sliding_feet": true,
+    "fixed_single_disco_ball": true
+  },
+  "source": "candidates/local-20261108T170457Z/candidate.mp4",
+  "finishing": "loop-finishing.json",
+  "user_approval": "not yet requested or claimed"
+}

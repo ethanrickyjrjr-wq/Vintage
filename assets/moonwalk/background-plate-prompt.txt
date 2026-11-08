@@ -1,0 +1,5 @@
+Built-in ImageGen edit, November 8, 2026.
+Edit target: mannequin_full_body_wide.png.
+Output: disco-background.png.
+
+Edit this exact image into a clean background plate for compositing an animation. Remove ONLY the mannequin and all her clothes, hat, shoes, and her floor reflection. Seamlessly reconstruct the room where she stood. Keep the exact camera view, square dimensions, dark burgundy-purple walls, large hanging magenta disco mirror ball in the same position and size, two neon pink triangular wall outlines, vertical side light tubes, magenta perspective floor grid and its glossy reflections, and fine distant purple sparkles. Nothing else moves or changes. The result is this same EMPTY disco studio with absolutely no person, mannequin, body, clothing, shoes, face, text or remnants of the removed figure. Preserve the open central floor area for an animated mannequin to be added later.

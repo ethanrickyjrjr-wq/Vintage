@@ -35,3 +35,19 @@ the mannequin head is composited at manually keyed neck positions, the
 shot is scaled to 80 percent with margins, and playback is slowed to
 108 frames / 24 fps / 4.5 seconds. No new motion frames are interpolated.
 driver-facing-tracking.json records the source, positions and edits.
+
+Finished shareable files, November 8:
+mustache-moonwalk-final.mp4 and mustache-moonwalk-final.gif use actual
+continuous generated frames from candidates/local-20261108T170457Z/candidate.mp4.
+Model: Wan-AI/Wan2.2-Animate-2-14B-Distilled-Diffusers, revision
+59e4141466bcb1bf9733eca1bc78be6891c9fbdf, run locally in NF4, six steps,
+seed 57, 384 square, conditioned on the widened reference and facing driver.
+The untouched model output is 4.5 seconds / 108 frames / 24 fps.
+Finishing uses source frames 46-97, u2netp character mattes, normalized
+head/foot framing, a fixed room, a soft reflection and a four-frame
+character-only dissolve. The resulting two-second cycle repeats twice
+in the four-second MP4 and GIF. No pose-grid animation, reverse bounce
+or optical-flow frame synthesis is used.
+disco-background.png is a built-in ImageGen edit removing the mannequin
+from the widened room. Its complete prompt is in background-plate-prompt.txt.
+loop-finishing.json and final-verification.json record the finishing and checks.
