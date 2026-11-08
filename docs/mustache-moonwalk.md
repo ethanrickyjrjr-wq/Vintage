@@ -4,6 +4,8 @@
 
 **Continuation (2026-11-08):** the retry at approximately 01:04 Eastern was refused again: `188s requested vs. 15s left`, reset in `17:49:52` (approximately 18:54 Eastern on November 8). The local environment `.venv/moonwalk-local` now works with the PC's 16 GB RTX 4060 Ti. The same distilled model's 45.92 GB of original weights are downloading to the machine's Hugging Face cache; inference will quantize them to NF4. Download speed has been approximately 3–4 MiB/s, so this takes hours. A detached worker was started at 01:27 Eastern and verified alive; its live state, rather than this note, is authoritative: `.venv/moonwalk-local/job/status.json`. No new video has passed visual review. Do not present the November 7 draft as finished.
 
+**Recovery (November 8, 11:44 Eastern):** the overnight worker stopped at 04:15 Eastern with aria2 exit 22 / HTTP 403. Signed CDN links expired while the large downloads ran; two transformer shards were at 97–98%. No local render was produced. `run_local.py` now regenerates uncached resolve links and retries HTTP failures up to three times while retaining aria2's saved pieces and SHA-256 validation. A mock integration check confirmed a failed HTTP attempt refreshes URLs without changing the pinned revision or disabling resume/integrity checks. The frozen worker was refreshed and restarted at 11:44 Eastern. Read `job/status.json` for its phase and `job/worker.json` for the current log filenames; the original `stdout.log` and `stderr.log` are retained historical logs of the failed run.
+
 When Ricky says "ready for moonwalk" or "mustache moonwalk", this is the project. Do not ask him to explain it again. The earlier ChatGPT conversation is private, but the complete handoff is available locally in [START_HERE_CODEX.md](../assets/moonwalk/START_HERE_CODEX.md).
 
 ## Deliverable and character
@@ -50,7 +52,7 @@ uv pip install --link-mode copy --python .venv/moonwalk-local/Scripts/python.exe
 The detached run uses frozen copies of the scripts in `.venv/moonwalk-local/job/code/`, with `MOONWALK_ROOT` set to this repository. Editing the tracked scripts does not change the running worker. Check these machine-local files:
 
 - `.venv/moonwalk-local/job/status.json`: downloading, preparing_cache, rendering, ready_for_visual_review, or failed, plus any error.
-- `.venv/moonwalk-local/job/stdout.log` and `stderr.log`: download and inference progress.
+- `.venv/moonwalk-local/job/worker.json`: current process metadata and stdout/stderr log filenames. Follow those log names for download and inference progress; the original `stdout.log` and `stderr.log` are the failed overnight run.
 - `assets/moonwalk/candidates/local-*/`: generated MP4, GIF, settings, credits and contact sheet after a successful render. The worker commits and pushes only its output folder. A candidate still requires visual review and loop finishing.
 
 To resume after a stopped or failed worker (do not start a second worker while the frozen worker is alive):
