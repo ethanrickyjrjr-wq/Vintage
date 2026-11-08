@@ -30,6 +30,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 
 - [ebay-photo-studio.md](ebay-photo-studio.md): the decisions (visible form on white, honest close-ups, no ghost mannequin or AI try-on by default), the rules, the tools, the shoot, what the tests showed, what is still unverified.
 - [ebay-listings-2026-11-08.md](ebay-listings-2026-11-08.md): the 2026-11-08 batch of seven garments (Liz Claiborne, Future Collective, Ronny Kobo, Brooks Brothers, The Limited, Starlo, We The Free): how each image was cut, the title, item specifics and description per piece, the measurement sheet to fill in, and ballpark prices to replace with comps. Images in `assets/ebay-2026-11-08/ebay/`.
+- [photoroom-brand-library.md](photoroom-brand-library.md): the Photoroom Brand Library kit for Holliewood & Vine (logos in `assets/brand/`, palette, fonts, brand info), what Photoroom accepts, and the ten-minute upload card.
 - [ebay-photo-studio-handoff.md](ebay-photo-studio-handoff.md): the card for the Windows PC: install, GPU check, first run, daily flow, shopping list, fetching the blocked pages.
 - `tools/cutout/cutout.py` is the script both describe; `tools/crawl-cloud.sh` is the cloud-session page fetcher the research lanes used.
 
