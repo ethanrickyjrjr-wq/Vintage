@@ -12,6 +12,15 @@ cropped to 480x480 at x=80,y=0, converted to 24 fps and H.264.
 The reference is used to drive an AI mannequin animation. Credit does not
 imply endorsement. Keep this attribution when sharing derivatives.
 
+moonwalk-driver-side.mp4 uses source seconds 2.0-5.6, slowed by 1.25,
+the same square crop, and conversion to 24 fps. No optical flow is used.
+
+wan-animate-modular-raw.mp4 is the model's untouched continuous output.
+mustache-moonwalk-draft.mp4 is a remux with title and source metadata.
+mustache-moonwalk-draft.gif is resized to 480 pixels with palette
+optimization at about 15 fps and infinite repeat. These are drafts:
+mustache visibility and the loop seam have not passed visual review.
+
 Character references and START_HERE_CODEX.md came from Ricky's handoff:
 https://drive.google.com/file/d/1UjY-oTTxzwx1YkAaVnI4lAr2vL3FESeJ/view
 The old rejected GIF in that ZIP is deliberately not copied or used.

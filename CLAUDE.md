@@ -1,6 +1,6 @@
 # Vintage
 
-**Mustache moonwalk (2026-11-07):** "ready for moonwalk" means the mustached mannequin video/GIF task. The recovered iPhone handoff and character references are in `assets/moonwalk/`; the current generation status, driving-clip attribution and continuation instructions are in `docs/mustache-moonwalk.md`. Read those instead of asking Ricky to explain the project again.
+**Mustache moonwalk (2026-11-07):** "ready for moonwalk" means the mustached mannequin video/GIF task. The recovered iPhone handoff, character references and continuous-motion draft MP4/GIF are in `assets/moonwalk/`. Mustache visibility and loop continuity still need fixing; free ZeroGPU quota blocked refinement. `docs/mustache-moonwalk.md` has the status, credits and one-command retry (`python tools/moonwalk/generate.py`). Read those instead of asking Ricky to explain the project again.
 
 **Status (2026-10-26):** Vintage is Ricky's vintage resale shop, **Holliewood and Vine**. A physical room already exists
 (burgundy walls, racks, lamps, art, a pink "do it for the plot" neon); the job is to put it online on
