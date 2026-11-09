@@ -1,0 +1,39 @@
+INTERNAL MASTER — CLOTHING
+Template name: HWV | Clothing | 2 day | 30 day
+Shipping: HWV | Parcel | Calculated | 2 business days
+Returns: HWV | Returns | 30 days | Buyer pays
+Payment: HWV | eBay checkout | Immediate payment where available
+
+TITLE FORMULA
+[Brand] [Garment type] [Color/pattern] [Verified material or style] [Label size]
+Stay within eBay's title limit. Use "vintage" and an era only when supported.
+
+ITEM DESCRIPTION TO COMPLETE
+[Describe this actual piece in two or three specific sentences.]
+
+Condition: [Verified condition, every material flaw, repairs, alterations and odor
+if present. Identify the photo showing each significant flaw.]
+
+Label size: [Exact label, or state that the size tag is missing.]
+Measurements, taken flat, in inches:
+  Chest, underarm to underarm: [actual measurement]
+  Waist: [actual; relaxed and stretched when useful]
+  Hips: [actual when relevant]
+  Length: [actual, with measuring points]
+  Sleeve / inseam / rise: [actual measurements relevant to the garment]
+
+Material and care: [Read the tags. If unknown, say unknown.]
+Included: [Garment / set pieces / belt / other inclusions.]
+Please compare the measurements with a similar garment that fits you well.
+
+[Append listing-footer.txt here after the native policies match.]
+
+SELLER CHECK — REMOVE BEFORE PUBLISHING
+Use this item's Photoroom front photo plus unaltered labels, details and flaws.
+Fill brand, department, type, size, size type, color and condition in eBay's fields.
+Do not copy another item's size, photos, measurements, condition or brand.
+Do not claim smoke-free, pet-free, cleaned, authentic, or a decade without evidence.
+Weigh and measure the packed parcel. Enter its real ship-from location.
+Quantity 1 for a unique piece. Record SKU and storage location in the item folder.
+Check the total delivered price against comparable SOLD pieces and your margin.
+Remove all brackets and internal notes. Preview before publishing.

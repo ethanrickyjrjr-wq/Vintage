@@ -1,0 +1,29 @@
+INTERNAL MASTER — SHIPPABLE ART AND DECOR
+Template name: HWV | Decor | 2 day | 30 day
+Shipping: HWV | Fragile | Calculated | 2 business days (for fragile pieces)
+Returns: HWV | Returns | 30 days | Buyer pays
+
+TITLE FORMULA
+[Verified maker/artist] [Object type] [Material/style] [Size] [Key detail]
+
+ITEM DESCRIPTION TO COMPLETE
+[Describe this actual piece. Distinguish an original, print, licensed reproduction
+or unsigned piece using evidence. Do not guess a maker, date or material.]
+
+Condition: [Chips, cracks, scratches, crazing, repairs, frame wear, fading and
+other material flaws. Refer to close-up photos.]
+Dimensions: [Height x width x depth with units; framed and image sizes if useful.]
+Materials / markings: [Verified details; transcribe relevant labels.]
+Included: [Exact contents, mounting hardware, stand, box or frame.]
+Function: [What was actually tested; for electrical items document the inspection
+and any limitations before deciding whether the item is suitable to sell.]
+
+[Append listing-footer.txt here after the native policies match.]
+
+SELLER CHECK — REMOVE BEFORE PUBLISHING
+Choose and test the packing method before listing. Weigh and measure the packed
+box, including protective layers. Check actual carrier coverage and restrictions
+for this material and value. "Fragile" does not itself provide insurance.
+Use local pickup if safe parcel shipping has not been established.
+Confirm the selected carrier serves the buyer locations offered by the policy.
+Remove all brackets and internal notes. Preview before publishing.

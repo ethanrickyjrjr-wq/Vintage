@@ -1,0 +1,27 @@
+INTERNAL MASTER — BAGS, SHOES AND ACCESSORIES
+Template name: HWV | Accessories | 2 day | 30 day
+Shipping: HWV | Parcel | Calculated | 2 business days
+Returns: HWV | Returns | 30 days | Buyer pays
+
+TITLE FORMULA
+[Brand] [Item type/model] [Color] [Verified material] [Size/key feature]
+
+ITEM DESCRIPTION TO COMPLETE
+[Describe the actual piece and its distinctive details.]
+
+Condition: [Exterior, interior, corners/soles, lining, hardware, closures, odor,
+repairs and all material flaws. Mention the corresponding close-up photos.]
+Size / dimensions: [Actual measurements and units; label size for shoes.]
+Material: [Verified from label or evidence; do not guess leather or metal content.]
+Included: [Strap, dust bag, box, accessories, or item only.]
+Function: [Verified closure, zipper and hardware operation.]
+
+[Append listing-footer.txt here after the native policies match.]
+
+SELLER CHECK — REMOVE BEFORE PUBLISHING
+Use photos of this actual piece, including labels and flaws. Never assert
+authenticity or a model name from a resemblance alone. Check any eBay
+Authenticity Guarantee terms that apply to this exact listing.
+Use a protective box when needed; enter packed weight and dimensions.
+Fill eBay's category-specific fields, SKU and true item location. Quantity 1.
+Remove all brackets and internal notes. Preview before publishing.

@@ -1,0 +1,31 @@
+INTERNAL MASTER — FURNITURE AND LOCAL PICKUP
+Template name: HWV | Local pickup | 30 day
+Shipping: HWV | Local pickup only
+Returns: HWV | Returns | 30 days | Buyer pays
+
+TITLE FORMULA
+[Verified maker] [Furniture/object type] [Style/material] [Important dimension]
+
+ITEM DESCRIPTION TO COMPLETE
+[Describe this actual piece, including construction and distinguishing details.]
+
+Condition: [All material wear, damage, repairs, stability and missing parts.]
+Dimensions: [Height x width x depth, with units; detached components if applicable.]
+Included: [Exact pieces, hardware and accessories.]
+
+LOCAL PICKUP ONLY
+Collection in [verified town and state]. Please confirm that you can collect the
+item before purchasing. Arrange collection through eBay Messages. Bring a suitable
+vehicle, protective materials and any help needed to load the item. Parcel shipping
+and delivery are not included. Please bring your eBay pickup code to collection.
+
+[Append listing-footer.txt here after the native policies match.]
+
+SELLER CHECK — REMOVE BEFORE PUBLISHING
+Verify the item's actual town, storage location, pickup availability and loading
+requirements. Keep the exact pickup address out of public copy.
+For change-of-mind returns, the buyer arranges return transport. For damage,
+wrong-item or not-as-described claims, resolve the return through eBay and cover
+required return arrangements. Local pickup does not waive buyer protections.
+Confirm payment in the order and record eBay's pickup code at handover.
+Remove all brackets and internal notes. Preview before publishing.
