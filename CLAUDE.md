@@ -4,6 +4,12 @@
 
 **Facebook Marketplace (2026-11-09):** the shop sells from Hollie's personal profile "Hollie Wood" (`facebook.com/profile.php?id=61596451137563`), signed in to Ricky's Chrome. A Page cannot list on Marketplace. Marketplace access is open. With Ricky's approval, the bio, the work line (Owner at Holliewood & Vine) and the city (Bonita Springs, FL) are set. One private draft exists: item 01, with no price or condition yet. Still open: Hollie's own profile photo, real friends, payouts (Ricky enters the bank details) and whether "Hollie Wood" matches her ID. Meta's rules are verified in `docs/facebook-marketplace.md`: 10% fee, $500 shipped cap, ship within 7 days.
 
+**Following research (2026-11-09):** research only; no account touched. Seven Sonnet lanes are in `research/following-2026-11-09/`, and the decision layer is `docs/following-2026-11.md`.
+- Facebook gate: buyers see account age and friend count, so the profile comes first: her face, real friends, the free Verified badge, pro mode off. Ricky must settle whether Hollie already has a Facebook account and whether "Hollie Wood" is her ID name.
+- The best promo group is Colourful & Maximalist (662,779 members; business posts Tue/Sat/Sun, twice a month).
+- eBay following is one-way, and marketing to followers needs a Store.
+- Two shop-kit wording fixes are listed but not yet made.
+
 **Mustache moonwalk (2026-11-08): finished exports exist.** `assets/moonwalk/mustache-moonwalk-final.mp4` and `.gif` are four-second loops with the black mustache, complete hat, both shoes and continuous heel/slide footwork. `mustache-moonwalk.zip` includes both files, credits and prompt records. The local model download was recovered from expired links; a corrected driver and wider reference fixed the face/framing. Finishing uses video mattes, a fixed room and a brief character dissolve; the two-second cycle repeats twice. Visual and media checks passed; Ricky has not yet reviewed or approved the result. `docs/mustache-moonwalk.md` has the exact sources, editing details and verification. The November 7 files and first November 8 candidate are historical drafts, not the delivery files.
 
 **Status (2026-10-26):** Vintage is Ricky's vintage resale shop, **Holliewood and Vine**. A physical room already exists

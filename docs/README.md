@@ -35,6 +35,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - [../research/instagram-and-marketplaces-2026-11-08.md](../research/instagram-and-marketplaces-2026-11-08.md): what the public `@holliewoodandvine` Instagram, the `holliewoodandvinellc` eBay store and the Depop page showed on 2026-11-08, and what it changes for the Photoroom kit, the social manual, the site and the eBay and Shopify plans.
 - [ebay-photo-studio-handoff.md](ebay-photo-studio-handoff.md): the card for the Windows PC: install, GPU check, first run, daily flow, shopping list, fetching the blocked pages.
 - [facebook-marketplace.md](facebook-marketplace.md): Marketplace from Hollie's personal profile. Covers the 2026-11-09 profile intro, the private draft of item 01, Meta's verified rules (10% fee, $500 shipped cap, 7-day ship, account-age and real-name risk) and the manual to-dos.
+- [following-2026-11.md](following-2026-11.md): how to build a following before the Marketplace and eBay launch. Covers what Ricky must decide first, Facebook Pages to like and groups to join in order (four checked signed-in on 2026-11-09), Meta's and eBay's red lines, the free-account eBay levers and two shop-kit fixes. Built from seven Sonnet lanes in `research/following-2026-11-09/`.
 - [ebay-drive-items.md](ebay-drive-items.md): the rule of one Drive folder per eBay item (photos plus `listing.txt`), the script that builds and checks it, and the 2026-11-08 check.
 - `tools/cutout/cutout.py` is the script both describe; `tools/crawl-cloud.sh` is the cloud-session page fetcher the research lanes used.
 
@@ -97,4 +98,5 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 | `vinted-2026-10-30/` | Vinted rules and crosslister support, raw pages plus a README | its README |
 | `ebay-clothing-photos-2026-10-30/` | eBay photo and clothing pages fetched 2026-10-30, with a README of the rules | [ebay-photo-studio.md](ebay-photo-studio.md) |
 | `ebay-photo-studio-2026-11-07/` | 21 Sonnet lanes on photographing clothes for eBay (models, rembg, ghost mannequin, AI try-on, pipeline, gear, eBay rules, hosted services, phone tools), raw pages, test results on Ricky's photos, a verification table, `fetch-later.md`, `raw/fetched-on-pc/` (the pages crawled from the PC on 2026-11-07) and `verify-on-pc/` (six re-verification reports against them) | [ebay-photo-studio.md](ebay-photo-studio.md) |
+| `following-2026-11-09/` | seven Sonnet lanes (Facebook f1 to f4, eBay e1 to e3), raw crawls and the parent's signed-in check (`raw/parent-chrome-check.md`) | [following-2026-11.md](following-2026-11.md) |
 | loose `*.md` in `research/` | pages fetched by `tools/crawl.sh`, named `<host>-<utc>.md` | none |
