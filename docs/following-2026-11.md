@@ -22,8 +22,8 @@ The parent session also checked the Facebook shortlist read-only, signed in ([ra
    - Ratings only become public after 5.
    - The best vintage buy/sell group found (Quirky Groovy Vintage, 74.9K members) turns away profiles with no photo or a low friend count.
    - So no following or group work matters until the profile is filled in: her face as the photo, real friends, the free badge (see "Before anything else" below).
-2. **The follower that counts on Marketplace is Marketplace's own Follow.** A buyer taps the seller's name, then Follow, and is "notified when they create new listings" (verified, f3). Listing steadily is what grows it. Following other people does not.
-3. **Liking Pages is safe. Joining groups should be slow.** Meta publishes no daily number for friend requests, group joins, listings or shares. It does name the triggers: lots of friend requests, requests that go unanswered, and repeated content posted at high frequency (verified, f3).
+2. **The follower that counts on Marketplace is Marketplace's own Follow.** A buyer taps the seller's name, then Follow, and will "get notifications when they create new listings" (verified, f3). Listing steadily is what grows it. Following other people does not.
+3. **Liking Pages is low risk (inferred: Meta publishes no limit, and a like is far lighter than a group join). Joining groups should be slow.** Meta publishes no daily number for friend requests, group joins, listings or shares. It does name the triggers: lots of friend requests, requests that go unanswered, and repeated content posted at high frequency (verified, f3).
 4. **eBay following is one-way.** Saving another seller only adds them to our own feed. Our followers are buyers who save us. Every tool that markets to them (newsletters, coupons, sale events, buyer groups) needs a Store (verified, e1 and e2). On the free account, growth comes from the free levers listed under "eBay: do now" below.
 5. **The single best promotion channel found:** Colourful & Maximalist Home Decor Inspo, 662,779 members, checked signed-in today. Its rules allow maximalist small businesses to post about themselves on Tuesdays, Saturdays and Sundays, at most twice a month, with a handle and a photo carousel. The look is exactly the shop's.
 
@@ -42,7 +42,7 @@ These block the Facebook plan. All are Meta's own rules (verified, f3) unless ma
 4. **Leave professional mode off.**
    - Pro mode makes followers public and adds insights.
    - But the free Facebook Verified badge, which shows on Marketplace, "is not available for Pages or ProMode accounts" (Meta, July 2026). At launch the badge is worth more.
-   - Meta Verified (paid, about $12 to $15 a month) adds nothing for Marketplace. Skip it.
+   - Meta Verified (paid; about $12 to $15 a month per search snippets, not read on a Meta page) adds nothing for Marketplace. Skip it.
 5. **The social manual says otherwise.** `docs/social-manual.md` skips Facebook Groups and "Marketplace except shipped checkout", and calls November "a setup month, not a posting month for products". This plan launches local-pickup Marketplace and slow group joins in November. Ricky decides. Real stock now exists (45 eBay items prepared), which was the manual's own gate.
 6. **Handing over heavy pieces.** Public daytime meetups at a police-station lot are the safety norm (f4). Furniture such as the $850 Bassett table can't be handed over that way. Keep it on eBay local pickup, or define a controlled handover.
 

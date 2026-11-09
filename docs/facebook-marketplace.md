@@ -2,6 +2,8 @@
 
 Ricky asked on 2026-11-08 to get Facebook set up for Holliewood and Vine so the shop can post on Marketplace. He gave the profile URL `https://www.facebook.com/profile.php?id=61596451137563` and signed in to it in Chrome.
 
+**Update, 2026-11-09:** see [`following-2026-11.md`](following-2026-11.md) before acting on "Account risk" or "Pace" below. Meta no longer allows new additional profiles, and its Terms allow one account per person. The friend cap is 6,000. The free Verified badge is not available in professional mode.
+
 ## State
 
 - **Account.** The account is a personal profile named "Hollie Wood", signed in to Ricky's Chrome. It is new: no profile photo, no cover photo and 0 friends. Login details are not kept here.
