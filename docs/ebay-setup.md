@@ -2,7 +2,7 @@
 
 **Status, November 9, 2026:** Ricky approved dispatch within two business days and 30-day returns, with buyer-paid return postage for a change of mind and seller-paid returns for damage, faults, wrong items or description errors. **Use the free seller profile and templates now; Ricky intends to upgrade soon.** The copy and future Store assets are prepared in [`assets/ebay-shop-kit`](../assets/ebay-shop-kit/README.txt).
 
-**Done on eBay (November 9, Claude Code via Claude in Chrome):** business policies are switched on, the HWV policies exist, and four listing templates are saved. **The 7 live listings are not changed yet.** They still show "Seller does not accept returns" and 3-business-day handling. No messages, offers, subscription or payout settings were touched. Details: [Account state, November 9](#account-state-november-9).
+**Done on eBay (November 9, Claude Code via Claude in Chrome):** business policies are switched on, the HWV policies exist and four listing templates are saved. With Ricky's go-ahead in chat, **all 6 active listings now carry 30-day buyer-pays returns and 2-business-day handling**, checked from each buyer page. The seventh, the Nancy Glazier print, had already been ended: its page says it was ended Nov 9 at 4:53 AM "by indicating this item is no longer available". Claude did not end it. No messages, offers, subscription or payout settings were touched. Details: [Account state, November 9](#account-state-november-9).
 
 **Browser access:** two Chrome browsers are connected to the account. Browser tools refuse to act until one is chosen. Pick **Browser 1** with `list_connected_browsers`, then `select_browser`. That browser is signed in as `holliewoodandvinellc`, and eBay pages open there with no extra site prompt. Screenshots time out on that window, so read pages through the DOM (`javascript_tool`, `find`, `read_page`). Do not ask for another eBay sign-in. Login details are not part of this kit.
 
@@ -17,7 +17,7 @@ Everything in this section was read back from Seller Hub on November 9.
 - **Shipping preferences:** working days are Monday–Friday with a 2:00 PM Pacific cut-off. Carrier rates are eBay discounted. There are no combined-shipping rules, rate tables or exclusions.
 - **International:** none of the policies offer international shipping. No eBay International Shipping enrollment shows on Shipping Preferences or in the policy forms. This was left unchanged.
 
-**Live listings (7), unchanged.** All of them currently say "Seller does not accept returns".
+**Listings as found in the audit.** All seven said "Seller does not accept returns" and had 3-business-day handling. The revisions that followed are listed below this table.
 
 | Item | Format | Shipping today | Location shown |
 |---|---|---|---|
@@ -28,6 +28,18 @@ Everything in this section was read back from Seller Hub on November 9.
 | Kay Unger skirt suit (198660722385) | BIN $45, Best Offer | Calculated | Fort Myers, FL |
 | Nancy Glazier framed print (198669139180) | BIN $225, Best Offer | Calculated, plus free local pickup | Bonita Springs, FL |
 | Bassett coffee table (198693142364) | BIN $850, Best Offer, in a General Promoted Listings campaign | Local pickup only | Bonita Springs, FL |
+
+**Revisions, November 9 (Ricky approved in chat).** Each listing was revised in place; none was ended and relisted. Every buyer page was then read back.
+
+| Item | Shipping policy | Payment policy | Buyer page after revision |
+|---|---|---|---|
+| Sandals (auction, still 0 bids) | HWV Parcel + pickup | HWV immediate payment | 30-day returns; $5.87 calculated; free local pickup |
+| Satchel, tote, GUESS bag | HWV Parcel | HWV immediate payment | 30-day returns; $5.87 calculated |
+| Kay Unger suit | HWV Parcel | HWV immediate payment | 30-day returns; $7.04 calculated |
+| Bassett table | Local Pickup (unchanged) | eBay Managed Payments: eBay checkout, no money orders | 30-day returns; free local pickup |
+| Nancy Glazier print | — | — | Already ended Nov 9, 4:53 AM, "no longer available". Not relisted |
+
+eBay refused immediate payment on the table: "Because you've specified Local Pickup Only for this item, you can't require immediate payment." Ricky had chosen to drop money orders, so the table now uses eBay Managed Payments, which is eBay checkout with no immediate-payment requirement and no offline methods. The same fix went into the Local Pickup template. The descriptions are unchanged; the footer has not been added to any live listing yet.
 
 **Business policies.** Opting in is reversible: eBay's help page says "You can opt out any time", active listings are unaffected, and opting out deletes your policies ([Business policies](https://www.ebay.com/help/selling/business-policies/business-policies?id=4212), read November 9). At opt-in, eBay generated policies from the listings and named them itself. Do not edit those generated policies. Editing a policy pushes the change to every linked listing.
 
@@ -51,10 +63,9 @@ Not created: **Fragile** and **Clothing combine weights**. They depend on tested
 | HWV \| Clothing \| 2 day \| 30 day | HWV Parcel | **Antiques > Other Antiques: change it on every listing.** Women's Vintage Clothing would not save on a template because eBay then requires a title and a condition |
 | HWV \| Accessories \| 2 day \| 30 day | HWV Parcel | Women's Bags & Handbags |
 | HWV \| Decor \| 2 day \| 30 day | HWV Parcel + pickup (no Fragile policy yet) | Home Décor > Other Home Décor |
-| HWV \| Local pickup \| 30 day | Local Pickup (eBay's generated policy) | Furniture > Tables |
+| HWV \| Local pickup \| 30 day | Local Pickup (eBay's generated policy), with payment set to eBay Managed Payments because pickup-only listings cannot require immediate payment | Furniture > Tables |
 
 **Not done, and why:**
-- **Live-listing revisions.** On the sandals auction, the revise form was filled in with HWV Parcel + pickup, HWV Returns and HWV Payment. Submitting it was refused by Claude Code's permission classifier, so nothing was saved. The other six were not attempted. Ricky must approve applying the new terms to live listings before they are revised, either in chat or by doing it in Seller Hub.
 - **Profile About text.** The field is empty, with a 1,000-character limit. Typing `profile-bio.txt` and pressing Save twice did not persist after a reload. Paste it by hand at `ebay.com/usr/holliewoodandvinellc?_tab=about`.
 - **Clothing template category:** see the template table above.
 
@@ -166,16 +177,9 @@ Review weekly: carrier scans by deadline, unanswered questions, returns by reaso
 
 The audit, policies and templates are done (see [Account state, November 9](#account-state-november-9)). What is left:
 
-1. **Get Ricky's go-ahead to revise the 7 live listings**, then revise each one in place. Do not end and relist. Use this mapping:
-   - Sandals and print: HWV Parcel + pickup.
-   - The three bags and the suit: HWV Parcel.
-   - Table: keep Local Pickup.
-   - All seven: HWV Returns.
-   - Payment: use HWV Payment on the shipped Buy It Now listings. The table now takes money orders through its MOCC policy; keep that or switch it to HWV Payment on Ricky's word.
-   
-   Revise the sandals first, while the auction still has no bids. It ends Tue Nov 10 at 5:44 PM ET. eBay's [Revise a listing](https://www.ebay.com/help/selling/listings/revising-listing?id=4356) page (read Nov 9) lists what can change in an auction with no bids and under 12 hours left, and policy edits are not on that list. So the practical deadline is about 5:44 AM ET on Nov 10.
-2. **Check each revised listing from the buyer view.** Each should show 30-day returns and the expected shipping and pickup lines. Record anything eBay refuses.
-3. **Add the footer last.** Append it to a listing's description only after that listing's native policies match. First scan the existing description for "no returns", smoke-free claims and similar wording.
+1. **Done:** the 6 active listings were revised and checked from the buyer view (see the revisions table). Find out from Ricky why the print was ended at 4:53 AM. Then decide whether it comes back, as a relist under the new policies, or stays off.
+2. **eBay revise limits, for later edits:** the sandals auction ends Tue Nov 10 at 5:44 PM ET. eBay's [Revise a listing](https://www.ebay.com/help/selling/listings/revising-listing?id=4356) page (read Nov 9) sets out what can still change in an auction with no bids and under 12 hours left, and policy edits are not on that list. So finish any further change to it before about 5:44 AM ET on Nov 10.
+3. **Add the footer last.** The policies now match on all 6 active listings, so the footer can go on. First scan each existing description for "no returns", smoke-free claims and similar wording.
 4. **Paste the profile About text by hand** (it would not save from automation). The profile image stays as it is until Ricky picks one.
 5. **When nothing links to them any more,** delete the generated "Calculated: USPSParcel, 3 business days" and "No Return Accepted" policies (or use Delete inactive policies). Ask Ricky before deleting.
 6. **Inbox aids:** inspect folders and AI reply suggestions. Do not send messages or offers just to test them.
