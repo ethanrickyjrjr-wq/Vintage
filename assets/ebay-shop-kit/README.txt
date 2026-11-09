@@ -1,5 +1,5 @@
 HOLLIEWOOD & VINE — EBAY SHOP KIT
-Prepared November 8, 2026.
+Prepared November 8, 2026. Access status updated November 9.
 
 STATUS
 Ricky approved two-business-day dispatch and 30-day returns, with the buyer paying
@@ -44,6 +44,9 @@ customer-replies.txt    Twelve messages to adapt; none have been sent.
 thank-you-card.txt     Optional printed package insert, not listing copy.
 
 ACCOUNT ACCESS
-The user is signed in, but this Codex session cannot control that browser.
-No login details are stored here. A supported browser connection is needed to
-apply and verify settings. Do not buy a subscription during this task.
+The user is signed in. Both Chrome sessions and their open eBay tabs were detected.
+The page read stopped because the app's website-access approval returned no valid
+decision. Select Chrome from the chat's @ menu and use the native eBay access
+prompt; see the setup guide for the documented recovery. Do not bypass that gate.
+No login details are stored here. Account settings still need implementation and
+verification. Do not buy a subscription during this task.

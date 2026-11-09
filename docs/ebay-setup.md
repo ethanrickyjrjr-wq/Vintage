@@ -1,8 +1,10 @@
 # Holliewood & Vine eBay setup
 
-**Status, November 8, 2026:** Ricky approved dispatch within two business days and 30-day returns, with buyer-paid return postage for a change of mind and seller-paid returns for damage, faults, wrong items or description errors. **Use the free seller profile and templates now; Ricky intends to upgrade soon.** The copy and future Store assets are prepared in [`assets/ebay-shop-kit`](../assets/ebay-shop-kit/README.txt). No eBay account settings, messages, subscriptions or live listings have been changed.
+**Status, November 9, 2026:** Ricky approved dispatch within two business days and 30-day returns, with buyer-paid return postage for a change of mind and seller-paid returns for damage, faults, wrong items or description errors. **Use the free seller profile and templates now; Ricky intends to upgrade soon.** The copy and future Store assets are prepared in [`assets/ebay-shop-kit`](../assets/ebay-shop-kit/README.txt). No eBay account settings, messages, subscriptions or live listings have been changed.
 
-Ricky confirmed that he is signed in. This Codex session has no callable browser-control or computer-use runtime, so it cannot inspect that tab. A public profile request also returned HTTP 403. A TinyFish browser connection was suggested, but is not confirmed connected. Login details are not part of this kit. The existing account evidence is the [earlier November 8 inspection](../research/instagram-and-marketplaces-2026-11-08.md), not a new live audit.
+Ricky is signed in. On November 9, the installed Chrome integration successfully detected both Chrome sessions and an open eBay tab in each. Extension and native-host checks passed after two stale local runtime paths were repaired. The attempted page read then stopped because the app's website-access approval returned no valid decision. The earlier claim that no browser connection was available was incorrect; no new browser service is needed. Account contents and settings remain unaudited in this task. Login details are not part of this kit. Existing account evidence comes from the [earlier November 8 inspection](../research/instagram-and-marketplaces-2026-11-08.md).
+
+Resume with Chrome selected from the chat's `@` menu and native approval for `ebay.com`. If that prompt does not appear, the user can inspect **Settings → Computer Use → Chrome → Manage**; a fresh chat can clear chat-specific connection state. Do not bypass the access gate or ask for another eBay sign-in. [OpenAI browser access and troubleshooting](https://learn.chatgpt.com/docs/chrome-extension#control-website-access).
 
 ## Start with a dependable shop
 
@@ -110,7 +112,7 @@ Review weekly: carrier scans by deadline, unanswered questions, returns by reaso
 
 ## Resume account implementation
 
-With a supported browser connection, continue without repeating the approved-policy question:
+Once native eBay site access is granted, continue without repeating the approved-policy question:
 
 - Confirm seller identity, subscription, selling limits, existing policies and international enrollment. Inspect listings and any orders or bids before revisions.
 - Verify locations privately in eBay. Establish packed specifications and suitable carrier services.
