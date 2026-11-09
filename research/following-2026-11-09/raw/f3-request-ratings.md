@@ -1,0 +1,55 @@
+[Help Center](https://www.facebook.com/help/)
+[](https://www.facebook.com/support/)
+English (US)
+[](https://www.facebook.com/help/search/)
+[](https://www.facebook.com/help/463972400461409/?helpref=hc_global_nav)
+Using Facebook
+Login, Recovery and Security
+Managing Your Account
+Privacy and Safety
+Policies
+Reporting
+# Request ratings from buyers on Facebook Marketplace
+Copy link
+This feature isn't available on computers, but it is available on these devices. Select a device to learn more about this feature.
+[Android App Help](https://www.facebook.com/help/757344028516600/?cms_platform=android-app&helpref=platform_switcher)
+[iPad App Help](https://www.facebook.com/help/757344028516600/?cms_platform=ipad-app&helpref=platform_switcher)
+[iPhone App Help](https://www.facebook.com/help/757344028516600/?cms_platform=iphone-app&helpref=platform_switcher)
+## 
+Was this helpful?
+Yes
+No
+## Related Articles
+[How ratings work on Facebook Marketplace](https://www.facebook.com/help/915385548593204/?helpref=related_articles)
+[Rate a Facebook Marketplace seller](https://www.facebook.com/help/1049892879215022/?helpref=related_articles)
+[How seller reviews work on Facebook Marketplace](https://www.facebook.com/help/2976188062670725/?helpref=related_articles)
+[View your or someone else's Facebook Marketplace profile or ratings](https://www.facebook.com/help/115419748941011/?helpref=related_articles)
+[Reply to your reviews on Facebook Marketplace](https://www.facebook.com/help/408183763632468/?helpref=related_articles)
+Related Articles
+[How ratings work on Facebook Marketplace
+* * *](https://www.facebook.com/help/915385548593204/?helpref=related_articles)
+[Rate a Facebook Marketplace seller
+* * *](https://www.facebook.com/help/1049892879215022/?helpref=related_articles)
+[How seller reviews work on Facebook Marketplace
+* * *](https://www.facebook.com/help/2976188062670725/?helpref=related_articles)
+[View your or someone else's Facebook Marketplace profile or ratings
+* * *](https://www.facebook.com/help/115419748941011/?helpref=related_articles)
+[Reply to your reviews on Facebook Marketplace](https://www.facebook.com/help/408183763632468/?helpref=related_articles)
+## Other ways to get help
+Chat with Meta AI support assistant
+Resolve issues, make changes and get support in real time
+  * [About](https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.meta.com%2F%3Futm_source%3Dhelp-center%26utm_medium%3Dreferral&h=AUDpBwlK48b7ebOo4DwEz1IClNXJrBZMLyRjicKvYG4yPxhLNlBIupGlhHA9v_iStAl_rs-Nk83IHrxhhB3oYYWFzCt-q9B7iveie6JZplR08rVpuj0BYQfqsP5caHhm9pyL1TeX8flc-A)
+  * [Privacy](https://www.facebook.com/privacy/explanation/)
+  * [Terms and Policies](https://www.facebook.com/policies/)
+  * [Ad Choices](https://www.facebook.com/help/568137493302217/)
+  * [Careers](https://www.facebook.com/)
+  * [Cookies](https://www.facebook.com/policies/cookies/)
+  * [Create Ad](https://www.facebook.com/business/)
+  * [Create Page](https://www.facebook.com/pages/creation/)
+
+
+* * *
+![From Meta Logo](https://static.xx.fbcdn.net/rsrc.php/yU/r/i5fDHQITY46.webp)
+© 2026 Meta
+Feedback
+

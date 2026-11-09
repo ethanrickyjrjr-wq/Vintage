@@ -1,0 +1,106 @@
+[Skip to main content](https://pages.ebay.com/social/sharing/terms.html#mainContent)
+Hi! [Sign in](https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&sgfl=gh&ru=https%3A%2F%2Fpages.ebay.com%2Fsocial%2Fsharing%2Fterms.html) or [register](https://signup.ebay.com/pa/crte?ru=https%3A%2F%2Fpages.ebay.com%2Fsocial%2Fsharing%2Fterms.html)[Deals](https://www.ebay.com/deals)[Brand Outlet](https://www.ebay.com/b/Brand-Outlet/bn_7115532402)[Help & Contact](https://www.ebay.com/help/home)
+[Sell](https://www.ebay.com/sl/sell)
+[Watchlist](https://www.ebay.com/mye/myebay/watchlist)Expand Watch List
+[My eBay](https://www.ebay.com/mys/home?source=GBH)Expand My eBay
+  * [Summary](https://www.ebay.com/mye/myebay/summary)
+  * [Recently Viewed](https://www.ebay.com/mye/myebay/rvi)
+  * [Bids/Offers](https://www.ebay.com/mye/myebay/bidsoffers)
+  * [Watchlist](https://www.ebay.com/mye/myebay/watchlist)
+  * [Purchase History](https://www.ebay.com/mye/myebay/purchase)
+  * [Buy Again](https://www.ebay.com/mye/buyagain)
+  * [Selling](https://www.ebay.com/mys/home?CurrentPage=MyeBayAllSelling&ssPageName=STRK:ME:LNLK:MESX&source=GBH)
+  * [Saved Feed](https://www.ebay.com/mye/myebay/saved)
+  * [Saved Searches](https://www.ebay.com/mye/myebay/savedsearches)
+  * [Saved Sellers](https://www.ebay.com/mye/myebay/savedsellers)
+  * [Payments](https://www.ebay.com/mes/summary)
+  * [My Garage](https://www.ebay.com/g/mygarage)
+  * [Preferences](https://www.ebay.com/d/myebay/preferences)
+  * [My Collection](https://www.ebay.com/collection/hub)
+  * [Messages](https://mesg.ebay.com/mesgweb/ViewMessages/0)
+  * [PSA Vault](https://www.ebay.com/collection/category?notionalTypeId=Vault&period=1Y)
+  * [Issue Resolution Center](https://resolution.ebay.com)
+
+
+Notifications
+Please [sign in](https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&sgfl=nf&ru=https%3A%2F%2Fpages.ebay.com%2Fsocial%2Fsharing%2Fterms.html) to view notifications.
+[](https://cart.ebay.com)Expand Cart
+Loading...
+[eBay Home](https://www.ebay.com)
+Shop by category
+All Categories Antiques Art Baby Books Business & Industrial Cameras & Photo Cell Phones & Accessories Clothing, Shoes & Accessories Coins & Paper Money Collectibles Computers/Tablets & Networking Consumer Electronics Crafts Dolls & Bears Movies & TV eBay Motors Entertainment Memorabilia Gift Cards & Coupons Health & Beauty Home & Garden Jewelry & Watches Music Musical Instruments & Gear Pet Supplies Pottery & Glass Real Estate Specialty Services Sporting Goods Sports Mem, Cards & Fan Shop Stamps Tickets & Experiences Toys & Hobbies Travel Video Games & Consoles Everything Else
+Search[Advanced](https://www.ebay.com/sch/ebayadvsearch)
+# Terms And Conditions
+Participating sellers will receive a final value fee credit on items purchased through a unique listing link. To generate this unique listing link, select either “Share Your Link” after completing or revising a listing through eBay’s quick listing tool or the “Share Listing” option next to existing listings on My eBay Active and follow the prompts to share your listing. Buyers must click on and then purchase your item through your unique listing link in order for you to receive a final value fee credit. 
+Continue reading for more details, terms and conditions, and FAQs. 
+
+Terms and Conditions
+
+
+What is the Promotion?
+    
+Sellers will receive a final value fee credit on items purchased through a unique listing link.
+You may generate a unique listing link by: (i) selecting the “Share Your Link” prompt available after completing or revising a listing through eBay’s quick listing tool; or the “Share Listing” option available next to existing listings on My eBay Active; and (ii) following the prompts to share your listing via one of the available sharing options (the “Promotion”).
+The final value fee will appear as a credit on your eBay invoice within 30 days of a qualifying sale.
+Please note: All existing selling limits on your account (as well as category and item limits) still apply. Listing fees, depending on how many listings you have already created, as well as optional upgrade fees (such as reserve price, subtitle, etc.) may apply; learn more about seller fees, including the number of zero insertion fee listings per month, by viewing our [everyday rate ](http://pages.ebay.com/sellerinformation/ebay-fee-structure/Index.html)[plan](http://pages.ebay.com/sellerinformation/ebay-fee-structure/Index.html). 
+
+Who's eligible?
+    
+This Promotion is available to sellers who use eBay’s quick listing tool. Only sellers using eBay’s quick listing tool will see prompts to “Share Your Link” or “Share Listing.” 
+
+Summary of Restrictions & Exclusions
+    
+  * The Promotion is only valid for final value fee credits. Optional upgrade fees (such as reserve price, subtitle, etc.), as well as any applicable insertion and PayPal fees, may still apply.
+  * The Promotion is only valid for the current listing duration. Unique listing link expires at the end of the listing duration, _e.g_., if your item is listed as a 1-day auction and the auction expires without a sale the unique link also expires.
+  * The Promotion is not available for sellers using listing flows other than eBay’s quick listing tool.
+  * The Promotion is not available if the unique listing link is shared in any manner on [www.ebay.com](http://www.ebay.com), including, but not limited to, in your listing description, eBay Messages, or on another eBay website.
+  * If it is discovered or suspected at eBay’s sole discretion that a seller has participated or is attempting to participate in the Promotion by violating applicable eBay policies, that seller will be disqualified from the Promotion. eBay reserves all rights to recoup any final value fee credits from that seller.
+  * Any attempted form of participation in this Promotion other than as described herein is void.
+  * Sellers are responsible for their own compliance with applicable social media platform rules and restrictions.
+
+
+
+Frequently asked questions
+
+
+Why should I share my unique link?
+    
+When you share your unique listing link on social media, via e-mail, or through another available sharing option, and a buyer purchases your item through that unique link, you will receive a credit back on any final value fee related to the sale. 
+
+When will I receive my final value fee credit?
+    
+The final value fee will be credited back to your regular eBay invoice within 30 days of a qualifying sale. 
+
+What about credits for other fees?
+    
+Only final value fees will be credited back to you. Optional upgrade fees (such as reserve price, subtitle, etc.), as well as any applicable insertion and PayPal fees may still apply. 
+
+What if someone purchases my item through a different link I share?
+    
+You will not be eligible for the final value fee credit. For example, you will not receive a final value fee credit if your item sells via a link generated by yourself by finding your listing on [www.ebay.com](http://www.ebay.com) and directing buyers to your listing. 
+
+What if someone in my network purchases my item without clicking on my unique link?
+    
+You will not be eligible for the final value fee credit. Make sure to share the unique listing link to your network. 
+
+What if someone else shares my unique link?
+    
+As the seller who generated the unique link, you will be the one eligible to receive the final value fee credit on any sale of your item. 
+
+What happens if my listing expires?
+    
+You will need to re-list your item and then re-share your unique listing link. The final value fee credit is only available for the current listing duration. For example, if your item is listed as a 1-day auction and the auction expires without a sale the unique link also expires. 
+  * [About eBay](https://www.ebayinc.com)
+  * [Announcements](https://community.ebay.com/t5/Announcements/bg-p/Announcements)
+  * [Community](https://community.ebay.com)
+  * [Security Center](https://pages.ebay.com/securitycenter/index.html)
+  * [Seller Center](https://www.ebay.com/sellercenter)
+  * [Policies](https://www.ebay.com/help/policies/default/ebays-rules-policies?id=4205)
+  * [Affiliates](https://partnernetwork.ebay.com/)
+  * [Product Safety Tips](https://pages.ebay.com/safetytips)
+  * [Help & Contact](https://www.ebay.com/help/home)
+  * [Site Map](https://pages.ebay.com/sitemap.html)
+
+
+Copyright © 1995-2026 eBay Inc. All Rights Reserved. [Accessibility](https://www.ebayinc.com/accessibility/), [User Agreement](https://www.ebay.com/help/policies/member-behaviour-policies/user-agreement?id=4259), [Privacy](https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260), [Consumer Health Data](https://www.ebayinc.com/company/privacy-center/privacy-notice/consumer-health-data-privacy-policy/), [Payments Terms of Use](https://pages.ebay.com/payment/2.0/terms.html), [Cookies](https://www.ebay.com/help/policies/member-behaviour-policies/ebay-cookie-notice?id=4267), [CA Privacy Notice](https://www.ebayinc.com/company/privacy-center/privacy-notice/state-privacy-disclosures/#california), [Your Privacy Choices](https://www.ebay.com/adchoice/ccpa) and [AdChoice ](https://www.ebay.com/adchoice)
+

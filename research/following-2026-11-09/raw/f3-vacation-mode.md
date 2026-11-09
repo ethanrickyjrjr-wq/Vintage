@@ -1,0 +1,99 @@
+[Help Center](https://www.facebook.com/help/)
+[](https://www.facebook.com/support/)
+English (US)
+[](https://www.facebook.com/help/search/)
+[](https://www.facebook.com/help/463972400461409/?helpref=hc_global_nav)
+Using Facebook
+[Creating an Account](https://www.facebook.com/help/570785306433644/?helpref=hc_fnav)
+Your Profile
+Friending
+[Facebook Dating](https://www.facebook.com/help/312959615934334/?helpref=hc_fnav)
+Your Home Page
+Messaging
+Reels
+Facebook stories
+Photos
+Videos
+Gaming
+Pages
+Groups
+Events
+Fundraisers and Donations
+Meta Pay
+Marketplace
+[How Marketplace Works](https://www.facebook.com/help/1889067784738765/?helpref=hc_fnav)
+[Buying on Marketplace](https://www.facebook.com/help/272975853291364/?helpref=hc_fnav)
+[Selling on Marketplace](https://www.facebook.com/help/153832041692242/?helpref=hc_fnav)
+[Sell with Shipping on Marketplace](https://www.facebook.com/help/773379109714742/?helpref=hc_fnav)
+[Using Checkout on Facebook](https://www.facebook.com/help/1411280809160810/?helpref=hc_fnav)
+[Buy and Sell Groups](https://www.facebook.com/help/319768015124786/?helpref=hc_fnav)
+[Get help with Marketplace](https://www.facebook.com/help/1127970530677256/?helpref=hc_fnav)
+Apps
+Facebook Mobile Apps
+[Accessibility](https://www.facebook.com/help/273947702950567/?helpref=hc_fnav)
+Login, Recovery and Security
+Managing Your Account
+Privacy and Safety
+Policies
+Reporting
+  * [Using Facebook](https://www.facebook.com/help/463972400461409/?helpref=breadcrumb)
+  * [Marketplace](https://www.facebook.com/help/1713241952104830/?helpref=breadcrumb)
+
+
+# Vacation mode on Facebook Marketplace
+Copy link
+Android App Help
+Computer Help
+iPhone App Help
+More
+Android App Help
+Computer Help
+iPhone App Help
+Some shipping features are not available to all eligible sellers.
+When you sell something with shipping on Marketplace, you can let people know when you’re unavailable with vacation mode. Buyers won’t be able to place orders or message you.
+When you turn on vacation mode, your listings won’t appear in searches, and buyers can’t place orders or message you. Vacation mode also prevents orders from being canceled if you're unavailable to action on them.
+When vacation mode is off, people can place orders and message you. 
+## Turn vacation mode on or off
+  1. From your Feed, click ![](https://static.xx.fbcdn.net/assets/?set=content_operations_help_center&name=comet-marketplace-desktop&density=1)**Marketplace** in the left menu.
+  2. Click ![](https://static.xx.fbcdn.net/assets/?set=content_operations_help_center&name=fb-settingsgear-desktop&density=1)**Settings** in the left.
+  3. Click **Manage vacation mode** , then click ![](https://static.xx.fbcdn.net/assets/?set=content_operations_help_center&name=fb-toggleoffmarketplace-android&density=1)**Toggle** to turn vacation mode on or off.
+
+
+## 
+Was this helpful?
+Yes
+No
+## Related Articles
+[Use Soccer mode on Facebook](https://www.facebook.com/help/828909906963474/?helpref=related_articles)
+[Tips for using Door Drop Off or Pick Up on Facebook Marketplace](https://www.facebook.com/help/287743092672086/?helpref=related_articles)
+[Change the location of your Facebook Marketplace listings](https://www.facebook.com/help/856832575260415/?helpref=related_articles)
+[How long do my Facebook Marketplace listings stay active?](https://www.facebook.com/help/976748741431731/?helpref=related_articles)
+[Shipping performance on Facebook Marketplace](https://www.facebook.com/help/701015577168337/?helpref=related_articles)
+Related Articles
+[Use Soccer mode on Facebook
+* * *](https://www.facebook.com/help/828909906963474/?helpref=related_articles)
+[Tips for using Door Drop Off or Pick Up on Facebook Marketplace
+* * *](https://www.facebook.com/help/287743092672086/?helpref=related_articles)
+[Change the location of your Facebook Marketplace listings
+* * *](https://www.facebook.com/help/856832575260415/?helpref=related_articles)
+[How long do my Facebook Marketplace listings stay active?
+* * *](https://www.facebook.com/help/976748741431731/?helpref=related_articles)
+[Shipping performance on Facebook Marketplace](https://www.facebook.com/help/701015577168337/?helpref=related_articles)
+## Other ways to get help
+Chat with Meta AI support assistant
+Resolve issues, make changes and get support in real time
+  * [About](https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.meta.com%2F%3Futm_source%3Dhelp-center%26utm_medium%3Dreferral&h=AUC6b791t4WNURNSXHXIIm_DaoMLzDBgmSDBvtk9KpXvcAeC9sDLDAMaWxe51cH5OZyQI76Kmat2qyQyOq_ltnDFNxqv7gSt5v7mcRKdX93AUCO-76VWJG6i1VPL5aj_6kuF78IjGKxSLg)
+  * [Privacy](https://www.facebook.com/privacy/explanation/)
+  * [Terms and Policies](https://www.facebook.com/policies/)
+  * [Ad Choices](https://www.facebook.com/help/568137493302217/)
+  * [Careers](https://www.facebook.com/)
+  * [Cookies](https://www.facebook.com/policies/cookies/)
+  * [Create Ad](https://www.facebook.com/business/)
+  * [Create Page](https://www.facebook.com/pages/creation/)
+
+
+* * *
+![From Meta Logo](https://static.xx.fbcdn.net/rsrc.php/yU/r/i5fDHQITY46.webp)
+© 2026 Meta
+Feedback
+
