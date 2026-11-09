@@ -31,13 +31,16 @@ The parent session also checked the Facebook shortlist read-only, signed in ([ra
 
 These block the Facebook plan. All are Meta's own rules (verified, f3) unless marked otherwise.
 
-1. **Does Hollie already have a Facebook account?**
-   - Meta no longer lets anyone create additional profiles, so "Hollie Wood" is almost certainly its own account (inferred).
-   - The Terms say "Create only one account (your own)", so a second account for Hollie breaks them.
-   - If she has an older account, the safer path is to sell from that one.
-2. **Is "Hollie Wood" the name on her ID?**
-   - If not, Meta can ask for ID and lock features while it checks. A name can change only once every 60 days.
+1. **Settled (Ricky, 2026-11-09): Hollie already has a Facebook account, and Marketplace moves to it once she gives access.**
+   - Her own account brings its age, friends and real photos. That clears most of the trust problem.
+   - "Hollie Wood" becomes a second account for the same person. Meta's Terms allow one ("Create only one account (your own)").
+   - Next steps:
+     - Recreate the item 01 draft on her real account.
+     - Copy the shop work line and bio over.
+     - Then Ricky decides whether to retire "Hollie Wood". Deactivating it is the least destructive option, and Claude does not do this.
+2. **Name on her account.** Her real account should already carry the name on her ID, so the name-check risk mostly goes away.
    - Meta allows "another name" (nickname, professional name) to be listed on the account.
+   - The shop name goes in the work line and bio, not the profile name.
 3. **Who runs the profile.** The Terms also say "Not share your password, give access to your Facebook account to others". Hollie should be the one using it day to day, not Ricky.
 4. **Leave professional mode off.**
    - Pro mode makes followers public and adds insights.
@@ -124,7 +127,7 @@ Instagram link: if `@holliewoodandvine` and the Facebook profile sit in the same
 |---|---|---|
 | Paste `assets/ebay-shop-kit/profile-bio.txt` into the profile About field | It's empty now: 1,000 characters, free, and its placeholder reads "Give people more reasons to follow you!" | e1 |
 | Validated tracking on every order | Both current feedbacks are eBay's automated "delivered on time" ratings, which need tracking. Tracking is also a Top Rated requirement | e1 |
-| Check Seller Hub > Overview > Monthly limits **before** listing the 45 items | New-account limits are set monthly. Listings over the limit can be ended. The common figure of about 10 items or $500 is unverified | e1 |
+| ~~Check the monthly selling limit~~ **Done:** 75,000 items and $750,000 (Seller Hub, Nov 9). The 45-item backlog fits | Listings over the limit can be ended | `ebay-setup.md` |
 | Revise the 7 live listings in place; don't end and relist | eBay's search director said at eBay Open 2025 that end-and-relist hurts | e3 |
 | Best Offer on, plus send offers to watchers (at least 5% off, 96 hours, the 30 most recent) | The one free, native conversion tool. Test 10% on Friday to Sunday around midday | e1, e3 |
 | Point the Instagram bio link at `ebay.com/usr/holliewoodandvinellc` instead of the empty Depop shop | eBay's links policy covers listings, not Instagram's bio | e3 |
