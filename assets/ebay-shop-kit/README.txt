@@ -4,8 +4,10 @@ Prepared November 8, 2026. Access status updated November 9.
 STATUS
 Ricky approved two-business-day dispatch and 30-day returns, with the buyer paying
 change-of-mind return postage and the seller paying for damage, faults, wrong items
-or description errors. No eBay settings, live listings or subscriptions have been
-changed. Apply matching native policies before using the policy copy publicly.
+or description errors. On November 9 business policies were switched on, the HWV
+policies were created and four Seller Hub templates were saved. The live listings
+and the subscription are unchanged. Apply matching native policies to a listing
+before using the policy copy on it.
 Ricky chose the free seller profile and templates now, with an upgrade soon.
 The Store banner and About copy are prepared for that future upgrade.
 
@@ -38,15 +40,18 @@ listing-template-pickup.txt
 These are internal masters, not completed listings. Replace all bracketed fields,
 remove seller notes, attach actual item photos and fill native eBay fields.
 Do not copy unverified measurements, smoke-free claims, condition or provenance.
+Policy names that exist on the account (November 9): HWV | Parcel | Calculated |
+2 business days; HWV | Parcel + pickup | Calculated | 2 business days; Local Pickup;
+HWV | Returns | 30 days | Buyer pays; HWV | eBay checkout | Immediate payment.
+"HWV | Fragile" and "HWV | Local pickup only" in the decor and pickup masters
+were not created. Use HWV Parcel + pickup for decor and Local Pickup for furniture.
 
 CUSTOMER CARE
 customer-replies.txt    Twelve messages to adapt; none have been sent.
 thank-you-card.txt     Optional printed package insert, not listing copy.
 
 ACCOUNT ACCESS
-The user is signed in. Both Chrome sessions and their open eBay tabs were detected.
-The page read stopped because the app's website-access approval returned no valid
-decision. Select Chrome from the chat's @ menu and use the native eBay access
-prompt; see the setup guide for the documented recovery. Do not bypass that gate.
-No login details are stored here. Account settings still need implementation and
-verification. Do not buy a subscription during this task.
+The user is signed in. In Claude Code, pick Browser 1 with select_browser.
+Screenshots time out there, so read pages through the DOM. No login details are
+stored here. Account state and remaining steps: docs/ebay-setup.md.
+Do not buy a subscription during this task.

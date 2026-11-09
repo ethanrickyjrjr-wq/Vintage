@@ -21,7 +21,7 @@ Everything in this section was read back from Seller Hub on November 9.
 
 | Item | Format | Shipping today | Location shown |
 |---|---|---|---|
-| Alice + Olivia Sandals (198769499426) | Auction $26, BIN $40, 0 bids, ends about Nov 11 | Calculated, plus free local pickup | Fort Myers, FL |
+| Alice + Olivia Sandals (198769499426) | Auction $26, BIN $40, 0 bids, ends Tue Nov 10, 5:44 PM ET | Calculated, plus free local pickup | Fort Myers, FL |
 | Steve Madden satchel (198660368283) | BIN $15, Best Offer | Calculated | Fort Myers, FL |
 | Worthington tote (198660374454) | BIN $12, Best Offer | Calculated | Fort Myers, FL |
 | GUESS shoulder bag (198660388373) | BIN $15, Best Offer | Calculated | Fort Myers, FL |
@@ -173,7 +173,7 @@ The audit, policies and templates are done (see [Account state, November 9](#acc
    - All seven: HWV Returns.
    - Payment: use HWV Payment on the shipped Buy It Now listings. The table now takes money orders through its MOCC policy; keep that or switch it to HWV Payment on Ricky's word.
    
-   Revise the sandals first, while the auction still has no bids. It ends around November 11.
+   Revise the sandals first, while the auction still has no bids. It ends Tue Nov 10 at 5:44 PM ET. eBay's [Revise a listing](https://www.ebay.com/help/selling/listings/revising-listing?id=4356) page (read Nov 9) lists what can change in an auction with no bids and under 12 hours left, and policy edits are not on that list. So the practical deadline is about 5:44 AM ET on Nov 10.
 2. **Check each revised listing from the buyer view.** Each should show 30-day returns and the expected shipping and pickup lines. Record anything eBay refuses.
 3. **Add the footer last.** Append it to a listing's description only after that listing's native policies match. First scan the existing description for "no returns", smoke-free claims and similar wording.
 4. **Paste the profile About text by hand** (it would not save from automation). The profile image stays as it is until Ricky picks one.

@@ -154,6 +154,7 @@ Never put the Instagram handle, a URL or contact details anywhere eBay displays:
 
 ## Discrepancies (X verified, Y need review)
 
+- **eBay monthly limits:** 75,000 items and $750,000, read in Seller Hub > Overview on Nov 9 (7 items and $1,202 used). The "about 10 items or $500" figure does not apply to this account.
 - **Maximalist Design and Decor:** 1,695,318 members verified signed-in today. The 2023 "nearly 600k" is stale.
 - **Facebook friend cap:** 6,000 verified on Meta's page. The 5,000 figure is outdated.
 - **Facebook selling fee:** 10% verified (Meta merchant policy). Closo's "5%" needs review and is probably stale.
