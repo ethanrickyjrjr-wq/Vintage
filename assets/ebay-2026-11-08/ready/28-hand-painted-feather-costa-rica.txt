@@ -1,0 +1,59 @@
+ITEM 28. Hand-painted feather, Costa Rica
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Decor | 2 day | 30 day
+Category (search):    folk art
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel + pickup | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $20 to $40, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/28 ...
+
+== TITLE (76/80) ==
+Hand Painted Feather Blue Gold Macaw Parrot Costa Rica Signed Claudio Framed
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+A natural feather hand-painted with a blue-and-gold macaw on a branch, with green foliage at the tip, mounted on white and framed under glass in a slim gold-tone frame. Signed "Costa Rica" at the left and by the artist at the right.
+
+Condition: pre-owned, [glass and mount clean / note].
+
+Frame ____ x ____ in.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Type: Folk Art, Painting on feather
+- Subject: Birds, Macaw
+- Origin: Costa Rica
+- Signed: Yes
+- Color: Blue, Yellow, Green, Gold
+- Material: Feather, Paint, Glass, Metal frame
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (4 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Read the artist's surname (starts Claudio ...) and spell it right in the title.
+- Tape the frame. Check the hanger. This one still needs the square-on reshoot.

@@ -37,7 +37,7 @@ Item 6 has no size on the Starlo label. Look for a second tag at the side seam; 
 
 - Photos: `01-liz-claiborne-leopard-shirt-dress-front.jpg`, `-back.jpg`, `-tag.jpg`
 - Label: Liz Claiborne Dresses, size 8, 100% polyester, Made in China, RN 52002, CA 16396
-- Title (80 max): `Vintage 90s Liz Claiborne Blue Black Leopard Print Double Breasted Midi Shirt Dress 8`
+- Title (80 max): `Vintage 90s Liz Claiborne Blue Black Leopard Double Breasted Midi Shirt Dress 8` (shortened 2026-11-09; the posting sheets in `assets/ebay-2026-11-08/ready/` are current)
 - Item specifics: Brand Liz Claiborne; Department Women; Size 8; Size Type Regular; Type Shirt Dress; Style Shirt Dress; Dress Length Midi; Sleeve Length Short Sleeve; Neckline Collared (notched lapel); Pattern Animal Print (leopard); Color Blue, Black; Material 100% Polyester; Closure Button; Features Elastic Waist, Double Breasted; Vintage Yes; Decade 1990s; Occasion Casual, Work; Country China
 - Description: Bright periwinkle blue with a black leopard spot, notched lapel collar, double row of dark buttons down the front, short cuffed sleeves, shirred elastic waist, full midi skirt. Classic 90s Liz Claiborne Dresses label. Lightweight polyester, hangs and travels well, no ironing.
 - Ballpark: $32 to $48 (unverified)

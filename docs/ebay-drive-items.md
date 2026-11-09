@@ -12,6 +12,13 @@ An item is **set up** when the folder exists with a front photo and `listing.txt
 numbers (1 to 46 are the 2026-11-08 batch); the slug is the photo file-name stem. On the phone, Files > Google Drive >
 Holliewood eBay > Items > one folder = one eBay listing: pick the photos, paste the text.
 
+**Posting sheets (2026-11-09):** `tools/ebay-ready.py assets/ebay-2026-11-08` writes `ready/NN-slug.txt` for all 44 items, and
+`ebay-drive-items.py` now copies each one into its Drive folder as `ebay-ready.txt`. Each sheet names the Seller Hub template,
+the HWV shipping, return and payment policies, a category to search, the title (19 clothing titles were cut to eBay's 80
+characters in `listings-copy.md` that day), the description with the shop footer appended and blanket "smoke-free" claims
+removed, the item specifics and a checklist. Still needed for every item before posting: tape measurements, a daylight
+condition check, packed weight and size, and a price from eBay Sold. Rerun `ebay-drive-items.py` on the PC to refresh Drive.
+
 ## How it is built and checked
 
 `tools/ebay-drive-items.py <batch dir> [--check]` reads `listings-copy.md` and the `ebay/` and `other-items/` photo folders

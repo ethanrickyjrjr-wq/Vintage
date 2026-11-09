@@ -77,6 +77,9 @@ for n in sorted(set(sections) | set(photos)):
         if body:
             plain = re.sub(r'^## ', '', body, flags=re.M)
             (folder / 'listing.txt').write_text(f'{n}. {title}\n\n{plain}\n', encoding='utf-8')
+        # eBay posting sheet from tools/ebay-ready.py: policies, category, footer, blanks to fill.
+        for sheet in (batch / 'ready').glob(f'{n:02d}-*.txt'):
+            shutil.copy2(sheet, folder / 'ebay-ready.txt')
     ok = not status
     bad += not ok
     print(f'{n:>4}  {folder.name:<40} {len(pics):>6}  {"yes" if front else "no ":<5}  {"yes" if body else "no ":<4}  {"ok" if ok else "; ".join(status)}')

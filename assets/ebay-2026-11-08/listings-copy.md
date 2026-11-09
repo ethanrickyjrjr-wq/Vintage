@@ -5,7 +5,7 @@ Each item below is ready to paste into the eBay app: the Title line goes in the 
 # 1. Liz Claiborne leopard shirt dress
 
 ## Title
-Vintage 90s Liz Claiborne Blue Black Leopard Print Double Breasted Midi Shirt Dress 8
+Vintage 90s Liz Claiborne Blue Black Leopard Double Breasted Midi Shirt Dress 8
 
 ## Description
 Vintage 1990s Liz Claiborne Dresses shirt dress in a bright periwinkle blue with a black leopard spot. Notched lapel collar, double row of dark buttons down the front, short cuffed sleeves, shirred elastic waist and a full midi skirt. Lightweight 100% polyester that travels well and needs no ironing. Made in China. RN 52002.
@@ -46,7 +46,7 @@ Ships from Southwest Florida, smoke-free. Please check the measurements against 
 # 2. Future Collective floral lace-trim slip dress
 
 ## Title
-Future Collective Pink Cream Mixed Floral Lace Trim Tie Strap Slip Midi Dress Size S
+Future Collective Pink Cream Floral Lace Trim Tie Strap Slip Midi Dress Size S
 
 ## Description
 Future Collective slip dress in two prints: a blush pink sprig print on top meeting a cream ditsy floral along a diagonal seam, with eyelash lace at the neckline and hem. Adjustable tie shoulder straps and a front slit. Satin-finish fabric with a soft drape. Made in China.
@@ -86,7 +86,7 @@ Ships from Southwest Florida, smoke-free.
 # 3. Ronny Kobo rose jacquard plunge dress
 
 ## Title
-Ronny Kobo Rose Pink Leaf Jacquard Plunge V Neck Long Puff Sleeve Ruched Maxi Dress XS
+Ronny Kobo Rose Pink Jacquard Plunge V Neck Puff Sleeve Ruched Maxi Dress XS
 
 ## Description
 Ronny Kobo dress in a dusty rose tone-on-tone palm-leaf jacquard. Deep plunge V neckline with a draped bodice, gathered puff shoulders, long fitted sleeves, a ruched centre seam running down the fitted skirt into a fishtail-style hem, and a keyhole at the back. A designer piece that photographs beautifully and fits close to the body, so please go by the measurements rather than the XS. Made in China.
@@ -128,7 +128,7 @@ Ships from Southwest Florida, smoke-free.
 # 4. Brooks Brothers white chino shorts
 
 ## Title
-Brooks Brothers Advantage Chino White Cotton Flat Front Walking Shorts Women's Size 10
+Brooks Brothers Advantage Chino White Cotton Flat Front Walking Shorts Size 10
 
 ## Description
 Brooks Brothers Advantage Chino shorts in crisp white 100% cotton twill. Flat front, slant side pockets, belt loops, darted back and small vents at the side hems. Zip fly with hook-and-bar closure. Made in Malaysia.
@@ -168,7 +168,7 @@ Ships from Southwest Florida, smoke-free.
 # 5. The Limited green blouse
 
 ## Title
-The Limited Kelly Green Button Front Blouse Roll Tab Long Sleeves Chest Pocket Size S
+The Limited Kelly Green Button Front Blouse Roll Tab Sleeve Chest Pocket Size S
 
 ## Description
 The Limited blouse in a saturated kelly green lightweight crepe. Point collar over an open V neckline, single chest pocket, button front, long sleeves with button roll tabs, back yoke with a box pleat and a curved shirttail hem. Made in Indonesia.
@@ -207,7 +207,7 @@ Ships from Southwest Florida, smoke-free.
 # 6. Starlo Fashions vintage red pleated dress
 
 ## Title
-Vintage 80s Starlo Fashions Red Black Abstract Moire Print Pleated Blouson Midi Dress USA
+Vintage 80s Starlo Fashions Red Black Moire Print Pleated Blouson Midi Dress USA
 
 ## Description
 Vintage 1980s Starlo Fashions dress in a bold red-on-black abstract moire print. Bloused bodice over an elastic waist, long sleeves with button cuffs, round neck with a button keyhole at the back, and a finely accordion-pleated skirt. Made in the USA. The label carries no size, so please go by the measurements.
@@ -248,7 +248,7 @@ Ships from Southwest Florida, smoke-free.
 # 7. We The Free wide-leg jeans
 
 ## Title
-Free People We The Free Light Wash High Rise Wide Leg Jeans Flap Patch Pockets Size 29
+Free People We The Free Light Wash High Rise Wide Leg Jeans Patch Pockets 29
 
 ## Description
 Free People We The Free jeans in a light vintage-blue wash. High rise, full wide leg from the hip, button-flap patch pockets on the front and a seamed western-style V yoke across the back.
@@ -289,7 +289,7 @@ Ships from Southwest Florida, smoke-free.
 # 8. Free People mixed print blouse
 
 ## Title
-Free People Mixed Print Floral Paisley Button Front Blouse Long Balloon Sleeves Size S
+Free People Mixed Floral Paisley Print Button Front Blouse Balloon Sleeve Size S
 
 ## Description
 Free People blouse in a mixed print: black and cream pinstripe panels with pink and cream florals and paisley borders. Pointed collar, button front, long balloon sleeves gathered into smocked cuffs, boxy cropped shape with a gathered hem band. Lightweight woven. Made in Vietnam.
@@ -329,7 +329,7 @@ The grey jacket photographed on the fence (IMG_2287 and the Photoroom cut-out IM
 # 10. Lew Magram Collection black jersey faux-wrap maxi dress
 
 ## Title
-Vintage Lew Magram Collection Black Jersey Faux Wrap Maxi Dress White Satin Collar Cuffs 8
+Vintage Lew Magram Black Jersey Faux Wrap Maxi Dress White Satin Collar Cuffs 8
 
 ## Description
 Vintage Lew Magram Collection dress in a matte black stretch jersey with a wide white satin shawl collar and matching turn-back cuffs. Faux-wrap bodice with side ruching, long sleeves, straight column skirt to the ankle. A dramatic 1980s to 90s mail-order catalog piece. 100% polyester, dry clean only. Made in USA of imported fabric. Item 10676, RN 61246.
@@ -369,7 +369,7 @@ Ships from Southwest Florida, smoke-free.
 # 11. adidas SAMPLE grey satin nylon track jacket
 
 ## Title
-adidas Sample Gray Satin Nylon Full Zip Track Bomber Jacket Ribbed Cuffs Drawcord Hem S
+adidas Sample Gray Satin Nylon Full Zip Track Bomber Jacket Ribbed Cuffs Size S
 
 ## Description
 adidas jacket with a SAMPLE label, so a pre-production or showroom piece rather than a retail run. Charcoal grey satin-finish nylon shell with a stand collar, full front zip, zip hand pockets, ribbed cuffs and a drawcord hem. Mesh lined. Size label reads US S (UK 8 to 10, F 36 to 38, D 34 to 36). Made in Thailand.
@@ -402,7 +402,7 @@ Ships from Southwest Florida, smoke-free.
 # 12. Connie Rizza orange floral jersey dress
 
 ## Title
-Vintage 70s Connie Rizza Orange Floral Print Jersey Lace Up Collar Long Sleeve Dress
+Vintage 70s Connie Rizza Orange Floral Jersey Lace Up Collar Long Sleeve Dress
 
 ## Description
 Vintage Connie Rizza dress in a tangerine-orange silky jersey with a scattered floral print and a dense floral border at the hem and cuffs, white polka dots throughout. Wide pointed collar with a lace-up neckline, long sleeves with printed cuffs, straight knee-length skirt. Connie Rizza was a 1970s Italian-style jersey label. No size on the label; please go by the measurements.
@@ -439,7 +439,7 @@ Ships from Southwest Florida, smoke-free.
 # 13. Jones New York ivory flap-pocket blouse
 
 ## Title
-Vintage Jones New York Ivory Cream Flap Pocket Button Front Blouse Long Sleeve Size 8
+Vintage Jones New York Ivory Flap Pocket Button Front Long Sleeve Blouse Size 8
 
 ## Description
 Jones New York blouse in an ivory crepe-weight polyester. Notched camp collar, two buttoned flap chest pockets, button front, long sleeves with buttoned cuffs, shirttail hem. Clean 1980s to 90s workwear. 100% polyester. Made in Korea. RN 54050.
@@ -472,7 +472,7 @@ Ships from Southwest Florida, smoke-free.
 # 14. Ghost London geometric print plunge midi dress
 
 ## Title
-Ghost London Cream Olive Geometric Print Plunge V Neck Puff Sleeve Button Midi Dress XXS
+Ghost London Cream Olive Geometric Print Plunge V Puff Sleeve Midi Dress XXS
 
 ## Description
 Ghost London dress in a cream crepe printed with an olive and black lattice motif. Deep plunging V neckline, gathered puff shoulders, long sleeves with buttoned cuffs, button-through front and a flowing midi skirt. Ghost's signature fluid drape. Size XXS.
@@ -510,7 +510,7 @@ Ships from Southwest Florida, smoke-free.
 # 15. White coral-print high-waist trousers (brand not photographed)
 
 ## Title
-[Brand] White Coral Sea Print High Waist Slim Straight Trousers Gold Buttons Side Stripe
+[Brand] White Coral Print High Waist Slim Straight Trousers Gold Button Stripe
 
 ## Description
 White cotton trousers with an orange and purple coral-reef print, leopard-print patches, gold-tone buttons on the patch pockets and fly, and navy and orange stripes down the outseams. High waist, slim straight leg, cropped at the ankle. A statement resort piece.
@@ -547,7 +547,7 @@ Ships from Southwest Florida, smoke-free.
 # 16. Denim & Flower Ricky Singh cream varsity bomber
 
 ## Title
-Denim & Flower Ricky Singh Men's Cream Cotton Varsity Bomber Jacket Striped Rib Trim L
+Denim & Flower Ricky Singh Men's Cream Cotton Varsity Bomber Jacket Striped L
 
 ## Description
 Denim & Flower by Ricky Singh bomber jacket in a stone-cream cotton canvas with black and white striped ribbed collar, cuffs and hem. Zip front, welt hand pockets, printed medallion lining. Size L (EUR L, MEX 42).
@@ -580,7 +580,7 @@ Ships from Southwest Florida, smoke-free.
 # 17. Neiman Marcus navy silk shirt dress
 
 ## Title
-Vintage 80s Neiman Marcus Navy 100% Silk Shirt Dress Ivory Collar Cuffs Elastic Waist 12
+Vintage 80s Neiman Marcus Navy 100% Silk Shirt Dress Ivory Collar Cuffs Size 12
 
 ## Description
 Vintage Neiman Marcus dress in navy 100% silk with an ivory notched collar and matching cuffs. Gathered shoulders, long sleeves, a single pink button at the waist, elasticated waist and a soft gathered skirt to below the knee. Dry clean. Made in Hong Kong. Size 12.
@@ -615,7 +615,7 @@ Ships from Southwest Florida, smoke-free.
 # 18. Zara cream utility jumpsuit
 
 ## Title
-Zara Cream Oatmeal Short Sleeve Utility Boilersuit Jumpsuit Button Front Chest Pocket Size S
+Zara Cream Oatmeal Short Sleeve Utility Boilersuit Jumpsuit Button Front Size S
 
 ## Description
 Zara jumpsuit in an oatmeal-cream slubbed cotton-linen look weave. Pointed collar, V neckline, button front, patch chest pocket, short cuffed sleeves, seamed waist with side pockets and straight cropped legs. Size EUR S, US S, MEX 26. Made in Bangladesh.
@@ -653,7 +653,7 @@ Ships from Southwest Florida, smoke-free.
 # 19. Columbia PFG vented fishing shirt
 
 ## Title
-Columbia PFG Men's Pale Yellow Vented Short Sleeve Fishing Shirt Button Front Size L
+Columbia PFG Men's Pale Yellow Vented Short Sleeve Fishing Shirt Button Front L
 
 ## Description
 Columbia Sportswear PFG fishing shirt in pale yellow. Short sleeves, button front, chest pockets, mesh-lined vented back for airflow, Columbia logo at the back yoke. Men's size L. Made in Vietnam.
@@ -685,7 +685,7 @@ Ships from Southwest Florida, smoke-free.
 # 20. Bonnie & Norma paisley midi skirt
 
 ## Title
-Vintage Bonnie & Norma Paisley Print Elastic Waist Midi Skirt Rust Teal Gold Size 12
+Vintage Bonnie & Norma Paisley Elastic Waist Midi Skirt Rust Teal Gold Size 12
 
 ## Description
 Vintage Bonnie & Norma skirt in an autumn paisley of rust, teal, gold and black on a soft lightweight weave. Full elastic waist, straight-to-A-line shape, midi length. Size 12.

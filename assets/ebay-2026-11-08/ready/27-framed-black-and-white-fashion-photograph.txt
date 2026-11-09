@@ -1,0 +1,58 @@
+ITEM 27. Framed black-and-white fashion photograph
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Decor | 2 day | 30 day
+Category (search):    art photographs
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel + pickup | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $25 to $45, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/27 ...
+
+== TITLE (78/80) ==
+Black White Fashion Photo Print Model Heels with Horse Matted Black Wood Frame
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Black-and-white fashion photograph: a model in a one-shoulder bodysuit, strappy heels and dark lipstick beside the legs of a dark horse on a wet stone terrace. Cream mat, stepped black wood frame, glass front.
+
+Condition: pre-owned. Glass and mat clean [check the mat for foxing]; frame [note any rubs].
+
+Frame ____ x ____ in; image about ____ x ____ in.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Type: Photograph / Print
+- Subject: Fashion, Horse
+- Color: Black, White
+- Material: Paper, Wood frame, Glass
+- Photographer: [from the back or the print margin]
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (6 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Look for a photographer credit or magazine source on the back or under the mat.
+- Shoot it square-on with no reflections; the current photo has glare.

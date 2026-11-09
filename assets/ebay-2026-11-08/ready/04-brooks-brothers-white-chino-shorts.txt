@@ -1,0 +1,73 @@
+ITEM 04. Brooks Brothers white chino shorts
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Clothing | 2 day | 30 day
+Category (search):    women's shorts   (template defaults to Antiques: change it)
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $16 to $28, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/04 ...
+
+== TITLE (78/80) ==
+Brooks Brothers Advantage Chino White Cotton Flat Front Walking Shorts Size 10
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Brooks Brothers Advantage Chino shorts in crisp white 100% cotton twill. Flat front, slant side pockets, belt loops, darted back and small vents at the side hems. Zip fly with hook-and-bar closure. Made in Malaysia.
+
+Condition: pre-owned, [describe; white: say plainly if there is any mark].
+
+Measurements, taken flat:
+- Label size: 10
+- Waist: ____ in [about 16, so a 32 in waist]
+- Hip: ____ in
+- Front rise: ____ in [about 8.5]
+- Inseam: ____ in [about 8.5]
+- Outseam, waist top to hem: ____ in [about 16]
+- Leg opening: ____ in [about 10]
+
+Ships from Southwest Florida.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Brand: Brooks Brothers
+- Department: Women
+- Size: 10
+- Type: Chino Shorts
+- Style: Walking Shorts
+- Color: White
+- Material: 100% Cotton
+- Rise: [from the tape]
+- Inseam: [from the tape]
+- Features: Belt Loops, Side Pockets, Back Darts, Hem Vents
+- Closure: Zip, hook and bar
+- Pattern: Solid
+- Occasion: Casual, Golf, Resort
+- Country of Manufacture: Malaysia
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (6 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Confirm white versus ivory against a sheet of paper in daylight.

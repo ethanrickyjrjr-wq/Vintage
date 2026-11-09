@@ -1,0 +1,73 @@
+ITEM 02. Future Collective floral lace-trim slip dress
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Clothing | 2 day | 30 day
+Category (search):    women's dresses   (template defaults to Antiques: change it)
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $14 to $24, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/02 ...
+
+== TITLE (78/80) ==
+Future Collective Pink Cream Floral Lace Trim Tie Strap Slip Midi Dress Size S
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Future Collective slip dress in two prints: a blush pink sprig print on top meeting a cream ditsy floral along a diagonal seam, with eyelash lace at the neckline and hem. Adjustable tie shoulder straps and a front slit. Satin-finish fabric with a soft drape. Made in China.
+
+Condition: pre-owned, [describe].
+
+Measurements, taken flat:
+- Label size: S
+- Across the top edge: ____ in
+- Waist: ____ in
+- Hip: ____ in
+- Strap, as tied: ____ in [about 8], adjustable
+- Length, top edge to hem: ____ in [about 32]
+- Slit: ____ in
+
+Ships from Southwest Florida.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Brand: Future Collective
+- Department: Women
+- Size: S
+- Type / Style: Slip Dress
+- Dress Length: Midi
+- Sleeve Length: Sleeveless
+- Neckline: Square, lace trimmed
+- Pattern: Floral
+- Color: Pink, Cream, Black
+- Material: [from the care label]
+- Features: Lace Trim, Adjustable Tie Straps, Front Slit
+- Closure: [pullover or side zip]
+- Occasion: Casual, Party
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (6 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Read the care label for the fabric and whether it is lined.
+- Check whether there is a side zip.

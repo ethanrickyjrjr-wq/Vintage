@@ -1,0 +1,71 @@
+ITEM 14. Ghost London geometric print plunge midi dress
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Clothing | 2 day | 30 day
+Category (search):    women's dresses   (template defaults to Antiques: change it)
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $60 to $110, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/14 ...
+
+== TITLE (76/80) ==
+Ghost London Cream Olive Geometric Print Plunge V Puff Sleeve Midi Dress XXS
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Ghost London dress in a cream crepe printed with an olive and black lattice motif. Deep plunging V neckline, gathered puff shoulders, long sleeves with buttoned cuffs, button-through front and a flowing midi skirt. Ghost's signature fluid drape. Size XXS.
+
+Condition: pre-owned, [describe].
+
+Measurements, taken flat:
+- Label size: XXS
+- Pit to pit: ____ in
+- Shoulder to shoulder: ____ in
+- Sleeve, shoulder seam to cuff: ____ in [about 26]
+- Waist: ____ in
+- Hip: ____ in
+- Length, shoulder to hem: ____ in [about 43.5]
+
+Ships from Southwest Florida.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Brand: Ghost London
+- Department: Women
+- Size: XXS
+- Type: Midi Dress
+- Style: Button-Through
+- Dress Length: Midi
+- Sleeve Length: Long, Puff Shoulder
+- Neckline: Plunge V
+- Pattern: Geometric
+- Color: Cream, Olive, Black
+- Material: [from the care label; Ghost is usually viscose crepe]
+- Closure: Buttons
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (6 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Read the care label and count the buttons; the front opening runs the full length.

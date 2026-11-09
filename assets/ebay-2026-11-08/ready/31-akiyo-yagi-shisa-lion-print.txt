@@ -1,0 +1,59 @@
+ITEM 31. Akiyo Yagi shisa lion print
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Decor | 2 day | 30 day
+Category (search):    art prints
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel + pickup | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $40 to $80, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/31 ...
+
+== TITLE (75/80) ==
+Akiyo Yagi Red Shisa Lion Okinawa Art Print Signed Numbered /30 2010 Framed
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Red Okinawan shisa lion with curling mane and bared teeth on textured washi, with calligraphy and a red artist's seal. Pencil-signed Akiyo Yagi, dated 2010.7.6 and numbered out of 30 in the margin. White mat, slim black frame, glass front.
+
+Condition: pre-owned. Print clean; [pink marker mark on the glass wipes off].
+
+Frame ____ x ____ in; image ____ x ____ in.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Artist: Akiyo Yagi
+- Type: Print, limited edition
+- Subject: Shisa, Okinawa, Lion
+- Style: Japanese Folk Art
+- Signed / Numbered: Yes / ____ of 30
+- Year: 2010
+- Material: Washi paper, Wood frame, Glass
+- Condition: Used
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (5 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Read the edition number exactly and the technique if written on the back (stencil, woodblock or screen print).
+- Wipe the pink marker off the glass. Still needs the square-on reshoot.

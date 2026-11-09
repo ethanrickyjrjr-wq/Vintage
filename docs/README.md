@@ -38,6 +38,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - [following-2026-11.md](following-2026-11.md): how to build a following before the Marketplace and eBay launch. Covers what Ricky must decide first, Facebook Pages to like and groups to join in order (four checked signed-in on 2026-11-09), Meta's and eBay's red lines, the free-account eBay levers and two shop-kit fixes. Built from seven Sonnet lanes in `research/following-2026-11-09/`.
 - [launch-todo.md](launch-todo.md): the ordered to-do for the Facebook and eBay launch, a snapshot of the first export. The live copy with statuses is in the allstatecoop@gmail.com Drive at `My Drive/Holliewood Launch`, written by `tools/launch-drive-export.py` together with the plan and research as docx.
 - [ebay-drive-items.md](ebay-drive-items.md): the rule of one Drive folder per eBay item (photos plus `listing.txt`), the script that builds and checks it, and the 2026-11-08 check.
+- `assets/ebay-2026-11-08/ready/`: one eBay posting sheet per item (44), built by `tools/ebay-ready.py` on 2026-11-09: template and policies to pick, category to search, title within 80 characters, description with the shop footer, item specifics and the blanks still to fill. `STATUS.md` there is the board.
 - `tools/cutout/cutout.py` is the script both describe; `tools/crawl-cloud.sh` is the cloud-session page fetcher the research lanes used.
 
 ## Hire Hollie (Fabulous From Online)

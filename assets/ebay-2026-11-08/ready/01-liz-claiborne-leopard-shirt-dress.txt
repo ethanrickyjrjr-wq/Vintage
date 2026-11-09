@@ -1,0 +1,74 @@
+ITEM 01. Liz Claiborne leopard shirt dress
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Clothing | 2 day | 30 day
+Category (search):    women's dresses   (template defaults to Antiques: change it)
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $32 to $48, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/01 ...
+
+== TITLE (79/80) ==
+Vintage 90s Liz Claiborne Blue Black Leopard Double Breasted Midi Shirt Dress 8
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Vintage 1990s Liz Claiborne Dresses shirt dress in a bright periwinkle blue with a black leopard spot. Notched lapel collar, double row of dark buttons down the front, short cuffed sleeves, shirred elastic waist and a full midi skirt. Lightweight 100% polyester that travels well and needs no ironing. Made in China. RN 52002.
+
+Condition: pre-owned, [describe: no stains, pulls or odour / list any flaw and see photo].
+
+Measurements, taken flat:
+- Label size: 8
+- Pit to pit: ____ in
+- Shoulder to shoulder: ____ in
+- Sleeve, shoulder seam to cuff: ____ in [about 10.5]
+- Waist, relaxed / stretched: ____ / ____ in
+- Length, back collar seam to hem: ____ in [about 44]
+
+Ships from Southwest Florida. Please check the measurements against a dress you own; vintage sizes run differently from modern ones.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Brand: Liz Claiborne
+- Department: Women
+- Size: 8, Regular
+- Type / Style: Shirt Dress
+- Dress Length: Midi
+- Sleeve Length: Short Sleeve
+- Neckline: Collared
+- Pattern: Animal Print (leopard)
+- Color: Blue, Black
+- Material: 100% Polyester
+- Closure: Button
+- Features: Elastic Waist, Double Breasted
+- Vintage: Yes, 1990s
+- Occasion: Casual, Work
+- Country of Manufacture: China
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (6 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Fill the five blanks from the tape.
+- Check for missing or loose buttons (there are ten).

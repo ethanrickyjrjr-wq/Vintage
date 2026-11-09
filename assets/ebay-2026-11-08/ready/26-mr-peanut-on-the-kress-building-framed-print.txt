@@ -1,0 +1,60 @@
+ITEM 26. Mr. Peanut on the Kress building, framed print
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Decor | 2 day | 30 day
+Category (search):    art prints
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel + pickup | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark $35 to $60, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/26 ...
+
+== TITLE (76/80) ==
+Mr Peanut Fire Breathing Dancing on Kress Building Pop Art Print Black Frame
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+Pop-art print of a monocled Mr. Peanut in a top hat, cane raised, breathing fire as he dances on the roof of a Kress department store, over a distressed orange and cream ground. Matte black wood frame, glass front. Red marker signature at the top of the print.
+
+Condition: pre-owned. Small white chips on the frame edge at the lower left and right side, see photo. Print and glass clean.
+
+Frame ____ x ____ in; print about ____ x ____ in.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Type: Art Print
+- Subject: Mr. Peanut, Advertising, Architecture
+- Style: Pop Art, Street Art
+- Color: Orange, Black, Yellow
+- Material: Paper, Wood frame, Glass
+- Signed: [Yes, by the artist in red / describe]
+- Item Height / Width: ____ in / ____ in
+- Condition: Used
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (6 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- Read the red signature and search the artist; it may change the title and price. Check the back for a label.
+- Tape the frame and the visible print. Photograph the chips.
+- The shop tag on the frame says $45; remove it for the photos.

@@ -1,0 +1,70 @@
+ITEM 15. White coral-print high-waist trousers (brand not photographed)
+eBay posting sheet. Built by tools/ebay-ready.py from listings-copy.md. Nothing below is on eBay yet.
+
+== PICK IN EBAY ==
+Start from template:  HWV | Clothing | 2 day | 30 day
+Category (search):    women's pants   (template defaults to Antiques: change it)
+Format:               Buy It Now, quantity 1
+Shipping policy:      HWV | Parcel | Calculated | 2 business days
+Return policy:        HWV | Returns | 30 days | Buyer pays
+Payment policy:       HWV | eBay checkout | Immediate payment
+Best Offer:           on if the price is over about $30; auto-decline below your floor
+Package:              PACKED weight and box size: ____ lb ____ oz, ____ x ____ x ____ in
+Price:                ____   (ballpark unknown until the brand is known, unverified: check eBay Sold first)
+Photos:               the Photoroom set in Drive, Holliewood eBay/Items/15 ...
+
+== TITLE (78/80) ==
+[Brand] White Coral Print High Waist Slim Straight Trousers Gold Button Stripe
+
+== DESCRIPTION (paste as is, after filling the blanks) ==
+White cotton trousers with an orange and purple coral-reef print, leopard-print patches, gold-tone buttons on the patch pockets and fly, and navy and orange stripes down the outseams. High waist, slim straight leg, cropped at the ankle. A statement resort piece.
+
+Condition: pre-owned, [describe; white: say plainly if marked].
+
+Measurements, taken flat:
+- Label size: ____
+- Waist: ____ in [about 12, so a 24 in waist]
+- Hip: ____ in
+- Front rise: ____ in [about 15, rough]
+- Inseam: ____ in [about 24.5]
+- Outseam, waist top to hem: ____ in [about 40]
+- Leg opening: ____ in [about 5.5]
+
+Ships from Southwest Florida.
+
+HOLLIEWOOD & VINE
+Vintage with a past.
+
+Thoughtfully chosen vintage and preloved finds for your wardrobe and home.
+
+THE DETAILS MATTER
+Please read the item details and measurements and look through all photos for condition and signs of wear. Have a question? Send us a message through eBay; we're happy to help.
+
+SHIPPING & PICKUP
+Shipped orders go to the carrier within two business days after payment, Monday through Friday, excluding holidays. Tracking is added to your eBay order. Shipping costs and estimated delivery dates appear in the listing. For items offered with local pickup, collection is arranged through eBay Messages.
+
+RETURNS
+We accept returns within 30 days of delivery or collection. Buyers pay return shipping for a change of mind. If an item arrives damaged, faulty, incorrect, or not as described, we cover return shipping. Start a return from your eBay purchase history. For orders handled by eBay International Shipping, follow the return instructions in your order.
+
+FIND YOUR NEXT PIECE
+Follow Holliewood & Vine on eBay to see our latest finds.
+
+== ITEM SPECIFICS (eBay's own fields) ==
+- Brand: [from the label]
+- Department: Women
+- Size: [from the label]
+- Type: Trousers
+- Style: Slim, High Rise, Cropped
+- Color: White, Orange, Purple
+- Pattern: Novelty print
+- Material: [from the label]
+- Features: Gold-Tone Buttons, Patch Pockets, Side Stripes
+- Closure: Button
+
+== BEFORE YOU PUBLISH (delete nothing above; these are for you) ==
+- Fill every ____ (7 in the copy) from the tape, plus the package line.
+- Replace each [bracket] with what you see in daylight, or delete it.
+- Smoke-free was taken out. Add it back only if it is true for this piece.
+- Set eBay's Condition field to match the condition line.
+- No tag photo exists. Photograph the brand label and the care label, then finish the title.
+- The waist reads about 24 in: that is a size 00 or XS, worth checking.
