@@ -155,6 +155,8 @@ The footer is a maintained master, not a global live include. Editing it locally
 
 Some November 8 drafts contain estimated measurements and blanket smoke-free claims. Verify or remove them before publication. This task has not rewritten those drafts or appended the policy to unreviewed listings.
 
+**Unmeasured clothes go in as eBay drafts, not live listings** (checked 2026-11-09). Seller Hub keeps a draft 75 days after its last edit, up to 5,000 drafts ([Seller Center, Winter 2024](https://www.ebay.com/sellercenter/resources/seller-updates/2024-winter/business)). Do not publish first and add measurements later. Once an offer is sent or received, eBay blocks edits to the existing description and item specifics ([Revise a listing](https://www.ebay.com/help/selling/listings/revising-listing?id=4356)). The `[about NN]` figures in `listing.txt` are estimates from photos, so they never go into a listing. Weigh each packed item at the same time as measuring, because HWV Parcel uses calculated postage.
+
 ## Messages and customer service
 
 Use `customer-replies.txt` as a copy bank, adapted to the actual conversation. No buyer messages have been sent. Suggested inbox folders: Needs reply, Awaiting buyer, Shipping and Returns. eBay documents up to five custom folders and AI reply suggestions that can be reviewed and edited before sending. Inspect availability; a native saved-reply library has not been configured. [Messages](https://www.ebay.com/help/selling/selling-tools/schedule-time-away?id=4194).
