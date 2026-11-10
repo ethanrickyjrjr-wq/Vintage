@@ -157,6 +157,51 @@ Some November 8 drafts contain estimated measurements and blanket smoke-free cla
 
 **Unmeasured clothes go in as eBay drafts, not live listings** (checked 2026-11-09). Seller Hub keeps a draft 75 days after its last edit, up to 5,000 drafts ([Seller Center, Winter 2024](https://www.ebay.com/sellercenter/resources/seller-updates/2024-winter/business)). Do not publish first and add measurements later. Once an offer is sent or received, eBay blocks edits to the existing description and item specifics ([Revise a listing](https://www.ebay.com/help/selling/listings/revising-listing?id=4356)). The `[about NN]` figures in `listing.txt` are estimates from photos, so they never go into a listing. Weigh each packed item at the same time as measuring, because HWV Parcel uses calculated postage.
 
+### Clothing drafts, November 9
+
+All 20 clothing items are saved as Seller Hub drafts (**Listings → Drafts**). None is live; Active still shows only the six earlier listings. The custom label (SKU) `HWV-NN` matches the Drive folder number. Drafts expire 75 days after the last edit, so these go on **January 23, 2027**; any edit restarts the count.
+
+Every draft was read back from eBay after saving, and each one has:
+- a title of 80 characters or fewer. eBay's limit is 80, and every `listing.txt` title except item 45 was 84 to 92 characters, so each one was shortened by hand;
+- a category, Pre-owned – Good, quantity 1 and Buy It Now;
+- the item specifics from `listing.txt`, plus any eBay filled in from the title (checked);
+- the Drive photos, front first;
+- the description, with every measurement, size and condition gap left as `____`, then the shop footer;
+- the policies HWV eBay checkout immediate payment, HWV Parcel and HWV Returns 30 days.
+
+The photo estimates (`[about NN]`) and the unverified "smoke-free" line were removed. eBay pre-fills its own suggested price (it put $18 on item 01), so the price was cleared on every draft.
+
+**Before each draft can go live, with the piece in hand:**
+1. Search the description for `____` and fill each gap: measurements, condition, and size where the label has none.
+2. Change Pre-owned – Good if the inspection says otherwise.
+3. Weigh the packed item and enter its weight and box size. HWV Parcel uses calculated postage.
+4. Set the price, then Preview and List it.
+
+| NN | Category | Photos | Notes |
+|---|---|---|---|
+| 01 Liz Claiborne shirt dress | Women > Dresses | 3 | Count the ten buttons |
+| 02 Future Collective slip dress | Women > Dresses | 3 | |
+| 03 Ronny Kobo maxi | Women > Dresses | 3 | |
+| 04 Brooks Brothers shorts | Women > Shorts | 3 | |
+| 05 The Limited blouse | Women > Tops | 3 | |
+| 06 Starlo dress | Women > Dresses | 3 | No label size: set Size from the measurements |
+| 07 We The Free jeans | Women > Jeans | 4 | Waist Size and Inseam specifics come from the tape |
+| 08 Free People blouse | Women > Tops | 3 | |
+| 10 Lew Magram maxi | Women > Dresses | 3 | Check the satin collar for yellowing |
+| 11 adidas sample jacket | Women > Activewear Jackets | 4 | Confirm the shell material on the care label |
+| 12 Connie Rizza dress | Women > Dresses | 3 | No label size |
+| 13 Jones New York blouse | Women > Tops | 3 | |
+| 14 Ghost London dress | Women > Dresses | 3 | |
+| 15 coral-print trousers | Women > Pants | 2 | No brand or size yet. Adding a brand means shortening the title again |
+| 16 Denim & Flower bomber | Men > Coats, Jackets & Vests | 5 | Includes both flaw photos |
+| 17 Neiman Marcus silk dress | Women > Dresses | 3 | |
+| 18 Zara jumpsuit | Women > Jumpsuits & Rompers | 3 | eBay added "Set Includes: Shorts"; it was removed |
+| 19 Columbia PFG shirt | Men > Casual Button-Down Shirts | 3 | |
+| 20 Bonnie & Norma skirt | Women > Skirts | 3 | |
+| 45 halter tuxedo vest | Wedding & Formal > Men's Tuxedo & Formal Vests | 1 | One photo only, and no size yet |
+
+Dresses went into Women > Dresses with Vintage: Yes, not into Specialty > Vintage. The photo plan calls for 8 to 12 photos (label, fabric, closures, every flaw, a measurement card), and these drafts have 1 to 5. Add shots during the measuring pass where possible.
+
 ## Messages and customer service
 
 Use `customer-replies.txt` as a copy bank, adapted to the actual conversation. No buyer messages have been sent. Suggested inbox folders: Needs reply, Awaiting buyer, Shipping and Returns. eBay documents up to five custom folders and AI reply suggestions that can be reviewed and edited before sending. Inspect availability; a native saved-reply library has not been configured. [Messages](https://www.ebay.com/help/selling/selling-tools/schedule-time-away?id=4194).
