@@ -2,6 +2,8 @@
 
 **Status, 2026-11-09:** research only. Nothing was joined, liked, followed, posted or changed on any account.
 
+**Later direction, 2026-11-09:** Ricky reports being signed in to Hollie's established account and wants to prepare without changing her regular profile until everyone is ready. The [current preparation boundary](facebook-marketplace.md#current-preparation-boundary-ricky-later-on-2026-11-09) takes precedence over the profile edits, follows, joins and posting schedule below. Codex could not inspect the browser in that session and made no Facebook changes.
+
 Ricky asked for Sonnets to find profiles to like and follow, and other quick ways to build a following on Facebook for the Marketplace launch, then the same for eBay. This doc is the decision layer: what to do, in what order, and what Ricky has to decide first.
 
 **Sources.** Seven Sonnet lanes in `research/following-2026-11-09/`:
@@ -36,7 +38,7 @@ These block the Facebook plan. All are Meta's own rules (verified, f3) unless ma
    - "Hollie Wood" becomes a second account for the same person. Meta's Terms allow one ("Create only one account (your own)").
    - Next steps:
      - Recreate the item 01 draft on her real account.
-     - Copy the shop work line and bio over.
+     - Hold the shop work line and bio as draft copy; Ricky's later instruction keeps her regular profile unchanged until everyone is ready.
      - Then Ricky decides whether to retire "Hollie Wood". Deactivating it is the least destructive option, and Claude does not do this.
 2. **Name on her account.** Her real account should already carry the name on her ID, so the name-check risk mostly goes away.
    - Meta allows "another name" (nickname, professional name) to be listed on the account.

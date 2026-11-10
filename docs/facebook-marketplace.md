@@ -4,7 +4,22 @@ Ricky asked on 2026-11-08 to get Facebook set up for Holliewood and Vine so the 
 
 **Update, 2026-11-09 (Ricky):** Hollie already has her own Facebook account, and Marketplace moves to it once she gives access. The "Hollie Wood" profile below is a second account for the same person. Recreate item 01 on her account; retiring "Hollie Wood" is Ricky's call. Also see [`following-2026-11.md`](following-2026-11.md) before acting on "Account risk" or "Pace" below. Meta no longer allows new additional profiles, and its Terms allow one account per person. The friend cap is 6,000. The free Verified badge is not available in professional mode.
 
-## State
+## Current preparation boundary (Ricky, later on 2026-11-09)
+
+Ricky reports that Hollie's established Facebook account is now signed in and asks to prepare the shop without changing her regular profile until everyone is ready. This supersedes the earlier instruction to copy the shop bio and work line onto that profile. Keep its name, photos, bio, work, city, professional mode and privacy settings unchanged during preparation. Public listings, posts, friend invitations, group activity, account linking and automatic sharing wait for launch authorization.
+
+Recommended preparation:
+
+1. Inspect which account is active, Marketplace access and any existing Holliewood & Vine Page, without saving changes. Use the profile's View As option to review its existing public appearance when accessible.
+2. Prepare the shop Page's bio, logo, cover and opening posts in local files. A business Page is the proposed home for shop branding; check for an existing Page before creating one. Do not assume creating a Page is private, or that an unpublished/deactivated Page is editable. Verify the actual visibility controls before building inside Facebook.
+3. Prepare item photos and listing copy locally. Save Marketplace drafts only after confirming the established account and the actual Save draft control. Recreate item 01 there; the previous draft belongs to the second account. Its price, condition and measurements still need confirmation.
+4. Review the complete material together before publishing. Profile branding is optional and a separate decision; it is not a prerequisite to prepare listings. Keep the second account untouched pending Ricky's decision.
+
+Marketplace remains connected to the personal seller profile. Meta's [March 2026 announcement](https://about.fb.com/news/2026/03/facebook-marketplace-new-meta-ai-tools-make-selling-faster-and-easier/), re-read in this session, says buyers can see account age, friend count and Marketplace activity. A Page is not a separate identity for ordinary personal Marketplace listings. Do not treat a Hide from friends option as a private staging area; keep listings unpublished during preparation.
+
+**Inspection status:** Codex could not connect to the Windows Computer Use helper, including after retry and a JavaScript-session reset: `Computer Use native pipe is unavailable: failed to connect native pipe: The system cannot find the file specified. (os error 2)`. No Facebook screen was inspected and no Facebook changes were made in this session. The current account's identity, Pages and settings remain unverified. The public web reader also hit Facebook login/block pages for Help Center visibility articles, so it did not verify current Page unpublishing controls.
+
+## Earlier observed state: the second account
 
 - **Account.** The account is a personal profile named "Hollie Wood", signed in to Ricky's Chrome. It is new: no profile photo, no cover photo and 0 friends. Login details are not kept here.
 - **Marketplace access is open.** Both `facebook.com/marketplace/create/item` and the seller dashboard load. No restriction notice appeared.
@@ -44,7 +59,9 @@ Ricky asked on 2026-11-08 to get Facebook set up for Holliewood and Vine so the 
 - **Price cap for shipping.** Pieces over $500 cannot ship through Marketplace. The $850 Bassett coffee table is local pickup only here.
 - **Dispatch time.** The eBay promise of two-business-day dispatch fits inside Meta's 7-day limit.
 
-## Ricky or Hollie, by hand
+## Earlier handoff for the second account (paused)
+
+These steps predate the decision to use Hollie's established account and the preparation boundary above. Do not execute them against either account without reconciling that boundary.
 
 1. Hollie adds a profile photo from her phone. Untick "share to feed" if she does not want a post. A cover photo is optional.
 2. Add real friends.
