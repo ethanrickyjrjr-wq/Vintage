@@ -4,7 +4,9 @@ Usage (2026-11-09): python -I gen_drafts.py, then python -I emit_js.py NN and ru
 output in the draft tab (www.ebay.com/lstng?draftId=...). It PUTs title, SKU, description
 and item specifics to Seller Hub's own draft endpoint, using the page's srt token, and reads
 them back. It never lists. The footer comes from localStorage key hwvFooter (set once from
-assets/ebay-shop-kit/listing-footer.html). Photos are uploaded separately with file_upload."""
+assets/ebay-shop-kit/listing-footer.html). Photos are uploaded separately with file_upload.
+Do not re-run on the 20 clothing drafts made 2026-11-09: their item specifics were adjusted
+in eBay per category (docs/ebay-setup.md, "Clothing drafts"). Send bestOfferEnabled:false too."""
 import json, sys
 from pathlib import Path
 

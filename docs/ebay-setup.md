@@ -169,7 +169,7 @@ Every draft was read back from eBay after saving, and each one has:
 - the description, with every measurement, size and condition gap left as `____`, then the shop footer;
 - the policies HWV eBay checkout immediate payment, HWV Parcel and HWV Returns 30 days.
 
-The photo estimates (`[about NN]`) and the unverified "smoke-free" line were removed. eBay pre-fills its own suggested price (it put $18 on item 01), so the price was cleared on every draft.
+The photo estimates (`[about NN]`) and the unverified "smoke-free" line were removed. eBay pre-fills its own suggested price (it put $18 on item 01), so the price was cleared on every draft. It also switches Best Offer on by default. Best Offer was turned off on all 20 because offers wait for a per-item minimum, and an offer locks the description. Promoted Listings (General and Priority) are off on all 20, even though the General campaign's 13% rate shows as pre-filled.
 
 **Before each draft can go live, with the piece in hand:**
 1. Search the description for `____` and fill each gap: measurements, condition, and size where the label has none.
@@ -200,7 +200,7 @@ The photo estimates (`[about NN]`) and the unverified "smoke-free" line were rem
 | 20 Bonnie & Norma skirt | Women > Skirts | 3 | |
 | 45 halter tuxedo vest | Wedding & Formal > Men's Tuxedo & Formal Vests | 1 | One photo only, and no size yet |
 
-Dresses went into Women > Dresses with Vintage: Yes, not into Specialty > Vintage. The photo plan calls for 8 to 12 photos (label, fabric, closures, every flaw, a measurement card), and these drafts have 1 to 5. Add shots during the measuring pass where possible.
+eBay will require a Size before 06, 12, 15 and 45 can list. Item 16's description says "Priced accordingly"; check that line when setting its price. Do not re-run `tools/ebay-drafts/` on these drafts. The item specifics for 04, 05, 07, 11, 15, 16, 18, 19, 20 and 45 were adjusted in eBay to fit each category, and the generator would put the old values back. Dresses went into Women > Dresses with Vintage: Yes, not into Specialty > Vintage. The photo plan calls for 8 to 12 photos (label, fabric, closures, every flaw, a measurement card), and these drafts have 1 to 5. Add shots during the measuring pass where possible.
 
 ## Messages and customer service
 
