@@ -2,7 +2,7 @@
 
 Ricky asked on 2026-11-08 to get Facebook set up for Holliewood and Vine so the shop can post on Marketplace. He gave the profile URL `https://www.facebook.com/profile.php?id=61596451137563` and signed in to it in Chrome.
 
-**Update, 2026-11-09 (Ricky):** Hollie already has her own Facebook account, and Marketplace moves to it once she gives access. The "Hollie Wood" profile below is a second account for the same person. Recreate item 01 on her account; retiring "Hollie Wood" is Ricky's call. Also see [`following-2026-11.md`](following-2026-11.md) before acting on "Account risk" or "Pace" below. Meta no longer allows new additional profiles, and its Terms allow one account per person. The friend cap is 6,000. The free Verified badge is not available in professional mode.
+**Current status, 2026-11-09:** Hollie's established account is now verified in the browser, the existing shop Page has been found, and item 01 has been recreated as an unpublished draft there. The "Hollie Wood" profile below is a second account for the same person; its earlier draft remains untouched. Retiring that account is Ricky's call. The preparation boundary below supersedes earlier suggestions to change Hollie's profile, friend list or professional mode. See the current inspection results before acting on the historical notes.
 
 ## Current preparation boundary (Ricky, later on 2026-11-09)
 
@@ -17,7 +17,46 @@ Recommended preparation:
 
 Marketplace remains connected to the personal seller profile. Meta's [March 2026 announcement](https://about.fb.com/news/2026/03/facebook-marketplace-new-meta-ai-tools-make-selling-faster-and-easier/), re-read in this session, says buyers can see account age, friend count and Marketplace activity. A Page is not a separate identity for ordinary personal Marketplace listings. Do not treat a Hide from friends option as a private staging area; keep listings unpublished during preparation.
 
-**Inspection status:** Codex could not connect to the Windows Computer Use helper, including after retry and a JavaScript-session reset: `Computer Use native pipe is unavailable: failed to connect native pipe: The system cannot find the file specified. (os error 2)`. No Facebook screen was inspected and no Facebook changes were made in this session. The current account's identity, Pages and settings remain unverified. The public web reader also hit Facebook login/block pages for Help Center visibility articles, so it did not verify current Page unpublishing controls.
+## Verified preparation, later on 2026-11-09
+
+**Browser access works through Chrome DevTools MCP.** Ricky added `chrome-devtools` with `npx -y chrome-devtools-mcp@latest --autoConnect`; the server connected to the running Chrome browser. The Windows Computer Use helper still returned `Computer Use native pipe is unavailable: failed to connect native pipe: The system cannot find the file specified. (os error 2)`, but that no longer blocks this task. No credentials were read or entered.
+
+### Account and existing Page
+
+- The signed-in account menu and Marketplace composer identify **Hollie Lippmeier**, the established account. Its personal name, photographs, bio, work details and settings were not changed.
+- **[Holliewood and Vine already exists](https://www.facebook.com/61589196235186/)**, Page ID `61589196235186`, with **186 followers** observed. It appears in Hollie's account switcher and shortcuts. No duplicate Page was created.
+- The Page was also readable in a new tab that showed Facebook's logged-out interface. Treat it as public, not a hidden staging Page. No Page visibility settings were changed; unpublishing controls were not investigated.
+- Its current Intro describes a **Loveland, Ohio showroom and studio rental**. Ricky confirmed in this session that the prepared replacement copy should describe **Southwest Florida vintage and resale sales, with no showroom or rentals**. Exact address and contact details still need review before any live update. No Page edits or posts were saved.
+- The seller dashboard already had **two active listings**: the Bassett wood/glass coffee table at **$850** and Turkish pillow covers at **$10**. Both remain unchanged.
+
+### Item 01 saved as a draft
+
+[Open the saved Liz Claiborne draft](https://www.facebook.com/marketplace/edit/?listing_id=1761191728799823). Its draft ID is `1761191728799823`.
+
+The composer exposed an explicit **Save draft** button under Hollie's established seller identity. The draft was saved, appeared under the **Drafts** heading, then was reopened to verify:
+
+- Title: `Liz Claiborne Blue Leopard Print Midi Shirt Dress — Size 8`.
+- Three existing photographs in front/back/label order; front and back are Photoroom exports.
+- The factual description from [`marketplace-01.txt`](../assets/facebook-shop-kit/marketplace-01.txt), without unconfirmed condition, exact decade, measurements, smoke-free or no-ironing claims.
+- Material `100% Polyester` and private SKU `HV-01`.
+- Women's clothing & shoes selected during creation; reopening displays the parent category Clothing, Shoes & Accessories.
+- **Condition is blank. Price was left blank, but Facebook saved it as `$0` and shows `FREE` in the draft list. This is not an approved price. Replace it before publishing.**
+- The preview defaults to **Loveland**. Confirm the actual listing location and pickup/shipping arrangements before publication. The approved regional Page copy does not establish an exact pickup location.
+
+After saving, **Your listings** still showed **2 active**. No Next or Publish action was taken. Neither of the existing active listings, the existing Page, nor either personal profile was edited.
+
+### Local review pack
+
+Open [`preview.html`](../assets/facebook-shop-kit/preview.html) for the proposed bio, About text, three posts, existing brand artwork and first item. Plain-text files in the same folder are ready for review and copying. Existing artwork is reused unchanged; the eBay-sized banner is a cover reference and still needs a Facebook crop review before upload.
+
+The Page copy uses Ricky's confirmed Southwest Florida direction. The item still needs availability, price, condition, tape measurements and delivery/location confirmation. Publication and any shop link or work line on Hollie's personal profile remain separate decisions.
+
+### Browser notes for continuing
+
+- Reuse the already signed-in Facebook tab. In this inspection, newly created tabs used a different browser context and showed a logged-out interface; no new login was necessary in the original tab.
+- Prefer DOM text and accessibility snapshots. A live-browser screenshot timed out; the local preview was rendered separately with headless Chrome.
+- The MCP form-fill tool did not persist the description textarea through React rerenders. Clicking the textarea and entering it with `type_text` did; its full contents were verified after reopening the saved draft.
+- A `Public` label and "Listed a few seconds ago" appear in the composer preview even before publication. The actual saved status was verified under the **Drafts** heading, with the active-listing count unchanged. Hide from friends was not used as a privacy substitute.
 
 ## Earlier observed state: the second account
 

@@ -1,0 +1,63 @@
+ITEM 01 — LIZ CLAIBORNE LEOPARD SHIRT DRESS
+Preparation copy. Not ready to publish.
+
+SAVED DRAFT — VERIFIED 2026-11-09
+https://www.facebook.com/marketplace/edit/?listing_id=1761191728799823
+Saved under Hollie's established account and reopened to verify the title,
+description, all three photographs, material and private SKU.
+Facebook converted the unfilled price to $0 / FREE. This is a draft-system
+default, not an approved asking price. Replace it before publishing.
+Condition is blank. The preview defaults to Loveland; confirm the actual
+listing location before publication. The two existing active listings were
+unchanged. This item was not published.
+
+TITLE
+Liz Claiborne Blue Leopard Print Midi Shirt Dress — Size 8
+
+DESCRIPTION BASE
+Liz Claiborne Dresses shirt dress in periwinkle blue with a black leopard
+print. Notched lapel collar, double-breasted button front, short cuffed
+sleeves, elastic waist and a full midi skirt.
+
+Label size 8. Labelled 100% polyester, made in China. Please compare the
+final measurements with a dress you own before buying.
+
+PHOTOS — UPLOAD IN THIS ORDER
+../ebay-2026-11-08/ebay/01-liz-claiborne-leopard-shirt-dress-front.jpg
+../ebay-2026-11-08/ebay/01-liz-claiborne-leopard-shirt-dress-back.jpg
+../ebay-2026-11-08/ebay/01-liz-claiborne-leopard-shirt-dress-tag.jpg
+
+These are the existing Photoroom front/back exports and the label close-up.
+No new image generation, garment edits or local-model cutouts were used.
+
+SELLER FIELDS
+Private reference: HV-01
+Brand: Liz Claiborne
+Label size: 8
+Material: 100% Polyester
+Color: Blue / Black
+Category: Women's clothing & shoes selected during creation; reopening the
+draft displays the parent category Clothing, Shoes & Accessories.
+Price: pending owner confirmation; Facebook currently stores the draft as $0.
+Condition: pending physical inspection. Do not select "like new" by default.
+Delivery: pending confirmation of pickup/shipping and location.
+
+BEFORE PUBLICATION — THESE NOTES DO NOT GO IN THE DESCRIPTION
+- Confirm the dress is still on hand and available.
+- Set the asking price. The earlier $32–$48 range in
+  ../../docs/ebay-listings-2026-11-08.md is explicitly an unverified ballpark,
+  not current sold-price evidence or an approved Marketplace price.
+- Inspect stains, pulls, odour, seams, elastic and all buttons. Describe and
+  photograph flaws; then add the condition sentence to the buyer copy.
+- Measure flat: pit to pit, shoulder to shoulder, sleeve, waist relaxed and
+  stretched, and back collar seam to hem. Add those measurements to the copy.
+- Do not substitute the prior photo estimates for tape measurements.
+- Confirm delivery arrangements and listing location.
+- The exact decade is omitted from this draft; verify it before adding it.
+- Save as draft only. Verify it appears as a draft before leaving Facebook.
+
+SOURCE
+../../docs/ebay-listings-2026-11-08.md, item 1
+../ebay-2026-11-08/listings-copy.md, item 1
+The description above omits the older template's unconfirmed smoke-free,
+condition and no-ironing claims.
