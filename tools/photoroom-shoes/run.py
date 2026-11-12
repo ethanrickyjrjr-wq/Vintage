@@ -55,6 +55,8 @@ def main():
         counters[r["pair"]] = counters.get(r["pair"], 0) + 1
         name = f"{r['pair']}-{counters[r['pair']]:02d}-{r['slug']}.jpg"
         dest = OUT / r["pair"] / name
+        if r["mode"] == "drop":
+            continue
         log.append({**r, "file": f"{r['pair']}/{name}"})
         if only and r["mode"] != only:
             continue

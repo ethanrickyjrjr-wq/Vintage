@@ -1,43 +1,42 @@
-file,img,pair,slug,mode,background,note
-mk/mk-01-top.jpg,2606,mk,top,cutout,EDEDED,white midsole: grey so the sole edge reads
-mk/mk-02-angle-1.jpg,2607,mk,angle-1,cutout,EDEDED,
-mk/mk-03-angle-2.jpg,2608,mk,angle-2,cutout,EDEDED,
-mk/mk-04-angle-3.jpg,2609,mk,angle-3,cutout,EDEDED,
-mk/mk-05-sole.jpg,2610,mk,sole,cutout,EDEDED,white outsole: never on white
-mk/mk-06-side.jpg,2611,mk,side,cutout,EDEDED,
-mk/mk-07-insole-label.jpg,2647,mk,insole-label,keep,,soft focus: reshoot if possible
-ggdb/ggdb-01-top.jpg,2612,ggdb,top,cutout,EDEDED,cream foxing and silver upper
-ggdb/ggdb-02-side-1.jpg,2614,ggdb,side-1,cutout,EDEDED,
-ggdb/ggdb-03-side-2.jpg,2615,ggdb,side-2,cutout,EDEDED,
-ggdb/ggdb-04-sole.jpg,2616,ggdb,sole,cutout,EDEDED,
-ggdb/ggdb-05-insole-label.jpg,2613,ggdb,insole-label,keep,,
-ggdb/ggdb-06-tongue-label.jpg,2645,ggdb,tongue-label,keep,,
-charles/charles-01-top.jpg,2617,charles,top,cutout,FFFFFF,
-charles/charles-02-side-1.jpg,2618,charles,side-1,cutout,FFFFFF,
-charles/charles-03-sole.jpg,2619,charles,sole,cutout,FFFFFF,tan sole reads on white
-charles/charles-04-side-2.jpg,2620,charles,side-2,cutout,FFFFFF,
-charles/charles-05-back.jpg,2621,charles,back,cutout,FFFFFF,
-charles/charles-06-heel-height.jpg,2627,charles,heel-height,keep,,tape in shot
-charles/charles-07-insole-label.jpg,2646,charles,insole-label,keep,,soft focus: reshoot if possible
-charles/charles-08-size-label.jpg,7027,charles,size-label,keep,,added 22:08; 10M leather upper; pair not confirmed
-melani/melani-01-top.jpg,2622,melani,top,cutout,FFFFFF,
-melani/melani-02-sole.jpg,2623,melani,sole,cutout,FFFFFF,
-melani/melani-03-side-1.jpg,2624,melani,side-1,cutout,FFFFFF,
-melani/melani-04-side-2.jpg,2625,melani,side-2,cutout,FFFFFF,
-melani/melani-05-back.jpg,2626,melani,back,cutout,FFFFFF,
-melani/melani-06-heel-height.jpg,2629,melani,heel-height,keep,,tape in shot; 2628 is the same view
-melani/melani-07-insole-label.jpg,2653,melani,insole-label,keep,,
-melani/melani-08-sole-stamp.jpg,2654,melani,sole-stamp,keep,,
-zara/zara-01-top.jpg,2631,zara,top,cutout,EDEDED,silver on white loses its edge
-zara/zara-02-sole.jpg,2632,zara,sole,cutout,EDEDED,
-zara/zara-03-side-1.jpg,2633,zara,side-1,cutout,EDEDED,
-zara/zara-04-side-2.jpg,2634,zara,side-2,cutout,EDEDED,
-zara/zara-05-back.jpg,2635,zara,back,cutout,EDEDED,
-zara/zara-06-heel-height.jpg,2630,zara,heel-height,keep,,tape in shot
-zara/zara-07-insole-label.jpg,2648,zara,insole-label,keep,,soft focus: reshoot if possible
-jm/jm-01-top.jpg,2636,jm,top,cutout,EDEDED,cream sole edge
-jm/jm-02-side-1.jpg,2637,jm,side-1,cutout,EDEDED,
-jm/jm-03-sole.jpg,2638,jm,sole,cutout,EDEDED,
-jm/jm-04-side-2.jpg,2639,jm,side-2,cutout,EDEDED,
-jm/jm-05-back.jpg,2640,jm,back,cutout,EDEDED,
-jm/jm-06-insole-label.jpg,2641,jm,insole-label,keep,,
+file,img,pair,slug,mode,background,made_by,note
+mk/mk-01-top.jpg,2606,mk,top,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",white midsole: grey so the sole edge reads
+mk/mk-02-angle-1.jpg,2607,mk,angle-1,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+mk/mk-03-angle-2.jpg,2608,mk,angle-2,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+mk/mk-04-angle-3.jpg,2609,mk,angle-3,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+mk/mk-05-sole.jpg,2610,mk,sole,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",white outsole: never on white
+mk/mk-06-side.jpg,2611,mk,side,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+mk/mk-07-insole-label.jpg,2647,mk,insole-label,keep,,"as shot, upright, 1600 px",soft focus: reshoot if possible
+ggdb/ggdb-01-top.jpg,2612,ggdb,top,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",cream foxing and silver upper
+ggdb/ggdb-02-side-1.jpg,2614,ggdb,side-1,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+ggdb/ggdb-03-side-2.jpg,2615,ggdb,side-2,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+ggdb/ggdb-04-sole.jpg,2616,ggdb,sole,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+ggdb/ggdb-05-insole-label.jpg,2613,ggdb,insole-label,keep,,"as shot, upright, 1600 px",
+ggdb/ggdb-06-tongue-label.jpg,2645,ggdb,tongue-label,keep,,"as shot, upright, 1600 px",
+charles/charles-01-top.jpg,2617,charles,top,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+charles/charles-02-side-1.jpg,2618,charles,side-1,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+charles/charles-03-sole.jpg,2619,charles,sole,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",tan sole reads on white
+charles/charles-04-side-2.jpg,2620,charles,side-2,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+charles/charles-05-back.jpg,2621,charles,back,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+charles/charles-06-heel-height.jpg,2627,charles,heel-height,keep,,"as shot, upright, 1600 px",tape in shot
+charles/charles-07-insole-label.jpg,2646,charles,insole-label,keep,,"as shot, upright, 1600 px",soft focus: reshoot if possible
+charles/charles-08-size-label.jpg,7027,charles,size-label,keep,,"as shot, upright, 1600 px",added 22:08; 10M leather upper; pair not confirmed
+melani/melani-01-top.jpg,2622,melani,top,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+melani/melani-02-sole.jpg,2623,melani,sole,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+melani/melani-03-side-1.jpg,2624,melani,side-1,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+melani/melani-04-side-2.jpg,2625,melani,side-2,cutout,FFFFFF,"BiRefNet (Hugging Face, rembg 2.0.87) on white",
+melani/melani-06-heel-height.jpg,2629,melani,heel-height,keep,,"as shot, upright, 1600 px",tape in shot; 2628 is the same view
+melani/melani-07-insole-label.jpg,2653,melani,insole-label,keep,,"as shot, upright, 1600 px",
+melani/melani-08-sole-stamp.jpg,2654,melani,sole-stamp,keep,,"as shot, upright, 1600 px",
+zara/zara-01-top.jpg,2631,zara,top,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",silver on white loses its edge
+zara/zara-02-sole.jpg,2632,zara,sole,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+zara/zara-03-side-1.jpg,2633,zara,side-1,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+zara/zara-04-side-2.jpg,2634,zara,side-2,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+zara/zara-05-back.jpg,2635,zara,back,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+zara/zara-06-heel-height.jpg,2630,zara,heel-height,keep,,"as shot, upright, 1600 px",tape in shot
+zara/zara-07-insole-label.jpg,2648,zara,insole-label,keep,,"as shot, upright, 1600 px",soft focus: reshoot if possible
+jm/jm-01-top.jpg,2636,jm,top,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",cream sole edge
+jm/jm-02-side-1.jpg,2637,jm,side-1,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+jm/jm-03-sole.jpg,2638,jm,sole,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+jm/jm-04-side-2.jpg,2639,jm,side-2,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+jm/jm-05-back.jpg,2640,jm,back,cutout,EDEDED,"BiRefNet (Hugging Face, rembg 2.0.87) on grey",
+jm/jm-06-insole-label.jpg,2641,jm,insole-label,keep,,"as shot, upright, 1600 px",
