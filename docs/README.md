@@ -39,6 +39,7 @@ The desk wiki has a page on this project (`dev/Chief Of Staff/wiki/vintage.md`),
 - [launch-todo.md](launch-todo.md): the ordered to-do for the Facebook and eBay launch, a snapshot of the first export. The live copy with statuses is in the allstatecoop@gmail.com Drive at `My Drive/Holliewood Launch`, written by `tools/launch-drive-export.py` together with the plan and research as docx.
 - [ebay-drive-items.md](ebay-drive-items.md): the rule of one Drive folder per eBay item (photos plus `listing.txt`), the script that builds and checks it, and the 2026-11-08 check.
 - [ebay-weights-2026-11-12.md](ebay-weights-2026-11-12.md): paste-ready fill-ins for the 20 clothing drafts: measurement lines from the 11/12 tape photos, the smoke-free line (Ricky confirmed every piece is from a non-smoking home), and packed weight and box size estimated at the high end. Nothing has been weighed or entered into eBay.
+- `ebay-ready-to-list-2026-11-12.md`: one sheet per clothing draft: label size, fabric where the label says it, weight/box, paste-ready measurements (adds HWV-08 and HWV-11), smoke-free line, shoe label 10M.
 - `tools/cutout/cutout.py` is the script both describe; `tools/crawl-cloud.sh` is the cloud-session page fetcher the research lanes used.
 
 ## Hire Hollie (Fabulous From Online)

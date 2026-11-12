@@ -28,9 +28,9 @@ Nothing was entered into eBay. The Seller Hub drafts still hold `____`.
 
 Three of these differ from the 2026-11-08 photo estimates by more than 5 in and are worth one check with the tape: HWV-02 length (42 to 43 against "about 32"), HWV-03 length (53 to 55 against "about 45 to 47"), HWV-18 total length (58 against "about 50"). HWV-07 reads full length, not cropped (inseam 28 against "about 23.5"), so do not add "Cropped" to the title.
 
-## Drafts with no photo in this folder (5)
+## Drafts with no photo in this folder (3; 08 and 11 were added later, see `docs/ebay-ready-to-list-2026-11-12.md`)
 
-HWV-08 Free People blouse, HWV-11 adidas jacket, HWV-15 coral-print trousers, HWV-17 Neiman Marcus dress, HWV-20 Bonnie & Norma skirt.
+HWV-15 coral-print trousers, HWV-17 Neiman Marcus dress, HWV-20 Bonnie & Norma skirt.
 
 ## New pieces with no draft or listing copy yet
 
